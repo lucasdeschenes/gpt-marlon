@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPT Marlon — AI Training Tools</title>
+  <meta name="description" content="Master AI tools faster. GPT Marlon teaches you how to use ChatGPT, Claude, Midjourney, and more to build, create, and automate like a pro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #060610;
+      --bg2: #0d0d1a;
+      --bg3: #111127;
+      --purple: #7c3aed;
+      --purple-light: #a855f7;
+      --blue: #3b82f6;
+      --cyan: #06b6d4;
+      --pink: #ec4899;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: rgba(124,58,237,0.2);
+      --glow: rgba(124,58,237,0.15);
+      --nav-bg: rgba(6,6,16,0.85);
+      --terminal-bg: #0a0a14;
+      --terminal-bar-bg: #1a1a2e;
+      --noise-opacity: 0.4;
+      --logo-filter: brightness(0) invert(1);
+    }
+
+    [data-theme="light"] {
+      --bg: #f8f7ff;
+      --bg2: #f0eeff;
+      --bg3: #ffffff;
+      --purple-light: #7c3aed;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: rgba(124,58,237,0.15);
+      --glow: rgba(124,58,237,0.08);
+      --nav-bg: rgba(248,247,255,0.9);
+      --terminal-bg: #f1f0ff;
+      --terminal-bar-bg: #e8e5ff;
+      --noise-opacity: 0.15;
+      --logo-filter: brightness(0) opacity(0.55);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* smooth theme transitions */
+    nav, section, footer, .tool-card, .testimonial-card,
+    .ig-profile-card, .terminal, .steps-visual, .email-input {
+      transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: var(--noise-opacity);
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 0 20px rgba(124,58,237,0.4);
+    }
+
+    .nav-logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+
+    .nav-logo-text span { color: var(--purple-light); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      color: white !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600 !important;
+      font-size: 0.875rem !important;
+      transition: opacity 0.2s, transform 0.2s !important;
+      box-shadow: 0 0 20px rgba(124,58,237,0.3);
+    }
+
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .theme-toggle {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(124,58,237,0.15);
+      border-color: rgba(124,58,237,0.4);
+      transform: rotate(15deg);
+    }
+
+    [data-theme="light"] .theme-toggle {
+      background: rgba(0,0,0,0.05);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    .icon-sun, .icon-moon { line-height: 1; }
+    [data-theme="light"]  .icon-moon { display: none; }
+    [data-theme="light"]  .icon-sun  { display: block; }
+    html:not([data-theme="light"]) .icon-sun  { display: none; }
+    html:not([data-theme="light"]) .icon-moon { display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1.5rem 5rem;
+      overflow: hidden;
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .orb-1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%);
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .orb-2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, transparent 70%);
+      bottom: 0;
+      right: -100px;
+    }
+
+    .orb-3 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(236,72,153,0.15) 0%, transparent 70%);
+      bottom: 100px;
+      left: -50px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.35);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--purple-light);
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--purple-light);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      max-width: 860px;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, var(--purple-light), var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--muted);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 0 40px rgba(124,58,237,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 60px rgba(124,58,237,0.5);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(124,58,237,0.4);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple-light), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+      margin-top: 0.2rem;
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-section {
+      padding: 2rem 0;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(124,58,237,0.03);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 25s linear infinite;
+      white-space: nowrap;
+      width: max-content;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .tool-logo {
+      height: 20px;
+      width: 20px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: var(--logo-filter);
+      opacity: 0.75;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS SHARED ── */
+    section { padding: 6rem 1.5rem; position: relative; z-index: 1; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── TOOLS GRID ── */
+    .tools-section { background: var(--bg2); }
+
+    .tools-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .tools-header .section-desc { margin: 0 auto; }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tool-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.75rem;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: radial-gradient(circle at top left, var(--glow), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124,58,237,0.5);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(124,58,237,0.1);
+    }
+
+    .tool-card:hover::before { opacity: 1; }
+
+    .tool-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tool-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .tool-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .tool-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps-section { background: var(--bg); }
+
+    .steps-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      box-shadow: 0 0 20px rgba(124,58,237,0.3);
+    }
+
+    .step-content h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-content p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .steps-visual {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .steps-visual::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(124,58,237,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .terminal {
+      background: var(--terminal-bg);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .terminal-bar {
+      background: var(--terminal-bar-bg);
+      padding: 0.75rem 1rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .terminal-body {
+      padding: 1.5rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      line-height: 2;
+    }
+
+    .t-muted { color: #4a5568; }
+    .t-purple { color: #a855f7; }
+    .t-blue { color: #60a5fa; }
+    .t-green { color: #34d399; }
+    .t-yellow { color: #fbbf24; }
+    .t-white { color: #e2e8f0; }
+    .cursor { display: inline-block; width: 8px; height: 14px; background: var(--purple-light); animation: blink 1.2s step-end infinite; vertical-align: middle; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--bg2); }
+
+    .testimonials-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.75rem;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 4rem;
+      font-family: Georgia, serif;
+      color: rgba(124,58,237,0.15);
+      line-height: 1;
+    }
+
+    .stars {
+      color: #fbbf24;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card p {
+      font-size: 0.93rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .author-role {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── INSTAGRAM SECTION ── */
+    .instagram-section { background: var(--bg); }
+
+    .instagram-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    /* Instagram profile card */
+    .ig-profile-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .ig-card-header {
+      padding: 1.25rem 1.25rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .ig-avatar-wrap {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      padding: 2px;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    }
+
+    .ig-avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--bg2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      border: 2px solid var(--bg3);
+      overflow: hidden;
+    }
+
+    .ig-avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .ig-handle { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .ig-bio-text { font-size: 0.75rem; color: var(--muted); }
+
+    .ig-stats-row {
+      display: flex;
+      gap: 1.25rem;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .ig-stat-item { text-align: center; }
+    .ig-stat-num { font-weight: 800; font-size: 0.9rem; font-family: 'Space Grotesk', sans-serif; }
+    .ig-stat-lbl { font-size: 0.68rem; color: var(--muted); margin-top: 0.1rem; }
+
+    .instagram-posts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .insta-post {
+      aspect-ratio: 1;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* Replace background below with <img> tag when you have real screenshots */
+    .insta-post.ip1 { background: linear-gradient(135deg, #0f172a, #4c1d95); }
+    .insta-post.ip2 { background: linear-gradient(135deg, #052e16, #065f46); }
+    .insta-post.ip3 { background: linear-gradient(135deg, #0c1a2e, #1e3a5f); }
+    .insta-post.ip4 { background: linear-gradient(135deg, #451a03, #92400e); }
+    .insta-post.ip5 { background: linear-gradient(135deg, #0c2340, #1e40af); }
+    .insta-post.ip6 { background: linear-gradient(135deg, #4a044e, #9d174d); }
+    .insta-post.ip7 { background: linear-gradient(135deg, #1e1b4b, #3730a3); }
+    .insta-post.ip8 { background: linear-gradient(135deg, #042f2e, #134e4a); }
+    .insta-post.ip9 { background: linear-gradient(135deg, #1c0533, #6d28d9); }
+
+    .insta-post-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      font-size: 1.8rem;
+      transition: transform 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .insta-post-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s;
+      z-index: 2;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .insta-post:hover .insta-post-overlay { opacity: 1; }
+    .insta-post:hover .insta-post-inner { transform: scale(1.08); }
+
+    .insta-post-label {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .ig-follow-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: white;
+      padding: 0.85rem 1.75rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 0 30px rgba(131,58,180,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 1.5rem;
+    }
+
+    .ig-follow-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px rgba(131,58,180,0.45);
+    }
+
+    /* ── EMAIL CAPTURE ── */
+    .email-section {
+      background: var(--bg2);
+    }
+
+    .email-box {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .email-box .section-title { margin-bottom: 0.75rem; }
+    .email-box .section-desc { margin: 0 auto 2rem; }
+
+    .email-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .email-input {
+      flex: 1;
+      background: var(--bg3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 0.85rem 1.25rem;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .email-input::placeholder { color: var(--muted); }
+
+    .email-input:focus {
+      border-color: rgba(124,58,237,0.6);
+      box-shadow: 0 0 0 3px rgba(124,58,237,0.1);
+    }
+
+    .email-submit {
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      color: white;
+      border: none;
+      padding: 0.85rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 0 20px rgba(124,58,237,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+
+    .email-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 35px rgba(124,58,237,0.45);
+    }
+
+    .email-fine {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 3rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-social {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .footer-social:hover {
+      background: rgba(124,58,237,0.15);
+      border-color: rgba(124,58,237,0.4);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+
+      .hero-stats {
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .steps-layout,
+      .instagram-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .email-form {
+        flex-direction: column;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Color variants for tool icons */
+    .icon-purple { background: rgba(124,58,237,0.15); }
+    .icon-blue   { background: rgba(59,130,246,0.15); }
+    .icon-cyan   { background: rgba(6,182,212,0.15); }
+    .icon-pink   { background: rgba(236,72,153,0.15); }
+    .icon-green  { background: rgba(52,211,153,0.15); }
+    .icon-orange { background: rgba(251,146,60,0.15); }
+
+    .tag-purple { background: rgba(124,58,237,0.15); color: var(--purple-light); }
+    .tag-blue   { background: rgba(59,130,246,0.15); color: #93c5fd; }
+    .tag-cyan   { background: rgba(6,182,212,0.15);  color: #67e8f9; }
+    .tag-pink   { background: rgba(236,72,153,0.15); color: #f9a8d4; }
+    .tag-green  { background: rgba(52,211,153,0.15); color: #6ee7b7; }
+    .tag-orange { background: rgba(251,146,60,0.15); color: #fdba74; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">🤖</div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#instagram">Content</a></li>
+      <li><a href="#join" class="nav-cta">Get Free Training →</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      AI Tools Training
+    </div>
+
+    <h1>
+      Stop Guessing.<br />
+      <span class="gradient-text">Master AI Tools</span><br />
+      Like a Pro.
+    </h1>
+
+    <p>
+      Learn how to use ChatGPT, Claude, Midjourney, and the fastest-growing AI tools
+      to build projects, create content, and automate your workflow — in half the time.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#join" class="btn-primary">
+        🚀 Start for Free
+      </a>
+      <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="btn-secondary">
+        📸 Follow on Instagram
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">50K+</div>
+        <div class="hero-stat-label">Followers</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100+</div>
+        <div class="hero-stat-label">AI Tutorials</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-label">Tools Covered</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/openai" alt="" onerror="this.style.display='none'"/>ChatGPT</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/anthropic" alt="" onerror="this.style.display='none'"/>Claude AI</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/midjourney" alt="" onerror="this.style.display='none'"/>Midjourney</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/cursor" alt="" onerror="this.style.display='none'"/>Cursor AI</div>
+      <div class="marquee-item"><svg class="tool-logo" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>Lovable</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/perplexity" alt="" onerror="this.style.display='none'"/>Perplexity</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/runwayml" alt="" onerror="this.style.display='none'"/>Runway ML</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/make" alt="" onerror="this.style.display='none'"/>Make.com</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/googlegemini" alt="" onerror="this.style.display='none'"/>Gemini</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/elevenlabs" alt="" onerror="this.style.display='none'"/>ElevenLabs</div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/openai" alt="" onerror="this.style.display='none'"/>ChatGPT</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/anthropic" alt="" onerror="this.style.display='none'"/>Claude AI</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/midjourney" alt="" onerror="this.style.display='none'"/>Midjourney</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/cursor" alt="" onerror="this.style.display='none'"/>Cursor AI</div>
+      <div class="marquee-item"><svg class="tool-logo" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>Lovable</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/perplexity" alt="" onerror="this.style.display='none'"/>Perplexity</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/runwayml" alt="" onerror="this.style.display='none'"/>Runway ML</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/make" alt="" onerror="this.style.display='none'"/>Make.com</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/googlegemini" alt="" onerror="this.style.display='none'"/>Gemini</div>
+      <div class="marquee-item"><img class="tool-logo" src="https://cdn.simpleicons.org/elevenlabs" alt="" onerror="this.style.display='none'"/>ElevenLabs</div>
+    </div>
+  </div>
+
+  <!-- TOOLS -->
+  <section class="tools-section" id="tools">
+    <div class="container">
+      <div class="tools-header fade-up">
+        <div class="section-label">What You'll Learn</div>
+        <h2 class="section-title">The AI Toolkit You Actually Need</h2>
+        <p class="section-desc">
+          Hands-on training for the tools that matter. No fluff, no theory — just real workflows that save you hours every week.
+        </p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card fade-up">
+          <div class="tool-icon icon-purple">🤖</div>
+          <h3>ChatGPT Mastery</h3>
+          <p>Advanced prompting, custom GPTs, and workflows to 10x your output. Go beyond the basics and unlock ChatGPT's full potential.</p>
+          <span class="tool-tag tag-purple">Prompting</span>
+        </div>
+
+        <div class="tool-card fade-up">
+          <div class="tool-icon icon-blue">✦</div>
+          <h3>Claude AI</h3>
+          <p>Long-form analysis, coding help, and document processing. Learn how Claude handles complex tasks that others can't.</p>
+          <span class="tool-tag tag-blue">Analysis</span>
+        </div>
+
+        <div class="tool-card fade-up">
+          <div class="tool-icon icon-pink">🎨</div>
+          <h3>Midjourney & AI Art</h3>
+          <p>Generate stunning visuals, product mockups, and brand assets. Master prompts, styles, and post-production workflows.</p>
+          <span class="tool-tag tag-pink">Creative</span>
+        </div>
+
+        <div class="tool-card fade-up">
+          <div class="tool-icon icon-cyan">💻</div>
+          <h3>Cursor & AI Coding</h3>
+          <p>Build full apps without a CS degree. Cursor, Lovable, and Bolt turn your ideas into working products fast.</p>
+          <span class="tool-tag tag-cyan">Build</span>
+        </div>
+
+        <div class="tool-card fade-up">
+          <div class="tool-icon icon-green">⚡</div>
+          <h3>AI Automation</h3>
+          <p>Connect your tools with Make.com, Zapier, and n8n. Build automations that run 24/7 so you don't have to.</p>
+          <span class="tool-tag tag-green">Automate</span>
+        </div>
+
+        <div class="tool-card fade-up">
+          <div class="tool-icon icon-orange">🎬</div>
+          <h3>AI Video & Voice</h3>
+          <p>Create videos, voiceovers, and social content with Runway, ElevenLabs, and Sora. The future of content creation is here.</p>
+          <span class="tool-tag tag-orange">Content</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="steps-section" id="how">
+    <div class="container">
+      <div class="steps-layout">
+        <div>
+          <div class="section-label fade-up">How It Works</div>
+          <h2 class="section-title fade-up">From Zero to AI Power User</h2>
+          <p class="section-desc fade-up" style="margin-bottom: 2.5rem;">
+            A clear path from beginner to confident AI user. Follow along with real examples and hands-on practice.
+          </p>
+
+          <div class="steps-list">
+            <div class="step fade-up">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Pick Your First Tool</h4>
+                <p>Start with ChatGPT or whichever AI tool fits your goal. No experience needed — just curiosity.</p>
+              </div>
+            </div>
+            <div class="step fade-up">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Follow the Tutorials</h4>
+                <p>Watch short, practical videos on Instagram or deeper guides delivered to your inbox. Learn by doing.</p>
+              </div>
+            </div>
+            <div class="step fade-up">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Apply It Immediately</h4>
+                <p>Every lesson ends with a prompt, template, or workflow you can use today in your real work.</p>
+              </div>
+            </div>
+            <div class="step fade-up">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>Stack Your Skills</h4>
+                <p>Combine tools to build powerful AI-powered workflows. Automate the boring stuff and focus on what matters.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps-visual fade-up">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="terminal-dot" style="background:#ff5f57"></div>
+              <div class="terminal-dot" style="background:#ffbd2e"></div>
+              <div class="terminal-dot" style="background:#28c840"></div>
+            </div>
+            <div class="terminal-body">
+              <div><span class="t-muted">// Your AI workflow today</span></div>
+              <div>&nbsp;</div>
+              <div><span class="t-purple">const</span> <span class="t-blue">result</span> = <span class="t-purple">await</span> <span class="t-yellow">ChatGPT</span><span class="t-white">(</span></div>
+              <div>&nbsp;&nbsp;<span class="t-green">"Write a week of content"</span><span class="t-white">,</span></div>
+              <div>&nbsp;&nbsp;<span class="t-white">{ tone: </span><span class="t-green">"engaging"</span><span class="t-white">, </span></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-white">platform: </span><span class="t-green">"Instagram"</span><span class="t-white"> }</span></div>
+              <div><span class="t-white">);</span></div>
+              <div>&nbsp;</div>
+              <div><span class="t-muted">// Pass to Midjourney for visuals</span></div>
+              <div><span class="t-purple">const</span> <span class="t-blue">images</span> = <span class="t-purple">await</span> <span class="t-yellow">Midjourney</span><span class="t-white">(result.captions);</span></div>
+              <div>&nbsp;</div>
+              <div><span class="t-muted">// Auto-schedule with Make.com</span></div>
+              <div><span class="t-yellow">autoSchedule</span><span class="t-white">(images, result);</span></div>
+              <div>&nbsp;</div>
+              <div><span class="t-green">✓ Done in 8 minutes.</span> <span class="cursor"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-header fade-up">
+        <div class="section-label">Results</div>
+        <h2 class="section-title">What People Are Saying</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up">
+          <div class="stars">★★★★★</div>
+          <p>"GPT Marlon's breakdown of Cursor AI completely changed how I build side projects. I shipped a full SaaS in a weekend."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JL</div>
+            <div>
+              <div class="author-name">James L.</div>
+              <div class="author-role">Indie Developer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-up">
+          <div class="stars">★★★★★</div>
+          <p>"I had no idea how powerful these AI tools were together. The automation workflow alone saves me 10+ hours per week."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SR</div>
+            <div>
+              <div class="author-name">Sofia R.</div>
+              <div class="author-role">Marketing Director</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-up">
+          <div class="stars">★★★★★</div>
+          <p>"The Midjourney prompting guide is gold. My clients can't believe the quality of visuals I'm delivering now. Worth every minute."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DK</div>
+            <div>
+              <div class="author-name">David K.</div>
+              <div class="author-role">Freelance Designer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="instagram-section" id="instagram">
+    <div class="container">
+      <div class="instagram-layout">
+        <div class="fade-up">
+          <div class="section-label">@gptmarlon</div>
+          <h2 class="section-title">Daily AI Tips on Instagram</h2>
+          <p class="section-desc">
+            Short, punchy videos that show you exactly how to use the latest AI tools — every single day. No fluff. Just what works.
+          </p>
+          <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="ig-follow-btn">
+            📸 Follow @gptmarlon
+          </a>
+        </div>
+
+        <div class="ig-profile-card fade-up">
+          <div class="ig-card-header">
+            <div class="ig-avatar-wrap">
+              <div class="ig-avatar-inner">
+                <!-- Replace with: <img src="your-photo.jpg" alt="GPT Marlon"> -->
+                🤖
+              </div>
+            </div>
+            <div>
+              <div class="ig-handle">gptmarlon</div>
+              <div class="ig-bio-text">AI Tools · Creator · Daily Tips</div>
+            </div>
+          </div>
+          <div class="ig-stats-row">
+            <div class="ig-stat-item"><div class="ig-stat-num">100+</div><div class="ig-stat-lbl">Posts</div></div>
+            <div class="ig-stat-item"><div class="ig-stat-num">50K+</div><div class="ig-stat-lbl">Followers</div></div>
+            <div class="ig-stat-item"><div class="ig-stat-num">Daily</div><div class="ig-stat-lbl">Updates</div></div>
+          </div>
+          <div class="instagram-posts">
+            <!-- Tip: save your Instagram screenshots to this folder and replace the div backgrounds with <img src="post1.jpg"> inside each .insta-post -->
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip1">
+              <div class="insta-post-inner">🤖<span class="insta-post-label">ChatGPT</span></div>
+              <span class="insta-post-overlay">View →</span>
+            </a>
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip2">
+              <div class="insta-post-inner">🎨<span class="insta-post-label">Midjourney</span></div>
+              <span class="insta-post-overlay">View →</span>
+            </a>
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip3">
+              <div class="insta-post-inner">💻<span class="insta-post-label">Cursor AI</span></div>
+              <span class="insta-post-overlay">View →</span>
+            </a>
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip4">
+              <div class="insta-post-inner">⚡<span class="insta-post-label">Automation</span></div>
+              <span class="insta-post-overlay">View →</span>
+            </a>
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip5">
+              <div class="insta-post-inner">✦<span class="insta-post-label">Claude AI</span></div>
+              <span class="insta-post-overlay">View →</span>
+            </a>
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip6">
+              <div class="insta-post-inner">🎬<span class="insta-post-label">AI Video</span></div>
+              <span class="insta-post-overlay">View →</span>
+            </a>
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip7">
+              <div class="insta-post-inner">🔥<span class="insta-post-label">Perplexity</span></div>
+              <span class="insta-post-overlay">View →</span>
+            </a>
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip8">
+              <div class="insta-post-inner">🧠<span class="insta-post-label">Gemini</span></div>
+              <span class="insta-post-overlay">View →</span>
+            </a>
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip9">
+              <div class="insta-post-inner">🎙️<span class="insta-post-label">ElevenLabs</span></div>
+              <span class="insta-post-overlay">View →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL CAPTURE -->
+  <section class="email-section" id="join">
+    <div class="container">
+      <div class="email-box fade-up">
+        <div class="section-label">Free Training</div>
+        <h2 class="section-title">Get the AI Toolkit Newsletter</h2>
+        <p class="section-desc">
+          Weekly AI tool breakdowns, prompt templates, and exclusive workflows — straight to your inbox. Free forever.
+        </p>
+
+        <form class="email-form" onsubmit="handleSubmit(event)">
+          <input
+            type="email"
+            class="email-input"
+            placeholder="your@email.com"
+            required
+            id="emailInput"
+          />
+          <button type="submit" class="email-submit">Subscribe Free →</button>
+        </form>
+        <p class="email-fine">No spam. Unsubscribe anytime. Join 5,000+ AI learners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">🤖</div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+
+      <ul class="footer-links">
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="https://www.instagram.com/gptmarlon/" target="_blank">Instagram</a></li>
+        <li><a href="mailto:marlon@drahn.me">Contact</a></li>
+      </ul>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="footer-social">📸</a>
+        <a href="mailto:marlon@drahn.me" class="footer-social">✉️</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('gptmarlon-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    html.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+
+    themeToggle.addEventListener('click', () => {
+      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('gptmarlon-theme', html.dataset.theme);
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+      observer.observe(el);
+    });
+
+    // Email form
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      const input = document.getElementById('emailInput');
+      btn.textContent = '✓ You\'re in!';
+      btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+      input.value = '';
+      setTimeout(() => {
+        btn.textContent = 'Subscribe Free →';
+        btn.style.background = '';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
