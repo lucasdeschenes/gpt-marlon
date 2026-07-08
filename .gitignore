@@ -1,0 +1,9 @@
+# secrets & local data (shared working tree with the dashboard branch)
+.env
+.env.*
+node_modules/
+analysis/
+_*/
+_*
+*.log
+cookies*

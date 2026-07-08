@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GPT Marlon — AI Training Tools</title>
   <meta name="description" content="Master AI tools faster. GPT Marlon teaches you how to use ChatGPT, Claude, Midjourney, and more to build, create, and automate like a pro." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <meta property="og:title" content="GPT Marlon — AI Training Tools" />
+  <meta property="og:description" content="Daily German-language AI videos + free training. ChatGPT, Claude and real workflows for the DACH market." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gptmarlon.com/" />
+  <meta property="og:image" content="https://gptmarlon.com/assets/marlon.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -1029,6 +1036,66 @@
     .tag-pink   { background: rgba(236,72,153,0.15); color: #f9a8d4; }
     .tag-green  { background: rgba(52,211,153,0.15); color: #6ee7b7; }
     .tag-orange { background: rgba(251,146,60,0.15); color: #fdba74; }
+    /* ── HERO PORTRAIT ── */
+    .hero-portrait {
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--purple), var(--blue), var(--cyan));
+      box-shadow: 0 0 60px rgba(124,58,237,0.45);
+      margin: 0 auto 1.6rem;
+    }
+    .hero-portrait img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* ── REAL REELS ── */
+    .reels-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2.6rem;
+      align-items: start;
+    }
+    .reel-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: .9rem;
+      box-shadow: 0 24px 60px -34px var(--glow);
+    }
+    .reel-card .reel-stat {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: .4rem .4rem .7rem;
+    }
+    .reel-card .reel-views {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .reel-card .reel-label { color: var(--muted); font-size: .8rem; }
+    .reel-card blockquote.instagram-media { border-radius: 12px !important; }
+    .tiktok-cta {
+      margin-top: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.1rem 1.4rem;
+    }
   </style>
 </head>
 <body>
@@ -1041,8 +1108,11 @@
     </a>
     <ul class="nav-links">
       <li><a href="#tools">Tools</a></li>
-      <li><a href="#how">How It Works</a></li>
       <li><a href="#instagram">Content</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="partnerships.html">Partnerships</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="#join" class="nav-cta">Get Free Training →</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
@@ -1056,6 +1126,10 @@
     <div class="hero-orb orb-1"></div>
     <div class="hero-orb orb-2"></div>
     <div class="hero-orb orb-3"></div>
+
+    <div class="hero-portrait fade-in-hero">
+      <img src="assets/marlon.jpg" alt="Marlon — GPT Marlon" />
+    </div>
 
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
@@ -1078,18 +1152,21 @@
         🚀 Start for Free
       </a>
       <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="btn-secondary">
-        📸 Follow on Instagram
+        📸 Instagram
+      </a>
+      <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="btn-secondary">
+        🎵 TikTok
       </a>
     </div>
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">50K+</div>
+        <div class="hero-stat-num">27K+</div>
         <div class="hero-stat-label">Followers</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">100+</div>
-        <div class="hero-stat-label">AI Tutorials</div>
+        <div class="hero-stat-num">3.4M+</div>
+        <div class="hero-stat-label">Monthly Views</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">15+</div>
@@ -1313,17 +1390,21 @@
           <p class="section-desc">
             Short, punchy videos that show you exactly how to use the latest AI tools — every single day. No fluff. Just what works.
           </p>
-          <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="ig-follow-btn">
-            📸 Follow @gptmarlon
-          </a>
+          <div style="display:flex; gap:.7rem; flex-wrap:wrap">
+            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="ig-follow-btn">
+              📸 Follow @gptmarlon
+            </a>
+            <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="ig-follow-btn" style="background:var(--bg3); border:1px solid var(--border); color:var(--text)">
+              🎵 TikTok
+            </a>
+          </div>
         </div>
 
         <div class="ig-profile-card fade-up">
           <div class="ig-card-header">
             <div class="ig-avatar-wrap">
-              <div class="ig-avatar-inner">
-                <!-- Replace with: <img src="your-photo.jpg" alt="GPT Marlon"> -->
-                🤖
+              <div class="ig-avatar-inner" style="overflow:hidden">
+                <img src="assets/marlon.jpg" alt="GPT Marlon" style="width:100%; height:100%; object-fit:cover; object-position:top" />
               </div>
             </div>
             <div>
@@ -1332,50 +1413,35 @@
             </div>
           </div>
           <div class="ig-stats-row">
-            <div class="ig-stat-item"><div class="ig-stat-num">100+</div><div class="ig-stat-lbl">Posts</div></div>
-            <div class="ig-stat-item"><div class="ig-stat-num">50K+</div><div class="ig-stat-lbl">Followers</div></div>
+            <div class="ig-stat-item"><div class="ig-stat-num">27K+</div><div class="ig-stat-lbl">Followers</div></div>
+            <div class="ig-stat-item"><div class="ig-stat-num">3.4M+</div><div class="ig-stat-lbl">Monthly Views</div></div>
             <div class="ig-stat-item"><div class="ig-stat-num">Daily</div><div class="ig-stat-lbl">Updates</div></div>
           </div>
-          <div class="instagram-posts">
-            <!-- Tip: save your Instagram screenshots to this folder and replace the div backgrounds with <img src="post1.jpg"> inside each .insta-post -->
-            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip1">
-              <div class="insta-post-inner">🤖<span class="insta-post-label">ChatGPT</span></div>
-              <span class="insta-post-overlay">View →</span>
-            </a>
-            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip2">
-              <div class="insta-post-inner">🎨<span class="insta-post-label">Midjourney</span></div>
-              <span class="insta-post-overlay">View →</span>
-            </a>
-            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip3">
-              <div class="insta-post-inner">💻<span class="insta-post-label">Cursor AI</span></div>
-              <span class="insta-post-overlay">View →</span>
-            </a>
-            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip4">
-              <div class="insta-post-inner">⚡<span class="insta-post-label">Automation</span></div>
-              <span class="insta-post-overlay">View →</span>
-            </a>
-            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip5">
-              <div class="insta-post-inner">✦<span class="insta-post-label">Claude AI</span></div>
-              <span class="insta-post-overlay">View →</span>
-            </a>
-            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip6">
-              <div class="insta-post-inner">🎬<span class="insta-post-label">AI Video</span></div>
-              <span class="insta-post-overlay">View →</span>
-            </a>
-            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip7">
-              <div class="insta-post-inner">🔥<span class="insta-post-label">Perplexity</span></div>
-              <span class="insta-post-overlay">View →</span>
-            </a>
-            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip8">
-              <div class="insta-post-inner">🧠<span class="insta-post-label">Gemini</span></div>
-              <span class="insta-post-overlay">View →</span>
-            </a>
-            <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="insta-post ip9">
-              <div class="insta-post-inner">🎙️<span class="insta-post-label">ElevenLabs</span></div>
-              <span class="insta-post-overlay">View →</span>
-            </a>
-          </div>
         </div>
+      </div>
+
+      <!-- real reels, embedded and playable -->
+      <div class="reels-row">
+        <div class="reel-card fade-up">
+          <div class="reel-stat"><span class="reel-views">704K+ views</span><span class="reel-label">breakout reel</span></div>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaTAWouIVD7/" data-instgrm-version="14" style="background:transparent; border:0; margin:0; width:100%; min-width:0"></blockquote>
+        </div>
+        <div class="reel-card fade-up">
+          <div class="reel-stat"><span class="reel-views">527K+ views</span><span class="reel-label">CV rewrite with Claude</span></div>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZNMQbnolsB/" data-instgrm-version="14" style="background:transparent; border:0; margin:0; width:100%; min-width:0"></blockquote>
+        </div>
+        <div class="reel-card fade-up">
+          <div class="reel-stat"><span class="reel-views">410K+ views</span><span class="reel-label">job-search prompts</span></div>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZshGPUo_Wf/" data-instgrm-version="14" style="background:transparent; border:0; margin:0; width:100%; min-width:0"></blockquote>
+        </div>
+      </div>
+
+      <div class="tiktok-cta fade-up">
+        <div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem">Also on TikTok 🎵</div>
+          <div style="color:var(--muted); font-size:.9rem; margin-top:.2rem">Same daily AI content — follow @gptmarlon on TikTok too.</div>
+        </div>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="btn-primary">Follow on TikTok →</a>
       </div>
     </div>
   </section>
@@ -1414,15 +1480,17 @@
       </a>
 
       <ul class="footer-links">
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="https://www.instagram.com/gptmarlon/" target="_blank">Instagram</a></li>
-        <li><a href="mailto:marlon@drahn.me">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.xml">Sitemap</a></li>
       </ul>
 
       <div class="footer-socials">
-        <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="footer-social">📸</a>
-        <a href="mailto:marlon@drahn.me" class="footer-social">✉️</a>
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="footer-social" title="Instagram">📸</a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="footer-social" title="TikTok">🎵</a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email">✉️</a>
       </div>
     </div>
     <div style="text-align:center; margin-top:2rem;">
@@ -1457,19 +1525,35 @@
       observer.observe(el);
     });
 
-    // Email form
-    function handleSubmit(e) {
+    // Email form → stored in Supabase (publishable key; row-level security allows INSERT only)
+    const SB_URL = 'https://topypyboyyvykdfbxqmj.supabase.co';
+    const SB_KEY = 'sb_publishable_igrAFNS4S_dvOAqnxZY7pg_EE0oipId';
+    async function handleSubmit(e) {
       e.preventDefault();
       const btn = e.target.querySelector('button');
       const input = document.getElementById('emailInput');
-      btn.textContent = '✓ You\'re in!';
-      btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
-      input.value = '';
+      const email = input.value.trim();
+      btn.textContent = 'Joining…';
+      try {
+        const res = await fetch(SB_URL + '/rest/v1/site_leads', {
+          method: 'POST',
+          headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+          body: JSON.stringify({ kind: 'newsletter', email: email }),
+        });
+        if (!res.ok) throw new Error('save failed');
+        btn.textContent = '✓ You\'re in!';
+        btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+        input.value = '';
+      } catch (err) {
+        btn.textContent = 'Try again — or DM @gptmarlon';
+        btn.style.background = 'linear-gradient(135deg, #b91c1c, #ef4444)';
+      }
       setTimeout(() => {
         btn.textContent = 'Subscribe Free →';
         btn.style.background = '';
-      }, 3000);
+      }, 3200);
     }
   </script>
+  <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>

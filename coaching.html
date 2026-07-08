@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coaching &amp; Community — GPT Marlon</title>
+  <meta name="description" content="Learn AI directly with Marlon: 1-on-1 power sessions, private classes for you or your team, and the GPT Marlon community. Leave your email to get started." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">🤖</div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="coaching.html" class="active">Coaching</a></li>
+      <li><a href="partnerships.html">Partnerships</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html#join" class="nav-cta">Get Free Training →</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+  </nav>
+
+  <main class="page">
+    <div class="page-hero fade-up">
+      <div class="section-label">Coaching &amp; Community</div>
+      <h1 class="page-title">Learn AI <span class="gradient-text">directly with Marlon.</span></h1>
+      <p class="page-sub">
+        The reels show you what's possible — coaching makes it stick. Work with Marlon 1-on-1, book a private
+        class for yourself or your team, or join the community and be first in line when new cohorts open.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card fade-up">
+        <span class="emoji">⚡</span>
+        <h3>1-on-1 Power Session</h3>
+        <p>Your actual workflow, live. Bring a problem — job search, content, automation, your business — and leave with it built and working.</p>
+      </div>
+      <div class="card fade-up">
+        <span class="emoji">🏫</span>
+        <h3>Private classes</h3>
+        <p>Structured sessions for individuals or teams — from first prompts to advanced workflows with ChatGPT, Claude and automation tools. In German or English.</p>
+      </div>
+      <div class="card fade-up">
+        <span class="emoji">👥</span>
+        <h3>Community</h3>
+        <p>Prompt library, weekly breakdowns, and early access to new formats. Join the waitlist and you'll be the first to know when doors open.</p>
+      </div>
+    </div>
+
+    <div class="form-box fade-up">
+      <div class="section-label">I'm interested</div>
+      <h3 style="font-family:'Space Grotesk',sans-serif; font-size:1.3rem; margin-bottom:1.2rem">Leave your email — Marlon gets back to you personally.</h3>
+      <form id="coachingForm">
+        <div class="field">
+          <label for="cName">Name</label>
+          <input id="cName" type="text" placeholder="Your name" />
+        </div>
+        <div class="field">
+          <label for="cEmail">Email *</label>
+          <input id="cEmail" type="email" placeholder="your@email.com" required />
+        </div>
+        <div class="field">
+          <label for="cInterest">What are you interested in?</label>
+          <select id="cInterest">
+            <option>1-on-1 Power Session</option>
+            <option>Private class (just me)</option>
+            <option>Private class / workshop (my team or company)</option>
+            <option>Community waitlist</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cNote">What do you want to achieve? (optional)</label>
+          <textarea id="cNote" placeholder="e.g. I want to automate my job applications with Claude…"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" id="cSubmit">Request info →</button>
+        <div class="form-status" id="cStatus"></div>
+        <p class="form-note">Your email is stored securely and only used to get back to you about coaching. No spam, ever.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🤖</div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.xml">Sitemap</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram">📸</a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok">🎵</a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email">✉️</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+  <script>
+    document.getElementById('coachingForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('cSubmit');
+      const status = document.getElementById('cStatus');
+      const email = document.getElementById('cEmail').value.trim();
+      const name = document.getElementById('cName').value.trim();
+      const interest = document.getElementById('cInterest').value;
+      const note = document.getElementById('cNote').value.trim();
+      btn.disabled = true; btn.textContent = 'Sending…'; status.className = 'form-status';
+      try {
+        await saveLead('coaching', email, name, '[' + interest + '] ' + note);
+        status.textContent = '✓ Got it — Marlon will reach out to ' + email + ' soon.';
+        status.className = 'form-status ok';
+        e.target.reset();
+      } catch (err) {
+        status.textContent = 'Something went wrong — please email business@gptmarlon.com instead.';
+        status.className = 'form-status err';
+      }
+      btn.disabled = false; btn.textContent = 'Request info →';
+    });
+  </script>
+</body>
+</html>

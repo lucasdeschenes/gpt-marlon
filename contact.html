@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — GPT Marlon</title>
+  <meta name="description" content="Contact GPT Marlon — questions, coaching, press or partnerships. Your message goes straight to Marlon." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">🤖</div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="partnerships.html">Partnerships</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="index.html#join" class="nav-cta">Get Free Training →</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+  </nav>
+
+  <main class="page">
+    <div class="page-hero fade-up">
+      <div class="section-label">Contact</div>
+      <h1 class="page-title">Say hi — <span class="gradient-text">Marlon reads everything.</span></h1>
+      <p class="page-sub">
+        Questions, ideas, press, coaching, collabs — drop a message. It's saved for Marlon and your email app
+        opens so you can send it directly too. Businesses: see <a href="partnerships.html" style="color:var(--purple-light)">Partnerships</a>.
+      </p>
+    </div>
+
+    <div class="form-box fade-up">
+      <form id="contactForm">
+        <div class="field">
+          <label for="mName">Name</label>
+          <input id="mName" type="text" placeholder="Your name" />
+        </div>
+        <div class="field">
+          <label for="mEmail">Email *</label>
+          <input id="mEmail" type="email" placeholder="your@email.com" required />
+        </div>
+        <div class="field">
+          <label for="mTopic">Topic</label>
+          <select id="mTopic">
+            <option>General</option>
+            <option>Coaching</option>
+            <option>Partnership / Business</option>
+            <option>Press</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mMsg">Message *</label>
+          <textarea id="mMsg" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" id="mSubmit">Send message →</button>
+        <div class="form-status" id="mStatus"></div>
+        <p class="form-note">On send, your message is stored for Marlon and your email app opens pre-filled to <b>business@gptmarlon.com</b> — hit send there to make sure it lands in the inbox too.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🤖</div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.xml">Sitemap</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram">📸</a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok">🎵</a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email">✉️</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('mSubmit');
+      const status = document.getElementById('mStatus');
+      const name = document.getElementById('mName').value.trim();
+      const email = document.getElementById('mEmail').value.trim();
+      const topic = document.getElementById('mTopic').value;
+      const msg = document.getElementById('mMsg').value.trim();
+      btn.disabled = true; btn.textContent = 'Sending…'; status.className = 'form-status';
+      let saved = true;
+      try { await saveMessage(name, email, topic, msg); }
+      catch (err) { saved = false; }
+      // open the visitor's email app pre-filled either way
+      const subject = encodeURIComponent('[' + topic + '] Message from ' + (name || email));
+      const body = encodeURIComponent(msg + '\n\n— ' + (name || 'Anonymous') + ' (' + email + ')');
+      window.location.href = 'mailto:business@gptmarlon.com?subject=' + subject + '&body=' + body;
+      status.textContent = saved
+        ? '✓ Message saved — your email app just opened, hit send there too.'
+        : 'Message could not be stored, but your email app opened — please send it from there.';
+      status.className = 'form-status ' + (saved ? 'ok' : 'err');
+      btn.disabled = false; btn.textContent = 'Send message →';
+      if (saved) e.target.reset();
+    });
+  </script>
+</body>
+</html>
