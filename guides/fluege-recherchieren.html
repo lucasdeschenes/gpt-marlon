@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flüge &amp; Hotels mit Claude recherchieren &amp; vergleichen — GPT Marlon Guides</title>
+  <meta name="description" content="Richte in Claude Cowork ein Reise-Profil ein, und Claude recherchiert Flüge und Hotels, vergleicht 3 Optionen je Kategorie und bereitet die Buchung Schritt für Schritt vor. Wichtig: Claude bucht und bezahlt nicht eigenständig – es füllt die Formulare vor und pausiert vor der Zahlung, den Kauf gibst du selbst frei und schließt ihn ab. Ein Bonus-Prompt erstellt danach einen einseitigen Reisevorbereitungs-Brief." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Alltag</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">Flüge &amp; Hotels mit Claude recherchieren &amp; vergleichen</h1>
+      <p class="page-sub">Richte in Claude Cowork ein Reise-Profil ein, und Claude recherchiert Flüge und Hotels, vergleicht 3 Optionen je Kategorie und bereitet die Buchung Schritt für Schritt vor. Wichtig: Claude bucht und bezahlt nicht eigenständig – es füllt die Formulare vor und pausiert vor der Zahlung, den Kauf gibst du selbst frei und schließt ihn ab. Ein Bonus-Prompt erstellt danach einen einseitigen Reisevorbereitungs-Brief.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude</span>
+        <span class="chip">Alltag</span>
+        <span class="chip">3 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/fluege-recherchieren.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Claude bucht und bezahlt nicht autonom: Es recherchiert, vergleicht und füllt Buchungsformulare vor und pausiert vor der Zahlung – den Kauf bestätigst und schließt du selbst ab.</div>
+
+      <section class="guide-section">
+        <h2>Warum das jetzt gut funktioniert</h2>
+        <p>Claude Cowork war beim Reisebuchen schon brauchbar – mit den neueren Opus-Modellen (z. B. Opus 4.7) hat es eine neue Stufe erreicht. Der Ansatz: Du trägst deine Reisepräferenzen einmal ins Cowork-Projekt ein, fragst deine Trips an, und Claude öffnet den Browser, vergleicht Optionen auf den Reise-Websites und <b>bereitet die Buchungen bis zur Zahlung vor</b>.</p>
+<p><b>Wichtige Einordnung:</b> Claude kann nicht autonom bezahlen oder verbindlich buchen. Es <b>recherchiert, vergleicht und füllt Formulare vor</b> – die finale Zahlung und Buchung gibst du selbst frei. Genau dafür sind die festen Bestätigungs-Stopps im Prompt gebaut („NIEMALS ohne mein ‚Los' buchen").</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 1 – Reisepräferenzen einmalig einrichten</h2>
+        <p>Einmal ausfüllen – dann nie wieder tippen:</p>
+<ol><li>Öffne <b>Claude Cowork</b> auf deinem Computer.</li><li>Klicke oben links auf <b>+ Neues Projekt</b> und nenne es <i>Reise-HQ</i>.</li><li>Öffne das Projekt und klicke auf <b>Projektanweisungen</b> (Zahnrad-Symbol).</li><li>Kopiere die Vorlage (siehe Prompt <b>„Projektanweisungen: Reise-HQ"</b>) komplett in das Textfeld.</li><li>Fülle alle <b>[PLATZHALTER]</b> mit deinen echten Daten aus – Name, Flughafen, Kreditkarte, Loyalitätsnummern.</li><li>Speichern. Claude kennt jetzt deine Reisepräferenzen dauerhaft.</li></ol>
+<p>Die Vorlage legt fest, wer du bist, deine Flug- und Hotelpräferenzen sowie <b>feste Regeln</b> – u. a. immer vor der Buchung Gesamtkosten, Kreditkarte, Empfehlung und 2 Alternativen zeigen und <b>niemals ohne dein ‚Los' buchen</b>.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 2 – Claude die Reise mitteilen</h2>
+        <p>Cowork kennt deine Präferenzen bereits. Kopiere den <b>Buchungs-Prompt</b>, fülle die Lücken (Ziel, Daten, Zweck, Hotel-Lage, Reisende, Priorität, Abweichungen) und schick ihn ab. Der Prompt arbeitet in <b>drei Phasen mit Freigabe-Pause dazwischen</b>:</p>
+<ul><li><b>Phase 1 – Recherche (noch keine Buchung):</b> Google Flights + Airlines direkt + Buchungsportale vergleichen; je 3 Flug- und 3 Hoteloptionen (Empfehlung + 2 Alternativen) mit Gesamtkosten, Punkten, Storno und einem Hinweis; sauberer Vergleich nebeneinander.</li><li><b>Phase 2 – Buchen (nur nach deiner Freigabe):</b> Buchungsseiten öffnen, Formulare mit deinen Projektdaten vorausfüllen, Treueprogramm-Nummern &amp; Kreditkarte anwenden; direkt vor ‚Kaufen' nochmals pausieren und die Endsumme zeigen – erst nach deinem ‚Los' schließt du ab.</li><li><b>Phase 3 – Bericht:</b> Bestätigung im Standard-Format, Trip in Google Calendar eintragen, Bestätigungsmails in Google Drive ablegen.</li></ul>
+<p><b>Standard-Ausgabe nach jeder Buchung:</b> kurze Textzusammenfassung (z. B. „Gebucht: MUC→NYC + 3 Nächte NYC, 15.–22. Dez, Gesamt 890 €"), 6-stellige Bestätigungscodes, verdiente Meilen/Punkte und was vor der Reise zu tun ist (Check-in-Fenster, Upgrade, Stornofrist).</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 3 – Zusehen &amp; Zahlung freigeben</h2>
+        <p>Cowork öffnet deinen Browser, navigiert die Buchungsseiten, füllt alle Formulare aus und <b>pausiert zur Bestätigung, bevor die Karte belastet wird</b>. Du kannst live zuschauen oder es vorbereiten lassen – den finalen Kauf gibst du selbst frei.</p>
+<p><b>Wann man das nicht verwenden sollte:</b></p>
+<ul><li>Familienbuchungen mit mehreren Personen und spezifischen Zusammensitz-Anforderungen</li><li>Prämienflüge, die nur telefonisch eingelöst werden können</li><li>Firmen-Buchungstools mit internen Genehmigungsworkflows</li></ul>
+      </section>
+
+      <section class="guide-section">
+        <h2>Bonus – der Reisevorbereitungs-Brief</h2>
+        <p>Nach jeder Buchung führst du den <b>Trip-Brief-Prompt</b> aus. Er erstellt eine einseitige, druckbare Übersicht (unter 500 Wörter) mit 8 Abschnitten: Wetter + Packliste, Restaurants in Hotelnähe, deine Meetings/Events (aus Google Calendar), eine lokale Aktivität, Fortbewegung, was du vergessen könntest, Geld-Tipps und eine persönliche Notiz.</p>
+<p><b>Quick-Setup-Checkliste (15 Minuten):</b> Cowork öffnen → Projekt <i>Reise-HQ</i> erstellen → Projektanweisungen einfügen und ausfüllen → Treueprogramm-Nummern &amp; Kreditkarten eintragen → Test: „Suche Flüge nach [ZIEL] nächsten Monat" (nur Recherche) → ersten echten Trip vorbereiten und selbst freigeben.</p>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Projektanweisungen: Reise-HQ</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">### REISE-HQ PROJEKTANWEISUNGEN
+
+Du bist mein persönlicher Reiseagent in Claude Cowork. Jede Reise folgt den Präferenzen unten, außer ich überschreibe sie. Bestätige IMMER vor einer Buchung.
+
+== WER ICH BIN ==
+Name für Buchungen: [OFFIZIELLER VORNAME + NACHNAME]
+Geburtsdatum (für Airlines die es brauchen): [DATUM]
+Telefon für Buchungsbestätigungen: [NUMMER]
+E-Mail für Buchungsbestätigungen: [EMAIL]
+
+== FLÜGE ==
+Heimatflughafen: [DEIN HAUPTFLUGHAFEN] (auch offen für [AUSWEICH] falls günstiger)
+Sitzplatz: Gang, Notausgangreihe wenn möglich, nie Mitte
+Klasse: Economy unter 5h — Premium Economy/Business ab 5h
+Umstieg: Direktflug wenn unter 200 € Aufpreis, sonst max. 1 Stopp
+Abflugzeit: Morgens 07:00–11:00 Uhr — keine Nachtflüge außer ich frage explizit
+Airlines die ich NIE buche: [Deine Liste, z.B. Ryanair, Wizz Air]
+Vielfliegerprogramme (Priorität):
+   - [AIRLINE 1] (Nr.: [XXXX]) — Tier: [Gold/Silver/Platin/keine]
+   - [AIRLINE 2] (Nr.: [XXXX])
+Kreditkarte für Flüge: [z.B. Amex Platinum, Miles&amp;More Karte]
+
+== HOTELS ==
+Hotelketten (Priorität): [KETTE 1] (Nr.: [XXXX]) — Tier: [...]
+Must-haves: Kingsize-Bett, hohes Stockwerk (ab 5.OG), Gym, schnelles WLAN
+Budget-Grenze/Nacht: [BETRAG] € (bis 50 € Überschreitung erlaubt wenn nötig)
+Kreditkarte für Hotels: [KARTE]
+
+== FESTE REGELN ==
+1. IMMER vor Buchung bestätigen: Gesamtkosten + Kreditkarte + Empfehlung + 2 Alternativen
+2. NIEMALS ohne mein 'Los' buchen
+3. Immer Meilen/Punkte pro Option angeben
+4. Prüfen ob Punkte-Einlösung besser als Barzahlung ist</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Reise-Buchungs-Prompt (3 Phasen)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Buche mir eine Reise. Hier die Details:
+
+VON: [ABFLUGHAFEN] nach [ZIELORT]
+WANN: Hinflug [DATUM], Rückflug [DATUM] ([ANZAHL] Nächte gesamt)
+ZWECK: [Geschäftsreise / Urlaub / Familie / Hochzeit / anderes]
+HOTEL-LAGE: [Viertel oder Landmark, z.B. 'Nähe Messe Frankfurt']
+REISENDE: [alleine / mit Partner / Familie mit X Personen]
+PRIORITÄT: [günstigster / direktester / meiste Punkte / Ankunftszeit]
+ABWEICHUNGEN VON MEINEN STANDARDS: [z.B. 'Diesmal Nachtflug OK wenn 400 € günstiger' oder 'Hotel muss hunde-OK sein']
+
+Mach das in drei Phasen. Pause für meine Freigabe zwischen jeder.
+
+PHASE 1 — RECHERCHE (noch keine Buchung)
+- Google Flights + Airlines direkt + Buchungsportale vergleichen
+- 3 Flugoptionen: Empfehlung + 2 Alternativen (Preis/Zeit)
+- 3 Hoteloptionen: Empfehlung + 2 Alternativen (Preis/Lage)
+- Für jede Option: Gesamtkosten, Punkte, Storno, 1 wichtiger Hinweis
+- Sauberer Vergleich nebeneinander
+- ABSCHLUSS: 'Flug genehmigen? (1/2/3) Hotel genehmigen? (1/2/3)'
+
+PHASE 2 — BUCHEN (nur nach meiner Freigabe)
+- Buchungsseiten öffnen, Formulare mit meinen Projektdaten ausfüllen
+- Treueprogramm-Nummern &amp; Kreditkarte anwenden
+- Direkt vor 'Kaufen' nochmals pausieren &amp; Endsumme zeigen
+- Nach meinem 'Los' — Buchung abschließen
+
+PHASE 3 — BERICHT
+- Bestätigung im Standard-Ausgabeformat senden
+- Trip in Google Calendar eintragen (Flüge + Hotel getrennt)
+- Bestätigungsmails in Google Drive: 'Reisen/[ZIEL] [MONAT JAHR]'
+
+Nicht blind das günstigste buchen. Optimiere für meine Priorität. Zeig mir die Abwägung damit ich verstehe was ich wähle.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-3">
+        <div class="prompt-head">
+          <span class="prompt-label">Reisevorbereitungs-Brief (Trip-Brief)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Du bist mein Reisevorbereiter. Erstelle eine einseitige Übersicht:
+
+REISEDETAILS:
+- Zielstadt: [STADT]
+- Daten: [DATUM] bis [DATUM] ([ANZAHL NÄCHTE])
+- Hotelname und Viertel: [HOTEL + VIERTEL]
+- Zweck: [Urlaub / Business / gemischt / Familie / Hochzeit]
+- Mit wem: [alleine / Partner / Familie mit X]
+- Meine Stimmung: [z.B. 'entspannt, gut essen &amp; spazieren', 'voll gepackter Zeitplan', 'erstes Mal, die Highlights', 'Hidden Gems']
+
+8 Abschnitte in dieser Reihenfolge:
+
+1. WETTER + PACKLISTE — Tageweise Vorhersage + spezifische Packliste
+2. RESTAURANTS IN HOTELNÄHE — 2x Abendessen, 2x Frühstück, 1x Café
+3. MEINE MEETINGS/EVENTS — Aus Google Calendar mit Fahrtzeit &amp; Tipp
+4. EINE LOKALE AKTIVITÄT — Konkret, keine Touristenfallen, max. 2 Sätze
+5. FORTBEWEGUNG — Flughafen→Hotel + Vor-Ort-Tipp
+6. WAS ICH VERGESSEN KÖNNTE — 1 kritischer Gegenstand + Dokumente
+7. GELD — Tageskosten, Karte/Bar, 1 spezifischer Tipp
+8. PERSÖNLICHE NOTIZ — War ich schon dort / erste lokale Phrase
+
+Format: Sauber, druckbar, unter 500 Wörter. Abschnitte fett.</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "file": "Belege_erfassen_GPTMarlon_v9.pdf",
+  "title": "Belege automatisch erfassen — Excel oder DATEV-Datei mit Claude",
+  "slug": "belege-erfassen",
+  "category": "Finanzen",
+  "tool": "Claude",
+  "summary": "Claude liest deine Belege aus einem Ordner aus, erkennt Datum, Betrag und Kategorie und fängt Doppelungen und Zahlendreher über eine eingebaute Prüfstelle ab. Am Ende steht eine saubere Excel- oder Google-Sheet-Tabelle — auf Wunsch machst du daraus eine importfertige DATEV-Datei für deinen Steuerberater. Die stundenlange Tipparbeit fällt weg, die fachliche Freigabe bleibt bei dir.",
+  "sections": [
+    {
+      "heading": "Voraussetzungen & die zwei Wege",
+      "body": "Du arbeitest mit **Claude Cowork** in der Desktop-App — der Variante, in der Claude eigenständig mit deinen Dateien und Ordnern arbeitet. Du brauchst **Claude Pro**: Cowork und der Google-Drive-Connector gibt es nur in bezahlten Plänen, und bei hunderten Belegen lohnt Pro wegen der höheren Limits. Claude rechnet pro Anfrage in „Tokens“ ab — teile große Stapel in mehrere Durchläufe.\n\nZwei Wege, je nachdem wo deine Belege liegen:\n- **Weg A — Cowork + lokaler Ordner:** Deine Belege liegen in einem Ordner auf dem Computer. Claude liest sie direkt und legt die fertige Excel genau dort ab. Am direktesten.\n- **Weg B — Cowork + Google Drive:** Deine Belege liegen in Google Drive. Claude liest sie über den Drive-Connector und legt das Ergebnis zurück in Drive. Gut für die Cloud oder geräteübergreifendes Arbeiten."
+    },
+    {
+      "heading": "Weg A — Cowork + lokaler Ordner einrichten",
+      "body": "1. Claude-Desktop-App (Mac/Windows) von claude.com/download laden und mit dem Pro-Account anmelden.\n2. Oben im Fenster von „Chat“ auf „Cowork“ umschalten.\n3. Auf dem Computer einen Ordner anlegen (z. B. „Belege 2026“) und alle Belege hineinlegen (PDF, Foto, Scan).\n4. In der linken Leiste unter Projekte ein neues Projekt erstellen (z. B. „Buchhaltung“). Ein Projekt merkt sich Ordner, Anweisungen und frühere Läufe.\n5. Im Projekt deinen Belege-Ordner als Arbeitsordner freigeben. Claude darf nur freigegebene Ordner lesen/schreiben.\n6. Projekt-Anweisung setzen (siehe Prompt „Projekt-Anweisung“ unten) — danach reicht jeden Monat ein kurzer Satz.\n\n**Monatlicher Lauf:** neue Belege in den Ordner legen und schreiben „Verarbeite die neuen Belege.“ Die App muss offen und der Rechner wach bleiben; Löschen verlangt Claude immer extra deine Erlaubnis."
+    },
+    {
+      "heading": "Weg B — Cowork + Google Drive einrichten",
+      "body": "1. In der Desktop-App in den Cowork-Modus wechseln.\n2. Google Drive verbinden: Einstellungen → Connectoren → Google Drive verbinden (einmalig Google-Login + Freigabe).\n3. Belege in einen Ordner in „Meine Ablage“ legen (geteilte Ablagen werden aktuell teils nicht erkannt).\n4. Projekt anlegen und die Projekt-Anweisung wie bei Weg A eintragen.\n5. Im Task sagen, aus welchem Drive-Ordner Claude lesen soll. Claude liest die Belege, baut die Excel und legt sie als neue Datei in Drive ab (oder du lädst sie herunter).\n\n**Kann Claude direkt in ein Google Sheet schreiben?** Nein. Der native Google-Drive-Connector kann Dateien nur lesen und neu anlegen, aber keine Zellen in ein bestehendes Sheet schreiben oder Zeilen anhängen — das ist eine Funktionsgrenze. Direktes Schreiben ins Sheet geht nur mit einem zusätzlichen Google-Sheets-Connector (MCP) mit Schreibrechten. Einfacher: Claude legt die fertige Excel in Drive ab, die du als Google Sheet öffnest.\n\n**Erst klein testen (bei beiden Wegen):** Lass die Prompts zuerst mit 2–3 Belegen laufen und vergleiche mit den Originalen, bevor du hunderte Belege verarbeitest."
+    },
+    {
+      "heading": "Prompt 1 — Belege auslesen",
+      "body": "Diese Anweisung sagt Claude genau, was es aus jedem Beleg holen soll — und zwingt es, bei Unklarheit „UNKLAR“ zu schreiben statt zu raten. Dafür brauchst du noch keinen Kontenrahmen. → siehe Prompt „Belege auslesen“ unten.\n\n**Selbst prüfen:** Geh die Tabelle einmal durch. Prüfe stichprobenartig 5–10 Zeilen gegen die Originalbelege (Datum, Brutto-Betrag, USt-Satz) und schau dir jeden UNKLAR-Eintrag manuell an. Lieber jetzt zwei Minuten kontrollieren als später eine falsche Buchung."
+    },
+    {
+      "heading": "Prompt 2 — Die Prüfstelle",
+      "body": "Jetzt baust du die automatische Kontrolle ein: Sie fängt Doppelungen, Zahlendreher und fehlende Felder ab, bevor irgendetwas weiterverarbeitet wird. → siehe Prompt „Prüfstelle“ unten.\n\n**Selbst prüfen:** Das Prüfprotokoll ist eine Hilfe, kein Freibrief. Geh jeden markierten Punkt durch und entscheide selbst, ob Claude korrigieren darf. So gibst du frei, z. B.: „Korrigiere Punkt 2 und 3, Doppelung bei ‚Bürobedarf 14.03.‘ löschen. Rest unverändert.“ Claude ändert nur, was du freigibst."
+    },
+    {
+      "heading": "Optional — Abgleich mit Kontoauszügen",
+      "body": "Du kannst Claude zusätzlich deine Kontoauszüge geben. Dann gleicht es jede Buchung mit deinen Belegen ab und findet vor allem, ob ein Beleg fehlt. Exportiere die Auszüge aus dem Online-Banking als PDF oder CSV und lege sie in denselben verbundenen Ordner (ein Unterordner „Kontoauszüge“ hält alles getrennt). → siehe Prompt „Abgleich & fehlende Belege“ unten.\n\n**Freiwillig — deine Entscheidung:** Kontoauszüge enthalten sensible Finanzdaten. Lade nur hoch, wozu du berechtigt bist (DSGVO), und nutze bei Bedarf nur die relevanten Monate.\n\n**Selbst prüfen:** Geh zuerst die als BELEG FEHLT markierten Buchungen durch — genau dort steckt der verlorene Beleg. Gleiche Beträge bei verschiedenen Lieferanten kann Claude verwechseln."
+    },
+    {
+      "heading": "Deine Grundbasis: Excel oder Google Sheet",
+      "body": "Die geprüfte Tabelle ist deine Grundbasis. Sichere sie als Datei — von hier aus baust du immer noch eine DATEV-Datei oder belässt es bei der Tabelle.\n- **Einfachste Variante:** Lass Claude die geprüfte Tabelle als .xlsx ausgeben (siehe Prompt „Excel-Datei erstellen“ unten). Bei Weg A landet sie im lokalen Ordner, bei Weg B in Google Drive.\n- **Cloud:** Da der native Drive-Connector read-only ist, öffnest du die .xlsx/.csv in Drive per Rechtsklick → Öffnen mit → Google Tabellen. Für laufendes Direkt-Schreiben ins Sheet brauchst du einen zusätzlichen Google-Sheets-Connector (MCP).\n\n**Selbst prüfen:** Öffne die fertige Datei und vergleiche die Summenzeile mit der Brutto-Summe aus der Prüfstelle."
+    },
+    {
+      "heading": "Optional — DATEV-Datei erzeugen",
+      "body": "Willst du, dass dein Steuerberater die Daten mit einem Klick importiert, machst du aus der Grundbasis eine Datei im DATEV-Format (EXTF-Buchungsstapel, CSV). Erst jetzt wird der Kontenrahmen relevant. Hol dir einmalig vom Steuerberater:\n- Kontenrahmen (SKR03 / SKR04) — der genormte „Nummernplan“, der jeder Ausgabe ein festes Konto gibt.\n- Berater-Nr, Mandanten-Nr und Wirtschaftsjahr.\n- Eine Muster-Importdatei als Vorlage (zeigt Claude Spalten + Kopfzeile).\n\n→ siehe Prompt „DATEV-Datei erzeugen“ unten.\n\n**Selbst prüfen — vor dem Import:** Schick die fertige CSV vorab deinem Steuerberater oder mach in DATEV einen Testimport. Erst importieren, wenn die Struktur bestätigt ist."
+    },
+    {
+      "heading": "Selbst anpassen & Eigenkontrolle",
+      "body": "**Pro-Move:** Lass dir eine gespeicherte Projekt-Anweisung bauen, die genau auf dein Ausgabeformat, deine Kategorien und (bei DATEV) deinen Kontenrahmen zugeschnitten ist. → siehe Prompt „Eigene Projekt-Anweisung“ unten.\n\n**Deine Eigenkontrolle — immer:**\n- Erst mit wenigen Belegen testen.\n- Ausgelesene Tabelle stichprobenartig gegen Originale prüfen.\n- Jeden UNKLAR-Eintrag manuell klären.\n- Prüfprotokoll Punkt für Punkt durchgehen.\n- Summenzeile gegen die Brutto-Summe abgleichen.\n- DATEV-Datei vor dem Import vom Steuerberater bestätigen lassen.\n\nDieser Guide ersetzt keine Steuer-, Rechts- oder Buchhaltungsberatung; die automatische Erfassung unterstützt die Vorarbeit, die fachliche Prüfung bleibt bei dir und deinem Steuerberater."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Projekt-Anweisung (einmal eintragen)",
+      "text": "Du bist mein Buchhaltungs-Assistent. Bei jedem Lauf: lies die Belege im verbundenen Ordner aus (Datum, Lieferant, Belegnummer, Netto, USt, Brutto, Kategorie, Dateiname). Schreib bei Unklarheit \"UNKLAR\" statt zu raten. Führe danach die Prüfstelle aus (Doppelungen, Netto+USt=Brutto, fehlende Felder, Summe). Erzeuge die Datei erst nach meiner Freigabe."
+    },
+    {
+      "label": "Prompt 1 — Belege auslesen",
+      "text": "Du bist mein Buchhaltungs-Assistent. Lies jeden Beleg [aus dem verbundenen Ordner bzw. Google-Drive-Ordner] einzeln aus und erstelle eine Tabelle mit diesen Spalten:\n- Belegdatum (TT.MM.JJJJ)\n- Lieferant / Aussteller\n- Belegnummer\n- Netto-Betrag\n- Umsatzsteuer (Betrag) und USt-Satz in %\n- Brutto-Betrag\n- Waehrung\n- Kategorie (kurze Beschreibung, z.B. \"Bürobedarf\")\n- Quelle (Dateiname des Belegs)\n\nRegeln:\n- Wenn ein Wert nicht eindeutig lesbar ist, schreib \"UNKLAR\" statt zu raten. Erfinde niemals Zahlen.\n- Rechne nichts, was nicht auf dem Beleg steht.\nGib mir zuerst NUR die Tabelle zur Kontrolle aus."
+    },
+    {
+      "label": "Prompt 2 — Die Prüfstelle",
+      "text": "Prüfe die Tabelle jetzt automatisch und erstelle ein Prüfprotokoll. Markiere jeden Fund mit dem Belegnamen:\n1. Doppelungen: gleicher Lieferant + Betrag + Datum mehrfach.\n2. Rechen-Plausibilitaet: Netto + USt = Brutto? Passt der USt-Satz zum Betrag? Zahlendreher?\n3. Fehlende oder als \"UNKLAR\" markierte Felder.\n4. Unplausible Werte: Datum in der Zukunft, Betrag = 0, negativer Betrag ohne Grund.\n5. Gegenkontrolle: nenne die Summe aller Brutto-Betraege.\nListe alle Funde auf. Aendere noch NICHTS ohne meine Freigabe."
+    },
+    {
+      "label": "Prompt 3 — Abgleich & fehlende Belege",
+      "text": "Ich habe zusätzlich meine Kontoauszüge in den verbundenen Ordner gelegt (PDF oder CSV). Gleiche die geprüfte Belegtabelle mit den Kontobewegungen ab und erstelle ein Abgleich-Protokoll:\n1. Ordne jeder Kontobewegung den passenden Beleg zu (Betrag + Datum, ggf. Verwendungszweck/Lieferant).\n2. BELEG FEHLT: Bewegung auf dem Konto, aber kein Beleg dazu.\n3. KEINE ZAHLUNG: Beleg vorhanden, aber keine passende Bewegung (z.B. bar bezahlt oder noch offen).\n4. Abweichungen bei Betrag oder Datum zwischen Beleg und Konto.\n5. Mögliche Doppelzahlungen.\nListe alle Funde mit Belegname und Buchungszeile auf. Ändere noch NICHTS ohne meine Freigabe."
+    },
+    {
+      "label": "Excel-Datei erstellen",
+      "text": "Erstelle aus der geprüften Tabelle eine Excel-Datei (.xlsx) mit Kopfzeile, Summenzeile unten und sauber formatierten Spalten."
+    },
+    {
+      "label": "DATEV-Datei erzeugen",
+      "text": "Erstelle aus der geprüften Tabelle eine Import-Datei im DATEV-Format (EXTF-Buchungsstapel, CSV).\nNutze exakt dieses Layout / diese Musterdatei: [anhaengen].\nEckdaten: Kontenrahmen=[SKR03/SKR04], Berater-Nr=[__], Mandanten-Nr=[__], Wirtschaftsjahr=[__].\nPflichtfelder je Zeile: Umsatz, Soll/Haben-Kennzeichen, Konto, Gegenkonto, Belegdatum, Belegfeld 1 (Belegnummer), Buchungstext.\nFehlt eine Pflicht-Angabe, FRAG NACH statt zu raten. Gib die Datei als herunterladbare .csv aus."
+    },
+    {
+      "label": "Eigene Projekt-Anweisung bauen (Pro-Move)",
+      "text": "Baue mir eine gespeicherte Projekt-Anweisung für meine Belegerfassung, zugeschnitten auf: Ausgabeformat = [Excel / Google Sheet / DATEV], meine Kategorien = [___], (falls DATEV) Kontenrahmen = [SKR03/SKR04].\nSie soll: (1) Belege auslesen und bei Unklarheit \"UNKLAR\" schreiben, (2) eine Prüfstelle für Doppelungen und Zahlendreher enthalten, (3) erst nach meiner Freigabe die Datei erzeugen."
+    }
+  ],
+  "note": "Claude liest und prüft die Belege und bereitet die Excel- bzw. DATEV-Datei vor — die fachliche Freigabe und den DATEV-Import machst du (bzw. dein Steuerberater) selbst. Der native Google-Drive-Connector kann Dateien nur lesen und neu anlegen, aber nicht in ein bestehendes Google Sheet schreiben; dafür braucht es einen zusätzlichen Google-Sheets-Connector (MCP) mit Schreibrechten."
+}

@@ -1,0 +1,49 @@
+{
+  "file": "Recherche_letzte_30_Tage_GPTMarlon.pdf",
+  "title": "Claude mit der Recherche der letzten 30 Tage",
+  "slug": "recherche-30-tage",
+  "category": "Produktivität",
+  "tool": "Claude",
+  "summary": "Jedes KI-Modell hat einen Wissensstichtag — fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um: Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht.",
+  "sections": [
+    {
+      "heading": "Teil 1 — Warum Claude manchmal alte Infos liefert",
+      "body": "Stell dir das Gedächtnis einer KI wie ein Buch vor, das einmal gedruckt und nie wieder aktualisiert wurde. Beim Druck war alles richtig. Doch die Welt drehte sich weiter: Preise änderten sich, neue Tools kamen, Meinungen kippten. Fragst du nach etwas Aktuellem, will Claude trotzdem hilfreich sein — und antwortet aus genau diesem alten Buch. So handelst du am Ende vielleicht nach einem Preis, einem Feature oder einer „besten Wahl\", die vor Monaten still und leise falsch geworden ist.\n\n**Der Fachbegriff: Wissensstichtag.** Der Wissensstichtag (englisch „knowledge cutoff\") ist das Datum, an dem das Training eines KI-Modells endete. Alles danach kennt das Modell nicht aus sich heraus. Es sagt dann selten „weiß ich nicht\" — es füllt die Lücke mit einer plausibel klingenden Vermutung.\n\n**Die Lösung — erst lesen, dann antworten.** Die kostenlose Erweiterung „Letzte 30 Tage\" schließt diese Lücke. Du gibst ihr ein Thema. Statt aus dem Gedächtnis zu antworten, sucht sie quer durch viele Quellen — aber nur die Treffer der letzten 30 Tage. Diese frischen Ergebnisse legt sie Claude als Notizen vor, die es zuerst liest. Die Antwort stammt dann aus diesem Monat, nicht aus dem alten Buch."
+    },
+    {
+      "heading": "Teil 2 — Was die Erweiterung liest",
+      "body": "Wenn du sie startest, wirft sie ein weites Netz aus und zieht frische Treffer aus vielen Orten gleichzeitig — alle gefiltert auf die letzten 30 Tage. So mischst du normale Leute von Reddit, die Tech-Crowd von Hacker News, den Trend-Schwarm von TikTok und Reels und sogar Wett-Quoten aus dem letzten Monat.\n\nEin wichtiger Teil ist sofort kostenlos und ohne Anmeldung nutzbar. Andere Quellen brauchen einen (oft kostenlosen) Zugangsschlüssel — dazu mehr in Teil 6.\n\n**Sofort gratis — ohne Schlüssel:**\n\n- Reddit (inkl. Top-Kommentare, nach Upvotes gewichtet — du siehst, dem die Leute zugestimmt haben)\n- Hacker News (die Tech- & News-Crowd)\n- Polymarket (echte Prognosemarkt-Quoten: worauf Leute wetten)\n- GitHub (neue Projekte & Tools)\n- YouTube-Transkripte & Bluesky (mit App-Passwort)\n\n**Erst mit Zugangsschlüssel:**\n\n- X / Twitter\n- TikTok, Instagram Reels, Threads, Pinterest\n- YouTube-Kommentare\n- Perplexity (KI-Websuche)\n- allgemeine Websuche\n\n*Prognosemarkt — kurz erklärt:* Ein Prognosemarkt (z. B. Polymarket) ist eine Plattform, auf der Menschen mit echtem Geld auf den Ausgang künftiger Ereignisse wetten. Die Quoten zeigen, für wie wahrscheinlich die Menge ein Ereignis gerade hält — ein Stimmungsbild in Zahlen."
+    },
+    {
+      "heading": "Teil 3 — Was du vorher brauchst",
+      "body": "Die Erweiterung selbst ist kostenlos und quelloffen — sie läuft auf deinem Rechner, deine Recherche bleibt bei dir. Damit Claude sie ausführen darf, muss in deinem Konto eine Funktion eingeschaltet sein. Das ist in zwei Minuten erledigt.\n\n**Punkt 1 — Ein Claude-Konto mit aktivem Code-Ausführen.** Eine Erweiterung (in Claude „Skill\" genannt) funktioniert nur, wenn die Capability „Code-Ausführung & Dateierstellung\" aktiv ist:\n\n1. In Claude oben rechts auf dein Profil → Einstellungen.\n2. Capabilities (Funktionen) öffnen.\n3. Code-Ausführung & Dateierstellung einschalten.\n\nEigene Skills lassen sich in den Plänen Free, Pro und Max sowie Team/Enterprise nutzen, solange diese Capability an ist. Brauchst du sie nur im Browser unter claude.ai, reicht das aus — fürs Hochladen eigener Skills ist kein zusätzliches Programm nötig.\n\n**Punkt 2 — Für gratis loslegen: gar nichts weiter.** Die kostenlosen Quellen (Reddit, Hacker News, Polymarket, GitHub) laufen ohne jeden Schlüssel. Kein Konto bei einem anderen Dienst, keine Kreditkarte.\n\n*Kurz gegengecheckt:* Öffne Einstellungen → Capabilities und vergewissere dich, dass „Code-Ausführung & Dateierstellung\" wirklich aktiv ist. Ohne diesen Haken startet die Skill nicht — das ist die häufigste Stolperstelle."
+    },
+    {
+      "heading": "Teil 4 — Installieren: drei Wege",
+      "body": "Es gibt mehrere Wege. Der einfachste ohne Terminal ist Weg A direkt im Browser. Wer Claude Code nutzt, nimmt Weg B. Alle führen zum selben Befehl `/last30days`.\n\n**Weg A — ohne Terminal: im Browser unter claude.ai hochladen**\n\n1. Auf der Projektseite der Erweiterung die Datei `last30days.skill` aus dem neuesten Release herunterladen.\n2. In claude.ai auf Customize (Anpassen) → Skills.\n3. Auf + → Create skill → Upload a skill klicken und die Datei reinziehen.\n4. Sicherstellen, dass „Code-Ausführung & Dateierstellung\" an ist (Teil 3). Fertig.\n\n**Weg B — Claude Code: als Plugin.** Nutzt du Claude Code (das Terminal-Werkzeug für Entwickler), fügst du die Erweiterung mit einer Zeile als Plugin hinzu (siehe Prompt unten). Einfügen, Enter, fertig.\n\n**Weg C — andere KI-Editoren: per Terminal (50+ Tools).** Arbeitest du mit einem anderen KI-Editor (z. B. Cursor, Codex, Gemini CLI), läuft die Zeile unten im Terminal. Das `-g` am Ende installiert global, also überall verfügbar.\n\nUnsicher, welcher Weg? Claude im Browser/Desktop ohne Terminal → Weg A. Claude Code → Weg B. Anderer Editor → Weg C. Am Ende hast du überall denselben Befehl `/last30days`."
+    },
+    {
+      "heading": "Teil 5 — So nutzt du es",
+      "body": "Ist die Erweiterung installiert, ist die Anwendung kinderleicht. Du tippst `/last30days` und dann dein Thema. Je konkreter dein Thema, desto schärfer die frischen Treffer. Das Muster ist immer gleich: `/last30days` + dein Thema (siehe Grundmuster-Prompt unten).\n\n**Weitere Beispiele zum Ausprobieren:**\n\n- `/last30days kündigen gerade Leute wirklich Netflix`\n- `/last30days neue KI-Tools, die Leute aktuell lieben`\n- `/last30days ehrliche Tests zum neuen iPhone`\n- `/last30days was trended diese Woche auf TikTok für kleine Unternehmen`\n\n**Vier Momente — wann sich der Befehl lohnt:**\n\n- **Bevor du etwas kaufst.** Vor der Ausgabe einmal laufen lassen — du siehst, was echte Leute diesen Monat sagen, nicht einen Glanz-Test von vor zwei Jahren. Fang die „nach drei Wochen kaputt\"-Posts ab.\n- **Vor einer größeren Entscheidung.** Tool, Plattform, Dienst oder Richtung fürs Business? Hol dir erst das aktuelle Lagebild.\n- **Bevor du auf Social postest.** Willst du einen Trend reiten, musst du wissen, was heute läuft. Lass es auf deine Nische los.\n- **Für Recherche & News, die aktuell sein müssen.** Immer wenn die Antwort sich schnell ändert — Preise, Releases, „was ist der letzte Stand bei …\"."
+    },
+    {
+      "heading": "Teil 6 — Später mehr Quellen freischalten",
+      "body": "Die gratis Kernquellen (Reddit, Hacker News, Polymarket, GitHub) decken schon eine Menge ab — fang damit an und zahl vorerst für nichts. Ein Zugangsschlüssel (API-Key) ist ein persönlicher Code, mit dem sich die Erweiterung bei einem anderen Dienst anmeldet, um dort zu suchen. Beim ersten Lauf führt dich ein kurzer Einrichtungs-Assistent durch die optionale Eingabe.\n\n**Extra-Quellen, ihre Anbieter und Kosten:**\n\n- TikTok, Instagram, Threads, Pinterest, YouTube-Kommentare — über **ScrapeCreators** (100 Gratis-Credits, danach nach Verbrauch).\n- X / Twitter — über **Xquik oder xAI-Schlüssel** (anbieterabhängig).\n- Websuche — über **Brave Search** (2.000 Abfragen/Monat gratis).\n- KI-Websuche — über **Perplexity oder OpenRouter** (nach Verbrauch).\n\n*Ehrlicher Hinweis — gratis zuerst:* Fang mit den kostenlosen Kernquellen an und gib vorerst kein Geld aus. Schlüssel ergänzt du nur, wenn du wirklich die sozialen Plattformen oder die volle Websuche brauchst.\n\n**Hinweis:** Dieser Guide dient ausschließlich zu Informations- und Bildungszwecken. Die vorgestellte Erweiterung ist ein quelloffenes Drittanbieter-Werkzeug; Verfügbarkeit, Befehle, Quellen, Schlüssel-Anbieter und Preise können sich ändern — prüfe sie vor der Nutzung selbst. Such-Ergebnisse aus dem Netz können Fehler, Werbung oder ungeprüfte Meinungen enthalten; behandle sie als Stimmungsbild, nicht als gesicherte Fakten."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Installieren in Claude Code (Weg B)",
+      "text": "/plugin marketplace add mvanhorn/last30days-skill"
+    },
+    {
+      "label": "Installieren per Terminal, andere Editoren (Weg C)",
+      "text": "npx skills add mvanhorn/last30days-skill -g"
+    },
+    {
+      "label": "Anwenden — Grundmuster",
+      "text": "/last30days bester günstiger Laptop für Studenten"
+    }
+  ],
+  "note": "Die Erweiterung ist ein quelloffenes Drittanbieter-Werkzeug, das Claudes Capability „Code-Ausführung & Dateierstellung\" nutzt; Verfügbarkeit, Befehle, Quellen und Preise können sich ändern, und die Treffer sind ein Stimmungsbild aus dem Netz (Werbung/ungeprüfte Meinungen möglich) — prüfe wichtige Angaben selbst gegen."
+}

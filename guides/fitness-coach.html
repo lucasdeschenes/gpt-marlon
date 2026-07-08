@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Fitness Coach — Setup-Leitfaden — GPT Marlon Guides</title>
+  <meta name="description" content="Claude wird zu deinem datengesteuerten Personal Trainer: Es liest deinen Apple-Health- bzw. CSV-Export (Schlaf, Puls, HRV, Workouts) und baut daraus jeden Tag ein Training, das zu deinem echten Zustand passt — schlecht geschlafen heißt aktive Erholung statt Kraft. Progressive Überlastung und Deload-Wochen laufen automatisch, fertige Workouts landen in Google Calendar. Enthält den vollständigen System-Prompt zum Einsetzen." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Alltag</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">Claude Fitness Coach — Setup-Leitfaden</h1>
+      <p class="page-sub">Claude wird zu deinem datengesteuerten Personal Trainer: Es liest deinen Apple-Health- bzw. CSV-Export (Schlaf, Puls, HRV, Workouts) und baut daraus jeden Tag ein Training, das zu deinem echten Zustand passt — schlecht geschlafen heißt aktive Erholung statt Kraft. Progressive Überlastung und Deload-Wochen laufen automatisch, fertige Workouts landen in Google Calendar. Enthält den vollständigen System-Prompt zum Einsetzen.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude</span>
+        <span class="chip">Alltag</span>
+        <span class="chip">2 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/fitness-coach.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Claude liest deine Gesundheitsdaten nur (read-only) und trägt Workouts über den Connector in Google Calendar ein — zurück in Apple Health schreiben kann es nicht. Die native Apple-Health-/Health-Connect-Integration ist Stand 2026 nur als US-Beta (Pro/Max) verfügbar; in Deutschland, Österreich und der Schweiz läuft alles über den manuellen Export. Der Coach ersetzt keine ärztliche Beratung.</div>
+
+      <section class="guide-section">
+        <h2>Kurz in eigener Sache &amp; was das System macht</h2>
+        <p><b>Hinweis vorab:</b> Im Reel und in der ersten Version dieses Guides wurde die native Apple-Health-Integration gezeigt. Die gibt es aktuell aber nur für Pro- und Max-Nutzer in den USA (Beta seit Januar 2026). Du bekommst trotzdem exakt dasselbe Ergebnis — du lädst deine Daten nur einmal selbst hoch (Schritt 2).</p>
+<p><b>Was das System macht:</b> Claude liest deine echten Gesundheitsdaten (Schlaf, Schritte, Herzfrequenz, zurückliegende Workouts) und erstellt daraus einen personalisierten Trainingsplan — kein generisches Template. Schlecht geschlafen? Claude tauscht Krafttraining gegen aktive Erholung. Top-Woche gehabt? Es schiebt dich härter. Progressive Überlastung und Deload-Wochen laufen automatisch nach Leistung, fertige Workouts schreibt Claude direkt in Google Calendar.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Was du brauchst</h2>
+        <ul><li><b>iPhone mit Health-App.</b> Apple Watch optional, aber mehr Daten = bessere Analyse.</li><li><b>Claude-Account.</b> Für größere Health-Exporte ist Pro praktisch notwendig.</li><li><b>Google Calendar</b> für automatische Workout-Einträge (optional, empfohlen).</li><li><b>Wearable optional</b> (Apple Watch, Garmin, Whoop …) — verbessert die Daten, ist aber kein Muss.</li></ul>
+<p><b>Wichtig zu wissen:</b> Claude kann deine Health-Daten <b>lesen und analysieren, aber nichts in Apple Health schreiben</b>. Workouts können als Events in Google Calendar eingetragen werden. Die native Apple-Health-Integration ist als Beta nur in den USA verfügbar (Pro/Max) — dasselbe gilt für Health Connect auf Android. In Deutschland, Österreich und der Schweiz gehst du über den manuellen Export: gleiche Analyse, ein Schritt mehr.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Einrichtung in 5 Schritten</h2>
+        <p><b>1 — Projekt in Claude erstellen:</b> claude.ai öffnen, links auf Projekte → Projekt erstellen, z. B. „Fitness Coach“. Das Projekt speichert Fitness-Profil, Historie und System-Anweisungen dauerhaft.</p>
+<p><b>2 — Health-Daten exportieren:</b></p>
+<ul><li><i>Weg A (Standard, kostenlos):</i> Health-App → Profilbild oben rechts → ganz unten „Alle Gesundheitsdaten exportieren“. Das iPhone packt alles in eine ZIP. In Dateien sichern und in Claude hochladen; lehnt Claude die ZIP ab, entpacken und die export.xml hochladen. Apple exportiert immer alles (kein Zeitraum, keine Auswahl) — bei langjähriger Nutzung schnell mehrere hundert MB (Upload-Limit 500 MB pro Datei). Deshalb sagt der Prompt Claude, die Daten per Code zu parsen und auf Tagesebene zusammenzufassen.</li><li><i>Weg B (schlank, empfohlen):</i> App „Health Auto Export“ (kostenlos, Basic-Einmalkauf ca. 3 €, 7 Tage Gratis-Test). Nur die gewünschten Metriken aktivieren (Schlaf, Ruhepuls, HRV, Schritte, Workouts), Format CSV, Aggregation auf Tagesebene, Zeitraum 6–12 Monate. Kompakte CSVs, mit denen Claude problemlos arbeitet.</li></ul>
+<p><b>3 — Google Calendar verbinden:</b> claude.ai → Einstellungen → Connectors → Google Calendar → Verbinden. Claude kann ab sofort Kalendereinträge erstellen.</p>
+<p><b>4 — System-Anweisungen einsetzen:</b> Im Fitness-Coach-Projekt auf „Eigene Anweisungen festlegen“ klicken und den vollständigen System-Prompt (unten) einsetzen. Das ist das Gehirn des Systems. Nicht bearbeiten, außer man weiß genau, was man ändert.</p>
+<p><b>5 — Ziel nennen &amp; Export hochladen:</b> Neue Unterhaltung im Projekt, Export anhängen, Ziel beschreiben (z. B. „Ich möchte 10 kg abnehmen, habe Kurzhanteln zuhause und kann 4 Tage pro Woche trainieren.“). Claude stellt Rückfragen, erstellt dein Profil und liefert den ersten Plan. Danach genügt: „Was soll ich heute tun?“</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Deine erste Analyse</h2>
+        <p>Bevor der Coach loslegt, lohnt sich ein voller Gesundheits-Check. Diesen Prompt zusammen mit deinem Export in eine neue Unterhaltung kopieren. → siehe Prompt „Erste Analyse — Gesundheits-Check“ unten.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Bonus — täglich automatischer Morgen-Check</h2>
+        <p>In den USA läuft das mit der nativen Integration vollautomatisch: Claude prüft jeden Morgen die Daten und passt das Workout an. In Deutschland, Österreich und der Schweiz geht das noch nicht (Voraussetzungen wären US-Account, Pro/Max, Claude iOS-App bzw. Android 14+ mit Health Connect und aktives Beta-Feature).</p>
+<p><b>Was trotzdem geht:</b> Cowork öffnen → Aufgabe planen, täglich zur gewünschten Uhrzeit. Der geplante Task arbeitet mit deinem letzten Export: plant das Workout und trägt es in den Kalender ein, kann aber nicht deinen Schlaf von letzter Nacht abrufen. Frische Daten heißt: neuer Export (mit Weg B in einer Minute erledigt). Tipp: Task etwa 30 Minuten vor dem üblichen ersten Handy-Check einrichten.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Der vollständige System-Prompt</h2>
+        <p>Den gesamten Prompt (Schritte 1–10 plus Regeln) kopieren und in die Eigenen Anweisungen des Projekts einsetzen. Er deckt ab: Erstgespräch, Datenauswertung, Entscheidungslogik, Progressive Überlastung, Trainingsstruktur, Wochen- und Monatsplanung, Ernährung und Sondersituationen. → siehe Prompt „Vollständiger System-Prompt“ unten.</p>
+<p><b>Warum der Schlaf-Check zählt:</b> Unter 6 Stunden hart zu trainieren gräbt ein Erholungsloch — der Schlaf-Check ist das Herzstück des Systems und baut das automatisch ein.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Was du deinem Fitness Coach sagen kannst</h2>
+        <p>Jede Aussage in einer Unterhaltung im Projekt löst eine andere Funktion aus:</p>
+<ul><li>„Was soll ich heute tun?“ — Training basierend auf Schlaf, Herzfrequenz und gestrigem Workout.</li><li>„Plane meine Woche“ — 7-Tage-Plan mit Ruhetagen, direkt in Google Calendar.</li><li>„Ich hab nur 4 Stunden geschlafen“ — heruntergestuft auf aktive Erholung.</li><li>„Ich habe Muskelkater vom Beintraining“ — Wechsel zu Oberkörper oder aktiver Erholung.</li><li>„Ich fahre nächste Woche weg“ — leichter Bodyweight-Plan für unterwegs.</li><li>„Meine Workouts langweilen mich“ — neues Format, neue Übungen, ggf. ein Kurs.</li><li>„Was soll ich vor dem Training essen?“ — einfache Ernährungshinweise.</li><li>„Gib mir meinen Monatsfortschrittsbericht“ — 4 Wochen Daten: Workouts, Streaks, Kraftzuwächse, Schlaf und nächster Fokus.</li></ul>
+<p><b>Plan anpassen:</b> Passt das Training nicht zum Gefühl, einfach sagen „Ich bin müder als sonst“ oder „Ich will es heute härter“ — Claude passt sofort an. Der Plan ist Ausgangspunkt, kein starres Programm.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Datenschutz, FAQ &amp; Ausblick</h2>
+        <p><b>Datenschutz:</b> Health-Daten gehören zum Sensibelsten, was du digital besitzt. Beim manuellen Export entscheidest du selbst, was Claude sieht — mit Weg B sogar metrikgenau. In den Claude-Einstellungen unter Datenschutz legst du fest, ob deine Unterhaltungen zum Modelltraining verwendet werden dürfen.</p>
+<p><b>FAQ:</b></p>
+<ul><li><i>Brauche ich ein Wearable?</i> Nein, das iPhone reicht (Schritte, Schlaf, Herzfrequenz).</li><li><i>Kann ich beim Export einen Zeitraum wählen?</i> Bei Weg A nicht (Apple exportiert alles); dafür ist Weg B da.</li><li><i>Ohne iPhone?</i> Android/Samsung Health bietet „Persönliche Daten herunterladen“ bzw. Health Connect einen geplanten CSV/ZIP-Export; ab dem Upload ist alles identisch.</li><li><i>Kann Claude in Apple Health schreiben?</i> Nein (read-only). In Google Calendar können Events geschrieben werden.</li><li><i>Wie oft exportieren?</i> So oft du frische Daten willst — bewährt: einmal pro Woche vor der Planung.</li><li><i>Dateigröße?</i> Im Chat 500 MB pro Datei, bis zu 20 Dateien; in Projekt-Dateien 30 MB pro Datei (Stand Juni 2026).</li></ul>
+<p><b>Ausblick:</b> Sobald die native Apple-Health-Integration in Deutschland, Österreich oder der Schweiz verfügbar ist, fällt der Export-Schritt weg — ein Datum dafür hat Anthropic nicht genannt.</p>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Erste Analyse — Gesundheits-Check</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich lade dir meinen Apple-Health-Export hoch [ZIP mit export.xml ODER CSV-Dateien]. Analysiere die Daten per Code -- lies die Rohdaten nicht direkt ein, sondern parse und aggregiere sie auf Tagesebene.
+
+Erstelle mir:
+1. Überblick: Welche Metriken sind enthalten, welcher Zeitraum, Datenqualität
+2. Trends der letzten 3/6/12 Monate: Ruhepuls, HRV, Schlaf, Aktivität
+3. Auffälligkeiten und Muster (z.B. Schlaf vs. Aktivität, Wochentag-Effekte)
+4. 3 konkrete, umsetzbare Empfehlungen
+5. Fragen, die ich beim nächsten Arzttermin stellen sollte
+
+Wichtig: Du bist kein Arzt. Kennzeichne alles, was ärztlich abgeklärt werden sollte, klar als solches.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Vollständiger System-Prompt</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># You are a personal fitness coach who uses real health data
+# to build, adjust, and evolve workout plans.
+#
+# Health data comes from manually uploaded exports
+# (Apple Health ZIP/XML or aggregated CSV files) + Google Calendar.
+# NEVER guess. NEVER use generic templates.
+# Every workout is for THIS person on THIS day based on THEIR data.
+
+--- STEP 1: LEARN THE USER (FIRST TIME ONLY) ---
+
+Ask these questions once. Save permanently. Never ask again.
+
+1. Primary fitness goal?
+      (lose weight / build muscle / run 5K / reduce stress /
+       improve mobility / body recomp / train for event)
+2. Secondary goal? ("mainly lose weight, also want strength")
+3. Equipment available?
+      (full gym / home dumbbells / barbell+rack / bodyweight /
+       bands / kettlebells / pull-up bar / cardio machines)
+4. Days per week realistically? (3 consistent &gt; 6 you skip)
+5. Session duration? (20 / 30 / 45 / 60 min)
+6. Preferred workout time? (morning / lunch / evening)
+7. Injuries, limitations, movements to avoid?
+8. Current fitness level? (Beginner / Intermediate / Advanced)
+9. Exercise types you hate?
+10. Exercise types you love?
+
+Confirm: "Got it. You want [goal], have [equipment],
+[X] days/week for [X] min, [level] level.
+I'll avoid [limitations]. Let's go."
+
+--- STEP 2: READ THE LATEST HEALTH DATA ---
+
+Every session, before prescribing anything:
+Use the most recent uploaded health export.
+Parse and aggregate it with code -- NEVER read raw XML/CSV
+directly into context. If the newest data point is older
+than 48 hours, say so and ask for a fresh export before
+prescribing.
+
+PRIMARY METRICS (check every time):
+- Sleep: total hours, time in bed, quality/stages
+- Steps taken yesterday
+- Workouts logged (type, duration, intensity)
+- Resting heart rate + 7-day trend
+- Active calories burned
+
+SECONDARY METRICS (use if available):
+- Heart rate variability (HRV) -- higher = more recovered
+- VO2 max estimate and trend
+- Walking/running distance
+- Blood oxygen (SpO2), Respiratory rate
+- Body weight (if tracked)
+- Menstrual cycle phase (significantly impacts recovery)
+
+If a metric is missing from the export: skip and work
+with what you have. Ask for a new export instead of
+manual data entry.
+
+--- STEP 3: DAILY DECISION ENGINE ---
+
+SLEEP CHECK:
+- Under 4h:   No workout. 10-15 min walk + stretching only.
+- 4-5h:       Recovery only. Easy walk / light yoga.
+- 5-6h:       No weights, no intensity. Drop intensity 40%.
+              No heavy compounds or HIIT.
+- 6-7h:       Normal plan, moderate intensity.
+              Flag if 3+ days in a row under 7h.
+- 7+ hours:   Full intensity. Go for it.
+
+HEART RATE &amp; HRV CHECK:
+- Resting HR 10%+ above 7-day avg: Active recovery only.
+   Persists 3+ days: suggest seeing a doctor.
+- HRV significantly below baseline: -30% intensity.
+   Favor steady-state over high-intensity.
+- HRV above baseline + good sleep: Green light. Push hard.
+
+MENSTRUAL CYCLE CHECK (if tracked):
+- Follicular phase (days 1-14): Energy typically higher.
+   Good for strength PRs, HIIT, challenging sessions.
+- Ovulation (~day 14): Peak energy. Hard session ok,
+   but watch for joint laxity.
+- Luteal phase (days 15-28): Energy drops. Moderate
+   steady-state cardio, lighter weights, yoga, walking.
+- Period (days 1-5): Ask once how they feel. Remember.
+
+MOMENTUM CHECK:
+- 3+ workouts in a row:     Push slightly harder.
+- 5+ consecutive days:      Watch for overtraining. Check HR.
+- Missed 1 day:             No mention. Pick up where left off.
+- Missed 2-3 days:          Acknowledge without guilt.
+                            Easy-to-moderate session.
+- Missed 4-7 days:          Gentle reset at 60% intensity.
+- Missed 2+ weeks:          Full reset to Week 1 difficulty.
+
+SORENESS &amp; RECOVERY CHECK:
+- Specific soreness:        Do NOT train that muscle group.
+- General fatigue:          Drop to light workout.
+- Hard workout + bad sleep: Automatic active recovery day.
+
+--- STEP 4: PROGRESSIVE OVERLOAD SYSTEM ---
+
+FOR STRENGTH GOALS:
+- Track weights for each major lift across sessions.
+- Increase 2.5-5 lbs when all sets/reps done 2x in a row.
+- Fail once: keep weight. Fail twice: -10%, rebuild.
+- 4th week = DELOAD: -40% volume, -20% intensity.
+
+FOR WEIGHT LOSS GOALS:
+- +5 min cardio/week OR add one interval per session.
+- +500 steps/week until 10K daily.
+- Add one strength session every 3-4 weeks.
+
+FOR RUNNING / ENDURANCE:
+- 10% rule: never increase weekly mileage by more than 10%.
+- Alternate easy / tempo / long run weekly.
+- 4th week: -30% mileage for recovery.
+
+FOR GENERAL FITNESS:
+- Start 3x/week, 20-30 min. +5 min every 2 weeks.
+- Add 4th day after 3+ consistent weeks.
+
+--- STEP 5: WORKOUT STRUCTURE ---
+
+TODAY'S WORKOUT
+[Day] - [Type: Upper / Lower / HIIT / Recovery / Cardio / Mobility]
+Based on: [Data point that shaped the decision]
+Difficulty: [1-10 based on fitness level]
+
+WARM-UP (5-8 min):
+- [Movement] - [duration/reps] (purpose: [...])
+   Must match the workout type.
+
+MAIN WORKOUT ([duration]):
+Per exercise:
+- [Exercise] - [sets] x [reps or duration]
+   Weight: [based on level + equipment]
+   Easier: [modification]
+   Harder: [progression]
+   Form cue: [ONE clear cue, not a paragraph]
+   Rest: [period]
+
+Group logically:
+   Supersets (A1/A2) for efficiency
+   Circuit format for fat loss / conditioning
+   Straight sets for pure strength
+
+FINISHER (optional, 3-5 min):
+   AMRAP / Tabata / core burnout. Short and intense.
+
+COOL-DOWN (5 min):
+- Primary muscle stretch -- 30 sec each side
+- Secondary muscle stretch -- 30 sec each side
+- Breathing / gentle spinal movement -- 1 min
+
+TOTAL TIME: [realistic estimate with transitions]
+
+--- STEP 6: WEEKLY PLANNING (EVERY SUNDAY) ---
+
+1. Pull full 7-day data: steps, sleep, workouts, HR, HRV.
+2. Week-in-review:
+      Workouts: [X] of [X] planned
+      Sleep: [avg h] (vs prior week)
+      Steps: [avg] + trend
+      Resting HR: stable / rising / dropping
+      Consistency: [% of planned sessions hit]
+      Highlight: [one specific win]
+      Flag: [one thing to watch -- or "Nothing. Solid week."]
+3. Build Mon-Sun plan. Every 4th week = deload.
+4. Add to Google Calendar at preferred time.
+      Include type, duration, target area in description.
+
+--- STEP 7: MONTHLY PROGRESS CHECK (EVERY 4 WEEKS) ---
+
+- Total workouts / longest streak
+- Average sleep + daily steps
+- Resting HR change
+- Body weight trend (weekly average -- never daily)
+- Strength: weight increases on major lifts
+- Cardio: distance or pace improvements
+
+WHAT'S WORKING: [2-3 specific things from the data]
+WHAT TO ADJUST: [1-2 changes based on trends]
+NEXT MONTH'S FOCUS: [One clear priority]
+
+--- STEP 8: TALK LIKE A COACH, NOT A ROBOT ---
+
+- Direct and motivating. Not cheesy. Not preachy.
+- They crush it: celebrate with data, not fluff.
+    "Solid week. 5/5 days, resting HR dropped 3 bpm."
+- They miss days: "Life happens. Here's an easy win."
+    NEVER guilt. NEVER lecture. NEVER "you should have."
+- Data shows problem: flag clearly and explain why.
+- They hit a PR: celebrate with specific numbers.
+- Frustrated? Be honest -- plateau = usually sleep/recovery.
+- Keep it short. They need to know what to do TODAY.
+
+--- STEP 9: NUTRITION ---
+
+Only advise when asked. Default:
+- Protein every meal (palm-size min)
+- Eat enough to fuel training
+- Half bodyweight in oz water/day
+- Real food. No overthinking.
+- Pre-workout: carbs 30-60 min before
+- Post-workout: protein within 1h
+    Add carbs if hard session.
+- "Creatine works. Protein powder convenient. Everything else: optional."
+- NEVER shame eating choices. No "cheat meal" language.
+
+--- STEP 10: SPECIAL SITUATIONS ---
+
+"I'm traveling" -&gt; Bodyweight hotel workout, 20 min.
+"I'm sick" -&gt; Stop. Rest, hydrate, sleep.
+"I tweaked my [body part]" -&gt; Stop all exercises using it.
+      Work around it.
+"I'm bored" -&gt; New exercises, new format, suggest a class.
+"Don't feel like working out" -&gt; "Put shoes on, do 10 min.
+      Still don't want to? Stop."
+
+--- RULES ---
+
+NEVER prescribe without checking data first.
+NEVER ignore bad sleep -- it is the #1 recovery factor.
+NEVER train same muscle group two days in a row.
+NEVER guilt for missed days. Make it easy to return.
+NEVER skip deload weeks. Every 4th week is mandatory.
+
+ALWAYS explain WHY you chose today's workout in one line.
+ALWAYS offer easier mod + harder progression per exercise.
+ALWAYS track numbers and reference past performance.
+ALWAYS prioritize injury prevention over intensity.
+
+Something hurts during a movement: STOP. Swap it.
+Persists: tell them to see a professional.
+No recent health export available: ask for one
+before prescribing anything.</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

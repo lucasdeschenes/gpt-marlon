@@ -1,0 +1,77 @@
+{
+  "file": "Bulletproof_ChatGPT_GPTMarlon.pdf",
+  "title": "Bulletproof ChatGPT — mach aus dem Ja-Sager deinen härtesten Coach",
+  "slug": "bulletproof-chatgpt",
+  "category": "Produktivität",
+  "tool": "ChatGPT",
+  "summary": "Mit einer einzigen Instruktion in den „Individuellen Hinweisen“ wird aus dem höflichen Ja-Sager ein schonungsloser Mentor, der deine Ideen stresstestet, statt sie zu loben. Du richtest sie in 60 Sekunden ein — kein Abo, kein Tool nötig — und schaltest mit Trigger-Sätzen gezielt in den Kritik-Modus. Dazu kommen drei Bonus-Modi: Advocatus Diaboli, Pre-Mortem und Entscheidungs-Matrix.",
+  "sections": [
+    {
+      "heading": "Warum sich ChatGPT wie ein Ja-Sager anfühlt",
+      "body": "Du pitchst eine Idee → „Großartig!“. Du teilst einen Plan → „Das schaffst du locker!“. Du bittest um Feedback → höfliche, sichere Antworten. Das passiert, weil ChatGPT standardmäßig darauf getrimmt ist, hilfsbereit, zustimmend und nutzerfreundlich zu sein.\n\nFür den Alltag ist das gut. Für Strategie, Business-Entscheidungen und kreative Richtung kann es teuer werden — weil du Bestätigung bekommst, wo du Widerstand gebraucht hättest. Die Lösung: Du brauchst kein neues Tool, du änderst nur die Anweisung."
+    },
+    {
+      "heading": "Welches Abo brauchst du? Keins.",
+      "body": "Die „Individuellen Hinweise“ (auch „Personalisierung“) sind in allen ChatGPT-Tarifen enthalten — Free, Go, Plus und Pro. Du brauchst weder Plus noch ein Plugin noch ein neues Tool. Pro Feld stehen rund 1.500 Zeichen zur Verfügung; die Mentor-Instruktion passt locker hinein. Einrichtung: einmal 60 Sekunden, danach gilt sie automatisch in jedem neuen Chat."
+    },
+    {
+      "heading": "Schritt 1 — Individuelle Hinweise öffnen (60 Sekunden)",
+      "body": "1. ChatGPT öffnen und unten auf deinen Namen bzw. dein Profil klicken (App: oben rechts auf das Profil-Icon).\n2. „Anpassen von ChatGPT“ bzw. „Personalisierung“ auswählen.\n3. Das Feld „Individuelle Hinweise“ öffnen (darunter steht „Zusätzliche Einstellungen für Verhalten, Stil und Tonfall“).\n4. Die Mentor-Instruktion (unten) einfügen und auf „Speichern“ klicken.\n\n**Richtiges Feld treffen:** OpenAI ändert die Bezeichnungen gelegentlich — suche nach „Individuelle Hinweise“ oder „Personalisierung“ mit dem Hinweis „Zusätzliche Einstellungen für Verhalten, Stil und Tonfall“.\n\n**Ohne Einrichtung:** Du kannst die Instruktion auch einfach an den Anfang eines normalen Chats setzen — dann gilt sie nur für dieses Gespräch (praktisch zum Ausprobieren)."
+    },
+    {
+      "heading": "Schritt 2 — Die Mentor-Instruktion einfügen",
+      "body": "Das ist das Herzstück: Diese Anweisung verwandelt ChatGPT in einen Mentor, der deine Ideen bulletproof macht, statt sie zu loben. Kopieren und in das Feld aus Schritt 1 einfügen. → siehe Prompt „Mentor-Instruktion (DE)“ unten (englisches Original im Appendix).\n\nWas sie bewirkt: ChatGPT hört auf, automatisch zuzustimmen, erkennt schwache Logik schnell, flaggt fehlende Details, erzwingt Klarheit und liefert schärferes, umsetzbares Feedback statt Hype."
+    },
+    {
+      "heading": "Schritt 3 — So nutzt du es, damit es greift",
+      "body": "Die Instruktion läuft im Hintergrund. Mit diesen Endungen schaltest du ChatGPT gezielt in den Kritik-Modus — häng einen Satz an deine Frage:\n- „Zerleg das in seine Einzelteile.“\n- „Was würde das scheitern lassen?“\n- „Was ist das stärkste Gegenargument?“\n- „Welche Annahmen übersehe ich?“\n- „Wenn du dagegen wetten müsstest — warum?“\n\nUnd wenn du eine Idee zum Stresstest bringst, gib sie immer im 3-Teile-Format ein (siehe Prompt „3-Teile-Format“ unten) — das liefert genug Kontext für wirklich scharfes Feedback."
+    },
+    {
+      "heading": "Ja-Sager vs. schonungsloser Mentor",
+      "body": "Derselbe Input, zwei völlig verschiedene Outputs. So verändert die Instruktion die Antworten, die du bekommst:\n\n| Wenn du … | Ja-Sager (Standard) | Mentor-Modus |\n| --- | --- | --- |\n| eine Idee pitchst | „Großartige Idee, los geht’s!“ | Nennt die 3 größten Schwachstellen plus den kleinsten Fix, der sie behebt |\n| einen Plan teilst | „Das schaffst du locker.“ | Listet Annahmen, Risiken, Failure Modes und Edge Cases auf |\n| um Feedback bittest | Höflich, sicher, allgemein | Konkret, begründet, ehrlich — auf eine stärkere Version ausgerichtet |\n| eine Entscheidung triffst | Bestätigt, was du ohnehin willst | Spielt das stärkste Gegenargument durch, bevor es zustimmt |"
+    },
+    {
+      "heading": "Richtig einsetzen — damit es dir hilft",
+      "body": "**„Schonungslos“ heißt nicht „unhöflich“.** Das Ziel ist nicht, dass ChatGPT gemein wird. Das beste Feedback ist klar, konkret, begründet — und darauf ausgerichtet, deine Idee stärker zu machen, nicht dich kleinzumachen. Wahrheit vor Ton, aber mit dem Ziel, dich weiterzubringen.\n\n**Wann du den Modus NICHT brauchst:** beim frühen Brainstorming (zu viel Kritik tötet rohe Ideen), bei reiner Recherche/Faktenfragen und wenn du emotionale Unterstützung statt Analyse suchst. Dann kurz pausieren — siehe Prompt „Mentor pausieren“ unten."
+    },
+    {
+      "heading": "Bonus — 3 weitere Mentor-Modi",
+      "body": "Wenn „schonungslos“ allein nicht reicht: Diese drei Prompts zwingen ChatGPT, deine Idee aus anderen Winkeln anzugreifen — einzeln in den Chat einfügen. → siehe Prompts „Advocatus Diaboli“, „Pre-Mortem“ und „Entscheidungs-Matrix“ unten."
+    },
+    {
+      "heading": "Appendix — englisches Original",
+      "body": "Falls du lieber direkt auf Englisch arbeitest (oft minimal stärker, weil viele Modelle stark auf englischen Daten trainiert sind): das Original steht unten als Prompt „Ruthless Mentor (EN)“. Passende Critique-Trigger ans Ende der Frage:\n- „Tear this apart.“\n- „What would make this fail?“\n- „What’s the strongest counterargument?“\n- „What assumptions am I missing?“\n- „If you had to bet against this, why?“"
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Mentor-Instruktion (DE)",
+      "text": "Du bist mein schonungsloser Mentor.\nDeine Aufgabe ist es, meine Ideen bulletproof zu machen.\n\nSei direkt, ehrlich und konkret.\nWenn eine Idee schwach, unrealistisch, unklar oder schlecht durchdacht ist, sag es -- und erklaere warum.\n\nStresstest jeden Plan entlang von:\n- Annahmen\n- Risiken\n- Fehlerquellen (Failure Modes)\n- Tradeoffs\n- Edge Cases\n\nStelle harte Fragen, BEVOR du Loesungen lieferst.\nWenn du Verbesserungen vorschlaegst, nenne die kleinste Menge an Aenderungen, die die Idee wirklich funktionieren laesst.\n\nVermeide generische Ermutigung. Wahrheit vor Ton."
+    },
+    {
+      "label": "3-Teile-Format (jede Idee)",
+      "text": "1. Ziel:\n2. Mein Plan:\n3. Rahmen: (Zeit, Budget, Skills, Zielgruppe)\n\nDann frag: \"Stresstest das und gib mir eine staerkere Version.\""
+    },
+    {
+      "label": "Bonus 1 — Advocatus Diaboli",
+      "text": "Uebernimm die Gegenposition. Argumentiere so ueberzeugend wie moeglich GEGEN meine Idee -- als muesstest du jemanden davon abhalten, sie umzusetzen. Nenne die 5 staerksten Gruende dagegen."
+    },
+    {
+      "label": "Bonus 2 — Pre-Mortem",
+      "text": "Stell dir vor, es ist 12 Monate spaeter und dieses Projekt ist krachend gescheitert. Schreibe die Post-Mortem: Was ist schiefgegangen, warum, und welche Warnsignale haette ich heute schon sehen koennen?"
+    },
+    {
+      "label": "Bonus 3 — Entscheidungs-Matrix",
+      "text": "Ich schwanke zwischen [Option A] und [Option B]. Bewerte beide entlang von [Kriterien, z.B. Aufwand, Risiko, Ertrag]. Gib jeder eine Wertung 1-10 mit Begruendung -- und am Ende eine klare Empfehlung."
+    },
+    {
+      "label": "Mentor pausieren (für eine Antwort)",
+      "text": "Schalt den Mentor-Modus fuer diese Antwort aus. Ich will hier erstmal nur frei brainstormen, ohne Kritik."
+    },
+    {
+      "label": "Ruthless Mentor (EN)",
+      "text": "You are my ruthless mentor.\nYour job is to make my ideas bulletproof.\n\nBe direct, honest, and specific.\nIf my idea is weak, unrealistic, unclear, or poorly reasoned, say so and explain why.\n\nStress-test every plan with:\n- assumptions\n- risks\n- failure modes\n- tradeoffs\n- edge cases\n\nAsk hard questions before giving solutions.\nWhen you suggest improvements, give the smallest set of changes that would make the idea actually work.\n\nAvoid generic encouragement. Prioritize truth over tone."
+    }
+  ],
+  "note": "„Individuelle Hinweise“ / „Personalisierung“ (Custom Instructions) ist eine echte ChatGPT-Funktion in allen Tarifen (Free bis Pro); OpenAI ändert die Menü-Bezeichnungen gelegentlich. Schonungsloses Feedback ist ein Denkwerkzeug, kein fachliches, rechtliches oder finanzielles Urteil."
+}

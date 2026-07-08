@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude mit der Recherche der letzten 30 Tage — GPT Marlon Guides</title>
+  <meta name="description" content="Jedes KI-Modell hat einen Wissensstichtag — fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um: Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Produktivität</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">Claude mit der Recherche der letzten 30 Tage</h1>
+      <p class="page-sub">Jedes KI-Modell hat einen Wissensstichtag — fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um: Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude</span>
+        <span class="chip">Produktivität</span>
+        <span class="chip">3 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/recherche-30-tage.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Die Erweiterung ist ein quelloffenes Drittanbieter-Werkzeug, das Claudes Capability „Code-Ausführung & Dateierstellung" nutzt; Verfügbarkeit, Befehle, Quellen und Preise können sich ändern, und die Treffer sind ein Stimmungsbild aus dem Netz (Werbung/ungeprüfte Meinungen möglich) — prüfe wichtige Angaben selbst gegen.</div>
+
+      <section class="guide-section">
+        <h2>Teil 1 — Warum Claude manchmal alte Infos liefert</h2>
+        <p>Stell dir das Gedächtnis einer KI wie ein Buch vor, das einmal gedruckt und nie wieder aktualisiert wurde. Beim Druck war alles richtig. Doch die Welt drehte sich weiter: Preise änderten sich, neue Tools kamen, Meinungen kippten. Fragst du nach etwas Aktuellem, will Claude trotzdem hilfreich sein — und antwortet aus genau diesem alten Buch. So handelst du am Ende vielleicht nach einem Preis, einem Feature oder einer „besten Wahl", die vor Monaten still und leise falsch geworden ist.</p>
+<p><b>Der Fachbegriff: Wissensstichtag.</b> Der Wissensstichtag (englisch „knowledge cutoff") ist das Datum, an dem das Training eines KI-Modells endete. Alles danach kennt das Modell nicht aus sich heraus. Es sagt dann selten „weiß ich nicht" — es füllt die Lücke mit einer plausibel klingenden Vermutung.</p>
+<p><b>Die Lösung — erst lesen, dann antworten.</b> Die kostenlose Erweiterung „Letzte 30 Tage" schließt diese Lücke. Du gibst ihr ein Thema. Statt aus dem Gedächtnis zu antworten, sucht sie quer durch viele Quellen — aber nur die Treffer der letzten 30 Tage. Diese frischen Ergebnisse legt sie Claude als Notizen vor, die es zuerst liest. Die Antwort stammt dann aus diesem Monat, nicht aus dem alten Buch.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 2 — Was die Erweiterung liest</h2>
+        <p>Wenn du sie startest, wirft sie ein weites Netz aus und zieht frische Treffer aus vielen Orten gleichzeitig — alle gefiltert auf die letzten 30 Tage. So mischst du normale Leute von Reddit, die Tech-Crowd von Hacker News, den Trend-Schwarm von TikTok und Reels und sogar Wett-Quoten aus dem letzten Monat.</p>
+<p>Ein wichtiger Teil ist sofort kostenlos und ohne Anmeldung nutzbar. Andere Quellen brauchen einen (oft kostenlosen) Zugangsschlüssel — dazu mehr in Teil 6.</p>
+<p><b>Sofort gratis — ohne Schlüssel:</b></p>
+<ul><li>Reddit (inkl. Top-Kommentare, nach Upvotes gewichtet — du siehst, dem die Leute zugestimmt haben)</li><li>Hacker News (die Tech- &amp; News-Crowd)</li><li>Polymarket (echte Prognosemarkt-Quoten: worauf Leute wetten)</li><li>GitHub (neue Projekte &amp; Tools)</li><li>YouTube-Transkripte &amp; Bluesky (mit App-Passwort)</li></ul>
+<p><b>Erst mit Zugangsschlüssel:</b></p>
+<ul><li>X / Twitter</li><li>TikTok, Instagram Reels, Threads, Pinterest</li><li>YouTube-Kommentare</li><li>Perplexity (KI-Websuche)</li><li>allgemeine Websuche</li></ul>
+<p><i>Prognosemarkt — kurz erklärt:</i> Ein Prognosemarkt (z. B. Polymarket) ist eine Plattform, auf der Menschen mit echtem Geld auf den Ausgang künftiger Ereignisse wetten. Die Quoten zeigen, für wie wahrscheinlich die Menge ein Ereignis gerade hält — ein Stimmungsbild in Zahlen.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 3 — Was du vorher brauchst</h2>
+        <p>Die Erweiterung selbst ist kostenlos und quelloffen — sie läuft auf deinem Rechner, deine Recherche bleibt bei dir. Damit Claude sie ausführen darf, muss in deinem Konto eine Funktion eingeschaltet sein. Das ist in zwei Minuten erledigt.</p>
+<p><b>Punkt 1 — Ein Claude-Konto mit aktivem Code-Ausführen.</b> Eine Erweiterung (in Claude „Skill" genannt) funktioniert nur, wenn die Capability „Code-Ausführung &amp; Dateierstellung" aktiv ist:</p>
+<ol><li>In Claude oben rechts auf dein Profil → Einstellungen.</li><li>Capabilities (Funktionen) öffnen.</li><li>Code-Ausführung &amp; Dateierstellung einschalten.</li></ol>
+<p>Eigene Skills lassen sich in den Plänen Free, Pro und Max sowie Team/Enterprise nutzen, solange diese Capability an ist. Brauchst du sie nur im Browser unter claude.ai, reicht das aus — fürs Hochladen eigener Skills ist kein zusätzliches Programm nötig.</p>
+<p><b>Punkt 2 — Für gratis loslegen: gar nichts weiter.</b> Die kostenlosen Quellen (Reddit, Hacker News, Polymarket, GitHub) laufen ohne jeden Schlüssel. Kein Konto bei einem anderen Dienst, keine Kreditkarte.</p>
+<p><i>Kurz gegengecheckt:</i> Öffne Einstellungen → Capabilities und vergewissere dich, dass „Code-Ausführung &amp; Dateierstellung" wirklich aktiv ist. Ohne diesen Haken startet die Skill nicht — das ist die häufigste Stolperstelle.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 4 — Installieren: drei Wege</h2>
+        <p>Es gibt mehrere Wege. Der einfachste ohne Terminal ist Weg A direkt im Browser. Wer Claude Code nutzt, nimmt Weg B. Alle führen zum selben Befehl <code>/last30days</code>.</p>
+<p><b>Weg A — ohne Terminal: im Browser unter claude.ai hochladen</b></p>
+<ol><li>Auf der Projektseite der Erweiterung die Datei <code>last30days.skill</code> aus dem neuesten Release herunterladen.</li><li>In claude.ai auf Customize (Anpassen) → Skills.</li><li>Auf + → Create skill → Upload a skill klicken und die Datei reinziehen.</li><li>Sicherstellen, dass „Code-Ausführung &amp; Dateierstellung" an ist (Teil 3). Fertig.</li></ol>
+<p><b>Weg B — Claude Code: als Plugin.</b> Nutzt du Claude Code (das Terminal-Werkzeug für Entwickler), fügst du die Erweiterung mit einer Zeile als Plugin hinzu (siehe Prompt unten). Einfügen, Enter, fertig.</p>
+<p><b>Weg C — andere KI-Editoren: per Terminal (50+ Tools).</b> Arbeitest du mit einem anderen KI-Editor (z. B. Cursor, Codex, Gemini CLI), läuft die Zeile unten im Terminal. Das <code>-g</code> am Ende installiert global, also überall verfügbar.</p>
+<p>Unsicher, welcher Weg? Claude im Browser/Desktop ohne Terminal → Weg A. Claude Code → Weg B. Anderer Editor → Weg C. Am Ende hast du überall denselben Befehl <code>/last30days</code>.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 5 — So nutzt du es</h2>
+        <p>Ist die Erweiterung installiert, ist die Anwendung kinderleicht. Du tippst <code>/last30days</code> und dann dein Thema. Je konkreter dein Thema, desto schärfer die frischen Treffer. Das Muster ist immer gleich: <code>/last30days</code> + dein Thema (siehe Grundmuster-Prompt unten).</p>
+<p><b>Weitere Beispiele zum Ausprobieren:</b></p>
+<ul><li><code>/last30days kündigen gerade Leute wirklich Netflix</code></li><li><code>/last30days neue KI-Tools, die Leute aktuell lieben</code></li><li><code>/last30days ehrliche Tests zum neuen iPhone</code></li><li><code>/last30days was trended diese Woche auf TikTok für kleine Unternehmen</code></li></ul>
+<p><b>Vier Momente — wann sich der Befehl lohnt:</b></p>
+<ul><li><b>Bevor du etwas kaufst.</b> Vor der Ausgabe einmal laufen lassen — du siehst, was echte Leute diesen Monat sagen, nicht einen Glanz-Test von vor zwei Jahren. Fang die „nach drei Wochen kaputt"-Posts ab.</li><li><b>Vor einer größeren Entscheidung.</b> Tool, Plattform, Dienst oder Richtung fürs Business? Hol dir erst das aktuelle Lagebild.</li><li><b>Bevor du auf Social postest.</b> Willst du einen Trend reiten, musst du wissen, was heute läuft. Lass es auf deine Nische los.</li><li><b>Für Recherche &amp; News, die aktuell sein müssen.</b> Immer wenn die Antwort sich schnell ändert — Preise, Releases, „was ist der letzte Stand bei …".</li></ul>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 6 — Später mehr Quellen freischalten</h2>
+        <p>Die gratis Kernquellen (Reddit, Hacker News, Polymarket, GitHub) decken schon eine Menge ab — fang damit an und zahl vorerst für nichts. Ein Zugangsschlüssel (API-Key) ist ein persönlicher Code, mit dem sich die Erweiterung bei einem anderen Dienst anmeldet, um dort zu suchen. Beim ersten Lauf führt dich ein kurzer Einrichtungs-Assistent durch die optionale Eingabe.</p>
+<p><b>Extra-Quellen, ihre Anbieter und Kosten:</b></p>
+<ul><li>TikTok, Instagram, Threads, Pinterest, YouTube-Kommentare — über <b>ScrapeCreators</b> (100 Gratis-Credits, danach nach Verbrauch).</li><li>X / Twitter — über <b>Xquik oder xAI-Schlüssel</b> (anbieterabhängig).</li><li>Websuche — über <b>Brave Search</b> (2.000 Abfragen/Monat gratis).</li><li>KI-Websuche — über <b>Perplexity oder OpenRouter</b> (nach Verbrauch).</li></ul>
+<p><i>Ehrlicher Hinweis — gratis zuerst:</i> Fang mit den kostenlosen Kernquellen an und gib vorerst kein Geld aus. Schlüssel ergänzt du nur, wenn du wirklich die sozialen Plattformen oder die volle Websuche brauchst.</p>
+<p><b>Hinweis:</b> Dieser Guide dient ausschließlich zu Informations- und Bildungszwecken. Die vorgestellte Erweiterung ist ein quelloffenes Drittanbieter-Werkzeug; Verfügbarkeit, Befehle, Quellen, Schlüssel-Anbieter und Preise können sich ändern — prüfe sie vor der Nutzung selbst. Such-Ergebnisse aus dem Netz können Fehler, Werbung oder ungeprüfte Meinungen enthalten; behandle sie als Stimmungsbild, nicht als gesicherte Fakten.</p>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Installieren in Claude Code (Weg B)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">/plugin marketplace add mvanhorn/last30days-skill</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Installieren per Terminal, andere Editoren (Weg C)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">npx skills add mvanhorn/last30days-skill -g</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-3">
+        <div class="prompt-head">
+          <span class="prompt-label">Anwenden — Grundmuster</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">/last30days bester günstiger Laptop für Studenten</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

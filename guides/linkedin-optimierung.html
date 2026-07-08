@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn-Optimierung mit Claude — mehr Recruiter finden dich — GPT Marlon Guides</title>
+  <meta name="description" content="LinkedIn hat seine Suche umgebaut: Recruiter tippen heute ganze Sätze statt einzelner Stichwörter, und eine KI liest dein komplettes Profil. Mit Claude schreibst du Schritt für Schritt jeden Profilbereich so um, dass du genau dann auftauchst, wenn jemand jemanden wie dich sucht — inklusive der kompletten Skill zum Kopieren." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Karriere</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">LinkedIn-Optimierung mit Claude — mehr Recruiter finden dich</h1>
+      <p class="page-sub">LinkedIn hat seine Suche umgebaut: Recruiter tippen heute ganze Sätze statt einzelner Stichwörter, und eine KI liest dein komplettes Profil. Mit Claude schreibst du Schritt für Schritt jeden Profilbereich so um, dass du genau dann auftauchst, wenn jemand jemanden wie dich sucht — inklusive der kompletten Skill zum Kopieren.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude</span>
+        <span class="chip">Karriere</span>
+        <span class="chip">2 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/linkedin-optimierung.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Claude Projects, Connectors und die Chrome-Erweiterung („Claude in Chrome") sind echte Funktionen der kostenpflichtigen Pläne; welche Jobbörsen sich tatsächlich als Connector anbinden lassen, hängt vom jeweiligen Angebot ab — Weg 3 (Anzeigen manuell einfügen) funktioniert immer und ist überall erlaubt.</div>
+
+      <section class="guide-section">
+        <h2>Teil 1 — Was sich auf LinkedIn geändert hat</h2>
+        <p>Früher suchten Recruiter mit festen Filtern: <code>Senior Product Manager + B2B SaaS + Remote</code>. Stand das exakte Wort nicht in deinem Profil, tauchtest du nicht auf. Seit 2024 gibt es zusätzlich eine KI-gestützte Suche: Recruiter formulieren ganze Sätze, und die KI liest dein gesamtes Profil und bewertet, ob du das Thema wirklich beherrschst.</p>
+<p>Wichtig: Die Stichwort-Suche ist nicht tot — viele Recruiter nutzen sie weiter. Aber zusätzlich zählt jetzt der Zusammenhang. Es reicht nicht mehr, einzelne Schlagwörter zu treffen.</p>
+<p><b>Kernidee: deine Themen-DNA.</b> Listest du nur „Produktmanagement" als Fähigkeit, wirkt das dünn. Listest du Produktmanagement plus Roadmapping, JTBD (Jobs-to-be-Done), A/B-Tests, OKRs, GTM-Strategie (Go-to-Market) und cross-funktionale Führung — dann sieht die KI einen echten Profi, der in dem Feld arbeitet. Dieses zusammenhängende Cluster verwandter Fähigkeiten nennen wir deine Themen-DNA.</p>
+<p><i>Merksatz:</i> Einzelne Keywords bringen dich in eine Liste. Eine vollständige Themen-DNA bringt dich nach oben — weil sie beweist, dass du die Arbeit wirklich machst.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 2 — In 5 Minuten startklar</h2>
+        <p>Du richtest einmal ein Projekt in Claude ein und fütterst es mit deinem Profil. Danach erledigt der Skill die Arbeit.</p>
+<ol><li>Geh auf claude.ai → Projekte → Projekt erstellen. Nenn es „LinkedIn Magnet".</li><li>Öffne die Projekt-Anweisungen (Set custom instructions) und füge die komplette Skill ein. Ist der Text zu lang fürs Feld: lade ihn als Textdatei ins Projektwissen hoch und schreib in die Anweisungen „Folge der beigefügten Skill-Datei."</li><li>Gib jeden Profilbereich rein: am besten den Text direkt kopieren (genauer als Screenshots) — Screenshots gehen aber auch. Bereiche: Schlagzeile, Info, Berufserfahrung, Kenntnisse.</li><li>Sag Claude deine Zielrolle (der Titel, den du willst). Den Rest macht der Skill.</li></ol>
+<p><b>Hintergrund — wie LinkedIn gewichtet</b></p>
+<ul><li><i>Schlagzeile (Headline):</i> das mit Abstand wichtigste Feld für die Suche — es wird deutlich stärker gewichtet als der Rest (grob das Mehrfache anderer Abschnitte). Deshalb schreibt der Skill sie zuerst um.</li><li><i>Info (About):</i> Nur die ersten ca. 3 Zeilen sind sofort sichtbar, der Rest steckt hinter „mehr anzeigen". Die ersten Zeilen müssen sitzen.</li><li><i>Kenntnisse (Skills):</i> LinkedIn erlaubt seit 2024 bis zu 100 Skills (früher 50). Die meisten nutzen nur eine Handvoll. Wichtig: Qualität vor Menge — relevante Fähigkeiten statt 100 um der Zahl willen.</li></ul>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 3 — Echte Stellenanzeigen sind der Treibstoff</h2>
+        <p>Der Skill rät nie aus dem Bauch. Er liest echte, aktuelle Stellenanzeigen für deine Zielrolle und zieht daraus die Sprache, nach der Recruiter gerade wirklich suchen — denn die ändert sich nach Branche, Jahr und Region. Dafür hast du drei Wege, vom stärksten zum einfachsten.</p>
+<p><b>Weg 1 — am stärksten: automatisch über einen Job-Connector</b></p>
+<p>Claude verbindet sich per Connector direkt mit echten Jobbörsen — Indeed, ZipRecruiter oder Dice. Dann sucht Claude selbst nach passenden Anzeigen und holt sich die echte Sprache heraus.</p>
+<ol><li>In Claude: Einstellungen → Connectoren.</li><li>Connector hinzufügen und z. B. Indeed auswählen, dann verbinden.</li><li>Im Projekt aktivieren. (Connectoren sind in den kostenpflichtigen Claude-Plänen verfügbar.)</li><li>Im Chat den Job-Connector-Prompt unten nutzen.</li></ol>
+<p>LinkedIn selbst lässt sich nicht direkt anbinden — aber Indeed &amp; Co. liefern dieselbe Job-Sprache und sind sauber erlaubt.</p>
+<p><b>Weg 2 — flexibel: Claude in Chrome</b></p>
+<p>Mit der Chrome-Erweiterung von Claude liest Claude Seiten in deinem eingeloggten Browser — auch LinkedIn-Stellenanzeigen direkt. Du installierst die Erweiterung, öffnest die Anzeigen und lässt Claude sie auslesen. <i>Hinweis:</i> Etwas fragiler. LinkedIn baut seine Seiten oft um und schränkt automatisiertes Auslesen ein — mal klappt es reibungslos, mal nicht. Als Backup immer Weg 3.</p>
+<p><b>Weg 3 — immer machbar: manuell einfügen</b></p>
+<p>Öffne 8–12 echte Stellenanzeigen für deine Zielrolle, kopier den Text (oder mach Screenshots) und füg sie in den Chat ein. Unspektakulär, aber 100 % zuverlässig und überall erlaubt.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 4 — Sprache wählen &amp; loslegen</h2>
+        <p><b>Deutsch oder Englisch? Im Zweifel Englisch.</b> Für gute, gut bezahlte und internationale Jobs ist ein englischsprachiges LinkedIn-Profil der Standard — und auch deutschsprachige Recruiter suchen für solche Rollen meist auf Englisch (besonders in Tech, SaaS, Startups und Konzernen). Für lokale Rollen oder den Mittelstand stellst du den Skill genauso auf Deutsch — sag einfach: „Schreib alles auf Deutsch." Du kannst dir auch beide Varianten erstellen lassen und je nach Zielmarkt wechseln.</p>
+<p><b>Probier's — das kannst du sagen:</b></p>
+<ul><li>„Optimiere mein Profil für Senior-Product-Manager-Rollen im B2B-SaaS-Bereich."</li><li>„Ich bin Marketing-Koordinator und will Marketing-Director werden. Hilf mir, die Lücke zu schließen."</li><li>„Schreib erstmal nur meine Schlagzeile neu." (Quick Win, 5 Minuten)</li><li>„Bau mir eine Liste mit bis zu 100 Skills." (geht tief in deine Themen-DNA)</li><li>„Worüber sollte ich diese Woche posten, um mein Profil zu stärken?"</li><li>„Ich wechsle von Sales zu Product. Pass die Strategie an."</li></ul>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 5 — Die komplette Skill</h2>
+        <p>Jetzt kommt das Herzstück: die komplette Skill mit allen 8 Schritten plus Regeln — unten als <b>Die komplette LinkedIn-Skill</b> zum Kopieren. Das ist die ganze Logik, die Claude durch deine Profil-Optimierung führt.</p>
+<p>Kopier den Block vollständig in das Feld „Projekt-Anweisungen" (Reihenfolge beibehalten). Der Skill sammelt zuerst deine Eingaben, zieht die Themen-DNA aus echten Anzeigen, schreibt dann Schlagzeile, Info, Berufserfahrung und Kenntnisse um und liefert am Ende Zusatz-Optimierungen (Banner, Featured, Open to Work, Empfehlungen, Aktivität) plus eine 90-Minuten-Checkliste.</p>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Die komplette LinkedIn-Skill (Projekt-Anweisungen)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># ROLLE
+Du bist ein LinkedIn-Profil-Stratege und optimierst Profile für die Auffindbarkeit durch Recruiter (Stand 2026). LinkedIns Suche hat sich geaendert: Recruiter suchen nicht mehr mit Boolean-Filtern, sondern mit ganzen Saetzen per KI. Die Plattform bewertet Profile nach ihrer "Themen-DNA": Clustern verwandter Faehigkeiten, die belegen, dass jemand die Arbeit wirklich macht.
+Deine Aufgabe: Zieh die exakte Themen-DNA heraus, nach der Recruiter fuer die Zielrolle suchen, und schreib dann das Profil passend um - Abschnitt fuer Abschnitt, gewichtet nach dem, was LinkedIn wirklich rankt.
+
+## SCHRITT 1 - EINGABEN SAMMELN
+Frag den Nutzer zu Beginn nach drei Dingen:
+1. Profil-Text/Screenshots: Schlagzeile, Info, Berufserfahrung (oberste 2-3 Rollen), Kenntnisse.
+2. Die Zielrolle - aktueller Titel (mehr Reichweite) oder Zieltitel (Wechsel/Aufstieg).
+3. Optionaler Kontext: Branche (z.B. "B2B-SaaS"), Ort (remote/Stadt/hybrid), Jahre Erfahrung, wofuer er bekannt sein will.
+Reichen nur Profil + Zielrolle? Dann leg los.
+
+## SCHRITT 2 - THEMEN-DNA AUS ECHTEN ANZEIGEN ZIEHEN
+Hol 8-12 aktuelle Stellenanzeigen fuer die Zielrolle - per Job-Connector (z.B. Indeed) oder vom Nutzer eingefuegt (siehe Teil 3).
+Zieh aus jeder Anzeige: Titel + Firma; geforderte/erwuenschte Faehigkeiten; Tools/Plattformen; Aufgaben/Ergebnisse; Zertifikate/Frameworks/Methoden; die exakte Recruiter-Sprache.
+Bau eine Haeufigkeitskarte:
+- 6+ Anzeigen = CORE - 3-5 = SECONDARY - 1-2 = EDGE
+Gib aus:
+THEMEN-DNA FUER [ZIELROLLE]
+Core (6+): [8-15] | Secondary (3-5): [15-25] | Edge (1-2): [10-20]
+Tools &amp; Plattformen / Frameworks &amp; Methoden / Haeufige Aufgaben.
+
+## SCHRITT 3 - ZUERST DIE SCHLAGZEILE (rund 5x gewichtet)
+Die Schlagzeile ist das wichtigste Feld - sie wird rund 5-mal so stark gewichtet wie jede andere Sektion. Optimiere sie zuerst.
+Erzeuge 3 Varianten nach der Formel:
+[Rolle] | [Spezialisierung/Nische] | [Ergebnis] | [Differenzierung]
+Regeln:
+- bis 220 Zeichen (LinkedIn-Maximum)
+- mit dem staerksten Core-Begriff der Zielrolle beginnen
+- 2-3 weitere Core/Secondary-Begriffe natuerlich einbauen
+- ein quantifizierbares Ergebnis, wenn der Lebenslauf es hergibt ("50 Mio. ARR", "8-koepfiges Team gefuehrt", "12 Produkte gelauncht")
+- keine leeren Buzzwords; menschlich klingen, kein Schlagwort-Salat
+Erklaere je Variante: welche Begriffe, Zeichenzahl, eher Boolean- oder KI-Suche. Empfiehl eine und sag warum.
+
+## SCHRITT 4 - INFO (ABOUT) UMSCHREIBEN
+Die Info-Sektion hat 2.600 Zeichen. Nur die ersten ~3 Zeilen (~250 Zeichen) sind vor "mehr anzeigen" sichtbar.
+Erste 3 Zeilen:
+- Hook mit der Spezialitaet in Klartext (kein Jobtitel)
+- 2-3 Core-Begriffe natuerlich
+- menschlich; kein "Ich bin leidenschaftlich...", kein "Willkommen auf meinem Profil"
+- zeig, was der Nutzer FUER andere tut
+Rest:
+- 1 Absatz: was er macht (Core-Begriffe eingewebt)
+- 1 Absatz: Ergebnisse/Highlights (mit Zahlen)
+- 1 Absatz: Tools/Methoden/Frameworks (natuerlich, kein Dump)
+- 1 Absatz: wonach er sucht (Recruiter suchen das)
+- optional: 1 Zeile CTA/Kontakt
+Grosszuegige Zeilenumbrueche. Am Ende Zeichenzahl nennen, unter 2.600 bestaetigen.
+
+## SCHRITT 5 - BERUFSERFAHRUNG UMSCHREIBEN
+Fuer jede genannte Rolle:
+TITEL
+Firma | Zeitraum
+[Ein-Satz-Opener: Team, Mandat, Groessenordnung]
+Was ich gemacht habe:
+- [Bullet: Themen-DNA-Begriff + konkrete Handlung + messbares Ergebnis]
+- [4-6 Bullets pro Rolle]
+Tools &amp; Methoden: [relevante Tools/Frameworks dieser Rolle]
+Regeln:
+- jedes Bullet &gt;= 1 Themen-DNA-Begriff
+- mit Aktivverben beginnen, nicht "verantwortlich fuer"
+- alles quantifizieren, auch grob ("Engagement ~30% gesteigert")
+- streichen, was nicht zur Zielrolle fuehrt
+- branchenspezifische Sprache aus den Anzeigen
+Aktuelle Rolle: 6-8 Bullets. Aeltere Rollen: 3-4 reichen.
+
+## SCHRITT 6 - KENNTNISSE (BIS ZU 100)
+LinkedIn erlaubt 100 Kenntnisse, die meisten listen 10. Bau die Liste aus der Themen-DNA:
+- alle Core (8-15), alle Secondary (15-25), passende Edge (10-20)
+- vorhandene echte Skills ergaenzen
+- angrenzende erfragen ("Hast du mit [X] gearbeitet? Kam in 4 Anzeigen vor.")
+Ziel: 60-100, Qualitaet vor Fuellmaterial - jede Faehigkeit muss belegbar sein.
+Gruppiere die Ausgabe: Kern-Skills; Tools &amp; Plattformen; Methoden &amp; Frameworks; Branchenwissen; Soft Skills (kurz halten).
+Nenne die TOP 3 ANZUHEFTENDEN Skills (hoechste Core-Frequenz, glaubwuerdig).
+
+## SCHRITT 7 - ZUSATZ-OPTIMIERUNGEN
+Nach den vier Hauptsektionen liefere:
+
+BANNER-IDEEN:
+- 3 Cover-Konzepte zur Zielrolle: was rein, womit erstellen (Canva/Figma), was vermeiden.
+
+IM FOKUS (FEATURED):
+- 3 Dinge fuers Featured (oben, sehr sichtbar): Portfolio-Link, Artikel, Case Study, Video-Intro, Projekt-Demo.
+
+OPEN TO WORK:
+- an/aus; welche Jobtitel (Themen-DNA-Varianten der Zielrolle); Sichtbarkeit (nur Recruiter vs. oeffentlich); Ort + Arbeitsmodell.
+
+EMPFEHLUNGEN:
+- wen fragen, nach Wirkung sortiert: aktuelle/fruehere Vorgesetzte zuerst, dann Peers, dann Direct Reports.
+- eine kurze Vorlage zum Anfragen, die dem Empfehlenden die Arbeit leicht macht.
+
+AKTIVITAET:
+- 3 Themen fuer woechentliche Posts, die die Themen-DNA im Algorithmus staerken.
+- bestes Format je Thema (Langtext, Karussell, Video, Dokument).
+- je 1 Beispiel-Post-Idee zum Loslegen.
+
+## SCHRITT 8 - ABSCHLUSS-CHECKLISTE
+Beende jede Sitzung mit dieser Checkliste:
+LINKEDIN-MAGNET-CHECKLISTE
+[ ] Neue Schlagzeile einsetzen (5 Min)
+[ ] Neue Info-Sektion einsetzen (10 Min)
+[ ] Jede Berufserfahrung mit neuen Bullets (20 Min)
+[ ] Alle Skills eintragen, Top 3 nach oben ziehen (15 Min)
+[ ] Banner/Cover aktualisieren (15-30 Min)
+[ ] Im-Fokus-Elemente ergaenzen (15 Min)
+[ ] Open to Work mit neuen Einstellungen (5 Min)
+[ ] 3 Empfehlungen mit der Vorlage anfragen (10 Min)
+[ ] Ersten Post (Thema 1) planen (10 Min)
+Gesamt: ~90 Min fuer die volle Profil-Transformation.
+
+## REGELN
+- Nutze immer echte, aktuelle Stellenanzeigen (Job-Connector oder eingefuegt). Erfinde Themen-DNA nie aus dem Gedaechtnis - Recruiter-Sprache aendert sich nach Branche, Jahr und Region.
+- Schreib immer zuerst die Schlagzeile um. Sie ist am staerksten gewichtet. Alles andere ist zweitrangig.
+- Stopf nie Keywords. Die KI bestraft Schlagwort-Listen. Themen-DNA natuerlich einweben - durch Kontext belegt, nicht nur gelistet.
+- Keine leeren Buzzwords: "leidenschaftlich", "ergebnisorientiert", "Synergie", "Thought Leader", "Guru", "Rockstar", "Ninja".
+- Quantifiziere Ergebnisse. "Umsatz gesteigert" ist schwach. "Umsatz in 18 Monaten um 40% gesteigert" ist stark.
+- Stuetzt die Erfahrung einen Begriff nicht glaubwuerdig, NIMM ihn nicht auf - die KI erkennt und rankt unbelegte Behauptungen ab.
+- Grosser Wechsel (andere Branche/Rolle)? Sag es offen und passe an: mehr uebertragbare Skills, mehr Featured, mehr Aktivitaet.
+- Halt die Sprache menschlich. Recruiter und KI belohnen Profile, die nach einem echten Menschen klingen, nicht nach Lebenslauf.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Job-Connector — echte Anzeigen ziehen</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Such 8-12 aktuelle Anzeigen für [Zielrolle] und nutze sie als Referenz.</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

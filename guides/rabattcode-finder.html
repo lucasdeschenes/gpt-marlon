@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatGPT Rabattcode-Finder — nie wieder vollen Preis zahlen — GPT Marlon Guides</title>
+  <meta name="description" content="Bevor du auf „Bestellen“ klickst, schickst du ChatGPT im Agent-Modus los: Es sucht aktive Rabattcodes, Cashback und versteckte Deals, öffnet einen Browser und testet Code für Code direkt im Warenkorb. Drei Kern-Prompts bilden den Ablauf, sieben Bonus-Prompts decken Preis-Tracking, Alternativen, Cashback-Stapeln und Verhandlung ab. Den finalen Kauf bestätigst du selbst." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Alltag</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">ChatGPT Rabattcode-Finder — nie wieder vollen Preis zahlen</h1>
+      <p class="page-sub">Bevor du auf „Bestellen“ klickst, schickst du ChatGPT im Agent-Modus los: Es sucht aktive Rabattcodes, Cashback und versteckte Deals, öffnet einen Browser und testet Code für Code direkt im Warenkorb. Drei Kern-Prompts bilden den Ablauf, sieben Bonus-Prompts decken Preis-Tracking, Alternativen, Cashback-Stapeln und Verhandlung ab. Den finalen Kauf bestätigst du selbst.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">ChatGPT</span>
+        <span class="chip">Alltag</span>
+        <span class="chip">10 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/rabattcode-finder.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Der Agent-Modus recherchiert und testet Codes und legt Artikel in den Warenkorb, schließt den Kauf aber nicht selbst ab — Warenkorb und Endpreis prüfst und bestätigst du selbst. Rabattcodes und Preise ändern sich laufend; eine Ersparnis ist nicht garantiert. Weil der Agent Webseiten automatisch interpretiert, vorher Banking-, Mail- und Zahlungs-Tabs schließen (Prompt-Injection-Risiko).</div>
+
+      <section class="guide-section">
+        <h2>So funktioniert’s</h2>
+        <p>Du hast einen Artikel im Warenkorb; bevor du auf „Bestellen“ klickst, schickst du ChatGPT einmal los: Es sucht selbst nach aktiven Rabattcodes, probiert sie im Checkout durch und sagt dir, welcher am meisten spart. Möglich macht das der <b>Agent-Modus</b> von ChatGPT: Statt dir nur eine Liste zu geben (von der die Hälfte abgelaufen ist), öffnet ChatGPT einen eigenen Browser, geht zur Kaufseite, legt den Artikel in den Warenkorb und testet Code für Code durch.</p>
+<p><b>Begriff — Agent-Modus:</b> eine Funktion, bei der die KI nicht nur antwortet, sondern selbstständig einen Browser steuert (Seiten aufrufen, klicken, Formulare ausfüllen, Text eingeben). Du gibst das Ziel vor, ChatGPT übernimmt die Klicks.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Was du brauchst &amp; Agent-Modus aktivieren</h2>
+        <ul><li>Einen ChatGPT-Account mit <b>Plus-, Pro- oder Team/Business-Abo</b> — der Agent-Modus ist derzeit nicht im kostenlosen Tarif enthalten.</li><li>Sonst nichts: keine Browser-Erweiterung, keine zusätzliche App.</li></ul>
+<p>Ein Teil der Prompts funktioniert auch im normalen Chat, die eigentliche Stärke entfaltet sich aber erst im Agent-Modus. Aktivieren: ChatGPT direkt bitten — „Nutze den Agent-Modus“ oder „Öffne einen Browser und teste das für mich.“</p>
+<p><b>Selbst prüfen:</b> Reagiert ChatGPT nur mit einer Textliste, statt einen Browser zu öffnen, war der Agent-Modus nicht aktiv — noch einmal ausdrücklich danach fragen.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Die 3 Kern-Prompts</h2>
+        <p>Diese drei Prompts bilden den eigentlichen Ablauf — in dieser Reihenfolge nutzen:</p>
+<ul><li><b>Prompt 1 — Der Code-Jäger:</b> Du gibst den Link zum Produkt, ChatGPT durchsucht Coupon-Seiten, Händlerseiten, soziale Netzwerke, Foren und Deal-Aggregatoren nach Rabattcodes, Promos, Cashback, Studenten- und Neukundenaktionen und sortiert erkennbar Abgelaufenes aus. → Prompt 1.</li><li><b>Prompt 2 — Der Auto-Tester:</b> Mit aktivem Agent-Modus öffnet ChatGPT einen Browser, legt den Artikel in den Warenkorb und testet jeden Code aus Prompt 1 einzeln durch — am Ende: welcher hat funktioniert, welcher war abgelaufen, welcher spart am meisten. → Prompt 2.</li><li><b>Prompt 3 — Der Rundum-Check:</b> Hast du mehrere Kauf-Tabs offen, geht ChatGPT alle nacheinander durch. → Prompt 3.</li></ul>
+<p><b>Sicherheitshinweis:</b> Weil der Agent aktiv im Browser klickt und Seiteninhalte automatisch interpretiert, kann er durch versteckte Anweisungen auf manipulierten Webseiten getäuscht werden (Prompt-Injection). Schließe vor dem Rundum-Check alle Tabs mit Online-Banking, E-Mail-Postfach oder gespeicherten Zahlungsdaten. Lass den Agenten nie eine echte Bestellung final abschließen, ohne Warenkorb und Gesamtpreis vorher selbst zu prüfen.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>7 Bonus-Prompts</h2>
+        <p>Diese gehen über die reine Codesuche hinaus und decken weitere Wege ab, beim Einkaufen zu sparen:</p>
+<ul><li><b>Preis-Tracker:</b> prüft Preisverlauf und bevorstehende Sales — verlässliche Verlaufsdaten sind aber nicht für jeden Shop verfügbar, die Einschätzung ist ein Anhaltspunkt. → Prompt 4.</li><li><b>Alternativen-Finder:</b> findet dasselbe Produkt (oder eine Alternative) günstiger bei anderen Händlern, als Zweitmarke, generalüberholt oder als Rückläufer. → Prompt 5.</li><li><b>Abo-Check:</b> Rabattcode, günstigerer Tarif oder kostenlose Alternative je Abo — inkl. möglichem Retention-Angebot bei Kündigung. → Prompt 6.</li><li><b>Cashback-Stapler:</b> kombiniert Promo-Code, Cashback-Portal (z. B. Rakuten, TopCashback), vergünstigte Gutscheinkarte und Kreditkarten-Prämien. → Prompt 7.</li><li><b>Verhandlungs-Skript:</b> Skript für Chat, E-Mail oder Telefon (stark bei Internet, Versicherung, Miete, B2B-Software). → Prompt 8.</li><li><b>Preisschutz-Check:</b> prüft, ob der Preis nach dem Kauf gefallen ist, und formuliert eine Erstattungsanfrage. → Prompt 9.</li><li><b>Sammelbestellungs-Optimierer:</b> findet den günstigsten Gesamtweg für mehrere Artikel inkl. Versandkosten. → Prompt 10.</li></ul>
+<p><b>DACH-Hinweis:</b> Preisschutz-Richtlinien sind vor allem in den USA verbreitet, in Deutschland, Österreich und der Schweiz seltener und uneinheitlich. Verwechsle sie nicht mit dem gesetzlichen Widerrufsrecht (14 Tage Rückgabe in der EU) — das betrifft die Rückgabe, nicht automatisch eine Preisdifferenz.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schnellübersicht — alle 10 Prompts</h2>
+        <table><thead><tr><th>#</th><th>Prompt</th><th>Was er macht</th></tr></thead><tbody><tr><td>1</td><td>Der Code-Jäger</td><td>Findet aktuell gültige Rabattcodes für einen bestimmten Link</td></tr><tr><td>2</td><td>Der Auto-Tester</td><td>Testet jeden Code live im Browser und nennt den besten</td></tr><tr><td>3</td><td>Der Rundum-Check</td><td>Führt den Prozess für alle offenen Shopping-Tabs aus</td></tr><tr><td>4</td><td>Preis-Tracker</td><td>Prüft Preisverlauf und bevorstehende Sales</td></tr><tr><td>5</td><td>Alternativen-Finder</td><td>Findet dasselbe Produkt günstiger woanders</td></tr><tr><td>6</td><td>Abo-Check</td><td>Findet Rabatte oder kostenlose Alternativen für Abos</td></tr><tr><td>7</td><td>Cashback-Stapler</td><td>Stellt zusammen, wie sich mehrere Rabatte kombinieren lassen</td></tr><tr><td>8</td><td>Verhandlungs-Skript</td><td>Formuliert ein Skript für einen niedrigeren Preis</td></tr><tr><td>9</td><td>Preisschutz-Check</td><td>Prüft Preissenkungen für eine mögliche Erstattung</td></tr><tr><td>10</td><td>Sammelbestellungs-Optimierer</td><td>Findet den günstigsten Weg für mehrere Artikel zugleich</td></tr></tbody></table>
+<p><b>Kurz zusammengefasst:</b> Der Agent-Modus ersetzt kein eigenes Kopfrechnen — prüfe den finalen Warenkorb und Gesamtpreis vor dem Kauf immer noch einmal selbst. Verfügbare Codes, Cashback-Angebote und Preispolitiken ändern sich laufend und hängen vom Händler ab; eine Garantie auf Ersparnis gibt es nicht.</p>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 1 — Der Code-Jäger</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich möchte etwas von [URL] kaufen. Finde mir jeden aktuell gültigen Rabattcode, jede Promo-Aktion, jedes Cashback-Angebot und versteckte Deals. Keine abgelaufenen Codes.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 2 — Der Auto-Tester</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Geh auf die Seite, leg den Artikel in den Warenkorb und teste jeden Code einzeln durch. Sag mir, welcher mir am meisten spart.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-3">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 3 — Der Rundum-Check</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Mach das für jeden offenen Tab, in dem ich gerade etwas kaufen möchte.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-4">
+        <div class="prompt-head">
+          <span class="prompt-label">Bonus 1 — Der Preis-Tracker</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich möchte [Produkt] bei [Shop] kaufen. Prüfe den Preisverlauf für diesen Artikel. Ist das der niedrigste Preis der letzten Zeit? Steht ein Sale bevor? Sollte ich warten oder jetzt kaufen?</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-5">
+        <div class="prompt-head">
+          <span class="prompt-label">Bonus 2 — Der Alternativen-Finder</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich möchte [Produkt] für [Preis] kaufen. Finde mir das exakt gleiche Produkt oder eine vergleichbare Alternative günstiger. Prüfe andere Händler, Zweitmarken, generalüberholte Ware und Rückläufer-Angebote.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-6">
+        <div class="prompt-head">
+          <span class="prompt-label">Bonus 3 — Der Abo-Check</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Das sind alle Abos, die ich aktuell bezahle: [Liste]. Finde mir für jedes einen Rabattcode, einen günstigeren Tarif oder eine kostenlose Alternative mit vergleichbarem Funktionsumfang. Sag mir auch, ob es ein Kündigungs-Angebot (Retention-Rabatt) gibt.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-7">
+        <div class="prompt-head">
+          <span class="prompt-label">Bonus 4 — Der Cashback-Stapler</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich kaufe [Produkt] bei [Shop] für [Preis]. Finde mir jede Möglichkeit, Rabatte zu stapeln: Kreditkarten-Cashback, Cashback-Portale (z. B. Rakuten oder TopCashback), vergünstigte Gutscheinkarten und Promo-Codes. Wie hoch ist der maximal mögliche Gesamtrabatt?</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-8">
+        <div class="prompt-head">
+          <span class="prompt-label">Bonus 5 — Das Verhandlungs-Skript</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich möchte für [Produkt/Leistung] von [Unternehmen] einen niedrigeren Preis verhandeln. Schreib mir ein Skript für Chat, E-Mail oder Telefon. Nenne konkrete Argumente, Vergleichspreise und was ich sagen kann, falls abgelehnt wird.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-9">
+        <div class="prompt-head">
+          <span class="prompt-label">Bonus 6 — Der Preisschutz-Check</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich habe [Produkt] vor [X Tagen] bei [Shop] für [Preis] gekauft. Prüfe, ob der Preis seitdem gefallen ist. Falls ja, formuliere mir eine Anfrage an den Kundenservice, um die Differenz erstattet zu bekommen.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-10">
+        <div class="prompt-head">
+          <span class="prompt-label">Bonus 7 — Der Sammelbestellungs-Optimierer</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich muss diese Artikel kaufen: [Liste]. Finde den günstigsten Weg, alle zu bekommen. Prüfe, ob ein Kauf bei einem Händler mit sitewide-Rabattcode günstiger ist als der jeweils billigste Einzelanbieter. Berücksichtige die Versandkosten.</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

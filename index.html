@@ -115,7 +115,10 @@
       justify-content: center;
       font-size: 1.1rem;
       box-shadow: 0 0 20px rgba(124,58,237,0.4);
+      overflow: hidden;
     }
+    .nav-logo-icon img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 10px; }
+    .btn-primary svg, .btn-secondary svg, .ig-follow-btn svg { vertical-align: -3px; }
 
     .nav-logo-text {
       font-family: 'Space Grotesk', sans-serif;
@@ -1103,18 +1106,20 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">🤖</div>
+      <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
       <span class="nav-logo-text">GPT<span>Marlon</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="#tools">Tools</a></li>
       <li><a href="#instagram">Content</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="guides.html">Guides</a></li>
+      <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
       <li><a href="coaching.html">Coaching</a></li>
-      <li><a href="partnerships.html">Partnerships</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="#join" class="nav-cta">Get Free Training →</a></li>
+      <li><a href="partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
       <span class="icon-sun">☀️</span>
       <span class="icon-moon">🌙</span>
@@ -1133,39 +1138,40 @@
 
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
-      AI Tools Training
+      <span data-en="AI Tools Training">KI-Tools Training</span>
     </div>
 
     <h1>
-      Stop Guessing.<br />
-      <span class="gradient-text">Master AI Tools</span><br />
-      Like a Pro.
+      <span data-en="Stop Guessing.">Schluss mit Raten.</span><br />
+      <span class="gradient-text" data-en="Master AI Tools">Meistere KI-Tools</span><br />
+      <span data-en="Like a Pro.">wie ein Profi.</span>
     </h1>
 
     <p>
-      Learn how to use ChatGPT, Claude, Midjourney, and the fastest-growing AI tools
-      to build projects, create content, and automate your workflow — in half the time.
+      <span data-en="Learn how to use ChatGPT, Claude, Midjourney, and the fastest-growing AI tools to build projects, create content, and automate your workflow — in half the time.">Lerne, wie du ChatGPT, Claude, Midjourney und die schnellst wachsenden KI-Tools nutzt, um Projekte zu bauen, Content zu erstellen und deinen Workflow zu automatisieren — in der halben Zeit.</span>
     </p>
 
     <div class="hero-actions">
-      <a href="#join" class="btn-primary">
-        🚀 Start for Free
+      <a href="#" class="btn-primary" data-community>
+        <span data-en="🚀 Join the Community">🚀 Community beitreten</span>
       </a>
       <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="btn-secondary">
-        📸 Instagram
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+        Instagram
       </a>
       <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="btn-secondary">
-        🎵 TikTok
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg>
+        TikTok
       </a>
     </div>
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">27K+</div>
+        <div class="hero-stat-num" data-stat="followers">27K+</div>
         <div class="hero-stat-label">Followers</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">3.4M+</div>
+        <div class="hero-stat-num" data-stat="views_30d">3.4M+</div>
         <div class="hero-stat-label">Monthly Views</div>
       </div>
       <div class="hero-stat">
@@ -1206,10 +1212,10 @@
   <section class="tools-section" id="tools">
     <div class="container">
       <div class="tools-header fade-up">
-        <div class="section-label">What You'll Learn</div>
-        <h2 class="section-title">The AI Toolkit You Actually Need</h2>
+        <div class="section-label"><span data-en="What You'll Learn">Das lernst du</span></div>
+        <h2 class="section-title"><span data-en="The AI Toolkit You Actually Need">Das KI-Toolkit, das du wirklich brauchst</span></h2>
         <p class="section-desc">
-          Hands-on training for the tools that matter. No fluff, no theory — just real workflows that save you hours every week.
+          <span data-en="Hands-on training for the tools that matter. No fluff, no theory — just real workflows that save you hours every week.">Praxisnahes Training für die Tools, die zählen. Kein Bla-Bla, keine Theorie — nur echte Workflows, die dir jede Woche Stunden sparen.</span>
         </p>
       </div>
 
@@ -1264,10 +1270,10 @@
     <div class="container">
       <div class="steps-layout">
         <div>
-          <div class="section-label fade-up">How It Works</div>
-          <h2 class="section-title fade-up">From Zero to AI Power User</h2>
+          <div class="section-label fade-up"><span data-en="How It Works">So funktioniert's</span></div>
+          <h2 class="section-title fade-up"><span data-en="From Zero to AI Power User">Vom Anfänger zum KI-Power-User</span></h2>
           <p class="section-desc fade-up" style="margin-bottom: 2.5rem;">
-            A clear path from beginner to confident AI user. Follow along with real examples and hands-on practice.
+            <span data-en="A clear path from beginner to confident AI user. Follow along with real examples and hands-on practice.">Ein klarer Weg vom Anfänger zum sicheren KI-Nutzer. Mit echten Beispielen zum Mitmachen.</span>
           </p>
 
           <div class="steps-list">
@@ -1336,8 +1342,8 @@
   <section class="testimonials-section">
     <div class="container">
       <div class="testimonials-header fade-up">
-        <div class="section-label">Results</div>
-        <h2 class="section-title">What People Are Saying</h2>
+        <div class="section-label"><span data-en="Results">Ergebnisse</span></div>
+        <h2 class="section-title"><span data-en="What People Are Saying">Was andere sagen</span></h2>
       </div>
 
       <div class="testimonials-grid">
@@ -1386,16 +1392,18 @@
       <div class="instagram-layout">
         <div class="fade-up">
           <div class="section-label">@gptmarlon</div>
-          <h2 class="section-title">Daily AI Tips on Instagram</h2>
+          <h2 class="section-title"><span data-en="Daily AI Tips on Instagram">Täglich KI-Tipps auf Instagram</span></h2>
           <p class="section-desc">
-            Short, punchy videos that show you exactly how to use the latest AI tools — every single day. No fluff. Just what works.
+            <span data-en="Short, punchy videos that show you exactly how to use the latest AI tools — every single day. No fluff. Just what works.">Kurze, knackige Videos, die dir genau zeigen, wie du die neuesten KI-Tools nutzt — jeden Tag. Kein Bla-Bla. Nur was funktioniert.</span>
           </p>
           <div style="display:flex; gap:.7rem; flex-wrap:wrap">
             <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="ig-follow-btn">
-              📸 Follow @gptmarlon
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+              Follow @gptmarlon
             </a>
             <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="ig-follow-btn" style="background:var(--bg3); border:1px solid var(--border); color:var(--text)">
-              🎵 TikTok
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg>
+              TikTok
             </a>
           </div>
         </div>
@@ -1413,8 +1421,8 @@
             </div>
           </div>
           <div class="ig-stats-row">
-            <div class="ig-stat-item"><div class="ig-stat-num">27K+</div><div class="ig-stat-lbl">Followers</div></div>
-            <div class="ig-stat-item"><div class="ig-stat-num">3.4M+</div><div class="ig-stat-lbl">Monthly Views</div></div>
+            <div class="ig-stat-item"><div class="ig-stat-num" data-stat="followers">27K+</div><div class="ig-stat-lbl">Followers</div></div>
+            <div class="ig-stat-item"><div class="ig-stat-num" data-stat="views_30d">3.4M+</div><div class="ig-stat-lbl">Monthly Views</div></div>
             <div class="ig-stat-item"><div class="ig-stat-num">Daily</div><div class="ig-stat-lbl">Updates</div></div>
           </div>
         </div>
@@ -1423,8 +1431,8 @@
       <!-- real reels, embedded and playable -->
       <div class="reels-row">
         <div class="reel-card fade-up">
-          <div class="reel-stat"><span class="reel-views">704K+ views</span><span class="reel-label">breakout reel</span></div>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaTAWouIVD7/" data-instgrm-version="14" style="background:transparent; border:0; margin:0; width:100%; min-width:0"></blockquote>
+          <div class="reel-stat"><span class="reel-views">192K+ views</span><span class="reel-label">sponsored · Higgsfield</span></div>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaX1BwVKYgm/" data-instgrm-version="14" style="background:transparent; border:0; margin:0; width:100%; min-width:0"></blockquote>
         </div>
         <div class="reel-card fade-up">
           <div class="reel-stat"><span class="reel-views">527K+ views</span><span class="reel-label">CV rewrite with Claude</span></div>
@@ -1438,10 +1446,10 @@
 
       <div class="tiktok-cta fade-up">
         <div>
-          <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem">Also on TikTok 🎵</div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem"><span data-en="Also on TikTok 🎵">Auch auf TikTok 🎵</span></div>
           <div style="color:var(--muted); font-size:.9rem; margin-top:.2rem">Same daily AI content — follow @gptmarlon on TikTok too.</div>
         </div>
-        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="btn-primary">Follow on TikTok →</a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="btn-primary"><span data-en="Follow on TikTok →">Auf TikTok folgen →</span></a>
       </div>
     </div>
   </section>
@@ -1450,10 +1458,10 @@
   <section class="email-section" id="join">
     <div class="container">
       <div class="email-box fade-up">
-        <div class="section-label">Free Training</div>
-        <h2 class="section-title">Get the AI Toolkit Newsletter</h2>
+        <div class="section-label"><span data-en="Free Training">Kostenlos</span></div>
+        <h2 class="section-title"><span data-en="Get the AI Toolkit Newsletter">Hol dir den KI-Toolkit Newsletter</span></h2>
         <p class="section-desc">
-          Weekly AI tool breakdowns, prompt templates, and exclusive workflows — straight to your inbox. Free forever.
+          <span data-en="Weekly AI tool breakdowns, prompt templates, and exclusive workflows — straight to your inbox. Free forever.">Wöchentliche KI-Tool-Analysen, Prompt-Vorlagen und exklusive Workflows — direkt in dein Postfach. Für immer kostenlos.</span>
         </p>
 
         <form class="email-form" onsubmit="handleSubmit(event)">
@@ -1475,22 +1483,24 @@
   <footer>
     <div class="footer-inner">
       <a href="#" class="nav-logo">
-        <div class="nav-logo-icon">🤖</div>
+        <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
         <span class="nav-logo-text">GPT<span>Marlon</span></span>
       </a>
 
       <ul class="footer-links">
-        <li><a href="about.html">About</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
         <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="partnerships.html">Partnerships</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="sitemap.xml">Sitemap</a></li>
+        <li><a href="partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+        <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
       </ul>
 
       <div class="footer-socials">
-        <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="footer-social" title="Instagram">📸</a>
-        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="footer-social" title="TikTok">🎵</a>
-        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email">✉️</a>
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
       </div>
     </div>
     <div style="text-align:center; margin-top:2rem;">
@@ -1555,5 +1565,8 @@
     }
   </script>
   <script async src="https://www.instagram.com/embed.js"></script>
+  <script src="assets/stats.js"></script>
+  <script src="assets/community.js"></script>
+  <script src="assets/lang.js"></script>
 </body>
 </html>

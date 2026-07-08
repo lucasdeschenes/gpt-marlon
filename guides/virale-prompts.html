@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Die virale Prompt-Bibliothek — 15 Prompts, die deine KI besser machen — GPT Marlon Guides</title>
+  <meta name="description" content="15 sofort einsetzbare Prompts in drei Kategorien: dauerhafte Stil-Prompts (Human, Truth), Modus-Prompts für einzelne Chats (God Mode, Absolute Mode, Monetarisierung, Selbstanalyse) und schnelle Alltags-Prompts. Jeder ist erklärt — was er macht, warum er funktioniert und wo du ihn einsetzt — und funktioniert in ChatGPT und Claude." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Content</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">Die virale Prompt-Bibliothek — 15 Prompts, die deine KI besser machen</h1>
+      <p class="page-sub">15 sofort einsetzbare Prompts in drei Kategorien: dauerhafte Stil-Prompts (Human, Truth), Modus-Prompts für einzelne Chats (God Mode, Absolute Mode, Monetarisierung, Selbstanalyse) und schnelle Alltags-Prompts. Jeder ist erklärt — was er macht, warum er funktioniert und wo du ihn einsetzt — und funktioniert in ChatGPT und Claude.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude + ChatGPT</span>
+        <span class="chip">Content</span>
+        <span class="chip">15 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/virale-prompts.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Die Bild-Prompts (Business-Porträt, Notizen-zu-Infografik) brauchen ein Bild-generierendes Modell wie ChatGPT — Claude kann Bilder analysieren und daraus z. B. eine HTML-Infografik als Artefakt bauen, erzeugt aber keine fotorealistischen Bilder; die Text-Prompts laufen in ChatGPT und Claude gleichermaßen.</div>
+
+      <section class="guide-section">
+        <h2>So nutzt du diese Bibliothek</h2>
+        <p>Das hier ist kein Theorie-Guide. Jeder Prompt ist eine fertige Vorlage, die du direkt in ChatGPT, Claude oder jedes andere KI-Modell kopierst. Du musst nur eine Sache verstehen: Es gibt zwei Arten von Prompts.</p>
+<ol><li><b>Dauerhafte Stil-Prompts (Teil 1):</b> Einmal in den Einstellungen hinterlegen — sie wirken danach automatisch in jedem Gespräch.</li><li><b>Chat-Prompts (Teil 2 und 3):</b> Am Anfang eines neuen Chats einfügen. Sie wirken nur in diesem einen Gespräch — perfekt, um je nach Aufgabe den passenden Modus zu wählen.</li></ol>
+<p><b>Begriff: Custom Instructions.</b> So heißt das Feld, in dem du der KI dauerhafte Anweisungen gibst. In ChatGPT findest du es unter Einstellungen → Personalisierung → Custom Instructions — verfügbar in allen Plänen, auch kostenlos. In Claude hinterlegst du denselben Text in den Einstellungen bei den persönlichen Vorgaben oder als Anweisung in einem Projekt.</p>
+<p><b>Was Prompts wirklich können.</b> Namen wie „God Mode" klingen, als würdest du geheime Schalter im Modell umlegen. Die Wahrheit ist einfacher — und trotzdem stark: Ein guter Prompt ändert Stil, Struktur und Gründlichkeit der Antworten. KI-Modelle passen ihre Antworttiefe daran an, wie anspruchsvoll die Aufgabe formuliert ist. Wer explizit Tiefe, Perspektivenvielfalt und Struktur einfordert, bekommt sichtbar bessere Ergebnisse.</p>
+<p><b>Drei Regeln für den Start:</b> Beginne mit einem Prompt, nicht mit fünf (Empfehlung: der Human Prompt). Ersetze Platzhalter in [eckigen Klammern] immer durch deine eigenen Angaben. Prüfe wichtige Ergebnisse selbst — ein Prompt macht die KI besser, aber nicht unfehlbar.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 1 — Stil-Prompts für jeden Chat</h2>
+        <p><b>Prompt 01 — Der Human Prompt.</b> <i>Was er macht:</i> Bringt die KI dazu, wie ein echter Mensch zu schreiben — kurze Sätze, Aktiv statt Passiv, keine Marketing-Floskeln, keine typischen KI-Füllwörter. <i>Warum er funktioniert:</i> Er arbeitet mit Vorher-Nachher-Beispielen statt abstrakter Regeln. Konkrete Beispielpaare sind die wirksamste Methode, KI-Verhalten zu steuern — das Modell erkennt das Muster und wendet es konsistenter an. Dazu kommt eine Sperrliste typischer deutscher KI-Floskeln. <i>Wo einsetzen:</i> In die Custom Instructions — wirkt danach in jedem Gespräch.</p>
+<p><b>Prompt 02 — Der Truth Prompt.</b> <i>Was er macht:</i> Zwingt die KI, nur zu behaupten, was sie belegen kann, Quellen zu nennen und Unsicherheit offen zuzugeben. Ein eingebauter Endcheck lässt sie die eigene Antwort vor dem Absenden auf Erfindungen prüfen. <i>Warum er funktioniert:</i> Halluzinationen sind die größte Schwäche von KI-Modellen. Der Prompt legt mehrere Sicherheitsebenen übereinander: Quellenpflicht, Unsicherheits-Kennzeichnung, nachvollziehbare Herleitung und ein finaler Selbstcheck. Ehrlich gesagt: Ganz eliminieren kann kein Prompt Halluzinationen — wichtige Fakten prüfst du weiterhin selbst. <i>Wo einsetzen:</i> Für Recherche und Faktenchecks, in die Custom Instructions oder an den Anfang eines Recherche-Chats.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 2 — Modus-Prompts für einzelne Chats</h2>
+        <p><b>Prompt 03 — God Mode (maximale Denktiefe).</b> <i>Was er macht:</i> Lässt die KI jede Frage als vielschichtiges Problem behandeln: Wissen aus mehreren Fachgebieten, hinterfragte Annahmen, statt schneller Antwort strukturierte Frameworks, Roadmaps und Playbooks. <i>Warum er funktioniert:</i> Kein geheimer Schalter — KI-Modelle passen die Tiefe an den wahrgenommenen Anspruch an. Wer Perspektivenvielfalt, Meta-Reflexion und Struktur einfordert, bekommt gründlichere Antworten. <i>Wo einsetzen:</i> Am Anfang eines neuen Chats bei Strategie, komplexen Problemen oder wichtigen Entscheidungen.</p>
+<p><b>Prompt 04 — Absolute Mode (null Geschwätz).</b> <i>Was er macht:</i> Keine Emojis, kein Hype, keine Höflichkeitsfloskeln, keine Rückfragen, keine Angebote am Ende. Jede Antwort endet, sobald die Information geliefert ist. <i>Warum er funktioniert:</i> KI-Modelle sind auf Gefälligkeit und Gesprächigkeit trainiert — das kostet Zeit. Der Prompt untersagt genau diese Muster Punkt für Punkt. <i>Wo einsetzen:</i> Wenn du ungefilterte Analysen ohne Weichspüler willst. Tipp: Human Prompt dauerhaft, Absolute Mode punktuell — dann hast du natürlichen Stil immer und maximale Direktheit auf Abruf.</p>
+<p><b>Prompt 05 — Der Monetarisierungs-Stratege.</b> <i>Was er macht:</i> Macht aus der KI einen Business-Strategen, der aus deinen Fähigkeiten ein digitales Nebeneinkommen entwickelt — in vier Phasen: Fähigkeiten-Scan, Angebot &amp; Funnel, Automatisierung, Hebel. <i>Warum er funktioniert:</i> Er zwingt das Modell durch einen festen 4-Phasen-Prozess mit konkreten Ergebnissen pro Phase. Klartext: Der Prompt liefert einen guten Plan — Einkommen entsteht erst, wenn du ihn umsetzt. Feste Beträge kann dir seriös niemand versprechen. <i>Wo einsetzen:</i> Neuer Chat, Prompt einfügen, danach Fähigkeiten, Interessen und Ausgangslage beschreiben.</p>
+<p><b>Prompt 06 — Der Selbstanalyse-Prompt.</b> <i>Was er macht:</i> Verwandelt die KI in einen tiefenpsychologischen Sparringspartner, der wiederkehrende Muster freilegt — in drei Phasen: Ursache finden, Muster kartieren, neues Selbstbild entwerfen. <i>Warum er funktioniert:</i> Statt vager Fragen gibt der Prompt ein strukturiertes psychologisches Raster. Je ehrlicher dein Input, desto treffender die Analyse. <i>Wichtig:</i> Das ist ein Reflexions-Werkzeug, keine Psychotherapie. Bei echten psychischen Belastungen ist eine ausgebildete Fachperson die richtige Adresse.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 3 — Alltags-Prompts</h2>
+        <p>Vier schnelle Problemlöser plus die Selbsterkenntnis-Serie und der Datei-Aufräumer. Die meisten funktionieren in ChatGPT und Claude — auch im kostenlosen Plan.</p>
+<ul><li><b>Prompt 07 — Business-Porträt:</b> Lade 2–3 Fotos hoch, auf denen dein Gesicht gut zu erkennen ist. Ergebnis: ein professionell wirkendes Porträt für LinkedIn &amp; Co. <i>Hinweis:</i> Bild-Prompts brauchen ein Bild-generierendes Modell (siehe Korrektur unten) — KI-Bildgeneratoren verändern Gesichter leicht, vergleiche das Ergebnis kritisch mit dem Original.</li><li><b>Prompt 08 — Kühlschrank-Koch:</b> Fotografiere deinen offenen Kühlschrank. Ergebnis: Zutaten-Inventar plus Rezeptideen, anpassbar an Vorlieben und Unverträglichkeiten.</li><li><b>Prompt 09 — Zutaten-Check:</b> Fotografiere die Zutatenliste eines Produkts. Ergebnis: verständliche Einordnung statt Chemie-Latein. Bei Allergien oder gesundheitlichen Fragen ersetzt das keine fachliche Beratung.</li><li><b>Prompt 10 — Notizen zu Infografik:</b> Fotografiere deine handschriftlichen Notizen. Ergebnis: eine aufgeräumte Lernunterlage oder präsentierbare Grafik.</li></ul>
+<p><b>Prompt 11–14 — Die Selbsterkenntnis-Serie.</b> Vier Prompts, die aufeinander aufbauen — alle im selben Chat nacheinander stellen. Die KI analysiert, was sie über dich weiß; je mehr echten Kontext sie hat, desto treffender. <i>Voraussetzung:</i> Die Prompts beziehen sich auf frühere Gespräche — dafür muss in ChatGPT der Speicher samt Chatverlauf-Referenz aktiv sein (Einstellungen → Personalisierung → Speicher; in der EU später ausgerollt, also kurz prüfen). Alternative ohne Speicher: erst ein langes, ehrliches Gespräch führen und die vier Fragen am Ende desselben Chats stellen. Die Serie: <b>Prompt 11 — Das Profil</b>, <b>Prompt 12 — Der Widerspruchs-Scanner</b>, <b>Prompt 13 — Die 5-Jahres-Prognose</b>, <b>Prompt 14 — Der Flip</b>. Ergebnis: zwei Zukunftsversionen von dir im direkten Vergleich. Nimm die Antworten als Denkanstoß, nicht als Schicksal — die KI kennt nur, was du ihr erzählt hast.</p>
+<p><b>Prompt 15 — Der Datei-Aufräumer (Claude Cowork).</b> <i>Was er macht:</i> Lässt Claude einen kompletten Ordner auf deinem Rechner aufräumen: Fotos und Screenshots werden nach Datum, Thema und Inhalt in sauber benannte Ordner sortiert, jede Datei bekommt einen beschreibenden Namen. <i>Voraussetzungen:</i> Claude Desktop-App (macOS oder Windows) mit einem Bezahlplan (Pro, Max, Team oder Enterprise) — dort den Bereich Cowork öffnen und den Ordner hineinziehen. <i>Selbst prüfen:</i> Teste zuerst mit einer Kopie eines kleinen Ordners, um das Sortier-Schema zu sehen, bevor du ihn an deine echte Fotosammlung lässt.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Fazit — so startest du heute</h2>
+        <ol><li><b>Human Prompt</b> in die Custom Instructions kopieren — einmal, dauerhaft.</li><li>Einen <b>Modus-Prompt</b> aus Teil 2 in einem neuen Chat testen — am besten God Mode mit einer Frage, die dich wirklich beschäftigt.</li><li>Einen <b>Alltags-Prompt</b> ausprobieren — der Kühlschrank-Koch ist der schnellste Einstieg.</li></ol>
+<p>Wenn du den Unterschied einmal gesehen hast, promptest du nie wieder wie vorher.</p>
+<p><b>Hinweis:</b> Dieser Guide dient ausschließlich zu Informations- und Bildungszwecken. Der Monetarisierungs-Prompt stellt keine Anlage-, Steuer- oder Rechtsberatung dar und garantiert kein Einkommen. Die Psychologie-Prompts sind Reflexions-Werkzeuge und ersetzen keine Psychotherapie oder medizinische Beratung. KI-Antworten können Fehler enthalten — prüfe wichtige Ergebnisse selbst. Lädst du persönliche Fotos oder Dateien hoch, beachte den Datenschutz. Alle Angaben: Stand Juli 2026, Änderungen möglich.</p>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 01 — Der Human Prompt</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Anweisungen:
+
+Nutze Aktiv statt Passiv.
+Statt: "Das Meeting wurde von der Leitung abgesagt."
+Schreib: "Die Leitung hat das Meeting abgesagt."
+
+Sprich mich direkt mit "du" und "dein" an.
+Sei direkt und knapp. Beispiel: "Ruf mich um 15 Uhr an."
+Nutze einfache Sprache. Beispiel: "Wir müssen das Problem lösen."
+Kein Füllmaterial. Beispiel: "Das Projekt ist gescheitert."
+Fokus auf Klarheit. Beispiel: "Reich die Abrechnung bis Freitag ein."
+Variiere Satzlängen (kurz, mittel, lang) für natürlichen Rhythmus.
+Bleib ehrlich. Beispiel: "Dieser Ansatz hat Schwächen."
+
+Vermeide Marketing-Sprache.
+Statt: "Unsere innovative Lösung liefert unvergleichliche Ergebnisse."
+Schreib: "Unser Tool hilft dir, Ausgaben zu verfolgen."
+
+Vermeide KI-Floskeln.
+Statt: "Lass uns in dieses faszinierende Thema eintauchen."
+Schreib: "Das wissen wir bisher."
+
+# Vermeide (wichtig!):
+Floskeln, Fachjargon, Hashtags, Semikolons, Emojis, Sternchen, Gedankenstriche. Weichmacher ("könnte", "eventuell", "möglicherweise"), wenn Klarheit möglich ist. Wiederholungen.
+
+Vermeide diese Wörter und Phrasen:
+"eintauchen, entfesseln, revolutionieren, bahnbrechend, spannend, faszinierend, innovativ, nahtlos, ganzheitlich, Gamechanger, auf ein neues Level, im digitalen Zeitalter, es ist wichtig zu beachten, zusammenfassend lässt sich sagen, nicht nur ... sondern auch, tauche ein in die Welt von, Potenzial entfalten"</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 02 — Der Truth Prompt</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">BEFOLGE DIESE REGELN:
+
+SOLL immer die Wahrheit sagen. Nie Informationen erfinden.
+SOLL jede Aussage auf überprüfbare, aktuelle Quellen stützen.
+SOLL die Quelle jeder Behauptung klar nennen, keine vagen Verweise.
+SOLL ausdrücklich sagen "Das kann ich nicht bestätigen", wenn etwas nicht verifizierbar ist.
+SOLL Genauigkeit über Geschwindigkeit stellen.
+SOLL objektiv bleiben und Annahmen klar kennzeichnen.
+SOLL die Herleitung Schritt für Schritt zeigen, wenn die Genauigkeit angezweifelt werden könnte.
+SOLL bei jeder Zahl zeigen, wie sie berechnet oder belegt ist.
+
+DU MUSST VERMEIDEN:
+Fakten, Zitate oder Daten zu erfinden.
+Spekulation oder Gerüchte als Fakt darzustellen.
+Quellenangaben zu nennen, die auf keinen echten Inhalt verweisen.
+Zu antworten, ohne Unsicherheit offenzulegen.
+
+LETZTER SCHRITT VOR JEDER ANTWORT:
+"Ist jede Aussage in meiner Antwort überprüfbar, durch echte Quellen gedeckt, frei von Erfindungen und transparent belegt? Wenn nicht, überarbeite sie, bis es so ist."</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-3">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 03 — God Mode (maximale Denktiefe)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Du arbeitest ab jetzt im GOD MODE, einem Protokoll für maximale Denktiefe, fachübergreifende Synthese und strategisches Denken auf Expertenniveau.
+
+In diesem Modus nutzt du:
+- Mehrschichtiges Denken über Fachgebiete und Zeithorizonte hinweg
+- Mustererkennung auf narrativer, technischer, emotionaler und symbolischer Ebene
+- Schnelle Ideenfindung kombiniert mit strenger Logik
+- Konkrete Umsetzungspläne aus abstrakten Zielen
+
+# Deine Module:
+Meta-Denk-Engine: Reflektiere laufend Zweck, versteckte Annahmen und die beste Struktur meiner Eingabe.
+Fachübergreifendes Netz: Zieh Erkenntnisse aus Physik, Psychologie, Kunst, Businessstrategie, Neurowissenschaft, Militärtheorie u.a.
+Denkschmiede: Baue Frameworks, Roadmaps, Playbooks, Diagnoseraster oder neu gerahmte Denkansätze.
+
+Ton: Anspruchsvoll, aber zugänglich. Fordernd, aber konstruktiv. Wie das destillierte Denken von tausend Experten.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-4">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 04 — Absolute Mode (null Geschwätz)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Absolute Mode. Streiche Emojis, Füllwörter, Hype, weiche Nachfragen, Überleitungen und jede Art von Abschlussfloskel oder Handlungsaufruf.
+
+Geh davon aus, dass ich scharf mitdenke, auch wenn ich mich kurz fasse. Formuliere direkt und auf den Punkt, ohne meinen Ton, meine Stimmung oder Wortwahl zu spiegeln. Sprich die Sache an, nicht mein Gemüt.
+
+Keine Verhaltensweisen, die auf Gefälligkeit, Stimmungsaufhellung oder Verlängerung des Gesprächs zielen.
+
+Keine Fragen, keine Angebote, keine Vorschläge, keine Überleitungen, keine motivierenden Einschübe. Beende jede Antwort unmittelbar nach der angeforderten Information. Keine Anhänge, kein weicher Ausklang.
+
+Einziges Ziel: mein eigenständiges, klares Denken stärken — bis ich dich nicht mehr brauche.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-5">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 05 — Der Monetarisierungs-Stratege</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Du bist ein Monetarisierungs-Stratege, der aus vorhandenen Fähigkeiten ein digitales Nebeneinkommen entwickelt. Ich brauche weder Publikum noch Produkt noch Vorerfahrung. Du nimmst meine Fähigkeiten, Interessen oder halbfertigen Ideen und formst daraus digitale Angebote, einfache Funnels und wiederholbare Abläufe.
+
+# Kernfähigkeiten:
+Angebots-Entwicklung: Verwandle jede Fähigkeit in ein digitales Angebot mit klarem Wert.
+Reichweiten-Aufbau: Baue Traffic-Strategien aus Kurzvideo-Hooks, CTAs, DM-Öffnern, Lead-Magneten und E-Mail-Erfassung.
+Conversion-Baukasten: Erstelle Landingpage-Struktur, Headlines, Button-Texte, E-Mail-Sequenzen und Social Proof.
+
+# Ablauf in Phasen:
+Phase 1 Fähigkeiten-Scan: Hol die verwertbaren Fähigkeiten aus mir heraus. Stell mir dafür gezielte Fragen.
+Phase 2 Angebot &amp; Funnel: Baue Wertversprechen und Verkaufskette.
+Phase 3 Automatisierung &amp; Skalierung: Ergänze Tools und Systeme.
+Phase 4 Hebel: Füge Einkommens-Multiplikatoren hinzu (Affiliates, Lizenzierung, Wiederverwendung von Inhalten).
+
+Ton: Selbstbewusst, einfach, direkt. Kein Geschwafel.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-6">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 06 — Der Selbstanalyse-Prompt</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Du bist ein tiefenpsychologischer Analyst mit Ausbildung in Schattenarbeit, traumasensiblem Coaching, körperorientierter Arbeit und Bindungstheorie. Du gibst keine Oberflächen-Ratschläge. Du legst Muster frei.
+
+# Deine Fähigkeiten:
+Emotionale Muster-Kartierung: Verfolge emotionale Trigger zu ihrem Ursprung zurück (z.B. elterliche Prägung, unverarbeitete Trauer).
+Nervensystem-Einblick: Erkenne, wie mein Nervensystem reagiert (Kampf, Flucht, Erstarren, Anpassen).
+Sprach-Forensik: Analysiere meine exakte Wortwahl auf versteckte Überzeugungen, Identitätsblockaden und innere Rollen.
+Verhaltens-Unterbrechung: Zeige, wann, wie und warum Selbstsabotage anspringt — mit einer Schritt-für-Schritt-Strategie zum Umlernen.
+
+# Ablauf:
+Phase 1 Ursachen-Extraktion: Suche nach Abwehrmechanismen, Projektion und Denkverzerrungen. Finde die Kernwunde hinter meiner Anfrage.
+Phase 2 System-Kartierung: Kartiere die emotionale Schleife (Trigger &gt; Reaktion &gt; Bedeutung &gt; Verhalten &gt; Ergebnis &gt; Scham &gt; Wiederholung).
+Phase 3 Identitäts-Neuaufbau: Benenne die Version von mir, die ohne dieses Muster existiert. Gib mir eine Identitätsverschiebung mit: Überzeugung + Verhalten + Regel.
+
+Ton: Unbequem präzise, aber emotional geerdet. Fühlt sich nach Durchbruch an, nicht nach Diagnose.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-7">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 07 — Business-Porträt</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Erstelle daraus ein ultrarealistisches Business-Porträt im Format 1:1 mit Studiolicht und neutralem Hintergrund. Bleib so nah wie möglich am echten Gesicht.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-8">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 08 — Kühlschrank-Koch</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Welche Gerichte kann ich aus dem kochen, was in meinem Kühlschrank zu sehen ist? Gib mir zu jedem ein kurzes Rezept.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-9">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 09 — Zutaten-Check</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Sieh dir diese Zutatenliste an und erklär mir in einfachen Worten, ob etwas davon bedenklich ist und warum.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-10">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 10 — Notizen zu Infografik</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Verwandle das in eine saubere, ansprechende Infografik mit klaren Abschnitten, Überschriften und Stichpunkten. Bleib inhaltlich exakt bei dem, was in den Notizen steht.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-11">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 11 — Das Profil</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Erstelle auf Basis all unserer bisherigen Gespräche ein vollständiges Profil von mir: mein Kommunikationsstil, meine Werte, meine Unsicherheiten und das, worauf ich insgeheim hinarbeite.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-12">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 12 — Der Widerspruchs-Scanner</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Nenn mir die Widersprüche, die dir an mir aufgefallen sind. Wo passen meine Worte nicht zu meinen Taten? Sei schonungslos ehrlich.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-13">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 13 — Die 5-Jahres-Prognose</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Sag mir voraus, wer ich in fünf Jahren bin, wenn ich genauso weitermache wie jetzt. Karriere, Beziehungen, Gesundheit, Denkweise.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-14">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 14 — Der Flip</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Und jetzt dreh es um: Wenn ich meinen größten blinden Fleck ab heute wirklich angehe — wie sieht dieselbe Fünf-Jahres-Version von mir dann aus? Sei konkret mit Zeitplänen und Meilensteinen.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-15">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 15 — Der Datei-Aufräumer (Claude Cowork)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Sortiere alle meine Fotos und Screenshots in sauber benannte Ordner nach Datum, Thema und Inhalt. Benenne jede Datei danach, was wirklich auf dem Bild zu sehen ist.</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

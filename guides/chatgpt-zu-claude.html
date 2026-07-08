@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Von ChatGPT zu Claude — der Migrations-Guide — GPT Marlon Guides</title>
+  <meta name="description" content="Nimm deine komplette ChatGPT-History, deinen Stil und deine Projekte mit zu Claude — in drei Schritten. Statt bei null anzufangen, exportierst du deinen Kontext, importierst ihn in ein Claude-Project und aktivierst Claudes Memory für dauerhaftes Gedächtnis." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Claude Basics</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">Von ChatGPT zu Claude — der Migrations-Guide</h1>
+      <p class="page-sub">Nimm deine komplette ChatGPT-History, deinen Stil und deine Projekte mit zu Claude — in drei Schritten. Statt bei null anzufangen, exportierst du deinen Kontext, importierst ihn in ein Claude-Project und aktivierst Claudes Memory für dauerhaftes Gedächtnis.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude + ChatGPT</span>
+        <span class="chip">Claude Basics</span>
+        <span class="chip">2 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/chatgpt-zu-claude.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Claude Memory, Projects und Skills sind echte Funktionen (Stand 2026, teils Pro/Team). Die Anthropic-Kurse unter anthropic.skilljar.com sind offiziell und kostenlos — „Skills" baust du dort bzw. in Claude selbst, ein automatisches Ein-Klick-Installieren aus einem Kurskatalog gibt es nicht.</div>
+
+      <section class="guide-section">
+        <h2>Schritt 1 — Deinen „Digital Passport" exportieren</h2>
+        <p>Der offizielle OpenAI-Export ist gut fürs Archiv, aber unübersichtlich. Was du zuerst brauchst, ist eine saubere Zusammenfassung deiner Persönlichkeit und Präferenzen — deinen „Digital Passport". Dafür fügst du <b>Prompt 1</b> in einen neuen ChatGPT-Chat ein. ChatGPT erstellt daraus ein sauberes Markdown-Dokument (<code>Digital_Passport.md</code>), das du herunterladen kannst.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 2 — Dein offizielles Archiv herunterladen</h2>
+        <p>Das ist das „Deep Knowledge" — die Rohdaten jedes Gesprächs, das du je geführt hast:</p>
+<ol><li>In ChatGPT: <b>Settings → Data Controls</b> aufrufen.</li><li>Auf <b>Export Data → Confirm Export</b> klicken.</li><li>Die E-Mail von OpenAI abwarten und die <b>.zip-Datei</b> herunterladen.</li><li>Aus dem ZIP brauchst du nur die <b>conversations.json</b>.</li></ol>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 3 — Das „Brain Transplant": Import zu Claude</h2>
+        <p>Wechsle zu Claude. Für beste Ergebnisse nutzt du <b>Claude Projects</b> (verfügbar auf Pro- und Team-Plänen), um alles organisiert zu halten:</p>
+<ol><li>Erstelle ein neues Project namens „Mein Kontext".</li><li>Lade beide Dateien hoch: <code>Digital_Passport.md</code> und <code>conversations.json</code>.</li><li>Füge <b>Prompt 2</b> ein — Claude nutzt den Passport als Stil-Vorgabe und indexiert deine History.</li></ol>
+      </section>
+
+      <section class="guide-section">
+        <h2>Pro-Tipp — Global statt Project</h2>
+        <p>Wenn du keine Projects nutzen willst: Gehe zu <b>Claude → Settings → Capabilities → Memory</b> und aktiviere beide Toggles — <b>„Search and reference chats"</b> und <b>„Generate memory from chat history"</b>. Damit merkt sich Claude relevanten Kontext über alle Chats hinweg, ohne dass du ein Project brauchst.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>3 Dinge, die du sofort tun solltest</h2>
+        <ol><li><b>Memory aktivieren:</b> Settings → Capabilities → Memory, beide Toggles einschalten.</li><li><b>ChatGPT-Daten exportieren:</b> Settings → Data Controls → Export Data, dann die <code>conversations.json</code> in Claude hochladen.</li><li><b>Weiterlernen:</b> Die offiziellen Anthropic-Kurse unter https://anthropic.skilljar.com/ sind kostenlos und zeigen dir, wie du Claude für deinen Use Case einrichtest — inklusive eigener <b>Claude Skills</b>.</li></ol>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 1 — Digital Passport in ChatGPT erstellen</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich migriere meinen Kontext zu Claude. Bitte analysiere dein Memory, deine Custom Instructions und die letzten Gespräche, um einen umfassenden "Digital Passport" zu erstellen. Enthalte:
+
+1. User Persona: Mein beruflicher Hintergrund und aktuelle Ziele.
+2. Kommunikationsstil: Mein bevorzugter Ton und Formatierung.
+3. Technische Präferenzen: Tools die ich nutze und Coding-Stile.
+4. Key Knowledge: Fakten die du über mein Business oder Leben "gespeichert" hast.
+
+Formatiere als sauberes Markdown-Dokument und stelle eine downloadbare .md-Datei bereit.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 2 — Kontext in Claude importieren</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich migriere meinen kompletten AI-Workspace von ChatGPT. Ich habe zwei Dateien hochgeladen:
+
+1. Digital_Passport.md: Meine Core Persona und Style Guide.
+2. conversations.json: Meine rohe Gesprächs-History.
+
+Deine Aufgabe:
+• Nutze den Passport als "System Instructions" für unsere Kommunikation.
+• Indexiere die conversations.json um meine vergangenen Projekte zu verstehen.
+• Gib eine kurze Zusammenfassung wer ich als User bin und liste 3 "Key Insights" die du gewonnen hast, um zu bestätigen dass du die Daten erfolgreich verarbeitet hast.</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

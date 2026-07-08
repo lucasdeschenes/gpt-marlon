@@ -1,0 +1,101 @@
+{
+  "file": "Digitaler_Fussabdruck_GPTMarlon.pdf",
+  "title": "Digitalen Fußabdruck löschen – mit Claude aus den Datenbanken verschwinden",
+  "slug": "digitaler-fussabdruck",
+  "category": "Alltag",
+  "tool": "Claude",
+  "summary": "Datenhändler und Personensuchseiten verkaufen deinen Namen, deine Adresse und mehr – der Guide zeigt ein 4-Schritte-System, um sie loszuwerden: finden, Löschanfragen schreiben, einreichen und wöchentlich kontrollieren. Claude übernimmt die Recherche und die Formulierung; im Agenten-Modus (Cowork bzw. Claude in Chrome) füllt es Formulare vor und bereitet Anfragen zum Absenden auf. Rechtliche Grundlage ist in DACH vor allem Art. 17 DSGVO (Recht auf Löschung).",
+  "sections": [
+    {
+      "heading": "Warum deine Daten überall auftauchen",
+      "body": "Jede Anmeldung, jeder Online-Kauf, jedes Formular hinterlässt Spuren. Diese Daten werden gesammelt, gebündelt und von **Datenhändlern** weiterverkauft – an fast jeden, der zahlt. Über **190+** bekannte Datenhändler und Personensuchseiten haben oft Namen, Adresse, Telefon, E-Mail, Alter und Namen von Verwandten gespeichert – öffentlich durchsuchbar.\n\n**Deine rechtliche Grundlage:** In Deutschland, Österreich und der Schweiz ist die **DSGVO** die wichtigste Grundlage: **Art. 17 DSGVO** gibt dir das „Recht auf Löschung\" gegenüber jedem Anbieter, der personenbezogene Daten verarbeitet – unabhängig vom Firmensitz, solange EU-Bürger:innen erfasst werden. In den USA greifen zusätzlich der CCPA (Kalifornien) und seit Januar 2026 der DELETE Act.\n\n**Wichtig:** Dieser Guide ist eine praktische Anleitung, keine Rechtsberatung. Bei komplexen Fällen (hartnäckige Weigerung, sensible Daten) lohnt sich eine spezialisierte Beratungsstelle oder Anwältin."
+    },
+    {
+      "heading": "Das 4-Schritte-System",
+      "body": "Der komplette Ablauf läuft in **einem einzigen Claude-Chat**. Fang keinen neuen Chat zwischen den Schritten an – Claude braucht den Kontext aus jedem Schritt.\n\n| Schritt | Was passiert | Dauer |\n|---|---|---|\n| 1. Suchen | Claude durchsucht das Web nach deinen Daten bei Datenhändlern und Personensuchseiten | 5–10 Min. |\n| 2. Schreiben | Claude erstellt individuelle Löschanfragen und findet den exakten Abmelde-Link je Seite | 2–5 Min. |\n| 3. Einreichen | Im Agenten-Modus besucht Claude jede Seite und bereitet die Löschanfrage vor / reicht sie ein | 15–30 Min. |\n| 4. Kontrollieren | Claude prüft wöchentlich jede Seite erneut und stellt ignorierte Anfragen neu | automatisch |\n\n**Wichtig:** Für den (teil-)automatischen Ablauf (Schritt 3) brauchst du einen bezahlten Claude-Plan mit Zugriff auf den **Agenten-Modus** (Claude Cowork bzw. die Claude-in-Chrome-Erweiterung). Schritt 1 und 2 funktionieren mit jedem Plan. Ohne Agenten-Zugriff übernimmst du Schritt 3 manuell.\n\n**Bevor du startest:** vollen Namen, Wohnort und deine meistgenutzte E-Mail bereithalten. Nutze idealerweise eine separate E-Mail-Alias-Adresse für die Löschanfragen. Plane 20–30 Minuten aktive Zeit plus mehrere Wochen Geduld ein."
+    },
+    {
+      "heading": "Schritt 1 – Deine Daten finden",
+      "body": "Öffne Claude und starte einen neuen Chat. Der **Prompt „Meine Daten finden\"** lässt Claude das Web nach deinen persönlichen Daten durchsuchen und je Seite Name/URL, gespeicherte Daten, den exakten Abmelde-Link und nötige Verifizierung auflisten. Rechne mit 15 bis 50+ Treffern.\n\nDanach vertiefst du im selben Chat mit dem **Prompt „Tiefere Suche\"** gezielt Kategorien wie Personensuchmaschinen, Register-Aggregatoren, Background-Check- und Lookup-Seiten.\n\n**Tipp:** Gib Namensvarianten an (mit/ohne zweiten Vornamen, Geburtsname, Spitzname) sowie frühere Wohnadressen.\n\n**Für DACH-Nutzer:innen:** Viele große Personensuchseiten sind US-Anbieter. In DACH ergänzt du die Suche um Telefonbuch- und Auskunftsseiten wie Das Örtliche, Klicktel und 11880 sowie deinen Namen bei Google mit lokalem Bezug (Stadt, Firma, Verein)."
+    },
+    {
+      "heading": "Schritt 2 – Löschanfragen schreiben",
+      "body": "Bleib im gleichen Chat. Mit dem **Prompt „Löschanfragen schreiben\"** erstellt Claude für jede gefundene Seite eine individuelle Anfrage – im geforderten Format (E-Mail, Webformular oder Brief), mit Verweis auf die passende Rechtsgrundlage (DSGVO Art. 17 bzw. CCPA/Landesrecht), deinen konkreten Daten, Bitte um Löschbestätigung und einer Frist von 30 Tagen. Für reine E-Mail-Löschungen gibt es zusätzlich die **E-Mail-Vorlage**.\n\n**Warum überhaupt Gesetze zitieren?** Datenhändler bekommen tausende Anfragen. Die mit konkreter Rechtsgrundlage („Gemäß Art. 17 DSGVO\") werden schneller bearbeitet, weil die Firma echte Konsequenzen sieht. „Bitte entferne mich\" wird leicht ignoriert."
+    },
+    {
+      "heading": "Schritt 3 – Automatisch einreichen",
+      "body": "Der **Agenten-Modus** von Claude (Cowork bzw. Claude in Chrome) öffnet einen Browser, navigiert zu Webseiten, füllt Formulare aus und klickt Buttons. Aktiviere ihn und nutze den **Prompt „Automatisch einreichen\"**: Bei Seiten mit Abmelde-Formular navigiert Claude hin, füllt es mit deinen Daten und sendet ab; bei Seiten, die eine E-Mail brauchen, entwirft Claude sie (du verschickst sie selbst). Claude führt ein Protokoll (bearbeitete Seiten, Datum, Bestätigungsnummern, nicht abgeschlossene Fälle).\n\n**Was der Agent grundsätzlich nicht kann:** keine Telefonanrufe, keine physischen Briefe, die meisten CAPTCHAs nicht selbst lösen. Plane für diese Fälle 15–20 Minuten eigene Zeit ein."
+    },
+    {
+      "heading": "Wenn die automatische Löschung nicht klappt",
+      "body": "Rechne bei einer typischen Liste mit 3–5 Seiten, die hängen bleiben.\n\n| Problem | So automatisiert wie möglich | Manueller Rückfall |\n|---|---|---|\n| CAPTCHA-Abfrage | Agent weiterlaufen lassen, er merkt sich den Fortschritt | CAPTCHA im selben Fenster lösen, „weiter\" tippen |\n| Nur Telefonanruf (z. B. MyLife) | Claude schreibt ein Wort-für-Wort-Skript | Selbst anrufen, zu Geschäftszeiten (~5 Min.) |\n| Ausweis-Upload gefordert | Claude prüft, ob wirklich nötig, und formuliert eine Rückfrage | Nur bei seriösen Anbietern, sensible Felder schwärzen |\n| Anfrage wird ignoriert | Claude schreibt Eskalation mit Fristsetzung | Nach 30 Tagen Beschwerde bei der Aufsichtsbehörde |\n| Kein Kontaktweg | Claude recherchiert per WHOIS Domain-Inhaber/Hoster + Abuse-Kontakt | Direkt bei der Datenschutz-Aufsichtsbehörde melden |\n| Daten tauchen wieder auf | Wöchentliches Monitoring fängt es ab und stellt neu ein | Kostenpflichtigen Removal-Service nutzen |\n\n**Auslagern (kostenpflichtig):** Incogni (breite Automatisierung), DeleteMe (Automatisierung + menschliche Nachbearbeitung), Optery (Transparenz mit Vorher-Nachher-Nachweis). Für die große Mehrheit der Seiten reicht der kostenlose Claude-Weg – ein bezahlter Dienst lohnt sich vor allem, wenn dir die Zeit für die wöchentliche Kontrolle fehlt. Prüfe vorher Datenschutzerklärung und Firmensitz des Dienstes."
+    },
+    {
+      "heading": "Schritt 4 – Wöchentliche Kontrolle einrichten",
+      "body": "Diesen Teil überspringen die meisten – dabei ist er der wichtigste. Datenhändler kaufen laufend neue Datensätze ein und legen dein Profil wieder an. Mit dem **Prompt „Laufende Kontrolle\"** prüft Claude jede Woche jede Seite erneut, reicht ignorierte Anfragen neu ein, eskaliert hartnäckige Seiten und gibt dir einen Statusbericht. Die meisten Seiten löschen innerhalb von 7–14 Tagen, manche brauchen bis zu 45 Tage.\n\n**Eskalation & Beschwerde:** Reagiert eine Seite nicht, nutzt du den **Eskalations-Prompt** und – wenn nichts hilft – den **Beschwerde-Prompt**. In der EU ist meist die Landesdatenschutzbehörde am Firmensitz zuständig (nicht der BfDI). Bei US-Seiten gehen Beschwerden an die FTC bzw. seit Januar 2026 an die Plattform DROP der kalifornischen CPPA. Eine Beschwerde führt selten zur sofortigen Löschung, setzt aber einen offiziellen Vorgang in Gang."
+    },
+    {
+      "heading": "Die größten US-Datenhändler & DACH-Quellen",
+      "body": "Fang bei den großen US-Seiten an, wenn du je in den USA warst:\n\n| Seite | Löschweg |\n|---|---|\n| Spokeo / Intelius / FastPeopleSearch / PeopleFinder / USSearch | Online-Abmeldeformular |\n| WhitePages | Online-Abmeldung (Telefon-Verifizierung) |\n| BeenVerified | E-Mail an privacy@beenverified.com |\n| TruePeopleSearch | Online-Removal-Tool |\n| Radaris | E-Mail-Anfrage (reagiert oft langsam) |\n| MyLife | Telefonanruf nötig (1-888-704-1900) |\n| Acxiom | Online-Abmeldung bei aboutthedata.com |\n| Oracle/Datalogix | E-Mail an privacy@oracle.com |\n\n**DACH-Quellen:** Das Örtliche / Klicktel / 11880 (Telefonbuch-Einträge – bei Klicktel selbst löschen/bearbeiten, bei Das Örtliche über DTM Deutsche Tele Medien); **Robinsonliste** (kostenlose Sperrliste gegen Werbung unter robinsonliste.de); **Auskunfteien** (kostenlose Selbstauskunft nach Art. 15 DSGVO, danach ggf. Löschung/Berichtigung nach Art. 17).\n\n**Ehrlich gesagt:** Ein Werbewiderspruch (Sperrvermerk, Robinsonliste) ist oft praktikabler als eine vollständige Löschung – nach kompletter Löschung „vergisst\" das System auch deinen Werbewiderspruch."
+    },
+    {
+      "heading": "Mehr als nur Datenhändler & langfristig sauber bleiben",
+      "body": "Räum auch den Rest deines Fußabdrucks auf: **Google-Suchergebnisse** (Prompt „Google-Bereinigung\": veraltete Cache-Einträge per Google-Löschanfrage entfernen), **vergessene alte Accounts** (Prompt „Alte Accounts finden\": haveibeenpwned.com, Nutzernamen-Varianten, an die Telefonnummer gebundene Konten) und **Social-Media-Privatsphäre** (Prompt „Social-Media-Check\": Einstellungen bei Facebook, Instagram, LinkedIn, X, TikTok).\n\n**Wichtig:** Einen Social-Media-Account zu löschen, löscht nicht automatisch alle Daten (Facebook behält Daten bis zu 90 Tage, manche Backups länger). Lade dein Datenarchiv vorher herunter.\n\n**Langfristig sauber bleiben** (Prompt „Privatsphäre-System\"): E-Mail-Alias (Apple Hide My Email, SimpleLogin, Firefox Relay), seriöser VPN, Datenschutz-Browser (Brave, Firefox mit strengem Tracking-Schutz, DuckDuckGo), Zweit-Telefonnummer und Zahlungs-Privatsphäre (virtuelle Einmal-Kartennummern).\n\n**Häufige Fehler:** zwischen den Schritten einen neuen Chat starten · nur ein paar Seiten abarbeiten · keine laufende Kontrolle · echte E-Mail für Abmeldungen nutzen · anrufpflichtige Seiten überspringen · Daten vor dem Account-Löschen nicht sichern · sofortige Ergebnisse erwarten (Löschungen dauern 7–45 Tage). Am Ende des Guides gibt es außerdem einen Prompt-Spickzettel mit Kurzversionen jeder Aufgabe."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Meine Daten finden",
+      "text": "# Meinen digitalen Fußabdruck finden\nDurchsuche das Internet nach allem, was du über mich finden kannst.\n\nMein Name: [Dein voller Name]\nMein Wohnort: [Deine Stadt, Land]\nMeine E-Mail: [Deine E-Mail-Adresse]\n\nListe jeden Datenhändler und jede Personensuchseite auf, die meine persönlichen Daten zeigt. Gib mir für jede Seite:\n\n1. Name der Seite und URL\n2. Welche Daten sie über mich haben (Adresse, Telefon, E-Mail etc.)\n3. Den exakten Abmelde- bzw. Lösch-Link für diese Seite\n4. Ob eine E-Mail-Bestätigung oder ein Ausweis nötig ist"
+    },
+    {
+      "label": "Tiefere Suche",
+      "text": "# Weitere Seiten finden\nGut, durchsuche jetzt auch diese Kategorien:\n\n- Personensuchmaschinen (Spokeo, WhitePages, BeenVerified, Intelius, TruePeopleSearch)\n- Öffentliche Register-Aggregatoren\n- Background-Check-Seiten\n- Marketing-Datenhändler\n- Telefonnummer-Lookup-Seiten\n- E-Mail-Lookup-Dienste\n- Social-Media-Scraping-Seiten\n\nSuche außerdem meinen Namen in Anführungszeichen bei Google und zeig mir alle Treffer, von denen ich entfernt werden sollte."
+    },
+    {
+      "label": "Löschanfragen schreiben",
+      "text": "# Löschanfragen schreiben\nSchreib mir jetzt die exakte Löschanfrage für jede gefundene Seite.\n\nFür jede Seite:\n1. Im Format, das die Seite konkret verlangt (E-Mail, Webformular oder Brief)\n2. Mit Verweis auf die passende Rechtsgrundlage (DSGVO Art. 17 bzw. CCPA/Landesrecht bei US-Seiten)\n3. Mit meinen konkreten Daten, die gelöscht werden sollen\n4. Mit Bitte um Löschbestätigung\n5. Mit einer Frist von 30 Tagen"
+    },
+    {
+      "label": "E-Mail-Vorlage",
+      "text": "# Für E-Mail-basierte Löschungen\nSchreib eine formelle Lösch-E-Mail für Seiten, die eine E-Mail-Anfrage verlangen. Enthalten soll sein:\n\n- Betreffzeile mit Verweis auf mein Recht auf Löschung (DSGVO Art. 17 bzw. CCPA)\n- Mein voller Name und Angaben, damit die Seite meinen Datensatz findet\n- Konkrete Aufforderung, alle meine Daten zu löschen\n- Bitte um schriftliche Bestätigung innerhalb 30 Tagen\n- Hinweis, dass ich mich sonst bei der Aufsichtsbehörde beschwere"
+    },
+    {
+      "label": "Automatisch einreichen (Agenten-Modus)",
+      "text": "# Löschanfragen einreichen\nGeh auf jede der gefundenen Seiten und reiche die Löschanfrage für mich ein.\n\nBei Seiten mit Abmelde-Formular:\n- Zur Abmelde-Seite navigieren\n- Formular mit meinen Daten ausfüllen\n- Anfrage absenden\n\nBei Seiten, die eine E-Mail brauchen:\n- Die E-Mail entwerfen (ich verschicke sie selbst)\n\nFühr ein Protokoll:\n- Welche Seiten bearbeitet wurden\n- Datum jeder Einreichung\n- Bestätigungsnummern\n- Seiten, die nicht abgeschlossen werden konnten (und warum)"
+    },
+    {
+      "label": "Anruf-Skript",
+      "text": "# Skript für Löschanruf\n[Seitenname] verlangt einen Anruf zur Löschung meines Profils. Schreib mir ein kurzes Skript zum Vorlesen, das:\n\n1. Meine Identität kurz bestätigt (Name, Profil-URL)\n2. Klar die vollständige Löschung meiner Daten verlangt\n3. Nach einer Bestätigungsnummer fragt\n4. Falls abgewimmelt: höflich auf mein gesetzliches Recht auf Löschung verweist"
+    },
+    {
+      "label": "Laufende Kontrolle",
+      "text": "# Laufende Kontrolle einrichten\nPrüf jetzt jede Woche jede Seite erneut und reiche jede ignorierte Löschanfrage neu ein, bis meine Daten komplett verschwunden sind.\n\nBei jeder wöchentlichen Kontrolle:\n1. Jede Seite nach meinem Namen durchsuchen\n2. Sind meine Daten noch da: die Löschanfrage neu einreichen\n3. Seiten, die 2+ Anfragen ignoriert haben, eskalieren (Beschwerde an Aufsichtsbehörde vorbereiten)\n4. Mir einen wöchentlichen Statusbericht geben: welche Seiten sauber sind, welche noch Daten zeigen"
+    },
+    {
+      "label": "Eskalationsschreiben",
+      "text": "# Für Seiten, die nicht reagieren\n[Seitenname] hat meine Löschanfrage seit [Anzahl] Wochen ignoriert.\n\nSchreib mir eine Eskalations-E-Mail, die:\n1. Auf mein ursprüngliches Anfragedatum und die Bestätigungsnummer verweist\n2. Die konkrete Rechtsgrundlage nennt, gegen die verstoßen wird\n3. Ankündigt, dass ich in 7 Tagen Beschwerde bei der zuständigen Aufsichtsbehörde einreiche\n4. Nach Name und Kontakt des/der Datenschutzbeauftragten fragt"
+    },
+    {
+      "label": "Beschwerde vorbereiten",
+      "text": "# Beschwerde einreichen\n[Seitenname] hat [Anzahl] Löschanfragen über [Zeitraum] ignoriert.\n\nHilf mir, eine Beschwerde vorzubereiten: fasse den Verlauf (Anfragedaten, verwendete Rechtsgrundlage, ausbleibende Antworten) in einer Chronologie zusammen, die ich in das Beschwerdeformular der zuständigen Behörde einfügen kann."
+    },
+    {
+      "label": "Google-Bereinigung",
+      "text": "# Google-Suchergebnisse entfernen\nSuche bei Google nach meinem Namen und finde Treffer, die persönliche Infos von mir zeigen.\n\nFür jeden Treffer:\n1. Prüfen, ob die Quelle ein Datenhändler ist (per Opt-out bearbeiten) oder etwas anderes\n2. Ist die Quellseite bereits entfernt: zeig mir, wie ich eine Google-Löschanfrage für den veralteten Cache-Eintrag stelle\n3. Ist die Quelle noch live: entwirf eine Löschanfrage für genau diese Seite"
+    },
+    {
+      "label": "Alte Accounts finden",
+      "text": "# Vergessene Accounts finden\nHilf mir, alte, vergessene Accounts zu finden. Prüfe:\n\n- Meine E-Mail-Adresse auf haveibeenpwned.com, um zu sehen, bei welchen Diensten meine Daten in einem Datenleck auftauchten\n- Varianten meines Nutzernamens auf Social-Media-Plattformen\n- Accounts, die an meine Telefonnummer gebunden sind\n\nFür jeden gefundenen Account: sag mir, wie ich ihn lösche bzw. eine Datenlöschung anfordere. Wenn der Dienst nicht mehr existiert: sag mir, ob meine Daten trotzdem noch irgendwo abrufbar sind."
+    },
+    {
+      "label": "Social-Media-Check",
+      "text": "# Social-Media-Konten absichern\nGeh mit mir die genauen Privatsphäre-Einstellungen durch, die ich auf jeder Plattform ändern sollte, um meine Datenpreisgabe zu minimieren:\n\n- Facebook: was auf 'Nur Freunde' bzw. 'Nur ich' gestellt werden sollte\n- Instagram: was privat gestellt werden sollte\n- LinkedIn: was vor öffentlicher Suche verborgen werden sollte\n- X/Twitter: was eingeschränkt werden sollte\n- TikTok: Konto-Privatsphäre\n\nUnd: wie verhindere ich, dass Suchmaschinen meine Social-Media-Profile indexieren?"
+    },
+    {
+      "label": "Privatsphäre-System aufbauen",
+      "text": "# Ein Datenschutz-System aufbauen\nHilf mir, ein einfaches System aufzubauen, damit meine Daten nicht weiter durchsickern.\n\nIch brauche:\n1. Einen E-Mail-Alias-Dienst (empfiehl die beste kostenlose Option)\n2. Ein Datenschutz-Browser-Setup mit den passenden Erweiterungen\n3. Einen Plan, welche Dienste meine echten Daten bekommen und welche nur einen Alias\n4. Eine vierteljährliche Erinnerung, die Datenhändler-Suche erneut laufen zu lassen\n\nMach es praktisch. Ich stelle nicht alles über Nacht um. Gib mir die 3 wichtigsten Änderungen für diese Woche."
+    }
+  ],
+  "note": "Der Original-Guide nutzt ChatGPT; hier auf Claude übertragen – dieselbe Aufgabe erledigt Claude per Websuche und im Agenten-Modus (Cowork bzw. Claude in Chrome), der einen bezahlten Plan mit Agenten-Zugriff voraussetzt. Keine Rechtsberatung."
+}

@@ -1,0 +1,69 @@
+{
+  "file": "Claude Finanz-Plugins installieren – GPTMarlon.pdf",
+  "title": "Finanz-Plugins für Claude installieren: dein eigener Research-Desk",
+  "slug": "finanz-connectors",
+  "category": "Finanzen",
+  "tool": "Claude",
+  "summary": "Anthropic bietet kostenlose Finanz-Plugins an, die Claude in Cowork die Analyse-Werkzeuge großer Fonds geben – technisch sind das Connectors (MCP) und Agent Skills. Der Guide führt Schritt für Schritt durch Account, Marketplace und Installation und liefert sechs fertige Prompts für DCF, Earnings, Comps und Screening. Kein FactSet oder Bloomberg nötig, denn die Plugins arbeiten mit öffentlichen Daten – eine Anlageberatung ersetzen sie aber nicht.",
+  "sections": [
+    {
+      "heading": "Zuerst: drei Begriffe, die alles erklären",
+      "body": "**Cowork** – Claudes Arbeitsmodus für längere Projekte; hier leben die Plugins.\n\n**Marketplace** – ein Verzeichnis von Plugins. Du fügst es einmal hinzu und installierst dann von dort.\n\n**Plugin** – ein Bündel an Fähigkeiten (Modelle, Screening, Earnings-Notizen), das zu Claude hinzukommt. Kein Code nötig.\n\n> Hinweis: Bei Claude sind diese „Plugins\" technisch **Connectors (MCP)** und **Agent Skills** – gebündelt und über den Anthropic-Marketplace installierbar."
+    },
+    {
+      "heading": "Teil 1 – Claude-Account einrichten",
+      "body": "Drei schnelle Dinge, bevor du irgendetwas installieren kannst:\n\n1. **Account auf claude.com erstellen.** Melde dich mit der E-Mail an, die du nutzen möchtest.\n2. **Claude Pro reicht.** Pro (ab 20 $/Monat) gibt dir vollen Zugriff auf die Plugins. Auch in Max, Team und Enterprise enthalten – nur der kostenlose Plan hat keinen Zugriff.\n3. **Desktop-App laden.** Öffne sie und klicke oben auf **Cowork** – der Arbeitsmodus, in dem die Plugins leben."
+    },
+    {
+      "heading": "Teil 2 – Den Marketplace hinzufügen",
+      "body": "Die Finanz-Plugins kommen direkt von Anthropic. Du fügst den Marketplace einmal hinzu und installierst danach von dort.\n\n1. Claude Desktop öffnen → Menü **Customize** → Tab **Plugins**.\n2. Im Bereich **Personal plugins** auf **+** klicken → **Add marketplace**.\n3. Der einfache Weg: **Browse Anthropic sources** → **Financial Services** suchen → **Add** → **Done**.\n4. Alternativ über GitHub: **Add from a repository** wählen und diese URL einfügen:\n\n`https://github.com/anthropics/financial-services-plugins`"
+    },
+    {
+      "heading": "Teil 3 – Plugins für Privatanleger installieren",
+      "body": "Das Anthropic-Repo enthält Plugins für jede Ecke der Finanzwelt – die meisten sind für Profis gedacht. Für normale Anleger erledigen vier Plugins fast alles.\n\n| Plugin | Bereich | Was es macht |\n|---|---|---|\n| **Financial Analysis** | Kern (zuerst installieren) | Modelle, Bewertungen, Comps, DCF – bringt auch die Datenanbindungen mit |\n| **Equity Research** | Research | Investment-Thesen, Aktien-Screening, Coverage-Reports, Katalysator-Kalender |\n| **Earnings Reviewer** | Earnings | Quartalszahlen-Analysen, Morning Notes und Modell-Updates zu deinen Werten |\n| **Market Researcher** | Markt | Sektor-Überblicke, Vergleichsanalysen und Ideenfindung für neue Investments |\n\n**So installierst du jedes Plugin:**\n1. Plugin im Marketplace suchen.\n2. Auf **Install** klicken – Financial Analysis zuerst.\n3. Plugins aktivieren sich automatisch. Skills rufst du mit `/` oder dem **+** auf."
+    },
+    {
+      "heading": "Teil 4 – Deine ersten Befehle",
+      "body": "Öffne eine Cowork-Session und probiere die beiden Beispiel-Prompts unten (**Morning Note zu Tesla** und **Sektor-Screen**). Beide funktionieren mit jeder Aktie oder Branche.\n\n**Tipp:** Ein `/` öffnet in jeder Cowork-Session das Befehlsmenü. Du kannst aber auch einfach auf Deutsch beschreiben, was du willst – Claude wählt das richtige Tool selbst.\n\n**Du brauchst kein FactSet oder Bloomberg:** Claude fragt dich, ob du dich mit Datenanbietern wie FactSet, Bloomberg, Morningstar oder S&P Global verbinden willst. Du brauchst keinen davon. Die Plugins arbeiten vollständig mit öffentlichen Daten – direkt aus Geschäftsberichten (10-K) und offiziellen Finanzkennzahlen, ohne kostenpflichtiges Abo. Die Ausnahme: Reports, die sich von selbst mit Live-Kursen aktualisieren, brauchen einen API-Zugang eines Drittanbieters. Für alles andere reichen die kostenlosen öffentlichen Daten."
+    },
+    {
+      "heading": "Deine 6 Starter-Prompts",
+      "body": "Die Befehle hinter den Plugins, die du gerade installiert hast: **DCF-Bewertung**, **Earnings-Recap**, **Sektor-Überblick**, **Morning Note**, **Vergleichsunternehmen (Comps)** und **Ideenfindung**. Kopieren, Platzhalter in [eckigen Klammern] ersetzen, ausführen.\n\n**Hinweis:** KI-generierte Finanzanalysen sind kein Ersatz für eigene Recherche und sollten vor einer Entscheidung geprüft werden. Dieser Guide ist keine Anlageberatung."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Beispiel – Morning Note zu Tesla",
+      "text": "Erstelle mir eine kurze Morning Note zu Tesla: relevante News der letzten 24 Stunden, anstehende Termine (Earnings, Auslieferungszahlen) und ob es heute etwas gibt, das ich beachten sollte. Stichpunktartig."
+    },
+    {
+      "label": "Beispiel – Sektor-Screen Gesundheit",
+      "text": "Screene den europäischen Gesundheitssektor und gib mir die 5 spannendsten Aktien — je mit zwei Sätzen zur These und dem größten Risiko."
+    },
+    {
+      "label": "Prompt 1 – DCF-Bewertung",
+      "text": "Erstelle eine DCF-Bewertung für [Unternehmen]. Nutze die letzten 5 Jahre aus den offiziellen Filings, projiziere die Free Cashflows für 5 Jahre und nenne deine Annahmen für Wachstum, Marge und Diskontsatz (WACC) explizit. Zeig eine Sensitivitätstabelle und am Ende den fairen Wert pro Aktie im Vergleich zum aktuellen Kurs."
+    },
+    {
+      "label": "Prompt 2 – Earnings-Recap",
+      "text": "Fasse die letzten Quartalszahlen von [Unternehmen] zusammen. Vergleiche Umsatz und Gewinn mit den Erwartungen und dem Vorjahresquartal, nenne die 3 wichtigsten Aussagen aus dem Earnings Call, das Guidance-Update und was den Kurs bewegt hat. Maximal eine halbe Seite."
+    },
+    {
+      "label": "Prompt 3 – Sektor-Überblick",
+      "text": "Gib mir einen Überblick über den [Sektor] in [Region]. Nenne die aktuellen Markttreiber und Risiken, die 5 größten Player mit ihrer Positionierung, typische Bewertungsniveaus (KGV, EV/EBITDA) und wo gerade die größten Chancen und Gefahren liegen."
+    },
+    {
+      "label": "Prompt 4 – Morning Note (Tagesbriefing)",
+      "text": "Erstelle eine Morning Note zu meinen Werten: [Aktie 1, Aktie 2, ...]. Pro Aktie: relevante News der letzten 24 Stunden, anstehende Termine (Earnings, Dividende) und ob es etwas gibt, das ich heute beachten sollte. Kurz und stichpunktartig."
+    },
+    {
+      "label": "Prompt 5 – Vergleichsunternehmen (Comps)",
+      "text": "Erstelle eine Vergleichsanalyse (Comps) für [Unternehmen]. Wähle 5–6 vergleichbare börsennotierte Wettbewerber und stelle Bewertungsmultiplikatoren (KGV, EV/EBITDA, EV/Umsatz) sowie Wachstum und Margen in einer Tabelle gegenüber. Sag mir am Ende, ob [Unternehmen] relativ teuer oder günstig ist."
+    },
+    {
+      "label": "Prompt 6 – Ideenfindung",
+      "text": "Ich suche neue Investmentideen im Bereich [Thema/Sektor]. Screene nach Unternehmen mit [Kriterien, z. B. Umsatzwachstum >10 %, soliden Margen, moderater Bewertung] und gib mir 5 Kandidaten — je mit zwei Sätzen zur These und dem größten Risiko."
+    }
+  ],
+  "note": "„Plugins\" sind bei Claude technisch Connectors (MCP) plus Agent Skills; die Analysen sind KI-generiert und keine Anlageberatung – prüfe sie vor jeder Entscheidung selbst."
+}

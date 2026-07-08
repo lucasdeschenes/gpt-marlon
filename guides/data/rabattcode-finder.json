@@ -1,0 +1,73 @@
+{
+  "file": "ChatGPT_Rabattcode-Finder_GPTMarlon_v2.pdf",
+  "title": "ChatGPT Rabattcode-Finder — nie wieder vollen Preis zahlen",
+  "slug": "rabattcode-finder",
+  "category": "Alltag",
+  "tool": "ChatGPT",
+  "summary": "Bevor du auf „Bestellen“ klickst, schickst du ChatGPT im Agent-Modus los: Es sucht aktive Rabattcodes, Cashback und versteckte Deals, öffnet einen Browser und testet Code für Code direkt im Warenkorb. Drei Kern-Prompts bilden den Ablauf, sieben Bonus-Prompts decken Preis-Tracking, Alternativen, Cashback-Stapeln und Verhandlung ab. Den finalen Kauf bestätigst du selbst.",
+  "sections": [
+    {
+      "heading": "So funktioniert’s",
+      "body": "Du hast einen Artikel im Warenkorb; bevor du auf „Bestellen“ klickst, schickst du ChatGPT einmal los: Es sucht selbst nach aktiven Rabattcodes, probiert sie im Checkout durch und sagt dir, welcher am meisten spart. Möglich macht das der **Agent-Modus** von ChatGPT: Statt dir nur eine Liste zu geben (von der die Hälfte abgelaufen ist), öffnet ChatGPT einen eigenen Browser, geht zur Kaufseite, legt den Artikel in den Warenkorb und testet Code für Code durch.\n\n**Begriff — Agent-Modus:** eine Funktion, bei der die KI nicht nur antwortet, sondern selbstständig einen Browser steuert (Seiten aufrufen, klicken, Formulare ausfüllen, Text eingeben). Du gibst das Ziel vor, ChatGPT übernimmt die Klicks."
+    },
+    {
+      "heading": "Was du brauchst & Agent-Modus aktivieren",
+      "body": "- Einen ChatGPT-Account mit **Plus-, Pro- oder Team/Business-Abo** — der Agent-Modus ist derzeit nicht im kostenlosen Tarif enthalten.\n- Sonst nichts: keine Browser-Erweiterung, keine zusätzliche App.\n\nEin Teil der Prompts funktioniert auch im normalen Chat, die eigentliche Stärke entfaltet sich aber erst im Agent-Modus. Aktivieren: ChatGPT direkt bitten — „Nutze den Agent-Modus“ oder „Öffne einen Browser und teste das für mich.“\n\n**Selbst prüfen:** Reagiert ChatGPT nur mit einer Textliste, statt einen Browser zu öffnen, war der Agent-Modus nicht aktiv — noch einmal ausdrücklich danach fragen."
+    },
+    {
+      "heading": "Die 3 Kern-Prompts",
+      "body": "Diese drei Prompts bilden den eigentlichen Ablauf — in dieser Reihenfolge nutzen:\n- **Prompt 1 — Der Code-Jäger:** Du gibst den Link zum Produkt, ChatGPT durchsucht Coupon-Seiten, Händlerseiten, soziale Netzwerke, Foren und Deal-Aggregatoren nach Rabattcodes, Promos, Cashback, Studenten- und Neukundenaktionen und sortiert erkennbar Abgelaufenes aus. → Prompt 1.\n- **Prompt 2 — Der Auto-Tester:** Mit aktivem Agent-Modus öffnet ChatGPT einen Browser, legt den Artikel in den Warenkorb und testet jeden Code aus Prompt 1 einzeln durch — am Ende: welcher hat funktioniert, welcher war abgelaufen, welcher spart am meisten. → Prompt 2.\n- **Prompt 3 — Der Rundum-Check:** Hast du mehrere Kauf-Tabs offen, geht ChatGPT alle nacheinander durch. → Prompt 3.\n\n**Sicherheitshinweis:** Weil der Agent aktiv im Browser klickt und Seiteninhalte automatisch interpretiert, kann er durch versteckte Anweisungen auf manipulierten Webseiten getäuscht werden (Prompt-Injection). Schließe vor dem Rundum-Check alle Tabs mit Online-Banking, E-Mail-Postfach oder gespeicherten Zahlungsdaten. Lass den Agenten nie eine echte Bestellung final abschließen, ohne Warenkorb und Gesamtpreis vorher selbst zu prüfen."
+    },
+    {
+      "heading": "7 Bonus-Prompts",
+      "body": "Diese gehen über die reine Codesuche hinaus und decken weitere Wege ab, beim Einkaufen zu sparen:\n- **Preis-Tracker:** prüft Preisverlauf und bevorstehende Sales — verlässliche Verlaufsdaten sind aber nicht für jeden Shop verfügbar, die Einschätzung ist ein Anhaltspunkt. → Prompt 4.\n- **Alternativen-Finder:** findet dasselbe Produkt (oder eine Alternative) günstiger bei anderen Händlern, als Zweitmarke, generalüberholt oder als Rückläufer. → Prompt 5.\n- **Abo-Check:** Rabattcode, günstigerer Tarif oder kostenlose Alternative je Abo — inkl. möglichem Retention-Angebot bei Kündigung. → Prompt 6.\n- **Cashback-Stapler:** kombiniert Promo-Code, Cashback-Portal (z. B. Rakuten, TopCashback), vergünstigte Gutscheinkarte und Kreditkarten-Prämien. → Prompt 7.\n- **Verhandlungs-Skript:** Skript für Chat, E-Mail oder Telefon (stark bei Internet, Versicherung, Miete, B2B-Software). → Prompt 8.\n- **Preisschutz-Check:** prüft, ob der Preis nach dem Kauf gefallen ist, und formuliert eine Erstattungsanfrage. → Prompt 9.\n- **Sammelbestellungs-Optimierer:** findet den günstigsten Gesamtweg für mehrere Artikel inkl. Versandkosten. → Prompt 10.\n\n**DACH-Hinweis:** Preisschutz-Richtlinien sind vor allem in den USA verbreitet, in Deutschland, Österreich und der Schweiz seltener und uneinheitlich. Verwechsle sie nicht mit dem gesetzlichen Widerrufsrecht (14 Tage Rückgabe in der EU) — das betrifft die Rückgabe, nicht automatisch eine Preisdifferenz."
+    },
+    {
+      "heading": "Schnellübersicht — alle 10 Prompts",
+      "body": "| # | Prompt | Was er macht |\n| --- | --- | --- |\n| 1 | Der Code-Jäger | Findet aktuell gültige Rabattcodes für einen bestimmten Link |\n| 2 | Der Auto-Tester | Testet jeden Code live im Browser und nennt den besten |\n| 3 | Der Rundum-Check | Führt den Prozess für alle offenen Shopping-Tabs aus |\n| 4 | Preis-Tracker | Prüft Preisverlauf und bevorstehende Sales |\n| 5 | Alternativen-Finder | Findet dasselbe Produkt günstiger woanders |\n| 6 | Abo-Check | Findet Rabatte oder kostenlose Alternativen für Abos |\n| 7 | Cashback-Stapler | Stellt zusammen, wie sich mehrere Rabatte kombinieren lassen |\n| 8 | Verhandlungs-Skript | Formuliert ein Skript für einen niedrigeren Preis |\n| 9 | Preisschutz-Check | Prüft Preissenkungen für eine mögliche Erstattung |\n| 10 | Sammelbestellungs-Optimierer | Findet den günstigsten Weg für mehrere Artikel zugleich |\n\n**Kurz zusammengefasst:** Der Agent-Modus ersetzt kein eigenes Kopfrechnen — prüfe den finalen Warenkorb und Gesamtpreis vor dem Kauf immer noch einmal selbst. Verfügbare Codes, Cashback-Angebote und Preispolitiken ändern sich laufend und hängen vom Händler ab; eine Garantie auf Ersparnis gibt es nicht."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Prompt 1 — Der Code-Jäger",
+      "text": "Ich möchte etwas von [URL] kaufen. Finde mir jeden aktuell gültigen Rabattcode, jede Promo-Aktion, jedes Cashback-Angebot und versteckte Deals. Keine abgelaufenen Codes."
+    },
+    {
+      "label": "Prompt 2 — Der Auto-Tester",
+      "text": "Geh auf die Seite, leg den Artikel in den Warenkorb und teste jeden Code einzeln durch. Sag mir, welcher mir am meisten spart."
+    },
+    {
+      "label": "Prompt 3 — Der Rundum-Check",
+      "text": "Mach das für jeden offenen Tab, in dem ich gerade etwas kaufen möchte."
+    },
+    {
+      "label": "Bonus 1 — Der Preis-Tracker",
+      "text": "Ich möchte [Produkt] bei [Shop] kaufen. Prüfe den Preisverlauf für diesen Artikel. Ist das der niedrigste Preis der letzten Zeit? Steht ein Sale bevor? Sollte ich warten oder jetzt kaufen?"
+    },
+    {
+      "label": "Bonus 2 — Der Alternativen-Finder",
+      "text": "Ich möchte [Produkt] für [Preis] kaufen. Finde mir das exakt gleiche Produkt oder eine vergleichbare Alternative günstiger. Prüfe andere Händler, Zweitmarken, generalüberholte Ware und Rückläufer-Angebote."
+    },
+    {
+      "label": "Bonus 3 — Der Abo-Check",
+      "text": "Das sind alle Abos, die ich aktuell bezahle: [Liste]. Finde mir für jedes einen Rabattcode, einen günstigeren Tarif oder eine kostenlose Alternative mit vergleichbarem Funktionsumfang. Sag mir auch, ob es ein Kündigungs-Angebot (Retention-Rabatt) gibt."
+    },
+    {
+      "label": "Bonus 4 — Der Cashback-Stapler",
+      "text": "Ich kaufe [Produkt] bei [Shop] für [Preis]. Finde mir jede Möglichkeit, Rabatte zu stapeln: Kreditkarten-Cashback, Cashback-Portale (z. B. Rakuten oder TopCashback), vergünstigte Gutscheinkarten und Promo-Codes. Wie hoch ist der maximal mögliche Gesamtrabatt?"
+    },
+    {
+      "label": "Bonus 5 — Das Verhandlungs-Skript",
+      "text": "Ich möchte für [Produkt/Leistung] von [Unternehmen] einen niedrigeren Preis verhandeln. Schreib mir ein Skript für Chat, E-Mail oder Telefon. Nenne konkrete Argumente, Vergleichspreise und was ich sagen kann, falls abgelehnt wird."
+    },
+    {
+      "label": "Bonus 6 — Der Preisschutz-Check",
+      "text": "Ich habe [Produkt] vor [X Tagen] bei [Shop] für [Preis] gekauft. Prüfe, ob der Preis seitdem gefallen ist. Falls ja, formuliere mir eine Anfrage an den Kundenservice, um die Differenz erstattet zu bekommen."
+    },
+    {
+      "label": "Bonus 7 — Der Sammelbestellungs-Optimierer",
+      "text": "Ich muss diese Artikel kaufen: [Liste]. Finde den günstigsten Weg, alle zu bekommen. Prüfe, ob ein Kauf bei einem Händler mit sitewide-Rabattcode günstiger ist als der jeweils billigste Einzelanbieter. Berücksichtige die Versandkosten."
+    }
+  ],
+  "note": "Der Agent-Modus recherchiert und testet Codes und legt Artikel in den Warenkorb, schließt den Kauf aber nicht selbst ab — Warenkorb und Endpreis prüfst und bestätigst du selbst. Rabattcodes und Preise ändern sich laufend; eine Ersparnis ist nicht garantiert. Weil der Agent Webseiten automatisch interpretiert, vorher Banking-, Mail- und Zahlungs-Tabs schließen (Prompt-Injection-Risiko)."
+}

@@ -1,0 +1,53 @@
+{
+  "file": "Claude_Skills_Guide_GPTMarlon.pdf",
+  "title": "Claude Skills: der komplette Guide",
+  "slug": "claude-skills",
+  "category": "Claude Basics",
+  "tool": "Claude",
+  "summary": "Skills bringen Claude bei, WIE er eine Aufgabe ausführen soll – welche Schritte, welches Format, welche Standards – anders als Memory, das sich nur Fakten über dich merkt. Der Guide erklärt einfach, was ein Skill ist, wie du ihn auf allen Plänen installierst (Anthropic-Skills per Toggle, Community-Skills als ZIP) und stellt 10 sofort einsatzbereite Skills vor. Kein Code nötig – nur einmal einrichten, danach wendet Claude den Skill automatisch an.",
+  "sections": [
+    {
+      "heading": "Was ist ein Skill? – ganz einfach erklärt",
+      "body": "Skills und die **Memory**-Funktion lösen ein ähnliches Problem auf unterschiedliche Weise. Memory merkt sich Fakten über dich („Marlon arbeitet im Marketing, mag kurze Texte\"). Was Memory nicht kann: Claude beibringen, WIE er eine komplexe Aufgabe genau ausführt. Genau das tun **Skills**.\n\n| Memory (eingebaut) | Skills (du installierst sie) |\n|---|---|\n| „Marlon bevorzugt kurze Texte\" | „Erstelle Reports immer in diesem Format\" |\n| Fakten & Präferenzen | Workflows & Qualitätsstandards |\n| Keine Schritt-für-Schritt-Logik | Exakte, wiederholbare Abläufe |\n\n**Die Analogie:** Ein Skill ist wie die Einarbeitung eines neuen Mitarbeiters – die Claude einmal lernt und nie wieder vergisst.\n\n**3 Dinge, die du wissen musst:** 1) Einmal einrichten – danach erkennt Claude selbst, wann der Skill relevant ist. 2) Je mehr du verfeinerst, desto besser wird er. 3) Kein technisches Wissen nötig – für Community-Skills lädst du nur eine ZIP-Datei hoch."
+    },
+    {
+      "heading": "Installation – Schritt für Schritt",
+      "body": "**Voraussetzung:** Alle Pläne (Free, Pro, Max, Team, Enterprise). Einrichten geht über Desktop/Web, nutzen überall.\n\n**Wichtig zuerst – Code-Ausführung aktivieren:** Skills funktionieren nicht ohne diese Einstellung. Claude.ai → **Einstellungen → Capabilities → „Code execution and file creation\"** einschalten. Das machst du einmal.\n\n1. **Code-Ausführung einschalten** (siehe oben) – der einzige Setup-Schritt.\n2. **Skill-Bereich öffnen:** In Claude.ai auf **Customize** → **Skills**.\n3a. **Anthropic-Skills einschalten** (z. B. Document Suite): bereits integriert – einfach den Toggle einschalten.\n3b. **Community-Skill als ZIP hochladen:** Skill-Ordner von GitHub herunterladen → als ZIP komprimieren → **+** → **Upload a skill** → ZIP auswählen.\n\n**Desktop vs. Mobile:** Skills nutzen geht überall (Desktop & Mobil). Anthropic-Skills einschalten, ZIPs hochladen und Skills verwalten geht **nur über Desktop/Web**. Einmal eingerichtet, funktionieren sie danach auch am Handy."
+    },
+    {
+      "heading": "Wo findest du Skills?",
+      "body": "- **Anthropic (offiziell):** `github.com/anthropics/skills` – qualitätsgeprüft und sicher. Empfohlener Startpunkt.\n- **Composio – Awesome Claude Skills:** `github.com/ComposioHQ/awesome-claude-skills` – große Community-Sammlung, 50+ Skills. Hier kommen 8 der 10 Skills dieses Guides her.\n- **obra Superpowers:** `github.com/obra/superpowers` – Framework für Entwickler, 20+ Skills speziell für professionelles Coding mit Claude Code."
+    },
+    {
+      "heading": "Die 10 Skills – Produktivität & Automation",
+      "body": "**#01 Rube MCP Connector** (Community/Composio): ein MCP-Gateway-Server, der Claude mit über 500 Apps verbindet (Gmail, Slack, GitHub, Notion, Linear, Airtable …). Einmal bei Rube authentifizieren, alle Verbindungen laufen darüber – keine separaten API-Keys. Installation: `npx @composio/rube-mcp` bzw. in Claude Code `/plugin install rube`.\n\n**#02 Superpowers** (Community/obra): obras Developer-Toolkit für **Claude Code**. Fügt drei Befehle hinzu: `/brainstorm` (durchdenkt Alternativen vor dem ersten Code), `/write-plan` (Implementierungsplan nach TDD), `/execute-plan` (Schritt für Schritt mit Validierung). Über 20 vorgefertigte Skills. Installation: `/plugin marketplace add obra/superpowers-marketplace` → `/plugin install superpowers`.\n\n**#03 Document Suite** (offiziell/Anthropic): bereits in Claude integriert. Macht Claude wirklich kompetent in Word, Excel, PowerPoint und PDF – mit echter Formatierung, echten Formeln und professionellen Layouts. Claude wendet die Skills automatisch an, wenn du ein Dokument anforderst. Installation: Customize → Skills → Document-Suite-Toggles einschalten."
+    },
+    {
+      "heading": "Die 10 Skills – Design & Kreativität",
+      "body": "**#04 Theme Factory** (Community): gibt Claude 10 vorgefertigte Designthemes mit abgestimmten Farben und Fonts. Du aktivierst ein Theme mit einem Satz, und alle HTML-Artifacts, Präsentationen und visuellen Outputs der Unterhaltung folgen diesem Stil. Eigene Themes aus deinen Lieblingsfarben sind möglich.\n\n**#05 Algorithmic Art** (Community): generiert p5.js-Generative-Art aus Text-Beschreibungen. Durch Seed-Nummern sind Ergebnisse reproduzierbar („Seed 42\" ergibt immer dasselbe Bild). Ausgabe: interaktiver HTML-Viewer, PNG/SVG-Export und bearbeitbarer Code. Unterstützt Flow Fields, Partikel-Systeme, rekursive Muster.\n\n**#06 Slack GIF Creator** (Community/Composio): erstellt für Slack optimierte animierte GIFs. Kennt Slacks 2-MB-Limit und optimiert automatisch. Du beschreibst in normaler Sprache, was du möchtest.\n\nInstallation (04–06): GitHub-Ordner von `ComposioHQ/awesome-claude-skills` als ZIP komprimieren → Customize → Skills → Upload."
+    },
+    {
+      "heading": "Die 10 Skills – Code & Entwicklung",
+      "body": "**#07 Webapp Testing** (Community): schreibt und führt **Playwright**-Automatisierungstests aus (Chrome, Firefox, Safari). Du beschreibst, was getestet werden soll; Claude schreibt den Test-Code, führt ihn aus und liefert einen Bericht. (Playwright muss installiert sein.)\n\n**#08 MCP Builder** (Community/Composio): generiert produktionsreifen MCP-Server-Boilerplate in TypeScript oder Python (FastMCP) – mit Error-Handling, Rate-Limiting, Input-Validierung, Logging und Security. Was sonst 2–4 Stunden Setup kostet, dauert unter 15 Minuten.\n\n**#09 Brand Guidelines** (Community/Composio): speichert vollständige Brand-Identitäten (Hex-Farben, Fonts, Tonalität, Schreibregeln). Anders als Theme Factory lassen sich mehrere komplette Marken verwalten und jederzeit wechseln – ideal für Agenturen.\n\n**#10 Systematic Debugging** (Community): erzwingt ein striktes 4-Phasen-Framework – 1) Beweise sammeln, 2) Muster analysieren, 3) Hypothesen minimal testen, 4) implementieren und dokumentieren. Eiserne Regel: KEIN Fix ohne Root Cause. Ergebnis laut Guide: ~95 % First-Fix-Rate statt ~40 %."
+    },
+    {
+      "heading": "Empfehlungen: so fängst du am besten an",
+      "body": "- **Fang mit Document Suite an** – er ist bereits eingebaut. Customize → Skills → Toggles bei Word, Excel und PowerPoint einschalten (unter 30 Sekunden), dann Claude um einen Excel-Report oder eine PowerPoint bitten.\n- **Rube + Superpowers sind „Daily Drivers\"** – Skills, die du bei jeder Session nutzt: Rube zum Verbinden deiner Apps, Superpowers für Entwickler mit Claude Code.\n- **Maximal 20–50 Skills gleichzeitig aktiv halten.** Claude lädt beim Start die Metadaten aller aktiven Skills (je ~30–50 Token). Bei 100 Skills werden tausende Token verschwendet und Claude wird langsamer. Faustregel: nur aktiv halten, was du regelmäßig nutzt.\n- **Community-Skills kurz prüfen:** Öffne die `SKILL.md` im ZIP, bevor du hochlädst. Die Repos von `anthropics/skills` und `ComposioHQ/awesome-claude-skills` sind community-geprüft; bei unbekannten Quellen kurz reinschauen."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Document Suite – Word-Report",
+      "text": "Erstelle einen Q3-Report als Word-Dokument mit Inhaltsverzeichnis und Zusammenfassung"
+    },
+    {
+      "label": "Document Suite – Excel-Budget",
+      "text": "Bau mir eine Excel-Tabelle für mein Monatsbudget mit automatischen Summen und Farbmarkierungen"
+    },
+    {
+      "label": "Document Suite – PowerPoint",
+      "text": "Erstelle eine 10-Slide PowerPoint Präsentation über KI-Trends 2026 mit professionellem Layout"
+    }
+  ],
+  "note": "Mehrere der vorgestellten Skills (Superpowers, MCP Builder, Webapp Testing, Rube) richten sich an Claude Code bzw. Entwickler; die No-Code-Skills für die Claude-App aktivierst du per Toggle, nachdem „Code execution and file creation\" eingeschaltet ist."
+}

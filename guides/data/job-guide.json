@@ -1,0 +1,85 @@
+{
+  "file": "Claude_Job_Guide_GPTMarlon.pdf",
+  "title": "Claude Job Guide: wie du Claude für deine Jobsuche nutzt",
+  "slug": "job-guide",
+  "category": "Karriere",
+  "tool": "Claude",
+  "summary": "Die kompakte Version des Bewerbungs-Workflows: Lebenslauf-Analyse, Erfahrungs-Rewrite nach der Google-XYZ-Formel und ein ATS-plus-Hiring-Manager-Test, ergänzt um Bonus-Prompts für Anschreiben, Interview-Prep, Gehaltsverhandlung, LinkedIn und Follow-ups. Auto-Bewerben läuft über Claude Cowork und die Claude-in-Chrome-Erweiterung – mit Pause vor jeder Einreichung.",
+  "sections": [
+    {
+      "heading": "So funktioniert's",
+      "body": "Applicant Tracking Systems (**ATS**) scannen nach Keywords und Formatierung und entscheiden, ob du überhaupt zum Recruiter durchkommst. Selbst wenn ein Mensch deinen Lebenslauf sieht, scannt er ihn im Durchschnitt nur **7 Sekunden**.\n\nClaude analysiert deinen Lebenslauf gegen die echte Stellenbeschreibung, findet die fehlenden Keywords, schreibt deine Erfahrungen mit bewährten Formeln um und prüft das Ergebnis aus zwei Perspektiven: ATS-Filter und Hiring Manager. Der Prozess dauert ca. 10 Minuten.\n\n**Was du brauchst:**\n1. Ein Claude-Konto (Free-Tier reicht für die Lebenslauf-Prompts)\n2. Deinen aktuellen Lebenslauf (PDF, Word oder Plain Text)\n3. Die Stellenbeschreibung der Stelle\n4. Für Auto-Bewerben: Claude Pro + Cowork + Claude-in-Chrome-Erweiterung"
+    },
+    {
+      "heading": "Schritt 1 – Die Lebenslauf-Analyse",
+      "body": "Lade deinen Lebenslauf und die Stellenbeschreibung zu Claude hoch. **Prompt 1** lässt Claude wie ein Senior Recruiter des jeweiligen Unternehmens denken und gibt dir eine ehrliche Bestandsaufnahme: Match-Score, die 5 wichtigsten fehlenden Keywords, 3 rote Flags, starke/schwache Abschnitte und einen Vergleich zu einem starken Kandidaten.\n\n**Tipp:** Überspringe diesen Schritt nicht. Die Analyse zeigt dir genau, was geändert werden muss und warum. Die meisten sind überrascht, was das ATS tatsächlich bestraft."
+    },
+    {
+      "heading": "Schritt 2 – Der Erfahrungs-Rewrite",
+      "body": "Bleib im selben Chat, damit Claude den Kontext der Analyse behält. **Prompt 2** schreibt deinen Erfahrungsabschnitt mit der **Google-XYZ-Formel** um: *Erreicht [X] gemessen an [Y] durch [Z].*\n\nAus einer Aufgabe („Führte ein 5-köpfiges Team\") wird eine Leistung („Reduzierte Deployment-Zeit um 40 % (gemessen an wöchentlicher Release-Velocity) durch Umstrukturierung des Teams in cross-funktionale Pods\"). Hiring Manager interessiert das Zweite."
+    },
+    {
+      "heading": "Schritt 3 – ATS + Hiring Manager Test",
+      "body": "Noch im selben Chat. **Prompt 3** testet deinen umgeschriebenen Lebenslauf aus zwei Perspektiven: dem ATS-Filter, der dich aussortiert, bevor ein Mensch dich sieht, und dem Hiring Manager, der 200 Lebensläufe am Stück liest und Gründe sucht, nein zu sagen.\n\n**Tipp:** Bitte Claude danach, den finalen Lebenslauf als sauberes **Artefakt** auszugeben – als .docx herunterladbar. Prüfe alle **[EINTRAGEN]**-Platzhalter und ergänze deine echten Zahlen vor dem Absenden."
+    },
+    {
+      "heading": "Bonus – Auto-Bewerben mit Cowork",
+      "body": "Sobald dein Lebenslauf optimiert ist, wechselst du zu **Claude Cowork**: Claude geht zu LinkedIn, findet passende Jobs und bereitet für jede Stelle eine individuelle Bewerbung vor. **Prompt 4** steuert das.\n\n**Wichtig:** Das benötigt Claude Pro (ca. 20 $/Monat), die Claude-Desktop-App im Cowork-Modus und die **Claude-in-Chrome-Erweiterung**. Sei in Chrome bei LinkedIn eingeloggt. Starte mit der Einstellung *Pause vor Einreichung*, um jede Bewerbung zu prüfen, bevor sie rausgeht. Behandle jede automatische Bewerbung wie einen Entwurf – und prüfe die Nutzungsbedingungen der Plattform."
+    },
+    {
+      "heading": "Bonus – 30-Sekunden-Anschreiben",
+      "body": "Die meisten Anschreiben sind generisches Bla-Bla. Der **Anschreiben-Prompt** generiert in ca. 30 Sekunden ein gezieltes Anschreiben, das Unternehmen, Stelle und deine stärksten Erfahrungen verbindet. Nutze ihn nach der Lebenslauf-Analyse.\n\n**Geheimtipp:** Das Erfolgsgeheimnis liegt im dritten Absatz. Die Lücke direkt anzusprechen zeigt Selbstwahrnehmung und Selbstvertrauen – genau die Eigenschaften, die dich in den „Ja\"-Stapel bringen."
+    },
+    {
+      "heading": "Bonus – Interview-Vorbereitung",
+      "body": "Der **Interview-Prompt** recherchiert das Unternehmen, sagt die wahrscheinlichen Fragen voraus und bereitet deine Antworten anhand echter Beispiele aus deinem Lebenslauf vor – plus eigene Fragen an das Unternehmen und ein Mock-Interview.\n\n**Das Mock-Interview** am Ende ist der wertvollste Teil: Die Fragen wirklich zu beantworten zwingt dich, den Ernstfall zu üben. Claude gibt dir nach jeder Antwort Feedback."
+    },
+    {
+      "heading": "Bonus – Gehaltsverhandlung",
+      "body": "Fast jedes Angebot hat Verhandlungsspielraum – und wie du fragst, ist wichtiger als was du forderst. Der **Gehaltsverhandlungs-Prompt** liefert Marktdaten, eine Gegenangebot-E-Mail, ein Telefongespräch-Skript und eine Abbruch-Analyse.\n\n**Tipp:** Nenne niemals zuerst eine Zahl. Auf „Was sind Ihre Gehaltsvorstellungen?\" antwortest du: „Ich würde gerne mehr über das Gesamtpaket erfahren, bevor wir Zahlen besprechen. Welchen Budgetrahmen haben Sie für diese Stelle?\""
+    },
+    {
+      "heading": "Bonus – LinkedIn-Optimizer & Follow-ups",
+      "body": "Dein LinkedIn-Profil lässt Recruiter von sich aus auf dich zukommen. Der **LinkedIn-Prompt** schreibt Headline, Über-mich, Erfahrungs-Punkte, Skills und Featured um. „Marketing Manager bei XYZ GmbH\" ist unsichtbar; „B2B SaaS Growth Marketer | Pipeline von 2M auf 14M skaliert | Demand Gen + ABM\" wird angeklickt.\n\nDer **Follow-up-Prompt** erzeugt drei E-Mails: nach der Bewerbung (Tag 5), nach dem Interview (innerhalb 24 Stunden) und ein Reminder (7 Tage nach dem Interview).\n\n**Der komplette Workflow:** 1. Lebenslauf analysieren → 2. Erfahrungen umschreiben → 3. Stress-Test → 4. LinkedIn optimieren → 5. Anschreiben generieren → 6. Jobs bewerben → 7. Interview vorbereiten → 8. Angebot verhandeln → 9. Nachfassen. Wiederhole Schritte 1–3 für jede Stelle. **Wichtig:** Überprüfe und personalisiere immer, was Claude generiert – Claude gibt dir die Struktur, du lieferst den Inhalt."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Prompt 1 – Lebenslauf-Analyse",
+      "text": "Verhalte dich wie ein Senior Recruiter des Unternehmens, bei dem ich mich bewerbe.\n\nAnalysiere meinen Lebenslauf gegen diese Stellenbeschreibung.\n\nGib mir:\n1. Einen Match-Score von 100\n2. Die 5 wichtigsten fehlenden Keywords, nach denen das ATS sucht\n3. Die 3 roten Flags, die ein Hiring Manager in unter 10 Sekunden entdecken wuerde\n4. Welche Abschnitte stark sind und warum\n5. Welche Abschnitte schwach sind und warum\n6. Wie mein Lebenslauf im Vergleich zu einem starken Kandidaten fuer diese Stelle aussieht\n\nSei brutal ehrlich. Ich moechte Probleme lieber jetzt loesen als spaeter geghostet werden."
+    },
+    {
+      "label": "Prompt 2 – Erfahrungs-Rewrite (gleicher Chat)",
+      "text": "Schreibe meinen Erfahrungsabschnitt mit diesen Regeln um:\n\n1. Baue die fehlenden Keywords natuerlich ein, aber erzwinge sie NICHT. Sie sollen sich normal anfuehlen.\n2. Behebe oder entferne jede rote Flag, die du erkannt hast.\n3. Nutze die Google-XYZ-Formel fuer jeden Punkt: 'Erreicht [X] gemessen an [Y] durch [Z]'\n4. Beginne jeden Punkt mit einem starken Aktionsverb. Nie 'Verantwortlich fuer' oder 'Geholfen mit'.\n5. Fuege ueberall konkrete Zahlen ein. Wenn ich keine angegeben habe, schlage realistische Platzhalter vor und markiere sie mit [EINTRAGEN].\n6. Halte jeden Punkt auf max. 1-2 Zeilen. Recruiter ueberfliegen. Dichte Abschnitte werden uebersprungen.\n7. Ordne Punkte nach Wirkung, nicht nach Datum. Das beeindruckendste Ergebnis kommt zuerst."
+    },
+    {
+      "label": "Prompt 3 – ATS + Hiring Manager Scan (gleicher Chat)",
+      "text": "Verhalte dich jetzt wie zwei verschiedene Personen:\n\nERST: Als ATS-Filter. Scanne meinen neuen Lebenslauf:\n- Wuerde er das ATS fuer diesen Job bestehen? (Ja/Nein)\n- Welche Keywords sind jetzt vorhanden, welche fehlen?\n- Gibt es Formatierungsprobleme, die den Parser verwirren wuerden? (Tabellen, Spalten, Sonderzeichen)\n\nDANN: Als Hiring Manager, der 200 Lebenslaeufe liest. Scanne meinen Lebenslauf:\n- Welche Abschnitte wuerdest du ueberspringen? Warum?\n- Was laesst dich stoppen (positiv oder negativ)?\n- Kaeme er in den 'Ja', 'Vielleicht' oder 'Nein' Stapel?\n- Schreibe Abschnitte um, die uebersprungen wuerden.\n\nGib mir die finale Version meines Lebenslaufs nach allen Korrekturen."
+    },
+    {
+      "label": "Prompt 4 – Auto-Bewerben (in Claude Cowork)",
+      "text": "Jetzt, wo mein Lebenslauf optimiert ist, geh zu LinkedIn und mache folgendes:\n\n1. Suche nach [JOBTITEL]-Stellen in [ORT], veroeffentlicht in den letzten [7/14/30] Tagen.\n2. Filtere auf Jobs, bei denen mein Lebenslauf mindestens 70% Match hat.\n3. Waehle die Top 10 Jobs, bei denen meine Chancen auf ein Interview am hoechsten sind.\n4. Fuer jeden Job:\n- Lies die vollstaendige Stellenbeschreibung\n- Passe meine Zusammenfassung und Kernpunkte an\n- Schreibe ein kurzes Anschreiben (max. 3 Saetze) mit einem spezifischen Unternehmensbezug\n- Reiche die Bewerbung ueber LinkedIn ein\n5. Danach: Sende mir eine Zusammenfassung:\n- Unternehmen + Jobtitel\n- Match-Score\n- Was du angepasst hast\n- Bewerbungsstatus (Eingereicht / Entwurf)\n\nPausiere vor jeder Einreichung und zeige mir die angepasste Version zuerst."
+    },
+    {
+      "label": "Anschreiben-Prompt (gleicher Chat wie Analyse)",
+      "text": "Schreibe ein Anschreiben fuer diese Stelle. Regeln:\n\n1. Erster Absatz: Nenne das Unternehmen und die Stelle. Beziehe dich auf EINE spezifische Sache ueber das Unternehmen (kuerzlicher Produktlaunch, News-Artikel, Unternehmenswert der mich anspricht). Sei NICHT generisch.\n2. Zweiter Absatz: Waehle 2-3 Anforderungen aus der Stellenbeschreibung, bei denen meine Erfahrung am staerksten ist. Gib fuer jede ein konkretes Ergebnis aus meinem Lebenslauf (mit Zahlen).\n3. Dritter Absatz: Adressiere die groesste Luecke zwischen meinem Lebenslauf und der Stelle direkt. Erklaere, wie meine uebertragbaren Faehigkeiten sie abdecken. Verstecke die Luecke nicht.\n4. Abschluss: Ein Satz. Bitte um das Interview. Kein Fuelltext.\n\nGesamtlaenge: Unter 250 Woerter.\nTon: Selbstbewusst, spezifisch, menschlich.\nKlingt NICHT wie von einer KI geschrieben."
+    },
+    {
+      "label": "Interview-Vorbereitungs-Prompt",
+      "text": "Ich habe ein Interview fuer [STELLE] bei [UNTERNEHMEN] am [DATUM]. Hier ist die Stellenbeschreibung: [einfuegen]\n\nBereite mich vor mit:\n\n# UNTERNEHMENS-INFO\n- Was macht dieses Unternehmen wirklich (2 Saetze, nicht ihre PR-Version)\n- Aktuelle News (letzte 90 Tage) die ich erwaehnen sollte\n- Ihre groesste Herausforderung oder Wettbewerbs-Bedrohung\n- Was Glassdoor/Blind-Bewertungen ueber das Interview und die Kultur sagen\n\n# VORHERGESAGTE FRAGEN (Top 10)\nFuer jede Frage:\n- Die Frage, die sie stellen werden\n- Warum sie sie stellen (was sie testen)\n- Eine Muster-Antwort mit meiner echten Erfahrung (mit spezifischen Zahlen)\n- Die Folgefrage, die sie wahrscheinlich stellen\n\n# MEINE FRAGEN AN SIE\n5 Fragen, die zeigen dass ich recherchiert habe. Nicht generisch. Fragen, die den Interviewer denken lassen: 'Diese Person versteht unser Geschaeft.'\n\n# MOCK-INTERVIEW\nStelle mir die Top 5 Fragen nacheinander. Gib mir nach jeder Antwort Feedback."
+    },
+    {
+      "label": "Gehaltsverhandlungs-Prompt",
+      "text": "Ich habe ein Angebot fuer [STELLE] bei [UNTERNEHMEN].\n\nAngebots-Details:\n- Grundgehalt: [BETRAG]\n- Bonus: [BETRAG oder KEINER]\n- Aktien/Equity: [BETRAG oder KEINE]\n- Startdatum: [DATUM]\n- Weitere Vorteile: [LISTE]\n\nMein Ziel: [BETRAG] Grundgehalt\n(oder sag mir, was ich anstreben sollte)\n\nErstelle mir eine Verhandlungsstrategie:\n\n1. MARKTDATEN\n- Was zahlt diese Stelle laut Levels.fyi, Glassdoor, Blind und Gehaltsvergleichen?\n- Wo liegt mein Angebot in der Bandbreite?\n\n2. GEGENANGEBOT-E-MAIL\n- Schreibe die genaue E-Mail die ich senden soll\n- Ton: dankbar, selbstbewusst, spezifisch\n- Beziehe Marktdaten ein ohne konfrontativ zu sein\n- Frage eine genaue Zahl, keine Bandbreite\n\n3. TELEFONGESPRAECH-SKRIPT\n- Eroeffnung des Gespraechs\n- Mein Gegenangebot vortragen\n- Umgang mit 'Das ist unser bestes Angebot'\n- Nicht-Gehalts-Verhandlung wenn Grundgehalt fix ist (Signing Bonus, mehr Urlaub, Remote, Startdatum)\n\n4. ABBRUCH-ANALYSE\n- Ab welchem Betrag sollte ich annehmen?\n- Ab welchem Betrag sollte ich ablehnen?\n- Welche nicht-monetaeren Faktoren koennten ein niedrigeres Angebot trotzdem attraktiv machen?"
+    },
+    {
+      "label": "LinkedIn-Optimizer-Prompt",
+      "text": "Optimiere mein LinkedIn-Profil so, dass Recruiter mich finden und sich melden. Hier ist mein aktuelles Profil: [einfuegen oder Screenshot hochladen]\n\nZiel-Stellen: [STELLE 1, STELLE 2]\nZiel-Unternehmen: [UNTERNEHMEN 1, 2]\nStandort/Remote: [ORT oder REMOTE]\n\nSchreibe diese Abschnitte um:\n\n1. HEADLINE (max. 220 Zeichen)\n- Nicht mein aktueller Jobtitel\n- 2-3 Keywords, nach denen Recruiter suchen\n- Ein Ergebnis oder eine Spezialisierung\n- Format: [Was ich tue] | [Ergebnis] | [Nische]\n\n2. UEBER MICH (max. 2.600 Zeichen)\n- Erste 2 Zeilen muessen vor 'Mehr anzeigen' ueberzeugen\n- Erste Person, nicht dritte\n- Beginne mit dem Problem das ich loese\n- 5-8 Keywords natuerlich einbauen\n- Klarer Call-to-Action am Ende\n\n3. ERFAHRUNGS-PUNKTE (XYZ-Formel, gespraechiger Ton)\n\n4. SKILLS: Top 5 in Prioritaet nach Suchvolumen\n\n5. FEATURED: 2-3 Ideen fuer Inhalte die Recruiter zum Anhalten bringen"
+    },
+    {
+      "label": "Follow-up-E-Mails (ein Prompt)",
+      "text": "E-MAIL 1: NACH BEWERBUNG (5 Tage spaeter senden)\n- Betreffzeile die geoeffnet wird (nicht 'Rueckmeldung')\n- Spezifischer Unternehmensbezug\n- Ein Ergebnis aus meinem Lebenslauf das zu ihrer groessten Herausforderung passt\n- Unter 100 Woerter\n\nE-MAIL 2: NACH INTERVIEW (innerhalb 24 Stunden)\n- Dankeschoen mit Namen des Interviewers\n- Bezug auf etwas Spezifisches aus dem Gespraech\n- Etwas das ich vergessen habe zu erwaehnen\n- Unter 120 Woerter\n\nE-MAIL 3: DER REMINDER (7 Tage nach Interview, wenn keine Antwort)\n- Leicht, professionell, nicht druckvoll\n- Fuege einen Mehrwert hinzu (Artikel, Insight)\n- Gib ihnen eine einfache Ausweichmoeglichkeit\n- Unter 80 Woerter\n\nTon fuer alle: Selbstbewusst, nicht verzweifelt. Spezifisch, nicht generisch. Menschlich."
+    }
+  ],
+  "note": "Auto-Bewerben läuft über Claude Cowork + die Claude-in-Chrome-Erweiterung und bleibt entwurfsbasiert (Pause vor Einreichung); für DACH sind Kununu und gehalt.de die passenderen Gehaltsquellen als Blind."
+}

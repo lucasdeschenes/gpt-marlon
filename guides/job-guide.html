@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Job Guide: wie du Claude für deine Jobsuche nutzt — GPT Marlon Guides</title>
+  <meta name="description" content="Die kompakte Version des Bewerbungs-Workflows: Lebenslauf-Analyse, Erfahrungs-Rewrite nach der Google-XYZ-Formel und ein ATS-plus-Hiring-Manager-Test, ergänzt um Bonus-Prompts für Anschreiben, Interview-Prep, Gehaltsverhandlung, LinkedIn und Follow-ups. Auto-Bewerben läuft über Claude Cowork und die Claude-in-Chrome-Erweiterung – mit Pause vor jeder Einreichung." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Karriere</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">Claude Job Guide: wie du Claude für deine Jobsuche nutzt</h1>
+      <p class="page-sub">Die kompakte Version des Bewerbungs-Workflows: Lebenslauf-Analyse, Erfahrungs-Rewrite nach der Google-XYZ-Formel und ein ATS-plus-Hiring-Manager-Test, ergänzt um Bonus-Prompts für Anschreiben, Interview-Prep, Gehaltsverhandlung, LinkedIn und Follow-ups. Auto-Bewerben läuft über Claude Cowork und die Claude-in-Chrome-Erweiterung – mit Pause vor jeder Einreichung.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude</span>
+        <span class="chip">Karriere</span>
+        <span class="chip">9 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/job-guide.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Auto-Bewerben läuft über Claude Cowork + die Claude-in-Chrome-Erweiterung und bleibt entwurfsbasiert (Pause vor Einreichung); für DACH sind Kununu und gehalt.de die passenderen Gehaltsquellen als Blind.</div>
+
+      <section class="guide-section">
+        <h2>So funktioniert's</h2>
+        <p>Applicant Tracking Systems (<b>ATS</b>) scannen nach Keywords und Formatierung und entscheiden, ob du überhaupt zum Recruiter durchkommst. Selbst wenn ein Mensch deinen Lebenslauf sieht, scannt er ihn im Durchschnitt nur <b>7 Sekunden</b>.</p>
+<p>Claude analysiert deinen Lebenslauf gegen die echte Stellenbeschreibung, findet die fehlenden Keywords, schreibt deine Erfahrungen mit bewährten Formeln um und prüft das Ergebnis aus zwei Perspektiven: ATS-Filter und Hiring Manager. Der Prozess dauert ca. 10 Minuten.</p>
+<p><b>Was du brauchst:</b></p>
+<ol><li>Ein Claude-Konto (Free-Tier reicht für die Lebenslauf-Prompts)</li><li>Deinen aktuellen Lebenslauf (PDF, Word oder Plain Text)</li><li>Die Stellenbeschreibung der Stelle</li><li>Für Auto-Bewerben: Claude Pro + Cowork + Claude-in-Chrome-Erweiterung</li></ol>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 1 – Die Lebenslauf-Analyse</h2>
+        <p>Lade deinen Lebenslauf und die Stellenbeschreibung zu Claude hoch. <b>Prompt 1</b> lässt Claude wie ein Senior Recruiter des jeweiligen Unternehmens denken und gibt dir eine ehrliche Bestandsaufnahme: Match-Score, die 5 wichtigsten fehlenden Keywords, 3 rote Flags, starke/schwache Abschnitte und einen Vergleich zu einem starken Kandidaten.</p>
+<p><b>Tipp:</b> Überspringe diesen Schritt nicht. Die Analyse zeigt dir genau, was geändert werden muss und warum. Die meisten sind überrascht, was das ATS tatsächlich bestraft.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 2 – Der Erfahrungs-Rewrite</h2>
+        <p>Bleib im selben Chat, damit Claude den Kontext der Analyse behält. <b>Prompt 2</b> schreibt deinen Erfahrungsabschnitt mit der <b>Google-XYZ-Formel</b> um: <i>Erreicht [X] gemessen an [Y] durch [Z].</i></p>
+<p>Aus einer Aufgabe („Führte ein 5-köpfiges Team") wird eine Leistung („Reduzierte Deployment-Zeit um 40 % (gemessen an wöchentlicher Release-Velocity) durch Umstrukturierung des Teams in cross-funktionale Pods"). Hiring Manager interessiert das Zweite.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 3 – ATS + Hiring Manager Test</h2>
+        <p>Noch im selben Chat. <b>Prompt 3</b> testet deinen umgeschriebenen Lebenslauf aus zwei Perspektiven: dem ATS-Filter, der dich aussortiert, bevor ein Mensch dich sieht, und dem Hiring Manager, der 200 Lebensläufe am Stück liest und Gründe sucht, nein zu sagen.</p>
+<p><b>Tipp:</b> Bitte Claude danach, den finalen Lebenslauf als sauberes <b>Artefakt</b> auszugeben – als .docx herunterladbar. Prüfe alle <b>[EINTRAGEN]</b>-Platzhalter und ergänze deine echten Zahlen vor dem Absenden.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Bonus – Auto-Bewerben mit Cowork</h2>
+        <p>Sobald dein Lebenslauf optimiert ist, wechselst du zu <b>Claude Cowork</b>: Claude geht zu LinkedIn, findet passende Jobs und bereitet für jede Stelle eine individuelle Bewerbung vor. <b>Prompt 4</b> steuert das.</p>
+<p><b>Wichtig:</b> Das benötigt Claude Pro (ca. 20 $/Monat), die Claude-Desktop-App im Cowork-Modus und die <b>Claude-in-Chrome-Erweiterung</b>. Sei in Chrome bei LinkedIn eingeloggt. Starte mit der Einstellung <i>Pause vor Einreichung</i>, um jede Bewerbung zu prüfen, bevor sie rausgeht. Behandle jede automatische Bewerbung wie einen Entwurf – und prüfe die Nutzungsbedingungen der Plattform.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Bonus – 30-Sekunden-Anschreiben</h2>
+        <p>Die meisten Anschreiben sind generisches Bla-Bla. Der <b>Anschreiben-Prompt</b> generiert in ca. 30 Sekunden ein gezieltes Anschreiben, das Unternehmen, Stelle und deine stärksten Erfahrungen verbindet. Nutze ihn nach der Lebenslauf-Analyse.</p>
+<p><b>Geheimtipp:</b> Das Erfolgsgeheimnis liegt im dritten Absatz. Die Lücke direkt anzusprechen zeigt Selbstwahrnehmung und Selbstvertrauen – genau die Eigenschaften, die dich in den „Ja"-Stapel bringen.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Bonus – Interview-Vorbereitung</h2>
+        <p>Der <b>Interview-Prompt</b> recherchiert das Unternehmen, sagt die wahrscheinlichen Fragen voraus und bereitet deine Antworten anhand echter Beispiele aus deinem Lebenslauf vor – plus eigene Fragen an das Unternehmen und ein Mock-Interview.</p>
+<p><b>Das Mock-Interview</b> am Ende ist der wertvollste Teil: Die Fragen wirklich zu beantworten zwingt dich, den Ernstfall zu üben. Claude gibt dir nach jeder Antwort Feedback.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Bonus – Gehaltsverhandlung</h2>
+        <p>Fast jedes Angebot hat Verhandlungsspielraum – und wie du fragst, ist wichtiger als was du forderst. Der <b>Gehaltsverhandlungs-Prompt</b> liefert Marktdaten, eine Gegenangebot-E-Mail, ein Telefongespräch-Skript und eine Abbruch-Analyse.</p>
+<p><b>Tipp:</b> Nenne niemals zuerst eine Zahl. Auf „Was sind Ihre Gehaltsvorstellungen?" antwortest du: „Ich würde gerne mehr über das Gesamtpaket erfahren, bevor wir Zahlen besprechen. Welchen Budgetrahmen haben Sie für diese Stelle?"</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Bonus – LinkedIn-Optimizer &amp; Follow-ups</h2>
+        <p>Dein LinkedIn-Profil lässt Recruiter von sich aus auf dich zukommen. Der <b>LinkedIn-Prompt</b> schreibt Headline, Über-mich, Erfahrungs-Punkte, Skills und Featured um. „Marketing Manager bei XYZ GmbH" ist unsichtbar; „B2B SaaS Growth Marketer | Pipeline von 2M auf 14M skaliert | Demand Gen + ABM" wird angeklickt.</p>
+<p>Der <b>Follow-up-Prompt</b> erzeugt drei E-Mails: nach der Bewerbung (Tag 5), nach dem Interview (innerhalb 24 Stunden) und ein Reminder (7 Tage nach dem Interview).</p>
+<p><b>Der komplette Workflow:</b> 1. Lebenslauf analysieren → 2. Erfahrungen umschreiben → 3. Stress-Test → 4. LinkedIn optimieren → 5. Anschreiben generieren → 6. Jobs bewerben → 7. Interview vorbereiten → 8. Angebot verhandeln → 9. Nachfassen. Wiederhole Schritte 1–3 für jede Stelle. <b>Wichtig:</b> Überprüfe und personalisiere immer, was Claude generiert – Claude gibt dir die Struktur, du lieferst den Inhalt.</p>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 1 – Lebenslauf-Analyse</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Verhalte dich wie ein Senior Recruiter des Unternehmens, bei dem ich mich bewerbe.
+
+Analysiere meinen Lebenslauf gegen diese Stellenbeschreibung.
+
+Gib mir:
+1. Einen Match-Score von 100
+2. Die 5 wichtigsten fehlenden Keywords, nach denen das ATS sucht
+3. Die 3 roten Flags, die ein Hiring Manager in unter 10 Sekunden entdecken wuerde
+4. Welche Abschnitte stark sind und warum
+5. Welche Abschnitte schwach sind und warum
+6. Wie mein Lebenslauf im Vergleich zu einem starken Kandidaten fuer diese Stelle aussieht
+
+Sei brutal ehrlich. Ich moechte Probleme lieber jetzt loesen als spaeter geghostet werden.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 2 – Erfahrungs-Rewrite (gleicher Chat)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Schreibe meinen Erfahrungsabschnitt mit diesen Regeln um:
+
+1. Baue die fehlenden Keywords natuerlich ein, aber erzwinge sie NICHT. Sie sollen sich normal anfuehlen.
+2. Behebe oder entferne jede rote Flag, die du erkannt hast.
+3. Nutze die Google-XYZ-Formel fuer jeden Punkt: 'Erreicht [X] gemessen an [Y] durch [Z]'
+4. Beginne jeden Punkt mit einem starken Aktionsverb. Nie 'Verantwortlich fuer' oder 'Geholfen mit'.
+5. Fuege ueberall konkrete Zahlen ein. Wenn ich keine angegeben habe, schlage realistische Platzhalter vor und markiere sie mit [EINTRAGEN].
+6. Halte jeden Punkt auf max. 1-2 Zeilen. Recruiter ueberfliegen. Dichte Abschnitte werden uebersprungen.
+7. Ordne Punkte nach Wirkung, nicht nach Datum. Das beeindruckendste Ergebnis kommt zuerst.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-3">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 3 – ATS + Hiring Manager Scan (gleicher Chat)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Verhalte dich jetzt wie zwei verschiedene Personen:
+
+ERST: Als ATS-Filter. Scanne meinen neuen Lebenslauf:
+- Wuerde er das ATS fuer diesen Job bestehen? (Ja/Nein)
+- Welche Keywords sind jetzt vorhanden, welche fehlen?
+- Gibt es Formatierungsprobleme, die den Parser verwirren wuerden? (Tabellen, Spalten, Sonderzeichen)
+
+DANN: Als Hiring Manager, der 200 Lebenslaeufe liest. Scanne meinen Lebenslauf:
+- Welche Abschnitte wuerdest du ueberspringen? Warum?
+- Was laesst dich stoppen (positiv oder negativ)?
+- Kaeme er in den 'Ja', 'Vielleicht' oder 'Nein' Stapel?
+- Schreibe Abschnitte um, die uebersprungen wuerden.
+
+Gib mir die finale Version meines Lebenslaufs nach allen Korrekturen.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-4">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 4 – Auto-Bewerben (in Claude Cowork)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Jetzt, wo mein Lebenslauf optimiert ist, geh zu LinkedIn und mache folgendes:
+
+1. Suche nach [JOBTITEL]-Stellen in [ORT], veroeffentlicht in den letzten [7/14/30] Tagen.
+2. Filtere auf Jobs, bei denen mein Lebenslauf mindestens 70% Match hat.
+3. Waehle die Top 10 Jobs, bei denen meine Chancen auf ein Interview am hoechsten sind.
+4. Fuer jeden Job:
+- Lies die vollstaendige Stellenbeschreibung
+- Passe meine Zusammenfassung und Kernpunkte an
+- Schreibe ein kurzes Anschreiben (max. 3 Saetze) mit einem spezifischen Unternehmensbezug
+- Reiche die Bewerbung ueber LinkedIn ein
+5. Danach: Sende mir eine Zusammenfassung:
+- Unternehmen + Jobtitel
+- Match-Score
+- Was du angepasst hast
+- Bewerbungsstatus (Eingereicht / Entwurf)
+
+Pausiere vor jeder Einreichung und zeige mir die angepasste Version zuerst.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-5">
+        <div class="prompt-head">
+          <span class="prompt-label">Anschreiben-Prompt (gleicher Chat wie Analyse)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Schreibe ein Anschreiben fuer diese Stelle. Regeln:
+
+1. Erster Absatz: Nenne das Unternehmen und die Stelle. Beziehe dich auf EINE spezifische Sache ueber das Unternehmen (kuerzlicher Produktlaunch, News-Artikel, Unternehmenswert der mich anspricht). Sei NICHT generisch.
+2. Zweiter Absatz: Waehle 2-3 Anforderungen aus der Stellenbeschreibung, bei denen meine Erfahrung am staerksten ist. Gib fuer jede ein konkretes Ergebnis aus meinem Lebenslauf (mit Zahlen).
+3. Dritter Absatz: Adressiere die groesste Luecke zwischen meinem Lebenslauf und der Stelle direkt. Erklaere, wie meine uebertragbaren Faehigkeiten sie abdecken. Verstecke die Luecke nicht.
+4. Abschluss: Ein Satz. Bitte um das Interview. Kein Fuelltext.
+
+Gesamtlaenge: Unter 250 Woerter.
+Ton: Selbstbewusst, spezifisch, menschlich.
+Klingt NICHT wie von einer KI geschrieben.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-6">
+        <div class="prompt-head">
+          <span class="prompt-label">Interview-Vorbereitungs-Prompt</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich habe ein Interview fuer [STELLE] bei [UNTERNEHMEN] am [DATUM]. Hier ist die Stellenbeschreibung: [einfuegen]
+
+Bereite mich vor mit:
+
+# UNTERNEHMENS-INFO
+- Was macht dieses Unternehmen wirklich (2 Saetze, nicht ihre PR-Version)
+- Aktuelle News (letzte 90 Tage) die ich erwaehnen sollte
+- Ihre groesste Herausforderung oder Wettbewerbs-Bedrohung
+- Was Glassdoor/Blind-Bewertungen ueber das Interview und die Kultur sagen
+
+# VORHERGESAGTE FRAGEN (Top 10)
+Fuer jede Frage:
+- Die Frage, die sie stellen werden
+- Warum sie sie stellen (was sie testen)
+- Eine Muster-Antwort mit meiner echten Erfahrung (mit spezifischen Zahlen)
+- Die Folgefrage, die sie wahrscheinlich stellen
+
+# MEINE FRAGEN AN SIE
+5 Fragen, die zeigen dass ich recherchiert habe. Nicht generisch. Fragen, die den Interviewer denken lassen: 'Diese Person versteht unser Geschaeft.'
+
+# MOCK-INTERVIEW
+Stelle mir die Top 5 Fragen nacheinander. Gib mir nach jeder Antwort Feedback.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-7">
+        <div class="prompt-head">
+          <span class="prompt-label">Gehaltsverhandlungs-Prompt</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Ich habe ein Angebot fuer [STELLE] bei [UNTERNEHMEN].
+
+Angebots-Details:
+- Grundgehalt: [BETRAG]
+- Bonus: [BETRAG oder KEINER]
+- Aktien/Equity: [BETRAG oder KEINE]
+- Startdatum: [DATUM]
+- Weitere Vorteile: [LISTE]
+
+Mein Ziel: [BETRAG] Grundgehalt
+(oder sag mir, was ich anstreben sollte)
+
+Erstelle mir eine Verhandlungsstrategie:
+
+1. MARKTDATEN
+- Was zahlt diese Stelle laut Levels.fyi, Glassdoor, Blind und Gehaltsvergleichen?
+- Wo liegt mein Angebot in der Bandbreite?
+
+2. GEGENANGEBOT-E-MAIL
+- Schreibe die genaue E-Mail die ich senden soll
+- Ton: dankbar, selbstbewusst, spezifisch
+- Beziehe Marktdaten ein ohne konfrontativ zu sein
+- Frage eine genaue Zahl, keine Bandbreite
+
+3. TELEFONGESPRAECH-SKRIPT
+- Eroeffnung des Gespraechs
+- Mein Gegenangebot vortragen
+- Umgang mit 'Das ist unser bestes Angebot'
+- Nicht-Gehalts-Verhandlung wenn Grundgehalt fix ist (Signing Bonus, mehr Urlaub, Remote, Startdatum)
+
+4. ABBRUCH-ANALYSE
+- Ab welchem Betrag sollte ich annehmen?
+- Ab welchem Betrag sollte ich ablehnen?
+- Welche nicht-monetaeren Faktoren koennten ein niedrigeres Angebot trotzdem attraktiv machen?</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-8">
+        <div class="prompt-head">
+          <span class="prompt-label">LinkedIn-Optimizer-Prompt</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Optimiere mein LinkedIn-Profil so, dass Recruiter mich finden und sich melden. Hier ist mein aktuelles Profil: [einfuegen oder Screenshot hochladen]
+
+Ziel-Stellen: [STELLE 1, STELLE 2]
+Ziel-Unternehmen: [UNTERNEHMEN 1, 2]
+Standort/Remote: [ORT oder REMOTE]
+
+Schreibe diese Abschnitte um:
+
+1. HEADLINE (max. 220 Zeichen)
+- Nicht mein aktueller Jobtitel
+- 2-3 Keywords, nach denen Recruiter suchen
+- Ein Ergebnis oder eine Spezialisierung
+- Format: [Was ich tue] | [Ergebnis] | [Nische]
+
+2. UEBER MICH (max. 2.600 Zeichen)
+- Erste 2 Zeilen muessen vor 'Mehr anzeigen' ueberzeugen
+- Erste Person, nicht dritte
+- Beginne mit dem Problem das ich loese
+- 5-8 Keywords natuerlich einbauen
+- Klarer Call-to-Action am Ende
+
+3. ERFAHRUNGS-PUNKTE (XYZ-Formel, gespraechiger Ton)
+
+4. SKILLS: Top 5 in Prioritaet nach Suchvolumen
+
+5. FEATURED: 2-3 Ideen fuer Inhalte die Recruiter zum Anhalten bringen</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-9">
+        <div class="prompt-head">
+          <span class="prompt-label">Follow-up-E-Mails (ein Prompt)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">E-MAIL 1: NACH BEWERBUNG (5 Tage spaeter senden)
+- Betreffzeile die geoeffnet wird (nicht 'Rueckmeldung')
+- Spezifischer Unternehmensbezug
+- Ein Ergebnis aus meinem Lebenslauf das zu ihrer groessten Herausforderung passt
+- Unter 100 Woerter
+
+E-MAIL 2: NACH INTERVIEW (innerhalb 24 Stunden)
+- Dankeschoen mit Namen des Interviewers
+- Bezug auf etwas Spezifisches aus dem Gespraech
+- Etwas das ich vergessen habe zu erwaehnen
+- Unter 120 Woerter
+
+E-MAIL 3: DER REMINDER (7 Tage nach Interview, wenn keine Antwort)
+- Leicht, professionell, nicht druckvoll
+- Fuege einen Mehrwert hinzu (Artikel, Insight)
+- Gib ihnen eine einfache Ausweichmoeglichkeit
+- Unter 80 Woerter
+
+Ton fuer alle: Selbstbewusst, nicht verzweifelt. Spezifisch, nicht generisch. Menschlich.</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

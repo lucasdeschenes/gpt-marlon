@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digitalen Fußabdruck löschen – mit Claude aus den Datenbanken verschwinden — GPT Marlon Guides</title>
+  <meta name="description" content="Datenhändler und Personensuchseiten verkaufen deinen Namen, deine Adresse und mehr – der Guide zeigt ein 4-Schritte-System, um sie loszuwerden: finden, Löschanfragen schreiben, einreichen und wöchentlich kontrollieren. Claude übernimmt die Recherche und die Formulierung; im Agenten-Modus (Cowork bzw. Claude in Chrome) füllt es Formulare vor und bereitet Anfragen zum Absenden auf. Rechtliche Grundlage ist in DACH vor allem Art. 17 DSGVO (Recht auf Löschung)." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Alltag</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">Digitalen Fußabdruck löschen – mit Claude aus den Datenbanken verschwinden</h1>
+      <p class="page-sub">Datenhändler und Personensuchseiten verkaufen deinen Namen, deine Adresse und mehr – der Guide zeigt ein 4-Schritte-System, um sie loszuwerden: finden, Löschanfragen schreiben, einreichen und wöchentlich kontrollieren. Claude übernimmt die Recherche und die Formulierung; im Agenten-Modus (Cowork bzw. Claude in Chrome) füllt es Formulare vor und bereitet Anfragen zum Absenden auf. Rechtliche Grundlage ist in DACH vor allem Art. 17 DSGVO (Recht auf Löschung).</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude</span>
+        <span class="chip">Alltag</span>
+        <span class="chip">13 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/digitaler-fussabdruck.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Der Original-Guide nutzt ChatGPT; hier auf Claude übertragen – dieselbe Aufgabe erledigt Claude per Websuche und im Agenten-Modus (Cowork bzw. Claude in Chrome), der einen bezahlten Plan mit Agenten-Zugriff voraussetzt. Keine Rechtsberatung.</div>
+
+      <section class="guide-section">
+        <h2>Warum deine Daten überall auftauchen</h2>
+        <p>Jede Anmeldung, jeder Online-Kauf, jedes Formular hinterlässt Spuren. Diese Daten werden gesammelt, gebündelt und von <b>Datenhändlern</b> weiterverkauft – an fast jeden, der zahlt. Über <b>190+</b> bekannte Datenhändler und Personensuchseiten haben oft Namen, Adresse, Telefon, E-Mail, Alter und Namen von Verwandten gespeichert – öffentlich durchsuchbar.</p>
+<p><b>Deine rechtliche Grundlage:</b> In Deutschland, Österreich und der Schweiz ist die <b>DSGVO</b> die wichtigste Grundlage: <b>Art. 17 DSGVO</b> gibt dir das „Recht auf Löschung" gegenüber jedem Anbieter, der personenbezogene Daten verarbeitet – unabhängig vom Firmensitz, solange EU-Bürger:innen erfasst werden. In den USA greifen zusätzlich der CCPA (Kalifornien) und seit Januar 2026 der DELETE Act.</p>
+<p><b>Wichtig:</b> Dieser Guide ist eine praktische Anleitung, keine Rechtsberatung. Bei komplexen Fällen (hartnäckige Weigerung, sensible Daten) lohnt sich eine spezialisierte Beratungsstelle oder Anwältin.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Das 4-Schritte-System</h2>
+        <p>Der komplette Ablauf läuft in <b>einem einzigen Claude-Chat</b>. Fang keinen neuen Chat zwischen den Schritten an – Claude braucht den Kontext aus jedem Schritt.</p>
+<table><thead><tr><th>Schritt</th><th>Was passiert</th><th>Dauer</th></tr></thead><tbody><tr><td>1. Suchen</td><td>Claude durchsucht das Web nach deinen Daten bei Datenhändlern und Personensuchseiten</td><td>5–10 Min.</td></tr><tr><td>2. Schreiben</td><td>Claude erstellt individuelle Löschanfragen und findet den exakten Abmelde-Link je Seite</td><td>2–5 Min.</td></tr><tr><td>3. Einreichen</td><td>Im Agenten-Modus besucht Claude jede Seite und bereitet die Löschanfrage vor / reicht sie ein</td><td>15–30 Min.</td></tr><tr><td>4. Kontrollieren</td><td>Claude prüft wöchentlich jede Seite erneut und stellt ignorierte Anfragen neu</td><td>automatisch</td></tr></tbody></table>
+<p><b>Wichtig:</b> Für den (teil-)automatischen Ablauf (Schritt 3) brauchst du einen bezahlten Claude-Plan mit Zugriff auf den <b>Agenten-Modus</b> (Claude Cowork bzw. die Claude-in-Chrome-Erweiterung). Schritt 1 und 2 funktionieren mit jedem Plan. Ohne Agenten-Zugriff übernimmst du Schritt 3 manuell.</p>
+<p><b>Bevor du startest:</b> vollen Namen, Wohnort und deine meistgenutzte E-Mail bereithalten. Nutze idealerweise eine separate E-Mail-Alias-Adresse für die Löschanfragen. Plane 20–30 Minuten aktive Zeit plus mehrere Wochen Geduld ein.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 1 – Deine Daten finden</h2>
+        <p>Öffne Claude und starte einen neuen Chat. Der <b>Prompt „Meine Daten finden"</b> lässt Claude das Web nach deinen persönlichen Daten durchsuchen und je Seite Name/URL, gespeicherte Daten, den exakten Abmelde-Link und nötige Verifizierung auflisten. Rechne mit 15 bis 50+ Treffern.</p>
+<p>Danach vertiefst du im selben Chat mit dem <b>Prompt „Tiefere Suche"</b> gezielt Kategorien wie Personensuchmaschinen, Register-Aggregatoren, Background-Check- und Lookup-Seiten.</p>
+<p><b>Tipp:</b> Gib Namensvarianten an (mit/ohne zweiten Vornamen, Geburtsname, Spitzname) sowie frühere Wohnadressen.</p>
+<p><b>Für DACH-Nutzer:innen:</b> Viele große Personensuchseiten sind US-Anbieter. In DACH ergänzt du die Suche um Telefonbuch- und Auskunftsseiten wie Das Örtliche, Klicktel und 11880 sowie deinen Namen bei Google mit lokalem Bezug (Stadt, Firma, Verein).</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 2 – Löschanfragen schreiben</h2>
+        <p>Bleib im gleichen Chat. Mit dem <b>Prompt „Löschanfragen schreiben"</b> erstellt Claude für jede gefundene Seite eine individuelle Anfrage – im geforderten Format (E-Mail, Webformular oder Brief), mit Verweis auf die passende Rechtsgrundlage (DSGVO Art. 17 bzw. CCPA/Landesrecht), deinen konkreten Daten, Bitte um Löschbestätigung und einer Frist von 30 Tagen. Für reine E-Mail-Löschungen gibt es zusätzlich die <b>E-Mail-Vorlage</b>.</p>
+<p><b>Warum überhaupt Gesetze zitieren?</b> Datenhändler bekommen tausende Anfragen. Die mit konkreter Rechtsgrundlage („Gemäß Art. 17 DSGVO") werden schneller bearbeitet, weil die Firma echte Konsequenzen sieht. „Bitte entferne mich" wird leicht ignoriert.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 3 – Automatisch einreichen</h2>
+        <p>Der <b>Agenten-Modus</b> von Claude (Cowork bzw. Claude in Chrome) öffnet einen Browser, navigiert zu Webseiten, füllt Formulare aus und klickt Buttons. Aktiviere ihn und nutze den <b>Prompt „Automatisch einreichen"</b>: Bei Seiten mit Abmelde-Formular navigiert Claude hin, füllt es mit deinen Daten und sendet ab; bei Seiten, die eine E-Mail brauchen, entwirft Claude sie (du verschickst sie selbst). Claude führt ein Protokoll (bearbeitete Seiten, Datum, Bestätigungsnummern, nicht abgeschlossene Fälle).</p>
+<p><b>Was der Agent grundsätzlich nicht kann:</b> keine Telefonanrufe, keine physischen Briefe, die meisten CAPTCHAs nicht selbst lösen. Plane für diese Fälle 15–20 Minuten eigene Zeit ein.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Wenn die automatische Löschung nicht klappt</h2>
+        <p>Rechne bei einer typischen Liste mit 3–5 Seiten, die hängen bleiben.</p>
+<table><thead><tr><th>Problem</th><th>So automatisiert wie möglich</th><th>Manueller Rückfall</th></tr></thead><tbody><tr><td>CAPTCHA-Abfrage</td><td>Agent weiterlaufen lassen, er merkt sich den Fortschritt</td><td>CAPTCHA im selben Fenster lösen, „weiter" tippen</td></tr><tr><td>Nur Telefonanruf (z. B. MyLife)</td><td>Claude schreibt ein Wort-für-Wort-Skript</td><td>Selbst anrufen, zu Geschäftszeiten (~5 Min.)</td></tr><tr><td>Ausweis-Upload gefordert</td><td>Claude prüft, ob wirklich nötig, und formuliert eine Rückfrage</td><td>Nur bei seriösen Anbietern, sensible Felder schwärzen</td></tr><tr><td>Anfrage wird ignoriert</td><td>Claude schreibt Eskalation mit Fristsetzung</td><td>Nach 30 Tagen Beschwerde bei der Aufsichtsbehörde</td></tr><tr><td>Kein Kontaktweg</td><td>Claude recherchiert per WHOIS Domain-Inhaber/Hoster + Abuse-Kontakt</td><td>Direkt bei der Datenschutz-Aufsichtsbehörde melden</td></tr><tr><td>Daten tauchen wieder auf</td><td>Wöchentliches Monitoring fängt es ab und stellt neu ein</td><td>Kostenpflichtigen Removal-Service nutzen</td></tr></tbody></table>
+<p><b>Auslagern (kostenpflichtig):</b> Incogni (breite Automatisierung), DeleteMe (Automatisierung + menschliche Nachbearbeitung), Optery (Transparenz mit Vorher-Nachher-Nachweis). Für die große Mehrheit der Seiten reicht der kostenlose Claude-Weg – ein bezahlter Dienst lohnt sich vor allem, wenn dir die Zeit für die wöchentliche Kontrolle fehlt. Prüfe vorher Datenschutzerklärung und Firmensitz des Dienstes.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Schritt 4 – Wöchentliche Kontrolle einrichten</h2>
+        <p>Diesen Teil überspringen die meisten – dabei ist er der wichtigste. Datenhändler kaufen laufend neue Datensätze ein und legen dein Profil wieder an. Mit dem <b>Prompt „Laufende Kontrolle"</b> prüft Claude jede Woche jede Seite erneut, reicht ignorierte Anfragen neu ein, eskaliert hartnäckige Seiten und gibt dir einen Statusbericht. Die meisten Seiten löschen innerhalb von 7–14 Tagen, manche brauchen bis zu 45 Tage.</p>
+<p><b>Eskalation &amp; Beschwerde:</b> Reagiert eine Seite nicht, nutzt du den <b>Eskalations-Prompt</b> und – wenn nichts hilft – den <b>Beschwerde-Prompt</b>. In der EU ist meist die Landesdatenschutzbehörde am Firmensitz zuständig (nicht der BfDI). Bei US-Seiten gehen Beschwerden an die FTC bzw. seit Januar 2026 an die Plattform DROP der kalifornischen CPPA. Eine Beschwerde führt selten zur sofortigen Löschung, setzt aber einen offiziellen Vorgang in Gang.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Die größten US-Datenhändler &amp; DACH-Quellen</h2>
+        <p>Fang bei den großen US-Seiten an, wenn du je in den USA warst:</p>
+<table><thead><tr><th>Seite</th><th>Löschweg</th></tr></thead><tbody><tr><td>Spokeo / Intelius / FastPeopleSearch / PeopleFinder / USSearch</td><td>Online-Abmeldeformular</td></tr><tr><td>WhitePages</td><td>Online-Abmeldung (Telefon-Verifizierung)</td></tr><tr><td>BeenVerified</td><td>E-Mail an privacy@beenverified.com</td></tr><tr><td>TruePeopleSearch</td><td>Online-Removal-Tool</td></tr><tr><td>Radaris</td><td>E-Mail-Anfrage (reagiert oft langsam)</td></tr><tr><td>MyLife</td><td>Telefonanruf nötig (1-888-704-1900)</td></tr><tr><td>Acxiom</td><td>Online-Abmeldung bei aboutthedata.com</td></tr><tr><td>Oracle/Datalogix</td><td>E-Mail an privacy@oracle.com</td></tr></tbody></table>
+<p><b>DACH-Quellen:</b> Das Örtliche / Klicktel / 11880 (Telefonbuch-Einträge – bei Klicktel selbst löschen/bearbeiten, bei Das Örtliche über DTM Deutsche Tele Medien); <b>Robinsonliste</b> (kostenlose Sperrliste gegen Werbung unter robinsonliste.de); <b>Auskunfteien</b> (kostenlose Selbstauskunft nach Art. 15 DSGVO, danach ggf. Löschung/Berichtigung nach Art. 17).</p>
+<p><b>Ehrlich gesagt:</b> Ein Werbewiderspruch (Sperrvermerk, Robinsonliste) ist oft praktikabler als eine vollständige Löschung – nach kompletter Löschung „vergisst" das System auch deinen Werbewiderspruch.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Mehr als nur Datenhändler &amp; langfristig sauber bleiben</h2>
+        <p>Räum auch den Rest deines Fußabdrucks auf: <b>Google-Suchergebnisse</b> (Prompt „Google-Bereinigung": veraltete Cache-Einträge per Google-Löschanfrage entfernen), <b>vergessene alte Accounts</b> (Prompt „Alte Accounts finden": haveibeenpwned.com, Nutzernamen-Varianten, an die Telefonnummer gebundene Konten) und <b>Social-Media-Privatsphäre</b> (Prompt „Social-Media-Check": Einstellungen bei Facebook, Instagram, LinkedIn, X, TikTok).</p>
+<p><b>Wichtig:</b> Einen Social-Media-Account zu löschen, löscht nicht automatisch alle Daten (Facebook behält Daten bis zu 90 Tage, manche Backups länger). Lade dein Datenarchiv vorher herunter.</p>
+<p><b>Langfristig sauber bleiben</b> (Prompt „Privatsphäre-System"): E-Mail-Alias (Apple Hide My Email, SimpleLogin, Firefox Relay), seriöser VPN, Datenschutz-Browser (Brave, Firefox mit strengem Tracking-Schutz, DuckDuckGo), Zweit-Telefonnummer und Zahlungs-Privatsphäre (virtuelle Einmal-Kartennummern).</p>
+<p><b>Häufige Fehler:</b> zwischen den Schritten einen neuen Chat starten · nur ein paar Seiten abarbeiten · keine laufende Kontrolle · echte E-Mail für Abmeldungen nutzen · anrufpflichtige Seiten überspringen · Daten vor dem Account-Löschen nicht sichern · sofortige Ergebnisse erwarten (Löschungen dauern 7–45 Tage). Am Ende des Guides gibt es außerdem einen Prompt-Spickzettel mit Kurzversionen jeder Aufgabe.</p>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Meine Daten finden</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Meinen digitalen Fußabdruck finden
+Durchsuche das Internet nach allem, was du über mich finden kannst.
+
+Mein Name: [Dein voller Name]
+Mein Wohnort: [Deine Stadt, Land]
+Meine E-Mail: [Deine E-Mail-Adresse]
+
+Liste jeden Datenhändler und jede Personensuchseite auf, die meine persönlichen Daten zeigt. Gib mir für jede Seite:
+
+1. Name der Seite und URL
+2. Welche Daten sie über mich haben (Adresse, Telefon, E-Mail etc.)
+3. Den exakten Abmelde- bzw. Lösch-Link für diese Seite
+4. Ob eine E-Mail-Bestätigung oder ein Ausweis nötig ist</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Tiefere Suche</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Weitere Seiten finden
+Gut, durchsuche jetzt auch diese Kategorien:
+
+- Personensuchmaschinen (Spokeo, WhitePages, BeenVerified, Intelius, TruePeopleSearch)
+- Öffentliche Register-Aggregatoren
+- Background-Check-Seiten
+- Marketing-Datenhändler
+- Telefonnummer-Lookup-Seiten
+- E-Mail-Lookup-Dienste
+- Social-Media-Scraping-Seiten
+
+Suche außerdem meinen Namen in Anführungszeichen bei Google und zeig mir alle Treffer, von denen ich entfernt werden sollte.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-3">
+        <div class="prompt-head">
+          <span class="prompt-label">Löschanfragen schreiben</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Löschanfragen schreiben
+Schreib mir jetzt die exakte Löschanfrage für jede gefundene Seite.
+
+Für jede Seite:
+1. Im Format, das die Seite konkret verlangt (E-Mail, Webformular oder Brief)
+2. Mit Verweis auf die passende Rechtsgrundlage (DSGVO Art. 17 bzw. CCPA/Landesrecht bei US-Seiten)
+3. Mit meinen konkreten Daten, die gelöscht werden sollen
+4. Mit Bitte um Löschbestätigung
+5. Mit einer Frist von 30 Tagen</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-4">
+        <div class="prompt-head">
+          <span class="prompt-label">E-Mail-Vorlage</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Für E-Mail-basierte Löschungen
+Schreib eine formelle Lösch-E-Mail für Seiten, die eine E-Mail-Anfrage verlangen. Enthalten soll sein:
+
+- Betreffzeile mit Verweis auf mein Recht auf Löschung (DSGVO Art. 17 bzw. CCPA)
+- Mein voller Name und Angaben, damit die Seite meinen Datensatz findet
+- Konkrete Aufforderung, alle meine Daten zu löschen
+- Bitte um schriftliche Bestätigung innerhalb 30 Tagen
+- Hinweis, dass ich mich sonst bei der Aufsichtsbehörde beschwere</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-5">
+        <div class="prompt-head">
+          <span class="prompt-label">Automatisch einreichen (Agenten-Modus)</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Löschanfragen einreichen
+Geh auf jede der gefundenen Seiten und reiche die Löschanfrage für mich ein.
+
+Bei Seiten mit Abmelde-Formular:
+- Zur Abmelde-Seite navigieren
+- Formular mit meinen Daten ausfüllen
+- Anfrage absenden
+
+Bei Seiten, die eine E-Mail brauchen:
+- Die E-Mail entwerfen (ich verschicke sie selbst)
+
+Führ ein Protokoll:
+- Welche Seiten bearbeitet wurden
+- Datum jeder Einreichung
+- Bestätigungsnummern
+- Seiten, die nicht abgeschlossen werden konnten (und warum)</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-6">
+        <div class="prompt-head">
+          <span class="prompt-label">Anruf-Skript</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Skript für Löschanruf
+[Seitenname] verlangt einen Anruf zur Löschung meines Profils. Schreib mir ein kurzes Skript zum Vorlesen, das:
+
+1. Meine Identität kurz bestätigt (Name, Profil-URL)
+2. Klar die vollständige Löschung meiner Daten verlangt
+3. Nach einer Bestätigungsnummer fragt
+4. Falls abgewimmelt: höflich auf mein gesetzliches Recht auf Löschung verweist</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-7">
+        <div class="prompt-head">
+          <span class="prompt-label">Laufende Kontrolle</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Laufende Kontrolle einrichten
+Prüf jetzt jede Woche jede Seite erneut und reiche jede ignorierte Löschanfrage neu ein, bis meine Daten komplett verschwunden sind.
+
+Bei jeder wöchentlichen Kontrolle:
+1. Jede Seite nach meinem Namen durchsuchen
+2. Sind meine Daten noch da: die Löschanfrage neu einreichen
+3. Seiten, die 2+ Anfragen ignoriert haben, eskalieren (Beschwerde an Aufsichtsbehörde vorbereiten)
+4. Mir einen wöchentlichen Statusbericht geben: welche Seiten sauber sind, welche noch Daten zeigen</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-8">
+        <div class="prompt-head">
+          <span class="prompt-label">Eskalationsschreiben</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Für Seiten, die nicht reagieren
+[Seitenname] hat meine Löschanfrage seit [Anzahl] Wochen ignoriert.
+
+Schreib mir eine Eskalations-E-Mail, die:
+1. Auf mein ursprüngliches Anfragedatum und die Bestätigungsnummer verweist
+2. Die konkrete Rechtsgrundlage nennt, gegen die verstoßen wird
+3. Ankündigt, dass ich in 7 Tagen Beschwerde bei der zuständigen Aufsichtsbehörde einreiche
+4. Nach Name und Kontakt des/der Datenschutzbeauftragten fragt</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-9">
+        <div class="prompt-head">
+          <span class="prompt-label">Beschwerde vorbereiten</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Beschwerde einreichen
+[Seitenname] hat [Anzahl] Löschanfragen über [Zeitraum] ignoriert.
+
+Hilf mir, eine Beschwerde vorzubereiten: fasse den Verlauf (Anfragedaten, verwendete Rechtsgrundlage, ausbleibende Antworten) in einer Chronologie zusammen, die ich in das Beschwerdeformular der zuständigen Behörde einfügen kann.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-10">
+        <div class="prompt-head">
+          <span class="prompt-label">Google-Bereinigung</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Google-Suchergebnisse entfernen
+Suche bei Google nach meinem Namen und finde Treffer, die persönliche Infos von mir zeigen.
+
+Für jeden Treffer:
+1. Prüfen, ob die Quelle ein Datenhändler ist (per Opt-out bearbeiten) oder etwas anderes
+2. Ist die Quellseite bereits entfernt: zeig mir, wie ich eine Google-Löschanfrage für den veralteten Cache-Eintrag stelle
+3. Ist die Quelle noch live: entwirf eine Löschanfrage für genau diese Seite</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-11">
+        <div class="prompt-head">
+          <span class="prompt-label">Alte Accounts finden</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Vergessene Accounts finden
+Hilf mir, alte, vergessene Accounts zu finden. Prüfe:
+
+- Meine E-Mail-Adresse auf haveibeenpwned.com, um zu sehen, bei welchen Diensten meine Daten in einem Datenleck auftauchten
+- Varianten meines Nutzernamens auf Social-Media-Plattformen
+- Accounts, die an meine Telefonnummer gebunden sind
+
+Für jeden gefundenen Account: sag mir, wie ich ihn lösche bzw. eine Datenlöschung anfordere. Wenn der Dienst nicht mehr existiert: sag mir, ob meine Daten trotzdem noch irgendwo abrufbar sind.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-12">
+        <div class="prompt-head">
+          <span class="prompt-label">Social-Media-Check</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Social-Media-Konten absichern
+Geh mit mir die genauen Privatsphäre-Einstellungen durch, die ich auf jeder Plattform ändern sollte, um meine Datenpreisgabe zu minimieren:
+
+- Facebook: was auf 'Nur Freunde' bzw. 'Nur ich' gestellt werden sollte
+- Instagram: was privat gestellt werden sollte
+- LinkedIn: was vor öffentlicher Suche verborgen werden sollte
+- X/Twitter: was eingeschränkt werden sollte
+- TikTok: Konto-Privatsphäre
+
+Und: wie verhindere ich, dass Suchmaschinen meine Social-Media-Profile indexieren?</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-13">
+        <div class="prompt-head">
+          <span class="prompt-label">Privatsphäre-System aufbauen</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text"># Ein Datenschutz-System aufbauen
+Hilf mir, ein einfaches System aufzubauen, damit meine Daten nicht weiter durchsickern.
+
+Ich brauche:
+1. Einen E-Mail-Alias-Dienst (empfiehl die beste kostenlose Option)
+2. Ein Datenschutz-Browser-Setup mit den passenden Erweiterungen
+3. Einen Plan, welche Dienste meine echten Daten bekommen und welche nur einen Alias
+4. Eine vierteljährliche Erinnerung, die Datenhändler-Suche erneut laufen zu lassen
+
+Mach es praktisch. Ich stelle nicht alles über Nacht um. Gib mir die 3 wichtigsten Änderungen für diese Woche.</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

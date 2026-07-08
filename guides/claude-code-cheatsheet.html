@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essenzielles Claude Code Cheat Sheet — GPT Marlon Guides</title>
+  <meta name="description" content="Die vollständige Schnellreferenz zu Claude Code: CLI-Tastenkürzel, Slash-Befehle, Plan- und Berechtigungsmodi, Git-Worktrees, MCP-Server, Skills, Agenten, Konfigurationsdateien, Hooks und Modelle — kompakt in Tabellen zum Nachschlagen. Stand: Edition 2026; einzelne Befehle, Flags und Modellnamen hängen von deiner Version ab." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Claude Basics</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">Essenzielles Claude Code Cheat Sheet</h1>
+      <p class="page-sub">Die vollständige Schnellreferenz zu Claude Code: CLI-Tastenkürzel, Slash-Befehle, Plan- und Berechtigungsmodi, Git-Worktrees, MCP-Server, Skills, Agenten, Konfigurationsdateien, Hooks und Modelle — kompakt in Tabellen zum Nachschlagen. Stand: Edition 2026; einzelne Befehle, Flags und Modellnamen hängen von deiner Version ab.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude Code</span>
+        <span class="chip">Claude Basics</span>
+        <span class="chip">0 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/claude-code-cheatsheet.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Cleaned Snapshot (Edition 2026): Verfügbare Slash-Befehle, Flags und Modellnamen hängen von deiner Claude-Code-Version ab und ändern sich schnell — prüfe im Zweifel mit /help bzw. der offiziellen Doku. Neuere Modelle (z. B. Opus 4.8) können den hier gelisteten Stand ablösen.</div>
+
+      <section class="guide-section">
+        <h2>Tastenkürzel</h2>
+        <p><b>Allgemeine Steuerung</b></p>
+<table><thead><tr><th>Kürzel</th><th>Funktion</th></tr></thead><tbody><tr><td>Ctrl C</td><td>Eingabe / Generierung abbrechen</td></tr><tr><td>Ctrl D</td><td>Sitzung beenden</td></tr><tr><td>Ctrl L</td><td>Bildschirm neu laden</td></tr><tr><td>Ctrl O</td><td>Transkript-Ansicht umschalten</td></tr><tr><td>Ctrl R</td><td>Suchverlauf umkehren</td></tr><tr><td>Ctrl E / Ctrl X E</td><td>Im Editor öffnen</td></tr><tr><td>Ctrl B</td><td>Hintergrundaufgabe starten</td></tr><tr><td>Ctrl T</td><td>Aufgabenliste umschalten</td></tr><tr><td>Ctrl V</td><td>Bild einfügen</td></tr><tr><td>Ctrl X K</td><td>Hintergrundagenten beenden</td></tr><tr><td>Esc Esc</td><td>Zurückspulen / zusammenfassen</td></tr></tbody></table>
+<p><b>Modi wechseln</b></p>
+<table><thead><tr><th>Kürzel</th><th>Funktion</th></tr></thead><tbody><tr><td>Shift Tab</td><td>Berechtigungsmodi durchschalten</td></tr><tr><td>Alt P</td><td>Planungsmodus</td></tr><tr><td>Alt T</td><td>Denken ein/aus</td></tr><tr><td>Alt O</td><td>Schnellmodus</td></tr></tbody></table>
+<p><b>Eingabe &amp; Präfixe</b></p>
+<table><thead><tr><th>Präfix</th><th>Funktion</th></tr></thead><tbody><tr><td>\Enter / Ctrl J</td><td>Neue Zeile (kein Absenden)</td></tr><tr><td>/</td><td>Slash-Befehl</td></tr><tr><td>!</td><td>Direkter Bash-Befehl</td></tr><tr><td>@</td><td>Datei erwähnen + Autovervollständigung</td></tr></tbody></table>
+<p><b>Sitzungs-Picker</b></p>
+<table><thead><tr><th>Taste</th><th>Funktion</th></tr></thead><tbody><tr><td>Auf / Ab</td><td>Sitzungen navigieren</td></tr><tr><td>Links / Rechts</td><td>Erweitern / Einklappen</td></tr><tr><td>P / R</td><td>Vorschau / Suchen</td></tr><tr><td>A</td><td>Alle Projekte</td></tr><tr><td>B</td><td>Aktueller Branch</td></tr><tr><td>Ctrl E</td><td>Alle anzeigen</td></tr><tr><td>Q / Esc</td><td>Transkript verlassen</td></tr></tbody></table>
+      </section>
+
+      <section class="guide-section">
+        <h2>Slash-Befehle</h2>
+        <p><b>Sitzung</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>/clear</td><td>Gespräch löschen</td></tr><tr><td>/compact [fokus]</td><td>Kontext komprimieren (mit Fokus)</td></tr><tr><td>/resume</td><td>Sitzung wiederaufnehmen</td></tr><tr><td>/rename [name]</td><td>Aktuelle Sitzung benennen</td></tr><tr><td>/branch [name]</td><td>Branch-Gespräch</td></tr><tr><td>/cost</td><td>Nutzungsstatistik anzeigen</td></tr><tr><td>/context</td><td>Kontextraster visualisieren</td></tr><tr><td>/diff</td><td>Interaktiver Diff-Viewer</td></tr><tr><td>/copy [N]</td><td>Letzte (N-te) Antwort kopieren</td></tr><tr><td>/rewind</td><td>Auf Checkpoint zurückspulen</td></tr><tr><td>/export</td><td>Gespräch exportieren</td></tr></tbody></table>
+<p><b>Konfiguration</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>/config</td><td>Einstellungen öffnen</td></tr><tr><td>/model [Modell]</td><td>Modell wechseln</td></tr><tr><td>/fast [an\</td><td>aus]</td><td>Schnellmodus umschalten</td></tr><tr><td>/theme</td><td>Farbschema ändern</td></tr><tr><td>/permissions</td><td>Berechtigungen anzeigen</td></tr><tr><td>/effort [Stufe]</td><td>niedrig / mittel / hoch / max / auto</td></tr><tr><td>/keybindings</td><td>Tastenkürzel anpassen</td></tr><tr><td>/terminal-setup</td><td>Terminal konfigurieren</td></tr></tbody></table>
+<p><b>Werkzeuge</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>/init</td><td>CLAUDE.md erstellen</td></tr><tr><td>/memory</td><td>CLAUDE.md-Dateien bearbeiten</td></tr><tr><td>/mcp</td><td>MCP-Server verwalten</td></tr><tr><td>/hooks</td><td>Hooks verwalten</td></tr><tr><td>/skills</td><td>Verfügbare Skills auflisten</td></tr><tr><td>/agents</td><td>Agenten verwalten</td></tr><tr><td>/chrome</td><td>Chrome-Integration</td></tr><tr><td>/add-dir</td><td>Arbeitsverzeichnis hinzufügen</td></tr></tbody></table>
+<p><b>Spezial</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>/voice</td><td>Sprache-zu-Text (20 Sprachen)</td></tr><tr><td>/loop [desc\</td><td>interval]</td><td>Wiederkehrende / Cloud-Aufgabe planen</td></tr><tr><td>/schedule</td><td>Geplante Cloud-Aufgaben</td></tr><tr><td>/doctor</td><td>Installation diagnostizieren</td></tr><tr><td>/usage</td><td>Plan- &amp; Ratenlimits</td></tr><tr><td>/security-review</td><td>Sicherheitsanalyse</td></tr><tr><td>/recap</td><td>Zusammenfassung generieren</td></tr><tr><td>/release-notes</td><td>Changelog anzeigen</td></tr><tr><td>/feedback</td><td>Feedback senden</td></tr><tr><td>/btw [Frage]</td><td>Nebenfrage, kein Kontextkosten</td></tr><tr><td>/rc, /remote-control</td><td>Remote-Kontrollbrücke zu claude.ai (NEU)</td></tr><tr><td>/powerup</td><td>Bridge zu claude.ai (NEU)</td></tr></tbody></table>
+      </section>
+
+      <section class="guide-section">
+        <h2>Workflows &amp; Tipps</h2>
+        <p><b>Plan-Modus</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>Shift Tab</td><td>Normal → Auto-Accept → Plan</td></tr><tr><td>--permission-mode plan</td><td>Im Planmodus starten</td></tr></tbody></table>
+<p><b>Denken &amp; Aufwand</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>Alt T</td><td>Denken ein/aus</td></tr><tr><td>--ultrathink</td><td>Maximale Denktiefe</td></tr><tr><td>/effort</td><td>niedrig / mittel / hoch / max / auto</td></tr><tr><td>Ctrl Q</td><td>Transkript-Viewer anzeigen</td></tr></tbody></table>
+<p><b>Kontextverwaltung</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>/context</td><td>Nutzung &amp; Optimierungstipps</td></tr><tr><td>/compact [fokus]</td><td>Mit Fokus komprimieren</td></tr><tr><td>Auto-compact</td><td>Feuert bei ~95 % Kapazität (NEU)</td></tr><tr><td>1M Kontext</td><td>Opus 4.6 (Max / Team / Ent)</td></tr><tr><td>CLAUDE.md</td><td>Überlebt Komprimierung!</td></tr></tbody></table>
+<p><b>Git-Worktrees</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>--worktree name</td><td>Isolierter Branch pro Feature</td></tr><tr><td>isolation: worktree</td><td>Agent in eigenem Worktree</td></tr><tr><td>sparsePaths</td><td>Nur benötigte Verzeichnisse</td></tr><tr><td>/batch</td><td>Worktrees automatisch erstellen</td></tr></tbody></table>
+<p><b>Sitzungs-Schnellzugriff</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>claude -c</td><td>Letztes Gespräch fortsetzen</td></tr><tr><td>claude -r "Name"</td><td>Nach Name fortsetzen</td></tr><tr><td>/btw [Frage]</td><td>Nebenfrage, kein Kontextkosten</td></tr></tbody></table>
+<p><b>Sprachmodus</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>/voice</td><td>Push-to-Talk aktivieren</td></tr><tr><td>Leertaste</td><td>Aufnehmen, Loslassen = Senden</td></tr></tbody></table>
+<p><b>Headless / Batch</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>claude -p "Frage"</td><td>Nicht-interaktiv</td></tr><tr><td>--output-format json</td><td>Strukturierte Ausgabe</td></tr><tr><td>--max-budget-usd 5</td><td>Kostendeckel</td></tr><tr><td>cat datei \</td><td>claude -p</td><td>Pipe-Eingabe</td></tr></tbody></table>
+<p><b>Zeitplanung &amp; Fernzugriff</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>/loop 5m msg</td><td>Wiederkehrende Aufgabe</td></tr><tr><td>/rc</td><td>Remote-Kontrollbrücke (NEU)</td></tr><tr><td>--remote</td><td>Web-Sitzung auf claude.ai</td></tr></tbody></table>
+<p><b>Berechtigungsmodi</b></p>
+<table><thead><tr><th>Modus</th><th>Verhalten</th></tr></thead><tbody><tr><td>default</td><td>Fragt bei jeder Aktion</td></tr><tr><td>acceptEdits</td><td>Dateibearbeitungen akzeptieren</td></tr><tr><td>plan</td><td>Nur lesen, kein Schreibzugriff</td></tr><tr><td>dontAsk</td><td>Ablehnen, außer explizit erlaubt</td></tr><tr><td>bypassPermissions</td><td>Alle Prüfungen überspringen</td></tr><tr><td>--dangerously-skip-permissions</td><td>CLI: alle Prompts überspringen</td></tr><tr><td>/permissions</td><td>Abgelehnte Aktion mit R wiederholen (NEU)</td></tr></tbody></table>
+      </section>
+
+      <section class="guide-section">
+        <h2>MCP-Server</h2>
+        <p><b>Server hinzufügen</b></p>
+<table><thead><tr><th>Flag</th><th>Bedeutung</th></tr></thead><tbody><tr><td>--transport http</td><td>Remote HTTP (empfohlen)</td></tr><tr><td>--transport stdio</td><td>Lokaler Prozess</td></tr><tr><td>--transport sse</td><td>Remote SSE</td></tr></tbody></table>
+<p><b>Geltungsbereiche</b></p>
+<table><thead><tr><th>Geltungsbereich</th><th>Datei</th></tr></thead><tbody><tr><td>Lokal</td><td>~/.claude.json (nur du)</td></tr><tr><td>Projekt</td><td>.mcp.json (geteilt / VCS)</td></tr><tr><td>Nutzer</td><td>~/.claude.json (global)</td></tr></tbody></table>
+<p><b>Verwaltung</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>/mcp</td><td>Interaktive Oberfläche</td></tr><tr><td>claude mcp list</td><td>Alle Server auflisten</td></tr><tr><td>claude mcp serve</td><td>Claude als MCP-Server starten</td></tr><tr><td>maxResultSizeChars</td><td>Bis zu 500K pro Ergebnis</td></tr></tbody></table>
+<p><b>CLAUDE.md-Dateien</b></p>
+<table><thead><tr><th>Datei</th><th>Geltung</th></tr></thead><tbody><tr><td>./CLAUDE.md</td><td>Projekt (team-übergreifend)</td></tr><tr><td>~/.claude/CLAUDE.md</td><td>Persönlich (alle Projekte)</td></tr><tr><td>/etc/claude-code/</td><td>Verwaltet (orgweit)</td></tr></tbody></table>
+<p><b>Regeln &amp; Import</b></p>
+<table><thead><tr><th>Element</th><th>Zweck</th></tr></thead><tbody><tr><td>.claude/rules/*.md</td><td>Projektregeln</td></tr><tr><td>~/.claude/rules/*.md</td><td>Nutzerregeln</td></tr><tr><td>paths: (Frontmatter)</td><td>Pfadspezifische Regeln</td></tr><tr><td>@import in CLAUDE.md</td><td>Weitere CLAUDE.md importieren</td></tr></tbody></table>
+<p><b>Auto-Gedächtnis</b></p>
+<table><thead><tr><th>Element</th><th>Bedeutung</th></tr></thead><tbody><tr><td>~/.claude/projects/…/memory/</td><td>Auto-Gedächtnis-Ordner</td></tr><tr><td>MEMORY.md</td><td>Themen, automatisch geladen</td></tr><tr><td>Limit</td><td>max. 25 KB / 200 Zeilen pro Datei</td></tr></tbody></table>
+      </section>
+
+      <section class="guide-section">
+        <h2>Skills</h2>
+        <p><b>Eingebaute Skills</b></p>
+<table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>/simplify</td><td>Code-Review (3 parallele Agenten)</td></tr><tr><td>/batch</td><td>Parallele Änderungen (5–30 Worktrees)</td></tr><tr><td>/debug [Beschr.]</td><td>Fehlersuche im Debug-Log</td></tr><tr><td>/loop [interval]</td><td>Wiederkehrende Aufgabe planen</td></tr><tr><td>/claude-api</td><td>API- &amp; SDK-Referenz laden</td></tr></tbody></table>
+<p><b>Skill-Speicherorte</b></p>
+<table><thead><tr><th>Ort</th><th>Geltung</th></tr></thead><tbody><tr><td>.claude/skills/&lt;n&gt;/</td><td>Projektskills</td></tr><tr><td>~/.claude/skills/&lt;n&gt;/</td><td>Persönliche Skills</td></tr></tbody></table>
+<p><b>Skill-Frontmatter</b></p>
+<table><thead><tr><th>Frontmatter</th><th>Bedeutung</th></tr></thead><tbody><tr><td>description</td><td>Auslöser für Auto-Aufrufe</td></tr><tr><td>allowed-tools</td><td>Berechtigungs-Prompts überspringen</td></tr><tr><td>model</td><td>Modell für diesen Skill</td></tr><tr><td>effort</td><td>Aufwandsstufe überschreiben</td></tr><tr><td>paths: [globs]</td><td>Pfadspezifische YAML-Liste</td></tr><tr><td>context: fork</td><td>In Unter-Agent ausführen</td></tr><tr><td>$ARGUMENTS</td><td>Nutzereingabe-Platzhalter</td></tr><tr><td>${CLAUDE_SKILL_DIR}</td><td>Eigenes Skill-Verzeichnis</td></tr><tr><td>\</td><td>cmd</td><td>Dynamische Kontextinjektion</td></tr><tr><td>plugin bin/</td><td>Bash-Tool-Executables bereitstellen</td></tr></tbody></table>
+      </section>
+
+      <section class="guide-section">
+        <h2>Agenten</h2>
+        <p><b>Agentenarten</b></p>
+<table><thead><tr><th>Agent</th><th>Rolle</th></tr></thead><tbody><tr><td>Explore</td><td>Nur lesen (Auflistung)</td></tr><tr><td>Plan</td><td>Software-Architekt</td></tr><tr><td>General</td><td>Alle Werkzeuge, komplexe Aufgaben</td></tr><tr><td>Bash</td><td>Terminal, separater Kontext</td></tr></tbody></table>
+<p><b>Agent-Frontmatter</b></p>
+<table><thead><tr><th>Frontmatter</th><th>Bedeutung</th></tr></thead><tbody><tr><td>permissionMode</td><td>default / acceptEdits / plan / dontAsk</td></tr><tr><td>isolation: worktree</td><td>In Git-Worktree ausführen</td></tr><tr><td>memory</td><td>Nutzer / Projekt / Lokal</td></tr><tr><td>background: true</td><td>Hintergrundaufgabe</td></tr><tr><td>maxTurns</td><td>Agenten-Züge begrenzen</td></tr><tr><td>initialPrompt</td><td>Ersten Zug automatisch absenden</td></tr><tr><td>sendMessage</td><td>Agent fortsetzen</td></tr><tr><td>@agent-name</td><td>Benannte Unteragenten erwähnen (NEU)</td></tr></tbody></table>
+<p><b>SDK Agent Tool</b></p>
+<table><thead><tr><th>SDK Agent Tool</th><th>Bedeutung</th></tr></thead><tbody><tr><td>subagent_type</td><td>Zu startenden Agententyp wählen</td></tr><tr><td>isolation: worktree</td><td>Auto-Bereinigung ohne Änderungen</td></tr><tr><td>model</td><td>Sonnet / Opus / Haiku überschreiben</td></tr><tr><td>description</td><td>Kurzes Label für Agenten-Aufgabe</td></tr><tr><td>prompt</td><td>In sich geschlossene Aufgabe</td></tr></tbody></table>
+      </section>
+
+      <section class="guide-section">
+        <h2>Konfiguration</h2>
+        <p><b>Konfig-Dateispeicherorte</b></p>
+<table><thead><tr><th>Datei</th><th>Zweck</th></tr></thead><tbody><tr><td>~/.claude.json</td><td>Globale Nutzereinstellungen</td></tr><tr><td>.claude/settings.json</td><td>Projektkonfiguration (VCS)</td></tr><tr><td>~/.claude/settings.json</td><td>Nutzereinstellungen</td></tr><tr><td>.mcp.json</td><td>Projekt-MCP-Konfig (VCS)</td></tr><tr><td>.claude/settings.local.json</td><td>Lokale Überschreibungen</td></tr></tbody></table>
+<p><b>Wichtige Einstellungen</b></p>
+<table><thead><tr><th>Einstellung</th><th>Wirkung</th></tr></thead><tbody><tr><td>modelOverrides</td><td>Modell-Aliase zuordnen</td></tr><tr><td>fragments</td><td>Wiederverwendbare Prompt-Snippets</td></tr><tr><td>managedBy</td><td>Konfig per Org-Policy sperren</td></tr></tbody></table>
+<p><b>Hooks</b></p>
+<table><thead><tr><th>Hook</th><th>Läuft …</th></tr></thead><tbody><tr><td>PreToolUse</td><td>vor jedem Tool-Aufruf</td></tr><tr><td>PostToolUse</td><td>nach jedem Tool-Aufruf</td></tr><tr><td>Notification</td><td>bei Statusänderungen</td></tr><tr><td>Stop</td><td>beim Sitzungsende</td></tr><tr><td>/hooks</td><td>Hooks interaktiv verwalten</td></tr></tbody></table>
+<p><b>CLAUDE.md-Tipps</b></p>
+<table><thead><tr><th>Tipp</th><th>Warum</th></tr></thead><tbody><tr><td>@import Pfad</td><td>Weitere CLAUDE.md importieren</td></tr><tr><td>paths: glob</td><td>Regeln auf Dateimuster begrenzen</td></tr><tr><td>Kurz halten</td><td>Zählt zum Kontextlimit</td></tr><tr><td>Aufzählungen</td><td>Leichter für Claude zu parsen</td></tr></tbody></table>
+      </section>
+
+      <section class="guide-section">
+        <h2>Modelle &amp; Tipps</h2>
+        <p><b>Aktuelle Modelle</b> (Snapshot Edition 2026)</p>
+<table><thead><tr><th>Modell</th><th>Profil</th></tr></thead><tbody><tr><td>claude-opus-4-6</td><td>Leistungsstärkste, 1M Kontext</td></tr><tr><td>claude-sonnet-4-6</td><td>Ausgewogen: Speed + Intelligenz</td></tr><tr><td>claude-haiku-4-5</td><td>Schnell, leichtgewichtig</td></tr></tbody></table>
+<p><b>CLI-Flags</b></p>
+<table><thead><tr><th>Flag</th><th>Wirkung</th></tr></thead><tbody><tr><td>--model</td><td>Modell-String angeben</td></tr><tr><td>--output-format json</td><td>Strukturierte Ausgabe (headless)</td></tr><tr><td>--max-budget-usd 5</td><td>Kostendeckel pro Sitzung</td></tr><tr><td>--permission-mode plan</td><td>Im Planmodus starten</td></tr><tr><td>--debug</td><td>Debug-Logging aktivieren</td></tr></tbody></table>
+<p><b>Prompt-Tipps</b></p>
+<table><thead><tr><th>Prompt-Tipp</th><th>Kurz</th></tr></thead><tbody><tr><td>Konkret sein</td><td>Vage Prompts = vage Ergebnisse</td></tr><tr><td>Beispiele zeigen</td><td>Nicht nur sagen — demonstrieren</td></tr><tr><td>CLAUDE.md</td><td>Kontext über Sitzungen speichern</td></tr><tr><td>Worktrees</td><td>Paralleles Arbeiten ohne Konflikte</td></tr><tr><td>/compact</td><td>Vor Limit-Erreichen komprimieren</td></tr><tr><td>ultrathink</td><td>Schwierige Probleme, lohnt den Aufwand</td></tr><tr><td>/btw</td><td>Schnellfragen, freier Kontext</td></tr><tr><td>Pipe-Eingabe</td><td>cat datei \</td><td>claude -p für Batch</td></tr><tr><td>XML-Tags</td><td>Komplexe Prompts klar strukturieren</td></tr></tbody></table>
+      </section>
+
+      <section class="guide-section">
+        <h2>Über dieses Cheat Sheet</h2>
+        <p>KI-Strategie für Gründer &amp; Operatoren. „Wir beginnen nicht mit Tools.“ — thynkit.io</p>
+      </section>
+    
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>

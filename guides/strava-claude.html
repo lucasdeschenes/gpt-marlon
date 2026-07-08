@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dein Strava wird zum KI-Coach — mit Claude — GPT Marlon Guides</title>
+  <meta name="description" content="Verbinde deine Trainingsdaten über den offiziellen, rein lesenden Strava-Connector mit Claude und hol in Sekunden heraus, wofür du früher einen Coach gebraucht hast. Der Guide zeigt Schritt für Schritt die Einrichtung — auch ohne Technik-Wissen — und liefert 3 fertige Prompts: Tiefen-Analyse, Dashboard und dein persönlicher KI-Trainer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/guides.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../guides.html" class="active">Guides</a></li>
+      <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../partnerships.html"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+  </nav>
+  <main class="page guide-page">
+    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>Alltag</span></div>
+    <div class="page-hero">
+      <h1 class="page-title">Dein Strava wird zum KI-Coach — mit Claude</h1>
+      <p class="page-sub">Verbinde deine Trainingsdaten über den offiziellen, rein lesenden Strava-Connector mit Claude und hol in Sekunden heraus, wofür du früher einen Coach gebraucht hast. Der Guide zeigt Schritt für Schritt die Einrichtung — auch ohne Technik-Wissen — und liefert 3 fertige Prompts: Tiefen-Analyse, Dashboard und dein persönlicher KI-Trainer.</p>
+      <div class="chip-row">
+        <span class="chip chip-tool">Claude</span>
+        <span class="chip">Alltag</span>
+        <span class="chip">4 Prompts zum Kopieren</span>
+        <span class="chip">Aktualisiert Juli 2026</span>
+      </div>
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
+        <a class="btn-secondary" href="../guides/pdf/strava-claude.pdf" download>⬇ Als PDF herunterladen</a>
+        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      </div>
+    </div>
+    <div class="guide-note">ℹ️ Claude sieht deine Strava-Daten nur, weil du den read-only-Connector per Autorisierung selbst freigibst (jederzeit in den Strava-Einstellungen widerrufbar) — es „loggt sich nicht von allein ein" und kann nichts ändern oder posten; ist der Connector bei dir noch nicht ausgerollt, kannst du deine Strava-Daten alternativ exportieren und die Datei hochladen.</div>
+
+      <section class="guide-section">
+        <h2>Teil 1 — Was gerade passiert ist</h2>
+        <p><b>Neu: Strava spricht jetzt mit KI.</b> Strava hat einen offiziellen MCP-Connector veröffentlicht — eine sichere, offizielle Brücke, über die eine KI wie Claude direkt auf deine eigenen Strava-Daten zugreifen darf: Aktivitäten, Pace, Herzfrequenz, Höhenmeter, Leistungswerte und Trends. Früher musstest du deine Daten mühsam exportieren und hochladen — ein einmaliger, toter Schnappschuss. Jetzt liest die KI deinen aktuellen Datenstand direkt aus, sobald du sie autorisierst. Du fragst in normaler Sprache, sie antwortet auf Basis deiner echten Zahlen.</p>
+<p><b>Was ist ein MCP-Server?</b> Stell dir MCP wie einen Universal-Adapter vor. So wie ein Reisestecker dein Ladegerät mit jeder Steckdose verbindet, verbindet ein MCP-Server eine App (hier: Strava) mit einer KI (hier: Claude) — in einer Sprache, die beide verstehen. Du musst nichts programmieren: Du steckst die beiden einmal zusammen, danach reden sie miteinander.</p>
+<p><b>Sicher — was die KI darf und was nicht.</b> Der Zugriff ist ausschließlich lesend (read-only). Die KI kann deine Daten ansehen und auswerten, aber nichts in deinem Strava-Konto ändern, löschen oder posten. Den Zugriff gibst du selbst per Autorisierung frei und kannst ihn jederzeit in den Strava-Einstellungen wieder entziehen.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 2 — Was du brauchst</h2>
+        <p>Vier Dinge — mehr nicht. Wenn du Strava-Abonnent bist, hast du das Wichtigste schon.</p>
+<ul><li><b>Strava-Abo</b> — Pflicht. Der Connector ist Teil des Strava-Abonnements; mit kostenlosem Strava-Konto funktioniert er nicht.</li><li><b>Claude-Konto</b> — ein kostenloses Claude-Konto reicht zum Starten (mit Tageslimit). Wer viel auswertet, fährt mit Claude Pro komfortabler.</li><li><b>Gerät</b> — zum Einrichten am besten Computer im Browser (claude.ai) oder die Claude-Desktop-App.</li><li><b>Region</b> — in Deutschland, Österreich und der Schweiz verfügbar. Der Rollout läuft schrittweise — nicht jeder sieht es am selben Tag.</li></ul>
+<p><b>Kurz-Check vor dem Start:</b> Strava-Abo aktiv? Bei Claude eingeloggt (Browser oder Desktop-App)? Strava-Login (E-Mail/Passwort) griffbereit fürs Autorisieren?</p>
+<p><i>Was ist Claude?</i> Claude ist eine KI von Anthropic — vergleichbar mit ChatGPT. Du erreichst sie im Browser unter claude.ai oder über die kostenlose Desktop-App. Genau hier wird gleich der Strava-Connector eingeschaltet.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 3 — Strava mit Claude verbinden</h2>
+        <p>Der offizielle Weg — einmal einrichten, dann läuft's dauerhaft. Dauert keine zwei Minuten.</p>
+<ol><li>Öffne Claude im Browser auf claude.ai oder in der Desktop-App und logge dich ein.</li><li>Geh zu den Einstellungen und öffne den Bereich Connectors (Verbindungen).</li><li>Such in der Liste nach „Strava" und klick auf Connect (Verbinden).</li><li>Du wirst zu Strava weitergeleitet: dort einloggen und den Zugriff autorisieren (erlauben).</li><li>Zurück in Claude erscheint Strava als verbunden. Fertig — jetzt kannst du losfragen.</li></ol>
+<p><b>Strava taucht nicht auf?</b> Der Rollout läuft schrittweise — wenn du Abonnent bist und es fehlt, kommt der Zugang in Kürze. Prüf, ob dein Strava-Abo wirklich aktiv ist, und lade Claude bzw. den Browser einmal neu.</p>
+<p><i>Erster Test:</i> Nutze den Prompt <b>Erster Test — Aktivitäten ziehen</b> unten. Kommt eine saubere Tabelle zurück, ist alles korrekt verbunden.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 4 — Was jetzt möglich ist</h2>
+        <p>Sobald verbunden, wird aus „Daten anschauen" echtes Coaching.</p>
+<p><b>Analyse — deine Form ehrlich lesen:</b> Trainingsanalysen (Volumen, Intensität, Pace- und Herzfrequenz-Entwicklung über Wochen), Fitness-Trends (geht's bergauf oder stagnierst du?) und Readiness (bist du erholt genug zum Pushen — oder brauchst du eine ruhige Woche?).</p>
+<p><b>Aufbau — dir Werkzeuge bauen lassen:</b> Dashboards für deine Kennzahlen, Routen-Ideen auf Basis deiner bisherigen Strecken und Cross-Sport-Auswertung (wie passen Laufen, Radfahren und Kraft zusammen?).</p>
+<p><b>Der Star: dein persönlicher KI-Coach.</b> Das Mächtigste: Du lässt dir einen persönlichen Trainer bauen, der deine echten Leistungen kennt und dir daraus passgenaue Pläne und Tipps gibt — statt Standard-Plan von der Stange. Die 3 Prompts bauen genau das Schritt für Schritt auf.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 5 — Die 3 Prompts</h2>
+        <p>Die drei Prompts bauen aufeinander auf — am besten im selben Chat nacheinander einfügen (Strava muss verbunden sein). Bei [eckigen Klammern] deine Werte eintragen.</p>
+<ul><li><b>Prompt 1 — Tiefen-Analyse &amp; Fitness-Trends</b> liest deine Strava-Historie tief aus, erkennt echte Fitness-Trends statt Bauchgefühl und fasst alles in einer klaren Analyse zusammen (Stärken, Baustellen, Status deiner Form). Er liefert die Datenbasis für Prompt 2 und 3.</li><li><b>Prompt 2 — Dashboard &amp; Progress-Tracking</b> verwandelt die Analyse in ein visuelles Dashboard als eigenständige Seite (Artefakt / HTML), das du immer wieder mit neuen Daten fütterst.</li><li><b>Prompt 3 — Dein persönlicher KI-Trainer</b> macht aus Claude deinen dauerhaften Coach: periodisierter Plan, Anpassung an deine echten Daten, Readiness-Check, Feedback und Warnungen vor Überlastung.</li></ul>
+<p><i>Tipp:</i> Sag Claude beim Erstellen „merke dir, wie du dieses Dashboard gebaut hast" bzw. „merke dir mein Profil" — dann reicht künftig ein Satz zum Aktualisieren.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Teil 6 — Mehr rausholen &amp; andere Wege</h2>
+        <p>Wenn du öfter analysierst oder ein anderes Tool nutzt — so machst du's clever.</p>
+<p><b>Wiederverwenden — aus einem Prompt eine Skill machen.</b> Nutzt du denselben Prompt (z. B. den Wochen-Review oder deinen Coach) immer wieder, musst du ihn nicht jedes Mal einfügen. In Claude bzw. Cowork kannst du daraus eine Skill machen — eine gespeicherte Anleitung, die Claude bei Bedarf automatisch anwendet. Einmal anlegen, danach reicht „mach meinen Wochen-Review".</p>
+<p><b>Andere Tools — ehrlich eingeordnet:</b></p>
+<ul><li><b>Claude (Web/Desktop)</b> — der offizielle, einfachste Weg. Für 99 % die richtige Wahl.</li><li><b>Claude Code</b> — für Entwickler: Connector ergänzen und feste Abläufe als Skills oder Slash-Befehle speichern.</li><li><b>Codex / ChatGPT</b> — kein offizieller Strava-Connector. Nur über Umwege (Drittanbieter wie Composio/Merge oder selbst gehostet, mit eigenen API-Keys); Prompts speicherst du dort als Custom/gespeicherte Prompts.</li></ul>
+<p>Kurz: Für den einfachen, sicheren Einstieg bleib bei Claude. Die anderen Wege sind etwas für Technik-Affine mit mehr Setup-Aufwand.</p>
+<p><b>Hinweis &amp; Haftungsausschluss:</b> Dieser Guide dient ausschließlich zu Informations- und Bildungszwecken. KI-generierte Trainingsanalysen und -pläne ersetzen keine individuelle, qualifizierte Trainings- oder ärztliche Beratung. Höre auf deinen Körper, steigere die Belastung mit Augenmaß und kläre gesundheitliche Fragen mit Ärztin/Arzt oder einer ausgebildeten Trainerin/einem Trainer ab. Funktionen, Verfügbarkeit und Menüpfade können sich ändern.</p>
+      </section>
+    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+      <div class="prompt-card" id="prompt-1">
+        <div class="prompt-head">
+          <span class="prompt-label">Erster Test — Aktivitäten ziehen</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Zieh meine letzten 5 Aktivitäten aus Strava und zeig mir Distanz, Pace und Höhenmeter.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-2">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 1 — Tiefen-Analyse &amp; Fitness-Trends</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Du bist mein erfahrener Ausdauer-Coach und Datenanalyst. Greif über den verbundenen Strava-Connector (read-only) auf meine Aktivitäten der letzten [180] Tage zu. Ziehe je Aktivität: Datum, Sportart, Distanz, Dauer, Pace bzw. Geschwindigkeit, Höhenmeter, Ø- und Max-Herzfrequenz, Leistung (Watt, falls vorhanden) und — wo verfügbar — die Pace- und Herzfrequenz-Streams.
+
+Analysiere systematisch:
+1. VOLUMEN: Wochen- und Monatsvolumen (Distanz, Dauer, Höhenmeter), Trend und Steigerungsrate. Markiere, wenn der Aufbau über 10 % pro Woche liegt (Verletzungsrisiko).
+2. INTENSITÄT: Verteilung locker vs. hart anhand der Herzfrequenzzonen. Sind meine lockeren Einheiten wirklich locker (Ziel: ca. 80/20 polarisiert)?
+3. ENTWICKLUNG: Wie verändern sich Pace bei gleicher Herzfrequenz, Ø-/Ruhe-HF und meine aerobe Effizienz über die Zeit? Werde ich fitter?
+4. KONSISTENZ: Trainingsfrequenz, längste Pausen, Wochen ohne Einheit.
+5. RISIKEN: Anzeichen für Stagnation, Übertraining oder zu monotones Training.
+
+Gib mir als Output:
+- Eine kompakte Tabelle: Kennzahl | letzte 4 Wochen | Vormonat | Trend.
+- Meine 3 größten Stärken und 3 größten Baustellen, jeweils mit einer konkreten Zahl aus den Daten belegt.
+- Ein Klartext-Fazit in 4 Sätzen: Wo stehe ich fitnessmäßig gerade?
+
+Fehlen dir Daten (z. B. keine HF), sag es offen und arbeite mit dem, was da ist. Fasse am Ende die wichtigsten Kennzahlen dieser Analyse kompakt zusammen und merke sie dir — ich baue im nächsten Schritt ein Dashboard darauf auf.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-3">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 2 — Dashboard &amp; Progress-Tracking</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Bau mir aus der Trainingsanalyse von eben und meinen verbundenen Strava-Daten ein übersichtliches Dashboard als eigenständige Seite (Artefakt / HTML). Es soll meine Form auf einen Blick zeigen und meinen Fortschritt über die Zeit abbilden.
+
+Das Dashboard enthält:
+1. KENNZAHL-KARTEN oben: Wochenvolumen, Ø-Pace, Ø-Herzfrequenz, Höhenmeter und Trainingstage — jeweils mit Vergleich zur Vorwoche und farbigem Pfeil (grün = Verbesserung, rot = Verschlechterung).
+2. VERLAUFS-DIAGRAMME: Wochenvolumen der letzten 12 Wochen, „Pace bei gleicher HF"-Trend, Verteilung der Herzfrequenzzonen (Balken) und Höhenmeter pro Woche.
+3. FORM-AMPEL: ein klares Signal — AUFBAU / STABIL / ERMÜDET — aus Volumen- und HF-Trend, mit einem Satz Begründung.
+4. PROGRESS-BLOCK: „dieser Monat vs. letzter Monat" — was hat sich um wie viel Prozent verbessert oder verschlechtert.
+
+Anforderungen:
+- Dunkles, aufgeräumtes Design mit klar beschrifteten Diagrammen.
+- Beschrifte jede Zahl und Einheit, damit ich nichts raten muss.
+- Lege das Dashboard so an, dass ich es leicht aktualisieren kann: Wenn ich später sage „aktualisiere mein Dashboard mit meinen neuesten Strava-Daten", ziehst du die neuen Wochen, hängst sie an die Verläufe an und zeigst mir, was sich seither verbessert oder verschlechtert hat.
+- Erkläre mir am Ende in 3 Sätzen, was das Dashboard gerade über meine Entwicklung sagt.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-4">
+        <div class="prompt-head">
+          <span class="prompt-label">Prompt 3 — Dein persönlicher KI-Trainer</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+          </div>
+        </div>
+        <pre class="prompt-text">Werde mein persönlicher KI-Trainer — dauerhaft und auf mich zugeschnitten. Nutze die Trainingsanalyse und das Dashboard von eben als Wissensbasis über mein Level. Stell mir zuerst kurz diese Fragen (eine nach der anderen):
+- Mein Ziel + Zieldatum [z. B. Halbmarathon unter 1:45 am TT.MM.JJJJ]
+- Trainingstage pro Woche und meine Wunsch-Tage
+- Aktuelle oder frühere Verletzungen / Beschwerden
+- Vorlieben &amp; No-Gos [z. B. keine Bahn-Intervalle]
+- Wie viel Zeit ich pro Einheit maximal habe
+
+Sei danach dauerhaft mein Coach mit diesen Funktionen:
+1. PLAN: Erstelle einen realistischen, periodisierten Wochenplan bis zum Zieldatum — je Einheit Typ, Distanz/Dauer und Intensität (konkrete Pace- bzw. HF-Zone), inkl. Entlastungswochen und Tapering. Begründe jede Woche in einem Satz.
+2. ANPASSUNG: Greif vor jeder neuen Woche auf meine echten Strava-Daten zu und passe den Plan daran an, wie ich die letzte Woche umgesetzt habe (erfüllt, zu hart, ausgefallen). Zieh den Plan nie stur durch.
+3. READINESS: Wenn ich frage „Soll ich heute trainieren?", bewerte meine Erholung aus den letzten Einheiten und gib eine klare Empfehlung: PUSHEN, LOCKER oder RUHE — mit kurzer Begründung.
+4. FEEDBACK: Nach einer Einheit auf Wunsch eine kurze Auswertung — war Pace/HF im Zielbereich, und was beim nächsten Mal besser geht.
+5. WARNUNGEN: Melde dich aktiv, wenn meine Daten auf Übertraining, zu schnellen Aufbau oder Verletzungsrisiko hindeuten.
+6. TON: motivierend, ehrlich und konkret — kein Geschwafel.
+
+Sprich mich mit Vornamen an und merke dir mein Profil für alle weiteren Gespräche.</pre>
+      </div></section>
+    <div class="guide-cta">
+      <div>
+        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
+        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+      </div>
+      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="../guides.html">Guides</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/guides.js"></script>
+  <script src="../assets/stats.js"></script>
+  <script src="../assets/community.js"></script>
+  <script src="../assets/lang.js"></script>
+</body>
+</html>
