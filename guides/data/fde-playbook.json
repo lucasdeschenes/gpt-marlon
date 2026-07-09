@@ -31,5 +31,6 @@
       "body": "Jede glaubwürdige FDE-Quelle landet bei denselben drei Artefakten. Bau alle drei bis Tag 90:\n\n1. **Ein Integrationsprojekt** — Zwei Systeme, die nie füreinander gebaut wurden. Echte API, echtes Auth, echtes Error-Handling. Deployed, nicht gemockt. Ein echter Nutzer.\n2. **Eine deployte KI-Pipeline** — RAG-App über ein echtes Dokumenten-Set, ein Agent mit echtem Job oder ein LLM-Workflow auf echten Daten. Produktion, kein Notebook. Eval-Suite inklusive.\n3. **Eine Debug-Case-Study** — Die Story von „was kaputt war, wie ich untersucht habe, was ich geändert habe.\" Das differenzierendste Stück, das du haben kannst. Fast niemand schreibt eins.\n\n**Wo die Jobs ausgeschrieben sind**\n\n- *DACH & Europa:* Glassdoor.de — Suche „Forward Deployed Engineer · Deutschland\" (~190 offene Stellen). LinkedIn Jobs — die 8 Titel plus Skills-Filter „LLM\", „RAG\", „Agent Development\". Indeed.de & StepStone für breitere DACH-Abdeckung.\n- *Direkt bei den Firmen:* Greenhouse-Boards von Anthropic, OpenAI, Cohere, Databricks, Ramp. careers.salesforce.com für Agentforce-FDE. Levels.fyi als Gehalts-Board (nach Comp filtern). Y Combinator „Work at a Startup\" für Series-A/B-FDE-Rollen in Europa.\n\n**Der eine Satz, den du mitnimmst:** Niemand stellt dich wegen deines Zeugnisses ein. Sie stellen dich ein, weil du drei Dinge gebaut und öffentlich gezeigt hast, dass du genau das kannst, was ein FDE jeden Tag tut."
     }
   ],
-  "prompts": []
+  "prompts": [],
+  "date": "2026-06-19"
 }

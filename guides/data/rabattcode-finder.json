@@ -69,5 +69,6 @@
       "text": "Ich muss diese Artikel kaufen: [Liste]. Finde den günstigsten Weg, alle zu bekommen. Prüfe, ob ein Kauf bei einem Händler mit sitewide-Rabattcode günstiger ist als der jeweils billigste Einzelanbieter. Berücksichtige die Versandkosten."
     }
   ],
-  "note": "Der Agent-Modus recherchiert und testet Codes und legt Artikel in den Warenkorb, schließt den Kauf aber nicht selbst ab — Warenkorb und Endpreis prüfst und bestätigst du selbst. Rabattcodes und Preise ändern sich laufend; eine Ersparnis ist nicht garantiert. Weil der Agent Webseiten automatisch interpretiert, vorher Banking-, Mail- und Zahlungs-Tabs schließen (Prompt-Injection-Risiko)."
+  "note": "Der Agent-Modus recherchiert und testet Codes und legt Artikel in den Warenkorb, schließt den Kauf aber nicht selbst ab — Warenkorb und Endpreis prüfst und bestätigst du selbst. Rabattcodes und Preise ändern sich laufend; eine Ersparnis ist nicht garantiert. Weil der Agent Webseiten automatisch interpretiert, vorher Banking-, Mail- und Zahlungs-Tabs schließen (Prompt-Injection-Risiko).",
+  "date": "2026-07-05"
 }

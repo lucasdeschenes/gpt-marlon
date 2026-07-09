@@ -61,5 +61,6 @@
       "text": "Bestimme auf Basis des hochgeladenen Fotos meinen Farbtyp und baue mir eine komplette Capsule-Wardrobe. Bestaetige zuerst meine Farbjahreszeit und liste meine 10 besten Farben. Baue dann eine 30-teilige Capsule-Wardrobe ausschliesslich aus Farben meiner Palette:\nOBERTEILE (10 Teile): konkrete Teile mit exakten Farbbeschreibungen (nicht nur \"blau\", sondern z.B. \"staubiges Schieferblau\" oder \"warmes Cognac\"). HOSEN/ROECKE (6 Teile): Jeans, Stoffhosen, Roecke mit Farb- und Waschung-Empfehlung. JACKEN/MAENTEL (4 Teile): in meiner Palette. KLEIDER/JUMPSUITS (4 Teile): komplette Outfits in meinen besten Farben. ACCESSOIRES (6 Teile): Taschen, Schals, Guertel in meinen Metallen und Akzentfarben.\nErklaere fuer jedes Teil, warum die Farbe zu meiner Jahreszeit passt. Zeige dann 10 Outfit-Kombinationen aus diesen 30 Teilen. Schliesse mit einer priorisierten Einkaufsliste der 10 Teile ab, die ich zuerst kaufen sollte, wenn ich bei null anfange."
     }
   ],
-  "note": "Die Prompts funktionieren in jeder bildfähigen KI (ChatGPT, Claude, Gemini); die Farbanalyse-Abkürzung ist ein ChatGPT-Custom-GPT und braucht einen ChatGPT-Login. KI analysiert nur Pixel und ersetzt keine medizinische oder professionelle Farb- oder Stilberatung."
+  "note": "Die Prompts funktionieren in jeder bildfähigen KI (ChatGPT, Claude, Gemini); die Farbanalyse-Abkürzung ist ein ChatGPT-Custom-GPT und braucht einen ChatGPT-Login. KI analysiert nur Pixel und ersetzt keine medizinische oder professionelle Farb- oder Stilberatung.",
+  "date": "2026-07-03"
 }

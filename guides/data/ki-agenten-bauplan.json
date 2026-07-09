@@ -33,5 +33,6 @@
       "text": "# Reporting-Agent — feste Anweisung\nDu bist mein Reporting-Agent. Lies jeden Morgen meine Verkaufs- und Werbedaten und schreib mir einen kurzen Report: Umsatz gestern, Werbeausgaben, auffällige Zahlen, 3 nächste Schritte.\nHalte dich an die Regeln in CLAUDE.md.\nSchreib deine Erkenntnisse am Ende in MEMORY.md."
     }
   ],
-  "note": "CLAUDE.md, MCP-Connectors und der Gedächtnis-Datei-Ansatz (MEMORY.md) sind echte Claude-Code-Muster; „OpenClaw\" ist dagegen ein optionales Drittanbieter-Tool, dessen Verfügbarkeit du selbst prüfen solltest — und sensible Aktionen (Geld ausgeben, posten, Rückerstattungen) lässt du dir immer manuell bestätigen."
+  "note": "CLAUDE.md, MCP-Connectors und der Gedächtnis-Datei-Ansatz (MEMORY.md) sind echte Claude-Code-Muster; „OpenClaw\" ist dagegen ein optionales Drittanbieter-Tool, dessen Verfügbarkeit du selbst prüfen solltest — und sensible Aktionen (Geld ausgeben, posten, Rückerstattungen) lässt du dir immer manuell bestätigen.",
+  "date": "2026-06-26"
 }

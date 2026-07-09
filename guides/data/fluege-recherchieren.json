@@ -41,5 +41,6 @@
       "text": "Du bist mein Reisevorbereiter. Erstelle eine einseitige Übersicht:\n\nREISEDETAILS:\n- Zielstadt: [STADT]\n- Daten: [DATUM] bis [DATUM] ([ANZAHL NÄCHTE])\n- Hotelname und Viertel: [HOTEL + VIERTEL]\n- Zweck: [Urlaub / Business / gemischt / Familie / Hochzeit]\n- Mit wem: [alleine / Partner / Familie mit X]\n- Meine Stimmung: [z.B. 'entspannt, gut essen & spazieren', 'voll gepackter Zeitplan', 'erstes Mal, die Highlights', 'Hidden Gems']\n\n8 Abschnitte in dieser Reihenfolge:\n\n1. WETTER + PACKLISTE — Tageweise Vorhersage + spezifische Packliste\n2. RESTAURANTS IN HOTELNÄHE — 2x Abendessen, 2x Frühstück, 1x Café\n3. MEINE MEETINGS/EVENTS — Aus Google Calendar mit Fahrtzeit & Tipp\n4. EINE LOKALE AKTIVITÄT — Konkret, keine Touristenfallen, max. 2 Sätze\n5. FORTBEWEGUNG — Flughafen→Hotel + Vor-Ort-Tipp\n6. WAS ICH VERGESSEN KÖNNTE — 1 kritischer Gegenstand + Dokumente\n7. GELD — Tageskosten, Karte/Bar, 1 spezifischer Tipp\n8. PERSÖNLICHE NOTIZ — War ich schon dort / erste lokale Phrase\n\nFormat: Sauber, druckbar, unter 500 Wörter. Abschnitte fett."
     }
   ],
-  "note": "Claude bucht und bezahlt nicht autonom: Es recherchiert, vergleicht und füllt Buchungsformulare vor und pausiert vor der Zahlung – den Kauf bestätigst und schließt du selbst ab."
+  "note": "Claude bucht und bezahlt nicht autonom: Es recherchiert, vergleicht und füllt Buchungsformulare vor und pausiert vor der Zahlung – den Kauf bestätigst und schließt du selbst ab.",
+  "date": "2026-06-02"
 }

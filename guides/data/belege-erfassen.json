@@ -73,5 +73,6 @@
       "text": "Baue mir eine gespeicherte Projekt-Anweisung für meine Belegerfassung, zugeschnitten auf: Ausgabeformat = [Excel / Google Sheet / DATEV], meine Kategorien = [___], (falls DATEV) Kontenrahmen = [SKR03/SKR04].\nSie soll: (1) Belege auslesen und bei Unklarheit \"UNKLAR\" schreiben, (2) eine Prüfstelle für Doppelungen und Zahlendreher enthalten, (3) erst nach meiner Freigabe die Datei erzeugen."
     }
   ],
-  "note": "Claude liest und prüft die Belege und bereitet die Excel- bzw. DATEV-Datei vor — die fachliche Freigabe und den DATEV-Import machst du (bzw. dein Steuerberater) selbst. Der native Google-Drive-Connector kann Dateien nur lesen und neu anlegen, aber nicht in ein bestehendes Google Sheet schreiben; dafür braucht es einen zusätzlichen Google-Sheets-Connector (MCP) mit Schreibrechten."
+  "note": "Claude liest und prüft die Belege und bereitet die Excel- bzw. DATEV-Datei vor — die fachliche Freigabe und den DATEV-Import machst du (bzw. dein Steuerberater) selbst. Der native Google-Drive-Connector kann Dateien nur lesen und neu anlegen, aber nicht in ein bestehendes Google Sheet schreiben; dafür braucht es einen zusätzlichen Google-Sheets-Connector (MCP) mit Schreibrechten.",
+  "date": "2026-06-23"
 }

@@ -81,5 +81,6 @@
       "text": "E-MAIL 1: NACH BEWERBUNG (5 Tage spaeter senden)\n- Betreffzeile die geoeffnet wird (nicht 'Rueckmeldung')\n- Spezifischer Unternehmensbezug\n- Ein Ergebnis aus meinem Lebenslauf das zu ihrer groessten Herausforderung passt\n- Unter 100 Woerter\n\nE-MAIL 2: NACH INTERVIEW (innerhalb 24 Stunden)\n- Dankeschoen mit Namen des Interviewers\n- Bezug auf etwas Spezifisches aus dem Gespraech\n- Etwas das ich vergessen habe zu erwaehnen\n- Unter 120 Woerter\n\nE-MAIL 3: DER REMINDER (7 Tage nach Interview, wenn keine Antwort)\n- Leicht, professionell, nicht druckvoll\n- Fuege einen Mehrwert hinzu (Artikel, Insight)\n- Gib ihnen eine einfache Ausweichmoeglichkeit\n- Unter 80 Woerter\n\nTon fuer alle: Selbstbewusst, nicht verzweifelt. Spezifisch, nicht generisch. Menschlich."
     }
   ],
-  "note": "Auto-Bewerben läuft über Claude Cowork + die Claude-in-Chrome-Erweiterung und bleibt entwurfsbasiert (Pause vor Einreichung); für DACH sind Kununu und gehalt.de die passenderen Gehaltsquellen als Blind."
+  "note": "Auto-Bewerben läuft über Claude Cowork + die Claude-in-Chrome-Erweiterung und bleibt entwurfsbasiert (Pause vor Einreichung); für DACH sind Kununu und gehalt.de die passenderen Gehaltsquellen als Blind.",
+  "date": "2026-06-05"
 }

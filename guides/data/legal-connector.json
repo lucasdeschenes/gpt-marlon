@@ -197,5 +197,6 @@
       "text": "Ich habe dieses Schreiben von [Firma/Person] erhalten, die behauptet, ich schulde ihr Geld für [Situation]. [Schreiben hochladen] Hilf mir, eine sachliche Antwort zu entwerfen, die die Forderung bestreitet und begründet, warum ich den Betrag nicht schulde."
     }
   ],
-  "note": "Das „Plugin\" ist ein Bündel aus Claude-Skills und Connectors; seine Analysen sind KI-generiert und ersetzen keine Prüfung durch eine Anwältin/einen Anwalt oder Steuerberater – lass rechtlich Wesentliches fachlich freigeben."
+  "note": "Das „Plugin\" ist ein Bündel aus Claude-Skills und Connectors; seine Analysen sind KI-generiert und ersetzen keine Prüfung durch eine Anwältin/einen Anwalt oder Steuerberater – lass rechtlich Wesentliches fachlich freigeben.",
+  "date": "2026-07-06"
 }

@@ -65,5 +65,6 @@
       "text": "Ich suche neue Investmentideen im Bereich [Thema/Sektor]. Screene nach Unternehmen mit [Kriterien, z. B. Umsatzwachstum >10 %, soliden Margen, moderater Bewertung] und gib mir 5 Kandidaten — je mit zwei Sätzen zur These und dem größten Risiko."
     }
   ],
-  "note": "„Plugins\" sind bei Claude technisch Connectors (MCP) plus Agent Skills; die Analysen sind KI-generiert und keine Anlageberatung – prüfe sie vor jeder Entscheidung selbst."
+  "note": "„Plugins\" sind bei Claude technisch Connectors (MCP) plus Agent Skills; die Analysen sind KI-generiert und keine Anlageberatung – prüfe sie vor jeder Entscheidung selbst.",
+  "date": "2026-06-18"
 }

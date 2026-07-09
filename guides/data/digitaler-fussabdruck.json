@@ -97,5 +97,6 @@
       "text": "# Ein Datenschutz-System aufbauen\nHilf mir, ein einfaches System aufzubauen, damit meine Daten nicht weiter durchsickern.\n\nIch brauche:\n1. Einen E-Mail-Alias-Dienst (empfiehl die beste kostenlose Option)\n2. Ein Datenschutz-Browser-Setup mit den passenden Erweiterungen\n3. Einen Plan, welche Dienste meine echten Daten bekommen und welche nur einen Alias\n4. Eine vierteljährliche Erinnerung, die Datenhändler-Suche erneut laufen zu lassen\n\nMach es praktisch. Ich stelle nicht alles über Nacht um. Gib mir die 3 wichtigsten Änderungen für diese Woche."
     }
   ],
-  "note": "Der Original-Guide nutzt ChatGPT; hier auf Claude übertragen – dieselbe Aufgabe erledigt Claude per Websuche und im Agenten-Modus (Cowork bzw. Claude in Chrome), der einen bezahlten Plan mit Agenten-Zugriff voraussetzt. Keine Rechtsberatung."
+  "note": "Der Original-Guide nutzt ChatGPT; hier auf Claude übertragen – dieselbe Aufgabe erledigt Claude per Websuche und im Agenten-Modus (Cowork bzw. Claude in Chrome), der einen bezahlten Plan mit Agenten-Zugriff voraussetzt. Keine Rechtsberatung.",
+  "date": "2026-07-02"
 }

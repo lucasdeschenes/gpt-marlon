@@ -89,5 +89,6 @@
       "text": "Sortiere alle meine Fotos und Screenshots in sauber benannte Ordner nach Datum, Thema und Inhalt. Benenne jede Datei danach, was wirklich auf dem Bild zu sehen ist."
     }
   ],
-  "note": "Die Bild-Prompts (Business-Porträt, Notizen-zu-Infografik) brauchen ein Bild-generierendes Modell wie ChatGPT — Claude kann Bilder analysieren und daraus z. B. eine HTML-Infografik als Artefakt bauen, erzeugt aber keine fotorealistischen Bilder; die Text-Prompts laufen in ChatGPT und Claude gleichermaßen."
+  "note": "Die Bild-Prompts (Business-Porträt, Notizen-zu-Infografik) brauchen ein Bild-generierendes Modell wie ChatGPT — Claude kann Bilder analysieren und daraus z. B. eine HTML-Infografik als Artefakt bauen, erzeugt aber keine fotorealistischen Bilder; die Text-Prompts laufen in ChatGPT und Claude gleichermaßen.",
+  "date": "2026-07-04"
 }

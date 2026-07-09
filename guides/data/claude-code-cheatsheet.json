@@ -44,5 +44,6 @@
     }
   ],
   "prompts": [],
-  "note": "Modelle auf den aktuellen 2026-Stand gebracht (Claude Opus 4.8 als leistungsstärkstes Modell, Sonnet 5, Haiku 4.5). Tastenkürzel, Slash-Befehle und Flags hängen von deiner Claude-Code-Version und Konfiguration ab und ändern sich schnell — Kürzel lassen sich mit /keybindings anzeigen und anpassen; im Zweifel /help oder die offizielle Doku prüfen."
+  "note": "Modelle auf den aktuellen 2026-Stand gebracht (Claude Opus 4.8 als leistungsstärkstes Modell, Sonnet 5, Haiku 4.5). Tastenkürzel, Slash-Befehle und Flags hängen von deiner Claude-Code-Version und Konfiguration ab und ändern sich schnell — Kürzel lassen sich mit /keybindings anzeigen und anpassen; im Zweifel /help oder die offizielle Doku prüfen.",
+  "date": "2026-06-01"
 }

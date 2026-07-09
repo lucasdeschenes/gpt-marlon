@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newsletter — GPT Marlon</title>
+  <meta name="description" content="Der KI-Newsletter, der wirklich Sinn ergibt. Jede Woche die wichtigsten KI-Tools, Prompts und Workflows auf Deutsch — kostenlos. Aus einer Community von 30.000+ im DACH-Raum." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <style>
+    .nl-hero { text-align: center; max-width: 680px; margin: 0 auto; }
+    .nl-hero .page-sub { margin-left: auto; margin-right: auto; }
+    .nl-form { display: flex; gap: .6rem; max-width: 460px; margin: 1.8rem auto 0; }
+    .nl-form input { flex: 1; min-width: 0; padding: .9rem 1.1rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg2); color: var(--text); font-family: inherit; font-size: .98rem; }
+    .nl-form input:focus { outline: none; border-color: var(--purple-light); box-shadow: 0 0 0 3px var(--glow); }
+    .nl-form .btn-primary { white-space: nowrap; }
+    .nl-proof { display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap; margin-top: 2.4rem; color: var(--muted); font-size: .9rem; }
+    .nl-proof b { color: var(--text); font-family: 'Space Grotesk', sans-serif; }
+    .nl-what { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+    .nl-what .card { text-align: left; }
+    @media (max-width: 640px) { .nl-what { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
+      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
+      <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="partnerships.html">Partnerships</a></li>
+      <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="index.html#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
+    </ul>
+    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+  </nav>
+
+  <main class="page">
+    <div class="nl-hero fade-up">
+      <div class="section-label">Newsletter</div>
+      <h1 class="page-title"><span data-en="The AI breakdown that">Der KI-Newsletter, der</span> <span class="gradient-text" data-en="actually makes sense.">wirklich Sinn ergibt.</span></h1>
+      <p class="page-sub"><span data-en="Every week: the AI tools, prompts and workflows worth your time — explained in plain German, ready to use. No hype, no filler. Free.">Jede Woche: die KI-Tools, Prompts und Workflows, die deine Zeit wert sind — verständlich auf Deutsch erklärt, direkt einsetzbar. Kein Hype, kein Füllmaterial. Kostenlos.</span></p>
+      <form id="nlForm" class="nl-form">
+        <input id="nlEmail" type="email" placeholder="your@email.com" required aria-label="E-Mail" />
+        <button type="submit" class="btn-primary" id="nlSubmit"><span data-en="Subscribe free →">Kostenlos abonnieren →</span></button>
+      </form>
+      <div class="form-status" id="nlStatus" style="text-align:center; margin-top:.9rem"></div>
+      <div class="nl-proof">
+        <div><b data-stat="followers">30K+</b> <span data-en="in the community">in der Community</span></div>
+        <div><b data-stat="views_30d">3.5M+</b> <span data-en="monthly views">Views / Monat</span></div>
+        <div><b><span data-aud-fact="dach">96%</span></b> <span data-en="in the DACH region">im DACH-Raum</span></div>
+      </div>
+      <p class="form-note" style="text-align:center; margin-top:1.4rem"><span data-en="Built for the 30,000+ people already following GPT Marlon. No spam — unsubscribe any time.">Gebaut für die 30.000+ Menschen, die GPT Marlon schon folgen. Kein Spam — jederzeit abbestellbar.</span></p>
+    </div>
+
+    <div class="page-hero fade-up" style="margin-top:3rem">
+      <div class="section-label"><span data-en="Who reads along">Wer mitliest</span></div>
+      <h2 class="page-title" style="font-size:1.95rem"><span data-en="A real DACH audience of">Ein echtes DACH-Publikum aus</span> <span class="gradient-text"><span data-en="professionals & early adopters.">Professionals & Early Adopters.</span></span></h2>
+      <p class="page-sub"><span data-en="These are live Instagram follower demographics — the same people the newsletter is written for.">Das ist die Live-Demografie der Instagram-Follower — genau die Menschen, für die der Newsletter geschrieben wird.</span></p>
+    </div>
+    <div class="aud-block fade-up">
+      <div class="aud-card">
+        <div class="aud-head"><span class="aud-name" data-en="Age">Alter</span><span class="aud-plat">Instagram</span></div>
+        <div data-audience="age" data-platform="instagram"><span class="aud-empty">…</span></div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-head"><span class="aud-name" data-en="Top countries">Top-Länder</span><span class="aud-plat">Instagram</span></div>
+        <div data-audience="country" data-platform="instagram" data-aud-max="5"><span class="aud-empty">…</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem">
+      <div class="section-label"><span data-en="What you get">Was du bekommst</span></div>
+      <div class="nl-what">
+        <div class="card fade-up">
+          <span class="emoji">🧰</span>
+          <h3><span data-en="Tools that matter">Tools, die zählen</span></h3>
+          <p><span data-en="The 2–3 AI tools each week actually worth trying — with the honest verdict, not a press release.">Die 2–3 KI-Tools pro Woche, die sich wirklich lohnen — mit ehrlichem Urteil, keine Pressemitteilung.</span></p>
+        </div>
+        <div class="card fade-up">
+          <span class="emoji">⌨️</span>
+          <h3><span data-en="Copy-ready prompts">Prompts zum Kopieren</span></h3>
+          <p><span data-en="Prompts and workflows you can paste into Claude or ChatGPT and use the same day.">Prompts und Workflows, die du direkt in Claude oder ChatGPT einfügst und am selben Tag nutzt.</span></p>
+        </div>
+        <div class="card fade-up">
+          <span class="emoji">🇩🇪</span>
+          <h3><span data-en="In plain German">Verständlich auf Deutsch</span></h3>
+          <p><span data-en="Written for the DACH market — practical, jargon-free, and relevant to how you actually work.">Für den DACH-Markt geschrieben — praxisnah, ohne Fachchinesisch, relevant für deinen Alltag.</span></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
+        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
+        <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg></a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+  <script>
+    document.getElementById('nlForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('nlSubmit');
+      const status = document.getElementById('nlStatus');
+      const email = document.getElementById('nlEmail').value.trim();
+      const en = document.documentElement.getAttribute('lang') === 'en';
+      btn.disabled = true; status.className = 'form-status';
+      try {
+        await saveLead('newsletter', email, null, 'newsletter signup');
+        status.textContent = en ? '✓ You’re in — welcome aboard.' : '✓ Du bist dabei — willkommen an Bord.';
+        status.className = 'form-status ok';
+        e.target.reset();
+      } catch (err) {
+        status.textContent = en ? 'Something went wrong — please try again.' : 'Etwas ist schiefgelaufen — bitte versuch es erneut.';
+        status.className = 'form-status err';
+      }
+      btn.disabled = false;
+    });
+  </script>
+  <script src="assets/stats.js"></script>
+  <script src="assets/audience.js"></script>
+  <script src="assets/community.js"></script>
+  <script src="assets/lang.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

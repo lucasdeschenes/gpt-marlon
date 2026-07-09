@@ -16,5 +16,6 @@
     }
   ],
   "prompts": [],
-  "note": "Diese Fassung enthält 99 nummerierte Codes (die Vorlage ist als „100“ vermarktet); alle sind modellunabhängig und funktionieren in Claude wie in ChatGPT. „FACT CHECK“ und „SOURCE MODE“ liefern nur dann aktuelle Quellen, wenn die KI Websuche nutzen kann."
+  "note": "Diese Fassung enthält 99 nummerierte Codes (die Vorlage ist als „100“ vermarktet); alle sind modellunabhängig und funktionieren in Claude wie in ChatGPT. „FACT CHECK“ und „SOURCE MODE“ liefern nur dann aktuelle Quellen, wenn die KI Websuche nutzen kann.",
+  "date": "2026-05-28"
 }

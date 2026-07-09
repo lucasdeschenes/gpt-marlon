@@ -67,10 +67,10 @@ const nav = (active) => `  <nav>
       <span class="nav-logo-text">GPT<span>Marlon</span></span>
     </a>
     <ul class="nav-links">
-      <li><a href="${active === "guide" ? "../guides.html" : "guides.html"}"${active === "guides" || active === "guide" ? ' class="active"' : ""}>Guides</a></li>
+      <li><a href="${active === "guide" ? "../guides.html" : "guides.html"}"${active === "guides" || active === "guide" ? ' class="active"' : ""}><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="${active === "guide" ? "../about.html" : "about.html"}"><span data-en="About">Über mich</span></a></li>
       <li><a href="${active === "guide" ? "../coaching.html" : "coaching.html"}">Coaching</a></li>
-      <li><a href="${active === "guide" ? "../partnerships.html" : "partnerships.html"}"><span data-en="Partnerships">Kooperationen</span></a></li>
+      <li><a href="${active === "guide" ? "../partnerships.html" : "partnerships.html"}">Partnerships</a></li>
       <li><a href="${active === "guide" ? "../contact.html" : "contact.html"}"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
@@ -85,10 +85,12 @@ const footer = (p) => `  <footer>
         <span class="nav-logo-text">GPT<span>Marlon</span></span>
       </a>
       <ul class="footer-links">
-        <li><a href="${p}guides.html">Guides</a></li>
-        <li><a href="${p}about.html">About</a></li>
+        <li><a href="${p}guides.html"><span data-en="Resources">Ressourcen</span></a></li>
+        <li><a href="${p}about.html"><span data-en="About">Über mich</span></a></li>
         <li><a href="${p}coaching.html">Coaching</a></li>
-        <li><a href="${p}contact.html">Contact</a></li>
+        <li><a href="${p}partnerships.html">Partnerships</a></li>
+        <li><a href="${p}contact.html"><span data-en="Contact">Kontakt</span></a></li>
+        <li><a href="${p}newsletter.html">Newsletter</a></li>
         <li><a href="${p}impressum.html">Impressum</a></li>
         <li><a href="${p}datenschutz.html">Datenschutz</a></li>
       </ul>
@@ -167,7 +169,7 @@ ${head(g.title + " — GPT Marlon Guides", g.summary, "../")}
 <body>
 ${nav("guide")}
   <main class="page guide-page">
-    <div class="crumbs"><a href="../guides.html">← Alle Guides</a> · <span>${esc(g.category)}</span></div>
+    <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>${esc(g.category)}</span></div>
     <div class="page-hero">
       <h1 class="page-title">${esc(g.title)}</h1>
       <p class="page-sub">${esc(g.summary)}</p>
@@ -185,12 +187,18 @@ ${nav("guide")}
     ${g.note ? `<div class="guide-note">ℹ️ ${g.note}</div>` : ""}
 ${sectionsHtml}
     ${(g.prompts || []).length ? `<section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>${promptsHtml}</section>` : ""}
+    <div class="guide-download">
+      <div class="guide-download-icon">📖</div>
+      <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
+      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/${g.slug}.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+    </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title">Mehr davon — jede Woche.</div>
-        <div class="guide-cta-sub">Neue Guides, Prompts und Workflows direkt ins Postfach. Kostenlos.</div>
+        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community>Community beitreten →</a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
     </div>
   </main>
 ${footer("../")}
@@ -199,6 +207,7 @@ ${footer("../")}
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>
   <script src="../assets/lang.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
 `;
@@ -207,48 +216,99 @@ ${footer("../")}
 
 // ── index page ────────────────────────────────────────────────────────────────
 const cats = [...new Set(guides.map((g) => g.category))];
-const cards = guides.map((g) => `
-      <a class="guide-card fade-up" data-cat="${escAttr(g.category)}" href="guides/${g.slug}.html">
+const cards = guides.map((g, i) => {
+  const searchable = [g.title, g.summary, g.category, g.tool].join(" ").toLowerCase();
+  return `
+      <a class="guide-card fade-up" data-cat="${escAttr(g.category)}" data-order="${i}" data-date="${escAttr(g.date || "")}" data-title="${escAttr(g.title.toLowerCase())}" data-search="${escAttr(searchable)}" href="guides/${g.slug}.html">
         <div class="chip-row">${toolBadge(g.tool)}<span class="chip">${esc(g.category)}</span></div>
         <h3>${esc(g.title)}</h3>
         <p>${esc(g.summary)}</p>
-        <div class="guide-card-meta">${(g.prompts || []).length} Prompts · Guide lesen →</div>
-      </a>`).join("\n");
+        <div class="guide-card-meta">${(g.prompts || []).length} Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+      </a>`;
+}).join("\n");
 
 const indexHtml = `<!DOCTYPE html>
 <html lang="de">
-${head("Guides — GPT Marlon", "Alle GPT Marlon Guides: Schritt-für-Schritt-Anleitungen für Claude & ChatGPT — Bewerbung, Finanzen, Produktivität, Content. Mit kopierbaren Prompts.", "")}
+${head("Ressourcen — GPT Marlon", "Alle GPT Marlon Ressourcen: Schritt-für-Schritt-Anleitungen für Claude & ChatGPT — Bewerbung, Finanzen, Produktivität, Content. Mit kopierbaren Prompts.", "")}
 <body>
 ${nav("guides")}
   <main class="page">
     <div class="page-hero fade-up">
-      <div class="section-label">Guides</div>
-      <h1 class="page-title">Alle Guides. <span class="gradient-text">Alle Prompts. Kostenlos.</span></h1>
-      <p class="page-sub">Die kompletten Schritt-für-Schritt-Anleitungen aus den Reels — jeder Guide mit kopierbaren Prompts, die du direkt in Claude oder ChatGPT öffnen kannst.</p>
+      <div class="section-label"><span data-en="Resources">Ressourcen</span></div>
+      <h1 class="page-title"><span data-en="All resources.">Alle Ressourcen.</span> <span class="gradient-text" data-en="All prompts. Free.">Alle Prompts. Kostenlos.</span></h1>
+      <p class="page-sub"><span data-en="The complete step-by-step guides from the reels — each with copy-ready prompts you can open straight in Claude or ChatGPT.">Die kompletten Schritt-für-Schritt-Anleitungen aus den Reels — jeder Guide mit kopierbaren Prompts, die du direkt in Claude oder ChatGPT öffnen kannst.</span></p>
+    </div>
+    <div class="res-controls fade-up">
+      <div class="res-search">
+        <svg class="res-search-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="search" id="guideSearch" placeholder="Ressourcen durchsuchen…" data-en-ph="Search resources…" autocomplete="off" aria-label="Suche" />
+      </div>
+      <div class="res-sort">
+        <label for="guideSort" data-en="Sort by">Sortieren</label>
+        <select id="guideSort" aria-label="Sortieren">
+          <option value="featured" data-en="Featured">Empfohlen</option>
+          <option value="new" data-en="Newest first">Neueste zuerst</option>
+          <option value="old" data-en="Oldest first">Älteste zuerst</option>
+          <option value="az" data-en="A to Z">A–Z</option>
+        </select>
+      </div>
     </div>
     <div class="cat-filter" id="catFilter">
-      <button class="cat-chip active" data-cat="all">Alle (${guides.length})</button>
+      <button class="cat-chip active" data-cat="all"><span data-en="All">Alle</span> (${guides.length})</button>
       ${cats.map((c) => `<button class="cat-chip" data-cat="${escAttr(c)}">${esc(c)} (${guides.filter((g) => g.category === c).length})</button>`).join("\n      ")}
     </div>
     <div class="guides-grid" id="guidesGrid">
 ${cards}
     </div>
+    <div class="res-empty" id="resEmpty" hidden><span data-en="No resources match your search.">Keine Ressourcen zu deiner Suche gefunden.</span></div>
   </main>
 ${footer("")}
   <script src="assets/site.js"></script>
   <script>
-    document.querySelectorAll('.cat-chip').forEach((b) => b.addEventListener('click', () => {
-      document.querySelectorAll('.cat-chip').forEach((x) => x.classList.remove('active'));
-      b.classList.add('active');
-      const cat = b.dataset.cat;
-      document.querySelectorAll('.guide-card').forEach((c) => {
-        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+    (function () {
+      var grid = document.getElementById('guidesGrid');
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('.guide-card'));
+      var search = document.getElementById('guideSearch');
+      var sortSel = document.getElementById('guideSort');
+      var empty = document.getElementById('resEmpty');
+      var cat = 'all';
+
+      function apply() {
+        var q = (search.value || '').trim().toLowerCase();
+        var visible = cards.filter(function (c) {
+          var okCat = (cat === 'all' || c.dataset.cat === cat);
+          var okQ = !q || c.dataset.search.indexOf(q) !== -1;
+          return okCat && okQ;
+        });
+        var mode = sortSel.value;
+        visible.sort(function (a, b) {
+          if (mode === 'az') return a.dataset.title.localeCompare(b.dataset.title);
+          if (mode === 'new') return (b.dataset.date || '').localeCompare(a.dataset.date || '');
+          if (mode === 'old') return (a.dataset.date || '').localeCompare(b.dataset.date || '');
+          return (+a.dataset.order) - (+b.dataset.order);
+        });
+        cards.forEach(function (c) { c.style.display = 'none'; });
+        visible.forEach(function (c) { c.style.display = ''; c.classList.add('visible'); grid.appendChild(c); });
+        empty.hidden = visible.length > 0;
+      }
+
+      document.querySelectorAll('.cat-chip').forEach(function (b) {
+        b.addEventListener('click', function () {
+          document.querySelectorAll('.cat-chip').forEach(function (x) { x.classList.remove('active'); });
+          b.classList.add('active');
+          cat = b.dataset.cat;
+          apply();
+        });
       });
-    }));
+      search.addEventListener('input', apply);
+      sortSel.addEventListener('change', apply);
+      apply();
+    })();
   </script>
   <script src="assets/stats.js"></script>
   <script src="assets/community.js"></script>
   <script src="assets/lang.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
 `;
@@ -257,7 +317,8 @@ writeFileSync("guides.html", indexHtml);
 // ── sitemap ───────────────────────────────────────────────────────────────────
 const urls = [
   ["", "weekly", "1.0"], ["guides.html", "weekly", "0.9"], ["about.html", "monthly", "0.8"],
-  ["coaching.html", "monthly", "0.9"], ["partnerships.html", "monthly", "0.8"], ["contact.html", "yearly", "0.6"],
+  ["coaching.html", "monthly", "0.9"], ["partnerships.html", "monthly", "0.8"],
+  ["newsletter.html", "monthly", "0.8"], ["contact.html", "yearly", "0.6"],
   ...guides.map((g) => ["guides/" + g.slug + ".html", "monthly", "0.7"]),
 ];
 writeFileSync("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

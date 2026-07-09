@@ -114,3 +114,18 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 /* reveal */
 .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
 .fade-up.visible { opacity: 1; transform: none; }
+
+/* audience demographics — real IG follower breakdowns rendered by audience.js */
+.aud-block { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.1rem; margin-top: 1.4rem; }
+.aud-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 18px; padding: 1.4rem 1.5rem 1.5rem; box-shadow: 0 20px 50px -30px var(--glow); }
+.aud-head { display: flex; align-items: center; justify-content: space-between; gap: .6rem; margin-bottom: 1.1rem; }
+.aud-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.aud-plat { display: inline-flex; align-items: center; gap: .3rem; font-size: .72rem; font-weight: 600; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: .2rem .55rem; }
+.aud-plat svg { width: 13px; height: 13px; fill: currentColor; }
+.aud-row { display: grid; grid-template-columns: minmax(78px, 39%) 1fr auto; align-items: center; gap: .7rem; margin: .58rem 0; font-size: .88rem; }
+.aud-lbl { color: var(--text); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.aud-track { position: relative; height: 10px; background: var(--bg2); border-radius: 999px; overflow: hidden; }
+.aud-fill { position: absolute; inset: 0 auto 0 0; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--purple), var(--blue)); transition: width .7s cubic-bezier(.22,1,.36,1); }
+.aud-val { color: var(--muted); font-weight: 700; font-variant-numeric: tabular-nums; min-width: 46px; text-align: right; }
+.aud-note { color: var(--muted); font-size: .78rem; margin-top: 1rem; }
+.aud-card:not(.aud-ready) .aud-empty { display: block; color: var(--muted); font-size: .85rem; }
