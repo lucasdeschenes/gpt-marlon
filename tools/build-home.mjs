@@ -9,6 +9,7 @@
 
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
+import { T, PH, SAME } from "./i18n-home.mjs";
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const MONTHS_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -205,6 +206,68 @@ const SITE_FOOTER = `  <footer class="site-footer">
     s = s.slice(0, a) + (i === 0 ? SITE_FOOTER : "") + s.slice(b);
   }
   console.log(`  footer: ${ranges.length} breakpoint copies collapsed into one shared footer`);
+}
+
+
+// ── i18n ──────────────────────────────────────────────────────────────────────
+// The Framer markup has no data-en attributes, so the DE/EN toggle had nothing
+// to swap on the homepage. Inject them from tools/i18n-home.mjs, keyed on the
+// German text. Anything unmatched is reported so untranslated copy is visible
+// rather than silently German.
+{
+  const plain = (h) => h.replace(/<[^>]+>/g, "")
+    .replace(/&amp;/g, "&").replace(/&nbsp;/g, " ")
+    .replace(/&#39;/g, "'").replace(/&quot;/g, '"')
+    .replace(/\s+/g, " ").trim();
+  const attr = (v) => v.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+
+  // the guide cards carry German titles/summaries straight from
+  // guides/data/*.json — those are German content, not UI copy, so they stay
+  const contentDE = new Set();
+  for (const g of newest) {
+    [g.title, g.summary, g.category, g.tool].forEach((v) => v && contentDE.add(String(v).replace(/\s+/g, " ").trim()));
+  }
+
+  let done = 0;
+  const missing = new Set();
+  s = s.replace(/<p([^>]*class="framer-text[^"]*"[^>]*)>([\s\S]*?)<\/p>/g, (full, at, inner) => {
+    if (/data-en=/.test(at)) return full;
+    const de = plain(inner);
+    if (!de) return full;
+    const en = T[de];
+    if (!en) { if (!SAME.has(de) && !contentDE.has(de) && !/^\w{3} \d{1,2}, \d{4}$/.test(de)) missing.add(de); return full; }
+    if (en === de) return full;
+    done++;
+    return `<p${at} data-en="${attr(en)}">${inner}</p>`;
+  });
+
+  // input placeholders
+  let ph = 0;
+  s = s.replace(/placeholder="([^"]*)"/g, (full, val) => {
+    const en = PH[val];
+    if (!en || en === val) return full;
+    ph++;
+    return `${full} data-en-ph="${attr(en)}"`;
+  });
+
+  // leaf elements outside Framer's RichText wrappers (e.g. the social card)
+  let leaf = 0;
+  for (const [de, en] of Object.entries(T)) {
+    if (de === en) continue;
+    const lit = de.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const rx = new RegExp("<(\\w+)([^>]*)>(\\s*)" + lit + "(\\s*)</\\1>", "g");
+    s = s.replace(rx, (full, tag, at, l, r) => {
+      if (/data-en=/.test(at)) return full;
+      leaf++;
+      return `<${tag}${at} data-en="${attr(en)}">${l}${de}${r}</${tag}>`;
+    });
+  }
+
+  console.log(`  i18n: ${done} rich-text + ${leaf} leaf blocks + ${ph} placeholders given data-en`);
+  if (missing.size) {
+    console.log(`  i18n: ${missing.size} block(s) NOT translated —`);
+    [...missing].forEach((m) => console.log(`        · ${m.slice(0, 110)}`));
+  }
 }
 
 // ── links ─────────────────────────────────────────────────────────────────────
