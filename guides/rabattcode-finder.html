@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/site.css" />
   <link rel="stylesheet" href="../assets/guides.css" />
 </head>
@@ -16,18 +16,20 @@
   <nav>
     <a href="../index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="../guides.html" class="active"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../newsletter.html">Newsletter</a></li>
       <li><a href="../partnerships.html">Partnerships</a></li>
       <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Alltag</span></div>
@@ -40,46 +42,65 @@
         <span class="chip">10 Prompts zum Kopieren</span>
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
-      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
-        <a class="btn-secondary" href="../guides/pdf/rabattcode-finder.pdf" download>⬇ Als PDF herunterladen</a>
-        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      <div class="guide-actions">
+        <a class="btn-primary" href="../guides/pdf/rabattcode-finder.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
       </div>
     </div>
     <div class="guide-note">ℹ️ Der Agent-Modus recherchiert und testet Codes und legt Artikel in den Warenkorb, schließt den Kauf aber nicht selbst ab — Warenkorb und Endpreis prüfst und bestätigst du selbst. Rabattcodes und Preise ändern sich laufend; eine Ersparnis ist nicht garantiert. Weil der Agent Webseiten automatisch interpretiert, vorher Banking-, Mail- und Zahlungs-Tabs schließen (Prompt-Injection-Risiko).</div>
 
-      <section class="guide-section">
+    <nav class="guide-toc" aria-label="Inhalt">
+      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
+      <ol>
+        <li><a href="#s1"><span class="toc-n">01</span>So funktioniert’s</a></li>
+        <li><a href="#s2"><span class="toc-n">02</span>Was du brauchst &amp; Agent-Modus aktivieren</a></li>
+        <li><a href="#s3"><span class="toc-n">03</span>Die 3 Kern-Prompts</a></li>
+        <li><a href="#s4"><span class="toc-n">04</span>7 Bonus-Prompts</a></li>
+        <li><a href="#s5"><span class="toc-n">05</span>Schnellübersicht — alle 10 Prompts</a></li>
+        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
+      </ol>
+    </nav>
+
+      <section class="guide-section" id="s1">
+        <div class="gs-num">01</div>
         <h2>So funktioniert’s</h2>
         <p>Du hast einen Artikel im Warenkorb; bevor du auf „Bestellen“ klickst, schickst du ChatGPT einmal los: Es sucht selbst nach aktiven Rabattcodes, probiert sie im Checkout durch und sagt dir, welcher am meisten spart. Möglich macht das der <b>Agent-Modus</b> von ChatGPT: Statt dir nur eine Liste zu geben (von der die Hälfte abgelaufen ist), öffnet ChatGPT einen eigenen Browser, geht zur Kaufseite, legt den Artikel in den Warenkorb und testet Code für Code durch.</p>
 <p><b>Begriff — Agent-Modus:</b> eine Funktion, bei der die KI nicht nur antwortet, sondern selbstständig einen Browser steuert (Seiten aufrufen, klicken, Formulare ausfüllen, Text eingeben). Du gibst das Ziel vor, ChatGPT übernimmt die Klicks.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s2">
+        <div class="gs-num">02</div>
         <h2>Was du brauchst &amp; Agent-Modus aktivieren</h2>
         <ul><li>Einen ChatGPT-Account mit <b>Plus-, Pro- oder Team/Business-Abo</b> — der Agent-Modus ist derzeit nicht im kostenlosen Tarif enthalten.</li><li>Sonst nichts: keine Browser-Erweiterung, keine zusätzliche App.</li></ul>
 <p>Ein Teil der Prompts funktioniert auch im normalen Chat, die eigentliche Stärke entfaltet sich aber erst im Agent-Modus. Aktivieren: ChatGPT direkt bitten — „Nutze den Agent-Modus“ oder „Öffne einen Browser und teste das für mich.“</p>
 <p><b>Selbst prüfen:</b> Reagiert ChatGPT nur mit einer Textliste, statt einen Browser zu öffnen, war der Agent-Modus nicht aktiv — noch einmal ausdrücklich danach fragen.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s3">
+        <div class="gs-num">03</div>
         <h2>Die 3 Kern-Prompts</h2>
         <p>Diese drei Prompts bilden den eigentlichen Ablauf — in dieser Reihenfolge nutzen:</p>
 <ul><li><b>Prompt 1 — Der Code-Jäger:</b> Du gibst den Link zum Produkt, ChatGPT durchsucht Coupon-Seiten, Händlerseiten, soziale Netzwerke, Foren und Deal-Aggregatoren nach Rabattcodes, Promos, Cashback, Studenten- und Neukundenaktionen und sortiert erkennbar Abgelaufenes aus. → Prompt 1.</li><li><b>Prompt 2 — Der Auto-Tester:</b> Mit aktivem Agent-Modus öffnet ChatGPT einen Browser, legt den Artikel in den Warenkorb und testet jeden Code aus Prompt 1 einzeln durch — am Ende: welcher hat funktioniert, welcher war abgelaufen, welcher spart am meisten. → Prompt 2.</li><li><b>Prompt 3 — Der Rundum-Check:</b> Hast du mehrere Kauf-Tabs offen, geht ChatGPT alle nacheinander durch. → Prompt 3.</li></ul>
 <p><b>Sicherheitshinweis:</b> Weil der Agent aktiv im Browser klickt und Seiteninhalte automatisch interpretiert, kann er durch versteckte Anweisungen auf manipulierten Webseiten getäuscht werden (Prompt-Injection). Schließe vor dem Rundum-Check alle Tabs mit Online-Banking, E-Mail-Postfach oder gespeicherten Zahlungsdaten. Lass den Agenten nie eine echte Bestellung final abschließen, ohne Warenkorb und Gesamtpreis vorher selbst zu prüfen.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s4">
+        <div class="gs-num">04</div>
         <h2>7 Bonus-Prompts</h2>
         <p>Diese gehen über die reine Codesuche hinaus und decken weitere Wege ab, beim Einkaufen zu sparen:</p>
 <ul><li><b>Preis-Tracker:</b> prüft Preisverlauf und bevorstehende Sales — verlässliche Verlaufsdaten sind aber nicht für jeden Shop verfügbar, die Einschätzung ist ein Anhaltspunkt. → Prompt 4.</li><li><b>Alternativen-Finder:</b> findet dasselbe Produkt (oder eine Alternative) günstiger bei anderen Händlern, als Zweitmarke, generalüberholt oder als Rückläufer. → Prompt 5.</li><li><b>Abo-Check:</b> Rabattcode, günstigerer Tarif oder kostenlose Alternative je Abo — inkl. möglichem Retention-Angebot bei Kündigung. → Prompt 6.</li><li><b>Cashback-Stapler:</b> kombiniert Promo-Code, Cashback-Portal (z. B. Rakuten, TopCashback), vergünstigte Gutscheinkarte und Kreditkarten-Prämien. → Prompt 7.</li><li><b>Verhandlungs-Skript:</b> Skript für Chat, E-Mail oder Telefon (stark bei Internet, Versicherung, Miete, B2B-Software). → Prompt 8.</li><li><b>Preisschutz-Check:</b> prüft, ob der Preis nach dem Kauf gefallen ist, und formuliert eine Erstattungsanfrage. → Prompt 9.</li><li><b>Sammelbestellungs-Optimierer:</b> findet den günstigsten Gesamtweg für mehrere Artikel inkl. Versandkosten. → Prompt 10.</li></ul>
 <p><b>DACH-Hinweis:</b> Preisschutz-Richtlinien sind vor allem in den USA verbreitet, in Deutschland, Österreich und der Schweiz seltener und uneinheitlich. Verwechsle sie nicht mit dem gesetzlichen Widerrufsrecht (14 Tage Rückgabe in der EU) — das betrifft die Rückgabe, nicht automatisch eine Preisdifferenz.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s5">
+        <div class="gs-num">05</div>
         <h2>Schnellübersicht — alle 10 Prompts</h2>
         <table><thead><tr><th>#</th><th>Prompt</th><th>Was er macht</th></tr></thead><tbody><tr><td>1</td><td>Der Code-Jäger</td><td>Findet aktuell gültige Rabattcodes für einen bestimmten Link</td></tr><tr><td>2</td><td>Der Auto-Tester</td><td>Testet jeden Code live im Browser und nennt den besten</td></tr><tr><td>3</td><td>Der Rundum-Check</td><td>Führt den Prozess für alle offenen Shopping-Tabs aus</td></tr><tr><td>4</td><td>Preis-Tracker</td><td>Prüft Preisverlauf und bevorstehende Sales</td></tr><tr><td>5</td><td>Alternativen-Finder</td><td>Findet dasselbe Produkt günstiger woanders</td></tr><tr><td>6</td><td>Abo-Check</td><td>Findet Rabatte oder kostenlose Alternativen für Abos</td></tr><tr><td>7</td><td>Cashback-Stapler</td><td>Stellt zusammen, wie sich mehrere Rabatte kombinieren lassen</td></tr><tr><td>8</td><td>Verhandlungs-Skript</td><td>Formuliert ein Skript für einen niedrigeren Preis</td></tr><tr><td>9</td><td>Preisschutz-Check</td><td>Prüft Preissenkungen für eine mögliche Erstattung</td></tr><tr><td>10</td><td>Sammelbestellungs-Optimierer</td><td>Findet den günstigsten Weg für mehrere Artikel zugleich</td></tr></tbody></table>
 <p><b>Kurz zusammengefasst:</b> Der Agent-Modus ersetzt kein eigenes Kopfrechnen — prüfe den finalen Warenkorb und Gesamtpreis vor dem Kauf immer noch einmal selbst. Verfügbare Codes, Cashback-Angebote und Preispolitiken ändern sich laufend und hängen vom Händler ab; eine Garantie auf Ersparnis gibt es nicht.</p>
       </section>
-    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+    <section class="guide-section" id="alle-prompts">
+      <div class="gs-num">★</div>
+      <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
           <span class="prompt-label">Prompt 1 — Der Code-Jäger</span>
@@ -188,7 +209,8 @@
           </div>
         </div>
         <pre class="prompt-text">Ich muss diese Artikel kaufen: [Liste]. Finde den günstigsten Weg, alle zu bekommen. Prüfe, ob ein Kauf bei einem Händler mit sitewide-Rabattcode günstiger ist als der jeweils billigste Einzelanbieter. Berücksichtige die Versandkosten.</pre>
-      </div></section>
+      </div>
+    </section>
     <div class="guide-download">
       <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
@@ -207,12 +229,11 @@
     <div class="footer-inner">
       <a href="../index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="../guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="../coaching.html">Coaching</a></li>
         <li><a href="../partnerships.html">Partnerships</a></li>
         <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="../newsletter.html">Newsletter</a></li>
@@ -228,6 +249,7 @@
     <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
   </footer>
   <script src="../assets/site.js"></script>
+  <script src="../assets/cursor.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>

@@ -8,25 +8,27 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
   <nav>
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="coaching.html">Coaching</a></li>
       <li><a href="partnerships.html" class="active">Partnerships</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="index.html#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
 
   <main class="page">
@@ -36,9 +38,9 @@
       <p class="page-sub">
         <span data-en="@gptmarlon reaches professionals and early adopters across Germany, Switzerland and Austria with daily German-language AI content — an audience that saves, comments and acts, not just scrolls.">@gptmarlon erreicht Professionals und Early Adopters in Deutschland, der Schweiz und Österreich mit täglichem deutschsprachigem KI-Content — ein Publikum, das speichert, kommentiert und handelt, nicht nur scrollt.</span>
       </p>
-      <div style="display:flex; gap:.8rem; margin-top:1.6rem; flex-wrap:wrap">
-        <a class="btn-primary" href="mailto:business@gptmarlon.com?subject=Partnership%20inquiry%20—%20%5Byour%20brand%5D&body=Hi%20Marlon%2C%0A%0AWe%27d%20love%20to%20explore%20a%20collaboration.%0A%0ABrand%3A%0AProduct%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0ABest%2C">✉️ business@gptmarlon.com</a>
-        <a class="btn-secondary" href="contact.html"><span data-en="Use the contact form">Zum Kontaktformular</span></a>
+      <div style="display:flex; gap:.7rem; margin-top:1.8rem; flex-wrap:wrap">
+        <a class="btn-primary" href="media-kit.html"><span data-en="View full media kit →">Komplettes Media-Kit ansehen →</span></a>
+        <a class="btn-secondary" href="mailto:business@gptmarlon.com?subject=Partnership%20inquiry%20—%20%5Byour%20brand%5D&body=Hi%20Marlon%2C%0A%0AWe%27d%20love%20to%20explore%20a%20collaboration.%0A%0ABrand%3A%0AProduct%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0ABest%2C"><span data-en="✉️ Get in touch">✉️ Kontakt aufnehmen</span></a>
       </div>
     </div>
 
@@ -49,25 +51,71 @@
       <div class="stat fade-up"><div class="num" data-aud-fact="dach">96%</div><div class="lbl"><span data-en="Audience in DACH">Publikum in DACH</span></div></div>
     </div>
 
+    <!-- CASE STUDY -->
+    <div class="case-study fade-up">
+      <div class="section-label"><span data-en="Case study">Case Study</span></div>
+      <h2 class="case-title"><span data-en="First sponsored reel">Erstes gesponsertes Reel</span></h2>
+      <div class="case-nums">
+        <div><b>192.6K</b><span>Views</span></div>
+        <div><b>9.1K</b><span>Saves</span></div>
+        <div><b>+1.007</b><span>Follows</span></div>
+        <div><b>4</b><span data-en="days">Tage</span></div>
+      </div>
+      <p><span data-en="A dedicated sponsored reel that performed like organic content — with 1,000+ viewers actively requesting the partner's resource in the comments.">Ein dediziertes gesponsertes Reel, das wie organischer Content performte — mit 1.000+ Zuschauern, die die Ressource des Partners aktiv in den Kommentaren angefragt haben.</span></p>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="page-hero fade-up" style="margin-top:3.5rem">
+      <div class="section-label"><span data-en="What you can book">Was du buchen kannst</span></div>
+      <h2 class="page-title" style="font-size:1.95rem"><span data-en="Formats &amp; deliverables">Formate & Leistungen</span></h2>
+    </div>
     <div class="cards">
       <div class="card fade-up">
-        <span class="emoji">📈</span>
-        <h3><span data-en="Case study: first sponsored reel">Case Study: erstes gesponsertes Reel</span></h3>
-        <p><b>192.6K Views · 9.1K Saves · +1.007 Follows</b><span data-en=" in the first 4 days — a dedicated sponsored reel that performed like organic, with 1,000+ viewers actively requesting the partner's resource via comments."> in den ersten 4 Tagen — ein dediziertes gesponsertes Reel, das wie organischer Content performte, mit 1.000+ Zuschauern, die aktiv über Kommentare die Ressource des Partners anfragten.</span></p>
-      </div>
-      <div class="card fade-up">
         <span class="emoji">🎬</span>
-        <h3><span data-en="Formats">Formate</span></h3>
-        <p><span data-en="Dedicated Reels (scripted, produced &amp; retention-optimised), Story sets with link stickers, TikTok &amp; YouTube cross-posting, usage rights and whitelisting on request.">Dedizierte Reels (geskriptet, produziert & retention-optimiert), Story-Sets mit Link-Stickern, TikTok- & YouTube-Cross-Posting, Nutzungsrechte und Whitelisting auf Anfrage.</span></p>
+        <h3><span data-en="Dedicated reel">Dediziertes Reel</span></h3>
+        <p><span data-en="Scripted, produced and retention-optimised — a full reel built around your product, not a bolted-on mention.">Geskriptet, produziert und retention-optimiert — ein komplettes Reel rund um dein Produkt, keine angeklebte Erwähnung.</span></p>
       </div>
       <div class="card fade-up">
-        <span class="emoji">🎯</span>
-        <h3><span data-en="Why it converts">Warum es konvertiert</span></h3>
-        <p><span data-en="Every reel is instrumented with per-second retention analytics — sponsored segments are placed where attention is proven to hold. The audience: 72% aged 25–54, decision-makers and professionals.">Jedes Reel ist mit sekundengenauer Retention-Analyse instrumentiert — gesponserte Segmente werden dort platziert, wo die Aufmerksamkeit nachweislich hält. Das Publikum: 72% zwischen 25–54, Entscheider und Professionals.</span></p>
+        <span class="emoji">📲</span>
+        <h3><span data-en="Story set + link sticker">Story-Set + Link-Sticker</span></h3>
+        <p><span data-en="A multi-frame story sequence with a direct link sticker — the fastest path from view to click.">Eine mehrteilige Story-Sequenz mit direktem Link-Sticker — der schnellste Weg vom View zum Klick.</span></p>
+      </div>
+      <div class="card fade-up">
+        <span class="emoji">🔁</span>
+        <h3><span data-en="Cross-posting">Cross-Posting</span></h3>
+        <p><span data-en="The same asset published on TikTok and YouTube Shorts, so one production reaches three platforms.">Dasselbe Asset auf TikTok und YouTube Shorts — eine Produktion, drei Plattformen.</span></p>
+      </div>
+      <div class="card fade-up">
+        <span class="emoji">📄</span>
+        <h3><span data-en="Usage rights &amp; whitelisting">Nutzungsrechte & Whitelisting</span></h3>
+        <p><span data-en="Run the reel as a paid ad from your account or mine — usage rights and whitelisting available on request.">Schalte das Reel als bezahlte Anzeige über deinen oder meinen Account — Nutzungsrechte und Whitelisting auf Anfrage.</span></p>
+      </div>
+      <div class="card fade-up">
+        <span class="emoji">✉️</span>
+        <h3><span data-en="Newsletter feature">Newsletter-Feature</span></h3>
+        <p><span data-en="A dedicated section in the AI toolkit newsletter — for products that need more explanation than a reel allows.">Ein eigener Abschnitt im KI-Toolkit-Newsletter — für Produkte, die mehr Erklärung brauchen, als ein Reel hergibt.</span></p>
+      </div>
+      <div class="card fade-up">
+        <span class="emoji">🎞️</span>
+        <h3><span data-en="Raw video files">Rohmaterial</span></h3>
+        <p><span data-en="Get the unbranded source files to reuse across your own channels and campaigns.">Erhalte die unbrandeten Quelldateien zur Weiterverwendung in deinen eigenen Kanälen und Kampagnen.</span></p>
       </div>
     </div>
 
-    <div class="page-hero fade-up" style="margin-top:1.4rem">
+    <!-- WHY -->
+    <div class="page-hero fade-up" style="margin-top:3.5rem">
+      <div class="section-label"><span data-en="Why it works">Warum es funktioniert</span></div>
+      <h2 class="page-title" style="font-size:1.95rem"><span data-en="Why brands work with me">Warum Marken mit mir arbeiten</span></h2>
+    </div>
+    <ul class="why-list fade-up">
+      <li><span data-en="<b>Retention-driven placement.</b> Every reel is instrumented with per-second retention analytics — sponsored segments sit where attention is proven to hold, not where they're convenient."><b>Retention-getriebene Platzierung.</b> Jedes Reel ist mit sekundengenauer Retention-Analyse instrumentiert — gesponserte Segmente sitzen dort, wo die Aufmerksamkeit nachweislich hält, nicht dort, wo es bequem ist.</span></li>
+      <li><span data-en="<b>A decision-making audience.</b> 72% are aged 25–54 — professionals and decision-makers, not a teenage scroll audience."><b>Ein entscheidungsfähiges Publikum.</b> 72% sind zwischen 25 und 54 — Professionals und Entscheider, kein reines Teenager-Publikum.</span></li>
+      <li><span data-en="<b>Genuinely DACH.</b> German-language content for a German-speaking market — around 96% of the audience sits in Germany, Austria and Switzerland."><b>Echtes DACH.</b> Deutschsprachiger Content für einen deutschsprachigen Markt — rund 96% des Publikums sitzt in Deutschland, Österreich und der Schweiz.</span></li>
+      <li><span data-en="<b>Saves, not just views.</b> The content is built to be saved and re-opened — the strongest signal that a viewer intends to act."><b>Saves statt nur Views.</b> Der Content ist darauf gebaut, gespeichert und wieder geöffnet zu werden — das stärkste Signal, dass jemand handeln will.</span></li>
+      <li><span data-en="<b>Live, verifiable numbers.</b> Every figure on this page is pulled from the Instagram account automatically — nothing here is a screenshot from six months ago."><b>Live und überprüfbar.</b> Jede Zahl auf dieser Seite kommt automatisch aus dem Instagram-Account — nichts davon ist ein Screenshot von vor sechs Monaten.</span></li>
+    </ul>
+
+    <div class="page-hero fade-up" style="margin-top:3.5rem">
       <div class="section-label"><span data-en="Audience">Zielgruppe</span></div>
       <h2 class="page-title" style="font-size:1.95rem"><span data-en="Who you reach —">Wen du erreichst —</span> <span class="gradient-text"><span data-aud-fact="dach">96%</span> <span data-en="in DACH.">in DACH.</span></span></h2>
       <p class="page-sub"><span data-en="Live Instagram follower demographics — pulled straight from the account and refreshed automatically, not a static claim.">Live-Demografie der Instagram-Follower — direkt aus dem Account und automatisch aktualisiert, kein statisches Versprechen.</span></p>
@@ -92,13 +140,13 @@
       </div>
     </div>
 
-    <div class="form-box fade-up" style="max-width:none">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap">
-        <div>
-          <h3 style="font-family:'Space Grotesk',sans-serif; font-size:1.25rem; margin-bottom:.4rem"><span data-en="The current media kit">Das aktuelle Media-Kit</span></h3>
-          <p style="color:var(--muted); font-size:.93rem"><span data-en="Full audience breakdown, benchmarks and campaign data — always the latest live numbers. Open it and save as PDF.">Vollständige Zielgruppen-Analyse, Benchmarks und Kampagnendaten — immer mit den aktuellsten Live-Zahlen. Öffnen und als PDF speichern.</span></p>
-        </div>
+    <!-- FINAL CTA -->
+    <div class="final-cta fade-up">
+      <h2><span data-en="Let's build something together.">Lass uns zusammen etwas bauen.</span></h2>
+      <p><span data-en="The media kit has the full audience breakdown, benchmarks and campaign data — always with the latest live numbers. Open it, or just send me a line.">Das Media-Kit enthält die vollständige Zielgruppen-Analyse, Benchmarks und Kampagnendaten — immer mit den aktuellsten Live-Zahlen. Öffne es, oder schreib mir einfach.</span></p>
+      <div class="final-cta-actions">
         <a class="btn-primary" href="media-kit.html"><span data-en="Open media kit →">Media-Kit öffnen →</span></a>
+        <a class="btn-secondary" href="mailto:business@gptmarlon.com?subject=Partnership%20inquiry%20—%20%5Byour%20brand%5D">business@gptmarlon.com</a>
       </div>
     </div>
   </main>
@@ -107,12 +155,11 @@
     <div class="footer-inner">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="coaching.html">Coaching</a></li>
         <li><a href="partnerships.html">Partnerships</a></li>
         <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="newsletter.html">Newsletter</a></li>
@@ -129,6 +176,8 @@
   </footer>
 
   <script src="assets/site.js"></script>
+
+  <script src="assets/cursor.js"></script>
   <script src="assets/stats.js"></script>
   <script src="assets/audience.js"></script>
   <script src="assets/community.js"></script>

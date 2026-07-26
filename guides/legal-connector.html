@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/site.css" />
   <link rel="stylesheet" href="../assets/guides.css" />
 </head>
@@ -16,18 +16,20 @@
   <nav>
     <a href="../index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="../guides.html" class="active"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../newsletter.html">Newsletter</a></li>
       <li><a href="../partnerships.html">Partnerships</a></li>
       <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Produktivität</span></div>
@@ -40,14 +42,32 @@
         <span class="chip">37 Prompts zum Kopieren</span>
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
-      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
-        <a class="btn-secondary" href="../guides/pdf/legal-connector.pdf" download>⬇ Als PDF herunterladen</a>
-        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      <div class="guide-actions">
+        <a class="btn-primary" href="../guides/pdf/legal-connector.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
       </div>
     </div>
     <div class="guide-note">ℹ️ Das „Plugin" ist ein Bündel aus Claude-Skills und Connectors; seine Analysen sind KI-generiert und ersetzen keine Prüfung durch eine Anwältin/einen Anwalt oder Steuerberater – lass rechtlich Wesentliches fachlich freigeben.</div>
 
-      <section class="guide-section">
+    <nav class="guide-toc" aria-label="Inhalt">
+      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
+      <ol>
+        <li><a href="#s1"><span class="toc-n">01</span>Teil 1 – Das Plugin in 60 Sekunden installieren</a></li>
+        <li><a href="#s2"><span class="toc-n">02</span>Alle Funktionen auf einen Blick</a></li>
+        <li><a href="#s3"><span class="toc-n">03</span>Teil 2 – Das Playbook (der Schritt, den fast alle überspringen)</a></li>
+        <li><a href="#s4"><span class="toc-n">04</span>Teil 3 – Vertragsprüfung mit /review-contract</a></li>
+        <li><a href="#s5"><span class="toc-n">05</span>Teil 4 – NDA-Triage mit /triage-nda</a></li>
+        <li><a href="#s6"><span class="toc-n">06</span>Teil 5 – Compliance-Prüfung (einfach fragen)</a></li>
+        <li><a href="#s7"><span class="toc-n">07</span>Teil 6 – Risiko-Bewertung mit System</a></li>
+        <li><a href="#s8"><span class="toc-n">08</span>Teil 7 – Vendor-Check, Briefings &amp; Antwort-Vorlagen</a></li>
+        <li><a href="#s9"><span class="toc-n">09</span>Teil 8 – Alltags-Prompts (ganz ohne Plugin)</a></li>
+        <li><a href="#s10"><span class="toc-n">10</span>Die wichtigste Regel zum Schluss</a></li>
+        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
+      </ol>
+    </nav>
+
+      <section class="guide-section" id="s1">
+        <div class="gs-num">01</div>
         <h2>Teil 1 – Das Plugin in 60 Sekunden installieren</h2>
         <p>Das Legal-Plugin kommt direkt von Anthropic (offiziell verifiziert, quelloffen, kostenlos) und läuft in <b>Claude Cowork</b> – dem Agenten-Modus der Desktop-App, in dem Claude direkt mit deinen Dateien arbeitet.</p>
 <p><b>Voraussetzungen:</b> bezahlter Claude-Plan (ab Pro, ca. 20 €/Monat) · Claude-Desktop-App (Windows/macOS) · das Plugin selbst ist kostenlos.</p>
@@ -57,12 +77,14 @@
 <p>&gt; Terminologie: Ein „Plugin" ist bei Claude ein fertiges Erweiterungspaket – gebündelte Arbeitsanleitungen (<b>Skills</b>), Befehle und Tool-Anbindungen (<b>Connectors</b>).</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s2">
+        <div class="gs-num">02</div>
         <h2>Alle Funktionen auf einen Blick</h2>
         <table><thead><tr><th>Funktion</th><th>Aufruf</th><th>Was sie macht</th></tr></thead><tbody><tr><td>Vertragsprüfung</td><td><code>/review-contract</code></td><td>Klausel für Klausel prüfen, Ampel-Bewertung, fertige Gegenformulierungen</td></tr><tr><td>NDA-Triage</td><td><code>/triage-nda</code></td><td>Geheimhaltungsvertrag einstufen: unterschreiben / prüfen / ablehnen</td></tr><tr><td>Vendor-Check</td><td><code>/vendor-check</code></td><td>Alle Verträge &amp; Fristen zu einem Lieferanten aus deinen Systemen ziehen</td></tr><tr><td>Briefings</td><td><code>/brief</code></td><td>Tages-Briefing, Rechtsrecherche oder Krisen-Briefing</td></tr><tr><td>Antwort-Vorlagen</td><td><code>/respond</code></td><td>Antworten auf DSGVO-Anfragen, NDA-Anfragen &amp; Co. aus Vorlagen</td></tr><tr><td>Compliance-Prüfung</td><td>normale Anfrage</td><td>Vorhaben gegen DSGVO, CCPA &amp; Co. prüfen</td></tr><tr><td>Risiko-Bewertung</td><td>normale Anfrage</td><td>Risiken scoren (1–25) mit Schwere-mal-Wahrscheinlichkeit-Matrix</td></tr><tr><td>Meeting-Briefing</td><td>normale Anfrage</td><td>Gesprächsvorbereitung mit Kontext aus deinen verbundenen Tools</td></tr></tbody></table>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s3">
+        <div class="gs-num">03</div>
         <h2>Teil 2 – Das Playbook (der Schritt, den fast alle überspringen)</h2>
         <p>Das Plugin prüft Verträge nicht gegen einen allgemeinen Maßstab, sondern gegen dein <b>Playbook</b>: eine einfache Textdatei mit deinen Standard-Positionen – welche Haftungsgrenzen du akzeptierst, welche Kündigungsfristen, wann eskaliert wird.</p>
 <p><b>Warum das Pflicht ist:</b> Die mitgelieferten Standard-Positionen basieren auf US-Recht (Delaware, New York, Kalifornien). Anthropic weist ausdrücklich darauf hin: Wer in der EU arbeitet, muss das Playbook an die eigene Rechtsordnung anpassen – sonst bewertet Claude nach amerikanischen Maßstäben, z. B. ohne DSGVO-Anforderungen und deutsche AGB-Besonderheiten.</p>
@@ -71,7 +93,8 @@
 <p><b>Selbst prüfen:</b> Lade einen alten, bereits geprüften Vertrag hoch und starte <code>/review-contract</code>. Bewertet Claude die Punkte so, wie dein Anwalt es damals tat? Wenn nicht: Playbook nachschärfen.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s4">
+        <div class="gs-num">04</div>
         <h2>Teil 3 – Vertragsprüfung mit /review-contract</h2>
         <p>Lade einen Vertrag, Mietvertrag oder AGB hoch – Claude prüft Klausel für Klausel gegen dein Playbook und versieht jede Abweichung mit konkreten Gegenformulierungen (Redlines).</p>
 <table><thead><tr><th>Stufe</th><th>Bedeutung</th><th>Was Claude liefert</th></tr></thead><tbody><tr><td><b>GRÜN</b></td><td>Entspricht deiner Standard-Position</td><td>Keine Verhandlung nötig</td></tr><tr><td><b>GELB</b></td><td>Außerhalb Standard, aber verhandelbar</td><td>Gegenformulierung, Rückfallposition, Business-Impact</td></tr><tr><td><b>ROT</b></td><td>Wesentliches Risiko</td><td>Konkretes Risiko, Begründung, Empfehlung: Fachanwalt einschalten</td></tr></tbody></table>
@@ -79,27 +102,31 @@
 <p><b>Tipp:</b> Lade die Original-Datei hoch (PDF/Word) statt Text zu kopieren – so bleiben Formatierung und Klausel-Nummerierung erhalten und Claude kann präzise auf „§ 7 Abs. 2" verweisen.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s5">
+        <div class="gs-num">05</div>
         <h2>Teil 4 – NDA-Triage mit /triage-nda</h2>
         <p>Claude stuft jedes NDA in Minuten ein: GRÜN (unterschreiben), GELB (gezielte Punkte prüfen lassen) oder ROT (nicht unterschreiben, Anwalt einschalten).</p>
 <p><b>Was Claude in jedem NDA screent:</b> Struktur (gegenseitig vs. einseitig) · zu breite Definition von „vertraulich" · Standard-Ausnahmen (öffentlich bekannt, vorher bekannt, unabhängig entwickelt, von Dritten erhalten, gesetzliche Pflicht) · Laufzeit und Nachwirkung (unbefristet = Warnsignal) · Rückgabe-/Löschpflichten · Rechtsfolgen · versteckte Klauseln (Abwerbeverbote, Wettbewerbsverbote, Exklusivität, Übertragung geistigen Eigentums) · Gerichtsstand.</p>
 <p>Prompts: Schnell-Check, NDA vom Wettbewerber und Stapel-Triage.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s6">
+        <div class="gs-num">06</div>
         <h2>Teil 5 – Compliance-Prüfung (einfach fragen)</h2>
         <p>Beschreibe, was du vorhast, und Claude gleicht es mit DSGVO, CCPA und weiteren Datenschutz-Regelwerken ab: welche Gesetze greifen, wo Risiken liegen, welche Freigaben nötig sind und was du vor dem Start ändern solltest. Kein eigener Slash-Befehl – die Compliance-Fähigkeit springt automatisch an.</p>
 <p>Fertige Prompts decken ab: neues Produkt-Feature (Biometrie), Marketing-Kampagne, E-Mail-Marketing (DSGVO/UWG/ePrivacy), KI-Feature (DSGVO + EU AI Act), Datentransfer in die USA, Mitarbeiter-Monitoring (inkl. Betriebsrat) und Kinder-/Jugenddaten.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s7">
+        <div class="gs-num">07</div>
         <h2>Teil 6 – Risiko-Bewertung mit System</h2>
         <p>Lade ein Dokument hoch und bitte um eine Risiko-Bewertung: Jedes Risiko wird nach Schwere × Eintrittswahrscheinlichkeit mit 1–25 Punkten gescort.</p>
 <table><thead><tr><th>Risiko-Stufe</th><th>Score</th><th>Empfohlene Aktion</th></tr></thead><tbody><tr><td>GRÜN (niedrig)</td><td>1–4</td><td>Akzeptieren, dokumentieren, gelegentlich prüfen</td></tr><tr><td>GELB (mittel)</td><td>5–9</td><td>Entschärfen, monatlich beobachten, Verantwortlichen benennen</td></tr><tr><td>ORANGE (hoch)</td><td>10–15</td><td>An erfahrenen Juristen eskalieren, wöchentlich prüfen</td></tr><tr><td>ROT (kritisch)</td><td>16–25</td><td>Sofort eskalieren, externe Kanzlei einschalten</td></tr></tbody></table>
 <p>Prompts: Lieferantenvertrag bewerten, Markteintritt USA, Open-Source-Lizenzrisiko (AGPL) und Scheinselbstständigkeit.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s8">
+        <div class="gs-num">08</div>
         <h2>Teil 7 – Vendor-Check, Briefings &amp; Antwort-Vorlagen</h2>
         <p><b><code>/vendor-check</code></b> durchsucht deine verbundenen Systeme (Slack, Microsoft 365, Box, Jira/Confluence) nach allen Verträgen zu einem Lieferanten: was existiert (NDA, Rahmenvertrag, AVV), was fehlt, was läuft aus. <b>Voraussetzung:</b> angebundene <b>Connectoren</b> (in den Claude-Einstellungen unter <i>Connectors</i>). Ohne verbundene Systeme sagt Claude ehrlich, was es nicht prüfen konnte.</p>
 <p><b><code>/brief</code></b> liefert drei Modi: <code>daily</code> (Morgen-Briefing), <code>topic:</code> (Themen-Recherche) und <code>incident</code> (Vorfall/Datenpanne, Abmahnung).</p>
@@ -107,19 +134,23 @@
 <p><b>Meeting-Briefings</b> ziehen Kontext aus Kalender, E-Mail und Dokumenten und bauen ein komplettes Briefing mit Gesprächspunkten und Aufgaben-Tracking.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s9">
+        <div class="gs-num">09</div>
         <h2>Teil 8 – Alltags-Prompts (ganz ohne Plugin)</h2>
         <p>Für viele Rechtsfragen brauchst du das Plugin gar nicht. Diese Prompts funktionieren in jedem Claude-Chat: jedes Dokument verständlich erklären, zwei Vertragsversionen vergleichen, eine Klausel in Klartext übersetzen, einen besseren Deal verhandeln, ein Kündigungsschreiben aufsetzen und auf eine Forderung reagieren.</p>
 <p><b>Selbst prüfen:</b> KI ist dein Erstgutachter, nicht deine letzte Instanz. Bei allem, was Geld oder Rechtsfolgen hat, die Kernaussagen selbst im Dokument nachlesen – und bei hohem Einsatz (Kündigung, Klage, große Summen) vor dem Absenden fachlich prüfen lassen.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s10">
+        <div class="gs-num">10</div>
         <h2>Die wichtigste Regel zum Schluss</h2>
         <p>Der schnellste Einstieg: <b>1.</b> Installieren (Cowork → Customize → Plugins → Legal → Install). <b>2.</b> Playbook anlegen (<code>legal.local.md</code> in einen freigegebenen Ordner). <b>3.</b> Erstes Dokument testen (NDA oder Altvertrag, <code>/triage-nda</code> oder <code>/review-contract</code>).</p>
 <p>Das Plugin ist ein <b>Beschleuniger für die Vorarbeit</b>: Es triagiert, prüft gegen dein Playbook und formuliert Entwürfe. <b>Es ersetzt keine Rechtsberatung</b> – bei allem Wesentlichen gehört die finale Entscheidung in die Hände eines Anwalts. Genau dafür ist das Ampel-System gebaut: GRÜN beschleunigt Routine, ROT zeigt, wo sich der Anwalt wirklich lohnt.</p>
 <p><b>Datenschutz-Hinweis:</b> Verträge enthalten oft personenbezogene Daten und Geschäftsgeheimnisse. Prüfe vor dem Hochladen, ob du die Dokumente teilen darfst, schwärze sensible Stellen und aktiviere in den Claude-Einstellungen die passenden Datenschutz-Optionen.</p>
       </section>
-    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+    <section class="guide-section" id="alle-prompts">
+      <div class="gs-num">★</div>
+      <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
           <span class="prompt-label">/review-contract – Lieferantenvertrag</span>
@@ -538,7 +569,8 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
           </div>
         </div>
         <pre class="prompt-text">Ich habe dieses Schreiben von [Firma/Person] erhalten, die behauptet, ich schulde ihr Geld für [Situation]. [Schreiben hochladen] Hilf mir, eine sachliche Antwort zu entwerfen, die die Forderung bestreitet und begründet, warum ich den Betrag nicht schulde.</pre>
-      </div></section>
+      </div>
+    </section>
     <div class="guide-download">
       <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
@@ -557,12 +589,11 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
     <div class="footer-inner">
       <a href="../index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="../guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="../coaching.html">Coaching</a></li>
         <li><a href="../partnerships.html">Partnerships</a></li>
         <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="../newsletter.html">Newsletter</a></li>
@@ -578,6 +609,7 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
     <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
   </footer>
   <script src="../assets/site.js"></script>
+  <script src="../assets/cursor.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>

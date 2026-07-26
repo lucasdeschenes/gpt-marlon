@@ -8,17 +8,17 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css" />
   <style>
     .nl-hero { text-align: center; max-width: 680px; margin: 0 auto; }
     .nl-hero .page-sub { margin-left: auto; margin-right: auto; }
     .nl-form { display: flex; gap: .6rem; max-width: 460px; margin: 1.8rem auto 0; }
     .nl-form input { flex: 1; min-width: 0; padding: .9rem 1.1rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg2); color: var(--text); font-family: inherit; font-size: .98rem; }
-    .nl-form input:focus { outline: none; border-color: var(--purple-light); box-shadow: 0 0 0 3px var(--glow); }
+    .nl-form input:focus { outline: none; border-color: var(--yellow); box-shadow: 0 0 0 3px var(--glow); }
     .nl-form .btn-primary { white-space: nowrap; }
     .nl-proof { display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap; margin-top: 2.4rem; color: var(--muted); font-size: .9rem; }
-    .nl-proof b { color: var(--text); font-family: 'Space Grotesk', sans-serif; }
+    .nl-proof b { color: var(--text); font-family: var(--font-display); }
     .nl-what { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
     .nl-what .card { text-align: left; }
     @media (max-width: 640px) { .nl-what { grid-template-columns: 1fr; } }
@@ -28,18 +28,20 @@
   <nav>
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="coaching.html">Coaching</a></li>
       <li><a href="partnerships.html">Partnerships</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="index.html#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
 
   <main class="page">
@@ -102,12 +104,11 @@
     <div class="footer-inner">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="coaching.html">Coaching</a></li>
         <li><a href="partnerships.html">Partnerships</a></li>
         <li><a href="newsletter.html">Newsletter</a></li>
         <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
@@ -124,6 +125,8 @@
   </footer>
 
   <script src="assets/site.js"></script>
+
+  <script src="assets/cursor.js"></script>
   <script>
     document.getElementById('nlForm').addEventListener('submit', async (e) => {
       e.preventDefault();

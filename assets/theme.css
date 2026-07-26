@@ -1,0 +1,89 @@
+/* GPT Marlon — design tokens.
+   Extracted from the Framer design ("adapt-hero-section" branch).
+   Single source of truth: site.css, guides.css and index.html all read from here.
+   Dark-only by design — the light theme was removed with the redesign. */
+
+:root {
+  /* ---- surfaces (neutral black, not blue-black) ---- */
+  --bg:   #030303;   /* page */
+  --bg2:  #141414;   /* raised surface / input */
+  --bg3:  #1a1a1a;   /* card */
+  --bg4:  #1d1d1d;   /* card hover / nested */
+
+  /* ---- lines ---- */
+  --border:        #222222;
+  --border-strong: #303030;
+  --border-soft:   rgba(255,255,255,.07);
+
+  /* ---- text ---- */
+  --text:   #ffffff;
+  --text2:  #d4d4d4;   /* secondary body */
+  --muted:  #a3a2a2;   /* captions, labels */
+  --faint:  #454545;   /* dividers, disabled, meta */
+
+  /* ---- light surfaces (used ON the dark page) ---- */
+  --cream:  #faf7eb;
+  --white:  #ffffff;
+  --off:    #f2f2f2;
+  --off2:   #ededed;
+
+  /* ---- accents ---- */
+  --yellow:      #ffe74a;
+  --yellow-soft: #fdff91;
+  --lavender:      #c191ff;
+  --lavender-soft: #ddcffb;
+  --magenta: #ff0dc2;
+  --peach:   #ffdbb5;
+
+  /* the redesign's primary action: white pill, black label */
+  --btn-bg: #ffffff;
+  --btn-fg: #030303;
+
+  /* ---- category chips — one accent per guide category ---- */
+  --cat-alltag:       var(--yellow);
+  --cat-claude:       var(--lavender-soft);
+  --cat-content:      var(--peach);
+  --cat-finanzen:     var(--yellow-soft);
+  --cat-karriere:     var(--lavender);
+  --cat-produktiv:    var(--cream);
+
+  /* ---- radii ---- */
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r:    10px;   /* buttons, chips, inputs */
+  --r-lg: 16px;   /* cards */
+  --r-xl: 24px;   /* large panels */
+
+  /* ---- type ---- */
+  --font-display: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --fs-hero: clamp(2.6rem, 7vw, 3.5rem);  /*  ~56px */
+  --fs-h1:   clamp(2rem, 5vw, 2.5rem);    /*  ~40px */
+  --fs-h2:   clamp(1.6rem, 4vw, 2rem);    /*  ~32px */
+  --fs-h3:   1.5rem;                      /*   24px */
+  --fs-lg:   1.125rem;                    /*   18px */
+  --fs-base: 1rem;                        /*   16px */
+  --fs-sm:   .9375rem;                    /*   15px */
+  --fs-xs:   .875rem;                     /*   14px */
+  --fs-2xs:  .8125rem;                    /*   13px */
+  --fs-3xs:  .75rem;                      /*   12px */
+
+  /* ---- elevation ---- */
+  --shadow:    0 20px 50px -30px rgba(0,0,0,.9);
+  --shadow-lg: 0 40px 90px -40px rgba(0,0,0,.95);
+
+  /* ---- misc ---- */
+  --nav-bg: rgba(3,3,3,.82);
+  --noise-opacity: .28;
+  --ease: cubic-bezier(.22,1,.36,1);
+
+  /* Legacy aliases — kept so any rule still referencing the old purple system
+     degrades to the new palette instead of breaking. Remove once nothing uses them. */
+  --purple:       var(--lavender);
+  --purple-light: var(--lavender);
+  --blue:         var(--lavender-soft);
+  --cyan:         var(--yellow);
+  --pink:         var(--magenta);
+  --glow:         rgba(0,0,0,.6);
+}

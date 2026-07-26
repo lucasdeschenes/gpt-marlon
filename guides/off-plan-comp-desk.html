@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/site.css" />
   <link rel="stylesheet" href="../assets/guides.css" />
 </head>
@@ -16,18 +16,20 @@
   <nav>
     <a href="../index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="../guides.html" class="active"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../newsletter.html">Newsletter</a></li>
       <li><a href="../partnerships.html">Partnerships</a></li>
       <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Finanzen</span></div>
@@ -40,14 +42,28 @@
         <span class="chip">1 Prompt zum Kopieren</span>
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
-      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
-        <a class="btn-secondary" href="../guides/pdf/off-plan-comp-desk.pdf" download>⬇ Als PDF herunterladen</a>
-        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      <div class="guide-actions">
+        <a class="btn-primary" href="../guides/pdf/off-plan-comp-desk.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
       </div>
     </div>
     <div class="guide-note">ℹ️ Alle Ausgaben sind Research und keine Anlage-, Steuer- oder Rechtsberatung: Claude analysiert, modelliert und schreibt das Memo, aber die Kauf- oder Verkaufsentscheidung triffst und verantwortest du selbst — prüfe Werte und Marktdaten gegen, denn KI kann sie falsch erkennen.</div>
 
-      <section class="guide-section">
+    <nav class="guide-toc" aria-label="Inhalt">
+      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
+      <ol>
+        <li><a href="#s1"><span class="toc-n">01</span>Teil 1 — Warum das zählt und was du baust</a></li>
+        <li><a href="#s2"><span class="toc-n">02</span>Teil 2 — Was du brauchst</a></li>
+        <li><a href="#s3"><span class="toc-n">03</span>Teil 3 — Plugin installieren &amp; Skill finden</a></li>
+        <li><a href="#s4"><span class="toc-n">04</span>Teil 4 — Den Analysten briefen</a></li>
+        <li><a href="#s5"><span class="toc-n">05</span>Schritt 4 — Das Projektpaket hochladen</a></li>
+        <li><a href="#s6"><span class="toc-n">06</span>Schritt 5 — Das Ergebnis lesen</a></li>
+        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
+      </ol>
+    </nav>
+
+      <section class="guide-section" id="s1">
+        <div class="gs-num">01</div>
         <h2>Teil 1 — Warum das zählt und was du baust</h2>
         <p>Off-Plan-Einführungen verkaufen über Emotion: ein Render vom Golfplatz, ein Hotelpartner, ein Zahlungsplan, der sonntagabends reinflattert. Die eine entscheidende Frage — ist der Preis fair gegenüber dem restlichen Markt? — beantwortet ausgerechnet die Preisfolie des Entwicklers selbst.</p>
 <p>Ein institutioneller Käufer akzeptiert das nie. Er fährt vor jedem Angebot zwei Vergleichsanalysen pro Wohnungstyp: eine gegen fertige Objekte (Wachstumspotenzial), eine gegen aktuelle Einführungen (Preis-Positionierung). Danach ein Renditemodell bis zur Übergabe, dann ein schriftliches Memo. Nichts davon ist exotisch — es liegt nur meist hinter einer Bezahlschranke, an die normale Käufer nie kommen.</p>
@@ -57,7 +73,8 @@
 <p><i>Kurz gesagt:</i> Was sich ändert, ist nicht die Entscheidung — die bleibt deine. Was sich ändert, ist die Tiefe der Datei, aus der du sie triffst.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s2">
+        <div class="gs-num">02</div>
         <h2>Teil 2 — Was du brauchst</h2>
         <p><b>Voraussetzungen</b></p>
 <ul><li><b>Claude mit Cowork.</b> Cowork ist in allen bezahlten Plänen ab Pro (20 $/Monat) enthalten, läuft aber nur in der Desktop-App für macOS oder Windows — nicht im Browser und nicht mobil.</li><li><b>Das Plugin „Financial Services".</b> Es bringt den Agenten <code>market-researcher</code> mit, und darin steckt der Skill <code>comps-analysis</code>.</li><li><b>Das Launch-Dokumentenpaket.</b> Entwickler-Track-Record, Master-Plan-Broschüre, jede Wohnungstyp-Broschüre, Preisliste, Flächenplan und Zahlungsplan.</li><li>Etwa 10 Minuten von der Installation bis zur laufenden Analyse — plus die Zeit, das Memo zu lesen.</li></ul>
@@ -66,7 +83,8 @@
 <p><i>Plan-Hinweis:</i> Im kostenlosen Tarif ist der Plugin-Marktplatz nicht sichtbar — dort endet der Workflow. Für Cowork, das Plugin und Datei-Uploads brauchst du einen bezahlten Plan ab Pro.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s3">
+        <div class="gs-num">03</div>
         <h2>Teil 3 — Plugin installieren &amp; Skill finden</h2>
         <p><b>Schritt 1 — Das Plugin installieren.</b> Die Installation dauert unter einer Minute und lebt in deinem bestehenden Claude-Konto.</p>
 <ol><li>In Claude die Einstellungen öffnen und auf Anpassen (Customise) klicken.</li><li>Plugins hinzufügen wählen, dann Plugins durchsuchen.</li><li>Das Plugin „Financial Services" suchen und unter Persönlich (Personal) installieren.</li></ol>
@@ -75,14 +93,16 @@
 <p><i>Warum das zählt:</i> Jedes Plugin funktioniert so — frag Claude, was drin ist. Du findest Agenten und Skills, die in keiner Doku auftauchen, auch solche, die ursprünglich für angrenzende Zwecke gebaut wurden und sauber auf Immobilien passen.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s4">
+        <div class="gs-num">04</div>
         <h2>Teil 4 — Den Analysten briefen</h2>
         <p>Der <code>comps-analysis</code>-Skill kommt ursprünglich aus der Aktienanalyse und stellt vorab ein paar Setup-Fragen. Die wichtigste fragt, ob du eine Vorlage oder bestehende Daten hast. Dort fügst du den <b>Master-Prompt</b> (unten) ein — er verwandelt den generischen Aktien-Workflow in einen Immobilien-Workflow.</p>
 <p><b>VAE ist nur das Beispiel — pass es an.</b> Markt, Region, Währung (hier AED + psf) und das, was du auswerten willst, kannst du im Prompt frei ändern — etwa eine andere Stadt, ein anderes Segment oder andere Kennzahlen. Das System dahinter bleibt identisch: Claude baut Excel, Memo und Tracker nach demselben Schema.</p>
 <p><b>Warum dieser Prompt die Arbeit macht:</b> Er sagt Claude drei Dinge, die der Standard-Skill nicht annimmt — jeden Wohnungstyp einzeln behandeln, zwei Vergleichsanalysen statt einer fahren, und im Komitee-Stil mit klar getrennten Fakten und Annahmen schreiben.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s5">
+        <div class="gs-num">05</div>
         <h2>Schritt 4 — Das Projektpaket hochladen</h2>
         <p>Sobald Claude gebrieft ist, zeigst du auf den Ordner mit den Launch-Materialien. Je vollständiger das Paket, desto schärfer das Urteil. Fehlt die Broschüre, muss Claude aus öffentlichen Daten schätzen. Gib alles — dann trianguliert Claude zwischen dem, was der Entwickler behauptet, was der Vergleichssatz tut und was die Zahlen tatsächlich hergeben.</p>
 <p><b>Das Dokumentenpaket</b></p>
@@ -91,7 +111,8 @@
 <p><i>Mehr Input, schärferes Urteil:</i> Floorplans, Renders und Lagepläne zählen. Claude liest Bilder, nicht nur Text, und zieht Qualitätsunterschiede aus den Visuals — Pool, Grundstücksausrichtung, Keller-Spec —, die den Headline-psf oft rechtfertigen oder entkräften.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s6">
+        <div class="gs-num">06</div>
         <h2>Schritt 5 — Das Ergebnis lesen</h2>
         <p>Heraus kommen drei Artefakte — ein editierbares Modell, ein schriftliches Urteil und ein Tracker, der mitwächst.</p>
 <p><b>Das Excel-Modell</b></p>
@@ -102,7 +123,9 @@
 <p>Er hält die Original-Analyse. Landet ein neuer vergleichbarer Launch im selben Teilmarkt, legst du die Broschüre rein und lässt Claude aktualisieren — der Tracker bewertet neu und zeigt, was sich verschoben hat. So bleibt die Vergleichsanalyse zwischen Reservierung und Flip-Entscheidung bei Übergabe nützlich.</p>
 <p><b>Haftungsausschluss:</b> Dieser Guide dient ausschließlich zu Informations- und Bildungszwecken und stellt keine Anlage-, Steuer- oder Rechtsberatung dar. Alle Outputs sind Research, kein Kauf- oder Verkaufssignal. KI kann Werte und Marktdaten falsch erkennen — prüfe Ergebnisse selbst und lass sie bei Bedarf fachlich freigeben. Märkte und Preise ändern sich; die Entscheidung bleibt deine.</p>
       </section>
-    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+    <section class="guide-section" id="alle-prompts">
+      <div class="gs-num">★</div>
+      <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
           <span class="prompt-label">Master-Prompt — Immobilien-Comps für den Analysten</span>
@@ -134,7 +157,8 @@ Liefere drei Artefakte:
     1) Excel — Annahmen-Tab; ein Tab pro Wohnungstyp; Summary-Dashboard.
     2) Memo — Executive Summary; Deep-Dive je Typ; Cross-Comparison-Ranking mit bestem Pick für Wachstum, Liquidität, Rendite, geringeres Risiko und gehebelte Investoren; Gesamtempfehlung.
     3) Live-Tracker — ein Dashboard, das ich aktualisiere, sobald eine neue vergleichbare Einführung im selben Teilmarkt erscheint, mit Neubewertung gegen die ursprüngliche Analyse.</pre>
-      </div></section>
+      </div>
+    </section>
     <div class="guide-download">
       <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
@@ -153,12 +177,11 @@ Liefere drei Artefakte:
     <div class="footer-inner">
       <a href="../index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="../guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="../coaching.html">Coaching</a></li>
         <li><a href="../partnerships.html">Partnerships</a></li>
         <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="../newsletter.html">Newsletter</a></li>
@@ -174,6 +197,7 @@ Liefere drei Artefakte:
     <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
   </footer>
   <script src="../assets/site.js"></script>
+  <script src="../assets/cursor.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>

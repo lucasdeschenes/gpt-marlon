@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css" />
   <link rel="stylesheet" href="assets/guides.css" />
 </head>
@@ -16,18 +16,20 @@
   <nav>
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="guides.html" class="active"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="partnerships.html">Partnerships</a></li>
       <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
   <main class="page">
     <div class="page-hero fade-up">
@@ -65,175 +67,250 @@
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Alltag</span></div>
         <h3>8 KI-Foto-Analysen — dein Selfie als komplettes Style-System</h3>
         <p>Acht Copy-&amp;-Paste-Prompts verwandeln jede bildfähige KI in deine persönliche Farb-, Stil-, Brillen- und Hautpflege-Beraterin. Du lädst ein Selfie hoch, fügst einen Prompt ein und bekommst eine detaillierte, ehrliche Analyse — von der saisonalen Farbpalette bis zur kompletten Capsule-Wardrobe. Gestapelt ergeben die Prompts ein vollständiges Style-System aus deinen echten Merkmalen.</p>
-        <div class="guide-card-meta">8 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>8 Prompts</span>
+          <span class="gc-date">3. Juli 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Alltag" data-order="1" data-date="2026-07-05" data-title="chatgpt rabattcode-finder — nie wieder vollen preis zahlen" data-search="chatgpt rabattcode-finder — nie wieder vollen preis zahlen bevor du auf „bestellen“ klickst, schickst du chatgpt im agent-modus los: es sucht aktive rabattcodes, cashback und versteckte deals, öffnet einen browser und testet code für code direkt im warenkorb. drei kern-prompts bilden den ablauf, sieben bonus-prompts decken preis-tracking, alternativen, cashback-stapeln und verhandlung ab. den finalen kauf bestätigst du selbst. alltag chatgpt" href="guides/rabattcode-finder.html">
         <div class="chip-row"><span class="chip chip-tool">ChatGPT</span><span class="chip">Alltag</span></div>
         <h3>ChatGPT Rabattcode-Finder — nie wieder vollen Preis zahlen</h3>
         <p>Bevor du auf „Bestellen“ klickst, schickst du ChatGPT im Agent-Modus los: Es sucht aktive Rabattcodes, Cashback und versteckte Deals, öffnet einen Browser und testet Code für Code direkt im Warenkorb. Drei Kern-Prompts bilden den Ablauf, sieben Bonus-Prompts decken Preis-Tracking, Alternativen, Cashback-Stapeln und Verhandlung ab. Den finalen Kauf bestätigst du selbst.</p>
-        <div class="guide-card-meta">10 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>10 Prompts</span>
+          <span class="gc-date">5. Juli 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Alltag" data-order="2" data-date="2026-06-12" data-title="claude fitness coach — setup-leitfaden" data-search="claude fitness coach — setup-leitfaden claude wird zu deinem datengesteuerten personal trainer: es liest deinen apple-health- bzw. csv-export (schlaf, puls, hrv, workouts) und baut daraus jeden tag ein training, das zu deinem echten zustand passt — schlecht geschlafen heißt aktive erholung statt kraft. progressive überlastung und deload-wochen laufen automatisch, fertige workouts landen in google calendar. enthält den vollständigen system-prompt zum einsetzen. alltag claude" href="guides/fitness-coach.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Alltag</span></div>
         <h3>Claude Fitness Coach — Setup-Leitfaden</h3>
         <p>Claude wird zu deinem datengesteuerten Personal Trainer: Es liest deinen Apple-Health- bzw. CSV-Export (Schlaf, Puls, HRV, Workouts) und baut daraus jeden Tag ein Training, das zu deinem echten Zustand passt — schlecht geschlafen heißt aktive Erholung statt Kraft. Progressive Überlastung und Deload-Wochen laufen automatisch, fertige Workouts landen in Google Calendar. Enthält den vollständigen System-Prompt zum Einsetzen.</p>
-        <div class="guide-card-meta">2 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>2 Prompts</span>
+          <span class="gc-date">12. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Alltag" data-order="3" data-date="2026-06-20" data-title="dein strava wird zum ki-coach — mit claude" data-search="dein strava wird zum ki-coach — mit claude verbinde deine trainingsdaten über den offiziellen, rein lesenden strava-connector mit claude und hol in sekunden heraus, wofür du früher einen coach gebraucht hast. der guide zeigt schritt für schritt die einrichtung — auch ohne technik-wissen — und liefert 3 fertige prompts: tiefen-analyse, dashboard und dein persönlicher ki-trainer. alltag claude" href="guides/strava-claude.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Alltag</span></div>
         <h3>Dein Strava wird zum KI-Coach — mit Claude</h3>
         <p>Verbinde deine Trainingsdaten über den offiziellen, rein lesenden Strava-Connector mit Claude und hol in Sekunden heraus, wofür du früher einen Coach gebraucht hast. Der Guide zeigt Schritt für Schritt die Einrichtung — auch ohne Technik-Wissen — und liefert 3 fertige Prompts: Tiefen-Analyse, Dashboard und dein persönlicher KI-Trainer.</p>
-        <div class="guide-card-meta">4 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>4 Prompts</span>
+          <span class="gc-date">20. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Alltag" data-order="4" data-date="2026-07-02" data-title="digitalen fußabdruck löschen – mit claude aus den datenbanken verschwinden" data-search="digitalen fußabdruck löschen – mit claude aus den datenbanken verschwinden datenhändler und personensuchseiten verkaufen deinen namen, deine adresse und mehr – der guide zeigt ein 4-schritte-system, um sie loszuwerden: finden, löschanfragen schreiben, einreichen und wöchentlich kontrollieren. claude übernimmt die recherche und die formulierung; im agenten-modus (cowork bzw. claude in chrome) füllt es formulare vor und bereitet anfragen zum absenden auf. rechtliche grundlage ist in dach vor allem art. 17 dsgvo (recht auf löschung). alltag claude" href="guides/digitaler-fussabdruck.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Alltag</span></div>
         <h3>Digitalen Fußabdruck löschen – mit Claude aus den Datenbanken verschwinden</h3>
         <p>Datenhändler und Personensuchseiten verkaufen deinen Namen, deine Adresse und mehr – der Guide zeigt ein 4-Schritte-System, um sie loszuwerden: finden, Löschanfragen schreiben, einreichen und wöchentlich kontrollieren. Claude übernimmt die Recherche und die Formulierung; im Agenten-Modus (Cowork bzw. Claude in Chrome) füllt es Formulare vor und bereitet Anfragen zum Absenden auf. Rechtliche Grundlage ist in DACH vor allem Art. 17 DSGVO (Recht auf Löschung).</p>
-        <div class="guide-card-meta">13 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>13 Prompts</span>
+          <span class="gc-date">2. Juli 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Alltag" data-order="5" data-date="2026-06-02" data-title="flüge &amp; hotels mit claude recherchieren &amp; vergleichen" data-search="flüge &amp; hotels mit claude recherchieren &amp; vergleichen richte in claude cowork ein reise-profil ein, und claude recherchiert flüge und hotels, vergleicht 3 optionen je kategorie und bereitet die buchung schritt für schritt vor. wichtig: claude bucht und bezahlt nicht eigenständig – es füllt die formulare vor und pausiert vor der zahlung, den kauf gibst du selbst frei und schließt ihn ab. ein bonus-prompt erstellt danach einen einseitigen reisevorbereitungs-brief. alltag claude" href="guides/fluege-recherchieren.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Alltag</span></div>
         <h3>Flüge &amp; Hotels mit Claude recherchieren &amp; vergleichen</h3>
         <p>Richte in Claude Cowork ein Reise-Profil ein, und Claude recherchiert Flüge und Hotels, vergleicht 3 Optionen je Kategorie und bereitet die Buchung Schritt für Schritt vor. Wichtig: Claude bucht und bezahlt nicht eigenständig – es füllt die Formulare vor und pausiert vor der Zahlung, den Kauf gibst du selbst frei und schließt ihn ab. Ein Bonus-Prompt erstellt danach einen einseitigen Reisevorbereitungs-Brief.</p>
-        <div class="guide-card-meta">3 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>3 Prompts</span>
+          <span class="gc-date">2. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Claude Basics" data-order="6" data-date="2026-06-16" data-title="claude skills: der komplette guide" data-search="claude skills: der komplette guide skills bringen claude bei, wie er eine aufgabe ausführen soll – welche schritte, welches format, welche standards – anders als memory, das sich nur fakten über dich merkt. der guide erklärt einfach, was ein skill ist, wie du ihn auf allen plänen installierst (anthropic-skills per toggle, community-skills als zip) und stellt 10 sofort einsatzbereite skills vor. kein code nötig – nur einmal einrichten, danach wendet claude den skill automatisch an. claude basics claude" href="guides/claude-skills.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Claude Basics</span></div>
         <h3>Claude Skills: der komplette Guide</h3>
         <p>Skills bringen Claude bei, WIE er eine Aufgabe ausführen soll – welche Schritte, welches Format, welche Standards – anders als Memory, das sich nur Fakten über dich merkt. Der Guide erklärt einfach, was ein Skill ist, wie du ihn auf allen Plänen installierst (Anthropic-Skills per Toggle, Community-Skills als ZIP) und stellt 10 sofort einsatzbereite Skills vor. Kein Code nötig – nur einmal einrichten, danach wendet Claude den Skill automatisch an.</p>
-        <div class="guide-card-meta">3 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>3 Prompts</span>
+          <span class="gc-date">16. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Claude Basics" data-order="7" data-date="2026-06-01" data-title="essenzielles claude code cheat sheet" data-search="essenzielles claude code cheat sheet die vollständige schnellreferenz zu claude code: cli-tastenkürzel, slash-befehle, plan- und berechtigungsmodi, git-worktrees, mcp-server, skills, agenten, konfigurationsdateien, hooks und modelle — kompakt in tabellen zum nachschlagen. stand: edition 2026; einzelne befehle, flags und modellnamen hängen von deiner version ab. claude basics claude code" href="guides/claude-code-cheatsheet.html">
         <div class="chip-row"><span class="chip chip-tool">Claude Code</span><span class="chip">Claude Basics</span></div>
         <h3>Essenzielles Claude Code Cheat Sheet</h3>
         <p>Die vollständige Schnellreferenz zu Claude Code: CLI-Tastenkürzel, Slash-Befehle, Plan- und Berechtigungsmodi, Git-Worktrees, MCP-Server, Skills, Agenten, Konfigurationsdateien, Hooks und Modelle — kompakt in Tabellen zum Nachschlagen. Stand: Edition 2026; einzelne Befehle, Flags und Modellnamen hängen von deiner Version ab.</p>
-        <div class="guide-card-meta">0 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>0 Prompts</span>
+          <span class="gc-date">1. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Claude Basics" data-order="8" data-date="2026-06-10" data-title="von chatgpt zu claude — der migrations-guide" data-search="von chatgpt zu claude — der migrations-guide nimm deine komplette chatgpt-history, deinen stil und deine projekte mit zu claude — in drei schritten. statt bei null anzufangen, exportierst du deinen kontext, importierst ihn in ein claude-project und aktivierst claudes memory für dauerhaftes gedächtnis. claude basics claude + chatgpt" href="guides/chatgpt-zu-claude.html">
         <div class="chip-row"><span class="chip chip-tool">Claude + ChatGPT</span><span class="chip">Claude Basics</span></div>
         <h3>Von ChatGPT zu Claude — der Migrations-Guide</h3>
         <p>Nimm deine komplette ChatGPT-History, deinen Stil und deine Projekte mit zu Claude — in drei Schritten. Statt bei null anzufangen, exportierst du deinen Kontext, importierst ihn in ein Claude-Project und aktivierst Claudes Memory für dauerhaftes Gedächtnis.</p>
-        <div class="guide-card-meta">2 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>2 Prompts</span>
+          <span class="gc-date">10. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Content" data-order="9" data-date="2026-05-28" data-title="100 ai-prompt-codes" data-search="100 ai-prompt-codes kurze kürzel, die du an jeden prompt anhängst, um claude oder chatgpt sofort in eine bestimmte richtung zu lenken — von „eli5“ (kindgerecht erklären) über „swot“ bis „red team“. statt lange anweisungen zu formulieren, steuerst du ton, tiefe und format mit einem einzigen codewort. alle codes sind modellunabhängig und funktionieren in claude wie in chatgpt. content claude + chatgpt" href="guides/100-ai-prompt-codes.html">
         <div class="chip-row"><span class="chip chip-tool">Claude + ChatGPT</span><span class="chip">Content</span></div>
         <h3>100 AI-Prompt-Codes</h3>
         <p>Kurze Kürzel, die du an jeden Prompt anhängst, um Claude oder ChatGPT sofort in eine bestimmte Richtung zu lenken — von „ELI5“ (kindgerecht erklären) über „SWOT“ bis „RED TEAM“. Statt lange Anweisungen zu formulieren, steuerst du Ton, Tiefe und Format mit einem einzigen Codewort. Alle Codes sind modellunabhängig und funktionieren in Claude wie in ChatGPT.</p>
-        <div class="guide-card-meta">0 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>0 Prompts</span>
+          <span class="gc-date">28. Mai 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Content" data-order="10" data-date="2026-07-04" data-title="die virale prompt-bibliothek — 15 prompts, die deine ki besser machen" data-search="die virale prompt-bibliothek — 15 prompts, die deine ki besser machen 15 sofort einsetzbare prompts in drei kategorien: dauerhafte stil-prompts (human, truth), modus-prompts für einzelne chats (god mode, absolute mode, monetarisierung, selbstanalyse) und schnelle alltags-prompts. jeder ist erklärt — was er macht, warum er funktioniert und wo du ihn einsetzt — und funktioniert in chatgpt und claude. content claude + chatgpt" href="guides/virale-prompts.html">
         <div class="chip-row"><span class="chip chip-tool">Claude + ChatGPT</span><span class="chip">Content</span></div>
         <h3>Die virale Prompt-Bibliothek — 15 Prompts, die deine KI besser machen</h3>
         <p>15 sofort einsetzbare Prompts in drei Kategorien: dauerhafte Stil-Prompts (Human, Truth), Modus-Prompts für einzelne Chats (God Mode, Absolute Mode, Monetarisierung, Selbstanalyse) und schnelle Alltags-Prompts. Jeder ist erklärt — was er macht, warum er funktioniert und wo du ihn einsetzt — und funktioniert in ChatGPT und Claude.</p>
-        <div class="guide-card-meta">15 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>15 Prompts</span>
+          <span class="gc-date">4. Juli 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Finanzen" data-order="11" data-date="2026-06-23" data-title="belege automatisch erfassen — excel oder datev-datei mit claude" data-search="belege automatisch erfassen — excel oder datev-datei mit claude claude liest deine belege aus einem ordner aus, erkennt datum, betrag und kategorie und fängt doppelungen und zahlendreher über eine eingebaute prüfstelle ab. am ende steht eine saubere excel- oder google-sheet-tabelle — auf wunsch machst du daraus eine importfertige datev-datei für deinen steuerberater. die stundenlange tipparbeit fällt weg, die fachliche freigabe bleibt bei dir. finanzen claude" href="guides/belege-erfassen.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Finanzen</span></div>
         <h3>Belege automatisch erfassen — Excel oder DATEV-Datei mit Claude</h3>
         <p>Claude liest deine Belege aus einem Ordner aus, erkennt Datum, Betrag und Kategorie und fängt Doppelungen und Zahlendreher über eine eingebaute Prüfstelle ab. Am Ende steht eine saubere Excel- oder Google-Sheet-Tabelle — auf Wunsch machst du daraus eine importfertige DATEV-Datei für deinen Steuerberater. Die stundenlange Tipparbeit fällt weg, die fachliche Freigabe bleibt bei dir.</p>
-        <div class="guide-card-meta">7 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>7 Prompts</span>
+          <span class="gc-date">23. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Finanzen" data-order="12" data-date="2026-06-12" data-title="der 5-prompt aktien-stack — jede aktie in unter 5 minuten analysieren" data-search="der 5-prompt aktien-stack — jede aktie in unter 5 minuten analysieren fünf aufeinander aufbauende prompts komprimieren die stundenlange aktienrecherche auf rund fünf minuten pro titel: marktregime prüfen, deep dive scoren, peers vergleichen, den bear case erzwingen und vor dem kauf einen exit-plan schreiben. jeden prompt bekommst du auf deutsch und im englischen original. das framework stammt von albert (@berttrading); die ki liefert die analyse, dein urteil und die zahlenprüfung bleiben bei dir. finanzen claude" href="guides/aktien-prompt-stack.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Finanzen</span></div>
         <h3>Der 5-Prompt Aktien-Stack — jede Aktie in unter 5 Minuten analysieren</h3>
         <p>Fünf aufeinander aufbauende Prompts komprimieren die stundenlange Aktienrecherche auf rund fünf Minuten pro Titel: Marktregime prüfen, Deep Dive scoren, Peers vergleichen, den Bear Case erzwingen und vor dem Kauf einen Exit-Plan schreiben. Jeden Prompt bekommst du auf Deutsch und im englischen Original. Das Framework stammt von Albert (@berttrading); die KI liefert die Analyse, dein Urteil und die Zahlenprüfung bleiben bei dir.</p>
-        <div class="guide-card-meta">10 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>10 Prompts</span>
+          <span class="gc-date">12. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Finanzen" data-order="13" data-date="2026-06-18" data-title="finanz-plugins für claude installieren: dein eigener research-desk" data-search="finanz-plugins für claude installieren: dein eigener research-desk anthropic bietet kostenlose finanz-plugins an, die claude in cowork die analyse-werkzeuge großer fonds geben – technisch sind das connectors (mcp) und agent skills. der guide führt schritt für schritt durch account, marketplace und installation und liefert sechs fertige prompts für dcf, earnings, comps und screening. kein factset oder bloomberg nötig, denn die plugins arbeiten mit öffentlichen daten – eine anlageberatung ersetzen sie aber nicht. finanzen claude" href="guides/finanz-connectors.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Finanzen</span></div>
         <h3>Finanz-Plugins für Claude installieren: dein eigener Research-Desk</h3>
         <p>Anthropic bietet kostenlose Finanz-Plugins an, die Claude in Cowork die Analyse-Werkzeuge großer Fonds geben – technisch sind das Connectors (MCP) und Agent Skills. Der Guide führt Schritt für Schritt durch Account, Marketplace und Installation und liefert sechs fertige Prompts für DCF, Earnings, Comps und Screening. Kein FactSet oder Bloomberg nötig, denn die Plugins arbeiten mit öffentlichen Daten – eine Anlageberatung ersetzen sie aber nicht.</p>
-        <div class="guide-card-meta">8 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>8 Prompts</span>
+          <span class="gc-date">18. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Finanzen" data-order="14" data-date="2026-06-30" data-title="off-plan comp-desk in claude — neubau-launches bewerten wie ein profi" data-search="off-plan comp-desk in claude — neubau-launches bewerten wie ein profi jede neubau-einführung (off-plan) bewerten wie ein institutioneller käufer: modell, memo und live-tracker in rund 10 minuten. mit dem financial-services-plugin und dem comps-analysis-skill baut claude pro wohnungstyp zwei vergleichsanalysen, ein renditemodell und ein schriftliches urteil — als research für deine eigene entscheidung. finanzen claude" href="guides/off-plan-comp-desk.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Finanzen</span></div>
         <h3>Off-Plan Comp-Desk in Claude — Neubau-Launches bewerten wie ein Profi</h3>
         <p>Jede Neubau-Einführung (Off-Plan) bewerten wie ein institutioneller Käufer: Modell, Memo und Live-Tracker in rund 10 Minuten. Mit dem Financial-Services-Plugin und dem comps-analysis-Skill baut Claude pro Wohnungstyp zwei Vergleichsanalysen, ein Renditemodell und ein schriftliches Urteil — als Research für deine eigene Entscheidung.</p>
-        <div class="guide-card-meta">1 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>1 Prompts</span>
+          <span class="gc-date">30. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Karriere" data-order="15" data-date="2026-06-05" data-title="claude job guide: wie du claude für deine jobsuche nutzt" data-search="claude job guide: wie du claude für deine jobsuche nutzt die kompakte version des bewerbungs-workflows: lebenslauf-analyse, erfahrungs-rewrite nach der google-xyz-formel und ein ats-plus-hiring-manager-test, ergänzt um bonus-prompts für anschreiben, interview-prep, gehaltsverhandlung, linkedin und follow-ups. auto-bewerben läuft über claude cowork und die claude-in-chrome-erweiterung – mit pause vor jeder einreichung. karriere claude" href="guides/job-guide.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Karriere</span></div>
         <h3>Claude Job Guide: wie du Claude für deine Jobsuche nutzt</h3>
         <p>Die kompakte Version des Bewerbungs-Workflows: Lebenslauf-Analyse, Erfahrungs-Rewrite nach der Google-XYZ-Formel und ein ATS-plus-Hiring-Manager-Test, ergänzt um Bonus-Prompts für Anschreiben, Interview-Prep, Gehaltsverhandlung, LinkedIn und Follow-ups. Auto-Bewerben läuft über Claude Cowork und die Claude-in-Chrome-Erweiterung – mit Pause vor jeder Einreichung.</p>
-        <div class="guide-card-meta">9 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>9 Prompts</span>
+          <span class="gc-date">5. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Karriere" data-order="16" data-date="2026-06-21" data-title="linkedin-optimierung mit claude — mehr recruiter finden dich" data-search="linkedin-optimierung mit claude — mehr recruiter finden dich linkedin hat seine suche umgebaut: recruiter tippen heute ganze sätze statt einzelner stichwörter, und eine ki liest dein komplettes profil. mit claude schreibst du schritt für schritt jeden profilbereich so um, dass du genau dann auftauchst, wenn jemand jemanden wie dich sucht — inklusive der kompletten skill zum kopieren. karriere claude" href="guides/linkedin-optimierung.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Karriere</span></div>
         <h3>LinkedIn-Optimierung mit Claude — mehr Recruiter finden dich</h3>
         <p>LinkedIn hat seine Suche umgebaut: Recruiter tippen heute ganze Sätze statt einzelner Stichwörter, und eine KI liest dein komplettes Profil. Mit Claude schreibst du Schritt für Schritt jeden Profilbereich so um, dass du genau dann auftauchst, wenn jemand jemanden wie dich sucht — inklusive der kompletten Skill zum Kopieren.</p>
-        <div class="guide-card-meta">2 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>2 Prompts</span>
+          <span class="gc-date">21. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Karriere" data-order="17" data-date="2026-06-19" data-title="so positionierst du dich für die fde-rolle — der heißeste ki-job 2026" data-search="so positionierst du dich für die fde-rolle — der heißeste ki-job 2026 der forward deployed engineer (fde) ist einer der am schnellsten wachsenden ki-jobs — und du brauchst dafür keinen klassischen engineering-background. dieses playbook zeigt, wer im dach-raum einstellt, was die rolle wirklich verlangt, was sie zahlt und mit welchem konkreten 90-tage-plan du dich positionierst. karriere claude" href="guides/fde-playbook.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Karriere</span></div>
         <h3>So positionierst du dich für die FDE-Rolle — der heißeste KI-Job 2026</h3>
         <p>Der Forward Deployed Engineer (FDE) ist einer der am schnellsten wachsenden KI-Jobs — und du brauchst dafür keinen klassischen Engineering-Background. Dieses Playbook zeigt, wer im DACH-Raum einstellt, was die Rolle wirklich verlangt, was sie zahlt und mit welchem konkreten 90-Tage-Plan du dich positionierst.</p>
-        <div class="guide-card-meta">0 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>0 Prompts</span>
+          <span class="gc-date">19. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Karriere" data-order="18" data-date="2026-07-01" data-title="wie du claude nutzt, um deinen nächsten job zu landen" data-search="wie du claude nutzt, um deinen nächsten job zu landen die meisten lebensläufe werden von einem ats aussortiert, bevor ein mensch sie liest. dieser guide zeigt einen 3-schritt-kern (lebenslauf-check, erfahrungs-rewrite nach der google-xyz-formel, ats- und recruiter-test) plus sechs bonus-prompts für anschreiben, interview-vorbereitung, gehaltsverhandlung, linkedin und follow-ups. für automatisiertes bewerben nutzt claude cowork und die claude-in-chrome-erweiterung – immer mit freigabe vor dem absenden. karriere claude" href="guides/bewerbungsguide.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Karriere</span></div>
         <h3>Wie du Claude nutzt, um deinen nächsten Job zu landen</h3>
         <p>Die meisten Lebensläufe werden von einem ATS aussortiert, bevor ein Mensch sie liest. Dieser Guide zeigt einen 3-Schritt-Kern (Lebenslauf-Check, Erfahrungs-Rewrite nach der Google-XYZ-Formel, ATS- und Recruiter-Test) plus sechs Bonus-Prompts für Anschreiben, Interview-Vorbereitung, Gehaltsverhandlung, LinkedIn und Follow-ups. Für automatisiertes Bewerben nutzt Claude Cowork und die Claude-in-Chrome-Erweiterung – immer mit Freigabe vor dem Absenden.</p>
-        <div class="guide-card-meta">9 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>9 Prompts</span>
+          <span class="gc-date">1. Juli 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Produktivität" data-order="19" data-date="2026-07-06" data-title="anwalts-arbeit mit claude: das legal-plugin" data-search="anwalts-arbeit mit claude: das legal-plugin das offizielle legal-plugin von anthropic (technisch ein bündel aus skills, slash-befehlen und connectors) läuft in claude cowork und prüft verträge, ndas und compliance-fragen nach einem ampel-system. der guide zeigt installation, das entscheidende playbook (legal.local.md) sowie über 25 fertige prompts – inklusive dach-anpassung und dsgvo-fokus. es ist ein beschleuniger für die vorarbeit und ersetzt keine anwaltliche beratung. produktivität claude" href="guides/legal-connector.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Produktivität</span></div>
         <h3>Anwalts-Arbeit mit Claude: das Legal-Plugin</h3>
         <p>Das offizielle Legal-Plugin von Anthropic (technisch ein Bündel aus Skills, Slash-Befehlen und Connectors) läuft in Claude Cowork und prüft Verträge, NDAs und Compliance-Fragen nach einem Ampel-System. Der Guide zeigt Installation, das entscheidende Playbook (legal.local.md) sowie über 25 fertige Prompts – inklusive DACH-Anpassung und DSGVO-Fokus. Es ist ein Beschleuniger für die Vorarbeit und ersetzt keine anwaltliche Beratung.</p>
-        <div class="guide-card-meta">37 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>37 Prompts</span>
+          <span class="gc-date">6. Juli 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Produktivität" data-order="20" data-date="2026-06-15" data-title="bulletproof chatgpt — mach aus dem ja-sager deinen härtesten coach" data-search="bulletproof chatgpt — mach aus dem ja-sager deinen härtesten coach mit einer einzigen instruktion in den „individuellen hinweisen“ wird aus dem höflichen ja-sager ein schonungsloser mentor, der deine ideen stresstestet, statt sie zu loben. du richtest sie in 60 sekunden ein — kein abo, kein tool nötig — und schaltest mit trigger-sätzen gezielt in den kritik-modus. dazu kommen drei bonus-modi: advocatus diaboli, pre-mortem und entscheidungs-matrix. produktivität chatgpt" href="guides/bulletproof-chatgpt.html">
         <div class="chip-row"><span class="chip chip-tool">ChatGPT</span><span class="chip">Produktivität</span></div>
         <h3>Bulletproof ChatGPT — mach aus dem Ja-Sager deinen härtesten Coach</h3>
         <p>Mit einer einzigen Instruktion in den „Individuellen Hinweisen“ wird aus dem höflichen Ja-Sager ein schonungsloser Mentor, der deine Ideen stresstestet, statt sie zu loben. Du richtest sie in 60 Sekunden ein — kein Abo, kein Tool nötig — und schaltest mit Trigger-Sätzen gezielt in den Kritik-Modus. Dazu kommen drei Bonus-Modi: Advocatus Diaboli, Pre-Mortem und Entscheidungs-Matrix.</p>
-        <div class="guide-card-meta">7 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>7 Prompts</span>
+          <span class="gc-date">15. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Produktivität" data-order="21" data-date="2026-06-28" data-title="claude für kleinunternehmen: als dienstleistung einrichten" data-search="claude für kleinunternehmen: als dienstleistung einrichten anthropic hat mit „claude für kleinunternehmen&quot; 15 vorgefertigte ki-workflows veröffentlicht, die direkt in tools wie quickbooks, paypal, hubspot oder google workspace laufen – alles über claude cowork und immer erst nach freigabe des inhabers. der guide zeigt, wie du daraus eine dienstleistung machst: kostenloses zertifikat, selbst-setup, kundengewinnung, verkaufsgespräch und installation an einem nachmittag. preise und das einkommensziel sind beispielrechnungen, kein von anthropic festgelegter tarif. produktivität claude" href="guides/claude-kleinunternehmen.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Produktivität</span></div>
         <h3>Claude für Kleinunternehmen: als Dienstleistung einrichten</h3>
         <p>Anthropic hat mit „Claude für Kleinunternehmen" 15 vorgefertigte KI-Workflows veröffentlicht, die direkt in Tools wie QuickBooks, PayPal, HubSpot oder Google Workspace laufen – alles über Claude Cowork und immer erst nach Freigabe des Inhabers. Der Guide zeigt, wie du daraus eine Dienstleistung machst: kostenloses Zertifikat, Selbst-Setup, Kundengewinnung, Verkaufsgespräch und Installation an einem Nachmittag. Preise und das Einkommensziel sind Beispielrechnungen, kein von Anthropic festgelegter Tarif.</p>
-        <div class="guide-card-meta">0 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>0 Prompts</span>
+          <span class="gc-date">28. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Produktivität" data-order="22" data-date="2026-06-24" data-title="claude mit der recherche der letzten 30 tage" data-search="claude mit der recherche der letzten 30 tage jedes ki-modell hat einen wissensstichtag — fragst du nach etwas neuerem, rät es oft überzeugt daneben. die kostenlose, quelloffene erweiterung /last30days dreht das um: sie sucht erst die neuesten beiträge aus vielen quellen, gefiltert auf die letzten 30 tage, und legt sie claude zum lesen vor, bevor eine antwort entsteht. produktivität claude" href="guides/recherche-30-tage.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Produktivität</span></div>
         <h3>Claude mit der Recherche der letzten 30 Tage</h3>
         <p>Jedes KI-Modell hat einen Wissensstichtag — fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um: Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht.</p>
-        <div class="guide-card-meta">3 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>3 Prompts</span>
+          <span class="gc-date">24. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Produktivität" data-order="23" data-date="2026-06-26" data-title="ki-agenten — der bauplan: bau dir ein ki-team" data-search="ki-agenten — der bauplan: bau dir ein ki-team statt eines tools, das alles halb kann, baust du dir mehrere spezialisierte ki-agenten — jeder ein mitarbeiter mit genau einer aufgabe, jeder nach derselben 4-teile-struktur. dieser guide zeigt den bauplan aus kontext, verbindungen, workflows und gedächtnis und wie du deinen ersten agenten in claude code startest. produktivität claude" href="guides/ki-agenten-bauplan.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Produktivität</span></div>
         <h3>KI-Agenten — der Bauplan: Bau dir ein KI-Team</h3>
         <p>Statt eines Tools, das alles halb kann, baust du dir mehrere spezialisierte KI-Agenten — jeder ein Mitarbeiter mit genau einer Aufgabe, jeder nach derselben 4-Teile-Struktur. Dieser Guide zeigt den Bauplan aus Kontext, Verbindungen, Workflows und Gedächtnis und wie du deinen ersten Agenten in Claude Code startest.</p>
-        <div class="guide-card-meta">1 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>1 Prompts</span>
+          <span class="gc-date">26. Juni 2026</span>
+        </div>
       </a>
 
       <a class="guide-card fade-up" data-cat="Produktivität" data-order="24" data-date="2026-06-22" data-title="loop engineering — hör auf zu prompten, bau schleifen" data-search="loop engineering — hör auf zu prompten, bau schleifen statt claude immer wieder von hand zu prompten, baust du loops: du übergibst ein messbares ziel, und claude findet die arbeit, erledigt sie, prüft sich selbst, merkt sich den stand und macht weiter, bis das ziel wirklich erreicht ist. dieser guide zeigt die zwei auslöser-befehle in claude code, fünf bausteine und einen fertigen loop-charter zum kopieren. produktivität claude" href="guides/loop-engineering.html">
         <div class="chip-row"><span class="chip chip-tool">Claude</span><span class="chip">Produktivität</span></div>
         <h3>Loop Engineering — hör auf zu prompten, bau Schleifen</h3>
         <p>Statt Claude immer wieder von Hand zu prompten, baust du Loops: Du übergibst ein messbares Ziel, und Claude findet die Arbeit, erledigt sie, prüft sich selbst, merkt sich den Stand und macht weiter, bis das Ziel wirklich erreicht ist. Dieser Guide zeigt die zwei Auslöser-Befehle in Claude Code, fünf Bausteine und einen fertigen Loop-Charter zum Kopieren.</p>
-        <div class="guide-card-meta">4 Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>4 Prompts</span>
+          <span class="gc-date">22. Juni 2026</span>
+        </div>
       </a>
     </div>
     <div class="res-empty" id="resEmpty" hidden><span data-en="No resources match your search.">Keine Ressourcen zu deiner Suche gefunden.</span></div>
@@ -242,12 +319,11 @@
     <div class="footer-inner">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="coaching.html">Coaching</a></li>
         <li><a href="partnerships.html">Partnerships</a></li>
         <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="newsletter.html">Newsletter</a></li>
@@ -263,6 +339,7 @@
     <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
   </footer>
   <script src="assets/site.js"></script>
+  <script src="assets/cursor.js"></script>
   <script>
     (function () {
       var grid = document.getElementById('guidesGrid');

@@ -8,24 +8,26 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
   <nav>
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="coaching.html">Coaching</a></li>
       <li><a href="partnerships.html">Partnerships</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
 
   <main class="page" style="max-width:760px">
@@ -36,29 +38,29 @@
 
     <div style="line-height:1.75; color:var(--text); font-size:.98rem; display:flex; flex-direction:column; gap:1.4rem">
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:.5rem">Angaben gemäß § 5 DDG</h3>
+        <h3 style="font-family:var(--font-display); margin-bottom:.5rem">Angaben gemäß § 5 DDG</h3>
         <p>Marlon Drahn<br/>
         <b style="color:#f59e0b">[Bitte Anschrift ergänzen — Straße, Hausnummer, PLZ, Ort]</b><br/>
         Deutschland</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:.5rem">Kontakt</h3>
-        <p>E-Mail: <a href="mailto:business@gptmarlon.com" style="color:var(--purple-light)">business@gptmarlon.com</a></p>
+        <h3 style="font-family:var(--font-display); margin-bottom:.5rem">Kontakt</h3>
+        <p>E-Mail: <a href="mailto:business@gptmarlon.com" style="color:var(--yellow)">business@gptmarlon.com</a></p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:.5rem">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+        <h3 style="font-family:var(--font-display); margin-bottom:.5rem">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
         <p>Marlon Drahn (Anschrift wie oben)</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:.5rem">Haftung für Inhalte</h3>
+        <h3 style="font-family:var(--font-display); margin-bottom:.5rem">Haftung für Inhalte</h3>
         <p style="color:var(--muted)">Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte — insbesondere von Anleitungen zu Drittanbieter-Tools, deren Funktionsumfang sich laufend ändert — kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:.5rem">Haftung für Links</h3>
+        <h3 style="font-family:var(--font-display); margin-bottom:.5rem">Haftung für Links</h3>
         <p style="color:var(--muted)">Unser Angebot enthält Links zu externen Websites Dritter (z.&nbsp;B. Instagram, TikTok, claude.ai, chatgpt.com), auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte ist stets der jeweilige Anbieter verantwortlich.</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:.5rem">Urheberrecht</h3>
+        <h3 style="font-family:var(--font-display); margin-bottom:.5rem">Urheberrecht</h3>
         <p style="color:var(--muted)">Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Genannte Marken (u.&nbsp;a. Claude, ChatGPT, Instagram, TikTok) sind Eigentum der jeweiligen Rechteinhaber; diese Website steht in keiner offiziellen Verbindung zu Anthropic, OpenAI, Meta oder ByteDance.</p>
       </div>
     </div>
@@ -68,7 +70,7 @@
     <div class="footer-inner">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
@@ -88,6 +90,8 @@
   </footer>
 
   <script src="assets/site.js"></script>
+
+  <script src="assets/cursor.js"></script>
   <script src="assets/stats.js"></script>
   <script src="assets/community.js"></script>
   <script src="assets/lang.js"></script>

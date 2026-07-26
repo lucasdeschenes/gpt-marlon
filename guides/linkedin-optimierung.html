@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/site.css" />
   <link rel="stylesheet" href="../assets/guides.css" />
 </head>
@@ -16,18 +16,20 @@
   <nav>
     <a href="../index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="../guides.html" class="active"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../newsletter.html">Newsletter</a></li>
       <li><a href="../partnerships.html">Partnerships</a></li>
       <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Karriere</span></div>
@@ -40,14 +42,27 @@
         <span class="chip">2 Prompts zum Kopieren</span>
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
-      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
-        <a class="btn-secondary" href="../guides/pdf/linkedin-optimierung.pdf" download>⬇ Als PDF herunterladen</a>
-        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      <div class="guide-actions">
+        <a class="btn-primary" href="../guides/pdf/linkedin-optimierung.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
       </div>
     </div>
     <div class="guide-note">ℹ️ Claude Projects, Connectors und die Chrome-Erweiterung („Claude in Chrome") sind echte Funktionen der kostenpflichtigen Pläne; welche Jobbörsen sich tatsächlich als Connector anbinden lassen, hängt vom jeweiligen Angebot ab — Weg 3 (Anzeigen manuell einfügen) funktioniert immer und ist überall erlaubt.</div>
 
-      <section class="guide-section">
+    <nav class="guide-toc" aria-label="Inhalt">
+      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
+      <ol>
+        <li><a href="#s1"><span class="toc-n">01</span>Teil 1 — Was sich auf LinkedIn geändert hat</a></li>
+        <li><a href="#s2"><span class="toc-n">02</span>Teil 2 — In 5 Minuten startklar</a></li>
+        <li><a href="#s3"><span class="toc-n">03</span>Teil 3 — Echte Stellenanzeigen sind der Treibstoff</a></li>
+        <li><a href="#s4"><span class="toc-n">04</span>Teil 4 — Sprache wählen &amp; loslegen</a></li>
+        <li><a href="#s5"><span class="toc-n">05</span>Teil 5 — Die komplette Skill</a></li>
+        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
+      </ol>
+    </nav>
+
+      <section class="guide-section" id="s1">
+        <div class="gs-num">01</div>
         <h2>Teil 1 — Was sich auf LinkedIn geändert hat</h2>
         <p>Früher suchten Recruiter mit festen Filtern: <code>Senior Product Manager + B2B SaaS + Remote</code>. Stand das exakte Wort nicht in deinem Profil, tauchtest du nicht auf. Seit 2024 gibt es zusätzlich eine KI-gestützte Suche: Recruiter formulieren ganze Sätze, und die KI liest dein gesamtes Profil und bewertet, ob du das Thema wirklich beherrschst.</p>
 <p>Wichtig: Die Stichwort-Suche ist nicht tot — viele Recruiter nutzen sie weiter. Aber zusätzlich zählt jetzt der Zusammenhang. Es reicht nicht mehr, einzelne Schlagwörter zu treffen.</p>
@@ -55,7 +70,8 @@
 <p><i>Merksatz:</i> Einzelne Keywords bringen dich in eine Liste. Eine vollständige Themen-DNA bringt dich nach oben — weil sie beweist, dass du die Arbeit wirklich machst.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s2">
+        <div class="gs-num">02</div>
         <h2>Teil 2 — In 5 Minuten startklar</h2>
         <p>Du richtest einmal ein Projekt in Claude ein und fütterst es mit deinem Profil. Danach erledigt der Skill die Arbeit.</p>
 <ol><li>Geh auf claude.ai → Projekte → Projekt erstellen. Nenn es „LinkedIn Magnet".</li><li>Öffne die Projekt-Anweisungen (Set custom instructions) und füge die komplette Skill ein. Ist der Text zu lang fürs Feld: lade ihn als Textdatei ins Projektwissen hoch und schreib in die Anweisungen „Folge der beigefügten Skill-Datei."</li><li>Gib jeden Profilbereich rein: am besten den Text direkt kopieren (genauer als Screenshots) — Screenshots gehen aber auch. Bereiche: Schlagzeile, Info, Berufserfahrung, Kenntnisse.</li><li>Sag Claude deine Zielrolle (der Titel, den du willst). Den Rest macht der Skill.</li></ol>
@@ -63,7 +79,8 @@
 <ul><li><i>Schlagzeile (Headline):</i> das mit Abstand wichtigste Feld für die Suche — es wird deutlich stärker gewichtet als der Rest (grob das Mehrfache anderer Abschnitte). Deshalb schreibt der Skill sie zuerst um.</li><li><i>Info (About):</i> Nur die ersten ca. 3 Zeilen sind sofort sichtbar, der Rest steckt hinter „mehr anzeigen". Die ersten Zeilen müssen sitzen.</li><li><i>Kenntnisse (Skills):</i> LinkedIn erlaubt seit 2024 bis zu 100 Skills (früher 50). Die meisten nutzen nur eine Handvoll. Wichtig: Qualität vor Menge — relevante Fähigkeiten statt 100 um der Zahl willen.</li></ul>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s3">
+        <div class="gs-num">03</div>
         <h2>Teil 3 — Echte Stellenanzeigen sind der Treibstoff</h2>
         <p>Der Skill rät nie aus dem Bauch. Er liest echte, aktuelle Stellenanzeigen für deine Zielrolle und zieht daraus die Sprache, nach der Recruiter gerade wirklich suchen — denn die ändert sich nach Branche, Jahr und Region. Dafür hast du drei Wege, vom stärksten zum einfachsten.</p>
 <p><b>Weg 1 — am stärksten: automatisch über einen Job-Connector</b></p>
@@ -76,19 +93,23 @@
 <p>Öffne 8–12 echte Stellenanzeigen für deine Zielrolle, kopier den Text (oder mach Screenshots) und füg sie in den Chat ein. Unspektakulär, aber 100 % zuverlässig und überall erlaubt.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s4">
+        <div class="gs-num">04</div>
         <h2>Teil 4 — Sprache wählen &amp; loslegen</h2>
         <p><b>Deutsch oder Englisch? Im Zweifel Englisch.</b> Für gute, gut bezahlte und internationale Jobs ist ein englischsprachiges LinkedIn-Profil der Standard — und auch deutschsprachige Recruiter suchen für solche Rollen meist auf Englisch (besonders in Tech, SaaS, Startups und Konzernen). Für lokale Rollen oder den Mittelstand stellst du den Skill genauso auf Deutsch — sag einfach: „Schreib alles auf Deutsch." Du kannst dir auch beide Varianten erstellen lassen und je nach Zielmarkt wechseln.</p>
 <p><b>Probier's — das kannst du sagen:</b></p>
 <ul><li>„Optimiere mein Profil für Senior-Product-Manager-Rollen im B2B-SaaS-Bereich."</li><li>„Ich bin Marketing-Koordinator und will Marketing-Director werden. Hilf mir, die Lücke zu schließen."</li><li>„Schreib erstmal nur meine Schlagzeile neu." (Quick Win, 5 Minuten)</li><li>„Bau mir eine Liste mit bis zu 100 Skills." (geht tief in deine Themen-DNA)</li><li>„Worüber sollte ich diese Woche posten, um mein Profil zu stärken?"</li><li>„Ich wechsle von Sales zu Product. Pass die Strategie an."</li></ul>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s5">
+        <div class="gs-num">05</div>
         <h2>Teil 5 — Die komplette Skill</h2>
         <p>Jetzt kommt das Herzstück: die komplette Skill mit allen 8 Schritten plus Regeln — unten als <b>Die komplette LinkedIn-Skill</b> zum Kopieren. Das ist die ganze Logik, die Claude durch deine Profil-Optimierung führt.</p>
 <p>Kopier den Block vollständig in das Feld „Projekt-Anweisungen" (Reihenfolge beibehalten). Der Skill sammelt zuerst deine Eingaben, zieht die Themen-DNA aus echten Anzeigen, schreibt dann Schlagzeile, Info, Berufserfahrung und Kenntnisse um und liefert am Ende Zusatz-Optimierungen (Banner, Featured, Open to Work, Empfehlungen, Aktivität) plus eine 90-Minuten-Checkliste.</p>
       </section>
-    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+    <section class="guide-section" id="alle-prompts">
+      <div class="gs-num">★</div>
+      <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
           <span class="prompt-label">Die komplette LinkedIn-Skill (Projekt-Anweisungen)</span>
@@ -226,7 +247,8 @@ Gesamt: ~90 Min fuer die volle Profil-Transformation.
           </div>
         </div>
         <pre class="prompt-text">Such 8-12 aktuelle Anzeigen für [Zielrolle] und nutze sie als Referenz.</pre>
-      </div></section>
+      </div>
+    </section>
     <div class="guide-download">
       <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
@@ -245,12 +267,11 @@ Gesamt: ~90 Min fuer die volle Profil-Transformation.
     <div class="footer-inner">
       <a href="../index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="../guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="../coaching.html">Coaching</a></li>
         <li><a href="../partnerships.html">Partnerships</a></li>
         <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="../newsletter.html">Newsletter</a></li>
@@ -266,6 +287,7 @@ Gesamt: ~90 Min fuer die volle Profil-Transformation.
     <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
   </footer>
   <script src="../assets/site.js"></script>
+  <script src="../assets/cursor.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>

@@ -8,6 +8,11 @@ const SRC = process.argv[2] || "guides/data";
 const SITE = "https://gptmarlon.com";
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const escAttr = (s) => esc(s).replace(/"/g, "&quot;");
+const MONTHS_DE = ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez."];
+const fmtDate = (iso) => {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ""));
+  return m ? `${+m[3]}. ${MONTHS_DE[+m[2] - 1]} ${m[1]}` : "";
+};
 
 // brand glyphs (inline so they inherit currentColor, no external requests)
 const IG_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>`;
@@ -61,33 +66,37 @@ function md(s) {
 }
 
 // ── shared page chrome ────────────────────────────────────────────────────────
-const nav = (active) => `  <nav>
-    <a href="${active === "guide" ? "../index.html" : "index.html"}" class="nav-logo">
-      ${logoIcon(active === "guide" ? "../" : "")}
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+const nav = (active) => {
+  const p = active === "guide" ? "../" : "";
+  return `  <nav>
+    <a href="${p}index.html" class="nav-logo">
+      ${logoIcon(p)}
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
-      <li><a href="${active === "guide" ? "../guides.html" : "guides.html"}"${active === "guides" || active === "guide" ? ' class="active"' : ""}><span data-en="Resources">Ressourcen</span></a></li>
-      <li><a href="${active === "guide" ? "../about.html" : "about.html"}"><span data-en="About">Über mich</span></a></li>
-      <li><a href="${active === "guide" ? "../coaching.html" : "coaching.html"}">Coaching</a></li>
-      <li><a href="${active === "guide" ? "../partnerships.html" : "partnerships.html"}">Partnerships</a></li>
-      <li><a href="${active === "guide" ? "../contact.html" : "contact.html"}"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="${p}guides.html"${active === "guides" || active === "guide" ? ' class="active"' : ""}><span data-en="Resources">Ressourcen</span></a></li>
+      <li><a href="${p}about.html"><span data-en="About">Über mich</span></a></li>
+      <li><a href="${p}newsletter.html">Newsletter</a></li>
+      <li><a href="${p}partnerships.html">Partnerships</a></li>
+      <li><a href="${p}contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>`;
+};
 
 const footer = (p) => `  <footer>
     <div class="footer-inner">
       <a href="${p}index.html" class="nav-logo">
         ${logoIcon(p)}
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="${p}guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="${p}about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="${p}coaching.html">Coaching</a></li>
         <li><a href="${p}partnerships.html">Partnerships</a></li>
         <li><a href="${p}contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="${p}newsletter.html">Newsletter</a></li>
@@ -109,7 +118,7 @@ const head = (title, desc, p) => `<head>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="${p}assets/site.css" />
   <link rel="stylesheet" href="${p}assets/guides.css" />
 </head>`;
@@ -157,11 +166,23 @@ for (const g of guides) {
         <pre class="prompt-text">${esc(p.text)}</pre>
       </div>`).join("\n");
 
-  const sectionsHtml = g.sections.map((s) => `
-      <section class="guide-section">
+  // Numbered, anchored sections + a table of contents — the guides are long, and
+  // a reader needs to see the shape of the workflow before starting it.
+  const sectionsHtml = g.sections.map((s, i) => `
+      <section class="guide-section" id="s${i + 1}">
+        <div class="gs-num">${String(i + 1).padStart(2, "0")}</div>
         <h2>${esc(s.heading)}</h2>
         ${md(s.body)}
       </section>`).join("\n");
+
+  const tocHtml = g.sections.length > 2 ? `
+    <nav class="guide-toc" aria-label="Inhalt">
+      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
+      <ol>
+${g.sections.map((s, i) => `        <li><a href="#s${i + 1}"><span class="toc-n">${String(i + 1).padStart(2, "0")}</span>${esc(s.heading)}</a></li>`).join("\n")}
+${(g.prompts || []).length ? `        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>` : ""}
+      </ol>
+    </nav>` : "";
 
   const html = `<!DOCTYPE html>
 <html lang="de">
@@ -179,14 +200,18 @@ ${nav("guide")}
         <span class="chip">${(g.prompts || []).length} Prompt${(g.prompts || []).length === 1 ? "" : "s"} zum Kopieren</span>
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
-      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
-        <a class="btn-secondary" href="../guides/pdf/${g.slug}.pdf" download>⬇ Als PDF herunterladen</a>
-        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      <div class="guide-actions">
+        <a class="btn-primary" href="../guides/pdf/${g.slug}.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
       </div>
     </div>
     ${g.note ? `<div class="guide-note">ℹ️ ${g.note}</div>` : ""}
+${tocHtml}
 ${sectionsHtml}
-    ${(g.prompts || []).length ? `<section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>${promptsHtml}</section>` : ""}
+    ${(g.prompts || []).length ? `<section class="guide-section" id="alle-prompts">
+      <div class="gs-num">★</div>
+      <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>${promptsHtml}
+    </section>` : ""}
     <div class="guide-download">
       <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
@@ -203,6 +228,7 @@ ${sectionsHtml}
   </main>
 ${footer("../")}
   <script src="../assets/site.js"></script>
+  <script src="../assets/cursor.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>
@@ -223,7 +249,10 @@ const cards = guides.map((g, i) => {
         <div class="chip-row">${toolBadge(g.tool)}<span class="chip">${esc(g.category)}</span></div>
         <h3>${esc(g.title)}</h3>
         <p>${esc(g.summary)}</p>
-        <div class="guide-card-meta">${(g.prompts || []).length} Prompts · <span data-en="Read guide →">Guide lesen →</span></div>
+        <div class="guide-card-meta">
+          <span>${(g.prompts || []).length} Prompts</span>
+          ${g.date ? `<span class="gc-date">${esc(fmtDate(g.date))}</span>` : ""}
+        </div>
       </a>`;
 }).join("\n");
 
@@ -264,6 +293,7 @@ ${cards}
   </main>
 ${footer("")}
   <script src="assets/site.js"></script>
+  <script src="assets/cursor.js"></script>
   <script>
     (function () {
       var grid = document.getElementById('guidesGrid');
@@ -314,10 +344,37 @@ ${footer("")}
 `;
 writeFileSync("guides.html", indexHtml);
 
+// ── homepage "newest guides" strip ────────────────────────────────────────────
+// Kept in sync here so index.html never drifts from guides/data/*.json.
+if (existsSync("index.html")) {
+  const newest = [...guides]
+    .filter((g) => g.date)
+    .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+    .slice(0, 4);
+  const homeCards = newest.map((g) => `        <a class="guide-card fade-up" data-cat="${escAttr(g.category)}" href="guides/${g.slug}.html">
+          <div class="chip-row">${toolBadge(g.tool)}<span class="chip">${esc(g.category)}</span></div>
+          <h3>${esc(g.title)}</h3>
+          <p>${esc(g.summary)}</p>
+          <div class="guide-card-meta">
+            <span>${(g.prompts || []).length} Prompts</span>
+            <span class="gc-date">${esc(fmtDate(g.date))}</span>
+          </div>
+        </a>`).join("\n");
+  const home = readFileSync("index.html", "utf8");
+  const patched = home.replace(
+    /<!-- LATEST-GUIDES:START -->[\s\S]*?<!-- LATEST-GUIDES:END -->/,
+    `<!-- LATEST-GUIDES:START -->\n${homeCards}\n        <!-- LATEST-GUIDES:END -->`
+  );
+  if (patched !== home) {
+    writeFileSync("index.html", patched);
+    console.log(`  homepage: ${newest.length} newest guides injected`);
+  }
+}
+
 // ── sitemap ───────────────────────────────────────────────────────────────────
 const urls = [
   ["", "weekly", "1.0"], ["guides.html", "weekly", "0.9"], ["about.html", "monthly", "0.8"],
-  ["coaching.html", "monthly", "0.9"], ["partnerships.html", "monthly", "0.8"],
+  ["partnerships.html", "monthly", "0.8"], ["media-kit.html", "monthly", "0.7"],
   ["newsletter.html", "monthly", "0.8"], ["contact.html", "yearly", "0.6"],
   ...guides.map((g) => ["guides/" + g.slug + ".html", "monthly", "0.7"]),
 ];

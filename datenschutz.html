@@ -8,24 +8,26 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
   <nav>
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="coaching.html">Coaching</a></li>
       <li><a href="partnerships.html">Partnerships</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
 
   <main class="page" style="max-width:760px">
@@ -37,36 +39,36 @@
 
     <div style="line-height:1.75; color:var(--muted); font-size:.95rem; display:flex; flex-direction:column; gap:1.5rem">
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; color:var(--text); margin-bottom:.5rem">1. Verantwortlicher</h3>
-        <p>Marlon Drahn · <b style="color:#f59e0b">[Anschrift ergänzen]</b> · E-Mail: <a href="mailto:business@gptmarlon.com" style="color:var(--purple-light)">business@gptmarlon.com</a></p>
+        <h3 style="font-family:var(--font-display); color:var(--text); margin-bottom:.5rem">1. Verantwortlicher</h3>
+        <p>Marlon Drahn · <b style="color:#f59e0b">[Anschrift ergänzen]</b> · E-Mail: <a href="mailto:business@gptmarlon.com" style="color:var(--yellow)">business@gptmarlon.com</a></p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; color:var(--text); margin-bottom:.5rem">2. Allgemeines zur Datenverarbeitung</h3>
+        <h3 style="font-family:var(--font-display); color:var(--text); margin-bottom:.5rem">2. Allgemeines zur Datenverarbeitung</h3>
         <p>Diese Website ist eine statische Website ohne Nutzerkonten und ohne Werbe-Tracking. Es werden keine Cookies zu Analyse- oder Werbezwecken gesetzt. Lediglich Ihre Theme-Einstellung (hell/dunkel) wird lokal in Ihrem Browser gespeichert (localStorage, technisch erforderlich, verlässt Ihr Gerät nicht).</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; color:var(--text); margin-bottom:.5rem">3. Formulare (Newsletter, Coaching, Kontakt)</h3>
+        <h3 style="font-family:var(--font-display); color:var(--text); margin-bottom:.5rem">3. Formulare (Newsletter, Coaching, Kontakt)</h3>
         <p>Wenn Sie eines unserer Formulare absenden, speichern wir die von Ihnen eingegebenen Daten (E-Mail-Adresse, ggf. Name, Nachricht/Anliegen sowie Zeitpunkt) in einer Datenbank unseres Auftragsverarbeiters <b>Supabase</b> (Supabase Inc.), um Ihre Anfrage zu bearbeiten bzw. Ihnen die angeforderten Inhalte zu senden. Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO (Einwilligung) bzw. Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (vorvertragliche Maßnahmen, z.&nbsp;B. Coaching-Anfragen). Sie können Ihre Einwilligung jederzeit widerrufen und die Löschung Ihrer Daten verlangen — eine formlose E-Mail an business@gptmarlon.com genügt. Beim Kontaktformular öffnet sich zusätzlich Ihr eigenes E-Mail-Programm; der Versand dieser E-Mail erfolgt außerhalb dieser Website.</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; color:var(--text); margin-bottom:.5rem">4. Hosting &amp; Server-Logs</h3>
+        <h3 style="font-family:var(--font-display); color:var(--text); margin-bottom:.5rem">4. Hosting &amp; Server-Logs</h3>
         <p>Beim Aufruf der Website verarbeitet unser Hosting-Anbieter technisch notwendige Daten (IP-Adresse, Datum/Uhrzeit, aufgerufene Seite, Browser-Typ) in Server-Logfiles zur Sicherstellung des Betriebs (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO).</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; color:var(--text); margin-bottom:.5rem">5. Instagram-Einbettungen</h3>
-        <p>Auf der Startseite betten wir Videos von <b>Instagram</b> (Meta Platforms Ireland Ltd.) ein. Beim Laden dieser Inhalte wird eine Verbindung zu Servern von Meta hergestellt; dabei können personenbezogene Daten (u.&nbsp;a. Ihre IP-Adresse) an Meta übertragen werden — auch in die USA. Details: <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener" style="color:var(--purple-light)">Instagram-Datenschutzrichtlinie</a>. Rechtsgrundlage: Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (Darstellung unserer Inhalte).</p>
+        <h3 style="font-family:var(--font-display); color:var(--text); margin-bottom:.5rem">5. Instagram-Einbettungen</h3>
+        <p>Auf der Startseite betten wir Videos von <b>Instagram</b> (Meta Platforms Ireland Ltd.) ein. Beim Laden dieser Inhalte wird eine Verbindung zu Servern von Meta hergestellt; dabei können personenbezogene Daten (u.&nbsp;a. Ihre IP-Adresse) an Meta übertragen werden — auch in die USA. Details: <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener" style="color:var(--yellow)">Instagram-Datenschutzrichtlinie</a>. Rechtsgrundlage: Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (Darstellung unserer Inhalte).</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; color:var(--text); margin-bottom:.5rem">6. Google Fonts</h3>
+        <h3 style="font-family:var(--font-display); color:var(--text); margin-bottom:.5rem">6. Google Fonts</h3>
         <p>Diese Website lädt Schriftarten von <b>Google Fonts</b> (Google Ireland Ltd.). Dabei wird Ihre IP-Adresse an Google übertragen. Rechtsgrundlage: Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (einheitliche Darstellung). Wir prüfen die Umstellung auf lokal gehostete Schriften.</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; color:var(--text); margin-bottom:.5rem">7. Externe Links</h3>
+        <h3 style="font-family:var(--font-display); color:var(--text); margin-bottom:.5rem">7. Externe Links</h3>
         <p>Links zu Instagram, TikTok, claude.ai, chatgpt.com u.&nbsp;a. führen zu Angeboten Dritter; dort gelten deren Datenschutzbestimmungen. Die „In Claude/ChatGPT öffnen“-Buttons in unseren Guides übergeben lediglich den sichtbaren Prompt-Text als URL-Parameter an den jeweiligen Anbieter — erst wenn Sie den Link anklicken.</p>
       </div>
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif; color:var(--text); margin-bottom:.5rem">8. Ihre Rechte</h3>
-        <p>Sie haben nach DSGVO das Recht auf Auskunft (Art.&nbsp;15), Berichtigung (Art.&nbsp;16), Löschung (Art.&nbsp;17), Einschränkung der Verarbeitung (Art.&nbsp;18), Datenübertragbarkeit (Art.&nbsp;20) sowie Widerspruch (Art.&nbsp;21). Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren. Für alle Anliegen: <a href="mailto:business@gptmarlon.com" style="color:var(--purple-light)">business@gptmarlon.com</a>.</p>
+        <h3 style="font-family:var(--font-display); color:var(--text); margin-bottom:.5rem">8. Ihre Rechte</h3>
+        <p>Sie haben nach DSGVO das Recht auf Auskunft (Art.&nbsp;15), Berichtigung (Art.&nbsp;16), Löschung (Art.&nbsp;17), Einschränkung der Verarbeitung (Art.&nbsp;18), Datenübertragbarkeit (Art.&nbsp;20) sowie Widerspruch (Art.&nbsp;21). Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren. Für alle Anliegen: <a href="mailto:business@gptmarlon.com" style="color:var(--yellow)">business@gptmarlon.com</a>.</p>
       </div>
     </div>
   </main>
@@ -75,7 +77,7 @@
     <div class="footer-inner">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
@@ -95,6 +97,8 @@
   </footer>
 
   <script src="assets/site.js"></script>
+
+  <script src="assets/cursor.js"></script>
   <script src="assets/stats.js"></script>
   <script src="assets/community.js"></script>
   <script src="assets/lang.js"></script>

@@ -1,4 +1,4 @@
-// GPT Marlon site — shared runtime: theme, reveal animations, Supabase form storage.
+// GPT Marlon site — shared runtime: Supabase capture, reveal animations, mobile nav.
 // The key below is the PUBLISHABLE key; row-level security only permits INSERTs.
 const SB_URL = 'https://topypyboyyvykdfbxqmj.supabase.co';
 const SB_KEY = 'sb_publishable_igrAFNS4S_dvOAqnxZY7pg_EE0oipId';
@@ -14,18 +14,31 @@ async function sbInsert(table, row) {
 window.saveLead = (kind, email, name, note) => sbInsert('site_leads', { kind, email, name: name || null, note: note || null });
 window.saveMessage = (name, email, topic, message) => sbInsert('site_messages', { name: name || null, email, topic: topic || null, message });
 
-// theme (shared with the landing page's localStorage key)
-const htmlEl = document.documentElement;
-const savedTheme = localStorage.getItem('gptmarlon-theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-htmlEl.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+// The redesign is dark-only. Drop any theme left over from the previous design
+// so a returning visitor who had picked "light" isn't stuck on a dead attribute.
+document.documentElement.removeAttribute('data-theme');
+try { localStorage.removeItem('gptmarlon-theme'); } catch (e) {}
 
 document.addEventListener('DOMContentLoaded', () => {
-  const t = document.getElementById('themeToggle');
-  if (t) t.addEventListener('click', () => {
-    htmlEl.dataset.theme = htmlEl.dataset.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('gptmarlon-theme', htmlEl.dataset.theme);
-  });
+  // mobile nav
+  const burger = document.querySelector('[data-burger]');
+  const links = document.querySelector('.nav-links');
+  if (burger && links) {
+    burger.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.textContent = open ? '✕' : '☰';
+    });
+    links.addEventListener('click', (e) => {
+      if (e.target.closest('a')) {
+        links.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.textContent = '☰';
+      }
+    });
+  }
+
+  // scroll reveal
   const observer = new IntersectionObserver((es) => {
     es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });

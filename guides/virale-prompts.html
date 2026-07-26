@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/site.css" />
   <link rel="stylesheet" href="../assets/guides.css" />
 </head>
@@ -16,18 +16,20 @@
   <nav>
     <a href="../index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="../guides.html" class="active"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../newsletter.html">Newsletter</a></li>
       <li><a href="../partnerships.html">Partnerships</a></li>
       <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Content</span></div>
@@ -40,14 +42,27 @@
         <span class="chip">15 Prompts zum Kopieren</span>
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
-      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
-        <a class="btn-secondary" href="../guides/pdf/virale-prompts.pdf" download>⬇ Als PDF herunterladen</a>
-        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      <div class="guide-actions">
+        <a class="btn-primary" href="../guides/pdf/virale-prompts.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
       </div>
     </div>
     <div class="guide-note">ℹ️ Die Bild-Prompts (Business-Porträt, Notizen-zu-Infografik) brauchen ein Bild-generierendes Modell wie ChatGPT — Claude kann Bilder analysieren und daraus z. B. eine HTML-Infografik als Artefakt bauen, erzeugt aber keine fotorealistischen Bilder; die Text-Prompts laufen in ChatGPT und Claude gleichermaßen.</div>
 
-      <section class="guide-section">
+    <nav class="guide-toc" aria-label="Inhalt">
+      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
+      <ol>
+        <li><a href="#s1"><span class="toc-n">01</span>So nutzt du diese Bibliothek</a></li>
+        <li><a href="#s2"><span class="toc-n">02</span>Teil 1 — Stil-Prompts für jeden Chat</a></li>
+        <li><a href="#s3"><span class="toc-n">03</span>Teil 2 — Modus-Prompts für einzelne Chats</a></li>
+        <li><a href="#s4"><span class="toc-n">04</span>Teil 3 — Alltags-Prompts</a></li>
+        <li><a href="#s5"><span class="toc-n">05</span>Fazit — so startest du heute</a></li>
+        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
+      </ol>
+    </nav>
+
+      <section class="guide-section" id="s1">
+        <div class="gs-num">01</div>
         <h2>So nutzt du diese Bibliothek</h2>
         <p>Das hier ist kein Theorie-Guide. Jeder Prompt ist eine fertige Vorlage, die du direkt in ChatGPT, Claude oder jedes andere KI-Modell kopierst. Du musst nur eine Sache verstehen: Es gibt zwei Arten von Prompts.</p>
 <ol><li><b>Dauerhafte Stil-Prompts (Teil 1):</b> Einmal in den Einstellungen hinterlegen — sie wirken danach automatisch in jedem Gespräch.</li><li><b>Chat-Prompts (Teil 2 und 3):</b> Am Anfang eines neuen Chats einfügen. Sie wirken nur in diesem einen Gespräch — perfekt, um je nach Aufgabe den passenden Modus zu wählen.</li></ol>
@@ -56,13 +71,15 @@
 <p><b>Drei Regeln für den Start:</b> Beginne mit einem Prompt, nicht mit fünf (Empfehlung: der Human Prompt). Ersetze Platzhalter in [eckigen Klammern] immer durch deine eigenen Angaben. Prüfe wichtige Ergebnisse selbst — ein Prompt macht die KI besser, aber nicht unfehlbar.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s2">
+        <div class="gs-num">02</div>
         <h2>Teil 1 — Stil-Prompts für jeden Chat</h2>
         <p><b>Prompt 01 — Der Human Prompt.</b> <i>Was er macht:</i> Bringt die KI dazu, wie ein echter Mensch zu schreiben — kurze Sätze, Aktiv statt Passiv, keine Marketing-Floskeln, keine typischen KI-Füllwörter. <i>Warum er funktioniert:</i> Er arbeitet mit Vorher-Nachher-Beispielen statt abstrakter Regeln. Konkrete Beispielpaare sind die wirksamste Methode, KI-Verhalten zu steuern — das Modell erkennt das Muster und wendet es konsistenter an. Dazu kommt eine Sperrliste typischer deutscher KI-Floskeln. <i>Wo einsetzen:</i> In die Custom Instructions — wirkt danach in jedem Gespräch.</p>
 <p><b>Prompt 02 — Der Truth Prompt.</b> <i>Was er macht:</i> Zwingt die KI, nur zu behaupten, was sie belegen kann, Quellen zu nennen und Unsicherheit offen zuzugeben. Ein eingebauter Endcheck lässt sie die eigene Antwort vor dem Absenden auf Erfindungen prüfen. <i>Warum er funktioniert:</i> Halluzinationen sind die größte Schwäche von KI-Modellen. Der Prompt legt mehrere Sicherheitsebenen übereinander: Quellenpflicht, Unsicherheits-Kennzeichnung, nachvollziehbare Herleitung und ein finaler Selbstcheck. Ehrlich gesagt: Ganz eliminieren kann kein Prompt Halluzinationen — wichtige Fakten prüfst du weiterhin selbst. <i>Wo einsetzen:</i> Für Recherche und Faktenchecks, in die Custom Instructions oder an den Anfang eines Recherche-Chats.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s3">
+        <div class="gs-num">03</div>
         <h2>Teil 2 — Modus-Prompts für einzelne Chats</h2>
         <p><b>Prompt 03 — God Mode (maximale Denktiefe).</b> <i>Was er macht:</i> Lässt die KI jede Frage als vielschichtiges Problem behandeln: Wissen aus mehreren Fachgebieten, hinterfragte Annahmen, statt schneller Antwort strukturierte Frameworks, Roadmaps und Playbooks. <i>Warum er funktioniert:</i> Kein geheimer Schalter — KI-Modelle passen die Tiefe an den wahrgenommenen Anspruch an. Wer Perspektivenvielfalt, Meta-Reflexion und Struktur einfordert, bekommt gründlichere Antworten. <i>Wo einsetzen:</i> Am Anfang eines neuen Chats bei Strategie, komplexen Problemen oder wichtigen Entscheidungen.</p>
 <p><b>Prompt 04 — Absolute Mode (null Geschwätz).</b> <i>Was er macht:</i> Keine Emojis, kein Hype, keine Höflichkeitsfloskeln, keine Rückfragen, keine Angebote am Ende. Jede Antwort endet, sobald die Information geliefert ist. <i>Warum er funktioniert:</i> KI-Modelle sind auf Gefälligkeit und Gesprächigkeit trainiert — das kostet Zeit. Der Prompt untersagt genau diese Muster Punkt für Punkt. <i>Wo einsetzen:</i> Wenn du ungefilterte Analysen ohne Weichspüler willst. Tipp: Human Prompt dauerhaft, Absolute Mode punktuell — dann hast du natürlichen Stil immer und maximale Direktheit auf Abruf.</p>
@@ -70,7 +87,8 @@
 <p><b>Prompt 06 — Der Selbstanalyse-Prompt.</b> <i>Was er macht:</i> Verwandelt die KI in einen tiefenpsychologischen Sparringspartner, der wiederkehrende Muster freilegt — in drei Phasen: Ursache finden, Muster kartieren, neues Selbstbild entwerfen. <i>Warum er funktioniert:</i> Statt vager Fragen gibt der Prompt ein strukturiertes psychologisches Raster. Je ehrlicher dein Input, desto treffender die Analyse. <i>Wichtig:</i> Das ist ein Reflexions-Werkzeug, keine Psychotherapie. Bei echten psychischen Belastungen ist eine ausgebildete Fachperson die richtige Adresse.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s4">
+        <div class="gs-num">04</div>
         <h2>Teil 3 — Alltags-Prompts</h2>
         <p>Vier schnelle Problemlöser plus die Selbsterkenntnis-Serie und der Datei-Aufräumer. Die meisten funktionieren in ChatGPT und Claude — auch im kostenlosen Plan.</p>
 <ul><li><b>Prompt 07 — Business-Porträt:</b> Lade 2–3 Fotos hoch, auf denen dein Gesicht gut zu erkennen ist. Ergebnis: ein professionell wirkendes Porträt für LinkedIn &amp; Co. <i>Hinweis:</i> Bild-Prompts brauchen ein Bild-generierendes Modell (siehe Korrektur unten) — KI-Bildgeneratoren verändern Gesichter leicht, vergleiche das Ergebnis kritisch mit dem Original.</li><li><b>Prompt 08 — Kühlschrank-Koch:</b> Fotografiere deinen offenen Kühlschrank. Ergebnis: Zutaten-Inventar plus Rezeptideen, anpassbar an Vorlieben und Unverträglichkeiten.</li><li><b>Prompt 09 — Zutaten-Check:</b> Fotografiere die Zutatenliste eines Produkts. Ergebnis: verständliche Einordnung statt Chemie-Latein. Bei Allergien oder gesundheitlichen Fragen ersetzt das keine fachliche Beratung.</li><li><b>Prompt 10 — Notizen zu Infografik:</b> Fotografiere deine handschriftlichen Notizen. Ergebnis: eine aufgeräumte Lernunterlage oder präsentierbare Grafik.</li></ul>
@@ -78,13 +96,16 @@
 <p><b>Prompt 15 — Der Datei-Aufräumer (Claude Cowork).</b> <i>Was er macht:</i> Lässt Claude einen kompletten Ordner auf deinem Rechner aufräumen: Fotos und Screenshots werden nach Datum, Thema und Inhalt in sauber benannte Ordner sortiert, jede Datei bekommt einen beschreibenden Namen. <i>Voraussetzungen:</i> Claude Desktop-App (macOS oder Windows) mit einem Bezahlplan (Pro, Max, Team oder Enterprise) — dort den Bereich Cowork öffnen und den Ordner hineinziehen. <i>Selbst prüfen:</i> Teste zuerst mit einer Kopie eines kleinen Ordners, um das Sortier-Schema zu sehen, bevor du ihn an deine echte Fotosammlung lässt.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s5">
+        <div class="gs-num">05</div>
         <h2>Fazit — so startest du heute</h2>
         <ol><li><b>Human Prompt</b> in die Custom Instructions kopieren — einmal, dauerhaft.</li><li>Einen <b>Modus-Prompt</b> aus Teil 2 in einem neuen Chat testen — am besten God Mode mit einer Frage, die dich wirklich beschäftigt.</li><li>Einen <b>Alltags-Prompt</b> ausprobieren — der Kühlschrank-Koch ist der schnellste Einstieg.</li></ol>
 <p>Wenn du den Unterschied einmal gesehen hast, promptest du nie wieder wie vorher.</p>
 <p><b>Hinweis:</b> Dieser Guide dient ausschließlich zu Informations- und Bildungszwecken. Der Monetarisierungs-Prompt stellt keine Anlage-, Steuer- oder Rechtsberatung dar und garantiert kein Einkommen. Die Psychologie-Prompts sind Reflexions-Werkzeuge und ersetzen keine Psychotherapie oder medizinische Beratung. KI-Antworten können Fehler enthalten — prüfe wichtige Ergebnisse selbst. Lädst du persönliche Fotos oder Dateien hoch, beachte den Datenschutz. Alle Angaben: Stand Juli 2026, Änderungen möglich.</p>
       </section>
-    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+    <section class="guide-section" id="alle-prompts">
+      <div class="gs-num">★</div>
+      <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
           <span class="prompt-label">Prompt 01 — Der Human Prompt</span>
@@ -339,7 +360,8 @@ Ton: Unbequem präzise, aber emotional geerdet. Fühlt sich nach Durchbruch an, 
           </div>
         </div>
         <pre class="prompt-text">Sortiere alle meine Fotos und Screenshots in sauber benannte Ordner nach Datum, Thema und Inhalt. Benenne jede Datei danach, was wirklich auf dem Bild zu sehen ist.</pre>
-      </div></section>
+      </div>
+    </section>
     <div class="guide-download">
       <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
@@ -358,12 +380,11 @@ Ton: Unbequem präzise, aber emotional geerdet. Fühlt sich nach Durchbruch an, 
     <div class="footer-inner">
       <a href="../index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="../guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="../coaching.html">Coaching</a></li>
         <li><a href="../partnerships.html">Partnerships</a></li>
         <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="../newsletter.html">Newsletter</a></li>
@@ -379,6 +400,7 @@ Ton: Unbequem präzise, aber emotional geerdet. Fühlt sich nach Durchbruch an, 
     <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
   </footer>
   <script src="../assets/site.js"></script>
+  <script src="../assets/cursor.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>

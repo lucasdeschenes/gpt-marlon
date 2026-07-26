@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/site.css" />
   <link rel="stylesheet" href="../assets/guides.css" />
 </head>
@@ -16,18 +16,20 @@
   <nav>
     <a href="../index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="../guides.html" class="active"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../newsletter.html">Newsletter</a></li>
       <li><a href="../partnerships.html">Partnerships</a></li>
       <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Produktivität</span></div>
@@ -40,14 +42,30 @@
         <span class="chip">0 Prompts zum Kopieren</span>
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
-      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
-        <a class="btn-secondary" href="../guides/pdf/claude-kleinunternehmen.pdf" download>⬇ Als PDF herunterladen</a>
-        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      <div class="guide-actions">
+        <a class="btn-primary" href="../guides/pdf/claude-kleinunternehmen.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
       </div>
     </div>
     <div class="guide-note">ℹ️ Das Zertifikat ist ein Kurs-Abschluss, kein offizieller Anthropic-Partner- oder Reseller-Status; die Honorare und das ~30.000-€-Ziel sind Beispielrechnungen, keine Zusicherung.</div>
 
-      <section class="guide-section">
+    <nav class="guide-toc" aria-label="Inhalt">
+      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
+      <ol>
+        <li><a href="#s1"><span class="toc-n">01</span>Teil 1 – Was ist Claude für Kleinunternehmen?</a></li>
+        <li><a href="#s2"><span class="toc-n">02</span>Die Chance – warum daraus eine Dienstleistung wird</a></li>
+        <li><a href="#s3"><span class="toc-n">03</span>Schritt 1 – Kostenloses Training &amp; Zertifikat</a></li>
+        <li><a href="#s4"><span class="toc-n">04</span>Schritt 2 – Erst bei dir selbst einrichten</a></li>
+        <li><a href="#s5"><span class="toc-n">05</span>Schritt 3 – Die richtigen Kunden finden</a></li>
+        <li><a href="#s6"><span class="toc-n">06</span>Schritt 4 – Das Verkaufsgespräch</a></li>
+        <li><a href="#s7"><span class="toc-n">07</span>Schritt 5 – Das Setup (ein Nachmittag)</a></li>
+        <li><a href="#s8"><span class="toc-n">08</span>Die 15 Workflows &amp; der Weg auf 30.000 €</a></li>
+
+      </ol>
+    </nav>
+
+      <section class="guide-section" id="s1">
+        <div class="gs-num">01</div>
         <h2>Teil 1 – Was ist Claude für Kleinunternehmen?</h2>
         <p>Am 13. Mai 2026 hat Anthropic <b>Claude für Kleinunternehmen</b> veröffentlicht: 15 vorgefertigte KI-Workflows, die direkt in den Programmen laufen, die Betriebe ohnehin nutzen – QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace und Microsoft 365.</p>
 <p><b>Drei Begriffe vorab:</b></p>
@@ -55,7 +73,8 @@
 <p>Entscheidend für jedes Verkaufsgespräch: <b>Nichts wird ohne Freigabe verschickt, gebucht oder bezahlt.</b> Der Inhaber sieht jeden Entwurf und klickt selbst auf „Freigeben".</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s2">
+        <div class="gs-num">02</div>
         <h2>Die Chance – warum daraus eine Dienstleistung wird</h2>
         <p>Die Workflows sind mächtig, aber jemand muss sie einrichten, die Tools verbinden und den Inhaber durch die Freigabe-Logik führen. Genau das übernimmst du – gegen ein einmaliges Honorar plus monatliche Betreuung.</p>
 <table><thead><tr><th>Position</th><th>Orientierungswert</th></tr></thead><tbody><tr><td>Einrichtungshonorar</td><td>1.500 € pro Kunde</td></tr><tr><td>Monatliche Betreuung</td><td>500 € / Monat</td></tr><tr><td>Ziel bei 5 Kunden</td><td>~30.000 € / Jahr</td></tr><tr><td>Installationsdauer</td><td>Ein Nachmittag</td></tr><tr><td>Trainingskosten</td><td>Kostenlos</td></tr></tbody></table>
@@ -63,7 +82,8 @@
 <p><b>Wichtig für den DACH-Raum:</b> Die kostenlosen Online-Kurse sind weltweit zugänglich. Die Live-Workshops (SMB-Tour) und der Gratismonat Claude Max gelten nur in den USA. QuickBooks ist in DACH wenig verbreitet; viele Betriebe nutzen DATEV, Lexware oder sevDesk – prüfe vor jedem Kunden, welche seiner Tools sich aktuell mit Claude verbinden lassen.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s3">
+        <div class="gs-num">03</div>
         <h2>Schritt 1 – Kostenloses Training &amp; Zertifikat</h2>
         <p>Mach das, bevor du den ersten Kunden ansprichst. Es dauert rund zwei Stunden und schließt mit einem Zertifikat ab. Grundlage ist Anthropics <b>4D-Framework</b>. Startpunkt: <code>claude.com/solutions/small-business</code>.</p>
 <ul><li><b>Kurs 1 – AI Fluency: Framework &amp; Foundations</b> (Voraussetzung): die Grundlagen zuerst. <code>anthropic.skilljar.com</code></li><li><b>Kurs 2 – AI Fluency for Small Businesses</b> (Zertifikatskurs): unterrichtet von echten Unternehmerinnen und Unternehmern; am Ende erhältst du ein Abschluss-Zertifikat.</li></ul>
@@ -72,14 +92,16 @@
 <p><b>Ehrlich bleiben:</b> Das ist ein Kurs-Abschlusszertifikat – ein Nachweis, dass du das Thema verstehst. Es ist kein offizieller Anthropic-Partner- oder Reseller-Status. Kommuniziere: „Ich bin im Anthropic-Kurs geschult" – nicht „offiziell von Anthropic autorisiert".</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s4">
+        <div class="gs-num">04</div>
         <h2>Schritt 2 – Erst bei dir selbst einrichten</h2>
         <p>Bevor du ein Kundenkonto anfasst, gehst du das Setup einmal komplett selbst durch. So entdeckst du jede Stolperstelle, bevor sie vor einem zahlenden Kunden auftaucht.</p>
 <ol><li><code>claude.com/solutions/small-business</code> öffnen und Überblick verschaffen.</li><li>Claude-Desktop-App herunterladen und mit einem bezahlten Konto anmelden (Team-Plan oder höher).</li><li>In Claude Cowork die Funktion „Claude für Kleinunternehmen" aktivieren.</li><li>Ein Tool zum Start verbinden – Google Workspace oder eine unterstützte Buchhaltung.</li><li>Den Rechnungs-Mahner einmal komplett mit einer Testrechnung durchspielen.</li><li>Jede Reibung notieren – genau diese Punkte kommen bei jedem Kunden wieder.</li></ol>
 <p><b>Datensicherheit als Verkaufsargument:</b> Auf Team- und Enterprise-Plänen trainiert Anthropic standardmäßig nicht mit den Daten der Kunden. Bestehende Berechtigungen aus QuickBooks, Google &amp; Co. werden unverändert übernommen: Was ein Mitarbeiter in der Buchhaltung nicht sehen darf, sieht er auch über Claude nicht.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s5">
+        <div class="gs-num">05</div>
         <h2>Schritt 3 – Die richtigen Kunden finden</h2>
         <p>Ziel sind lokale Betriebe ab ca. 200.000 € Jahresumsatz. Sie haben genug Cashflow, damit sich die Betreuung rechnet – und genug Verwaltungs-Schmerz, damit allein der Rechnungs-Mahner sich schnell bezahlt macht.</p>
 <p><b>Passende Branchen:</b> Fitness-/Sportstudios (wiederkehrende Mitgliedschaften), Handwerk (Projektrechnungen), Reinigungen &amp; Wäschereien (Stammkunden auf Rechnung), beratende Berufe (softwareaffin), Restaurants mit Firmen-/Catering-Geschäft.</p>
@@ -88,7 +110,8 @@
 <p><b>Faustregel:</b> Ein einziger Schmerzpunkt reicht für den Einstieg. Such nicht den Betrieb mit den meisten Tools, sondern den mit dem größten, konkret benennbaren Zeitfresser.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s6">
+        <div class="gs-num">06</div>
         <h2>Schritt 4 – Das Verkaufsgespräch</h2>
         <p>Halt es kurz. Ziel: einen Schmerzpunkt benennen und zeigen, dass Claude dafür schon einen fertigen Workflow hat.</p>
 <p><b>Dein roter Faden (Beispiel):</b> „Anthropic – die Firma hinter Claude – hat fertige KI-Workflows speziell für Betriebe wie deinen veröffentlicht. Einer davon mahnt deine offenen Rechnungen automatisch an. Ich bin darin geschult, das einzurichten. Es dauert einen Nachmittag; ich nehme 1.500 € für die Einrichtung und 500 € im Monat dafür, dass es läuft und ich neue Workflows ergänze. Sobald es die erste verspätete Zahlung hereinholt, hat es sich bezahlt gemacht."</p>
@@ -96,7 +119,8 @@
 <table><thead><tr><th>Einwand</th><th>Deine Antwort</th></tr></thead><tbody><tr><td>„Ich bin nicht technisch."</td><td>Musst du nicht sein. Du gibst jede Aktion frei, bevor sie rausgeht – nichts passiert ohne deinen Klick.</td></tr><tr><td>„Sind meine Daten sicher?"</td><td>Anthropic trainiert auf den Business-Plänen nicht mit deinen Daten. Deine bestehenden Berechtigungen bleiben exakt wie heute.</td></tr><tr><td>„Wir nutzen schon ChatGPT."</td><td>Das hier verbindet sich direkt mit Buchhaltung, CRM und Rechnungstools und führt echte Abläufe aus – nicht nur Chat.</td></tr><tr><td>„Zu teuer."</td><td>Eine einzige hereingeholte Rechnung über 2.000 € deckt drei Monate Betreuung. Wie viele Rechnungen sind gerade überfällig?</td></tr></tbody></table>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s7">
+        <div class="gs-num">07</div>
         <h2>Schritt 5 – Das Setup (ein Nachmittag)</h2>
         <p>Plane für den ersten Kunden drei bis vier Stunden ein. Mach es nach Möglichkeit vor Ort.</p>
 <p><b>Was du vorab vom Kunden brauchst:</b> Admin-Zugang zu seinem Claude-Konto (oder ihr legt eines auf dem Team-Plan an) · Zugang zu Buchhaltungssoftware · Zugang zu E-Mail (Google Workspace oder Microsoft 365) · PayPal-Zugang (falls er darüber Rechnungen stellt) · je 30 Minuten am Anfang und am Ende.</p>
@@ -105,7 +129,8 @@
 <p><b>Datenschutz (DSGVO):</b> Lass den Kunden seine Passwörter immer selbst eingeben – notiere oder speichere niemals fremde Zugangsdaten. Bei der Verarbeitung von Kunden-/Belegdaten kann ein Auftragsverarbeitungsvertrag (AVV) nötig sein; verweise für Details auf <code>trust.anthropic.com</code>.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s8">
+        <div class="gs-num">08</div>
         <h2>Die 15 Workflows &amp; der Weg auf 30.000 €</h2>
         <table><thead><tr><th>Bereich</th><th>Workflows</th></tr></thead><tbody><tr><td>Finanzen</td><td>Rechnungs-Mahner · Monatsabschluss · Lohn-/Gehaltsplanung · Cashflow-Prognose · Margen-Analyse · Steuer-Saison-Organizer</td></tr><tr><td>Betrieb</td><td>Monatsabschluss-Vorbereitung · Abstimmung/Reconciliation</td></tr><tr><td>Vertrieb &amp; CRM</td><td>Lead-Sichtung · Kunden-Stimmungsbild · Kampagnen-Attribution</td></tr><tr><td>Marketing</td><td>Kampagnen-Manager (HubSpot + Canva) · Content-Strategie</td></tr><tr><td>Recht</td><td>Vertrags-Prüfung</td></tr></tbody></table>
 <p>15 Workflows insgesamt; die Verfügbarkeit hängt von den verbundenen Tools und dem Plan ab.</p>
@@ -132,12 +157,11 @@
     <div class="footer-inner">
       <a href="../index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="../guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="../coaching.html">Coaching</a></li>
         <li><a href="../partnerships.html">Partnerships</a></li>
         <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="../newsletter.html">Newsletter</a></li>
@@ -153,6 +177,7 @@
     <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
   </footer>
   <script src="../assets/site.js"></script>
+  <script src="../assets/cursor.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>

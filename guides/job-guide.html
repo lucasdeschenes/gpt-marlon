@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/site.css" />
   <link rel="stylesheet" href="../assets/guides.css" />
 </head>
@@ -16,18 +16,20 @@
   <nav>
     <a href="../index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="../guides.html" class="active"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="../coaching.html">Coaching</a></li>
+      <li><a href="../newsletter.html">Newsletter</a></li>
       <li><a href="../partnerships.html">Partnerships</a></li>
       <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Theme wechseln">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Karriere</span></div>
@@ -40,14 +42,31 @@
         <span class="chip">9 Prompts zum Kopieren</span>
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
-      <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem">
-        <a class="btn-secondary" href="../guides/pdf/job-guide.pdf" download>⬇ Als PDF herunterladen</a>
-        <a class="btn-secondary" href="#" data-community>🚀 Community beitreten</a>
+      <div class="guide-actions">
+        <a class="btn-primary" href="../guides/pdf/job-guide.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
       </div>
     </div>
     <div class="guide-note">ℹ️ Auto-Bewerben läuft über Claude Cowork + die Claude-in-Chrome-Erweiterung und bleibt entwurfsbasiert (Pause vor Einreichung); für DACH sind Kununu und gehalt.de die passenderen Gehaltsquellen als Blind.</div>
 
-      <section class="guide-section">
+    <nav class="guide-toc" aria-label="Inhalt">
+      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
+      <ol>
+        <li><a href="#s1"><span class="toc-n">01</span>So funktioniert's</a></li>
+        <li><a href="#s2"><span class="toc-n">02</span>Schritt 1 – Die Lebenslauf-Analyse</a></li>
+        <li><a href="#s3"><span class="toc-n">03</span>Schritt 2 – Der Erfahrungs-Rewrite</a></li>
+        <li><a href="#s4"><span class="toc-n">04</span>Schritt 3 – ATS + Hiring Manager Test</a></li>
+        <li><a href="#s5"><span class="toc-n">05</span>Bonus – Auto-Bewerben mit Cowork</a></li>
+        <li><a href="#s6"><span class="toc-n">06</span>Bonus – 30-Sekunden-Anschreiben</a></li>
+        <li><a href="#s7"><span class="toc-n">07</span>Bonus – Interview-Vorbereitung</a></li>
+        <li><a href="#s8"><span class="toc-n">08</span>Bonus – Gehaltsverhandlung</a></li>
+        <li><a href="#s9"><span class="toc-n">09</span>Bonus – LinkedIn-Optimizer &amp; Follow-ups</a></li>
+        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
+      </ol>
+    </nav>
+
+      <section class="guide-section" id="s1">
+        <div class="gs-num">01</div>
         <h2>So funktioniert's</h2>
         <p>Applicant Tracking Systems (<b>ATS</b>) scannen nach Keywords und Formatierung und entscheiden, ob du überhaupt zum Recruiter durchkommst. Selbst wenn ein Mensch deinen Lebenslauf sieht, scannt er ihn im Durchschnitt nur <b>7 Sekunden</b>.</p>
 <p>Claude analysiert deinen Lebenslauf gegen die echte Stellenbeschreibung, findet die fehlenden Keywords, schreibt deine Erfahrungen mit bewährten Formeln um und prüft das Ergebnis aus zwei Perspektiven: ATS-Filter und Hiring Manager. Der Prozess dauert ca. 10 Minuten.</p>
@@ -55,55 +74,65 @@
 <ol><li>Ein Claude-Konto (Free-Tier reicht für die Lebenslauf-Prompts)</li><li>Deinen aktuellen Lebenslauf (PDF, Word oder Plain Text)</li><li>Die Stellenbeschreibung der Stelle</li><li>Für Auto-Bewerben: Claude Pro + Cowork + Claude-in-Chrome-Erweiterung</li></ol>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s2">
+        <div class="gs-num">02</div>
         <h2>Schritt 1 – Die Lebenslauf-Analyse</h2>
         <p>Lade deinen Lebenslauf und die Stellenbeschreibung zu Claude hoch. <b>Prompt 1</b> lässt Claude wie ein Senior Recruiter des jeweiligen Unternehmens denken und gibt dir eine ehrliche Bestandsaufnahme: Match-Score, die 5 wichtigsten fehlenden Keywords, 3 rote Flags, starke/schwache Abschnitte und einen Vergleich zu einem starken Kandidaten.</p>
 <p><b>Tipp:</b> Überspringe diesen Schritt nicht. Die Analyse zeigt dir genau, was geändert werden muss und warum. Die meisten sind überrascht, was das ATS tatsächlich bestraft.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s3">
+        <div class="gs-num">03</div>
         <h2>Schritt 2 – Der Erfahrungs-Rewrite</h2>
         <p>Bleib im selben Chat, damit Claude den Kontext der Analyse behält. <b>Prompt 2</b> schreibt deinen Erfahrungsabschnitt mit der <b>Google-XYZ-Formel</b> um: <i>Erreicht [X] gemessen an [Y] durch [Z].</i></p>
 <p>Aus einer Aufgabe („Führte ein 5-köpfiges Team") wird eine Leistung („Reduzierte Deployment-Zeit um 40 % (gemessen an wöchentlicher Release-Velocity) durch Umstrukturierung des Teams in cross-funktionale Pods"). Hiring Manager interessiert das Zweite.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s4">
+        <div class="gs-num">04</div>
         <h2>Schritt 3 – ATS + Hiring Manager Test</h2>
         <p>Noch im selben Chat. <b>Prompt 3</b> testet deinen umgeschriebenen Lebenslauf aus zwei Perspektiven: dem ATS-Filter, der dich aussortiert, bevor ein Mensch dich sieht, und dem Hiring Manager, der 200 Lebensläufe am Stück liest und Gründe sucht, nein zu sagen.</p>
 <p><b>Tipp:</b> Bitte Claude danach, den finalen Lebenslauf als sauberes <b>Artefakt</b> auszugeben – als .docx herunterladbar. Prüfe alle <b>[EINTRAGEN]</b>-Platzhalter und ergänze deine echten Zahlen vor dem Absenden.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s5">
+        <div class="gs-num">05</div>
         <h2>Bonus – Auto-Bewerben mit Cowork</h2>
         <p>Sobald dein Lebenslauf optimiert ist, wechselst du zu <b>Claude Cowork</b>: Claude geht zu LinkedIn, findet passende Jobs und bereitet für jede Stelle eine individuelle Bewerbung vor. <b>Prompt 4</b> steuert das.</p>
 <p><b>Wichtig:</b> Das benötigt Claude Pro (ca. 20 $/Monat), die Claude-Desktop-App im Cowork-Modus und die <b>Claude-in-Chrome-Erweiterung</b>. Sei in Chrome bei LinkedIn eingeloggt. Starte mit der Einstellung <i>Pause vor Einreichung</i>, um jede Bewerbung zu prüfen, bevor sie rausgeht. Behandle jede automatische Bewerbung wie einen Entwurf – und prüfe die Nutzungsbedingungen der Plattform.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s6">
+        <div class="gs-num">06</div>
         <h2>Bonus – 30-Sekunden-Anschreiben</h2>
         <p>Die meisten Anschreiben sind generisches Bla-Bla. Der <b>Anschreiben-Prompt</b> generiert in ca. 30 Sekunden ein gezieltes Anschreiben, das Unternehmen, Stelle und deine stärksten Erfahrungen verbindet. Nutze ihn nach der Lebenslauf-Analyse.</p>
 <p><b>Geheimtipp:</b> Das Erfolgsgeheimnis liegt im dritten Absatz. Die Lücke direkt anzusprechen zeigt Selbstwahrnehmung und Selbstvertrauen – genau die Eigenschaften, die dich in den „Ja"-Stapel bringen.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s7">
+        <div class="gs-num">07</div>
         <h2>Bonus – Interview-Vorbereitung</h2>
         <p>Der <b>Interview-Prompt</b> recherchiert das Unternehmen, sagt die wahrscheinlichen Fragen voraus und bereitet deine Antworten anhand echter Beispiele aus deinem Lebenslauf vor – plus eigene Fragen an das Unternehmen und ein Mock-Interview.</p>
 <p><b>Das Mock-Interview</b> am Ende ist der wertvollste Teil: Die Fragen wirklich zu beantworten zwingt dich, den Ernstfall zu üben. Claude gibt dir nach jeder Antwort Feedback.</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s8">
+        <div class="gs-num">08</div>
         <h2>Bonus – Gehaltsverhandlung</h2>
         <p>Fast jedes Angebot hat Verhandlungsspielraum – und wie du fragst, ist wichtiger als was du forderst. Der <b>Gehaltsverhandlungs-Prompt</b> liefert Marktdaten, eine Gegenangebot-E-Mail, ein Telefongespräch-Skript und eine Abbruch-Analyse.</p>
 <p><b>Tipp:</b> Nenne niemals zuerst eine Zahl. Auf „Was sind Ihre Gehaltsvorstellungen?" antwortest du: „Ich würde gerne mehr über das Gesamtpaket erfahren, bevor wir Zahlen besprechen. Welchen Budgetrahmen haben Sie für diese Stelle?"</p>
       </section>
 
-      <section class="guide-section">
+      <section class="guide-section" id="s9">
+        <div class="gs-num">09</div>
         <h2>Bonus – LinkedIn-Optimizer &amp; Follow-ups</h2>
         <p>Dein LinkedIn-Profil lässt Recruiter von sich aus auf dich zukommen. Der <b>LinkedIn-Prompt</b> schreibt Headline, Über-mich, Erfahrungs-Punkte, Skills und Featured um. „Marketing Manager bei XYZ GmbH" ist unsichtbar; „B2B SaaS Growth Marketer | Pipeline von 2M auf 14M skaliert | Demand Gen + ABM" wird angeklickt.</p>
 <p>Der <b>Follow-up-Prompt</b> erzeugt drei E-Mails: nach der Bewerbung (Tag 5), nach dem Interview (innerhalb 24 Stunden) und ein Reminder (7 Tage nach dem Interview).</p>
 <p><b>Der komplette Workflow:</b> 1. Lebenslauf analysieren → 2. Erfahrungen umschreiben → 3. Stress-Test → 4. LinkedIn optimieren → 5. Anschreiben generieren → 6. Jobs bewerben → 7. Interview vorbereiten → 8. Angebot verhandeln → 9. Nachfassen. Wiederhole Schritte 1–3 für jede Stelle. <b>Wichtig:</b> Überprüfe und personalisiere immer, was Claude generiert – Claude gibt dir die Struktur, du lieferst den Inhalt.</p>
       </section>
-    <section class="guide-section"><h2>Alle Prompts zum Kopieren</h2>
+    <section class="guide-section" id="alle-prompts">
+      <div class="gs-num">★</div>
+      <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
           <span class="prompt-label">Prompt 1 – Lebenslauf-Analyse</span>
@@ -356,7 +385,8 @@ E-MAIL 3: DER REMINDER (7 Tage nach Interview, wenn keine Antwort)
 - Unter 80 Woerter
 
 Ton fuer alle: Selbstbewusst, nicht verzweifelt. Spezifisch, nicht generisch. Menschlich.</pre>
-      </div></section>
+      </div>
+    </section>
     <div class="guide-download">
       <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
@@ -375,12 +405,11 @@ Ton fuer alle: Selbstbewusst, nicht verzweifelt. Spezifisch, nicht generisch. Me
     <div class="footer-inner">
       <a href="../index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="../assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="../guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="../about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="../coaching.html">Coaching</a></li>
         <li><a href="../partnerships.html">Partnerships</a></li>
         <li><a href="../contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="../newsletter.html">Newsletter</a></li>
@@ -396,6 +425,7 @@ Ton fuer alle: Selbstbewusst, nicht verzweifelt. Spezifisch, nicht generisch. Me
     <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
   </footer>
   <script src="../assets/site.js"></script>
+  <script src="../assets/cursor.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>

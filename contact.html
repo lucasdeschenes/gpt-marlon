@@ -4,29 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — GPT Marlon</title>
-  <meta name="description" content="Contact GPT Marlon — questions, coaching, press or partnerships. Your message goes straight to Marlon." />
+  <meta name="description" content="Contact GPT Marlon — questions, press or partnerships. Your message goes straight to Marlon." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
   <nav>
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>Marlon</span></span>
+      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
       <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-      <li><a href="coaching.html">Coaching</a></li>
       <li><a href="partnerships.html">Partnerships</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="contact.html" class="active"><span data-en="Contact">Kontakt</span></a></li>
       <li><a href="index.html#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
-    <button class="theme-toggle" data-langtoggle aria-label="Sprache/Language" style="width:auto;min-width:38px;padding:0 11px;font-size:.8rem;font-weight:700">EN</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">◐</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
 
   <main class="page">
@@ -34,7 +36,7 @@
       <div class="section-label"><span data-en="Contact">Kontakt</span></div>
       <h1 class="page-title"><span data-en="Say hi —">Sag Hallo —</span> <span class="gradient-text" data-en="Marlon reads everything.">Marlon liest alles.</span></h1>
       <p class="page-sub">
-        <span data-en="Questions, ideas, press, coaching, collabs — drop a message. It's saved for us and your email app opens so you can send it directly too. Businesses: see ">Fragen, Ideen, Presse, Coaching, Kooperationen — schreib uns. Deine Nachricht wird gespeichert und dein E-Mail-Programm öffnet sich, damit du sie auch direkt senden kannst. Für Unternehmen: siehe </span><a href="partnerships.html" style="color:var(--purple-light)">Partnerships</a>.
+        <span data-en="Questions, ideas, press, collabs — drop a message. It's saved for us and your email app opens so you can send it directly too. Businesses: see ">Fragen, Ideen, Presse, Kooperationen — schreib uns. Deine Nachricht wird gespeichert und dein E-Mail-Programm öffnet sich, damit du sie auch direkt senden kannst. Für Unternehmen: siehe </span><a href="partnerships.html" style="color:var(--yellow)">Partnerships</a>.
       </p>
     </div>
 
@@ -52,8 +54,7 @@
           <label for="mTopic"><span data-en="Topic">Thema</span></label>
           <select id="mTopic">
             <option data-en="General">Allgemein</option>
-            <option>Coaching</option>
-            <option>Partnership / Business</option>
+                <option>Partnership / Business</option>
             <option data-en="Press">Presse</option>
             <option>Other</option>
           </select>
@@ -73,12 +74,11 @@
     <div class="footer-inner">
       <a href="index.html" class="nav-logo">
         <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-        <span class="nav-logo-text">GPT<span>Marlon</span></span>
+        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
         <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
         <li><a href="about.html"><span data-en="About">Über mich</span></a></li>
-        <li><a href="coaching.html">Coaching</a></li>
         <li><a href="partnerships.html">Partnerships</a></li>
         <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
         <li><a href="newsletter.html">Newsletter</a></li>
@@ -95,6 +95,8 @@
   </footer>
 
   <script src="assets/site.js"></script>
+
+  <script src="assets/cursor.js"></script>
   <script>
     document.getElementById('contactForm').addEventListener('submit', async (e) => {
       e.preventDefault();
