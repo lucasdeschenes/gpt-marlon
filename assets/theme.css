@@ -35,9 +35,16 @@
   --magenta: #ff0dc2;
   --peach:   #ffdbb5;
 
-  /* the redesign's primary action: white pill, black label */
-  --btn-bg: #ffffff;
+  /* Actions follow the Framer design: lavender fill, 2px near-black border and
+     a hard offset shadow (no soft blur anywhere). */
+  --btn-bg: #c191ff;
   --btn-fg: #030303;
+  --btn-border: #1d1d1d;
+  --hard-shadow: 2px 2px 0 0 rgba(0,0,0,.95);
+  --hard-shadow-lg: 4px 4px 0 0 rgba(0,0,0,.95);
+
+  /* the nav is a cream bar, not a dark one */
+  --nav-cream: #faf7eb;
 
   /* ---- category chips — one accent per guide category ---- */
   --cat-alltag:       var(--yellow);

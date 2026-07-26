@@ -75,7 +75,6 @@ const nav = (active) => {
     </a>
     <ul class="nav-links">
       <li><a href="${p}guides.html"${active === "guides" || active === "guide" ? ' class="active"' : ""}><span data-en="Resources">Ressourcen</span></a></li>
-      <li><a href="${p}about.html"><span data-en="About">Über mich</span></a></li>
       <li><a href="${p}newsletter.html">Newsletter</a></li>
       <li><a href="${p}partnerships.html">Partnerships</a></li>
       <li><a href="${p}contact.html"><span data-en="Contact">Kontakt</span></a></li>
@@ -176,13 +175,13 @@ for (const g of guides) {
       </section>`).join("\n");
 
   const tocHtml = g.sections.length > 2 ? `
-    <nav class="guide-toc" aria-label="Inhalt">
+    <div class="guide-toc" role="navigation" aria-label="Inhalt">
       <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
       <ol>
 ${g.sections.map((s, i) => `        <li><a href="#s${i + 1}"><span class="toc-n">${String(i + 1).padStart(2, "0")}</span>${esc(s.heading)}</a></li>`).join("\n")}
 ${(g.prompts || []).length ? `        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>` : ""}
       </ol>
-    </nav>` : "";
+    </div>` : "";
 
   const html = `<!DOCTYPE html>
 <html lang="de">
@@ -229,6 +228,8 @@ ${sectionsHtml}
 ${footer("../")}
   <script src="../assets/site.js"></script>
   <script src="../assets/cursor.js"></script>
+  <script src="../assets/lenis.min.js"></script>
+  <script src="../assets/smoothscroll.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>
@@ -294,6 +295,8 @@ ${cards}
 ${footer("")}
   <script src="assets/site.js"></script>
   <script src="assets/cursor.js"></script>
+  <script src="assets/lenis.min.js"></script>
+  <script src="assets/smoothscroll.js"></script>
   <script>
     (function () {
       var grid = document.getElementById('guidesGrid');

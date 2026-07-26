@@ -24,64 +24,67 @@ body::before {
 ::selection { background: var(--yellow); color: var(--btn-fg); }
 
 /* ---------------------------------------------------------------- nav ---- */
-nav {
+/* scoped to the site header only — nested <nav> elements (e.g. a guide's table
+   of contents) must not inherit the fixed full-width bar */
+body > nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: .9rem 2rem;
+  padding: .8rem 2rem;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  background: var(--nav-bg);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  background: var(--nav-cream);
+  border-bottom: 2px solid var(--btn-border);
 }
 .nav-logo { display: flex; align-items: center; gap: .55rem; text-decoration: none; }
 .nav-logo-icon {
-  width: 34px; height: 34px; border-radius: var(--r);
-  background: var(--bg3); border: 1px solid var(--border-strong);
+  width: 34px; height: 34px; border-radius: var(--r-sm);
+  background: var(--bg3); border: 2px solid var(--btn-border);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.05rem; overflow: hidden; padding: 0;
 }
 .nav-logo-icon img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: inherit; }
 .nav-logo-text {
-  font-family: var(--font-display); font-weight: 600; font-size: 1.08rem;
-  letter-spacing: -.01em; color: var(--text);
+  font-family: var(--font-display); font-weight: 700; font-size: 1.08rem;
+  letter-spacing: -.01em; color: var(--btn-fg);
 }
 /* the ★ between GPT and Marlon */
 .nav-logo-text span { color: var(--yellow); }
 
 .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
 .nav-links a {
-  color: var(--muted); text-decoration: none;
+  color: rgba(3,3,3,.6); text-decoration: none;
   font-size: var(--fs-xs); font-weight: 500; transition: color .2s;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a:hover, .nav-links a.active { color: var(--btn-fg); }
 
 /* primary action — white pill, black label */
 .nav-cta {
-  padding: .55rem 1.05rem; border-radius: var(--r);
-  background: var(--btn-bg); color: var(--btn-fg) !important;
-  font-weight: 600; transition: transform .15s var(--ease), opacity .15s;
+  padding: .55rem 1.05rem; border-radius: var(--r-sm);
+  background: var(--bg3); color: #fff !important; font-weight: 700;
+  border: 2px solid var(--btn-border); box-shadow: var(--hard-shadow);
+  transition: transform .12s var(--ease), box-shadow .12s;
 }
-.nav-cta:hover { transform: translateY(-1px); opacity: .9; }
+.nav-cta:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 0 rgba(0,0,0,.95); }
 
 /* small square button in the nav — used by the DE/EN language toggle */
 .theme-toggle, .lang-toggle {
-  height: 34px; min-width: 34px; padding: 0 .6rem;
-  border-radius: var(--r); border: 1px solid var(--border-strong);
-  background: transparent; color: var(--text);
+  height: 34px; min-width: 38px; padding: 0 .65rem;
+  border-radius: var(--r-sm); border: 2px solid var(--btn-border);
+  background: var(--yellow); color: var(--btn-fg);
   font-family: var(--font-body); font-size: var(--fs-3xs); font-weight: 700;
-  cursor: pointer; transition: border-color .2s, color .2s;
+  cursor: pointer; box-shadow: var(--hard-shadow);
+  transition: transform .12s var(--ease), box-shadow .12s;
 }
-.theme-toggle:hover, .lang-toggle:hover { border-color: var(--muted); }
+.theme-toggle:hover, .lang-toggle:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 0 rgba(0,0,0,.95); }
 
-.nav-burger { display: none; background: none; border: 0; color: var(--text); font-size: 1.4rem; cursor: pointer; }
+.nav-burger { display: none; background: none; border: 0; color: var(--btn-fg); font-size: 1.4rem; cursor: pointer; }
 @media (max-width: 900px) {
   nav { padding: .8rem 1.1rem; }
   .nav-links {
     position: fixed; inset: 60px 0 auto 0; flex-direction: column; align-items: stretch;
-    gap: 0; background: var(--bg); border-bottom: 1px solid var(--border);
+    gap: 0; background: var(--nav-cream); border-bottom: 2px solid var(--btn-border);
     padding: .6rem 1.1rem 1.1rem; display: none;
   }
   .nav-links.open { display: flex; }
-  .nav-links li { border-top: 1px solid var(--border); }
+  .nav-links li { border-top: 1px solid rgba(3,3,3,.12); }
   .nav-links a { display: block; padding: .9rem .2rem; font-size: var(--fs-base); }
   .nav-cta { text-align: center; margin-top: .8rem; padding: .8rem; }
   .nav-burger { display: block; }
@@ -105,28 +108,35 @@ h2.page-title { font-family: var(--font-display); font-size: var(--fs-h2); line-
 .page-sub { color: var(--muted); font-size: var(--fs-lg); line-height: 1.7; max-width: 640px; margin-top: 1.1rem; }
 
 /* ------------------------------------------------------------ buttons ---- */
-.btn-primary, .btn-secondary {
+/* the design's action treatment: 2px near-black border + hard offset shadow */
+.btn-primary, .btn-secondary, .btn-accent {
   display: inline-flex; align-items: center; gap: .5rem;
-  padding: .8rem 1.4rem; border-radius: var(--r);
-  font-family: var(--font-body); font-weight: 600; font-size: var(--fs-sm);
-  text-decoration: none; cursor: pointer; border: 1px solid transparent;
-  transition: transform .15s var(--ease), opacity .15s, border-color .2s, background-color .2s;
+  padding: .75rem 1.3rem; border-radius: var(--r-sm);
+  font-family: var(--font-body); font-weight: 700; font-size: var(--fs-sm);
+  text-decoration: none; cursor: pointer; color: var(--btn-fg);
+  border: 2px solid var(--btn-border);
+  box-shadow: var(--hard-shadow);
+  transition: transform .12s var(--ease), box-shadow .12s;
 }
-.btn-primary { background: var(--btn-bg); color: var(--btn-fg); }
-.btn-primary:hover { transform: translateY(-2px); opacity: .9; }
-.btn-secondary { background: transparent; color: var(--text); border-color: var(--border-strong); }
-.btn-secondary:hover { transform: translateY(-2px); border-color: var(--muted); background: var(--bg2); }
-.btn-accent { background: var(--yellow); color: var(--btn-fg); }
-.btn-accent:hover { transform: translateY(-2px); opacity: .9; }
+.btn-primary:hover, .btn-secondary:hover, .btn-accent:hover {
+  transform: translate(-1px, -1px); box-shadow: 3px 3px 0 0 rgba(0,0,0,.95);
+}
+.btn-primary:active, .btn-secondary:active, .btn-accent:active {
+  transform: translate(1px, 1px); box-shadow: 1px 1px 0 0 rgba(0,0,0,.95);
+}
+.btn-primary { background: var(--btn-bg); }
+.btn-secondary { background: var(--cream); }
+.btn-accent { background: var(--yellow); }
 
 /* -------------------------------------------------------------- cards ---- */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2.2rem 0; }
 .card {
-  background: var(--bg3); border: 1px solid var(--border);
+  background: var(--bg3); border: 2px solid var(--btn-border);
   border-radius: var(--r-lg); padding: 1.5rem 1.4rem;
-  transition: border-color .2s, background-color .2s, transform .2s var(--ease);
+  box-shadow: var(--hard-shadow);
+  transition: transform .14s var(--ease), box-shadow .14s;
 }
-.card:hover { border-color: var(--border-strong); background: var(--bg4); }
+.card:hover { transform: translate(-2px,-2px); box-shadow: var(--hard-shadow-lg); }
 .card h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-lg); margin-bottom: .5rem; letter-spacing: -.01em; }
 .card p { color: var(--muted); font-size: var(--fs-xs); line-height: 1.65; }
 .card .emoji { font-size: 1.4rem; display: block; margin-bottom: .7rem; }
@@ -144,21 +154,16 @@ h2.page-title { font-family: var(--font-display); font-size: var(--fs-h2); line-
 
 /* ------------------------------------------------------------- chips ---- */
 .chip-row { display: flex; flex-wrap: wrap; gap: .4rem; }
+/* pill chips matching the design's <mark> treatment:
+   yellow = category, lavender = tool, black text, fully rounded */
 .chip {
   display: inline-flex; align-items: center; gap: .3rem;
-  padding: .25rem .6rem; border-radius: var(--r-xs);
-  font-size: var(--fs-3xs); font-weight: 600; letter-spacing: .01em;
-  background: var(--bg2); color: var(--text2); border: 1px solid var(--border);
+  padding: .3rem .7rem; border-radius: 999px;
+  font-size: var(--fs-3xs); font-weight: 700; letter-spacing: .01em;
+  background: var(--yellow); color: var(--btn-fg); border: none;
 }
-/* solid accent chip — category colour comes from the data-cat mapping below */
-.chip-tool { background: var(--white); color: var(--btn-fg); border-color: transparent; }
+.chip-tool { background: var(--lavender-soft); color: var(--btn-fg); }
 
-[data-cat="Alltag"]         .chip:not(.chip-tool) { background: var(--cat-alltag);    color: var(--btn-fg); border-color: transparent; }
-[data-cat="Claude Basics"]  .chip:not(.chip-tool) { background: var(--cat-claude);    color: var(--btn-fg); border-color: transparent; }
-[data-cat="Content"]        .chip:not(.chip-tool) { background: var(--cat-content);   color: var(--btn-fg); border-color: transparent; }
-[data-cat="Finanzen"]       .chip:not(.chip-tool) { background: var(--cat-finanzen);  color: var(--btn-fg); border-color: transparent; }
-[data-cat="Karriere"]       .chip:not(.chip-tool) { background: var(--cat-karriere);  color: var(--btn-fg); border-color: transparent; }
-[data-cat="Produktivität"]  .chip:not(.chip-tool) { background: var(--cat-produktiv); color: var(--btn-fg); border-color: transparent; }
 
 /* --------------------------------------------- partnerships / case study ---- */
 .case-study {
@@ -289,32 +294,27 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 }
 
 /* ------------------------------------------------- custom cursor ---- */
-/* Enabled on every page (the Framer design only had it on the hero).
-   Pointer-device only; never on touch, never with reduced motion. */
+/* Ported from the Framer component "custom cursor mouse": a yellow arrow with
+   a black outline and a hard offset shadow, rotated 13deg. Runs on every page. */
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  html.has-cursor, html.has-cursor * { cursor: none; }
-  html.has-cursor a, html.has-cursor button,
-  html.has-cursor input, html.has-cursor textarea, html.has-cursor select { cursor: none; }
+  html.has-cursor, html.has-cursor * { cursor: none !important; }
 }
-.cursor-dot, .cursor-ring {
+.framer-cursor {
   position: fixed; top: 0; left: 0; z-index: 9999;
-  pointer-events: none; border-radius: 50%;
-  will-change: transform; opacity: 0; transition: opacity .25s;
+  width: 55px; height: 55px; padding: 4px;
+  /* the arrow tip is the path's 0,0 — pull the box back so the tip sits on the pointer */
+  margin: -11px 0 0 -11px;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; will-change: transform;
+  opacity: 0; transition: opacity .2s;
 }
-.cursor-dot  { width: 6px;  height: 6px;  background: var(--yellow); margin: -3px 0 0 -3px; }
-.cursor-ring {
-  width: 34px; height: 34px; margin: -17px 0 0 -17px;
-  border: 1px solid rgba(255,255,255,.45);
-  transition: opacity .25s, width .22s var(--ease), height .22s var(--ease),
-              margin .22s var(--ease), background-color .22s, border-color .22s;
+.framer-cursor svg {
+  transform: rotate(13deg);
+  filter: drop-shadow(-2px 2px 0 rgba(0,0,0,.94));
+  transition: transform .18s var(--ease);
 }
-.cursor-ready .cursor-dot, .cursor-ready .cursor-ring { opacity: 1; }
-/* over a link/button the ring swells and the dot hides */
-.cursor-hot .cursor-ring {
-  width: 54px; height: 54px; margin: -27px 0 0 -27px;
-  background: rgba(255,231,74,.14); border-color: var(--yellow);
-}
-.cursor-hot .cursor-dot { opacity: 0; }
+.cursor-ready .framer-cursor { opacity: 1; }
+.cursor-hot .framer-cursor svg { transform: rotate(13deg) scale(1.25); }
 
 /* -------------------------------------- audience demographics (live) ---- */
 .aud-block { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.4rem; }
