@@ -103,6 +103,7 @@ const footer = (p) => `  <footer class="site-footer">
 ${socials()}
       </div>
     </div>
+    <div class="gm-physics" data-footer-physics aria-hidden="true"></div>
   </footer>`;
 
 const head = (title, desc, p) => `<head>
@@ -226,6 +227,7 @@ ${footer("../")}
   <script src="../assets/cursor.js"></script>
   <script src="../assets/lenis.min.js"></script>
   <script src="../assets/smoothscroll.js"></script>
+  <script src="../assets/footer-physics.js"></script>
   <script src="../assets/guides.js"></script>
   <script src="../assets/stats.js"></script>
   <script src="../assets/community.js"></script>
@@ -293,6 +295,7 @@ ${footer("")}
   <script src="assets/cursor.js"></script>
   <script src="assets/lenis.min.js"></script>
   <script src="assets/smoothscroll.js"></script>
+  <script src="assets/footer-physics.js"></script>
   <script>
     (function () {
       var grid = document.getElementById('guidesGrid');

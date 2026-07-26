@@ -169,7 +169,6 @@ const IG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 
 const TT = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg>`;
 const MAIL = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg>`;
 const SITE_FOOTER = `  <footer class="site-footer">
-    <div class="gm-physics" data-footer-physics aria-hidden="true"></div>
     <div class="footer-inner">
       <p class="footer-copy">&copy; 2026 GPT<span>&#9733;</span>Marlon</p>
       <ul class="footer-links">
@@ -187,6 +186,7 @@ const SITE_FOOTER = `  <footer class="site-footer">
         <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email">${MAIL}</a>
       </div>
     </div>
+    <div class="gm-physics" data-footer-physics aria-hidden="true"></div>
   </footer>
 `;
 {

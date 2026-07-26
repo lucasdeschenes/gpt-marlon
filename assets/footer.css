@@ -13,8 +13,30 @@ footer.site-footer {
   font-family: 'Poppins', Inter, -apple-system, sans-serif;
 }
 
-/* the physics band sits above the bar; only the homepage carries one */
-footer.site-footer .gm-physics { border-bottom: 1px solid rgba(255,255,255,.08); }
+/* ---------------------------------------------------- physics band ----
+   Reimplementation of the Framer code-component (plugin 84d4c1); see
+   assets/footer-physics.js. It sits BELOW the link bar and runs on every page. */
+footer.site-footer .gm-physics {
+  position: relative; width: 100%; min-height: 240px;
+  overflow: hidden; background: #141414;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.gm-pill {
+  position: absolute; top: 0; left: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; white-space: nowrap;
+  font-family: 'Poppins', Inter, sans-serif; font-weight: 600;
+  line-height: 1; letter-spacing: 0;
+  opacity: 0; will-change: transform;
+  user-select: none; -webkit-user-select: none;
+}
+/* reduced motion: no simulation, just lay the pills out */
+.gm-physics.gm-static {
+  display: flex; flex-wrap: wrap; gap: .6rem;
+  align-items: center; justify-content: center;
+  padding: 2rem 1rem; min-height: 0;
+}
+.gm-physics.gm-static .gm-pill { opacity: 1; position: static; }
 
 footer.site-footer .footer-inner {
   max-width: 1200px; margin: 0 auto;
