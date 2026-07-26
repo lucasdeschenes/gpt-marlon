@@ -159,35 +159,53 @@ const NAV = `  <nav class="site-nav">
   }
 }
 
-// ── footer links ──────────────────────────────────────────────────────────────
-// The design's footer ships Home + Ressourcen only; this site also needs the
-// legal pages and the rest of the sections. Clone the Resources wrapper.
-const FOOTER_EXTRA = [
-  { href: "newsletter.html",  label: "Newsletter" },
-  { href: "partnerships.html", label: "Partnerships" },
-  { href: "contact.html",      label: "Kontakt" },
-  { href: "impressum.html",    label: "Impressum" },
-  { href: "datenschutz.html",  label: "Datenschutz" },
-];
-// balancedEnd, not a lazy regex — the wrapper contains nested divs, so
-// matching to the first </div></div> would slice it in half.
-let footerCloned = 0;
+// ── footer ────────────────────────────────────────────────────────────────────
+// The design renders three breakpoint copies of the footer, each containing the
+// physics band. Replace all three with the single canonical footer used across
+// the site (assets/footer.css reproduces the design's styling for it) and keep
+// one physics band inside it.
+const IG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.3-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84m0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>`;
+const TT = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.31v13.35a2.4 2.4 0 1 1-2.4-2.4c.26 0 .5.04.74.12v-3.4a5.87 5.87 0 0 0-.74-.05 5.82 5.82 0 1 0 5.82 5.82V8.66a7.5 7.5 0 0 0 4.38 1.4V6.75a4.28 4.28 0 0 1-3.45-.93z"/></svg>`;
+const MAIL = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6.5L21 6"/></svg>`;
+const SITE_FOOTER = `  <footer class="site-footer">
+    <div class="gm-physics" data-footer-physics aria-hidden="true"></div>
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 GPT<span>&#9733;</span>Marlon</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/gptmarlon/" target="_blank" rel="noopener" class="footer-social" title="Instagram">${IG}</a>
+        <a href="https://www.tiktok.com/@gptmarlon" target="_blank" rel="noopener" class="footer-social" title="TikTok">${TT}</a>
+        <a href="mailto:business@gptmarlon.com" class="footer-social" title="Email">${MAIL}</a>
+      </div>
+    </div>
+  </footer>
+`;
 {
-  const MARK = '<div class="framer-9w4eop-container" data-framer-name="Resources Link Wrapper"';
-  let from = 0, at;
-  while ((at = s.indexOf(MARK, from)) !== -1) {
-    const end = balancedEnd(s, at);
-    if (end === -1) break;
-    const block = s.slice(at, end);
-    const extras = FOOTER_EXTRA.map(({ href, label }) =>
-      block.replace('href="./ressourcen"', `href="${href}"`).replace(">Ressourcen<", `>${label}<`)
-    ).join("");
-    s = s.slice(0, end) + extras + s.slice(end);
-    from = end + extras.length;
-    footerCloned++;
+  // Collect the page footers first, then splice — replacing as we scan would
+  // re-match the canonical footer we just inserted (it contains a physics band
+  // too) and delete it again. The hero social card also uses <footer>, so match
+  // only the ones carrying the band.
+  const ranges = [];
+  const re = /<footer[\s>]/g; let m;
+  while ((m = re.exec(s))) {
+    if (ranges.length && m.index < ranges[ranges.length - 1][1]) continue;
+    const end = balancedEnd(s, m.index);
+    if (end !== -1 && s.slice(m.index, end).includes("gm-physics")) ranges.push([m.index, end]);
   }
+  for (let i = ranges.length - 1; i >= 0; i--) {
+    const [a, b] = ranges[i];
+    s = s.slice(0, a) + (i === 0 ? SITE_FOOTER : "") + s.slice(b);
+  }
+  console.log(`  footer: ${ranges.length} breakpoint copies collapsed into one shared footer`);
 }
-console.log(`  footer links: cloned into ${footerCloned} footer variant(s)`);
 
 // ── links ─────────────────────────────────────────────────────────────────────
 const before = s;
@@ -250,6 +268,7 @@ const html = `<!DOCTYPE html>
   <!-- the ported Framer design; regenerate with tools/port-framer.mjs -->
   <link rel="stylesheet" href="assets/framer.css" />
   <link rel="stylesheet" href="assets/nav.css" />
+  <link rel="stylesheet" href="assets/footer.css" />
   <link rel="stylesheet" href="assets/home-overrides.css" />
 </head>
 <body>

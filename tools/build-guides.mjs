@@ -87,17 +87,15 @@ const nav = (active) => {
   </nav>`;
 };
 
-const footer = (p) => `  <footer>
+const footer = (p) => `  <footer class="site-footer">
     <div class="footer-inner">
-      <a href="${p}index.html" class="nav-logo">
-        <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
-      </a>
+      <p class="footer-copy">&copy; 2026 GPT<span>&#9733;</span>Marlon</p>
       <ul class="footer-links">
+        <li><a href="${p}index.html">Home</a></li>
         <li><a href="${p}guides.html"><span data-en="Resources">Ressourcen</span></a></li>
-        <li><a href="${p}about.html"><span data-en="About">Über mich</span></a></li>
+        <li><a href="${p}newsletter.html">Newsletter</a></li>
         <li><a href="${p}partnerships.html">Partnerships</a></li>
         <li><a href="${p}contact.html"><span data-en="Contact">Kontakt</span></a></li>
-        <li><a href="${p}newsletter.html">Newsletter</a></li>
         <li><a href="${p}impressum.html">Impressum</a></li>
         <li><a href="${p}datenschutz.html">Datenschutz</a></li>
       </ul>
@@ -105,7 +103,6 @@ const footer = (p) => `  <footer>
 ${socials()}
       </div>
     </div>
-    <div style="text-align:center; margin-top:2rem;"><p class="footer-copy">© 2026 GPT Marlon. All rights reserved.</p></div>
   </footer>`;
 
 const head = (title, desc, p) => `<head>
@@ -117,6 +114,7 @@ const head = (title, desc, p) => `<head>
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="${p}assets/fonts.css" />
   <link rel="stylesheet" href="${p}assets/site.css" />
+  <link rel="stylesheet" href="${p}assets/footer.css" />
   <link rel="stylesheet" href="${p}assets/guides.css" />
 </head>`;
 
