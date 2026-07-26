@@ -354,8 +354,6 @@ console.log(`  wired community CTA: ${ctaBefore === s ? "NOT FOUND" : "ok"}`);
 // ── contact form -> Supabase ──────────────────────────────────────────────────
 s = s.replace('<form class="framer-1hbf0g2"', '<form id="framerContact" class="framer-1hbf0g2"');
 
-writeFileSync("assets/framer-home.built.html", s);
-
 // ── assemble index.html ───────────────────────────────────────────────────────
 const html = `<!DOCTYPE html>
 <html lang="de">

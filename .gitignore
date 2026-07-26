@@ -9,3 +9,6 @@ _*
 cookies*
 
 .claude/
+
+# intermediate build dump
+assets/framer-home.built.html
