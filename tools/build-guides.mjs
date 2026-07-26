@@ -70,10 +70,10 @@ const nav = (active) => {
   const p = active === "guide" ? "../" : "";
   return `  <nav>
     <a href="${p}index.html" class="nav-logo">
-      ${logoIcon(p)}
       <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">
+      <li><a href="${p}index.html">Home</a></li>
       <li><a href="${p}guides.html"${active === "guides" || active === "guide" ? ' class="active"' : ""}><span data-en="Resources">Ressourcen</span></a></li>
       <li><a href="${p}newsletter.html">Newsletter</a></li>
       <li><a href="${p}partnerships.html">Partnerships</a></li>

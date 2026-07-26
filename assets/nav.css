@@ -1,0 +1,96 @@
+/* Canonical site navigation — ONE nav, identical on every page including the
+   ported homepage. Values are taken from the Framer design's Nav component:
+     bar   2px #030303 border on cream #faf7eb
+     logo  yellow #ffe74a pill, 2px #222 border
+     CTA   lavender #c191ff pill, 3px #030303 border
+   Literal colours (no tokens) so this works on the homepage too, which loads
+   the ported Framer stylesheet rather than theme.css. */
+
+body > nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .7rem 1.6rem;
+  background: #faf7eb;
+  border-bottom: 2px solid #030303;
+  font-family: 'Poppins', Inter, -apple-system, sans-serif;
+}
+
+/* ---- logo: yellow pill ---- */
+body > nav .nav-logo {
+  display: inline-flex; align-items: center; gap: .1rem;
+  padding: .45rem 1rem;
+  background: #ffe74a; color: #030303;
+  border: 2px solid #222222; border-radius: 999px;
+  box-shadow: 3px 3px 0 0 rgba(0,0,0,.95);
+  font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em;
+  text-decoration: none; white-space: nowrap;
+  transition: transform .12s cubic-bezier(.22,1,.36,1), box-shadow .12s;
+}
+body > nav .nav-logo:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 0 rgba(0,0,0,.95); }
+body > nav .nav-logo-text { font: inherit; color: inherit; }
+body > nav .nav-logo-text span,
+body > nav .nav-logo > span span { color: #030303; }
+/* the photo avatar is not part of the design's nav */
+body > nav .nav-logo-icon { display: none; }
+
+/* ---- links ---- */
+body > nav .nav-links {
+  display: flex; align-items: center; gap: 1.8rem;
+  list-style: none; margin: 0 auto; padding: 0;
+}
+body > nav .nav-links a {
+  color: #030303; text-decoration: none;
+  font-size: .95rem; font-weight: 600; opacity: .55;
+  transition: opacity .18s;
+}
+body > nav .nav-links a:hover,
+body > nav .nav-links a.active { opacity: 1; }
+
+/* ---- primary action: lavender pill ---- */
+body > nav .nav-cta {
+  padding: .6rem 1.3rem;
+  background: #c191ff; color: #030303 !important;
+  border: 3px solid #030303; border-radius: 999px;
+  box-shadow: 3px 3px 0 0 rgba(0,0,0,.95);
+  font-weight: 700; font-size: .95rem; opacity: 1 !important;
+  white-space: nowrap;
+  transition: transform .12s cubic-bezier(.22,1,.36,1), box-shadow .12s;
+}
+body > nav .nav-cta:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 0 rgba(0,0,0,.95); }
+body > nav .nav-cta:active { transform: translate(1px,1px); box-shadow: 2px 2px 0 0 rgba(0,0,0,.95); }
+
+/* ---- language toggle + burger ---- */
+body > nav .nav-actions { display: flex; align-items: center; gap: .5rem; }
+body > nav .lang-toggle, body > nav .theme-toggle {
+  height: 34px; min-width: 40px; padding: 0 .65rem;
+  background: #ffe74a; color: #030303;
+  border: 2px solid #030303; border-radius: 8px;
+  box-shadow: 2px 2px 0 0 rgba(0,0,0,.95);
+  font-family: inherit; font-size: .75rem; font-weight: 700; cursor: pointer;
+  transition: transform .12s cubic-bezier(.22,1,.36,1), box-shadow .12s;
+}
+body > nav .lang-toggle:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 0 rgba(0,0,0,.95); }
+body > nav .nav-burger {
+  display: none; background: none; border: 0;
+  color: #030303; font-size: 1.4rem; cursor: pointer; line-height: 1;
+}
+
+/* ---- mobile ---- */
+@media (max-width: 940px) {
+  body > nav { padding: .6rem 1rem; }
+  body > nav .nav-links {
+    position: fixed; inset: 56px 0 auto 0; margin: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: #faf7eb; border-bottom: 2px solid #030303;
+    padding: .4rem 1rem 1rem; display: none;
+  }
+  body > nav .nav-links.open { display: flex; }
+  body > nav .nav-links li { border-top: 1px solid rgba(3,3,3,.14); }
+  body > nav .nav-links a { display: block; padding: .9rem .2rem; font-size: 1rem; opacity: .8; }
+  body > nav .nav-cta { display: block; text-align: center; margin-top: .9rem; }
+  body > nav .nav-burger { display: block; }
+}
+
+/* the fixed bar needs clearance on every page */
+body { padding-top: 62px; }
+@media (max-width: 940px) { body { padding-top: 54px; } }

@@ -4,6 +4,7 @@
    all 25 guide pages pick up the new look without per-file edits. */
 
 @import url('theme.css');
+@import url('nav.css');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -21,73 +22,6 @@ body::before {
 }
 
 ::selection { background: var(--lavender); color: var(--btn-fg); }
-
-/* ---------------------------------------------------------------- nav ---- */
-/* scoped to the site header only — nested <nav> elements (e.g. a guide's table
-   of contents) must not inherit the fixed full-width bar */
-body > nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: .8rem 2rem;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  background: var(--nav-cream);
-  border-bottom: 2px solid var(--btn-border);
-}
-.nav-logo { display: flex; align-items: center; gap: .55rem; text-decoration: none; }
-.nav-logo-icon {
-  width: 34px; height: 34px; border-radius: var(--r-sm);
-  background: var(--bg3); border: 2px solid var(--btn-border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.05rem; overflow: hidden; padding: 0;
-}
-.nav-logo-icon img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: inherit; }
-.nav-logo-text {
-  font-family: var(--font-display); font-weight: 700; font-size: 1.08rem;
-  letter-spacing: -.01em; color: var(--btn-fg);
-}
-/* the ★ between GPT and Marlon */
-.nav-logo-text span { color: var(--yellow); }
-
-.nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
-.nav-links a {
-  color: rgba(3,3,3,.6); text-decoration: none;
-  font-size: var(--fs-xs); font-weight: 500; transition: color .2s;
-}
-.nav-links a:hover, .nav-links a.active { color: var(--btn-fg); }
-
-/* primary action — white pill, black label */
-.nav-cta {
-  padding: .55rem 1.05rem; border-radius: var(--r-sm);
-  background: var(--ink); color: #fff !important; font-weight: 700;
-  border: 2px solid var(--btn-border); box-shadow: var(--hard-shadow);
-  transition: transform .12s var(--ease), box-shadow .12s;
-}
-.nav-cta:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 0 rgba(0,0,0,.95); }
-
-/* small square button in the nav — used by the DE/EN language toggle */
-.theme-toggle, .lang-toggle {
-  height: 34px; min-width: 38px; padding: 0 .65rem;
-  border-radius: var(--r-sm); border: 2px solid var(--btn-border);
-  background: var(--yellow); color: var(--btn-fg);
-  font-family: var(--font-body); font-size: var(--fs-3xs); font-weight: 700;
-  cursor: pointer; box-shadow: var(--hard-shadow);
-  transition: transform .12s var(--ease), box-shadow .12s;
-}
-.theme-toggle:hover, .lang-toggle:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 0 rgba(0,0,0,.95); }
-
-.nav-burger { display: none; background: none; border: 0; color: var(--btn-fg); font-size: 1.4rem; cursor: pointer; }
-@media (max-width: 900px) {
-  nav { padding: .8rem 1.1rem; }
-  .nav-links {
-    position: fixed; inset: 60px 0 auto 0; flex-direction: column; align-items: stretch;
-    gap: 0; background: var(--nav-cream); border-bottom: 2px solid var(--btn-border);
-    padding: .6rem 1.1rem 1.1rem; display: none;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links li { border-top: 1px solid rgba(3,3,3,.12); }
-  .nav-links a { display: block; padding: .9rem .2rem; font-size: var(--fs-base); }
-  .nav-cta { text-align: center; margin-top: .8rem; padding: .8rem; }
-  .nav-burger { display: block; }
-}
 
 /* ----------------------------------------------------- page scaffold ---- */
 .page { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 8rem 2rem 4rem; }

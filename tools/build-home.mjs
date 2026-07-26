@@ -74,35 +74,90 @@ DEMO.forEach((slug, i) => {
 });
 console.log(`  swapped ${swapped}/4 guide cards for the newest real guides`);
 
+// ── helper: find the end of a balanced element starting at `from` ─────────────
+function balancedEnd(str, from) {
+  const tag = /^<(\w+)/.exec(str.slice(from))[1];
+  const re = new RegExp(`<${tag}\\b|</${tag}>`, "g");
+  re.lastIndex = from;
+  let depth = 0, m;
+  while ((m = re.exec(str))) {
+    depth += m[0][1] === "/" ? -1 : 1;
+    if (depth === 0) return m.index + m[0].length;
+  }
+  return -1;
+}
+
+// ── marquees ──────────────────────────────────────────────────────────────────
+// Both tickers are JS-driven in Framer. The logo strip is server-rendered but
+// never scrolls without the runtime; the footer strip is a code-component
+// plugin whose visible content is generated entirely in JS, leaving an empty
+// band. Rebuild both as CSS animations.
+
+// 1. logo strip — duplicate the items so the loop is seamless, then animate
+let logoFixed = 0;
+s = s.replace(/<ul style="display:flex;[^"]*">([\s\S]*?)<\/ul>/g, (full, items) => {
+  logoFixed++;
+  const open = full.slice(0, full.indexOf(">") + 1)
+    .replace('<ul style="', '<ul class="gm-marquee-track" style="width:max-content;');
+  return `${open}${items}${items}</ul>`;
+});
+console.log(`  logo marquee: ${logoFixed} track(s) duplicated + animated`);
+
+// 2. footer strip — rebuild the visible content from the screen-reader copy
+const FOOTER_WORDS = ["VIRAL", "CREATIVE", "ORGANIC", ":)", "SHORTS", "LIFESTYLE"];
+let footerFixed = 0;
+{
+  const marker = 'data-code-component-plugin-id';
+  let idx;
+  while ((idx = s.indexOf(marker, 0)) !== -1) {
+    const start = s.lastIndexOf("<div", idx);
+    const end = balancedEnd(s, start);
+    if (end === -1) break;
+    const run = FOOTER_WORDS.map((w) => `<span>${esc(w)}</span>`).join("");
+    s = s.slice(0, start) +
+        `<div class="gm-footer-marquee" aria-hidden="true"><div class="gm-footer-track">${run}${run}${run}</div></div>` +
+        s.slice(end);
+    footerFixed++;
+  }
+}
+console.log(`  footer marquee: ${footerFixed} strip(s) rebuilt`);
+
 // ── navigation ────────────────────────────────────────────────────────────────
 // The Framer template shipped Home / Ressourcen / "Book me". This site's nav is
 // Ressourcen / Newsletter / Partnerships / Kontakt + the community CTA, so clone
 // the "Resources Link" element for the missing entries and relabel the button.
 // The nav is rendered three times (Desktop / Tablet / Phone variants).
-const NAV_EXTRA = [
-  { href: "newsletter.html", label: "Newsletter" },
-  { href: "partnerships.html", label: "Partnerships" },
-  { href: "contact.html", label: "Kontakt" },
-];
-// The nav entries carry name="Resources Link"; the footer wrappers are
-// name="Resources Link Wrapper" and the CTAs are Buttons, so this matches the
-// nav only. The negative lookahead keeps "Wrapper" out.
-let navCloned = 0;
-s = s.replace(/<a name="Resources Link"(?!\sWrapper)[\s\S]*?<\/a>/g, (link) => {
-  if (!link.includes('href="./ressourcen"')) return link;
-  const extras = NAV_EXTRA.map(({ href, label }) =>
-    link.replace('href="./ressourcen"', `href="${href}"`)
-        .replace(/>Ressourcen</g, `>${label}<`)
-  ).join("");
-  navCloned++;
-  return link + extras;
-});
-console.log(`  cloned nav links into ${navCloned} nav variants`);
-
-// "Book me" -> the community CTA
-const bookBefore = s;
-s = s.replace(/Book me/g, "Community beitreten");
-console.log(`  relabelled Book me: ${bookBefore === s ? "NOT FOUND" : "ok"}`);
+// The Framer template's nav (Home / Ressourcen / "Book me") is a fixed-width
+// component that can't take extra entries, and it differs from every other page.
+// Replace it wholesale with the canonical nav so the bar is identical sitewide;
+// assets/nav.css reproduces the design's styling for it.
+const NAV = `  <nav>
+    <a href="index.html" class="nav-logo"><span class="nav-logo-text">GPT<span>★</span>Marlon</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="partnerships.html">Partnerships</a></li>
+      <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
+      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community">Community beitreten</span></a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
+      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+`;
+{
+  const at = s.indexOf('data-framer-name="Nav"');
+  if (at === -1) {
+    console.log("  ! Framer nav not found");
+  } else {
+    const start = s.lastIndexOf("<div", at);
+    const end = balancedEnd(s, start);
+    s = s.slice(0, start) + NAV + s.slice(end);
+    console.log("  replaced the Framer nav with the shared site nav");
+  }
+}
 
 // ── links ─────────────────────────────────────────────────────────────────────
 const before = s;
@@ -154,12 +209,11 @@ const html = `<!DOCTYPE html>
   <meta name="twitter:card" content="summary_large_image" />
   <!-- the ported Framer design; regenerate with tools/port-framer.mjs -->
   <link rel="stylesheet" href="assets/framer.css" />
+  <link rel="stylesheet" href="assets/nav.css" />
   <link rel="stylesheet" href="assets/home-overrides.css" />
 </head>
 <body>
 ${s}
-  <!-- DE/EN toggle, injected into the ported nav by home-overrides.js -->
-  <button class="lang-toggle floating-lang" data-langtoggle aria-label="Sprache/Language">EN</button>
 
   <script>
     // contact form -> Supabase site_messages (publishable key; RLS allows INSERT only)
