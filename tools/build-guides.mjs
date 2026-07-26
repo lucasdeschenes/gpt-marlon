@@ -78,9 +78,9 @@ const nav = (active) => {
       <li><a href="${p}newsletter.html">Newsletter</a></li>
       <li><a href="${p}partnerships.html">Partnerships</a></li>
       <li><a href="${p}contact.html"><span data-en="Contact">Kontakt</span></a></li>
-      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community →">Community beitreten →</span></a></li>
     </ul>
     <div class="nav-actions">
+      <a href="#" class="nav-cta" data-community><span data-en="Join Community">Community beitreten</span></a>
       <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
       <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
     </div>

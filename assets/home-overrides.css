@@ -25,32 +25,35 @@
 .cursor-hot .framer-cursor svg { transform: rotate(13deg) scale(1.25); }
 
 /* ------------------------------------------------------- marquees ---- */
-/* Framer drives both tickers from JS. With the runtime stripped the logo strip
-   sits still and the footer strip renders nothing at all (it is a code-component
-   plugin), so both are re-created as CSS animations. */
-.gm-marquee-track {
-  animation: gm-marquee 34s linear infinite;
-}
-.gm-footer-marquee {
-  overflow: hidden; width: 100%;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-.gm-footer-track {
-  display: flex; width: max-content; gap: 3.5rem; align-items: center;
-  animation: gm-marquee 26s linear infinite;
-}
-.gm-footer-track span {
-  font-family: 'Poppins', Inter, sans-serif;
-  font-size: clamp(2rem, 6vw, 4.2rem); font-weight: 700; letter-spacing: -.02em;
-  color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,.55);
-  white-space: nowrap; line-height: 1.1;
-}
-.gm-footer-track span:nth-child(3n) { color: #ffe74a; -webkit-text-stroke: 0; }
+/* The logo strip is server-rendered by Framer but only scrolls under its
+   runtime, so it gets a CSS animation. */
+.gm-marquee-track { animation: gm-marquee 34s linear infinite; }
 @keyframes gm-marquee { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) {
-  .gm-marquee-track, .gm-footer-track { animation: none; }
+
+/* The footer pills are a Framer code-component (plugin 84d4c1) rendered purely
+   in JS — falling, bouncing, tumbling. assets/footer-physics.js reimplements it
+   using the plugin's own gravity/bounce/friction values. */
+.gm-physics {
+  position: relative; width: 100%; height: 100%; min-height: 260px;
+  overflow: hidden; background: #141414;
 }
+.gm-pill {
+  position: absolute; top: 0; left: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; white-space: nowrap;
+  font-family: 'Poppins', Inter, sans-serif; font-weight: 600;
+  line-height: 1; letter-spacing: 0;
+  opacity: 0; will-change: transform;
+  user-select: none; -webkit-user-select: none;
+}
+/* reduced motion: no simulation, just lay the pills out */
+.gm-physics.gm-static {
+  display: flex; flex-wrap: wrap; gap: .6rem;
+  align-items: center; justify-content: center;
+  padding: 2rem 1rem; min-height: 0;
+}
+.gm-physics.gm-static .gm-pill { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .gm-marquee-track { animation: none; } }
 
 /* --------------------------------------------------- DE/EN toggle ---- */
 /* Kept for any page that renders the toggle outside the nav. */

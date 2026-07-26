@@ -103,8 +103,9 @@ s = s.replace(/<ul style="display:flex;[^"]*">([\s\S]*?)<\/ul>/g, (full, items) 
 });
 console.log(`  logo marquee: ${logoFixed} track(s) duplicated + animated`);
 
-// 2. footer strip — rebuild the visible content from the screen-reader copy
-const FOOTER_WORDS = ["VIRAL", "CREATIVE", "ORGANIC", ":)", "SHORTS", "LIFESTYLE"];
+// 2. footer strip — the code-component plugin (id 84d4c1) renders falling,
+// bouncing pills entirely in JS. assets/footer-physics.js reimplements it from
+// the plugin's own configuration; here we just drop in the container.
 let footerFixed = 0;
 {
   const marker = 'data-code-component-plugin-id';
@@ -113,14 +114,13 @@ let footerFixed = 0;
     const start = s.lastIndexOf("<div", idx);
     const end = balancedEnd(s, start);
     if (end === -1) break;
-    const run = FOOTER_WORDS.map((w) => `<span>${esc(w)}</span>`).join("");
     s = s.slice(0, start) +
-        `<div class="gm-footer-marquee" aria-hidden="true"><div class="gm-footer-track">${run}${run}${run}</div></div>` +
+        `<div class="gm-physics" data-footer-physics aria-hidden="true"></div>` +
         s.slice(end);
     footerFixed++;
   }
 }
-console.log(`  footer marquee: ${footerFixed} strip(s) rebuilt`);
+console.log(`  footer physics: ${footerFixed} container(s) placed`);
 
 // ── navigation ────────────────────────────────────────────────────────────────
 // The Framer template shipped Home / Ressourcen / "Book me". This site's nav is
@@ -139,9 +139,9 @@ const NAV = `  <nav class="site-nav">
       <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="partnerships.html">Partnerships</a></li>
       <li><a href="contact.html"><span data-en="Contact">Kontakt</span></a></li>
-      <li><a href="#" class="nav-cta" data-community><span data-en="Join Community">Community beitreten</span></a></li>
     </ul>
     <div class="nav-actions">
+      <a href="#" class="nav-cta" data-community><span data-en="Join Community">Community beitreten</span></a>
       <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
       <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
     </div>
@@ -251,6 +251,7 @@ ${s}
   </script>
   <script src="assets/site.js"></script>
   <script src="assets/cursor.js"></script>
+  <script src="assets/footer-physics.js"></script>
   <script src="assets/lenis.min.js"></script>
   <script src="assets/smoothscroll.js"></script>
   <script src="assets/stats.js"></script>

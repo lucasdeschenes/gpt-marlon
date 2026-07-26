@@ -1,96 +1,115 @@
 /* Canonical site navigation — ONE nav, identical on every page including the
-   ported homepage. Values are taken from the Framer design's Nav component:
-     bar   2px #030303 border on cream #faf7eb
-     logo  yellow #ffe74a pill, 2px #222 border
-     CTA   lavender #c191ff pill, 3px #030303 border
-   Literal colours (no tokens) so this works on the homepage too, which loads
-   the ported Framer stylesheet rather than theme.css. */
+   ported homepage. Every value below is taken from the Framer Nav component:
+     bar    2px #030303 border on all sides, cream #faf7eb, padding 12px 80px,
+            content capped at 1200px
+     logo   yellow #ffe74a, 2px #222 border, 12px radius, padding 6px 12px
+     links  Poppins 700 / 16px / line-height 24px / -.02em, solid black
+     CTA    lavender #c191ff, 3px #030303 border, 32px radius, padding 12px 24px,
+            box-shadow 4px 4px 0 0 rgb(15,15,15)
+   Literal colours (no tokens) so the same sheet works on the ported homepage,
+   which loads framer.css rather than theme.css. */
 
 nav.site-nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  padding: .7rem 1.6rem;
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px 80px;
   background: #faf7eb;
-  border-bottom: 2px solid #030303;
+  border: 2px solid #030303;
   font-family: 'Poppins', Inter, -apple-system, sans-serif;
 }
 
-/* ---- logo: yellow pill ---- */
+/* ---- logo ---- */
 nav.site-nav .nav-logo {
-  display: inline-flex; align-items: center; gap: .1rem;
-  padding: .45rem 1rem;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 6px 12px; flex: none;
   background: #ffe74a; color: #030303;
-  border: 2px solid #222222; border-radius: 999px;
-  box-shadow: 3px 3px 0 0 rgba(0,0,0,.95);
-  font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em;
+  border: 2px solid #222222; border-radius: 12px;
+  box-shadow: 3px 3px 0 0 rgb(15,15,15);
+  font-family: inherit; font-weight: 700; font-size: 18px; letter-spacing: -.02em;
   text-decoration: none; white-space: nowrap;
   transition: transform .12s cubic-bezier(.22,1,.36,1), box-shadow .12s;
 }
-nav.site-nav .nav-logo:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 0 rgba(0,0,0,.95); }
+nav.site-nav .nav-logo:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 0 rgb(15,15,15); }
 nav.site-nav .nav-logo-text { font: inherit; color: inherit; }
-nav.site-nav .nav-logo-text span,
-nav.site-nav .nav-logo > span span { color: #030303; }
-/* the photo avatar is not part of the design's nav */
+nav.site-nav .nav-logo-text span { color: #030303; }
+/* the design's nav has no photo avatar */
 nav.site-nav .nav-logo-icon { display: none; }
 
-/* ---- links ---- */
+/* ---- links: centred, solid black, Poppins 700 ---- */
 nav.site-nav .nav-links {
-  display: flex; align-items: center; gap: 1.8rem;
+  display: flex; align-items: center; gap: 32px;
   list-style: none; margin: 0 auto; padding: 0;
 }
 nav.site-nav .nav-links a {
-  color: #030303; text-decoration: none;
-  font-size: .95rem; font-weight: 600; opacity: .55;
+  color: #000; text-decoration: none;
+  font-family: inherit; font-weight: 700; font-size: 16px;
+  line-height: 24px; letter-spacing: -.02em;
   transition: opacity .18s;
 }
-nav.site-nav .nav-links a:hover,
-nav.site-nav .nav-links a.active { opacity: 1; }
+nav.site-nav .nav-links a:hover { opacity: .55; }
 
-/* ---- primary action: lavender pill ---- */
+/* ---- right-hand group ---- */
+nav.site-nav .nav-actions { display: flex; align-items: center; gap: 10px; flex: none; }
+
+/* primary action */
 nav.site-nav .nav-cta {
-  padding: .6rem 1.3rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 24px;
   background: #c191ff; color: #030303 !important;
-  border: 3px solid #030303; border-radius: 999px;
-  box-shadow: 3px 3px 0 0 rgba(0,0,0,.95);
-  font-weight: 700; font-size: .95rem; opacity: 1 !important;
-  white-space: nowrap;
+  border: 3px solid #030303; border-radius: 32px;
+  box-shadow: 4px 4px 0 0 rgb(15,15,15);
+  font-family: inherit; font-weight: 700; font-size: 16px;
+  line-height: 1; letter-spacing: -.02em; white-space: nowrap;
+  text-decoration: none; opacity: 1 !important;
   transition: transform .12s cubic-bezier(.22,1,.36,1), box-shadow .12s;
 }
-nav.site-nav .nav-cta:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 0 rgba(0,0,0,.95); }
-nav.site-nav .nav-cta:active { transform: translate(1px,1px); box-shadow: 2px 2px 0 0 rgba(0,0,0,.95); }
+nav.site-nav .nav-cta:hover { transform: translate(-1px,-1px); box-shadow: 5px 5px 0 0 rgb(15,15,15); }
+nav.site-nav .nav-cta:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 0 rgb(15,15,15); }
 
-/* ---- language toggle + burger ---- */
-nav.site-nav .nav-actions { display: flex; align-items: center; gap: .5rem; }
+/* language toggle — same treatment, yellow, compact */
 nav.site-nav .lang-toggle, nav.site-nav .theme-toggle {
-  height: 34px; min-width: 40px; padding: 0 .65rem;
+  padding: 11px 14px;
   background: #ffe74a; color: #030303;
-  border: 2px solid #030303; border-radius: 8px;
-  box-shadow: 2px 2px 0 0 rgba(0,0,0,.95);
-  font-family: inherit; font-size: .75rem; font-weight: 700; cursor: pointer;
+  border: 3px solid #030303; border-radius: 32px;
+  box-shadow: 4px 4px 0 0 rgb(15,15,15);
+  font-family: inherit; font-size: 14px; font-weight: 700; line-height: 1;
+  cursor: pointer;
   transition: transform .12s cubic-bezier(.22,1,.36,1), box-shadow .12s;
 }
-nav.site-nav .lang-toggle:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 0 rgba(0,0,0,.95); }
+nav.site-nav .lang-toggle:hover { transform: translate(-1px,-1px); box-shadow: 5px 5px 0 0 rgb(15,15,15); }
+nav.site-nav .lang-toggle:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 0 rgb(15,15,15); }
+
 nav.site-nav .nav-burger {
   display: none; background: none; border: 0;
-  color: #030303; font-size: 1.4rem; cursor: pointer; line-height: 1;
+  color: #030303; font-size: 1.5rem; cursor: pointer; line-height: 1; padding: 0 .2rem;
 }
 
-/* ---- mobile ---- */
+/* ---- responsive ---- */
+@media (max-width: 1180px) {
+  nav.site-nav { padding: 12px 28px; }
+  nav.site-nav .nav-links { gap: 22px; }
+}
 @media (max-width: 940px) {
-  nav.site-nav { padding: .6rem 1rem; }
+  nav.site-nav { padding: 10px 14px; justify-content: space-between; }
   nav.site-nav .nav-links {
-    position: fixed; inset: 56px 0 auto 0; margin: 0;
+    position: fixed; inset: 62px 8px auto 8px; margin: 0;
     flex-direction: column; align-items: stretch; gap: 0;
-    background: #faf7eb; border-bottom: 2px solid #030303;
+    background: #faf7eb; border: 2px solid #030303; border-radius: 12px;
+    box-shadow: 4px 4px 0 0 rgb(15,15,15);
     padding: .4rem 1rem 1rem; display: none;
   }
   nav.site-nav .nav-links.open { display: flex; }
-  nav.site-nav .nav-links li { border-top: 1px solid rgba(3,3,3,.14); }
-  nav.site-nav .nav-links a { display: block; padding: .9rem .2rem; font-size: 1rem; opacity: .8; }
-  nav.site-nav .nav-cta { display: block; text-align: center; margin-top: .9rem; }
+  nav.site-nav .nav-links li { border-top: 2px solid rgba(3,3,3,.12); }
+  nav.site-nav .nav-links li:first-child { border-top: 0; }
+  nav.site-nav .nav-links a { display: block; padding: .9rem .2rem; }
   nav.site-nav .nav-burger { display: block; }
+  /* CTA + toggle stay in the bar, compact, so they're reachable without opening the menu */
+  nav.site-nav .nav-cta { padding: 8px 14px; font-size: 13px; border-width: 2px; box-shadow: 3px 3px 0 0 rgb(15,15,15); }
+  nav.site-nav .lang-toggle { padding: 8px 10px; font-size: 12px; border-width: 2px; box-shadow: 3px 3px 0 0 rgb(15,15,15); }
+  nav.site-nav .nav-logo { font-size: 15px; padding: 5px 10px; }
+  nav.site-nav .nav-actions { gap: 6px; }
 }
 
-/* the fixed bar needs clearance on every page */
-body { padding-top: 62px; }
-@media (max-width: 940px) { body { padding-top: 54px; } }
+/* clearance for the fixed bar */
+body { padding-top: 66px; }
+@media (max-width: 940px) { body { padding-top: 58px; } }
