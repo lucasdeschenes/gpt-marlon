@@ -17,12 +17,18 @@ export const T = {
   "Ich bin kein Entwickler und kein Ki researcher. Ich habe mir meine gesamte Kenntnis selbst beigebracht und teile hier mein gesamtes Wissen, meine Erfahrungen und die Strategien, die ich täglich nutze.":
     "I'm not a developer and I'm not an AI researcher. I taught myself everything I know, and I share all of it here: the knowledge, the experience and the strategies I use every day.",
 
-  // one breakpoint variant puts the headline and the bio in a single <p>
-  "Lerne mit mir, KI effektiv zu nutzen.Ich bin kein Entwickler und kein Ki researcher. Ich habe mir meine gesamte Kenntnis selbst beigebracht und teile hier mein gesamtes Wissen, meine Erfahrungen und die Strategien, die ich selbst täglich nutze.":
-    "Learn to use AI effectively, with me. I'm not a developer and I'm not an AI researcher. I taught myself everything I know, and I share all of it here: the knowledge, the experience and the strategies I use every day.",
+  // The hero packs a bold headline and the bio into one <p>, separated by a
+  // <br>. Give the two parts separately so the English keeps the same shape —
+  // a flat string would lose both the bold and the line break.
+  "Lerne mit mir, KI effektiv zu nutzen.Ich bin kein Entwickler und kein Ki researcher. Ich habe mir meine gesamte Kenntnis selbst beigebracht und teile hier mein gesamtes Wissen, meine Erfahrungen und die Strategien, die ich selbst täglich nutze.": {
+    bold: "Learn to use AI effectively, with me.",
+    rest: "I'm not a developer and I'm not an AI researcher. I taught myself everything I know, and I share all of it here: the knowledge, the experience and the strategies I use every day.",
+  },
 
-  "Lerne mit mir, KI effektiv zu nutzen.Ich bin kein Entwickler und kein Ki researcher. Ich habe mir meine gesamte Kenntnis selbst beigebracht und teile hier mein gesamtes Wissen, meine Erfahrungen und die Strategien, die ich täglich nutze.":
-    "Learn to use AI effectively, with me. I'm not a developer and I'm not an AI researcher. I taught myself everything I know, and I share all of it here: the knowledge, the experience and the strategies I use every day.",
+  "Lerne mit mir, KI effektiv zu nutzen.Ich bin kein Entwickler und kein Ki researcher. Ich habe mir meine gesamte Kenntnis selbst beigebracht und teile hier mein gesamtes Wissen, meine Erfahrungen und die Strategien, die ich täglich nutze.": {
+    bold: "Learn to use AI effectively, with me.",
+    rest: "I'm not a developer and I'm not an AI researcher. I taught myself everything I know, and I share all of it here: the knowledge, the experience and the strategies I use every day.",
+  },
 
   "Community beitreten": "Join the community",
   "Tägliche KI-Tipps und Learnings.": "Daily AI tips and learnings.",

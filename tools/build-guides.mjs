@@ -70,6 +70,7 @@ const nav = (active) => {
   const p = active === "guide" ? "../" : "";
   return `  <nav class="site-nav">
     <a href="${p}index.html" class="nav-logo">
+      <span class="nav-logo-icon"><img src="${p}assets/marlon.jpg" alt="Marlon" /></span>
       <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
     <ul class="nav-links">

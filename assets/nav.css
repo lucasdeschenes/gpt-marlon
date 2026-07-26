@@ -18,22 +18,33 @@ nav.site-nav {
   font-family: 'Poppins', Inter, -apple-system, sans-serif;
 }
 
-/* ---- logo ---- */
+/* ---- logo: avatar + yellow name pill, side by side ---- */
 nav.site-nav .nav-logo {
   display: inline-flex; align-items: center; gap: 10px;
-  padding: 6px 12px; flex: none;
+  flex: none; text-decoration: none; white-space: nowrap;
+  transition: transform .12s cubic-bezier(.22,1,.36,1);
+}
+nav.site-nav .nav-logo:hover { transform: translate(-1px,-1px); }
+
+nav.site-nav .nav-logo-icon {
+  display: block; width: 38px; height: 38px; flex: none;
+  border: 2px solid #222222; border-radius: 10px;
+  box-shadow: 3px 3px 0 0 rgb(15,15,15);
+  overflow: hidden; background: #faf7eb;
+}
+nav.site-nav .nav-logo-icon img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+
+nav.site-nav .nav-logo-text {
+  display: inline-block; padding: 6px 12px;
   background: #ffe74a; color: #030303;
   border: 2px solid #222222; border-radius: 12px;
   box-shadow: 3px 3px 0 0 rgb(15,15,15);
   font-family: inherit; font-weight: 700; font-size: 18px; letter-spacing: -.02em;
-  text-decoration: none; white-space: nowrap;
-  transition: transform .12s cubic-bezier(.22,1,.36,1), box-shadow .12s;
 }
-nav.site-nav .nav-logo:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 0 rgb(15,15,15); }
-nav.site-nav .nav-logo-text { font: inherit; color: inherit; }
 nav.site-nav .nav-logo-text span { color: #030303; }
-/* the design's nav has no photo avatar */
-nav.site-nav .nav-logo-icon { display: none; }
 
 /* ---- links: centred, solid black, Poppins 700 ---- */
 nav.site-nav .nav-links {
@@ -106,7 +117,9 @@ nav.site-nav .nav-burger {
   /* CTA + toggle stay in the bar, compact, so they're reachable without opening the menu */
   nav.site-nav .nav-cta { padding: 8px 14px; font-size: 13px; border-width: 2px; box-shadow: 3px 3px 0 0 rgb(15,15,15); }
   nav.site-nav .lang-toggle { padding: 8px 10px; font-size: 12px; border-width: 2px; box-shadow: 3px 3px 0 0 rgb(15,15,15); }
-  nav.site-nav .nav-logo { font-size: 15px; padding: 5px 10px; }
+  nav.site-nav .nav-logo { gap: 7px; }
+  nav.site-nav .nav-logo-text { font-size: 15px; padding: 5px 10px; }
+  nav.site-nav .nav-logo-icon { width: 32px; height: 32px; }
   nav.site-nav .nav-actions { gap: 6px; }
 }
 

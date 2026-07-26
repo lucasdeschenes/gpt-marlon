@@ -133,7 +133,7 @@ console.log(`  footer physics: ${footerFixed} container(s) placed`);
 // Replace it wholesale with the canonical nav so the bar is identical sitewide;
 // assets/nav.css reproduces the design's styling for it.
 const NAV = `  <nav class="site-nav">
-    <a href="index.html" class="nav-logo"><span class="nav-logo-text">GPT<span>★</span>Marlon</span></a>
+    <a href="index.html" class="nav-logo"><span class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></span><span class="nav-logo-text">GPT<span>★</span>Marlon</span></a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="guides.html"><span data-en="Resources">Ressourcen</span></a></li>
@@ -228,6 +228,23 @@ const SITE_FOOTER = `  <footer class="site-footer">
     [g.title, g.summary, g.category, g.tool].forEach((v) => v && contentDE.add(String(v).replace(/\s+/g, " ").trim()));
   }
 
+  // The German copy is animated word by word, and the hero's first sentence is
+  // bold. A flat English string would drop both, so mirror the German markup:
+  // wrap each English word in the same .gm-word span, and keep <strong>/<br>.
+  const words = (t) => String(t).trim().split(/\s+/)
+    .map((w) => `<span class="gm-word" style="display:inline-block">${esc(w)}</span>`)
+    .join(" ");
+
+  const buildEN = (inner, en) => {
+    const animated = inner.includes("gm-word");
+    if (typeof en === "object") {
+      // bold headline + <br> + body, as in the German
+      return `<strong class="framer-text">${animated ? words(en.bold) : esc(en.bold)}</strong>` +
+             `<br class="framer-text">${animated ? words(en.rest) : esc(en.rest)}`;
+    }
+    return animated ? words(en) : esc(en);
+  };
+
   let done = 0;
   const missing = new Set();
   s = s.replace(/<p([^>]*class="framer-text[^"]*"[^>]*)>([\s\S]*?)<\/p>/g, (full, at, inner) => {
@@ -238,7 +255,7 @@ const SITE_FOOTER = `  <footer class="site-footer">
     if (!en) { if (!SAME.has(de) && !contentDE.has(de) && !/^\w{3} \d{1,2}, \d{4}$/.test(de)) missing.add(de); return full; }
     if (en === de) return full;
     done++;
-    return `<p${at} data-en="${attr(en)}">${inner}</p>`;
+    return `<p${at} data-en="${attr(buildEN(inner, en))}">${inner}</p>`;
   });
 
   // input placeholders
