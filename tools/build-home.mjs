@@ -123,6 +123,32 @@ let footerFixed = 0;
 }
 console.log(`  footer physics: ${footerFixed} container(s) placed`);
 
+
+// ── tool logos ────────────────────────────────────────────────────────────────
+// Two of the six marquee logos need fixing:
+//   Perplexity — never uploaded in Framer, so the design shows a "Logo
+//                Placeholder" with the letter P.
+//   Claude     — the uploaded mark is Anthropic's "A\\" wordmark, which reads as
+//                a letter next to the real logos; swap in the Claude sunburst.
+// Both replacements are global: the marquee track is duplicated for a seamless
+// loop, so every logo appears twice.
+{
+  const ph = /<div class="framer-zzcj0a" data-framer-name="Logo Placeholder"[\s\S]*?<\/div>/g;
+  const img = (src, alt) =>
+    '<div style="position:absolute;border-radius:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true">' +
+    `<img decoding="async" width="256" height="256" src="${src}" alt="${alt}" ` +
+    'style="display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:contain;padding:5px"></div>';
+
+  const nPh = (s.match(ph) || []).length;
+  s = s.replace(ph, img("assets/framer/perplexity.svg", "Perplexity logo"));
+
+  const CLAUDE_PNG = /assets\/framer\/qvBJQCLNxQFdJkIHh4OurV9Kxeo-[0-9a-f]+\.png/g;
+  const nCl = (s.match(CLAUDE_PNG) || []).length;
+  s = s.replace(CLAUDE_PNG, "assets/framer/claude.svg");
+
+  console.log(`  tool logos: ${nPh} Perplexity placeholder(s) + ${nCl} Claude mark(s) replaced`);
+}
+
 // ── navigation ────────────────────────────────────────────────────────────────
 // The Framer template shipped Home / Ressourcen / "Book me". This site's nav is
 // Ressourcen / Newsletter / Partnerships / Kontakt + the community CTA, so clone
