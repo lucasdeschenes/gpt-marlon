@@ -82,3 +82,12 @@
 }
 .modal-status { margin-top: .9rem; font-size: .9rem; font-weight: 600; min-height: 1.1rem; }
 .modal-fine { color: rgba(3,3,3,.5); font-size: .78rem; margin-top: .8rem; }
+
+/* ---------------------------------------------------- smooth scroll ---- */
+/* Required by Lenis. Without the scroll-behavior override the native smooth
+   scrolling fights the smooth scroller and the page feels sticky. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis.lenis-smooth iframe { pointer-events: none; }

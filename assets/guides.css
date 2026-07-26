@@ -15,7 +15,7 @@
 
 /* table of contents */
 .guide-toc {
-  background: var(--bg3); border: 1px solid var(--border);
+  background: var(--bg3); border: 2px solid var(--border-strong); box-shadow: var(--hard-shadow);
   border-radius: var(--r-lg); padding: 1.3rem 1.5rem; margin: 2.4rem 0;
 }
 .guide-toc-label {
@@ -23,20 +23,22 @@
   text-transform: uppercase; color: var(--muted); margin-bottom: .9rem;
 }
 .guide-toc ol { list-style: none; counter-reset: none; }
-.guide-toc li + li { border-top: 1px solid var(--border); }
+.guide-toc li + li { border-top: 1px solid rgba(3,3,3,.12); }
 .guide-toc a {
   display: flex; gap: .8rem; align-items: baseline;
   padding: .6rem 0; color: var(--text2); text-decoration: none;
   font-size: var(--fs-sm); line-height: 1.45; transition: color .15s;
 }
 .guide-toc a:hover { color: var(--text); }
-.toc-n { color: var(--yellow); font-weight: 700; font-size: var(--fs-3xs); min-width: 1.5rem; font-variant-numeric: tabular-nums; }
+.toc-n { color: var(--lavender); font-weight: 700; font-size: var(--fs-3xs); min-width: 1.5rem; font-variant-numeric: tabular-nums; }
 
 /* sections */
 .guide-section { margin: 2.8rem 0; scroll-margin-top: 90px; }
 .gs-num {
-  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-3xs);
-  letter-spacing: .1em; color: var(--yellow); margin-bottom: .5rem;
+  display: inline-block; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-3xs);
+  letter-spacing: .1em; color: var(--btn-fg); background: var(--yellow);
+  border: 2px solid var(--border-strong); border-radius: 999px;
+  padding: .15rem .6rem; margin-bottom: .7rem;
 }
 .guide-section h2 {
   font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h3);
@@ -46,52 +48,52 @@
 .guide-section li { color: var(--text2); line-height: 1.75; font-size: var(--fs-base); margin: .4rem 0 .4rem 1.2rem; }
 .guide-section b, .guide-section strong { color: var(--text); font-weight: 600; }
 .guide-section code {
-  background: var(--bg2); border: 1px solid var(--border-strong); border-radius: var(--r-xs);
-  padding: .12em .42em; font-size: .88em; color: var(--yellow);
+  background: var(--ink); border: none; border-radius: var(--r-xs);
+  padding: .14em .45em; font-size: .88em; color: var(--yellow);
 }
 .guide-section table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: var(--fs-xs); display: block; overflow-x: auto; }
 .guide-section th, .guide-section td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--border); color: var(--text2); }
 .guide-section th { color: var(--text); font-weight: 600; white-space: nowrap; }
 
 .guide-note {
-  background: rgba(255,231,74,.07); border: 1px solid rgba(255,231,74,.28);
-  border-left: 3px solid var(--yellow);
+  background: var(--yellow); border: 2px solid var(--border-strong);
+  box-shadow: var(--hard-shadow);
   border-radius: var(--r); padding: 1rem 1.2rem;
-  font-size: var(--fs-sm); color: var(--text2); line-height: 1.7; margin: 1.6rem 0;
+  font-size: var(--fs-sm); color: var(--btn-fg); line-height: 1.7; margin: 1.6rem 0;
 }
 
 /* ------------------------------------------------------ prompt blocks ---- */
 .prompt-card {
-  background: var(--bg2); border: 1px solid var(--border-strong);
+  background: var(--ink2); border: 2px solid var(--border-strong); box-shadow: var(--hard-shadow);
   border-radius: var(--r-lg); margin: 1.2rem 0; overflow: hidden;
 }
 .prompt-head {
   display: flex; align-items: center; justify-content: space-between; gap: .8rem;
-  flex-wrap: wrap; padding: .7rem 1rem; border-bottom: 1px solid var(--border-strong);
-  background: var(--bg3);
+  flex-wrap: wrap; padding: .7rem 1rem; border-bottom: 2px solid rgba(255,255,255,.14);
+  background: var(--ink3);
 }
-.prompt-label { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-2xs); }
+.prompt-label { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-2xs); color: #fff; }
 .prompt-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
 .pbtn {
-  border: 1px solid var(--border-strong); background: transparent; color: var(--text);
+  border: 2px solid rgba(255,255,255,.3); background: transparent; color: #fff;
   font-family: inherit; font-size: var(--fs-3xs); font-weight: 600;
   border-radius: var(--r-sm); padding: .4rem .7rem; cursor: pointer;
   transition: transform .12s, border-color .2s, background-color .2s;
 }
-.pbtn:hover { transform: translateY(-1px); border-color: var(--muted); background: var(--bg4); }
-.pbtn-claude { background: var(--white); color: var(--btn-fg); border-color: transparent; }
-.pbtn-claude:hover { background: var(--off); }
+.pbtn:hover { transform: translateY(-1px); border-color: #fff; background: rgba(255,255,255,.12); }
+.pbtn-claude { background: var(--yellow); color: var(--btn-fg); border-color: var(--border-strong); }
+.pbtn-claude:hover { background: var(--yellow-soft); }
 .prompt-text {
   padding: 1rem 1.2rem; white-space: pre-wrap; word-break: break-word;
   font-family: 'Cascadia Code', Consolas, ui-monospace, monospace;
-  font-size: var(--fs-2xs); line-height: 1.7; color: var(--text2);
+  font-size: var(--fs-2xs); line-height: 1.7; color: #e8e8e8;
   max-height: 380px; overflow: auto;
 }
 
 /* -------------------------------------------------------- guide CTAs ---- */
 .guide-cta {
   margin-top: 1.2rem; display: flex; align-items: center; justify-content: space-between;
-  gap: 1.2rem; flex-wrap: wrap; background: var(--bg3); border: 1px solid var(--border);
+  gap: 1.2rem; flex-wrap: wrap; background: var(--bg3); border: 2px solid var(--border-strong); box-shadow: var(--hard-shadow);
   border-radius: var(--r-lg); padding: 1.4rem 1.5rem;
 }
 .guide-cta-title { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-lg); }
@@ -99,13 +101,14 @@
 
 /* end-of-guide PDF card — cream block, deliberately loud against the black page */
 .guide-download {
-  margin-top: 3rem; text-align: center; background: var(--cream); color: var(--btn-fg);
+  margin-top: 3rem; text-align: center; background: var(--lavender); color: var(--btn-fg);
+  border: 2px solid var(--border-strong); box-shadow: var(--hard-shadow-lg);
   border-radius: var(--r-xl); padding: 2.2rem 1.5rem;
 }
 .guide-download-icon { font-size: 2rem; line-height: 1; margin-bottom: .7rem; }
 .guide-download-title { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h3); letter-spacing: -.02em; }
 .guide-download-sub { color: rgba(3,3,3,.68); font-size: var(--fs-sm); line-height: 1.65; margin: .6rem auto 1.4rem; max-width: 460px; }
-.guide-download .btn-primary { display: inline-flex; background: var(--btn-fg); color: var(--white); }
+.guide-download .btn-primary { display: inline-flex; background: var(--yellow); color: var(--btn-fg); }
 .guide-download .btn-primary:hover { opacity: .88; }
 
 /* ------------------------------------------------- ressourcen index ---- */
@@ -114,22 +117,22 @@
 .res-search-icon { position: absolute; left: .95rem; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--muted); pointer-events: none; }
 .res-search input {
   width: 100%; box-sizing: border-box; font-family: inherit; font-size: var(--fs-sm);
-  color: var(--text); background: var(--bg3); border: 1px solid var(--border-strong);
-  border-radius: var(--r); padding: .75rem 1rem .75rem 2.8rem; outline: none;
-  transition: border-color .15s, box-shadow .15s;
+  color: var(--text); background: #fff; border: 2px solid var(--border-strong);
+  border-radius: var(--r-sm); padding: .75rem 1rem .75rem 2.8rem; outline: none;
+  transition: box-shadow .12s;
 }
 .res-search input::placeholder { color: var(--faint); }
-.res-search input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(255,255,255,.07); }
+.res-search input:focus { box-shadow: var(--hard-shadow); }
 .res-search input::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 .res-sort { display: flex; align-items: center; gap: .55rem; flex: 0 0 auto; }
 .res-sort label { font-size: var(--fs-3xs); font-weight: 600; color: var(--muted); }
 .res-sort select {
   font-family: inherit; font-size: var(--fs-xs); font-weight: 600; color: var(--text);
-  background-color: var(--bg3); border: 1px solid var(--border-strong); border-radius: var(--r);
+  background-color: #fff; border: 2px solid var(--border-strong); border-radius: var(--r-sm);
   padding: .68rem 2.2rem .68rem .9rem; cursor: pointer; outline: none;
   appearance: none; -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a3a2a2' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23454545' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right .75rem center; background-size: 15px;
 }
 .res-sort select:focus { border-color: var(--text); }
@@ -137,18 +140,18 @@
 
 .cat-filter { display: flex; gap: .45rem; flex-wrap: wrap; margin: 0 0 1.8rem; }
 .cat-chip {
-  border: 2px solid var(--btn-border); background: transparent; color: var(--muted);
+  border: 2px solid var(--border-strong); background: #fff; color: var(--muted);
   font-family: inherit; font-size: var(--fs-2xs); font-weight: 600;
   border-radius: var(--r); padding: .5rem .95rem; cursor: pointer;
   transition: border-color .2s, color .2s, background-color .2s;
 }
-.cat-chip:hover { color: var(--text); border-color: var(--muted); }
+.cat-chip:hover { color: var(--text); box-shadow: var(--hard-shadow); }
 .cat-chip.active { background: var(--white); color: var(--btn-fg); border-color: transparent; }
 
 .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem; }
 /* cream cards on the black page, matching the Framer guide grid */
 .guide-card {
-  display: flex; flex-direction: column; background: var(--cream); color: var(--btn-fg);
+  display: flex; flex-direction: column; background: #fff; color: var(--btn-fg);
   border: 2px solid var(--btn-border); border-radius: var(--r-lg);
   padding: 1.3rem 1.3rem 1.15rem; text-decoration: none;
   box-shadow: var(--hard-shadow);
@@ -177,6 +180,7 @@
 /* copy toast */
 .copy-toast {
   position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(20px);
+  border: 2px solid var(--border-strong); box-shadow: var(--hard-shadow);
   background: var(--yellow); color: var(--btn-fg); font-weight: 600; font-size: var(--fs-xs);
   padding: .7rem 1.3rem; border-radius: var(--r); opacity: 0; pointer-events: none;
   transition: opacity .25s, transform .25s; z-index: 300;

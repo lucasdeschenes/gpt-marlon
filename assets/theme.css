@@ -1,27 +1,33 @@
 /* GPT Marlon — design tokens.
    Extracted from the Framer design ("adapt-hero-section" branch).
-   Single source of truth: site.css, guides.css and index.html all read from here.
-   Dark-only by design — the light theme was removed with the redesign. */
+   Single source of truth for the hand-written pages (the ported homepage
+   carries its own stylesheet). Cream page, dark ink, hard-edged shadows. */
 
 :root {
-  /* ---- surfaces (neutral black, not blue-black) ---- */
-  --bg:   #030303;   /* page */
-  --bg2:  #141414;   /* raised surface / input */
-  --bg3:  #1a1a1a;   /* card */
-  --bg4:  #1d1d1d;   /* card hover / nested */
+  /* ---- surfaces ----
+     The Framer design is a CREAM page, not a black one. These pages follow it. */
+  --bg:   #faf7eb;   /* page */
+  --bg2:  #f2f2f2;   /* raised surface / input */
+  --bg3:  #ffffff;   /* card */
+  --bg4:  #ededed;   /* card hover / nested */
+
+  /* dark surfaces, for the few blocks that invert (code, nav CTA, footer) */
+  --ink:   #030303;
+  --ink2:  #141414;
+  --ink3:  #1a1a1a;
 
   /* ---- lines ---- */
-  --border:        #222222;
-  --border-strong: #303030;
-  --border-soft:   rgba(255,255,255,.07);
+  --border:        rgba(3,3,3,.14);
+  --border-strong: #1d1d1d;
+  --border-soft:   rgba(3,3,3,.08);
 
   /* ---- text ---- */
-  --text:   #ffffff;
-  --text2:  #d4d4d4;   /* secondary body */
-  --muted:  #a3a2a2;   /* captions, labels */
-  --faint:  #454545;   /* dividers, disabled, meta */
+  --text:   #030303;
+  --text2:  #303030;   /* secondary body */
+  --muted:  #454545;   /* captions, labels */
+  --faint:  #a3a2a2;   /* dividers, disabled, meta */
 
-  /* ---- light surfaces (used ON the dark page) ---- */
+  /* ---- named light surfaces ---- */
   --cream:  #faf7eb;
   --white:  #ffffff;
   --off:    #f2f2f2;
@@ -77,12 +83,12 @@
   --fs-3xs:  .75rem;                      /*   12px */
 
   /* ---- elevation ---- */
-  --shadow:    0 20px 50px -30px rgba(0,0,0,.9);
-  --shadow-lg: 0 40px 90px -40px rgba(0,0,0,.95);
+  --shadow:    var(--hard-shadow);
+  --shadow-lg: var(--hard-shadow-lg);
 
   /* ---- misc ---- */
-  --nav-bg: rgba(3,3,3,.82);
-  --noise-opacity: .28;
+  --nav-bg: var(--nav-cream);
+  --noise-opacity: .10;
   --ease: cubic-bezier(.22,1,.36,1);
 
   /* Legacy aliases — kept so any rule still referencing the old purple system

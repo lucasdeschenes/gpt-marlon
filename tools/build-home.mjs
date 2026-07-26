@@ -74,6 +74,36 @@ DEMO.forEach((slug, i) => {
 });
 console.log(`  swapped ${swapped}/4 guide cards for the newest real guides`);
 
+// ── navigation ────────────────────────────────────────────────────────────────
+// The Framer template shipped Home / Ressourcen / "Book me". This site's nav is
+// Ressourcen / Newsletter / Partnerships / Kontakt + the community CTA, so clone
+// the "Resources Link" element for the missing entries and relabel the button.
+// The nav is rendered three times (Desktop / Tablet / Phone variants).
+const NAV_EXTRA = [
+  { href: "newsletter.html", label: "Newsletter" },
+  { href: "partnerships.html", label: "Partnerships" },
+  { href: "contact.html", label: "Kontakt" },
+];
+// The nav entries carry name="Resources Link"; the footer wrappers are
+// name="Resources Link Wrapper" and the CTAs are Buttons, so this matches the
+// nav only. The negative lookahead keeps "Wrapper" out.
+let navCloned = 0;
+s = s.replace(/<a name="Resources Link"(?!\sWrapper)[\s\S]*?<\/a>/g, (link) => {
+  if (!link.includes('href="./ressourcen"')) return link;
+  const extras = NAV_EXTRA.map(({ href, label }) =>
+    link.replace('href="./ressourcen"', `href="${href}"`)
+        .replace(/>Ressourcen</g, `>${label}<`)
+  ).join("");
+  navCloned++;
+  return link + extras;
+});
+console.log(`  cloned nav links into ${navCloned} nav variants`);
+
+// "Book me" -> the community CTA
+const bookBefore = s;
+s = s.replace(/Book me/g, "Community beitreten");
+console.log(`  relabelled Book me: ${bookBefore === s ? "NOT FOUND" : "ok"}`);
+
 // ── links ─────────────────────────────────────────────────────────────────────
 const before = s;
 s = s
