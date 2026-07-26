@@ -1,101 +1,160 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Media-Kit — GPT Marlon</title>
-  <meta name="description" content="GPT Marlon media kit — live audience and performance data for the DACH market. 30K+ followers, ~96% in Germany, Austria & Switzerland." />
+  <meta name="description" content="GPT Marlon media kit — live audience and performance data for the DACH market, plus current rates." />
   <meta name="robots" content="noindex" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="stylesheet" href="assets/fonts.css" />
   <link rel="stylesheet" href="assets/site.css" />
   <style>
-    body { background: #06060f; }
-    .kit-toolbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1rem 1.4rem; background: rgba(10,10,22,.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
-    .kit-toolbar .nav-logo { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
-    .kit-toolbar-actions { display: flex; gap: .6rem; align-items: center; }
-    .kit { max-width: 860px; margin: 0 auto; padding: 2.4rem 1.6rem 3rem; }
-    .kit-sheet { background: linear-gradient(180deg, #0c0c1c, #080814); border: 1px solid var(--border); border-radius: 26px; padding: 2.6rem 2.4rem; box-shadow: 0 40px 90px -50px rgba(124,58,237,.5); }
-    .kit-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 1.7rem; }
-    .kit-brand { display: flex; align-items: center; gap: .8rem; }
-    .kit-brand .nav-logo-icon { width: 46px; height: 46px; }
-    .kit-brand-name { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; }
-    .kit-brand-name span { color: var(--purple-light); }
-    .kit-brand-sub { color: var(--muted); font-size: .82rem; margin-top: .15rem; }
-    .kit-kicker { text-align: right; }
-    .kit-kicker .k1 { font-family: var(--font-display); font-weight: 700; letter-spacing: .22em; font-size: .78rem; text-transform: uppercase; color: var(--purple-light); }
-    .kit-kicker .k2 { color: var(--muted); font-size: .78rem; margin-top: .2rem; }
-    .kit-lead { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.3; letter-spacing: -.01em; margin-bottom: 1.6rem; }
-    .kit-lead .gradient-text { background: linear-gradient(90deg, var(--purple-light), var(--blue), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .kit-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin-bottom: 1.9rem; }
-    .kit-tile { background: var(--bg3); border: 1px solid var(--border); border-radius: 16px; padding: 1.1rem 1rem; text-align: center; }
-    .kit-tile .n { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; line-height: 1; background: linear-gradient(135deg, var(--purple-light), var(--blue)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .kit-tile .l { color: var(--muted); font-size: .74rem; margin-top: .45rem; line-height: 1.35; }
-    .kit-h { font-family: var(--font-display); font-weight: 700; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 1rem; }
-    .kit-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: 1.9rem 0; }
-    .kit-fact { background: rgba(124,58,237,.08); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; }
-    .kit-fact .n { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; color: var(--text); }
-    .kit-fact .l { color: var(--muted); font-size: .8rem; margin-top: .25rem; line-height: 1.4; }
-    .kit-why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.9rem 0; }
-    .kit-why div { font-size: .86rem; color: var(--muted); line-height: 1.55; }
-    .kit-why b { color: var(--text); font-family: var(--font-display); display: block; margin-bottom: .3rem; }
-    .kit-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 1.9rem; }
-    .kit-foot a { color: var(--purple-light); text-decoration: none; font-weight: 600; }
-    .kit-handles { display: flex; gap: 1.1rem; color: var(--muted); font-size: .86rem; align-items: center; }
-    .kit-handles svg { width: 15px; height: 15px; fill: currentColor; vertical-align: -2px; margin-right: .25rem; }
-    .aud-block { margin-top: 0; }
+    /* The media kit is a single sheet, designed to be opened and saved as PDF.
+       It deliberately does not use the site nav. */
+    body { padding-top: 0; background: #ededed; }
 
-    @media (max-width: 640px) {
+    .kit-toolbar {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; padding: .8rem 1.4rem;
+      background: #faf7eb; border-bottom: 2px solid #030303;
+    }
+    .kit-toolbar .nav-logo {
+      display: inline-flex; align-items: center; padding: .4rem .9rem;
+      background: var(--yellow); color: #030303; text-decoration: none;
+      border: 2px solid #222; border-radius: 999px; box-shadow: var(--hard-shadow);
+      font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+    }
+    .kit-toolbar-actions { display: flex; gap: .6rem; align-items: center; }
+
+    .kit { max-width: 900px; margin: 0 auto; padding: 2.2rem 1.4rem 3rem; }
+    .kit-sheet {
+      background: var(--cream); color: #030303;
+      border: 3px solid #030303; border-radius: 20px;
+      padding: 2.4rem 2.2rem;
+      box-shadow: 6px 6px 0 0 rgba(0,0,0,.95);
+    }
+
+    .kit-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+      border-bottom: 2px solid #030303; padding-bottom: 1.4rem; margin-bottom: 1.7rem;
+    }
+    .kit-brand-name { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; letter-spacing: -.02em; }
+    .kit-brand-name span { color: var(--yellow); -webkit-text-stroke: 1px #030303; }
+    .kit-brand-sub { color: rgba(3,3,3,.6); font-size: .84rem; margin-top: .2rem; }
+    .kit-kicker { text-align: right; }
+    .kit-kicker .k1 {
+      display: inline-block; font-family: var(--font-display); font-weight: 700;
+      letter-spacing: .18em; font-size: .7rem; text-transform: uppercase;
+      background: var(--lavender); color: #030303;
+      border: 2px solid #030303; border-radius: 999px; padding: .25rem .7rem;
+    }
+    .kit-kicker .k2 { color: rgba(3,3,3,.55); font-size: .76rem; margin-top: .4rem; }
+
+    .kit-lead { font-family: var(--font-display); font-size: 1.55rem; line-height: 1.32; letter-spacing: -.02em; margin-bottom: 1.6rem; }
+    .kit-lead mark { background: var(--yellow); padding: 0 .18em; border-radius: 6px; color: #030303; }
+
+    .kit-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin-bottom: 1.9rem; }
+    .kit-tile {
+      background: #fff; border: 2px solid #030303; border-radius: 14px;
+      padding: 1.05rem .9rem; text-align: center; box-shadow: var(--hard-shadow);
+    }
+    .kit-tile .n { font-family: var(--font-display); font-weight: 700; font-size: 1.55rem; line-height: 1; }
+    .kit-tile .l { color: rgba(3,3,3,.58); font-size: .72rem; margin-top: .45rem; line-height: 1.35; }
+
+    .kit-h {
+      font-family: var(--font-display); font-weight: 700; font-size: .78rem;
+      letter-spacing: .14em; text-transform: uppercase; color: rgba(3,3,3,.55);
+      margin: 2rem 0 1rem;
+    }
+
+    /* ---- rate card ---- */
+    .rate-list { display: grid; gap: .7rem; }
+    .rate {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+      background: #fff; border: 2px solid #030303; border-radius: 14px;
+      padding: 1.05rem 1.2rem; box-shadow: var(--hard-shadow);
+    }
+    .rate-name { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; }
+    .rate-desc { color: rgba(3,3,3,.6); font-size: .84rem; margin-top: .22rem; max-width: 46ch; line-height: 1.5; }
+    .rate-price {
+      font-family: var(--font-display); font-weight: 700; font-size: 1.4rem;
+      background: var(--yellow); color: #030303;
+      border: 2px solid #030303; border-radius: 999px;
+      padding: .3rem 1rem; white-space: nowrap;
+    }
+    .rate-note { color: rgba(3,3,3,.55); font-size: .78rem; margin-top: .9rem; line-height: 1.6; }
+
+    .kit-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: 1.9rem 0; }
+    .kit-fact { background: var(--lavender-soft); border: 2px solid #030303; border-radius: 14px; padding: 1rem; }
+    .kit-fact .n { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; }
+    .kit-fact .l { color: rgba(3,3,3,.65); font-size: .78rem; margin-top: .25rem; line-height: 1.4; }
+
+    .kit-why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.4rem 0; }
+    .kit-why div { font-size: .84rem; color: rgba(3,3,3,.65); line-height: 1.55; }
+    .kit-why b { display: block; color: #030303; font-family: var(--font-display); margin-bottom: .25rem; }
+
+    .kit-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+      border-top: 2px solid #030303; margin-top: 1.9rem; padding-top: 1.3rem;
+      font-size: .85rem;
+    }
+    .kit-handles { display: flex; gap: 1.1rem; }
+    .kit-handles span { display: inline-flex; align-items: center; gap: .35rem; font-weight: 600; }
+    .kit-handles svg { width: 15px; height: 15px; fill: currentColor; }
+    .kit-foot a { color: #030303; font-weight: 700; }
+
+    /* the audience bars sit on the cream sheet */
+    .kit-sheet .aud-card { background: #fff; }
+    .kit-sheet .aud-name { color: rgba(3,3,3,.55); }
+    .kit-sheet .aud-lbl { color: #030303; }
+    .kit-sheet .aud-val { color: rgba(3,3,3,.6); }
+    .kit-sheet .aud-plat { color: rgba(3,3,3,.6); border-color: #030303; }
+
+    @media (max-width: 720px) {
       .kit-stats { grid-template-columns: repeat(2, 1fr); }
       .kit-facts, .kit-why { grid-template-columns: 1fr; }
-      .kit-sheet { padding: 1.6rem 1.2rem; }
+      .kit-sheet { padding: 1.5rem 1.2rem; }
     }
     @media print {
-      .kit-toolbar { display: none !important; }
-      html, body { background: #06060f !important; }
-      body, .kit-sheet, .kit-tile, .kit-fact, .aud-card, .aud-fill, .aud-track { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-      .kit { max-width: none; padding: 0; }
-      .kit-sheet { border: none; border-radius: 0; box-shadow: none; padding: 8mm 6mm; }
-      .aud-block { grid-template-columns: repeat(2, 1fr); }
-      @page { size: A4; margin: 10mm; }
+      body { background: #fff; }
+      .kit-toolbar { display: none; }
+      .kit { padding: 0; max-width: none; }
+      .kit-sheet { border-radius: 0; box-shadow: none; border: none; }
+      .rate, .kit-tile { box-shadow: none; }
     }
   </style>
 </head>
 <body>
   <div class="kit-toolbar">
-    <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-      <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
-    </a>
+    <a href="index.html" class="nav-logo">GPT<span>★</span>Marlon</a>
     <div class="kit-toolbar-actions">
-      <div class="nav-actions">
       <button class="lang-toggle" data-langtoggle aria-label="Sprache/Language">EN</button>
-      <button class="nav-burger" data-burger aria-label="Menu" aria-expanded="false">☰</button>
-    </div>
-      <button class="btn-primary" onclick="window.print()" style="padding:.6rem 1.1rem;font-size:.9rem"><span data-en="⬇ Download as PDF">⬇ Als PDF herunterladen</span></button>
+      <button class="btn-primary" onclick="window.print()"><span data-en="⬇ Save as PDF">⬇ Als PDF speichern</span></button>
     </div>
   </div>
 
   <div class="kit">
     <div class="kit-sheet">
+
       <div class="kit-top">
-        <div class="kit-brand">
-          <div class="nav-logo-icon"><img src="assets/marlon.jpg" alt="Marlon" /></div>
-          <div>
-            <div class="kit-brand-name">GPT<span>★</span>Marlon</div>
-            <div class="kit-brand-sub"><span data-en="German-language AI content for the DACH market">Deutschsprachiger KI-Content für den DACH-Markt</span></div>
-          </div>
+        <div>
+          <div class="kit-brand-name">GPT<span>★</span>Marlon</div>
+          <div class="kit-brand-sub">@gptmarlon · <span data-en="AI creator · DACH">KI-Creator · DACH</span></div>
         </div>
         <div class="kit-kicker">
-          <div class="k1">Media-Kit</div>
-          <div class="k2"><span data-en="Live data · updated">Live-Daten · Stand</span> <span data-stat="updated">2026-07-09</span></div>
+          <div class="k1">Media Kit 2026</div>
+          <div class="k2"><span data-en="Live data · updated">Live-Daten · Stand</span> <span data-stat="updated">—</span></div>
         </div>
       </div>
 
-      <div class="kit-lead">
-        <span data-en="Put your product in front of">Bring dein Produkt vor</span>
-        <span class="gradient-text"><span data-en="DACH's AI-curious professionals.">DACHs KI-interessierte Professionals.</span></span>
-      </div>
+      <p class="kit-lead">
+        <span data-en="Daily German-language AI content for a ">Täglich deutschsprachiger KI-Content für ein </span><mark><span data-en="decision-making DACH audience">entscheidungsfähiges DACH-Publikum</span></mark><span data-en=" that saves, comments and acts — not just scrolls.">, das speichert, kommentiert und handelt — nicht nur scrollt.</span>
+      </p>
 
       <div class="kit-stats">
         <div class="kit-tile"><div class="n" data-stat="followers">30K+</div><div class="l">Follower</div></div>
@@ -104,6 +163,38 @@
         <div class="kit-tile"><div class="n" data-stat="engagement_rate">21.8%</div><div class="l"><span data-en="Engagement on reach">Engagement auf Reichweite</span></div></div>
       </div>
 
+      <!-- ─────────────────────────── RATES ─────────────────────────── -->
+      <h3 class="kit-h"><span data-en="Rates 2026">Konditionen 2026</span></h3>
+      <div class="rate-list">
+        <div class="rate">
+          <div>
+            <div class="rate-name"><span data-en="Video — Instagram + TikTok">Video — Instagram + TikTok</span></div>
+            <div class="rate-desc"><span data-en="A dedicated, scripted and retention-optimised video published on both Instagram and TikTok — including DM automation so viewers who comment receive your resource automatically.">Ein dediziertes, geskriptetes und retention-optimiertes Video auf Instagram und TikTok — inklusive DM-Automation, sodass Zuschauer, die kommentieren, deine Ressource automatisch erhalten.</span></div>
+          </div>
+          <div class="rate-price">$2,500</div>
+        </div>
+
+        <div class="rate">
+          <div>
+            <div class="rate-name">Story</div>
+            <div class="rate-desc"><span data-en="A story set with a direct link sticker — the fastest path from view to click.">Ein Story-Set mit direktem Link-Sticker — der schnellste Weg vom View zum Klick.</span></div>
+          </div>
+          <div class="rate-price">$800</div>
+        </div>
+
+        <div class="rate">
+          <div>
+            <div class="rate-name"><span data-en="Link in bio">Link in Bio</span></div>
+            <div class="rate-desc"><span data-en="Your link placed in the profile bio, charged per week.">Dein Link in der Profil-Bio, Abrechnung pro Woche.</span></div>
+          </div>
+          <div class="rate-price">$800<span style="font-size:.8rem;font-weight:600"> / <span data-en="week">Woche</span></span></div>
+        </div>
+      </div>
+      <p class="rate-note">
+        <span data-en="All rates in USD, excluding VAT. Usage rights, whitelisting and paid-ad amplification available on request. Bundles and multi-month retainers are quoted individually.">Alle Preise in USD, zzgl. USt. Nutzungsrechte, Whitelisting und Paid-Ad-Verstärkung auf Anfrage. Pakete und mehrmonatige Retainer werden individuell kalkuliert.</span>
+      </p>
+
+      <!-- ────────────────────────── AUDIENCE ───────────────────────── -->
       <h3 class="kit-h"><span data-en="Audience — live Instagram follower demographics">Zielgruppe — Live-Demografie der Instagram-Follower</span></h3>
       <div class="aud-block">
         <div class="aud-card">
@@ -121,7 +212,6 @@
         <div class="aud-card">
           <div class="aud-head"><span class="aud-name" data-en="Gender">Geschlecht</span><span class="aud-plat">Instagram</span></div>
           <div data-audience="gender" data-platform="instagram"><span class="aud-empty">…</span></div>
-          <p class="aud-note"><span data-en="Share of followers who declared a gender.">Anteil der Follower mit Geschlechtsangabe.</span></p>
         </div>
       </div>
 
@@ -134,8 +224,8 @@
       <h3 class="kit-h"><span data-en="Why brands work with GPT Marlon">Warum Marken mit GPT Marlon arbeiten</span></h3>
       <div class="kit-why">
         <div><b><span data-en="Retention-placed">Retention-platziert</span></b><span data-en="Every reel has per-second retention analytics — sponsored segments sit where attention is proven to hold.">Jedes Reel hat sekundengenaue Retention-Analyse — gesponserte Segmente sitzen dort, wo die Aufmerksamkeit nachweislich hält.</span></div>
-        <div><b><span data-en="Built to convert">Auf Conversion gebaut</span></b><span data-en="An audience that saves, comments and asks for resources — not just passive scrolling.">Ein Publikum, das speichert, kommentiert und nach Ressourcen fragt — kein passives Scrollen.</span></div>
-        <div><b><span data-en="Full-funnel formats">Full-Funnel-Formate</span></b><span data-en="Dedicated reels, story sets with link stickers, TikTok & YouTube cross-posting, usage rights & whitelisting.">Dedizierte Reels, Story-Sets mit Link-Stickern, TikTok- & YouTube-Cross-Posting, Nutzungsrechte & Whitelisting.</span></div>
+        <div><b><span data-en="Built to convert">Auf Conversion gebaut</span></b><span data-en="An audience that saves, comments and asks for resources — DM automation turns those comments into delivered leads.">Ein Publikum, das speichert, kommentiert und nach Ressourcen fragt — DM-Automation macht aus Kommentaren ausgelieferte Leads.</span></div>
+        <div><b><span data-en="Full-funnel formats">Full-Funnel-Formate</span></b><span data-en="Dedicated videos across Instagram and TikTok, story sets with link stickers, bio placement, usage rights & whitelisting.">Dedizierte Videos auf Instagram und TikTok, Story-Sets mit Link-Stickern, Bio-Platzierung, Nutzungsrechte & Whitelisting.</span></div>
       </div>
 
       <div class="kit-foot">

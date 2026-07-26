@@ -131,7 +131,7 @@ console.log(`  footer marquee: ${footerFixed} strip(s) rebuilt`);
 // component that can't take extra entries, and it differs from every other page.
 // Replace it wholesale with the canonical nav so the bar is identical sitewide;
 // assets/nav.css reproduces the design's styling for it.
-const NAV = `  <nav>
+const NAV = `  <nav class="site-nav">
     <a href="index.html" class="nav-logo"><span class="nav-logo-text">GPT<span>★</span>Marlon</span></a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>

@@ -68,7 +68,7 @@ function md(s) {
 // ── shared page chrome ────────────────────────────────────────────────────────
 const nav = (active) => {
   const p = active === "guide" ? "../" : "";
-  return `  <nav>
+  return `  <nav class="site-nav">
     <a href="${p}index.html" class="nav-logo">
       <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
     </a>
