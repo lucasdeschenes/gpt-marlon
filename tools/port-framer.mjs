@@ -95,6 +95,15 @@ markup = markup
 // them in with its runtime. Since the runtime is stripped, anything left at
 // opacity:0 / blur(10px) / translateY(10px) would simply never appear — the
 // hero headline is 78 individually-animated words. Snap them to their end state.
+// The headline is animated word by word. Tag those spans so the reveal can be
+// replayed in CSS (assets/reveal.js) instead of being flattened to static text.
+let words = 0;
+markup = markup.replace(
+  /<span style="display:inline-block;opacity:0\.001;filter:blur\([^)]*\);transform:[^"]*">/g,
+  () => { words++; return '<span class="gm-word" style="display:inline-block">'; }
+);
+console.log(`  tagged ${words} headline words for the reveal animation`);
+
 let settled = 0;
 markup = markup.replace(/style="([^"]*)"/g, (full, decl) => {
   if (!/opacity:\s*0(?:\.\d+)?[;"]|filter:\s*blur\(/.test(decl)) return full;

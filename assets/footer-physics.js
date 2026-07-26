@@ -153,7 +153,9 @@
         entries.forEach(function (e) {
           if (e.isIntersecting) { init(e.target); obs.unobserve(e.target); }
         });
-      }, { rootMargin: "120px" }).observe(el);
+        // fire only once the band is properly on screen, so the drop
+        // happens as you arrive at the bottom rather than before
+      }, { threshold: 0.45 }).observe(el);
     });
   }
 

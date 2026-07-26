@@ -282,4 +282,18 @@ html.lenis, html.lenis body { height: auto; }
 .aud-note { color: var(--faint); font-size: var(--fs-3xs); margin-top: 1rem; }
 .aud-card:not(.aud-ready) .aud-empty { display: block; color: var(--muted); font-size: var(--fs-2xs); }
 
-footer .nav-logo-text { color: #fff; }
+
+/* ---- footer brand ----
+   The nav rules live in nav.css and are scoped to nav.site-nav, so the footer's
+   logo needs its own sizing — without it the avatar renders at natural size. */
+footer .nav-logo {
+  display: inline-flex; align-items: center; gap: .1rem;
+  padding: .4rem .9rem; text-decoration: none;
+  background: var(--yellow); color: #030303;
+  border: 2px solid #222; border-radius: 12px;
+  box-shadow: 3px 3px 0 0 rgb(15,15,15);
+  font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: -.02em;
+}
+footer .nav-logo-icon { display: none; }
+footer .nav-logo-text { font: inherit; color: inherit; }
+footer .nav-logo-text span { color: #030303; }

@@ -159,6 +159,36 @@ const NAV = `  <nav class="site-nav">
   }
 }
 
+// ── footer links ──────────────────────────────────────────────────────────────
+// The design's footer ships Home + Ressourcen only; this site also needs the
+// legal pages and the rest of the sections. Clone the Resources wrapper.
+const FOOTER_EXTRA = [
+  { href: "newsletter.html",  label: "Newsletter" },
+  { href: "partnerships.html", label: "Partnerships" },
+  { href: "contact.html",      label: "Kontakt" },
+  { href: "impressum.html",    label: "Impressum" },
+  { href: "datenschutz.html",  label: "Datenschutz" },
+];
+// balancedEnd, not a lazy regex — the wrapper contains nested divs, so
+// matching to the first </div></div> would slice it in half.
+let footerCloned = 0;
+{
+  const MARK = '<div class="framer-9w4eop-container" data-framer-name="Resources Link Wrapper"';
+  let from = 0, at;
+  while ((at = s.indexOf(MARK, from)) !== -1) {
+    const end = balancedEnd(s, at);
+    if (end === -1) break;
+    const block = s.slice(at, end);
+    const extras = FOOTER_EXTRA.map(({ href, label }) =>
+      block.replace('href="./ressourcen"', `href="${href}"`).replace(">Ressourcen<", `>${label}<`)
+    ).join("");
+    s = s.slice(0, end) + extras + s.slice(end);
+    from = end + extras.length;
+    footerCloned++;
+  }
+}
+console.log(`  footer links: cloned into ${footerCloned} footer variant(s)`);
+
 // ── links ─────────────────────────────────────────────────────────────────────
 const before = s;
 s = s
@@ -172,6 +202,16 @@ s = s
   .replace(/href="https:\/\/Youtube\.com"/gi, 'href="https://www.youtube.com/@gptmarlon" target="_blank" rel="noopener"')
   .replace(/href="https:\/\/x\.com"/gi, 'href="mailto:business@gptmarlon.com"');
 console.log(`  rewrote links (${before === s ? "none changed!" : "ok"})`);
+
+// ── Instagram reels ───────────────────────────────────────────────────────────
+// The template repeats one embed three times; point them at the real reels.
+const REELS = ["DaX1BwVKYgm", "DZNMQbnolsB", "DZshGPUo_Wf"];
+let reelIdx = 0, reelsFixed = 0;
+s = s.replace(/src="https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/embed"/g, () => {
+  const id = REELS[reelIdx % REELS.length]; reelIdx++; reelsFixed++;
+  return `src="https://www.instagram.com/reel/${id}/embed"`;
+});
+console.log(`  reels: ${reelsFixed} embeds pointed at the real posts`);
 
 // ── live follower count on the social card ────────────────────────────────────
 const statBefore = s;
@@ -252,6 +292,7 @@ ${s}
   <script src="assets/site.js"></script>
   <script src="assets/cursor.js"></script>
   <script src="assets/footer-physics.js"></script>
+  <script src="assets/reveal.js"></script>
   <script src="assets/lenis.min.js"></script>
   <script src="assets/smoothscroll.js"></script>
   <script src="assets/stats.js"></script>

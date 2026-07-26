@@ -24,6 +24,25 @@
 .cursor-ready .framer-cursor { opacity: 1; }
 .cursor-hot .framer-cursor svg { transform: rotate(13deg) scale(1.25); }
 
+/* --------------------------------------------------- text reveal ---- */
+/* Replays the design's word-by-word entrance: fade up out of a blur.
+   Words start hidden ONLY once reveal.js has claimed the block, so with JS
+   disabled the text stays readable. */
+.gm-reveal .gm-word {
+  opacity: 0; filter: blur(10px); transform: translateY(10px);
+}
+.gm-reveal.gm-in .gm-word {
+  animation: gm-word-in .55s cubic-bezier(.22,1,.36,1) forwards;
+  animation-delay: calc(var(--i, 0) * 45ms);
+}
+@keyframes gm-word-in {
+  from { opacity: 0; filter: blur(10px); transform: translateY(10px); }
+  to   { opacity: 1; filter: blur(0);    transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gm-reveal .gm-word { opacity: 1; filter: none; transform: none; }
+}
+
 /* ------------------------------------------------------- marquees ---- */
 /* The logo strip is server-rendered by Framer but only scrolls under its
    runtime, so it gets a CSS animation. */

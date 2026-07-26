@@ -90,7 +90,6 @@ const nav = (active) => {
 const footer = (p) => `  <footer>
     <div class="footer-inner">
       <a href="${p}index.html" class="nav-logo">
-        ${logoIcon(p)}
         <span class="nav-logo-text">GPT<span>★</span>Marlon</span>
       </a>
       <ul class="footer-links">
