@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Newsletter — GPT Marlon</title>
-  <meta name="description" content="Der KI-Newsletter, der wirklich Sinn ergibt. Jede Woche die wichtigsten KI-Tools, Prompts und Workflows auf Deutsch — kostenlos. Aus einer Community von 30.000+ im DACH-Raum." />
+  <title>Newsletter (bald) — GPT Marlon</title>
+  <meta name="description" content="Der GPT Marlon KI-Newsletter startet bald: jede Woche KI-Tools, Prompts und Workflows auf Deutsch. Trag dich jetzt ein und sei in der ersten Ausgabe dabei." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
   <link rel="stylesheet" href="assets/fonts.css" />
   <link rel="stylesheet" href="assets/site.css" />
@@ -13,11 +13,40 @@
     .nl-hero { text-align: center; max-width: 680px; margin: 0 auto; }
     .nl-hero .page-sub { margin-left: auto; margin-right: auto; }
     .nl-form { display: flex; gap: .6rem; max-width: 460px; margin: 1.8rem auto 0; }
-    .nl-form input { flex: 1; min-width: 0; padding: .9rem 1.1rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg2); color: var(--text); font-family: inherit; font-size: .98rem; }
-    .nl-form input:focus { outline: none; border-color: var(--yellow); box-shadow: 0 0 0 3px var(--glow); }
+    .nl-form input { flex: 1; min-width: 0; padding: .9rem 1.1rem; border-radius: var(--r-sm); border: 2px solid var(--border-strong); background: #fff; color: var(--text); font-family: inherit; font-size: .98rem; }
+    .nl-form input:focus { outline: none; box-shadow: var(--hard-shadow); }
     .nl-form .btn-primary { white-space: nowrap; }
     .nl-proof { display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap; margin-top: 2.4rem; color: var(--muted); font-size: .9rem; }
     .nl-proof b { color: var(--text); font-family: var(--font-display); }
+    /* pre-launch badge */
+    .nl-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .4rem .9rem; margin-bottom: 1.1rem;
+      background: var(--yellow); color: var(--btn-fg);
+      border: 2px solid var(--border-strong); border-radius: 999px;
+      box-shadow: var(--hard-shadow);
+      font-size: var(--fs-3xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+    }
+    .nl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--btn-fg); animation: nl-pulse 1.8s ease-in-out infinite; }
+    @keyframes nl-pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.75); } }
+    @media (prefers-reduced-motion: reduce) { .nl-dot { animation: none; } }
+
+    /* what happens between signing up and launch */
+    .nl-steps { list-style: none; max-width: 480px; margin: 2.2rem auto 0; padding: 0; text-align: left; }
+    .nl-steps li {
+      display: flex; align-items: flex-start; gap: .8rem;
+      padding: .7rem 0; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: var(--fs-sm); line-height: 1.55;
+    }
+    .nl-steps li:last-child { border-bottom: 1px solid var(--border); }
+    .nl-step-n {
+      flex: none; width: 22px; height: 22px; border-radius: 50%;
+      background: var(--lavender); color: var(--btn-fg);
+      border: 2px solid var(--border-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; margin-top: .1rem;
+    }
+
     .nl-what { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
     .nl-what .card { text-align: left; }
     @media (max-width: 640px) { .nl-what { grid-template-columns: 1fr; } }
@@ -45,26 +74,35 @@
 
   <main class="page">
     <div class="nl-hero fade-up">
-      <div class="section-label">Newsletter</div>
-      <h1 class="page-title"><span data-en="The AI breakdown that">Der KI-Newsletter, der</span> <span class="gradient-text" data-en="actually makes sense.">wirklich Sinn ergibt.</span></h1>
-      <p class="page-sub"><span data-en="Every week: the AI tools, prompts and workflows worth your time — explained in plain German, ready to use. No hype, no filler. Free.">Jede Woche: die KI-Tools, Prompts und Workflows, die deine Zeit wert sind — verständlich auf Deutsch erklärt, direkt einsetzbar. Kein Hype, kein Füllmaterial. Kostenlos.</span></p>
+      <div class="nl-badge"><span class="nl-dot"></span><span data-en="Launching soon — reserve your spot">Startet bald — sichere dir deinen Platz</span></div>
+      <h1 class="page-title"><span data-en="The AI newsletter that">Der KI-Newsletter, der</span> <span class="gradient-text" data-en="actually makes sense — coming soon.">wirklich Sinn ergibt — bald hier.</span></h1>
+      <p class="page-sub"><span data-en="I'm building it right now: every week the AI tools, prompts and workflows worth your time — explained in plain German, ready to use. No hype, no filler. Free.">Ich baue ihn gerade: jede Woche die KI-Tools, Prompts und Workflows, die deine Zeit wert sind — verständlich auf Deutsch erklärt, direkt einsetzbar. Kein Hype, kein Füllmaterial. Kostenlos.</span></p>
+      <p class="page-sub" style="font-weight:600; color:var(--text)"><span data-en="Leave your email and you'll be in the very first issue — nothing before that.">Trag dich ein und du bist in der allerersten Ausgabe dabei — vorher hörst du nichts von uns.</span></p>
       <form id="nlForm" class="nl-form">
-        <input id="nlEmail" type="email" placeholder="your@email.com" required aria-label="E-Mail" />
-        <button type="submit" class="btn-primary" id="nlSubmit"><span data-en="Subscribe free →">Kostenlos abonnieren →</span></button>
+        <input id="nlEmail" type="email" placeholder="deine@email.com" data-en-ph="your@email.com" required aria-label="E-Mail" />
+        <button type="submit" class="btn-primary" id="nlSubmit"><span data-en="Reserve my spot →">Platz sichern →</span></button>
       </form>
       <div class="form-status" id="nlStatus" style="text-align:center; margin-top:.9rem"></div>
+      <p class="form-note" style="text-align:center; margin-top:1rem"><span data-en="Free, and no spam while it's in the works — you'll hear from me when issue one goes out. Unsubscribe any time.">Kostenlos, und kein Spam bis zum Start — du hörst von mir, wenn Ausgabe eins rausgeht. Jederzeit abbestellbar.</span></p>
+
+      <!-- what happens between signing up and launch -->
+      <ol class="nl-steps">
+        <li><span class="nl-step-n">1</span><span data-en="You leave your email — takes five seconds.">Du trägst deine E-Mail ein — dauert fünf Sekunden.</span></li>
+        <li><span class="nl-step-n">2</span><span data-en="It stays quiet. No welcome series, no drip campaign.">Es bleibt still. Keine Willkommens-Serie, keine Drip-Kampagne.</span></li>
+        <li><span class="nl-step-n">3</span><span data-en="Issue one lands in your inbox — you're among the first to read it.">Ausgabe eins landet in deinem Postfach — du liest sie als eine der Ersten.</span></li>
+      </ol>
+
       <div class="nl-proof">
         <div><b data-stat="followers">30K+</b> <span data-en="in the community">in der Community</span></div>
         <div><b data-stat="views_30d">3.5M+</b> <span data-en="monthly views">Views / Monat</span></div>
         <div><b><span data-aud-fact="dach">96%</span></b> <span data-en="in the DACH region">im DACH-Raum</span></div>
       </div>
-      <p class="form-note" style="text-align:center; margin-top:1.4rem"><span data-en="Built for the 30,000+ people already following GPT Marlon. No spam — unsubscribe any time.">Gebaut für die 30.000+ Menschen, die GPT Marlon schon folgen. Kein Spam — jederzeit abbestellbar.</span></p>
     </div>
 
     <div class="page-hero fade-up" style="margin-top:3rem">
       <div class="section-label"><span data-en="Who reads along">Wer mitliest</span></div>
       <h2 class="page-title" style="font-size:1.95rem"><span data-en="A real DACH audience of">Ein echtes DACH-Publikum aus</span> <span class="gradient-text"><span data-en="professionals & early adopters.">Professionals & Early Adopters.</span></span></h2>
-      <p class="page-sub"><span data-en="These are live Instagram follower demographics — the same people the newsletter is written for.">Das ist die Live-Demografie der Instagram-Follower — genau die Menschen, für die der Newsletter geschrieben wird.</span></p>
+      <p class="page-sub"><span data-en="Live Instagram follower demographics — the same people the newsletter is being written for.">Die Live-Demografie der Instagram-Follower — genau die Menschen, für die der Newsletter gerade entsteht.</span></p>
     </div>
     <div class="aud-block fade-up">
       <div class="aud-card">
@@ -78,12 +116,12 @@
     </div>
 
     <div style="margin-top:3rem">
-      <div class="section-label"><span data-en="What you get">Was du bekommst</span></div>
+      <div class="section-label"><span data-en="What's coming">Was dich erwartet</span></div>
       <div class="nl-what">
         <div class="card fade-up">
           <span class="emoji">🧰</span>
           <h3><span data-en="Tools that matter">Tools, die zählen</span></h3>
-          <p><span data-en="The 2–3 AI tools each week actually worth trying — with the honest verdict, not a press release.">Die 2–3 KI-Tools pro Woche, die sich wirklich lohnen — mit ehrlichem Urteil, keine Pressemitteilung.</span></p>
+          <p><span data-en="Each issue: the 2–3 AI tools actually worth trying — with the honest verdict, not a press release.">Pro Ausgabe: die 2–3 KI-Tools, die sich wirklich lohnen — mit ehrlichem Urteil, keine Pressemitteilung.</span></p>
         </div>
         <div class="card fade-up">
           <span class="emoji">⌨️</span>
@@ -138,7 +176,9 @@
       btn.disabled = true; status.className = 'form-status';
       try {
         await saveLead('newsletter', email, null, 'newsletter signup');
-        status.textContent = en ? '✓ You’re in — welcome aboard.' : '✓ Du bist dabei — willkommen an Bord.';
+        status.textContent = en
+          ? '✓ Your spot is reserved — you'll get issue one first.'
+          : '✓ Dein Platz ist reserviert — du bekommst Ausgabe eins zuerst.';
         status.className = 'form-status ok';
         e.target.reset();
       } catch (err) {
