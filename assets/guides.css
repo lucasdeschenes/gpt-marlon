@@ -62,6 +62,30 @@
   font-size: var(--fs-sm); color: var(--btn-fg); line-height: 1.7; margin: 1.6rem 0;
 }
 
+/* ---------------------------------------------------- what's on the page ---- */
+/* The walkthrough now lives only in the PDF, so the page opens by saying so
+   rather than leaving the reader hunting for steps that aren't there. */
+.guide-lead {
+  margin: 2rem 0 .4rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--border-strong);
+  color: var(--text2); font-size: var(--fs-base); line-height: 1.75; max-width: 62ch;
+}
+
+/* ------------------------------------------------------- skill files ---- */
+.skill-list { display: flex; flex-direction: column; gap: .6rem; margin-top: 1.1rem; }
+.skill-file {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .9rem 1.1rem;
+  border: 2px solid var(--border-strong); border-radius: var(--r-sm);
+  background: #fff; box-shadow: var(--hard-shadow);
+  text-decoration: none; color: var(--text);
+  transition: transform .12s cubic-bezier(.22,1,.36,1), box-shadow .12s;
+}
+.skill-file:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 0 rgba(0,0,0,.95); }
+.skill-name { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: var(--fs-sm); font-weight: 600; }
+.skill-hint { font-size: var(--fs-3xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: rgba(3,3,3,.55); white-space: nowrap; }
+
 /* ------------------------------------------------------ prompt blocks ---- */
 .prompt-card {
   background: var(--ink2); border: 2px solid var(--border-strong); box-shadow: var(--hard-shadow);

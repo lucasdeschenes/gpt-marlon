@@ -10,12 +10,11 @@
     b.innerHTML =
       '<div class="modal" role="dialog" aria-modal="true">' +
         '<button class="modal-close" aria-label="Schließen">×</button>' +
-        '<div class="modal-emoji">🚀</div>' +
         '<h3>Join the community</h3>' +
-        '<p>Neue KI-Guides, Prompts und Workflows — jede Woche kostenlos ins Postfach. Kein Spam, jederzeit abmeldbar.</p>' +
+        '<p>Wir bauen die Community gerade auf. Trag deine E-Mail ein und du stehst auf der Waitlist. Sobald es losgeht, erfährst du es als Erstes.</p>' +
         '<div class="modal-row">' +
           '<input type="email" placeholder="deine@email.com" id="__commEmail" />' +
-          '<button class="btn-primary" id="__commBtn">Beitreten →</button>' +
+          '<button class="btn-primary" id="__commBtn">Auf die Waitlist</button>' +
         '</div>' +
         '<div class="modal-status" id="__commStatus"></div>' +
         '<div class="modal-fine">Mit dem Beitreten stimmst du der Speicherung deiner E-Mail gemäß Datenschutzerklärung zu.</div>' +
@@ -37,13 +36,13 @@
           body: JSON.stringify({ kind: 'community', email: email }),
         });
         if (!res.ok) throw new Error('x');
-        status.style.color = '#34d399'; status.textContent = '✓ Willkommen! Check dein Postfach.';
+        status.style.color = '#34d399'; status.textContent = 'Du stehst auf der Waitlist.';
         input.value = '';
         setTimeout(close, 1800);
       } catch (e) {
-        status.style.color = '#f87171'; status.textContent = 'Etwas ist schiefgelaufen — versuch es später.';
+        status.style.color = '#f87171'; status.textContent = 'Etwas ist schiefgelaufen, versuch es später.';
       }
-      btn.disabled = false; btn.textContent = 'Beitreten →';
+      btn.disabled = false; btn.textContent = 'Auf die Waitlist';
     });
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter') btn.click(); });
     return b;

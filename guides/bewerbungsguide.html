@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wie du Claude nutzt, um deinen nächsten Job zu landen — GPT Marlon Guides</title>
-  <meta name="description" content="Die meisten Lebensläufe werden von einem ATS aussortiert, bevor ein Mensch sie liest. Dieser Guide zeigt einen 3-Schritt-Kern (Lebenslauf-Check, Erfahrungs-Rewrite nach der Google-XYZ-Formel, ATS- und Recruiter-Test) plus sechs Bonus-Prompts für Anschreiben, Interview-Vorbereitung, Gehaltsverhandlung, LinkedIn und Follow-ups. Für automatisiertes Bewerben nutzt Claude Cowork und die Claude-in-Chrome-Erweiterung – immer mit Freigabe vor dem Absenden." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <meta name="description" content="Die meisten Lebensläufe werden von einem ATS aussortiert, bevor ein Mensch sie liest. Dieser Guide zeigt einen 3-Schritt-Kern (Lebenslauf-Check, Erfahrungs-Rewrite nach der Google-XYZ-Formel, ATS- und Recruiter-Test) plus sechs Bonus-Prompts für Anschreiben, Interview-Vorbereitung, Gehaltsverhandlung, LinkedIn und Follow-ups. Für automatisiertes Bewerben nutzt Claude Cowork und die Claude-in-Chrome-Erweiterung: immer mit Freigabe vor dem Absenden." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -35,7 +35,7 @@
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Karriere</span></div>
     <div class="page-hero">
       <h1 class="page-title">Wie du Claude nutzt, um deinen nächsten Job zu landen</h1>
-      <p class="page-sub">Die meisten Lebensläufe werden von einem ATS aussortiert, bevor ein Mensch sie liest. Dieser Guide zeigt einen 3-Schritt-Kern (Lebenslauf-Check, Erfahrungs-Rewrite nach der Google-XYZ-Formel, ATS- und Recruiter-Test) plus sechs Bonus-Prompts für Anschreiben, Interview-Vorbereitung, Gehaltsverhandlung, LinkedIn und Follow-ups. Für automatisiertes Bewerben nutzt Claude Cowork und die Claude-in-Chrome-Erweiterung – immer mit Freigabe vor dem Absenden.</p>
+      <p class="page-sub">Die meisten Lebensläufe werden von einem ATS aussortiert, bevor ein Mensch sie liest. Dieser Guide zeigt einen 3-Schritt-Kern (Lebenslauf-Check, Erfahrungs-Rewrite nach der Google-XYZ-Formel, ATS- und Recruiter-Test) plus sechs Bonus-Prompts für Anschreiben, Interview-Vorbereitung, Gehaltsverhandlung, LinkedIn und Follow-ups. Für automatisiertes Bewerben nutzt Claude Cowork und die Claude-in-Chrome-Erweiterung: immer mit Freigabe vor dem Absenden.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Karriere</span>
@@ -43,113 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/bewerbungsguide.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/bewerbungsguide.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ „Auto-Bewerben" läuft über Claude Cowork + die Claude-in-Chrome-Erweiterung und ist entwurfsbasiert: Claude bereitet jede Bewerbung vor, absenden solltest du mit aktiver Freigabe – prüfe die Nutzungsbedingungen der Plattform (z. B. LinkedIn).</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>So funktioniert das</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Schritt 1 – Der Lebenslauf-Check</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Schritt 2 – Der Erfahrungs-Rewrite</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Schritt 3 – Der ATS- und Recruiter-Test</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Bonus – Automatisch bewerben mit Cowork</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Bonus – Anschreiben in 30 Sekunden</a></li>
-        <li><a href="#s7"><span class="toc-n">07</span>Bonus – Interview-Vorbereitungs-System</a></li>
-        <li><a href="#s8"><span class="toc-n">08</span>Bonus – Gehaltsverhandlungs-Skript</a></li>
-        <li><a href="#s9"><span class="toc-n">09</span>Bonus – LinkedIn-Profil-Optimierung</a></li>
-        <li><a href="#s10"><span class="toc-n">10</span>Bonus – Follow-up-E-Mail-Vorlagen</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>So funktioniert das</h2>
-        <p>Bewerbermanagementsysteme (<b>ATS</b> – Applicant Tracking Systems) scannen Lebensläufe zuerst nach Keywords und Formatierung, bevor sie entscheiden, ob dein Lebenslauf überhaupt an einen Menschen weitergeleitet wird. Und selbst wenn ihn jemand liest, bleiben im Schnitt nur rund <b>7 Sekunden</b>.</p>
-<p>Claude löst beide Probleme: Es analysiert deinen Lebenslauf gegen die konkrete Stellenanzeige, findet die fehlenden Keywords, formuliert deine Erfahrung nach bewährten Formeln neu und testet das Ergebnis aus Sicht des ATS und der Recruiterin/des Recruiters. Der Ablauf dauert etwa 10 Minuten.</p>
-<p><b>Das brauchst du:</b></p>
-<ol><li>Einen Claude-Account (die kostenlose Version reicht für die Lebenslauf-Prompts)</li><li>Deinen aktuellen Lebenslauf (PDF, Word oder reiner Text)</li><li>Die Stellenanzeige, auf die du dich beziehst</li><li>Für automatisches Bewerben: Claude Pro + Cowork + Claude-in-Chrome-Erweiterung</li></ol>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Schritt 1 – Der Lebenslauf-Check</h2>
-        <p>Lade zuerst deinen Lebenslauf und die Stellenanzeige bei Claude hoch. <b>Prompt 1</b> lässt Claude wie eine leitende Recruiterin bei genau diesem Unternehmen denken und gibt dir eine ehrliche Einschätzung, bevor du etwas umschreibst. Du bekommst einen Match-Score (0–100), die Top-5-fehlenden Keywords, 3 Warnsignale, starke/schwache Abschnitte und einen Vergleich zu starken Kandidaten.</p>
-<p><b>Tipp:</b> Überspring diesen Schritt nicht und schreib nicht sofort los. Der Check zeigt dir genau, was sich ändern muss und warum. Die Lücke zu verstehen ist die halbe Arbeit.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Schritt 2 – Der Erfahrungs-Rewrite</h2>
-        <p>Bleib im selben Chat, damit Claude den Kontext aus dem Check behält. <b>Prompt 2</b> schreibt deinen Erfahrungsabschnitt mit der <b>Google-XYZ-Formel</b> neu: <i>Erreichte [X], gemessen an [Y], durch [Z].</i></p>
-<p>Die meisten Lebenslauf-Punkte beschreiben Aufgaben („Führte ein Team aus 5 Ingenieurinnen und Ingenieuren"). Die XYZ-Formel macht daraus einen Erfolg („Reduzierte die Deployment-Zeit um 40 % (gemessen an der wöchentlichen Release-Geschwindigkeit), indem das Engineering-Team in funktionsübergreifende Pods umstrukturiert wurde"). Recruiter interessiert der zweite Satz.</p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Schritt 3 – Der ATS- und Recruiter-Test</h2>
-        <p>Immer noch im selben Chat. <b>Prompt 3</b> testet deinen überarbeiteten Lebenslauf aus zwei Perspektiven: der ATS-Software, die dich aussortiert, bevor ein Mensch dich sieht, und der Recruiterin, die 200 Lebensläufe am Stück liest und nach Gründen sucht, „Nein" zu sagen.</p>
-<p><b>Tipp:</b> Bitte Claude danach, den finalen Lebenslauf als sauberes <b>Artefakt</b> auszugeben. Du kannst es als .docx-Datei herunterladen. Prüfe unbedingt die <b>[AUSFÜLLEN]</b>-Platzhalter und trage deine echten Zahlen ein, bevor du dich bewirbst.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Bonus – Automatisch bewerben mit Cowork</h2>
-        <p>Sobald dein Lebenslauf optimiert ist, wechselst du zu <b>Claude Cowork</b> und lässt Claude auf LinkedIn nach passenden Stellen suchen und individuelle Bewerbungen vorbereiten. <b>Prompt 4</b> steuert das.</p>
-<p><b>Wichtig:</b> Das erfordert Claude Pro, die Claude-Desktop-App im Cowork-Modus und die <b>Claude-in-Chrome-Erweiterung</b>. Sei in Chrome bei LinkedIn eingeloggt, bevor du startest.</p>
-<p><b>Selbst prüfen, bevor du loslegst:</b> Automatisiertes Massen-Bewerben tangiert die Nutzungsbedingungen von Plattformen wie LinkedIn. Prüfe die aktuellen Bedingungen selbst, lass die <i>Pause-vor-dem-Absenden</i>-Einstellung möglichst dauerhaft aktiv und behandle jede „automatische" Bewerbung wie einen Entwurf, den du gegenliest.</p>
-<p><b>Einfachere Alternative – Easy Apply:</b> Falls dir das Cowork-Setup zu aufwendig oder riskant ist, nutze LinkedIns „Easy Apply" (bzw. „Indeed Apply"). Das sind offizielle Plattform-Features, keine Automatisierung von außen. Lass dir von Claude im Chat weiterhin pro Job den Lebenslauf anpassen und ein kurzes Anschreiben schreiben; den letzten Klick machst du selbst.</p>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Bonus – Anschreiben in 30 Sekunden</h2>
-        <p>Die meisten Anschreiben sind generische Füllwörter. Der <b>Anschreiben-Prompt</b> erzeugt in rund 30 Sekunden ein zielgerichtetes Anschreiben, das Unternehmen, Rolle und deine Erfahrung mit deren größten Herausforderungen verknüpft. Nutze ihn im selben Chat wie den Lebenslauf-Check.</p>
-<p><b>Tipp:</b> Das Geheimnis ist der dritte Absatz. Die Lücke direkt anzusprechen zeigt Selbstreflexion und Selbstvertrauen – genau das bringt dich vom „Vielleicht"- in den „Ja"-Stapel.</p>
-      </section>
-
-      <section class="guide-section" id="s7">
-        <div class="gs-num">07</div>
-        <h2>Bonus – Interview-Vorbereitungs-System</h2>
-        <p>Der <b>Interview-Prompt</b> macht drei Dinge auf einmal: recherchiert das Unternehmen, sagt die wahrscheinlichen Fragen voraus und bereitet deine Antworten mit echten Beispielen aus deinem Lebenslauf vor – inklusive Fragen, die du selbst stellen solltest, und einem abschließenden 15-minütigen Probeinterview.</p>
-<p><b>Das Probeinterview</b> am Ende ist der wertvollste Teil: Die Fragen tatsächlich zu beantworten zwingt dich, die echte Situation zu üben. Claude gibt dir nach jeder Antwort Feedback.</p>
-      </section>
-
-      <section class="guide-section" id="s8">
-        <div class="gs-num">08</div>
-        <h2>Bonus – Gehaltsverhandlungs-Skript</h2>
-        <p>Fast jedes Angebot hat Verhandlungsspielraum, und wie du fragst, zählt mehr als wonach du fragst. Der <b>Gehaltsverhandlungs-Prompt</b> baut ein datenbasiertes Skript: Marktdaten, Gegenangebot-E-Mail, Telefonat-Skript und Walk-away-Analyse.</p>
-<p><b>Tipp:</b> Nenne nie zuerst eine Zahl. Auf „Was sind deine Gehaltsvorstellungen?" antwortest du: „Ich würde gerne mehr über das gesamte Vergütungspaket erfahren, bevor wir über Zahlen sprechen. Wie sieht die budgetierte Spanne für diese Rolle aus?"</p>
-<p><b>Hinweis:</b> Gehaltsangaben aus Portalen wie Levels.fyi, Glassdoor, Kununu oder gehalt.de sind Richtwerte auf Basis von Selbstauskünften und können abweichen. Nutze sie als Orientierung, nicht als verbindliche Zahl.</p>
-      </section>
-
-      <section class="guide-section" id="s9">
-        <div class="gs-num">09</div>
-        <h2>Bonus – LinkedIn-Profil-Optimierung</h2>
-        <p>Dein Lebenslauf bringt dich durch die Tür, dein LinkedIn-Profil sorgt dafür, dass Recruiter zu dir kommen. Der <b>LinkedIn-Prompt</b> schreibt Headline, Über-mich-Abschnitt, Erfahrungs-Punkte, Skills und Featured-Bereich so um, dass du in Recruiter-Suchen auftauchst.</p>
-<p><b>Tipp:</b> Die Headline ist das wichtigste Feld. „Marketing Manager bei Muster GmbH" ist unsichtbar. „B2B-SaaS-Growth-Marketing | Pipeline von 2 Mio. € auf 14 Mio. € skaliert | Demand Gen + ABM" wird geklickt.</p>
-      </section>
-
-      <section class="guide-section" id="s10">
-        <div class="gs-num">10</div>
-        <h2>Bonus – Follow-up-E-Mail-Vorlagen</h2>
-        <p>Das Nachfassen ist der Punkt, an dem die meisten den Ball fallen lassen. Der <b>Follow-up-Prompt</b> erzeugt drei E-Mails: nach der Bewerbung (Tag 5), nach dem Interview (innerhalb 24 Stunden) und die Nachfrage (7 Tage nach dem Interview, falls keine Rückmeldung kam).</p>
-<p><b>Der komplette Workflow:</b> 1. Lebenslauf checken → 2. Erfahrung neu schreiben → 3. Stresstest → 4. LinkedIn optimieren → 5. Anschreiben erzeugen → 6. Auf Jobs bewerben → 7. Interviews vorbereiten → 8. Angebot verhandeln → 9. Nachfassen. Wiederhole die Schritte 1–3 für jeden Job, denn dieselben Keywords funktionieren nicht für jede Rolle.</p>
-<p><b>Wichtig:</b> Prüfe und personalisiere immer, was Claude generiert. Claude liefert die Struktur – du lieferst die Substanz.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">„Auto-Bewerben" läuft über Claude Cowork + die Claude-in-Chrome-Erweiterung und ist entwurfsbasiert: Claude bereitet jede Bewerbung vor, absenden solltest du mit aktiver Freigabe, prüfe die Nutzungsbedingungen der Plattform (z. B. LinkedIn).</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 1 – Lebenslauf-Check</span>
+          <span class="prompt-label">Prompt 1: Lebenslauf-Check</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Handle als leitende Recruiterin bzw. leitender Recruiter für genau dieses Unternehmen. Analysiere meinen Lebenslauf im Vergleich zu dieser Stellenanzeige.
@@ -167,10 +74,10 @@ Sei brutal ehrlich. Mir ist es lieber, jetzt Probleme zu beheben, als später gh
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 2 – Erfahrungs-Rewrite (im selben Chat)</span>
+          <span class="prompt-label">Prompt 2: Erfahrungs-Rewrite (im selben Chat)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Schreibe meinen Erfahrungsabschnitt nach folgenden Regeln neu:
@@ -186,10 +93,10 @@ Sei brutal ehrlich. Mir ist es lieber, jetzt Probleme zu beheben, als später gh
 
       <div class="prompt-card" id="prompt-3">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 3 – ATS- und Recruiter-Scan (im selben Chat)</span>
+          <span class="prompt-label">Prompt 3: ATS- und Recruiter-Scan (im selben Chat)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Handle jetzt als zwei unterschiedliche Personen:
@@ -210,10 +117,10 @@ Gib mir die finale Version meines Lebenslaufs, nachdem alle Korrekturen angewend
 
       <div class="prompt-card" id="prompt-4">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 4 – Automatisch bewerben (in Claude Cowork)</span>
+          <span class="prompt-label">Prompt 4: Automatisch bewerben (in Claude Cowork)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Jetzt, wo mein Lebenslauf optimiert ist, geh auf LinkedIn und mach Folgendes:
@@ -239,8 +146,8 @@ Halte vor jeder Einreichung an und zeig mir zuerst die angepasste Version.</pre>
         <div class="prompt-head">
           <span class="prompt-label">Anschreiben-Prompt (im selben Chat)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Schreibe ein Anschreiben für diese Rolle. Regeln:
@@ -259,8 +166,8 @@ Es soll NICHT klingen, als hätte eine KI geschrieben.</pre>
         <div class="prompt-head">
           <span class="prompt-label">Interview-Vorbereitungs-Prompt</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich habe ein Interview für [ROLLE] bei [UNTERNEHMEN] am [DATUM]. Hier nochmal die Stellenanzeige:
@@ -292,8 +199,8 @@ Führe nach meiner Durchsicht des oben Genannten ein 15-minütiges Probeintervie
         <div class="prompt-head">
           <span class="prompt-label">Gehaltsverhandlungs-Prompt</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich habe ein Angebot für [ROLLE] bei [UNTERNEHMEN] bekommen.
@@ -338,8 +245,8 @@ Erstelle mir eine Verhandlungsstrategie:
         <div class="prompt-head">
           <span class="prompt-label">LinkedIn-Optimierungs-Prompt</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich möchte mein LinkedIn-Profil so optimieren, dass Recruiter mich finden und sich melden. Hier ist mein aktuelles Profil: [einfügen oder Screenshot hochladen]
@@ -380,8 +287,8 @@ Schreibe diese Abschnitte neu:
         <div class="prompt-head">
           <span class="prompt-label">Follow-up-E-Mail-Prompt</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich brauche Follow-Up-E-Mails für meine Bewerbung bei [UNTERNEHMEN] für die Position [ROLLE]. Schreibe drei:
@@ -409,18 +316,18 @@ Schreibe diese Abschnitte neu:
 Ton für alle: selbstbewusst, nicht verzweifelt. Konkret, nicht generisch. Menschlich, nicht wie eine Vorlage.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/bewerbungsguide.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/bewerbungsguide.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

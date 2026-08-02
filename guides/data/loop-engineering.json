@@ -1,6 +1,6 @@
 {
   "file": "Loop_Engineering_GPTMarlon.pdf",
-  "title": "Loop Engineering — hör auf zu prompten, bau Schleifen",
+  "title": "Loop Engineering: hör auf zu prompten, bau Schleifen",
   "slug": "loop-engineering",
   "category": "Produktivität",
   "tool": "Claude",
@@ -33,15 +33,15 @@
   ],
   "prompts": [
     {
-      "label": "/goal — Blogpost-Meta (Beispiel)",
+      "label": "/goal: Blogpost-Meta (Beispiel)",
       "text": "/goal Jeder Blogpost im Ordner /posts hat eine Meta-Beschreibung unter 160 Zeichen und einen Titel unter 60 Zeichen. Gib nach jeder Datei die Zeichenzahl aus, damit ich es bestätigen kann, und fass den Fließtext nicht an. Stopp, wenn jede Datei besteht, oder nach 25 Dateien."
     },
     {
-      "label": "/loop — Website-Erreichbarkeit prüfen",
+      "label": "/loop: Website-Erreichbarkeit prüfen",
       "text": "/loop 30m Prüfe, ob meine Live-Website wieder erreichbar ist, indem du die Startseite lädst. Sobald sie eine normale Seite zurückgibt, sag mir Bescheid und hör auf zu prüfen."
     },
     {
-      "label": "/goal — selbstprüfendes Recherche-Briefing",
+      "label": "/goal: selbstprüfendes Recherche-Briefing",
       "text": "/goal Schreib ein einseitiges Briefing zu [dein Thema], bei dem jede Aussage mindestens drei Quellen hat und jeder Link wirklich eine Seite öffnet, die die Aussage stützt. Öffne jeden Link zur Bestätigung, bevor du es als fertig bezeichnest. Ersetze jede Quelle, die tot ist oder die Aussage nicht belegt. Stopp erst, wenn jede Quelle auf der Seite besteht."
     },
     {
@@ -49,6 +49,6 @@
       "text": "Du läufst als Loop, nicht als einzelne Antwort. Hier ist dein Auftrag (Charter):\n\nZIEL\n[Beschreibe den fertigen Zustand in ein, zwei Sätzen. Beispiel: \"Jede Produktseite in /seiten hat aktualisierte Preise und besteht den Link-Check.\" Sei konkret, wie FERTIG aussieht.]\n\nWO DIE ARBEIT LIEGT\n[Sag, wo die Arbeit zu finden ist. Beispiele: \"Durchsuche /seiten nach Dateien mit alten Preisen.\" / \"Lies TODO.md und behandle jeden nicht abgehakten Punkt als Aufgabe.\" / \"Prüfe mein verbundenes Aufgaben-Board auf Einträge mit dem Label 'ki'.\"]\n\nWIE DU ARBEITEST\n- Bearbeite IMMER nur einen Punkt. Schließe ihn vollständig ab, bevor du den nächsten beginnst.\n- Halte dich an die Konventionen in vorhandenen Dateien. Übernimm den Stil, erfinde keine neuen Muster.\n- Verlangt ein Punkt eine Entscheidung, die nur ich treffen kann (Geld ausgeben, etwas löschen, jemanden kontaktieren): STOPP bei diesem Punkt, schreib ihn auf eine Liste \"braucht meine Entscheidung\" und geh zum nächsten Punkt.\n\nWIE DU DICH SELBST PRÜFST\nPrüfe jeden Punkt, bevor du ihn als erledigt markierst:\n[Wähle, was passt: \"führe die Tests aus\" / \"lies die Datei erneut und bestätige, dass sie das Ziel erfüllt\" / \"mach einen Screenshot und bestätige, dass es richtig aussieht.\" Prüfen heißt Beweis, nicht Zuversicht.]\nSchlägt die Prüfung fehl, behebe es und prüfe erneut. Maximal 3 Versuche pro Punkt, danach als blockiert protokollieren und weiter.\n\nWIE DU DICH ERINNERST\nFühre eine Datei namens LOOP-STATE.md. Aktualisiere sie nach jedem Punkt mit: Name des Punkts, Status (erledigt / blockiert / braucht mich), was du geändert hast und alles, was der nächste Lauf wissen muss. Lies diese Datei ZUERST zu Beginn jedes Laufs, damit du nie erledigte Arbeit wiederholst.\n\nWANN DU STOPPST\nStopp, wenn: (a) jeder Punkt erledigt oder als blockiert protokolliert ist, oder (b) du in diesem Lauf [N] Punkte abgeschlossen hast. Gib mir dann einen kurzen Bericht: was erledigt wurde, was blockiert ist, was meine Entscheidung braucht.\n\nBeginne damit, LOOP-STATE.md zu lesen, falls vorhanden, dann finde die Arbeit."
     }
   ],
-  "note": "/loop, Sub-Agenten (.claude/agents/), Skills (.claude/skills/), Worktrees und MCP-Connectors sind echte Claude-Code-Funktionen; die genauen Namen der Loop-/Ziel-Befehle können je nach Version abweichen — prüfe mit /help, welche Befehle deine Claude-Code-Version kennt.",
+  "note": "/loop, Sub-Agenten (.claude/agents/), Skills (.claude/skills/), Worktrees und MCP-Connectors sind echte Claude-Code-Funktionen; die genauen Namen der Loop-/Ziel-Befehle können je nach Version abweichen: prüfe mit /help, welche Befehle deine Claude-Code-Version kennt.",
   "date": "2026-06-22"
 }

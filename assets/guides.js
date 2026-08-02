@@ -1,4 +1,4 @@
-// Guides — copy-to-clipboard + open-in-Claude/ChatGPT for prompt cards.
+// Guides: copy-to-clipboard + open-in-Claude/ChatGPT for prompt cards.
 function _promptText(btn) {
   const card = btn.closest('.prompt-card');
   const pre = card && card.querySelector('.prompt-text');
@@ -20,7 +20,7 @@ async function copyPrompt(btn) {
     ta.value = text; document.body.appendChild(ta); ta.select();
     document.execCommand('copy'); ta.remove();
   }
-  _toast('✓ Prompt kopiert');
+  _toast('Prompt kopiert');
 }
 function openIn(btn, target) {
   const text = _promptText(btn);

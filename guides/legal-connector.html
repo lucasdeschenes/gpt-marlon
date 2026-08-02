@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anwalts-Arbeit mit Claude: das Legal-Plugin — GPT Marlon Guides</title>
-  <meta name="description" content="Das offizielle Legal-Plugin von Anthropic (technisch ein Bündel aus Skills, Slash-Befehlen und Connectors) läuft in Claude Cowork und prüft Verträge, NDAs und Compliance-Fragen nach einem Ampel-System. Der Guide zeigt Installation, das entscheidende Playbook (legal.local.md) sowie über 25 fertige Prompts – inklusive DACH-Anpassung und DSGVO-Fokus. Es ist ein Beschleuniger für die Vorarbeit und ersetzt keine anwaltliche Beratung." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <meta name="description" content="Das offizielle Legal-Plugin von Anthropic (technisch ein Bündel aus Skills, Slash-Befehlen und Connectors) läuft in Claude Cowork und prüft Verträge, NDAs und Compliance-Fragen nach einem Ampel-System. Der Guide zeigt Installation, das entscheidende Playbook (legal.local.md) sowie über 25 fertige Prompts: inklusive DACH-Anpassung und DSGVO-Fokus. Es ist ein Beschleuniger für die Vorarbeit und ersetzt keine anwaltliche Beratung." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -35,7 +35,7 @@
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Produktivität</span></div>
     <div class="page-hero">
       <h1 class="page-title">Anwalts-Arbeit mit Claude: das Legal-Plugin</h1>
-      <p class="page-sub">Das offizielle Legal-Plugin von Anthropic (technisch ein Bündel aus Skills, Slash-Befehlen und Connectors) läuft in Claude Cowork und prüft Verträge, NDAs und Compliance-Fragen nach einem Ampel-System. Der Guide zeigt Installation, das entscheidende Playbook (legal.local.md) sowie über 25 fertige Prompts – inklusive DACH-Anpassung und DSGVO-Fokus. Es ist ein Beschleuniger für die Vorarbeit und ersetzt keine anwaltliche Beratung.</p>
+      <p class="page-sub">Das offizielle Legal-Plugin von Anthropic (technisch ein Bündel aus Skills, Slash-Befehlen und Connectors) läuft in Claude Cowork und prüft Verträge, NDAs und Compliance-Fragen nach einem Ampel-System. Der Guide zeigt Installation, das entscheidende Playbook (legal.local.md) sowie über 25 fertige Prompts: inklusive DACH-Anpassung und DSGVO-Fokus. Es ist ein Beschleuniger für die Vorarbeit und ersetzt keine anwaltliche Beratung.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Produktivität</span>
@@ -43,120 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/legal-connector.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/legal-connector.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ Das „Plugin" ist ein Bündel aus Claude-Skills und Connectors; seine Analysen sind KI-generiert und ersetzen keine Prüfung durch eine Anwältin/einen Anwalt oder Steuerberater – lass rechtlich Wesentliches fachlich freigeben.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Teil 1 – Das Plugin in 60 Sekunden installieren</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Alle Funktionen auf einen Blick</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Teil 2 – Das Playbook (der Schritt, den fast alle überspringen)</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Teil 3 – Vertragsprüfung mit /review-contract</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Teil 4 – NDA-Triage mit /triage-nda</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Teil 5 – Compliance-Prüfung (einfach fragen)</a></li>
-        <li><a href="#s7"><span class="toc-n">07</span>Teil 6 – Risiko-Bewertung mit System</a></li>
-        <li><a href="#s8"><span class="toc-n">08</span>Teil 7 – Vendor-Check, Briefings &amp; Antwort-Vorlagen</a></li>
-        <li><a href="#s9"><span class="toc-n">09</span>Teil 8 – Alltags-Prompts (ganz ohne Plugin)</a></li>
-        <li><a href="#s10"><span class="toc-n">10</span>Die wichtigste Regel zum Schluss</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Teil 1 – Das Plugin in 60 Sekunden installieren</h2>
-        <p>Das Legal-Plugin kommt direkt von Anthropic (offiziell verifiziert, quelloffen, kostenlos) und läuft in <b>Claude Cowork</b> – dem Agenten-Modus der Desktop-App, in dem Claude direkt mit deinen Dateien arbeitet.</p>
-<p><b>Voraussetzungen:</b> bezahlter Claude-Plan (ab Pro, ca. 20 €/Monat) · Claude-Desktop-App (Windows/macOS) · das Plugin selbst ist kostenlos.</p>
-<p><b>Installation – Klick für Klick:</b></p>
-<ol><li>Claude-Desktop-App öffnen und in den <b>Cowork</b>-Tab wechseln.</li><li>In der Seitenleiste auf <b>Customize</b> klicken.</li><li>Den Reiter <b>Plugins</b> öffnen und auf <b>Browse plugins</b> klicken.</li><li>Nach <b>Legal</b> suchen – das Plugin mit dem Vermerk „Anthropic" wählen.</li><li>Auf <b>Install</b> klicken. Fertig.</li></ol>
-<p><b>So rufst du die Funktionen auf:</b> 5 Slash-Befehle: <code>/review-contract</code>, <code>/triage-nda</code>, <code>/vendor-check</code>, <code>/brief</code>, <code>/respond</code>. Weitere Fähigkeiten (Compliance-Prüfung, Risiko-Bewertung, Meeting-Briefings) haben keinen eigenen Befehl – die nutzt Claude automatisch, sobald du in normaler Sprache danach fragst.</p>
-<p>&gt; Terminologie: Ein „Plugin" ist bei Claude ein fertiges Erweiterungspaket – gebündelte Arbeitsanleitungen (<b>Skills</b>), Befehle und Tool-Anbindungen (<b>Connectors</b>).</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Alle Funktionen auf einen Blick</h2>
-        <table><thead><tr><th>Funktion</th><th>Aufruf</th><th>Was sie macht</th></tr></thead><tbody><tr><td>Vertragsprüfung</td><td><code>/review-contract</code></td><td>Klausel für Klausel prüfen, Ampel-Bewertung, fertige Gegenformulierungen</td></tr><tr><td>NDA-Triage</td><td><code>/triage-nda</code></td><td>Geheimhaltungsvertrag einstufen: unterschreiben / prüfen / ablehnen</td></tr><tr><td>Vendor-Check</td><td><code>/vendor-check</code></td><td>Alle Verträge &amp; Fristen zu einem Lieferanten aus deinen Systemen ziehen</td></tr><tr><td>Briefings</td><td><code>/brief</code></td><td>Tages-Briefing, Rechtsrecherche oder Krisen-Briefing</td></tr><tr><td>Antwort-Vorlagen</td><td><code>/respond</code></td><td>Antworten auf DSGVO-Anfragen, NDA-Anfragen &amp; Co. aus Vorlagen</td></tr><tr><td>Compliance-Prüfung</td><td>normale Anfrage</td><td>Vorhaben gegen DSGVO, CCPA &amp; Co. prüfen</td></tr><tr><td>Risiko-Bewertung</td><td>normale Anfrage</td><td>Risiken scoren (1–25) mit Schwere-mal-Wahrscheinlichkeit-Matrix</td></tr><tr><td>Meeting-Briefing</td><td>normale Anfrage</td><td>Gesprächsvorbereitung mit Kontext aus deinen verbundenen Tools</td></tr></tbody></table>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Teil 2 – Das Playbook (der Schritt, den fast alle überspringen)</h2>
-        <p>Das Plugin prüft Verträge nicht gegen einen allgemeinen Maßstab, sondern gegen dein <b>Playbook</b>: eine einfache Textdatei mit deinen Standard-Positionen – welche Haftungsgrenzen du akzeptierst, welche Kündigungsfristen, wann eskaliert wird.</p>
-<p><b>Warum das Pflicht ist:</b> Die mitgelieferten Standard-Positionen basieren auf US-Recht (Delaware, New York, Kalifornien). Anthropic weist ausdrücklich darauf hin: Wer in der EU arbeitet, muss das Playbook an die eigene Rechtsordnung anpassen – sonst bewertet Claude nach amerikanischen Maßstäben, z. B. ohne DSGVO-Anforderungen und deutsche AGB-Besonderheiten.</p>
-<p><b>So richtest du es ein:</b></p>
-<ol><li>Erstelle eine Textdatei <code>legal.local.md</code>.</li><li>Speichere sie in einem Ordner, den du in Cowork über die Ordner-Auswahl freigegeben hast – das Plugin findet sie dort automatisch.</li><li>Trage deine Standard-Positionen ein (Haftungsbegrenzung, Datenschutz/AVV, Laufzeit &amp; Kündigung, Gerichtsstand &amp; Recht). Du kannst Claude die Datei auch erstellen lassen: „Erstelle daraus meine legal.local.md".</li></ol>
-<p><b>Selbst prüfen:</b> Lade einen alten, bereits geprüften Vertrag hoch und starte <code>/review-contract</code>. Bewertet Claude die Punkte so, wie dein Anwalt es damals tat? Wenn nicht: Playbook nachschärfen.</p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Teil 3 – Vertragsprüfung mit /review-contract</h2>
-        <p>Lade einen Vertrag, Mietvertrag oder AGB hoch – Claude prüft Klausel für Klausel gegen dein Playbook und versieht jede Abweichung mit konkreten Gegenformulierungen (Redlines).</p>
-<table><thead><tr><th>Stufe</th><th>Bedeutung</th><th>Was Claude liefert</th></tr></thead><tbody><tr><td><b>GRÜN</b></td><td>Entspricht deiner Standard-Position</td><td>Keine Verhandlung nötig</td></tr><tr><td><b>GELB</b></td><td>Außerhalb Standard, aber verhandelbar</td><td>Gegenformulierung, Rückfallposition, Business-Impact</td></tr><tr><td><b>ROT</b></td><td>Wesentliches Risiko</td><td>Konkretes Risiko, Begründung, Empfehlung: Fachanwalt einschalten</td></tr></tbody></table>
-<p>Fertige Prompts findest du im Prompt-Bereich für Lieferantenverträge, SaaS-AGB, Gewerbemietverträge, Arbeitsverträge, Freelancer- und Gesellschafterverträge.</p>
-<p><b>Tipp:</b> Lade die Original-Datei hoch (PDF/Word) statt Text zu kopieren – so bleiben Formatierung und Klausel-Nummerierung erhalten und Claude kann präzise auf „§ 7 Abs. 2" verweisen.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Teil 4 – NDA-Triage mit /triage-nda</h2>
-        <p>Claude stuft jedes NDA in Minuten ein: GRÜN (unterschreiben), GELB (gezielte Punkte prüfen lassen) oder ROT (nicht unterschreiben, Anwalt einschalten).</p>
-<p><b>Was Claude in jedem NDA screent:</b> Struktur (gegenseitig vs. einseitig) · zu breite Definition von „vertraulich" · Standard-Ausnahmen (öffentlich bekannt, vorher bekannt, unabhängig entwickelt, von Dritten erhalten, gesetzliche Pflicht) · Laufzeit und Nachwirkung (unbefristet = Warnsignal) · Rückgabe-/Löschpflichten · Rechtsfolgen · versteckte Klauseln (Abwerbeverbote, Wettbewerbsverbote, Exklusivität, Übertragung geistigen Eigentums) · Gerichtsstand.</p>
-<p>Prompts: Schnell-Check, NDA vom Wettbewerber und Stapel-Triage.</p>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Teil 5 – Compliance-Prüfung (einfach fragen)</h2>
-        <p>Beschreibe, was du vorhast, und Claude gleicht es mit DSGVO, CCPA und weiteren Datenschutz-Regelwerken ab: welche Gesetze greifen, wo Risiken liegen, welche Freigaben nötig sind und was du vor dem Start ändern solltest. Kein eigener Slash-Befehl – die Compliance-Fähigkeit springt automatisch an.</p>
-<p>Fertige Prompts decken ab: neues Produkt-Feature (Biometrie), Marketing-Kampagne, E-Mail-Marketing (DSGVO/UWG/ePrivacy), KI-Feature (DSGVO + EU AI Act), Datentransfer in die USA, Mitarbeiter-Monitoring (inkl. Betriebsrat) und Kinder-/Jugenddaten.</p>
-      </section>
-
-      <section class="guide-section" id="s7">
-        <div class="gs-num">07</div>
-        <h2>Teil 6 – Risiko-Bewertung mit System</h2>
-        <p>Lade ein Dokument hoch und bitte um eine Risiko-Bewertung: Jedes Risiko wird nach Schwere × Eintrittswahrscheinlichkeit mit 1–25 Punkten gescort.</p>
-<table><thead><tr><th>Risiko-Stufe</th><th>Score</th><th>Empfohlene Aktion</th></tr></thead><tbody><tr><td>GRÜN (niedrig)</td><td>1–4</td><td>Akzeptieren, dokumentieren, gelegentlich prüfen</td></tr><tr><td>GELB (mittel)</td><td>5–9</td><td>Entschärfen, monatlich beobachten, Verantwortlichen benennen</td></tr><tr><td>ORANGE (hoch)</td><td>10–15</td><td>An erfahrenen Juristen eskalieren, wöchentlich prüfen</td></tr><tr><td>ROT (kritisch)</td><td>16–25</td><td>Sofort eskalieren, externe Kanzlei einschalten</td></tr></tbody></table>
-<p>Prompts: Lieferantenvertrag bewerten, Markteintritt USA, Open-Source-Lizenzrisiko (AGPL) und Scheinselbstständigkeit.</p>
-      </section>
-
-      <section class="guide-section" id="s8">
-        <div class="gs-num">08</div>
-        <h2>Teil 7 – Vendor-Check, Briefings &amp; Antwort-Vorlagen</h2>
-        <p><b><code>/vendor-check</code></b> durchsucht deine verbundenen Systeme (Slack, Microsoft 365, Box, Jira/Confluence) nach allen Verträgen zu einem Lieferanten: was existiert (NDA, Rahmenvertrag, AVV), was fehlt, was läuft aus. <b>Voraussetzung:</b> angebundene <b>Connectoren</b> (in den Claude-Einstellungen unter <i>Connectors</i>). Ohne verbundene Systeme sagt Claude ehrlich, was es nicht prüfen konnte.</p>
-<p><b><code>/brief</code></b> liefert drei Modi: <code>daily</code> (Morgen-Briefing), <code>topic:</code> (Themen-Recherche) und <code>incident</code> (Vorfall/Datenpanne, Abmahnung).</p>
-<p><b><code>/respond</code></b> erzeugt Antworten auf wiederkehrende Anfragen: DSGVO-Auskunft (Art. 15), DSGVO-Löschung (Art. 17) mit Aufbewahrungskonflikt, NDA-Anfragen. <b>Eingebaute Notbremse:</b> Bei Anfragen von Behörden, drohenden Rechtsstreitigkeiten oder strafrechtlichen Dimensionen stoppt Claude die Vorlagen-Antwort und markiert den Fall für menschliche juristische Prüfung.</p>
-<p><b>Meeting-Briefings</b> ziehen Kontext aus Kalender, E-Mail und Dokumenten und bauen ein komplettes Briefing mit Gesprächspunkten und Aufgaben-Tracking.</p>
-      </section>
-
-      <section class="guide-section" id="s9">
-        <div class="gs-num">09</div>
-        <h2>Teil 8 – Alltags-Prompts (ganz ohne Plugin)</h2>
-        <p>Für viele Rechtsfragen brauchst du das Plugin gar nicht. Diese Prompts funktionieren in jedem Claude-Chat: jedes Dokument verständlich erklären, zwei Vertragsversionen vergleichen, eine Klausel in Klartext übersetzen, einen besseren Deal verhandeln, ein Kündigungsschreiben aufsetzen und auf eine Forderung reagieren.</p>
-<p><b>Selbst prüfen:</b> KI ist dein Erstgutachter, nicht deine letzte Instanz. Bei allem, was Geld oder Rechtsfolgen hat, die Kernaussagen selbst im Dokument nachlesen – und bei hohem Einsatz (Kündigung, Klage, große Summen) vor dem Absenden fachlich prüfen lassen.</p>
-      </section>
-
-      <section class="guide-section" id="s10">
-        <div class="gs-num">10</div>
-        <h2>Die wichtigste Regel zum Schluss</h2>
-        <p>Der schnellste Einstieg: <b>1.</b> Installieren (Cowork → Customize → Plugins → Legal → Install). <b>2.</b> Playbook anlegen (<code>legal.local.md</code> in einen freigegebenen Ordner). <b>3.</b> Erstes Dokument testen (NDA oder Altvertrag, <code>/triage-nda</code> oder <code>/review-contract</code>).</p>
-<p>Das Plugin ist ein <b>Beschleuniger für die Vorarbeit</b>: Es triagiert, prüft gegen dein Playbook und formuliert Entwürfe. <b>Es ersetzt keine Rechtsberatung</b> – bei allem Wesentlichen gehört die finale Entscheidung in die Hände eines Anwalts. Genau dafür ist das Ampel-System gebaut: GRÜN beschleunigt Routine, ROT zeigt, wo sich der Anwalt wirklich lohnt.</p>
-<p><b>Datenschutz-Hinweis:</b> Verträge enthalten oft personenbezogene Daten und Geschäftsgeheimnisse. Prüfe vor dem Hochladen, ob du die Dokumente teilen darfst, schwärze sensible Stellen und aktiviere in den Claude-Einstellungen die passenden Datenschutz-Optionen.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">Das „Plugin" ist ein Bündel aus Claude-Skills und Connectors; seine Analysen sind KI-generiert und ersetzen keine Prüfung durch eine Anwältin/einen Anwalt oder Steuerberater: lass rechtlich Wesentliches fachlich freigeben.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">/review-contract – Lieferantenvertrag</span>
+          <span class="prompt-label">/review-contract: Lieferantenvertrag</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/review-contract [Vertrag hochladen]
@@ -165,10 +65,10 @@ Ich bin der Kunde/Käufer. Wir müssen bis Monatsende abschließen. Markiere all
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">/review-contract – SaaS-AGB / Nutzungsbedingungen</span>
+          <span class="prompt-label">/review-contract: SaaS-AGB / Nutzungsbedingungen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Prüfe diese SaaS-Nutzungsbedingungen. Ich bin der Kunde. Fokus: Dateneigentum, Kündigungsrechte, Haftungsgrenzen und versteckte automatische Verlängerungen.</pre>
@@ -176,10 +76,10 @@ Ich bin der Kunde/Käufer. Wir müssen bis Monatsende abschließen. Markiere all
 
       <div class="prompt-card" id="prompt-3">
         <div class="prompt-head">
-          <span class="prompt-label">/review-contract – Gewerbemietvertrag</span>
+          <span class="prompt-label">/review-contract: Gewerbemietvertrag</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/review-contract [Mietvertrag hochladen]
@@ -188,10 +88,10 @@ Prüfe diesen Gewerbemietvertrag. Ich bin der Mieter. Markiere alles zu vorzeiti
 
       <div class="prompt-card" id="prompt-4">
         <div class="prompt-head">
-          <span class="prompt-label">/review-contract – Arbeitsvertrag</span>
+          <span class="prompt-label">/review-contract: Arbeitsvertrag</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Prüfe diesen Arbeitsvertrag. Ich bin der Arbeitnehmer. Markiere Wettbewerbsverbote, Klauseln zur Übertragung geistigen Eigentums, Rückzahlungsklauseln und alles, was mich nach dem Ausscheiden beruflich einschränkt.</pre>
@@ -199,10 +99,10 @@ Prüfe diesen Gewerbemietvertrag. Ich bin der Mieter. Markiere alles zu vorzeiti
 
       <div class="prompt-card" id="prompt-5">
         <div class="prompt-head">
-          <span class="prompt-label">/review-contract – Freelancer-Vertrag</span>
+          <span class="prompt-label">/review-contract: Freelancer-Vertrag</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Prüfe diesen Freelancer-Vertrag. Ich bin der Auftragnehmer. Markiere alles zu Nutzungsrechten an meiner Arbeit, Zahlungszielen, Ausfallhonoraren und Schutz vor schleichender Ausweitung des Auftragsumfangs.</pre>
@@ -210,10 +110,10 @@ Prüfe diesen Gewerbemietvertrag. Ich bin der Mieter. Markiere alles zu vorzeiti
 
       <div class="prompt-card" id="prompt-6">
         <div class="prompt-head">
-          <span class="prompt-label">/review-contract – Gesellschafter-/Partnervertrag</span>
+          <span class="prompt-label">/review-contract: Gesellschafter-/Partnervertrag</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/review-contract [Vertrag hochladen]
@@ -222,10 +122,10 @@ Ich gehe eine 50/50-Partnerschaft ein. Prüfe Ausstiegsregelungen, Streitbeilegu
 
       <div class="prompt-card" id="prompt-7">
         <div class="prompt-head">
-          <span class="prompt-label">/triage-nda – Schnell-Check</span>
+          <span class="prompt-label">/triage-nda: Schnell-Check</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/triage-nda [NDA hochladen]
@@ -234,10 +134,10 @@ Prüfe dieses NDA von einem potenziellen Partner. Können wir heute unterschreib
 
       <div class="prompt-card" id="prompt-8">
         <div class="prompt-head">
-          <span class="prompt-label">/triage-nda – NDA vom Wettbewerber</span>
+          <span class="prompt-label">/triage-nda: NDA vom Wettbewerber</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/triage-nda [NDA hochladen]
@@ -246,10 +146,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-9">
         <div class="prompt-head">
-          <span class="prompt-label">/triage-nda – Stapel-Triage</span>
+          <span class="prompt-label">/triage-nda: Stapel-Triage</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich habe diese Woche 5 NDAs von verschiedenen Anbietern bekommen. [alle 5 hochladen] Triagiere jedes einzeln: Welche kann ich sofort unterschreiben, welche brauchen Prüfung, wo sollte ich zurückverhandeln?</pre>
@@ -257,10 +157,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-10">
         <div class="prompt-head">
-          <span class="prompt-label">Compliance – neues Produkt-Feature</span>
+          <span class="prompt-label">Compliance: neues Produkt-Feature</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Compliance-Check: Wir wollen biometrische Anmeldung (Face ID) in unsere Mobile-App einbauen. Unsere Nutzer sitzen in Deutschland, Österreich und der Schweiz. Welche Regeln gelten, was müssen wir vor Launch klären?</pre>
@@ -268,10 +168,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-11">
         <div class="prompt-head">
-          <span class="prompt-label">Compliance – Marketing-Kampagne</span>
+          <span class="prompt-label">Compliance: Marketing-Kampagne</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Compliance-Check: Unser Marketing will Kunden-Testimonials und Vorher-Nachher-Fotos in bezahlten Anzeigen auf Meta und Google nutzen. Einige Kunden sind aus der EU. Worauf müssen wir achten?</pre>
@@ -279,10 +179,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-12">
         <div class="prompt-head">
-          <span class="prompt-label">Compliance – E-Mail-Marketing</span>
+          <span class="prompt-label">Compliance: E-Mail-Marketing</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Compliance-Check: Wir bauen eine E-Mail-Liste über einen Lead-Magneten auf unserer Website auf und wollen dieser Liste Werbe-Mails schicken. Nutzer weltweit, Schwerpunkt DACH. Welche Regeln gelten (DSGVO, UWG, ePrivacy)?</pre>
@@ -290,10 +190,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-13">
         <div class="prompt-head">
-          <span class="prompt-label">Compliance – KI-Feature</span>
+          <span class="prompt-label">Compliance: KI-Feature</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Compliance-Check: Wir wollen ein KI-Modell auf unseren Kundensupport-Chats trainieren, um einen Chatbot zu bauen. Die Chats enthalten Namen, E-Mail-Adressen und Kaufhistorie. Was verlangen DSGVO und EU AI Act von uns?</pre>
@@ -301,10 +201,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-14">
         <div class="prompt-head">
-          <span class="prompt-label">Compliance – Datentransfer</span>
+          <span class="prompt-label">Compliance: Datentransfer</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Compliance-Check: Wir müssen EU-Kundendaten zur Verarbeitung in unser US-Rechenzentrum übertragen. Welche Transfer-Mechanismen brauchen wir dafür (Standardvertragsklauseln, Data Privacy Framework)?</pre>
@@ -312,10 +212,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-15">
         <div class="prompt-head">
-          <span class="prompt-label">Compliance – Mitarbeiter-Monitoring</span>
+          <span class="prompt-label">Compliance: Mitarbeiter-Monitoring</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Compliance-Check: Wir überlegen, Bildschirm-Monitoring für unser Remote-Team einzuführen. Mitarbeiter sitzen in Deutschland, Österreich und UK. Was ist erlaubt, was nicht, und wo muss der Betriebsrat einbezogen werden?</pre>
@@ -323,10 +223,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-16">
         <div class="prompt-head">
-          <span class="prompt-label">Compliance – Kinder- und Jugenddaten</span>
+          <span class="prompt-label">Compliance: Kinder- und Jugenddaten</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Compliance-Check: Unsere App wird von Lehrern und Schülern (10-17 Jahre) genutzt. Wir erfassen Namen, E-Mail und Nutzungsdaten und wollen Analytics-Tracking ergänzen. Welche Anforderungen gelten für Minderjährige nach DSGVO (Einwilligung, Altersgrenzen)?</pre>
@@ -334,10 +234,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-17">
         <div class="prompt-head">
-          <span class="prompt-label">Risiko – Lieferantenvertrag bewerten</span>
+          <span class="prompt-label">Risiko: Lieferantenvertrag bewerten</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Bewerte die rechtlichen Risiken in diesem Liefervertrag. [Vertrag hochladen] Wir sind ein mittelständisches SaaS-Unternehmen, es geht um einen Cloud-Infrastruktur-Deal über 500.000 € pro Jahr.</pre>
@@ -345,10 +245,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-18">
         <div class="prompt-head">
-          <span class="prompt-label">Risiko – Markteintritt USA</span>
+          <span class="prompt-label">Risiko: Markteintritt USA</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Bewerte die rechtlichen Risiken einer Expansion unseres SaaS-Produkts in die USA. Wir sind bisher nur in der EU aktiv. Auf welche regulatorischen, datenschutzrechtlichen und vertraglichen Risiken müssen wir uns vorbereiten?</pre>
@@ -356,10 +256,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-19">
         <div class="prompt-head">
-          <span class="prompt-label">Risiko – Open-Source-Lizenz (AGPL)</span>
+          <span class="prompt-label">Risiko: Open-Source-Lizenz (AGPL)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Bewerte das IP-Risiko: Unser neues Feature nutzt eine Open-Source-Bibliothek unter AGPL-Lizenz. Unser Produkt ist proprietäre SaaS. Wo liegt das Problem und welche Alternativen haben wir?</pre>
@@ -367,10 +267,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-20">
         <div class="prompt-head">
-          <span class="prompt-label">Risiko – Scheinselbstständigkeit</span>
+          <span class="prompt-label">Risiko: Scheinselbstständigkeit</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Bewerte die rechtlichen Risiken: Wir beschäftigen 15 freie Mitarbeiter in Deutschland, einige seit über 3 Jahren fast ausschließlich für uns. Wie hoch ist unser Risiko bei einer Statusfeststellung (Scheinselbstständigkeit) und was würde eine Umstellung auf Festanstellung bedeuten?</pre>
@@ -378,10 +278,10 @@ Ein Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräc
 
       <div class="prompt-card" id="prompt-21">
         <div class="prompt-head">
-          <span class="prompt-label">/vendor-check – vor der Verlängerung</span>
+          <span class="prompt-label">/vendor-check: vor der Verlängerung</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/vendor-check Salesforce
@@ -390,10 +290,10 @@ Unser Salesforce-Vertrag steht zur Verlängerung an. Zeig mir alles, was wir zu 
 
       <div class="prompt-card" id="prompt-22">
         <div class="prompt-head">
-          <span class="prompt-label">/vendor-check – neuer Lieferant</span>
+          <span class="prompt-label">/vendor-check: neuer Lieferant</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/vendor-check Snowflake
@@ -402,10 +302,10 @@ Wir onboarden Snowflake als neuen Anbieter. Welche Vereinbarungen haben wir scho
 
       <div class="prompt-card" id="prompt-23">
         <div class="prompt-head">
-          <span class="prompt-label">/brief – Morgen-Briefing</span>
+          <span class="prompt-label">/brief: Morgen-Briefing</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/brief daily
@@ -414,10 +314,10 @@ Mein Morgen-Briefing: Welche Verträge warten auf Prüfung, welche Fristen nähe
 
       <div class="prompt-card" id="prompt-24">
         <div class="prompt-head">
-          <span class="prompt-label">/brief – Themen-Recherche</span>
+          <span class="prompt-label">/brief: Themen-Recherche</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/brief topic: Was sind die rechtlichen Folgen, wenn wir KI-generierte Inhalte in unserem Marketing einsetzen? Gibt es Urheberrechts- oder Haftungsfragen (DE/EU)?</pre>
@@ -425,10 +325,10 @@ Mein Morgen-Briefing: Welche Verträge warten auf Prüfung, welche Fristen nähe
 
       <div class="prompt-card" id="prompt-25">
         <div class="prompt-head">
-          <span class="prompt-label">/brief – Vorfall (Datenpanne)</span>
+          <span class="prompt-label">/brief: Vorfall (Datenpanne)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/brief incident
@@ -437,10 +337,10 @@ Wir haben eine mögliche Datenpanne entdeckt: Ein Laptop mit Kundendaten wurde g
 
       <div class="prompt-card" id="prompt-26">
         <div class="prompt-head">
-          <span class="prompt-label">/brief – Abmahnung / Unterlassung</span>
+          <span class="prompt-label">/brief: Abmahnung / Unterlassung</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/brief incident
@@ -449,10 +349,10 @@ Wir haben eine Abmahnung von einem Wettbewerber erhalten, der behauptet, unser P
 
       <div class="prompt-card" id="prompt-27">
         <div class="prompt-head">
-          <span class="prompt-label">/respond – DSGVO-Auskunftsersuchen</span>
+          <span class="prompt-label">/respond: DSGVO-Auskunftsersuchen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/respond
@@ -461,10 +361,10 @@ Wir haben ein Auskunftsersuchen nach Art. 15 DSGVO von einem Kunden aus Deutschl
 
       <div class="prompt-card" id="prompt-28">
         <div class="prompt-head">
-          <span class="prompt-label">/respond – DSGVO-Löschersuchen mit Konflikt</span>
+          <span class="prompt-label">/respond: DSGVO-Löschersuchen mit Konflikt</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/respond
@@ -473,10 +373,10 @@ Ein Ex-Kunde verlangt Löschung aller Daten nach Art. 17 DSGVO. Wir müssen sein
 
       <div class="prompt-card" id="prompt-29">
         <div class="prompt-head">
-          <span class="prompt-label">/respond – NDA-Anfrage aus dem Vertrieb</span>
+          <span class="prompt-label">/respond: NDA-Anfrage aus dem Vertrieb</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/respond
@@ -485,10 +385,10 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
 
       <div class="prompt-card" id="prompt-30">
         <div class="prompt-head">
-          <span class="prompt-label">Meeting-Briefing – Vertragsverhandlung</span>
+          <span class="prompt-label">Meeting-Briefing: Vertragsverhandlung</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Bereite ein Meeting-Briefing für meinen Verhandlungs-Call mit der Acme GmbH morgen 14 Uhr vor. Ich führe die Verhandlung. Es geht um deren Rahmenvertrag, Knackpunkt ist die Haftungsobergrenze.</pre>
@@ -496,10 +396,10 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
 
       <div class="prompt-card" id="prompt-31">
         <div class="prompt-head">
-          <span class="prompt-label">Meeting-Briefing – Geschäftsführungs-Update</span>
+          <span class="prompt-label">Meeting-Briefing: Geschäftsführungs-Update</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Bereite ein Legal-Update für die Geschäftsführungssitzung am Freitag vor: laufende Streitigkeiten, regulatorische Neuerungen, offene Freigaben und die Top-3-Rechtsrisiken, die wir gerade beobachten.</pre>
@@ -507,10 +407,10 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
 
       <div class="prompt-card" id="prompt-32">
         <div class="prompt-head">
-          <span class="prompt-label">Ohne Plugin – jedes Dokument verstehen</span>
+          <span class="prompt-label">Ohne Plugin: jedes Dokument verstehen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erkläre mir dieses Dokument, als wäre ich kein Jurist. Nenne die 5 wichtigsten Dinge, die ich vor der Unterschrift wissen muss, und markiere alles, was mir schaden könnte. [Dokument hochladen]</pre>
@@ -518,10 +418,10 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
 
       <div class="prompt-card" id="prompt-33">
         <div class="prompt-head">
-          <span class="prompt-label">Ohne Plugin – zwei Vertragsversionen vergleichen</span>
+          <span class="prompt-label">Ohne Plugin: zwei Vertragsversionen vergleichen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Vergleiche diese zwei Versionen des Vertrags. [v1 und v2 hochladen] Zeig mir jede Änderung, erkläre, was sie für mich bedeutet, und markiere alle Änderungen, die meine Position verschlechtern.</pre>
@@ -529,10 +429,10 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
 
       <div class="prompt-card" id="prompt-34">
         <div class="prompt-head">
-          <span class="prompt-label">Ohne Plugin – Klausel in Klartext</span>
+          <span class="prompt-label">Ohne Plugin: Klausel in Klartext</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Übersetze diese Vertragsklausel in verständliches Deutsch und sag mir, was sie für mich als Kunde konkret bedeutet: [Klausel einfügen]</pre>
@@ -540,10 +440,10 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
 
       <div class="prompt-card" id="prompt-35">
         <div class="prompt-head">
-          <span class="prompt-label">Ohne Plugin – besseren Deal verhandeln</span>
+          <span class="prompt-label">Ohne Plugin: besseren Deal verhandeln</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich habe diesen Vertrag von einem Anbieter erhalten. [Vertrag hochladen] Schreib mir eine professionelle E-Mail-Antwort, die die Haftungsobergrenze, die automatische Verlängerung und die Kündigungsfrist nachverhandelt. Ton: kooperativ, nicht konfrontativ.</pre>
@@ -551,10 +451,10 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
 
       <div class="prompt-card" id="prompt-36">
         <div class="prompt-head">
-          <span class="prompt-label">Ohne Plugin – Kündigungsschreiben</span>
+          <span class="prompt-label">Ohne Plugin: Kündigungsschreiben</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Schreib ein formelles Kündigungsschreiben für meinen Vertrag bei [Firma]. Meine Kundennummer: [HIER KUNDENNUMMER EINFÜGEN]. Beziehe dich auf die Kündigungsklausel, die eine Kündigung mit [X] Tagen Frist erlaubt.</pre>
@@ -562,27 +462,27 @@ Der Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise
 
       <div class="prompt-card" id="prompt-37">
         <div class="prompt-head">
-          <span class="prompt-label">Ohne Plugin – auf Forderung reagieren</span>
+          <span class="prompt-label">Ohne Plugin: auf Forderung reagieren</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich habe dieses Schreiben von [Firma/Person] erhalten, die behauptet, ich schulde ihr Geld für [Situation]. [Schreiben hochladen] Hilf mir, eine sachliche Antwort zu entwerfen, die die Forderung bestreitet und begründet, warum ich den Betrag nicht schulde.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/legal-connector.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/legal-connector.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

@@ -46,10 +46,114 @@
 /* ------------------------------------------------------- marquees ---- */
 /* The logo strip is server-rendered by Framer but only scrolls under its
    runtime, so it gets a CSS animation. */
-.gm-marquee-track { animation: gm-marquee 34s linear infinite; }
+.gm-marquee-track { animation: gm-marquee 15s linear infinite; }
 @keyframes gm-marquee { to { transform: translateX(-50%); } }
 
 @media (prefers-reduced-motion: reduce) { .gm-marquee-track { animation: none; } }
+
+/* --------------------------------------------- section rhythm ---- */
+/* The design shipped each section with its own hand-set padding, so the
+   vertical rhythm drifted — the guides section in particular ran 80/96 top to
+   bottom on desktop and 56/80 with mismatched 24px/36px sides on phones.
+   One scale for every section instead; horizontal padding is normalised in the
+   same place so the divider lines below all start and end on the same column. */
+/* The class is doubled on purpose. Framer's own rules are `.framer-jCsHZ
+   .framer-1b7ysv4`, i.e. specificity (0,2,0); a single `.gm-sec` is (0,1,0) and
+   would lose the cascade, so the padding below would never apply. Doubling ties
+   the specificity, and this file loads after framer.css so the tie breaks here. */
+.gm-sec.gm-sec { position: relative; padding: 96px 80px; }
+
+/* the logo strip is a thin band, not a full section, so it gets its own scale */
+.gm-sec.gm-sec[data-framer-name="Section-Logo Marquee"] { padding-top: 40px; padding-bottom: 40px; }
+/* the hero sits under the nav and needs the extra head room */
+.gm-sec.gm-sec[data-framer-name="Section-Hero"] { padding-top: 120px; }
+
+@media (max-width: 1199.98px) {
+  .gm-sec.gm-sec { padding: 80px 40px; }
+  .gm-sec.gm-sec[data-framer-name="Section-Logo Marquee"] { padding-top: 32px; padding-bottom: 32px; }
+  .gm-sec.gm-sec[data-framer-name="Section-Hero"] { padding-top: 104px; }
+}
+@media (max-width: 809.98px) {
+  .gm-sec.gm-sec { padding: 64px 24px; }
+  .gm-sec.gm-sec[data-framer-name="Section-Logo Marquee"] { padding-top: 28px; padding-bottom: 28px; }
+  .gm-sec.gm-sec[data-framer-name="Section-Hero"] { padding-top: 88px; }
+}
+
+/* -------------------------------------------- guides section rhythm ---- */
+/* The guides Container is a flex column with one shared gap, so header, card
+   grid and the "Alle Guides" button all sat the same distance apart and the
+   block read as cramped. Margins on the two children open it up: air under the
+   description before the cards start, and more around the button so it isn't
+   pinned between the last card and the divider below.
+   Doubled class for the same specificity reason as .gm-sec above. */
+.framer-sdjr1f.framer-sdjr1f { margin-top: 20px; }
+.framer-7ffn9d-container.framer-7ffn9d-container { margin-top: 28px; margin-bottom: 8px; }
+
+@media (max-width: 809.98px) {
+  .framer-sdjr1f.framer-sdjr1f { margin-top: 12px; }
+  .framer-7ffn9d-container.framer-7ffn9d-container { margin-top: 20px; margin-bottom: 4px; }
+}
+
+/* ------------------------------------------------ section dividers ---- */
+/* Hairline between sections, spanning the content column rather than the full
+   viewport (learnaiwithmariah.com's treatment: 1px of the ink colour at low
+   alpha on the cream ground). Only between sections, never above the first. */
+.gm-sec + .gm-sec::before {
+  content: "";
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: min(100% - 160px, 1200px); height: 1px;
+  background: rgba(29, 29, 29, .14);
+  pointer-events: none;
+}
+@media (max-width: 1199.98px) { .gm-sec + .gm-sec::before { width: calc(100% - 80px); } }
+@media (max-width: 809.98px)  { .gm-sec + .gm-sec::before { width: calc(100% - 48px); } }
+
+/* ------------------------------------------------------ hero bits ---- */
+/* The design gave the hero a single CTA in a 32px-gap column. Two actions sit
+   on one row instead, wrapping on narrow screens. */
+.gm-hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+/* secondary action, same hard-shadow language as the design's black button */
+.gm-btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 26px; border-radius: 32px;
+  border: 3px solid var(--token-242ee8ca-21cd-480f-8ef8-a755673ece2e, #030303);
+  background: transparent; color: #030303;
+  box-shadow: 4px 4px 0 0 rgb(15, 15, 15);
+  font-family: 'Poppins', Inter, sans-serif; font-size: 16px; font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+  transition: transform .12s cubic-bezier(.22,1,.36,1), box-shadow .12s;
+}
+.gm-btn-ghost:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 0 rgb(15, 15, 15); }
+.gm-btn-ghost:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 rgb(15, 15, 15); }
+
+/* The portrait card carries the social proof, so it earns more room than the
+   design's 322px. Capped per breakpoint so it never crowds the copy column. */
+.framer-jCsHZ .framer-v52nzq-container { width: min(400px, 100%); }
+@media (max-width: 1199.98px) { .framer-jCsHZ .framer-v52nzq-container { width: min(380px, 100%); } }
+@media (max-width: 809.98px)  { .framer-jCsHZ .framer-v52nzq-container { width: min(330px, 100%); } }
+
+/* ---------------------------------------------------- story stats ---- */
+/* Two facts under the story copy. The views figure is filled live by stats.js;
+   the markup value is the fallback when Supabase can't be reached. */
+.gm-stats {
+  display: flex; flex-wrap: wrap; gap: 40px;
+  margin: 8px 0 0; padding: 24px 0 0;
+  border-top: 1px solid rgba(29, 29, 29, .14);
+  width: 100%;
+}
+.gm-stat dt {
+  font-family: Inter, sans-serif; font-size: 13px; font-weight: 500;
+  letter-spacing: .02em; color: rgba(3, 3, 3, .55); margin: 0 0 6px;
+}
+.gm-stat dd {
+  font-family: 'Poppins', Inter, sans-serif; font-size: 28px; font-weight: 700;
+  line-height: 1; color: #030303; margin: 0;
+}
+@media (max-width: 809.98px) {
+  .gm-stats { gap: 28px; }
+  .gm-stat dd { font-size: 24px; }
+}
 
 /* --------------------------------------------------- DE/EN toggle ---- */
 /* Kept for any page that renders the toggle outside the nav. */

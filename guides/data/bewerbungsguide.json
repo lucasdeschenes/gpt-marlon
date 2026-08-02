@@ -4,7 +4,7 @@
   "slug": "bewerbungsguide",
   "category": "Karriere",
   "tool": "Claude",
-  "summary": "Die meisten Lebensläufe werden von einem ATS aussortiert, bevor ein Mensch sie liest. Dieser Guide zeigt einen 3-Schritt-Kern (Lebenslauf-Check, Erfahrungs-Rewrite nach der Google-XYZ-Formel, ATS- und Recruiter-Test) plus sechs Bonus-Prompts für Anschreiben, Interview-Vorbereitung, Gehaltsverhandlung, LinkedIn und Follow-ups. Für automatisiertes Bewerben nutzt Claude Cowork und die Claude-in-Chrome-Erweiterung – immer mit Freigabe vor dem Absenden.",
+  "summary": "Die meisten Lebensläufe werden von einem ATS aussortiert, bevor ein Mensch sie liest. Dieser Guide zeigt einen 3-Schritt-Kern (Lebenslauf-Check, Erfahrungs-Rewrite nach der Google-XYZ-Formel, ATS- und Recruiter-Test) plus sechs Bonus-Prompts für Anschreiben, Interview-Vorbereitung, Gehaltsverhandlung, LinkedIn und Follow-ups. Für automatisiertes Bewerben nutzt Claude Cowork und die Claude-in-Chrome-Erweiterung: immer mit Freigabe vor dem Absenden.",
   "sections": [
     {
       "heading": "So funktioniert das",
@@ -49,19 +49,19 @@
   ],
   "prompts": [
     {
-      "label": "Prompt 1 – Lebenslauf-Check",
+      "label": "Prompt 1: Lebenslauf-Check",
       "text": "Handle als leitende Recruiterin bzw. leitender Recruiter für genau dieses Unternehmen. Analysiere meinen Lebenslauf im Vergleich zu dieser Stellenanzeige.\n\nGib mir:\n1. Einen Match-Score von 0 bis 100\n2. Die Top 5 fehlenden Keywords, nach denen das ATS scannen wird\n3. Die 3 Warnsignale, die ein Recruiter in unter 10 Sekunden entdecken würde\n4. Welche Abschnitte stark sind und warum\n5. Welche Abschnitte schwach sind und warum\n6. Wie mein Lebenslauf im Vergleich zu einer starken Kandidatin/einem starken Kandidaten für diese Rolle aussieht\n\nSei brutal ehrlich. Mir ist es lieber, jetzt Probleme zu beheben, als später ghostet zu werden."
     },
     {
-      "label": "Prompt 2 – Erfahrungs-Rewrite (im selben Chat)",
+      "label": "Prompt 2: Erfahrungs-Rewrite (im selben Chat)",
       "text": "Schreibe meinen Erfahrungsabschnitt nach folgenden Regeln neu:\n\n1. Baue die fehlenden Keywords natürlich ein, aber erzwinge sie NICHT. Sie sollen sich wie ein normaler Teil jedes Punkts anfühlen.\n2. Entferne oder behebe jedes Warnsignal, das du markiert hast.\n3. Nutze für jeden Punkt die Google-XYZ-Formel: 'Erreichte [X], gemessen an [Y], durch [Z]'\n4. Beginne jeden Punkt mit einem starken Verb. Nutze niemals 'Verantwortlich für' oder 'Unterstützung bei'.\n5. Ergänze wo möglich konkrete Zahlen. Wenn ich keine Zahlen angegeben habe, schlage realistische Platzhalter vor, die ich später ausfüllen kann, und markiere sie mit [AUSFÜLLEN].\n6. Halte jeden Punkt auf maximal 1-2 Zeilen. Recruiter überfliegen Texte. Dichte Absätze werden übersprungen.\n7. Ordne die Punkte nach Wirkung, nicht nach Chronologie. Das beeindruckendste Ergebnis kommt zuerst."
     },
     {
-      "label": "Prompt 3 – ATS- und Recruiter-Scan (im selben Chat)",
+      "label": "Prompt 3: ATS- und Recruiter-Scan (im selben Chat)",
       "text": "Handle jetzt als zwei unterschiedliche Personen:\n\nERSTENS: Handle als ATS-Filter. Scanne meinen neuen Lebenslauf und sag mir:\n- Würde er das ATS für diesen Job passieren? (Ja/Nein)\n- Welche Keywords sind jetzt vorhanden, welche fehlen noch?\n- Gibt es Formatierungsprobleme, die einen ATS-Parser verwirren würden? (Tabellen, Spalten, Kopfzeilen, Sonderzeichen, Bilder)\n\nZWEITENS: Handle als Recruiterin bzw. Recruiter, die/der 200 Lebensläufe an einem Stück liest. Scanne meinen Lebenslauf und sag mir:\n- Welche Abschnitte würdest du überspringen? Warum?\n- Was lässt dich innehalten (positiv oder negativ)?\n- Käme das in den 'Ja'-, 'Vielleicht'- oder 'Nein'-Stapel für diese Rolle?\n- Schreibe alle Abschnitte neu, die übersprungen würden, sodass sie den Blick wirklich stoppen.\n\nGib mir die finale Version meines Lebenslaufs, nachdem alle Korrekturen angewendet wurden."
     },
     {
-      "label": "Prompt 4 – Automatisch bewerben (in Claude Cowork)",
+      "label": "Prompt 4: Automatisch bewerben (in Claude Cowork)",
       "text": "Jetzt, wo mein Lebenslauf optimiert ist, geh auf LinkedIn und mach Folgendes:\n\n1. Suche nach [JOBTITEL]-Stellen in [ORT], die in den letzten [7/14/30] Tagen veröffentlicht wurden.\n2. Filtere auf Jobs, bei denen mein Lebenslauf mindestens zu 70 % zu den in der Stellenanzeige genannten Skills und Erfahrungen passt.\n3. Wähle die Top 10 Jobs aus, bei denen ich die höchste Chance auf ein Interview habe.\n4. Für jeden Job:\n   - Lies die vollständige Stellenanzeige\n   - Passe meine Lebenslauf-Zusammenfassung und die wichtigsten Punkte an diese konkrete Rolle an\n   - Schreibe eine kurze Anschreiben-Notiz (max. 3 Sätze), die etwas Konkretes über das Unternehmen aufgreift\n   - Reiche die Bewerbung über LinkedIn ein\n5. Sende mir nach allen 10 Einreichungen eine Zusammenfassung:\n   - Unternehmensname + Jobtitel\n   - Match-Score\n   - Was du für jeden Job angepasst hast\n   - Bewerbungsstatus (eingereicht / Entwurf)\n\nHalte vor jeder Einreichung an und zeig mir zuerst die angepasste Version."
     },
     {
@@ -85,6 +85,6 @@
       "text": "Ich brauche Follow-Up-E-Mails für meine Bewerbung bei [UNTERNEHMEN] für die Position [ROLLE]. Schreibe drei:\n\n# E-MAIL 1: NACH DER BEWERBUNG (5 Tage danach)\n- Betreffzeile, die geöffnet wird (nicht 'Nachfrage')\n- Bezug auf etwas Konkretes zum Unternehmen\n- Ein Ergebnis aus meinem Lebenslauf erwähnen, das zur größten genannten Herausforderung passt\n- Fragen, ob noch etwas benötigt wird\n- Unter 100 Wörter gesamt\n\n# E-MAIL 2: NACH DEM INTERVIEW (innerhalb von 24 Stunden)\n- Der interviewenden Person namentlich danken\n- Auf ein konkretes besprochenes Thema Bezug nehmen\n- Eine Sache ergänzen, die ich vergessen habe zu erwähnen und die meine Bewerbung stärkt\n- Mein Interesse bekräftigen, ohne verzweifelt zu wirken\n- Unter 120 Wörter gesamt\n\n# E-MAIL 3: DIE NACHFRAGE (7 Tage nach dem Interview, falls keine Rückmeldung kam)\n- Locker, professionell, nicht aufdringlich\n- Einen Mehrwert einbauen (relevanter Artikel, Branchen-Insight oder ein kurzer Gedanke zu etwas Besprochenem)\n- Einen einfachen Ausstieg anbieten: 'Falls sich der Zeitplan verschoben hat, verstehe ich das völlig'\n- Unter 80 Wörter gesamt\n\nTon für alle: selbstbewusst, nicht verzweifelt. Konkret, nicht generisch. Menschlich, nicht wie eine Vorlage."
     }
   ],
-  "note": "„Auto-Bewerben\" läuft über Claude Cowork + die Claude-in-Chrome-Erweiterung und ist entwurfsbasiert: Claude bereitet jede Bewerbung vor, absenden solltest du mit aktiver Freigabe – prüfe die Nutzungsbedingungen der Plattform (z. B. LinkedIn).",
+  "note": "„Auto-Bewerben\" läuft über Claude Cowork + die Claude-in-Chrome-Erweiterung und ist entwurfsbasiert: Claude bereitet jede Bewerbung vor, absenden solltest du mit aktiver Freigabe, prüfe die Nutzungsbedingungen der Plattform (z. B. LinkedIn).",
   "date": "2026-07-01"
 }

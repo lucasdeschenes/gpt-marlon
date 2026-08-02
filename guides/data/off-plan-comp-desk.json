@@ -1,10 +1,10 @@
 {
   "file": "Off-Plan-Comp-Desk_GPTMarlon_final.pdf",
-  "title": "Off-Plan Comp-Desk in Claude — Neubau-Launches bewerten wie ein Profi",
+  "title": "Off-Plan Comp-Desk in Claude: Neubau-Launches bewerten wie ein Profi",
   "slug": "off-plan-comp-desk",
   "category": "Finanzen",
   "tool": "Claude",
-  "summary": "Jede Neubau-Einführung (Off-Plan) bewerten wie ein institutioneller Käufer: Modell, Memo und Live-Tracker in rund 10 Minuten. Mit dem Financial-Services-Plugin und dem comps-analysis-Skill baut Claude pro Wohnungstyp zwei Vergleichsanalysen, ein Renditemodell und ein schriftliches Urteil — als Research für deine eigene Entscheidung.",
+  "summary": "Jede Neubau-Einführung (Off-Plan) bewerten wie ein institutioneller Käufer: Modell, Memo und Live-Tracker in rund 10 Minuten. Mit dem Financial-Services-Plugin und dem comps-analysis-Skill baut Claude pro Wohnungstyp zwei Vergleichsanalysen, ein Renditemodell und ein schriftliches Urteil, als Research für deine eigene Entscheidung.",
   "sections": [
     {
       "heading": "Teil 1 — Warum das zählt und was du baust",
@@ -33,10 +33,10 @@
   ],
   "prompts": [
     {
-      "label": "Master-Prompt — Immobilien-Comps für den Analysten",
+      "label": "Master-Prompt: Immobilien-Comps für den Analysten",
       "text": "Kontext — ich teile gleich das komplette Projektpaket: Broschüre, Renders, Grundrisse, Lagepläne, Karten, Zahlungspläne, Preislisten, Einheitenlisten. Behandle jede Datei als Beleg, auch die Visuals — Grundstücksausrichtung, Pool, Ausstattung und Layout erklären oder entkräften oft den Headline-psf.\n\nDein Auftrag — agiere als institutioneller Immobilienanalyst und schreibe ein Investment-Memo für meine eigene Recherche. Entscheide: Ist diese Off-Plan-Einführung attraktiv bepreist, und welcher einzelne Wohnungstyp hat den stärksten Case?\n\nGrundregeln (durchgehend anwenden):\n- Fakten und Annahmen klar trennen.\n- Fehlt ein Input, benenne die Lücke — erfinde nie eine Zahl.\n- Behandle die Preis-Story des Entwicklers als zu prüfende Behauptung, nicht als gegeben; sag klar, ob ein Aufschlag gerechtfertigt ist.\n- Nutze die Visuals als Beleg.\n- Schreib knapp, im Investment-Komitee-Ton; fasse das Modell zusammen, rechne nicht auf der Seite nach.\n\nMethode — ein Wohnungstyp nach dem anderen. Behandle jeden Produkttyp (Apartment, Townhouse, Villa, Mansion usw.) als eigenen Fall; vermische nie die Schlüsse. Pro Typ zwei Vergleichsläufe und ein Renditemodell.\n\n    Vergleich 1 — gegen fertige Objekte (Wachstum): aktueller Wert (AED + psf), Rendite vs. fertig, Exit-Liquidität, konkurrierendes Angebot, impliziter Auf-/Abschlag zu fertig (%), bis Übergabe nötiges Wachstum (%), Urteil zum Angebotspreis.\n\n    Vergleich 2 — gegen aktuelle Einführungen (Preis): Einführungspreis (AED + psf), Position im Vergleichssatz, Wettbewerbsfähigkeit des Zahlungsplans, Standing des Entwicklers, Spec-/Amenity-Qualität, Käuferalternativen, Urteil: aggressiv, fair oder konservativ.\n\n    Renditemodell bis Übergabe: Kaufpreis + Meilenstein-Zahlungsplan, eingesetztes Eigenkapital, Transaktionskosten, Exit-Wert + Wertzuwachs, Gewinn (AED), ROI, ROE, annualisierte Rendite, Down-/Base-/Upside-Sensitivität.\n\nLiefere drei Artefakte:\n    1) Excel — Annahmen-Tab; ein Tab pro Wohnungstyp; Summary-Dashboard.\n    2) Memo — Executive Summary; Deep-Dive je Typ; Cross-Comparison-Ranking mit bestem Pick für Wachstum, Liquidität, Rendite, geringeres Risiko und gehebelte Investoren; Gesamtempfehlung.\n    3) Live-Tracker — ein Dashboard, das ich aktualisiere, sobald eine neue vergleichbare Einführung im selben Teilmarkt erscheint, mit Neubewertung gegen die ursprüngliche Analyse."
     }
   ],
-  "note": "Alle Ausgaben sind Research und keine Anlage-, Steuer- oder Rechtsberatung: Claude analysiert, modelliert und schreibt das Memo, aber die Kauf- oder Verkaufsentscheidung triffst und verantwortest du selbst — prüfe Werte und Marktdaten gegen, denn KI kann sie falsch erkennen.",
+  "note": "Alle Ausgaben sind Research und keine Anlage-, Steuer- oder Rechtsberatung: Claude analysiert, modelliert und schreibt das Memo, aber die Kauf- oder Verkaufsentscheidung triffst und verantwortest du selbst, prüfe Werte und Marktdaten gegen, denn KI kann sie falsch erkennen.",
   "date": "2026-06-30"
 }

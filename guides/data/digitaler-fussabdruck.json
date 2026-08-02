@@ -1,10 +1,10 @@
 {
   "file": "Digitaler_Fussabdruck_GPTMarlon.pdf",
-  "title": "Digitalen Fußabdruck löschen – mit Claude aus den Datenbanken verschwinden",
+  "title": "Digitalen Fußabdruck löschen: mit Claude aus den Datenbanken verschwinden",
   "slug": "digitaler-fussabdruck",
   "category": "Alltag",
   "tool": "Claude",
-  "summary": "Datenhändler und Personensuchseiten verkaufen deinen Namen, deine Adresse und mehr – der Guide zeigt ein 4-Schritte-System, um sie loszuwerden: finden, Löschanfragen schreiben, einreichen und wöchentlich kontrollieren. Claude übernimmt die Recherche und die Formulierung; im Agenten-Modus (Cowork bzw. Claude in Chrome) füllt es Formulare vor und bereitet Anfragen zum Absenden auf. Rechtliche Grundlage ist in DACH vor allem Art. 17 DSGVO (Recht auf Löschung).",
+  "summary": "Datenhändler und Personensuchseiten verkaufen deinen Namen, deine Adresse und mehr: der Guide zeigt ein 4-Schritte-System, um sie loszuwerden, finden, Löschanfragen schreiben, einreichen und wöchentlich kontrollieren. Claude übernimmt die Recherche und die Formulierung; im Agenten-Modus (Cowork bzw. Claude in Chrome) füllt es Formulare vor und bereitet Anfragen zum Absenden auf. Rechtliche Grundlage ist in DACH vor allem Art. 17 DSGVO (Recht auf Löschung).",
   "sections": [
     {
       "heading": "Warum deine Daten überall auftauchen",
@@ -97,6 +97,6 @@
       "text": "# Ein Datenschutz-System aufbauen\nHilf mir, ein einfaches System aufzubauen, damit meine Daten nicht weiter durchsickern.\n\nIch brauche:\n1. Einen E-Mail-Alias-Dienst (empfiehl die beste kostenlose Option)\n2. Ein Datenschutz-Browser-Setup mit den passenden Erweiterungen\n3. Einen Plan, welche Dienste meine echten Daten bekommen und welche nur einen Alias\n4. Eine vierteljährliche Erinnerung, die Datenhändler-Suche erneut laufen zu lassen\n\nMach es praktisch. Ich stelle nicht alles über Nacht um. Gib mir die 3 wichtigsten Änderungen für diese Woche."
     }
   ],
-  "note": "Der Original-Guide nutzt ChatGPT; hier auf Claude übertragen – dieselbe Aufgabe erledigt Claude per Websuche und im Agenten-Modus (Cowork bzw. Claude in Chrome), der einen bezahlten Plan mit Agenten-Zugriff voraussetzt. Keine Rechtsberatung.",
+  "note": "Der Original-Guide nutzt ChatGPT; hier auf Claude übertragen: dieselbe Aufgabe erledigt Claude per Websuche und im Agenten-Modus (Cowork bzw. Claude in Chrome), der einen bezahlten Plan mit Agenten-Zugriff voraussetzt. Keine Rechtsberatung.",
   "date": "2026-07-02"
 }

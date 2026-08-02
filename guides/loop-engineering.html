@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loop Engineering — hör auf zu prompten, bau Schleifen — GPT Marlon Guides</title>
+  <title>Loop Engineering: hör auf zu prompten, bau Schleifen — GPT Marlon Guides</title>
   <meta name="description" content="Statt Claude immer wieder von Hand zu prompten, baust du Loops: Du übergibst ein messbares Ziel, und Claude findet die Arbeit, erledigt sie, prüft sich selbst, merkt sich den Stand und macht weiter, bis das Ziel wirklich erreicht ist. Dieser Guide zeigt die zwei Auslöser-Befehle in Claude Code, fünf Bausteine und einen fertigen Loop-Charter zum Kopieren." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -34,7 +34,7 @@
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Produktivität</span></div>
     <div class="page-hero">
-      <h1 class="page-title">Loop Engineering — hör auf zu prompten, bau Schleifen</h1>
+      <h1 class="page-title">Loop Engineering: hör auf zu prompten, bau Schleifen</h1>
       <p class="page-sub">Statt Claude immer wieder von Hand zu prompten, baust du Loops: Du übergibst ein messbares Ziel, und Claude findet die Arbeit, erledigt sie, prüft sich selbst, merkt sich den Stand und macht weiter, bis das Ziel wirklich erreicht ist. Dieser Guide zeigt die zwei Auslöser-Befehle in Claude Code, fünf Bausteine und einen fertigen Loop-Charter zum Kopieren.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
@@ -43,86 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/loop-engineering.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/loop-engineering.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ /loop, Sub-Agenten (.claude/agents/), Skills (.claude/skills/), Worktrees und MCP-Connectors sind echte Claude-Code-Funktionen; die genauen Namen der Loop-/Ziel-Befehle können je nach Version abweichen — prüfe mit /help, welche Befehle deine Claude-Code-Version kennt.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Das Konzept — was ein Loop wirklich ist</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Der Auslöser — die zwei Befehle</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Das Setup — fünf Bausteine, die einen Loop stärker machen</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Ein echtes Beispiel — das selbstprüfende Recherche-Brief</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Zum Kopieren — dein erster Loop: der Loop-Charter</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Ehrliche Hinweise — wann du NICHT loopen solltest</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Das Konzept — was ein Loop wirklich ist</h2>
-        <p>Jahrelang war die wichtigste KI-Fähigkeit, einen guten Prompt zu schreiben. Das Problem: Prompten hält dich im Raum. Du tippst, du wartest, du korrigierst, du tippst wieder. Ein Loop setzt sich an deine Stelle. Du übergibst ihm ein Ziel — er findet die Arbeit, erledigt sie, prüft sich selbst, merkt sich, was fertig ist, und macht weiter, bis das Ziel tatsächlich erreicht ist.</p>
-<p>Ein Loop (englisch für „Schleife") ist ein System, das die KI für dich anstößt. Egal wie aufwendig — jeder Loop ist derselbe Fünf-Schritt-Zyklus:</p>
-<ol><li><b>Arbeit finden.</b> Der Loop entdeckt, was zu tun ist: offene Punkte in einer Liste, fehlgeschlagene Tests, unbeantwortete Mails, Einträge in einer Warteschlange.</li><li><b>Arbeit erledigen.</b> Die KI bearbeitet einen Punkt nach dem anderen — genau so, wie du sie sonst manuell angewiesen hättest.</li><li><b>Sich selbst prüfen.</b> Ein Kontrollschritt entscheidet, ob die Arbeit wirklich erledigt und korrekt ist — nicht bloß erzeugt.</li><li><b>Sich erinnern.</b> Der Loop schreibt auf, was fertig ist (eine kleine Status-Datei oder ein Aufgaben-Board), damit er nichts doppelt macht und dort weitermacht, wo er aufgehört hat.</li><li><b>Weitermachen.</b> Er wiederholt das, bis nichts mehr offen ist — dann stoppt er oder meldet sich bei dir.</li></ol>
-<p><b>Der Denkwechsel:</b> Prompten ist taktisch — eine Anweisung, ein Ergebnis. Loop Engineering ist strategisch: Du entwirfst das System, das die Anweisungen ausgibt. Es ist der Unterschied zwischen die Arbeit machen und den Arbeiter führen.</p>
-<p>&gt; „Ich prompte Claude nicht mehr. Ich habe Loops laufen, die Claude prompten und herausfinden, was zu tun ist. Mein Job ist es, Loops zu schreiben." — Boris Cherny, Head of Claude Code bei Anthropic, über seinen eigenen Arbeitsalltag.</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Der Auslöser — die zwei Befehle</h2>
-        <p>Hier machen die meisten den Fehler: Du baust keinen Loop, indem du „mach das in einer Schleife" in einen normalen Chat tippst. Die echten Loops laufen in <b>Claude Code</b> — Anthropics Werkzeug, das direkt in der Kommandozeile (dem Terminal) deines Rechners läuft.</p>
-<p><b>Voraussetzungen (einmalig)</b></p>
-<ul><li>Claude Code installiert. Installation und Schritte: <code>code.claude.com/docs</code>.</li><li>Bezahlter Claude-Plan (Pro oder Max) oder API-Abrechnung — Loops laufen nicht im kostenlosen Plan.</li><li>Aktuelle Version. Siehst du die Loop-Befehle nicht, aktualisiere Claude Code auf die neueste Version.</li></ul>
-<p><b>1 · /goal — der Loop, der arbeitet, bis es fertig ist.</b> Du tippst <code>/goal</code> und dahinter, wie „fertig" konkret aussieht. Claude arbeitet dann Runde für Runde von allein. Das Entscheidende: Nach jeder Runde prüft ein zweites KI-Modell still, ob das Ziel schon erreicht ist. Wenn nicht, sagt es Claude warum — und Claude macht weiter. Im Moment, in dem das Ziel wirklich erfüllt ist, stoppt der Loop von selbst. Siehe den Prompt <b>/goal — Blogpost-Meta</b> unten: Das Ziel ist messbar (Zeichenzahl), der Prüfer erkennt den exakten Moment, in dem es bestanden ist.</p>
-<p><b>2 · /loop — der Loop, der sich von selbst wiederholt.</b> Diesen nimmst du, wenn die Arbeit nicht „einen Stapel abarbeiten", sondern „etwas immer wieder kontrollieren" ist. Du tippst <code>/loop</code> mit dem Takt und der Aufgabe (siehe <b>/loop — Website-Erreichbarkeit</b> unten). <code>30m</code> heißt: alle 30 Minuten. Du kannst auch mit einer normalen Anweisung beginnen — Claude legt den Zeitplan dann selbst an. Mit der Esc-Taste stoppst du einen Loop, der auf seinen nächsten Lauf wartet.</p>
-<p><b>So merkst du dir, welcher wann:</b> <code>/goal</code>, wenn es eine Ziellinie gibt (arbeite, bis das wahr ist). <code>/loop</code>, wenn es keine Ziellinie gibt, nur einen Rhythmus (prüf das immer wieder). Die meisten starken Loops beginnen mit <code>/goal</code>.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Das Setup — fünf Bausteine, die einen Loop stärker machen</h2>
-        <p>Die zwei Befehle sind der Motor. Diese fünf Bausteine sind die Upgrades. Du brauchst nicht alle auf einmal — fang mit dem an, was dein Loop wirklich braucht.</p>
-<ol><li><b>Automatisierungen.</b> Lässt den Loop nach Zeitplan laufen statt erst, wenn du tippst. Das Einfachste ist der <code>/loop</code>-Befehl. Für Loops, die laufen sollen, auch wenn kein Fenster offen ist, startest du Claude im Hintergrund über einen Zeitplaner mit <code>claude -p "dein Loop-Auftrag"</code>.</li><li><b>Worktrees.</b> Git-Worktrees geben jeder KI eine eigene, isolierte Kopie deines Projekts — so können zwei Loops gleichzeitig arbeiten, ohne sich zu überschreiben. In Claude Code sagst du: „mach das in einem separaten Worktree." Läufst du immer nur eine KI gleichzeitig, kannst du das anfangs überspringen.</li><li><b>Skills.</b> Eine Skill ist eine Textdatei (im Ordner <code>.claude/skills/</code>), die das Wissen festhält, das du sonst immer wieder erklärst: wie dein Projekt aufgebaut ist, deine Regeln, deine Formate. Einfachster Start: sag Claude „mach aus allem, was ich gerade über dieses Projekt erklärt habe, eine Skill-Datei."</li><li><b>Connectors.</b> Verbindungen, über die die KI deine echten Werkzeuge erreicht: Mail, Aufgaben-Tracker, Google Drive, Datenbank. Ohne sie arbeitet ein Loop nur an lokalen Dateien. In Claude Code fügst du sie mit <code>claude mcp add</code> oder über das Connector-Menü hinzu.</li><li><b>Sub-Agenten.</b> Die KI, die die Arbeit macht, sollte nicht die sein, die sie benotet. Claude Code lässt dich getrennte Agenten anlegen (im Ordner <code>.claude/agents/</code>): Ein Bau-Agent erledigt die Aufgabe, ein Prüf-Agent kontrolliert sie unabhängig. Dieser eine Schritt macht Loops vertrauenswürdig genug, um unbeaufsichtigt zu laufen.</li></ol>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Ein echtes Beispiel — das selbstprüfende Recherche-Brief</h2>
-        <p>Sagen wir, du bittest Claude um ein einseitiges Briefing zu einem Thema. Das ist die Aufgabe. Das Ziel — der Teil, der es zum Loop macht — ist eine messbare Hürde: jede Aussage hat mindestens drei Quellen, und jeder Link öffnet wirklich eine Seite, die belegt, was dort steht.</p>
-<p>Ohne Loop verbrennt dich KI genau hier leise. Sie liefert ein sauber aussehendes Briefing mit Quellen, die echt klingen, aber nicht existieren — und merkt nicht, dass sie sie erfunden hat. Ein einzelner Prompt kann seine eigene erfundene Quelle nicht erkennen.</p>
-<p>Mit Loop schreibt Claude das Briefing, geht dann Link für Link, öffnet jede Quelle tatsächlich, um zu bestätigen, dass sie echt ist und die Aussage stützt. Erfundene wirft er raus, sucht echten Ersatz und prüft weiter, bis jede Quelle eine ist, die du wirklich öffnen kannst. So würdest du es laufen lassen — siehe <b>/goal — selbstprüfendes Recherche-Briefing</b> unten.</p>
-<p><b>Der eine Punkt, den fast alle falsch machen:</b> Dein Ziel muss etwas sein, gegen das Claude sich selbst benoten kann — echte Zahlen, ein Prozentwert, eine Checkliste. Nicht etwas Vages wie „mach es gut". Ein schwammiges Ziel gibt ihm nichts zum Prüfen — also stoppt er wie ein normaler Prompt.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Zum Kopieren — dein erster Loop: der Loop-Charter</h2>
-        <p>Die zwei Befehle sind der Auslöser. Das hier fütterst du ihnen. Ein einzeiliges Ziel reicht für eine kleine Aufgabe. Für eine größere mit vielen Schritten übergibst du dem Loop einen vollständigen <b>Loop-Charter</b> (eine Art Dienstanweisung): wo die Arbeit liegt, wie er sich prüft, wie er sich erinnert und wann er stoppt. Fülle die Klammern aus, füge dann den ganzen Charter in Claude Code ein — siehe <b>Der Loop-Charter (vollständig)</b> unten.</p>
-<p><b>Warum die Status-Datei zählt:</b> Die Datei <code>LOOP-STATE.md</code> verwandelt zehn einzelne Läufe in einen durchgehenden Mitarbeiter. Ohne sie startet jeder Lauf bei null. Mit ihr kannst du denselben Charter nach Zeitplan laufen lassen, und der Loop macht immer genau dort weiter, wo er aufgehört hat.</p>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Ehrliche Hinweise — wann du NICHT loopen solltest</h2>
-        <p>Loops sind nicht umsonst und nicht für alles. Drei ehrliche Vorbehalte:</p>
-<ol><li><b>Einmal-Aufgaben brauchen keinen Loop.</b> Ist die Arbeit eine einzelne Antwort (diese Mail schreiben, dieses Dokument zusammenfassen), ist ein Prompt schneller. Loops verdienen ihren Einrichtungs-Aufwand erst bei wiederkehrender oder mehrteiliger Arbeit.</li><li><b>Loops verbrauchen mehr als Prompts.</b> Ein Loop, der sich selbst prüft und Sachen wiederholt, läuft mehrere KI-Runden pro Punkt. Auf einem Claude-Plan heißt das: Du erreichst dein Nutzungslimit schneller. Fang mit kleinen Mengen an — dafür gibt es die Zeile <code>[N] Punkte pro Lauf</code> im Charter.</li><li><b>Verifikation ist das ganze Spiel.</b> Ein ungeprüfter Loop macht Fehler nur schneller. Wenn du nicht beschreiben kannst, wie der Loop seine eigene Arbeit prüfen soll, ist die Aufgabe noch nicht reif für einen Loop. Lass sie ein Prompt, bis du es kannst.</li></ol>
-<p><i>Los geht's — diese Woche starten:</i> Such dir eine nervige, mehrteilige Aufgabe, die du bisher von Hand machst. Füge den Charter ein, füll die Klammern aus, lass ihn einmal laufen und schau dabei zu. Sobald du ihm vertraust, gib ihm einen Zeitplan.</p>
-<p><b>Die Kernidee in einem Satz:</b> Prompten heißt, die Arbeit zu machen. Loop Engineering heißt, das System zu bauen, das die Arbeit macht — und sich selbst kontrolliert, bis sie wirklich fertig ist.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">/loop, Sub-Agenten (.claude/agents/), Skills (.claude/skills/), Worktrees und MCP-Connectors sind echte Claude-Code-Funktionen; die genauen Namen der Loop-/Ziel-Befehle können je nach Version abweichen: prüfe mit /help, welche Befehle deine Claude-Code-Version kennt.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">/goal — Blogpost-Meta (Beispiel)</span>
+          <span class="prompt-label">/goal: Blogpost-Meta (Beispiel)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/goal Jeder Blogpost im Ordner /posts hat eine Meta-Beschreibung unter 160 Zeichen und einen Titel unter 60 Zeichen. Gib nach jeder Datei die Zeichenzahl aus, damit ich es bestätigen kann, und fass den Fließtext nicht an. Stopp, wenn jede Datei besteht, oder nach 25 Dateien.</pre>
@@ -130,10 +64,10 @@
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">/loop — Website-Erreichbarkeit prüfen</span>
+          <span class="prompt-label">/loop: Website-Erreichbarkeit prüfen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/loop 30m Prüfe, ob meine Live-Website wieder erreichbar ist, indem du die Startseite lädst. Sobald sie eine normale Seite zurückgibt, sag mir Bescheid und hör auf zu prüfen.</pre>
@@ -141,10 +75,10 @@
 
       <div class="prompt-card" id="prompt-3">
         <div class="prompt-head">
-          <span class="prompt-label">/goal — selbstprüfendes Recherche-Briefing</span>
+          <span class="prompt-label">/goal: selbstprüfendes Recherche-Briefing</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/goal Schreib ein einseitiges Briefing zu [dein Thema], bei dem jede Aussage mindestens drei Quellen hat und jeder Link wirklich eine Seite öffnet, die die Aussage stützt. Öffne jeden Link zur Bestätigung, bevor du es als fertig bezeichnest. Ersetze jede Quelle, die tot ist oder die Aussage nicht belegt. Stopp erst, wenn jede Quelle auf der Seite besteht.</pre>
@@ -154,8 +88,8 @@
         <div class="prompt-head">
           <span class="prompt-label">Der Loop-Charter (vollständig)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Du läufst als Loop, nicht als einzelne Antwort. Hier ist dein Auftrag (Charter):
@@ -185,18 +119,18 @@ Stopp, wenn: (a) jeder Punkt erledigt oder als blockiert protokolliert ist, oder
 Beginne damit, LOOP-STATE.md zu lesen, falls vorhanden, dann finde die Arbeit.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/loop-engineering.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/loop-engineering.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

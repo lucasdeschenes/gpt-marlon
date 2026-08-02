@@ -4,7 +4,7 @@
   "slug": "claude-skills",
   "category": "Claude Basics",
   "tool": "Claude",
-  "summary": "Skills bringen Claude bei, WIE er eine Aufgabe ausführen soll – welche Schritte, welches Format, welche Standards – anders als Memory, das sich nur Fakten über dich merkt. Der Guide erklärt einfach, was ein Skill ist, wie du ihn auf allen Plänen installierst (Anthropic-Skills per Toggle, Community-Skills als ZIP) und stellt 10 sofort einsatzbereite Skills vor. Kein Code nötig – nur einmal einrichten, danach wendet Claude den Skill automatisch an.",
+  "summary": "Skills bringen Claude bei, WIE er eine Aufgabe ausführen soll: welche Schritte, welches Format, welche Standards, anders als Memory, das sich nur Fakten über dich merkt. Der Guide erklärt einfach, was ein Skill ist, wie du ihn auf allen Plänen installierst (Anthropic-Skills per Toggle, Community-Skills als ZIP) und stellt 10 sofort einsatzbereite Skills vor. Kein Code nötig: nur einmal einrichten, danach wendet Claude den Skill automatisch an.",
   "sections": [
     {
       "heading": "Was ist ein Skill? – ganz einfach erklärt",
@@ -37,15 +37,15 @@
   ],
   "prompts": [
     {
-      "label": "Document Suite – Word-Report",
+      "label": "Document Suite: Word-Report",
       "text": "Erstelle einen Q3-Report als Word-Dokument mit Inhaltsverzeichnis und Zusammenfassung"
     },
     {
-      "label": "Document Suite – Excel-Budget",
+      "label": "Document Suite: Excel-Budget",
       "text": "Bau mir eine Excel-Tabelle für mein Monatsbudget mit automatischen Summen und Farbmarkierungen"
     },
     {
-      "label": "Document Suite – PowerPoint",
+      "label": "Document Suite: PowerPoint",
       "text": "Erstelle eine 10-Slide PowerPoint Präsentation über KI-Trends 2026 mit professionellem Layout"
     }
   ],

@@ -4,7 +4,7 @@
   "slug": "recherche-30-tage",
   "category": "Produktivität",
   "tool": "Claude",
-  "summary": "Jedes KI-Modell hat einen Wissensstichtag — fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um: Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht.",
+  "summary": "Jedes KI-Modell hat einen Wissensstichtag: fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um, Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht.",
   "sections": [
     {
       "heading": "Teil 1 — Warum Claude manchmal alte Infos liefert",
@@ -41,10 +41,10 @@
       "text": "npx skills add mvanhorn/last30days-skill -g"
     },
     {
-      "label": "Anwenden — Grundmuster",
+      "label": "Anwenden: Grundmuster",
       "text": "/last30days bester günstiger Laptop für Studenten"
     }
   ],
-  "note": "Die Erweiterung ist ein quelloffenes Drittanbieter-Werkzeug, das Claudes Capability „Code-Ausführung & Dateierstellung\" nutzt; Verfügbarkeit, Befehle, Quellen und Preise können sich ändern, und die Treffer sind ein Stimmungsbild aus dem Netz (Werbung/ungeprüfte Meinungen möglich) — prüfe wichtige Angaben selbst gegen.",
+  "note": "Die Erweiterung ist ein quelloffenes Drittanbieter-Werkzeug, das Claudes Capability „Code-Ausführung & Dateierstellung\" nutzt; Verfügbarkeit, Befehle, Quellen und Preise können sich ändern, und die Treffer sind ein Stimmungsbild aus dem Netz (Werbung/ungeprüfte Meinungen möglich): prüfe wichtige Angaben selbst gegen.",
   "date": "2026-06-24"
 }

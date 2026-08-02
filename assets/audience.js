@@ -9,12 +9,14 @@
   var SB_URL = 'https://topypyboyyvykdfbxqmj.supabase.co';
   var SB_KEY = 'sb_publishable_igrAFNS4S_dvOAqnxZY7pg_EE0oipId';
 
+  // [German, English] per ISO code. No flag emojis: they fall back to bare letter
+  // pairs on Windows, and the plain localized name reads the same everywhere.
   var COUNTRY = {
-    DE: ['🇩🇪', 'Deutschland', 'Germany'], AT: ['🇦🇹', 'Österreich', 'Austria'],
-    CH: ['🇨🇭', 'Schweiz', 'Switzerland'], ES: ['🇪🇸', 'Spanien', 'Spain'],
-    IT: ['🇮🇹', 'Italien', 'Italy'], NL: ['🇳🇱', 'Niederlande', 'Netherlands'],
-    FR: ['🇫🇷', 'Frankreich', 'France'], GB: ['🇬🇧', 'UK', 'UK'],
-    US: ['🇺🇸', 'USA', 'USA'], PL: ['🇵🇱', 'Polen', 'Poland'], TR: ['🇹🇷', 'Türkei', 'Turkey']
+    DE: ['Deutschland', 'Germany'], AT: ['Österreich', 'Austria'],
+    CH: ['Schweiz', 'Switzerland'], ES: ['Spanien', 'Spain'],
+    IT: ['Italien', 'Italy'], NL: ['Niederlande', 'Netherlands'],
+    FR: ['Frankreich', 'France'], GB: ['UK', 'UK'],
+    US: ['USA', 'USA'], PL: ['Polen', 'Poland'], TR: ['Türkei', 'Turkey']
   };
   var CITY = { 'Munich': 'München', 'Vienna': 'Wien', 'Cologne': 'Köln', 'Zurich': 'Zürich' };
 
@@ -26,9 +28,7 @@
   function cleanCity(s) { var c = (s || '').split(',')[0].trim(); return CITY[c] || c; }
 
   function label(breakdown, raw) {
-    // Country flag emojis fall back to bare letter-codes on Windows, so render the plain
-    // localized name instead — clean and identical across every platform.
-    if (breakdown === 'country') { var c = COUNTRY[raw]; return c ? (isEN() ? c[2] : c[1]) : raw; }
+    if (breakdown === 'country') { var c = COUNTRY[raw]; return c ? (isEN() ? c[1] : c[0]) : raw; }
     if (breakdown === 'city') return cleanCity(raw);
     return raw; // age labels are language-neutral
   }

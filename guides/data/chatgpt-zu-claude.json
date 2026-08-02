@@ -1,10 +1,10 @@
 {
   "file": "ChatGPT_zu_Claude_Guide.pdf",
-  "title": "Von ChatGPT zu Claude — der Migrations-Guide",
+  "title": "Von ChatGPT zu Claude: der Migrations-Guide",
   "slug": "chatgpt-zu-claude",
   "category": "Claude Basics",
   "tool": "Claude + ChatGPT",
-  "summary": "Nimm deine komplette ChatGPT-History, deinen Stil und deine Projekte mit zu Claude — in drei Schritten. Statt bei null anzufangen, exportierst du deinen Kontext, importierst ihn in ein Claude-Project und aktivierst Claudes Memory für dauerhaftes Gedächtnis.",
+  "summary": "Nimm deine komplette ChatGPT-History, deinen Stil und deine Projekte mit zu Claude: in drei Schritten. Statt bei null anzufangen, exportierst du deinen Kontext, importierst ihn in ein Claude-Project und aktivierst Claudes Memory für dauerhaftes Gedächtnis.",
   "sections": [
     {
       "heading": "Schritt 1 — Deinen „Digital Passport\" exportieren",
@@ -29,14 +29,14 @@
   ],
   "prompts": [
     {
-      "label": "Prompt 1 — Digital Passport in ChatGPT erstellen",
+      "label": "Prompt 1: Digital Passport in ChatGPT erstellen",
       "text": "Ich migriere meinen Kontext zu Claude. Bitte analysiere dein Memory, deine Custom Instructions und die letzten Gespräche, um einen umfassenden \"Digital Passport\" zu erstellen. Enthalte:\n\n1. User Persona: Mein beruflicher Hintergrund und aktuelle Ziele.\n2. Kommunikationsstil: Mein bevorzugter Ton und Formatierung.\n3. Technische Präferenzen: Tools die ich nutze und Coding-Stile.\n4. Key Knowledge: Fakten die du über mein Business oder Leben \"gespeichert\" hast.\n\nFormatiere als sauberes Markdown-Dokument und stelle eine downloadbare .md-Datei bereit."
     },
     {
-      "label": "Prompt 2 — Kontext in Claude importieren",
+      "label": "Prompt 2: Kontext in Claude importieren",
       "text": "Ich migriere meinen kompletten AI-Workspace von ChatGPT. Ich habe zwei Dateien hochgeladen:\n\n1. Digital_Passport.md: Meine Core Persona und Style Guide.\n2. conversations.json: Meine rohe Gesprächs-History.\n\nDeine Aufgabe:\n• Nutze den Passport als \"System Instructions\" für unsere Kommunikation.\n• Indexiere die conversations.json um meine vergangenen Projekte zu verstehen.\n• Gib eine kurze Zusammenfassung wer ich als User bin und liste 3 \"Key Insights\" die du gewonnen hast, um zu bestätigen dass du die Daten erfolgreich verarbeitet hast."
     }
   ],
-  "note": "Claude Memory, Projects und Skills sind echte Funktionen (Stand 2026, teils Pro/Team). Die Anthropic-Kurse unter anthropic.skilljar.com sind offiziell und kostenlos — „Skills\" baust du dort bzw. in Claude selbst, ein automatisches Ein-Klick-Installieren aus einem Kurskatalog gibt es nicht.",
+  "note": "Claude Memory, Projects und Skills sind echte Funktionen (Stand 2026, teils Pro/Team). Die Anthropic-Kurse unter anthropic.skilljar.com sind offiziell und kostenlos: „Skills\" baust du dort bzw. in Claude selbst, ein automatisches Ein-Klick-Installieren aus einem Kurskatalog gibt es nicht.",
   "date": "2026-06-10"
 }

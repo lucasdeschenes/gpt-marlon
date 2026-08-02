@@ -4,7 +4,7 @@
   "slug": "claude-code-cheatsheet",
   "category": "Claude Basics",
   "tool": "Claude Code",
-  "summary": "Die vollständige Schnellreferenz zu Claude Code: CLI-Tastenkürzel, Slash-Befehle, Plan- und Berechtigungsmodi, Git-Worktrees, MCP-Server, Skills, Agenten, Konfigurationsdateien, Hooks und Modelle — kompakt in Tabellen zum Nachschlagen. Stand: Edition 2026; einzelne Befehle, Flags und Modellnamen hängen von deiner Version ab.",
+  "summary": "Die vollständige Schnellreferenz zu Claude Code: CLI-Tastenkürzel, Slash-Befehle, Plan- und Berechtigungsmodi, Git-Worktrees, MCP-Server, Skills, Agenten, Konfigurationsdateien, Hooks und Modelle, kompakt in Tabellen zum Nachschlagen. Stand: Edition 2026; einzelne Befehle, Flags und Modellnamen hängen von deiner Version ab.",
   "sections": [
     {
       "heading": "Tastenkürzel",
@@ -44,6 +44,6 @@
     }
   ],
   "prompts": [],
-  "note": "Modelle auf den aktuellen 2026-Stand gebracht (Claude Opus 4.8 als leistungsstärkstes Modell, Sonnet 5, Haiku 4.5). Tastenkürzel, Slash-Befehle und Flags hängen von deiner Claude-Code-Version und Konfiguration ab und ändern sich schnell — Kürzel lassen sich mit /keybindings anzeigen und anpassen; im Zweifel /help oder die offizielle Doku prüfen.",
+  "note": "Modelle auf den aktuellen 2026-Stand gebracht (Claude Opus 4.8 als leistungsstärkstes Modell, Sonnet 5, Haiku 4.5). Tastenkürzel, Slash-Befehle und Flags hängen von deiner Claude-Code-Version und Konfiguration ab und ändern sich schnell: Kürzel lassen sich mit /keybindings anzeigen und anpassen; im Zweifel /help oder die offizielle Doku prüfen.",
   "date": "2026-06-01"
 }

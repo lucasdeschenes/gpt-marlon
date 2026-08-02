@@ -1,10 +1,10 @@
 {
   "file": "AI-Foto-Analysen_GPTMarlon.pdf",
-  "title": "8 KI-Foto-Analysen — dein Selfie als komplettes Style-System",
+  "title": "8 KI-Foto-Analysen: dein Selfie als komplettes Style-System",
   "slug": "ai-foto-analysen",
   "category": "Alltag",
   "tool": "Claude",
-  "summary": "Acht Copy-&-Paste-Prompts verwandeln jede bildfähige KI in deine persönliche Farb-, Stil-, Brillen- und Hautpflege-Beraterin. Du lädst ein Selfie hoch, fügst einen Prompt ein und bekommst eine detaillierte, ehrliche Analyse — von der saisonalen Farbpalette bis zur kompletten Capsule-Wardrobe. Gestapelt ergeben die Prompts ein vollständiges Style-System aus deinen echten Merkmalen.",
+  "summary": "Acht Copy-&-Paste-Prompts verwandeln jede bildfähige KI in deine persönliche Farb-, Stil-, Brillen- und Hautpflege-Beraterin. Du lädst ein Selfie hoch, fügst einen Prompt ein und bekommst eine detaillierte, ehrliche Analyse: von der saisonalen Farbpalette bis zur kompletten Capsule-Wardrobe. Gestapelt ergeben die Prompts ein vollständiges Style-System aus deinen echten Merkmalen.",
   "sections": [
     {
       "heading": "So nutzt du die 8 Prompts",
@@ -29,35 +29,35 @@
   ],
   "prompts": [
     {
-      "label": "Prompt 1 — Farbanalyse",
+      "label": "Prompt 1: Farbanalyse",
       "text": "Erstelle auf Basis des hochgeladenen Fotos eine persoenliche Farbanalyse. Bestimme meinen Hautunterton (warm, kuehl oder neutral), mein Kontrastlevel (niedrig, mittel oder hoch) und meinen Farbtyp nach dem 12-Jahreszeiten-System. Erklaere jeweils, welche Merkmale (Haut, Haare, Augen) dazu gefuehrt haben.\nStelle meine beste Farbpalette als beschriftete Farbfelder dar: meine Power-Farben (direkt am Gesicht), meine besten Neutraltoene und meine besten Akzentfarben. Zeige ausserdem als kleinere \"Vermeiden\"-Palette die Farben, die mich blass wirken lassen oder mit meinem Unterton clashen.\nNenne, welche Metalle mir stehen (Gold, Silber oder beides), in welche Richtung eine Haarfarbe zu meiner Jahreszeit passt und welche Make-up- bzw. Lippentoene harmonieren.\nSchliesse mit praktischer Styling-Anleitung ab: wie ich aus meiner Palette Outfits baue, welche Farben ich direkt am Gesicht tragen sollte und was ich fuer Fotos anziehe. Bleib bei jeder Einschaetzung ehrlich und sachlich statt schmeichelnd."
     },
     {
-      "label": "Prompt 2 — Gesichtsform",
+      "label": "Prompt 2: Gesichtsform",
       "text": "Analysiere das hochgeladene Foto und erstelle eine Gesichtsform-Analyse. Bestimme zuerst meine genaue Gesichtsform (oval, rund, eckig, herzfoermig, laenglich, Diamant, Dreieck oder umgekehrtes Dreieck) und erklaere, welche Proportionen dazu gefuehrt haben: Stirnbreite vs. Wangenknochenbreite vs. Kieferbreite sowie das Verhaeltnis von Gesichtslaenge zu Gesichtsbreite.\nGib dann konkrete Empfehlungen fuer Frisuren, die zu meiner Gesichtsform passen: beste Laengen, beste Scheitel, Frisuren zum Meiden und ob ein Pony zu mir passt. Falls relevant, ergaenze Bart- oder Schnurrbartformen, die meine Proportionen ausgleichen.\nEmpfiehl ausserdem Brillenformen, Ohrring-Stile und Ausschnitte, die am besten wirken. Ergaenze Contouring-Hinweise: wo ich Highlight und Schatten setze, um meine Knochenstruktur zu betonen.\nSei konkret und ehrlich. Wenn mein Gesicht zwischen zwei Formen liegt, sag es und erklaere, wie ich fuer die dominante Form style. Praesentiere alles als klaren, uebersichtlichen Bericht."
     },
     {
-      "label": "Prompt 3 — Stil-Archetyp",
+      "label": "Prompt 3: Stil-Archetyp",
       "text": "Analysiere anhand des hochgeladenen Fotos meine Gesichtszuege, Knochenstruktur und meinen Gesamteindruck, um meinen Stil-Archetyp zu bestimmen.\nNutze die fuenf Kibbe-Grundtypen (Dramatic, Natural, Classic, Gamine, Romantic) und ordne mich einem Typ oder einer Mischung aus zweien zu. Erklaere, welche Merkmale dazu gefuehrt haben: Kantigkeit der Knochenstruktur, Lippenfuelle, Augenform, Nasenprofil, Kieferdefinition und die gesamte Gesichtsgeometrie. Behandle das als Einschaetzung auf Basis meines Gesichts - ein vollstaendiger Kibbe-Typ beruecksichtigt auch die Koerperproportionen.\nGib mir dann einen kompletten Styling-Leitfaden zu meinem Archetyp: ideale Stoffe, Musterskalen, Silhouetten, Schmuckstile, Schuhformen und die aesthetische Grundrichtung.\nNenne 5 konkrete Outfit-Formeln zum Nachbauen - jeweils mit Teilen, Proportionen und Begruendung. Schliesse mit Stil-Vorbildern ab, die meinen Archetyp teilen. Sei ehrlich statt schmeichelnd."
     },
     {
-      "label": "Prompt 4 — Brillen-Guide",
+      "label": "Prompt 4: Brillen-Guide",
       "text": "Analysiere das hochgeladene Foto und erstelle einen persoenlichen Brillen-Guide. Bestimme zuerst meine Gesichtsform, Gesichtsbreite (schmal, durchschnittlich oder breit), den Augenabstand, die Breite meines Nasenruecken und meinen Hautunterton.\nEmpfiehl auf dieser Basis die besten Fassungsformen fuer mich (mit konkreten Namen wie Aviator, Wayfarer, Cat-Eye, rund, Clubmaster usw.) und erklaere, warum jede zu meinem Gesicht passt. Nenne 2-3 Formen, die ich meiden sollte, und warum.\nEmpfiehl Fassungsfarben, die zu meinem Hautton und Kontrastlevel passen. Teile das auf in Alltagsfassungen, auffaellige Statement-Fassungen und serioese Fassungen fuers Bueros oder Bewerbungsgespraech.\nGib Groessen-Hinweise: ungefaehre Glasbreite, Stegbreite und Buegellaenge. Ergaenze konkrete Marken- und Modellvorschlaege, falls moeglich. Falls ich ein Kandidat fuer Sonnenbrillen bin, nenne passende Toenungsfarben. Halte es praktisch und einkaufsfertig."
     },
     {
-      "label": "Prompt 5 — Hautpflege-Routine",
+      "label": "Prompt 5: Hautpflege-Routine",
       "text": "Analysiere das hochgeladene Nahaufnahme-Foto meines Gesichts (ohne Make-up, bei Tageslicht) und erstelle eine Hautanalyse mit Pflegeroutine. Beurteile meine sichtbaren Hautmerkmale: geschaetzter Hauttyp (fettig, trocken, Mischhaut oder normal), Textur, Porengroesse, ungleichmaessiger Ton oder Pigmentflecken, feine Linien, Augenpartie und allgemeine Klarheit. Sei ehrlich bei dem, was du siehst.\nBaue mir eine Morgen- und Abendroutine mit konkreten Produkttypen (Reinigung, Toner, Serum, Feuchtigkeitscreme, Sonnenschutz) und den wichtigsten Wirkstoffen. Nenne guenstige Produktvorschlaege und hochwertigere Alternativen. Ergaenze einen woechentlichen Behandlungsplan (Peeling, Masken) und Inhaltsstoffe, die ich eher meiden sollte.\nNenne Lebensstil-Faktoren, die meine Haut beeinflussen koennten, und einen realistischen Zeitrahmen fuer sichtbare Verbesserung.\nWichtig: Du bist kein Arzt und stellst keine Diagnose. Bei auffaelligen Muttermalen, Ausschlaegen oder anhaltenden Hautproblemen empfiehl mir, eine Dermatologin oder einen Dermatologen aufzusuchen."
     },
     {
-      "label": "Prompt 6 — Foto-Coaching",
+      "label": "Prompt 6: Foto-Coaching",
       "text": "Analysiere das hochgeladene Foto und gib mir ein professionelles Foto-Coaching. Beurteile anhand meiner Gesichtsstruktur: meine bessere Seite (links oder rechts) und warum, meinen optimalen Kopfneigungswinkel, ob ich frontal oder leicht angewinkelt in die Kamera schauen sollte, und meine vorteilhafteste Kinnposition (angehoben, gerade oder leicht gesenkt).\nEmpfiehl Licht-Setups: wo das Hauptlicht relativ zu meinem Gesicht stehen sollte, ob weiches oder hartes Licht besser passt und welche Lichtmuster (Rembrandt, Loop, Butterfly) zu meiner Knochenstruktur passen.\nGib mir Ausdrucks-Coaching: wie breit ich laecheln sollte, ob mit oder ohne Zaehne, was ich mit den Augen mache (z.B. \"Squinch\"-Technik) und wie ich natuerlich statt eingefroren wirke. Ergaenze Kleidungs-Tipps: Ausschnitte, Farben, Muster und Accessoires, die zu meiner Faerbung und Gesichtsform gut aussehen.\nDecke verschiedene Szenarien ab: LinkedIn-Bewerbungsfoto, Social-Media-Selfie, Gruppenfoto und Video-Call-Bildausschnitt. Sei direkt und konkret."
     },
     {
-      "label": "Prompt 7 — Feature-Styling",
+      "label": "Prompt 7: Feature-Styling",
       "text": "Analysiere das hochgeladene Foto und erstelle einen Feature-fuer-Feature-Styling- und Make-up-Guide. Beurteile fuer jedes Merkmal Form und Proportion und gib konkrete Hinweise:\nAUGENBRAUEN: aktuelle Form, ideale Bogenposition, empfohlene Dichte sowie wo Anfang, hoechster Punkt und Ende relativ zu Nase und Auge liegen sollten. EYES/AUGEN: Augenform (Mandel, rund, mit Lidfalte verdeckt, Monolid, nach unten geneigt usw.), Abstand (eng, weit, durchschnittlich) und konkrete Lidschatten-Platzierung. LIPPEN: Proportion (voll, schmal, ungleichmaessig), Amorbogen-Definition sowie Lippenstift-/Konturtechniken zur Betonung. WANGENKNOCHEN & CONTOUR: Lage und Praegnanz, exakte Contour-Linien, wo Rouge und Highlighter sitzen. NASE: Nasenform und passende Contouring-Techniken.\nSei konkret bei der Platzierung anhand anatomischer Orientierungspunkte. Ehrliche Einschaetzung statt Schmeichelei. (Funktioniert auch ohne Make-up - dann als Guide fuer Pflege, Brauenform und Sonnenschutz-Platzierung.)"
     },
     {
-      "label": "Prompt 8 — Capsule-Wardrobe",
+      "label": "Prompt 8: Capsule-Wardrobe",
       "text": "Bestimme auf Basis des hochgeladenen Fotos meinen Farbtyp und baue mir eine komplette Capsule-Wardrobe. Bestaetige zuerst meine Farbjahreszeit und liste meine 10 besten Farben. Baue dann eine 30-teilige Capsule-Wardrobe ausschliesslich aus Farben meiner Palette:\nOBERTEILE (10 Teile): konkrete Teile mit exakten Farbbeschreibungen (nicht nur \"blau\", sondern z.B. \"staubiges Schieferblau\" oder \"warmes Cognac\"). HOSEN/ROECKE (6 Teile): Jeans, Stoffhosen, Roecke mit Farb- und Waschung-Empfehlung. JACKEN/MAENTEL (4 Teile): in meiner Palette. KLEIDER/JUMPSUITS (4 Teile): komplette Outfits in meinen besten Farben. ACCESSOIRES (6 Teile): Taschen, Schals, Guertel in meinen Metallen und Akzentfarben.\nErklaere fuer jedes Teil, warum die Farbe zu meiner Jahreszeit passt. Zeige dann 10 Outfit-Kombinationen aus diesen 30 Teilen. Schliesse mit einer priorisierten Einkaufsliste der 10 Teile ab, die ich zuerst kaufen sollte, wenn ich bei null anfange."
     }
   ],

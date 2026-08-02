@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claude Skills: der komplette Guide — GPT Marlon Guides</title>
-  <meta name="description" content="Skills bringen Claude bei, WIE er eine Aufgabe ausführen soll – welche Schritte, welches Format, welche Standards – anders als Memory, das sich nur Fakten über dich merkt. Der Guide erklärt einfach, was ein Skill ist, wie du ihn auf allen Plänen installierst (Anthropic-Skills per Toggle, Community-Skills als ZIP) und stellt 10 sofort einsatzbereite Skills vor. Kein Code nötig – nur einmal einrichten, danach wendet Claude den Skill automatisch an." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <meta name="description" content="Skills bringen Claude bei, WIE er eine Aufgabe ausführen soll: welche Schritte, welches Format, welche Standards, anders als Memory, das sich nur Fakten über dich merkt. Der Guide erklärt einfach, was ein Skill ist, wie du ihn auf allen Plänen installierst (Anthropic-Skills per Toggle, Community-Skills als ZIP) und stellt 10 sofort einsatzbereite Skills vor. Kein Code nötig: nur einmal einrichten, danach wendet Claude den Skill automatisch an." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -35,7 +35,7 @@
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Claude Basics</span></div>
     <div class="page-hero">
       <h1 class="page-title">Claude Skills: der komplette Guide</h1>
-      <p class="page-sub">Skills bringen Claude bei, WIE er eine Aufgabe ausführen soll – welche Schritte, welches Format, welche Standards – anders als Memory, das sich nur Fakten über dich merkt. Der Guide erklärt einfach, was ein Skill ist, wie du ihn auf allen Plänen installierst (Anthropic-Skills per Toggle, Community-Skills als ZIP) und stellt 10 sofort einsatzbereite Skills vor. Kein Code nötig – nur einmal einrichten, danach wendet Claude den Skill automatisch an.</p>
+      <p class="page-sub">Skills bringen Claude bei, WIE er eine Aufgabe ausführen soll: welche Schritte, welches Format, welche Standards, anders als Memory, das sich nur Fakten über dich merkt. Der Guide erklärt einfach, was ein Skill ist, wie du ihn auf allen Plänen installierst (Anthropic-Skills per Toggle, Community-Skills als ZIP) und stellt 10 sofort einsatzbereite Skills vor. Kein Code nötig: nur einmal einrichten, danach wendet Claude den Skill automatisch an.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Claude Basics</span>
@@ -43,91 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/claude-skills.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/claude-skills.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ Mehrere der vorgestellten Skills (Superpowers, MCP Builder, Webapp Testing, Rube) richten sich an Claude Code bzw. Entwickler; die No-Code-Skills für die Claude-App aktivierst du per Toggle, nachdem „Code execution and file creation" eingeschaltet ist.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Was ist ein Skill? – ganz einfach erklärt</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Installation – Schritt für Schritt</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Wo findest du Skills?</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Die 10 Skills – Produktivität &amp; Automation</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Die 10 Skills – Design &amp; Kreativität</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Die 10 Skills – Code &amp; Entwicklung</a></li>
-        <li><a href="#s7"><span class="toc-n">07</span>Empfehlungen: so fängst du am besten an</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Was ist ein Skill? – ganz einfach erklärt</h2>
-        <p>Skills und die <b>Memory</b>-Funktion lösen ein ähnliches Problem auf unterschiedliche Weise. Memory merkt sich Fakten über dich („Marlon arbeitet im Marketing, mag kurze Texte"). Was Memory nicht kann: Claude beibringen, WIE er eine komplexe Aufgabe genau ausführt. Genau das tun <b>Skills</b>.</p>
-<table><thead><tr><th>Memory (eingebaut)</th><th>Skills (du installierst sie)</th></tr></thead><tbody><tr><td>„Marlon bevorzugt kurze Texte"</td><td>„Erstelle Reports immer in diesem Format"</td></tr><tr><td>Fakten &amp; Präferenzen</td><td>Workflows &amp; Qualitätsstandards</td></tr><tr><td>Keine Schritt-für-Schritt-Logik</td><td>Exakte, wiederholbare Abläufe</td></tr></tbody></table>
-<p><b>Die Analogie:</b> Ein Skill ist wie die Einarbeitung eines neuen Mitarbeiters – die Claude einmal lernt und nie wieder vergisst.</p>
-<p><b>3 Dinge, die du wissen musst:</b> 1) Einmal einrichten – danach erkennt Claude selbst, wann der Skill relevant ist. 2) Je mehr du verfeinerst, desto besser wird er. 3) Kein technisches Wissen nötig – für Community-Skills lädst du nur eine ZIP-Datei hoch.</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Installation – Schritt für Schritt</h2>
-        <p><b>Voraussetzung:</b> Alle Pläne (Free, Pro, Max, Team, Enterprise). Einrichten geht über Desktop/Web, nutzen überall.</p>
-<p><b>Wichtig zuerst – Code-Ausführung aktivieren:</b> Skills funktionieren nicht ohne diese Einstellung. Claude.ai → <b>Einstellungen → Capabilities → „Code execution and file creation"</b> einschalten. Das machst du einmal.</p>
-<ol><li><b>Code-Ausführung einschalten</b> (siehe oben) – der einzige Setup-Schritt.</li><li><b>Skill-Bereich öffnen:</b> In Claude.ai auf <b>Customize</b> → <b>Skills</b>.</li></ol>
-<p>3a. <b>Anthropic-Skills einschalten</b> (z. B. Document Suite): bereits integriert – einfach den Toggle einschalten. 3b. <b>Community-Skill als ZIP hochladen:</b> Skill-Ordner von GitHub herunterladen → als ZIP komprimieren → <b>+</b> → <b>Upload a skill</b> → ZIP auswählen.</p>
-<p><b>Desktop vs. Mobile:</b> Skills nutzen geht überall (Desktop &amp; Mobil). Anthropic-Skills einschalten, ZIPs hochladen und Skills verwalten geht <b>nur über Desktop/Web</b>. Einmal eingerichtet, funktionieren sie danach auch am Handy.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Wo findest du Skills?</h2>
-        <ul><li><b>Anthropic (offiziell):</b> <code>github.com/anthropics/skills</code> – qualitätsgeprüft und sicher. Empfohlener Startpunkt.</li><li><b>Composio – Awesome Claude Skills:</b> <code>github.com/ComposioHQ/awesome-claude-skills</code> – große Community-Sammlung, 50+ Skills. Hier kommen 8 der 10 Skills dieses Guides her.</li><li><b>obra Superpowers:</b> <code>github.com/obra/superpowers</code> – Framework für Entwickler, 20+ Skills speziell für professionelles Coding mit Claude Code.</li></ul>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Die 10 Skills – Produktivität &amp; Automation</h2>
-        <p><b>#01 Rube MCP Connector</b> (Community/Composio): ein MCP-Gateway-Server, der Claude mit über 500 Apps verbindet (Gmail, Slack, GitHub, Notion, Linear, Airtable …). Einmal bei Rube authentifizieren, alle Verbindungen laufen darüber – keine separaten API-Keys. Installation: <code>npx @composio/rube-mcp</code> bzw. in Claude Code <code>/plugin install rube</code>.</p>
-<p><b>#02 Superpowers</b> (Community/obra): obras Developer-Toolkit für <b>Claude Code</b>. Fügt drei Befehle hinzu: <code>/brainstorm</code> (durchdenkt Alternativen vor dem ersten Code), <code>/write-plan</code> (Implementierungsplan nach TDD), <code>/execute-plan</code> (Schritt für Schritt mit Validierung). Über 20 vorgefertigte Skills. Installation: <code>/plugin marketplace add obra/superpowers-marketplace</code> → <code>/plugin install superpowers</code>.</p>
-<p><b>#03 Document Suite</b> (offiziell/Anthropic): bereits in Claude integriert. Macht Claude wirklich kompetent in Word, Excel, PowerPoint und PDF – mit echter Formatierung, echten Formeln und professionellen Layouts. Claude wendet die Skills automatisch an, wenn du ein Dokument anforderst. Installation: Customize → Skills → Document-Suite-Toggles einschalten.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Die 10 Skills – Design &amp; Kreativität</h2>
-        <p><b>#04 Theme Factory</b> (Community): gibt Claude 10 vorgefertigte Designthemes mit abgestimmten Farben und Fonts. Du aktivierst ein Theme mit einem Satz, und alle HTML-Artifacts, Präsentationen und visuellen Outputs der Unterhaltung folgen diesem Stil. Eigene Themes aus deinen Lieblingsfarben sind möglich.</p>
-<p><b>#05 Algorithmic Art</b> (Community): generiert p5.js-Generative-Art aus Text-Beschreibungen. Durch Seed-Nummern sind Ergebnisse reproduzierbar („Seed 42" ergibt immer dasselbe Bild). Ausgabe: interaktiver HTML-Viewer, PNG/SVG-Export und bearbeitbarer Code. Unterstützt Flow Fields, Partikel-Systeme, rekursive Muster.</p>
-<p><b>#06 Slack GIF Creator</b> (Community/Composio): erstellt für Slack optimierte animierte GIFs. Kennt Slacks 2-MB-Limit und optimiert automatisch. Du beschreibst in normaler Sprache, was du möchtest.</p>
-<p>Installation (04–06): GitHub-Ordner von <code>ComposioHQ/awesome-claude-skills</code> als ZIP komprimieren → Customize → Skills → Upload.</p>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Die 10 Skills – Code &amp; Entwicklung</h2>
-        <p><b>#07 Webapp Testing</b> (Community): schreibt und führt <b>Playwright</b>-Automatisierungstests aus (Chrome, Firefox, Safari). Du beschreibst, was getestet werden soll; Claude schreibt den Test-Code, führt ihn aus und liefert einen Bericht. (Playwright muss installiert sein.)</p>
-<p><b>#08 MCP Builder</b> (Community/Composio): generiert produktionsreifen MCP-Server-Boilerplate in TypeScript oder Python (FastMCP) – mit Error-Handling, Rate-Limiting, Input-Validierung, Logging und Security. Was sonst 2–4 Stunden Setup kostet, dauert unter 15 Minuten.</p>
-<p><b>#09 Brand Guidelines</b> (Community/Composio): speichert vollständige Brand-Identitäten (Hex-Farben, Fonts, Tonalität, Schreibregeln). Anders als Theme Factory lassen sich mehrere komplette Marken verwalten und jederzeit wechseln – ideal für Agenturen.</p>
-<p><b>#10 Systematic Debugging</b> (Community): erzwingt ein striktes 4-Phasen-Framework – 1) Beweise sammeln, 2) Muster analysieren, 3) Hypothesen minimal testen, 4) implementieren und dokumentieren. Eiserne Regel: KEIN Fix ohne Root Cause. Ergebnis laut Guide: ~95 % First-Fix-Rate statt ~40 %.</p>
-      </section>
-
-      <section class="guide-section" id="s7">
-        <div class="gs-num">07</div>
-        <h2>Empfehlungen: so fängst du am besten an</h2>
-        <ul><li><b>Fang mit Document Suite an</b> – er ist bereits eingebaut. Customize → Skills → Toggles bei Word, Excel und PowerPoint einschalten (unter 30 Sekunden), dann Claude um einen Excel-Report oder eine PowerPoint bitten.</li><li><b>Rube + Superpowers sind „Daily Drivers"</b> – Skills, die du bei jeder Session nutzt: Rube zum Verbinden deiner Apps, Superpowers für Entwickler mit Claude Code.</li><li><b>Maximal 20–50 Skills gleichzeitig aktiv halten.</b> Claude lädt beim Start die Metadaten aller aktiven Skills (je ~30–50 Token). Bei 100 Skills werden tausende Token verschwendet und Claude wird langsamer. Faustregel: nur aktiv halten, was du regelmäßig nutzt.</li><li><b>Community-Skills kurz prüfen:</b> Öffne die <code>SKILL.md</code> im ZIP, bevor du hochlädst. Die Repos von <code>anthropics/skills</code> und <code>ComposioHQ/awesome-claude-skills</code> sind community-geprüft; bei unbekannten Quellen kurz reinschauen.</li></ul>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">Mehrere der vorgestellten Skills (Superpowers, MCP Builder, Webapp Testing, Rube) richten sich an Claude Code bzw. Entwickler; die No-Code-Skills für die Claude-App aktivierst du per Toggle, nachdem „Code execution and file creation" eingeschaltet ist.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">Document Suite – Word-Report</span>
+          <span class="prompt-label">Document Suite: Word-Report</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle einen Q3-Report als Word-Dokument mit Inhaltsverzeichnis und Zusammenfassung</pre>
@@ -135,10 +64,10 @@
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">Document Suite – Excel-Budget</span>
+          <span class="prompt-label">Document Suite: Excel-Budget</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Bau mir eine Excel-Tabelle für mein Monatsbudget mit automatischen Summen und Farbmarkierungen</pre>
@@ -146,27 +75,27 @@
 
       <div class="prompt-card" id="prompt-3">
         <div class="prompt-head">
-          <span class="prompt-label">Document Suite – PowerPoint</span>
+          <span class="prompt-label">Document Suite: PowerPoint</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle eine 10-Slide PowerPoint Präsentation über KI-Trends 2026 mit professionellem Layout</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/claude-skills.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/claude-skills.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

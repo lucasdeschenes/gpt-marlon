@@ -1,4 +1,5 @@
-// German -> English strings for the ported Framer homepage.
+// German -> English strings for the ported Framer homepage, plus the German
+// copy fixes applied before translation.
 //
 // The Framer markup carries no data-en attributes, so build-home.mjs injects
 // them from this table. Keys are the German text with whitespace collapsed;
@@ -8,62 +9,69 @@
 // To add a string: run `node tools/build-home.mjs` — it prints every text block
 // it could not match, so untranslated copy shows up rather than failing quietly.
 
-export const T = {
-  "KI-TOOLS TRAINING": "AI TOOLS TRAINING",
-
-  "Lerne mit mir, KI effektiv zu nutzen.":
-    "Learn to use AI effectively, with me.",
-
-  "Ich bin kein Entwickler und kein Ki researcher. Ich habe mir meine gesamte Kenntnis selbst beigebracht und teile hier mein gesamtes Wissen, meine Erfahrungen und die Strategien, die ich täglich nutze.":
-    "I'm not a developer and I'm not an AI researcher. I taught myself everything I know, and I share all of it here: the knowledge, the experience and the strategies I use every day.",
-
-  // The hero packs a bold headline and the bio into one <p>, separated by a
-  // <br>. Give the two parts separately so the English keeps the same shape —
-  // a flat string would lose both the bold and the line break.
-  "Lerne mit mir, KI effektiv zu nutzen.Ich bin kein Entwickler und kein Ki researcher. Ich habe mir meine gesamte Kenntnis selbst beigebracht und teile hier mein gesamtes Wissen, meine Erfahrungen und die Strategien, die ich selbst täglich nutze.": {
-    bold: "Learn to use AI effectively, with me.",
-    rest: "I'm not a developer and I'm not an AI researcher. I taught myself everything I know, and I share all of it here: the knowledge, the experience and the strategies I use every day.",
-  },
-
-  "Lerne mit mir, KI effektiv zu nutzen.Ich bin kein Entwickler und kein Ki researcher. Ich habe mir meine gesamte Kenntnis selbst beigebracht und teile hier mein gesamtes Wissen, meine Erfahrungen und die Strategien, die ich täglich nutze.": {
-    bold: "Learn to use AI effectively, with me.",
-    rest: "I'm not a developer and I'm not an AI researcher. I taught myself everything I know, and I share all of it here: the knowledge, the experience and the strategies I use every day.",
-  },
-
-  "Community beitreten": "Join the community",
-  "Tägliche KI-Tipps und Learnings.": "Daily AI tips and learnings.",
-  "AI CREATOR": "AI CREATOR",
-
-  "Hey — ich bin Marlon.": "Hey — I'm Marlon.",
-
-  "Mehrere Jahre war ich im Venture Capital und habe in KI-Startups investiert. Alles, was ich über KI weiß, habe ich mir selbst beigebracht.":
-    "I spent several years in venture capital investing in AI startups. Everything I know about AI, I taught myself.",
-
-  "Heute läuft mein eigenes Business zu 90 % über KI-Agenten, die ich selbst gebaut habe. Genau das gibt mir den Kopf frei für GPTMarlon: Ich teile hier alles, was ich weiß, damit du es auch schaffst.":
-    "Today my own business runs 90% on AI agents I built myself. That's exactly what frees up my head for GPTMarlon: I share everything I know here, so you can do it too.",
-
-  "Der beste Zeitpunkt, um mit KI anzufangen, ist jetzt!":
-    "The best time to start with AI is now!",
-
-  "Tägliche KI-Tipps auf Instagram": "Daily AI tips on Instagram",
-
+// ── German copy fixes ─────────────────────────────────────────────────────────
+// The site is German-first, so house style is enforced on the German source and
+// the English follows. No em/en dashes (period, comma or colon instead) and no
+// emojis. Applied by build-home.mjs before the translation pass, so the keys in
+// T below are the FIXED German, not what Framer shipped.
+export const DE = {
   "Kurze, praktische Reels, die zeigen, wie man KI-Tools wirklich nutzt – jeden Tag auf Instagram.":
-    "Short, practical reels showing how to really use AI tools – every day on Instagram.",
-
-  "Meine neuesten Guides": "My newest guides",
+    "Kurze, praktische Reels, die zeigen, wie man KI-Tools wirklich nutzt. Jeden Tag auf Instagram.",
 
   "Lerne Schritt für Schritt, wie du KI effektiv im Alltag und Beruf einsetzt – von den Grundlagen bis zu fortgeschrittenen Workflows.":
-    "Learn step by step how to use AI effectively in daily life and at work – from the basics to advanced workflows.",
+    "Lerne Schritt für Schritt, wie du KI effektiv im Alltag und Beruf einsetzt: von den Grundlagen bis zu fortgeschrittenen Workflows.",
+
+  "Schreib mir, wobei du Unterstützung brauchst – ob Tool-Auswahl, Prompts, Workflows oder konkrete KI-Anwendungen. Ich melde mich so schnell wie möglich zurück.":
+    "Schreib mir, wobei du Unterstützung brauchst: ob Tool-Auswahl, Prompts, Workflows oder konkrete KI-Anwendungen. Ich melde mich so schnell wie möglich zurück.",
+};
+
+export const T = {
+  // ── hero ──
+  // The hero packs the title and the body into one <p> separated by a <br>.
+  // Give the two parts separately so the English keeps the same shape — a flat
+  // string would lose both the bold and the line break.
+  "Hey, ich bin Marlon.Ich mache KI so einfach, dass sie jeder nutzen kann. Egal ob du ein Business aufbaust, Content machst oder einfach nicht den Anschluss verlieren willst: Alles, was ich weiß, findest du hier. Kostenlos. Ich habe mir das komplett selbst beigebracht. Also schaffst du das auch.": {
+    bold: "Hey, I'm Marlon.",
+    rest: "I make AI simple enough that anyone can use it. Whether you're building a business, making content or just don't want to fall behind: everything I know is here. Free. I taught myself all of it. So you can do it too.",
+  },
+
+  "Meine Story": "My story",
+  "Community beitreten": "Join the community",
+  "Tägliche KI-Tipps und Learnings.": "Daily AI tips and learnings.",
+
+  // ── story ──
+  "Mehrere Jahre war ich im Venture Capital und habe von außen zugeschaut, wie KI alles verändert. Irgendwann wollte ich nicht mehr nur zuschauen. Ich habe mir alles selbst beigebracht, ohne Studium in dem Bereich und ohne teure Kurse. Einfach durchs Machen.":
+    "I spent several years in venture capital, watching from the outside while AI changed everything. At some point I didn't want to just watch anymore. I taught myself all of it, with no degree in the field and no expensive courses. Just by doing.",
+
+  "Heute läuft mein Business zu 90 Prozent über KI-Agenten. Und genau das, was ich dabei lerne, teile ich jeden Tag auf Instagram und hier auf der Seite.":
+    "Today my business runs 90 percent on AI agents. And what I learn doing it, I share every day on Instagram and here on the site.",
+
+  "Erster Post": "First post",
+  "27. Mai 2026": "May 27, 2026",
+  "Views · letzte 30 Tage": "Views · last 30 days",
+
+  // ── reels ──
+  "Tägliche KI-Tipps auf Instagram": "Daily AI tips on Instagram",
+
+  "Kurze, praktische Reels, die zeigen, wie man KI-Tools wirklich nutzt. Jeden Tag auf Instagram.":
+    "Short, practical reels showing how to really use AI tools. Every day on Instagram.",
+
+  // ── guides ──
+  "Meine neuesten Guides": "My newest guides",
+
+  "Lerne Schritt für Schritt, wie du KI effektiv im Alltag und Beruf einsetzt: von den Grundlagen bis zu fortgeschrittenen Workflows.":
+    "Learn step by step how to use AI effectively in daily life and at work: from the basics to advanced workflows.",
 
   "Alle Guides": "All guides",
 
+  // ── contact ──
   "Fragen stellen": "Ask a question",
 
   "Hast du Fragen zu KI? Stell sie mir hier.":
     "Got a question about AI? Ask me here.",
 
-  "Schreib mir, wobei du Unterstützung brauchst – ob Tool-Auswahl, Prompts, Workflows oder konkrete KI-Anwendungen. Ich melde mich so schnell wie möglich zurück.":
-    "Tell me what you need a hand with – choosing tools, prompts, workflows or specific AI use cases. I'll get back to you as soon as I can.",
+  "Schreib mir, wobei du Unterstützung brauchst: ob Tool-Auswahl, Prompts, Workflows oder konkrete KI-Anwendungen. Ich melde mich so schnell wie möglich zurück.":
+    "Tell me what you need a hand with: choosing tools, prompts, workflows or specific AI use cases. I'll get back to you as soon as I can.",
 
   "Dein Name": "Your name",
   "Betreff": "Subject",
@@ -83,6 +91,7 @@ export const PH = {
 // doesn't report them as missing.
 export const SAME = new Set([
   "GPT★Marlon", "Home", "Ressourcen", "OpenAI", "P", "Perplexity", "Claude",
-  "ElevenLabs", "Cursor AI", "Runway", "ChatGPT", "Content", "Claude Basics",
+  "ElevenLabs", "Cursor AI", "Higgsfield", "ChatGPT", "Content", "Claude Basics",
   "Email", "© 2026 GPTMarlon", "Book me", "Alltag", "Karriere",
+  "AI Creator & Educator",
 ]);

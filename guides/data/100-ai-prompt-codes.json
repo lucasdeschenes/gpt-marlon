@@ -4,7 +4,7 @@
   "slug": "100-ai-prompt-codes",
   "category": "Content",
   "tool": "Claude + ChatGPT",
-  "summary": "Kurze Kürzel, die du an jeden Prompt anhängst, um Claude oder ChatGPT sofort in eine bestimmte Richtung zu lenken — von „ELI5“ (kindgerecht erklären) über „SWOT“ bis „RED TEAM“. Statt lange Anweisungen zu formulieren, steuerst du Ton, Tiefe und Format mit einem einzigen Codewort. Alle Codes sind modellunabhängig und funktionieren in Claude wie in ChatGPT.",
+  "summary": "Kurze Kürzel, die du an jeden Prompt anhängst, um Claude oder ChatGPT sofort in eine bestimmte Richtung zu lenken: von „ELI5“ (kindgerecht erklären) über „SWOT“ bis „RED TEAM“. Statt lange Anweisungen zu formulieren, steuerst du Ton, Tiefe und Format mit einem einzigen Codewort. Alle Codes sind modellunabhängig und funktionieren in Claude wie in ChatGPT.",
   "sections": [
     {
       "heading": "So funktionieren die Codes",

@@ -1,10 +1,10 @@
 {
   "file": "Strava-Claude_GPTMarlon.pdf",
-  "title": "Dein Strava wird zum KI-Coach — mit Claude",
+  "title": "Dein Strava wird zum KI-Coach: mit Claude",
   "slug": "strava-claude",
   "category": "Alltag",
   "tool": "Claude",
-  "summary": "Verbinde deine Trainingsdaten über den offiziellen, rein lesenden Strava-Connector mit Claude und hol in Sekunden heraus, wofür du früher einen Coach gebraucht hast. Der Guide zeigt Schritt für Schritt die Einrichtung — auch ohne Technik-Wissen — und liefert 3 fertige Prompts: Tiefen-Analyse, Dashboard und dein persönlicher KI-Trainer.",
+  "summary": "Verbinde deine Trainingsdaten über den offiziellen, rein lesenden Strava-Connector mit Claude und hol in Sekunden heraus, wofür du früher einen Coach gebraucht hast. Der Guide zeigt Schritt für Schritt die Einrichtung: auch ohne Technik-Wissen, und liefert 3 fertige Prompts: Tiefen-Analyse, Dashboard und dein persönlicher KI-Trainer.",
   "sections": [
     {
       "heading": "Teil 1 — Was gerade passiert ist",
@@ -33,22 +33,22 @@
   ],
   "prompts": [
     {
-      "label": "Erster Test — Aktivitäten ziehen",
+      "label": "Erster Test: Aktivitäten ziehen",
       "text": "Zieh meine letzten 5 Aktivitäten aus Strava und zeig mir Distanz, Pace und Höhenmeter."
     },
     {
-      "label": "Prompt 1 — Tiefen-Analyse & Fitness-Trends",
+      "label": "Prompt 1: Tiefen-Analyse & Fitness-Trends",
       "text": "Du bist mein erfahrener Ausdauer-Coach und Datenanalyst. Greif über den verbundenen Strava-Connector (read-only) auf meine Aktivitäten der letzten [180] Tage zu. Ziehe je Aktivität: Datum, Sportart, Distanz, Dauer, Pace bzw. Geschwindigkeit, Höhenmeter, Ø- und Max-Herzfrequenz, Leistung (Watt, falls vorhanden) und — wo verfügbar — die Pace- und Herzfrequenz-Streams.\n\nAnalysiere systematisch:\n1. VOLUMEN: Wochen- und Monatsvolumen (Distanz, Dauer, Höhenmeter), Trend und Steigerungsrate. Markiere, wenn der Aufbau über 10 % pro Woche liegt (Verletzungsrisiko).\n2. INTENSITÄT: Verteilung locker vs. hart anhand der Herzfrequenzzonen. Sind meine lockeren Einheiten wirklich locker (Ziel: ca. 80/20 polarisiert)?\n3. ENTWICKLUNG: Wie verändern sich Pace bei gleicher Herzfrequenz, Ø-/Ruhe-HF und meine aerobe Effizienz über die Zeit? Werde ich fitter?\n4. KONSISTENZ: Trainingsfrequenz, längste Pausen, Wochen ohne Einheit.\n5. RISIKEN: Anzeichen für Stagnation, Übertraining oder zu monotones Training.\n\nGib mir als Output:\n- Eine kompakte Tabelle: Kennzahl | letzte 4 Wochen | Vormonat | Trend.\n- Meine 3 größten Stärken und 3 größten Baustellen, jeweils mit einer konkreten Zahl aus den Daten belegt.\n- Ein Klartext-Fazit in 4 Sätzen: Wo stehe ich fitnessmäßig gerade?\n\nFehlen dir Daten (z. B. keine HF), sag es offen und arbeite mit dem, was da ist. Fasse am Ende die wichtigsten Kennzahlen dieser Analyse kompakt zusammen und merke sie dir — ich baue im nächsten Schritt ein Dashboard darauf auf."
     },
     {
-      "label": "Prompt 2 — Dashboard & Progress-Tracking",
+      "label": "Prompt 2: Dashboard & Progress-Tracking",
       "text": "Bau mir aus der Trainingsanalyse von eben und meinen verbundenen Strava-Daten ein übersichtliches Dashboard als eigenständige Seite (Artefakt / HTML). Es soll meine Form auf einen Blick zeigen und meinen Fortschritt über die Zeit abbilden.\n\nDas Dashboard enthält:\n1. KENNZAHL-KARTEN oben: Wochenvolumen, Ø-Pace, Ø-Herzfrequenz, Höhenmeter und Trainingstage — jeweils mit Vergleich zur Vorwoche und farbigem Pfeil (grün = Verbesserung, rot = Verschlechterung).\n2. VERLAUFS-DIAGRAMME: Wochenvolumen der letzten 12 Wochen, „Pace bei gleicher HF\"-Trend, Verteilung der Herzfrequenzzonen (Balken) und Höhenmeter pro Woche.\n3. FORM-AMPEL: ein klares Signal — AUFBAU / STABIL / ERMÜDET — aus Volumen- und HF-Trend, mit einem Satz Begründung.\n4. PROGRESS-BLOCK: „dieser Monat vs. letzter Monat\" — was hat sich um wie viel Prozent verbessert oder verschlechtert.\n\nAnforderungen:\n- Dunkles, aufgeräumtes Design mit klar beschrifteten Diagrammen.\n- Beschrifte jede Zahl und Einheit, damit ich nichts raten muss.\n- Lege das Dashboard so an, dass ich es leicht aktualisieren kann: Wenn ich später sage „aktualisiere mein Dashboard mit meinen neuesten Strava-Daten\", ziehst du die neuen Wochen, hängst sie an die Verläufe an und zeigst mir, was sich seither verbessert oder verschlechtert hat.\n- Erkläre mir am Ende in 3 Sätzen, was das Dashboard gerade über meine Entwicklung sagt."
     },
     {
-      "label": "Prompt 3 — Dein persönlicher KI-Trainer",
+      "label": "Prompt 3: Dein persönlicher KI-Trainer",
       "text": "Werde mein persönlicher KI-Trainer — dauerhaft und auf mich zugeschnitten. Nutze die Trainingsanalyse und das Dashboard von eben als Wissensbasis über mein Level. Stell mir zuerst kurz diese Fragen (eine nach der anderen):\n- Mein Ziel + Zieldatum [z. B. Halbmarathon unter 1:45 am TT.MM.JJJJ]\n- Trainingstage pro Woche und meine Wunsch-Tage\n- Aktuelle oder frühere Verletzungen / Beschwerden\n- Vorlieben & No-Gos [z. B. keine Bahn-Intervalle]\n- Wie viel Zeit ich pro Einheit maximal habe\n\nSei danach dauerhaft mein Coach mit diesen Funktionen:\n1. PLAN: Erstelle einen realistischen, periodisierten Wochenplan bis zum Zieldatum — je Einheit Typ, Distanz/Dauer und Intensität (konkrete Pace- bzw. HF-Zone), inkl. Entlastungswochen und Tapering. Begründe jede Woche in einem Satz.\n2. ANPASSUNG: Greif vor jeder neuen Woche auf meine echten Strava-Daten zu und passe den Plan daran an, wie ich die letzte Woche umgesetzt habe (erfüllt, zu hart, ausgefallen). Zieh den Plan nie stur durch.\n3. READINESS: Wenn ich frage „Soll ich heute trainieren?\", bewerte meine Erholung aus den letzten Einheiten und gib eine klare Empfehlung: PUSHEN, LOCKER oder RUHE — mit kurzer Begründung.\n4. FEEDBACK: Nach einer Einheit auf Wunsch eine kurze Auswertung — war Pace/HF im Zielbereich, und was beim nächsten Mal besser geht.\n5. WARNUNGEN: Melde dich aktiv, wenn meine Daten auf Übertraining, zu schnellen Aufbau oder Verletzungsrisiko hindeuten.\n6. TON: motivierend, ehrlich und konkret — kein Geschwafel.\n\nSprich mich mit Vornamen an und merke dir mein Profil für alle weiteren Gespräche."
     }
   ],
-  "note": "Claude sieht deine Strava-Daten nur, weil du den read-only-Connector per Autorisierung selbst freigibst (jederzeit in den Strava-Einstellungen widerrufbar) — es „loggt sich nicht von allein ein\" und kann nichts ändern oder posten; ist der Connector bei dir noch nicht ausgerollt, kannst du deine Strava-Daten alternativ exportieren und die Datei hochladen.",
+  "note": "Claude sieht deine Strava-Daten nur, weil du den read-only-Connector per Autorisierung selbst freigibst (jederzeit in den Strava-Einstellungen widerrufbar): es „loggt sich nicht von allein ein\" und kann nichts ändern oder posten; ist der Connector bei dir noch nicht ausgerollt, kannst du deine Strava-Daten alternativ exportieren und die Datei hochladen.",
   "date": "2026-06-20"
 }

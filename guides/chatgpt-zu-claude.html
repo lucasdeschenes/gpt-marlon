@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Von ChatGPT zu Claude — der Migrations-Guide — GPT Marlon Guides</title>
-  <meta name="description" content="Nimm deine komplette ChatGPT-History, deinen Stil und deine Projekte mit zu Claude — in drei Schritten. Statt bei null anzufangen, exportierst du deinen Kontext, importierst ihn in ein Claude-Project und aktivierst Claudes Memory für dauerhaftes Gedächtnis." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <title>Von ChatGPT zu Claude: der Migrations-Guide — GPT Marlon Guides</title>
+  <meta name="description" content="Nimm deine komplette ChatGPT-History, deinen Stil und deine Projekte mit zu Claude: in drei Schritten. Statt bei null anzufangen, exportierst du deinen Kontext, importierst ihn in ein Claude-Project und aktivierst Claudes Memory für dauerhaftes Gedächtnis." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -34,8 +34,8 @@
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Claude Basics</span></div>
     <div class="page-hero">
-      <h1 class="page-title">Von ChatGPT zu Claude — der Migrations-Guide</h1>
-      <p class="page-sub">Nimm deine komplette ChatGPT-History, deinen Stil und deine Projekte mit zu Claude — in drei Schritten. Statt bei null anzufangen, exportierst du deinen Kontext, importierst ihn in ein Claude-Project und aktivierst Claudes Memory für dauerhaftes Gedächtnis.</p>
+      <h1 class="page-title">Von ChatGPT zu Claude: der Migrations-Guide</h1>
+      <p class="page-sub">Nimm deine komplette ChatGPT-History, deinen Stil und deine Projekte mit zu Claude: in drei Schritten. Statt bei null anzufangen, exportierst du deinen Kontext, importierst ihn in ein Claude-Project und aktivierst Claudes Memory für dauerhaftes Gedächtnis.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude + ChatGPT</span>
         <span class="chip">Claude Basics</span>
@@ -43,64 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/chatgpt-zu-claude.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/chatgpt-zu-claude.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ Claude Memory, Projects und Skills sind echte Funktionen (Stand 2026, teils Pro/Team). Die Anthropic-Kurse unter anthropic.skilljar.com sind offiziell und kostenlos — „Skills" baust du dort bzw. in Claude selbst, ein automatisches Ein-Klick-Installieren aus einem Kurskatalog gibt es nicht.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Schritt 1 — Deinen „Digital Passport" exportieren</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Schritt 2 — Dein offizielles Archiv herunterladen</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Schritt 3 — Das „Brain Transplant": Import zu Claude</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Pro-Tipp — Global statt Project</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>3 Dinge, die du sofort tun solltest</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Schritt 1 — Deinen „Digital Passport" exportieren</h2>
-        <p>Der offizielle OpenAI-Export ist gut fürs Archiv, aber unübersichtlich. Was du zuerst brauchst, ist eine saubere Zusammenfassung deiner Persönlichkeit und Präferenzen — deinen „Digital Passport". Dafür fügst du <b>Prompt 1</b> in einen neuen ChatGPT-Chat ein. ChatGPT erstellt daraus ein sauberes Markdown-Dokument (<code>Digital_Passport.md</code>), das du herunterladen kannst.</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Schritt 2 — Dein offizielles Archiv herunterladen</h2>
-        <p>Das ist das „Deep Knowledge" — die Rohdaten jedes Gesprächs, das du je geführt hast:</p>
-<ol><li>In ChatGPT: <b>Settings → Data Controls</b> aufrufen.</li><li>Auf <b>Export Data → Confirm Export</b> klicken.</li><li>Die E-Mail von OpenAI abwarten und die <b>.zip-Datei</b> herunterladen.</li><li>Aus dem ZIP brauchst du nur die <b>conversations.json</b>.</li></ol>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Schritt 3 — Das „Brain Transplant": Import zu Claude</h2>
-        <p>Wechsle zu Claude. Für beste Ergebnisse nutzt du <b>Claude Projects</b> (verfügbar auf Pro- und Team-Plänen), um alles organisiert zu halten:</p>
-<ol><li>Erstelle ein neues Project namens „Mein Kontext".</li><li>Lade beide Dateien hoch: <code>Digital_Passport.md</code> und <code>conversations.json</code>.</li><li>Füge <b>Prompt 2</b> ein — Claude nutzt den Passport als Stil-Vorgabe und indexiert deine History.</li></ol>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Pro-Tipp — Global statt Project</h2>
-        <p>Wenn du keine Projects nutzen willst: Gehe zu <b>Claude → Settings → Capabilities → Memory</b> und aktiviere beide Toggles — <b>„Search and reference chats"</b> und <b>„Generate memory from chat history"</b>. Damit merkt sich Claude relevanten Kontext über alle Chats hinweg, ohne dass du ein Project brauchst.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>3 Dinge, die du sofort tun solltest</h2>
-        <ol><li><b>Memory aktivieren:</b> Settings → Capabilities → Memory, beide Toggles einschalten.</li><li><b>ChatGPT-Daten exportieren:</b> Settings → Data Controls → Export Data, dann die <code>conversations.json</code> in Claude hochladen.</li><li><b>Weiterlernen:</b> Die offiziellen Anthropic-Kurse unter https://anthropic.skilljar.com/ sind kostenlos und zeigen dir, wie du Claude für deinen Use Case einrichtest — inklusive eigener <b>Claude Skills</b>.</li></ol>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">Claude Memory, Projects und Skills sind echte Funktionen (Stand 2026, teils Pro/Team). Die Anthropic-Kurse unter anthropic.skilljar.com sind offiziell und kostenlos: „Skills" baust du dort bzw. in Claude selbst, ein automatisches Ein-Klick-Installieren aus einem Kurskatalog gibt es nicht.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 1 — Digital Passport in ChatGPT erstellen</span>
+          <span class="prompt-label">Prompt 1: Digital Passport in ChatGPT erstellen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">In ChatGPT öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich migriere meinen Kontext zu Claude. Bitte analysiere dein Memory, deine Custom Instructions und die letzten Gespräche, um einen umfassenden "Digital Passport" zu erstellen. Enthalte:
@@ -115,10 +71,10 @@ Formatiere als sauberes Markdown-Dokument und stelle eine downloadbare .md-Datei
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 2 — Kontext in Claude importieren</span>
+          <span class="prompt-label">Prompt 2: Kontext in Claude importieren</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button><button class="pbtn" onclick="openIn(this,'chatgpt')">In ChatGPT öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich migriere meinen kompletten AI-Workspace von ChatGPT. Ich habe zwei Dateien hochgeladen:
@@ -132,18 +88,18 @@ Deine Aufgabe:
 • Gib eine kurze Zusammenfassung wer ich als User bin und liste 3 "Key Insights" die du gewonnen hast, um zu bestätigen dass du die Daten erfolgreich verarbeitet hast.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/chatgpt-zu-claude.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/chatgpt-zu-claude.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

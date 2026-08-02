@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KI-Agenten — der Bauplan: Bau dir ein KI-Team — GPT Marlon Guides</title>
-  <meta name="description" content="Statt eines Tools, das alles halb kann, baust du dir mehrere spezialisierte KI-Agenten — jeder ein Mitarbeiter mit genau einer Aufgabe, jeder nach derselben 4-Teile-Struktur. Dieser Guide zeigt den Bauplan aus Kontext, Verbindungen, Workflows und Gedächtnis und wie du deinen ersten Agenten in Claude Code startest." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <title>KI-Agenten: der Bauplan, Bau dir ein KI-Team — GPT Marlon Guides</title>
+  <meta name="description" content="Statt eines Tools, das alles halb kann, baust du dir mehrere spezialisierte KI-Agenten: jeder ein Mitarbeiter mit genau einer Aufgabe, jeder nach derselben 4-Teile-Struktur. Dieser Guide zeigt den Bauplan aus Kontext, Verbindungen, Workflows und Gedächtnis und wie du deinen ersten Agenten in Claude Code startest." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -34,8 +34,8 @@
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Produktivität</span></div>
     <div class="page-hero">
-      <h1 class="page-title">KI-Agenten — der Bauplan: Bau dir ein KI-Team</h1>
-      <p class="page-sub">Statt eines Tools, das alles halb kann, baust du dir mehrere spezialisierte KI-Agenten — jeder ein Mitarbeiter mit genau einer Aufgabe, jeder nach derselben 4-Teile-Struktur. Dieser Guide zeigt den Bauplan aus Kontext, Verbindungen, Workflows und Gedächtnis und wie du deinen ersten Agenten in Claude Code startest.</p>
+      <h1 class="page-title">KI-Agenten: der Bauplan, Bau dir ein KI-Team</h1>
+      <p class="page-sub">Statt eines Tools, das alles halb kann, baust du dir mehrere spezialisierte KI-Agenten: jeder ein Mitarbeiter mit genau einer Aufgabe, jeder nach derselben 4-Teile-Struktur. Dieser Guide zeigt den Bauplan aus Kontext, Verbindungen, Workflows und Gedächtnis und wie du deinen ersten Agenten in Claude Code startest.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Produktivität</span>
@@ -43,90 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/ki-agenten-bauplan.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/ki-agenten-bauplan.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ CLAUDE.md, MCP-Connectors und der Gedächtnis-Datei-Ansatz (MEMORY.md) sind echte Claude-Code-Muster; „OpenClaw" ist dagegen ein optionales Drittanbieter-Tool, dessen Verfügbarkeit du selbst prüfen solltest — und sensible Aktionen (Geld ausgeben, posten, Rückerstattungen) lässt du dir immer manuell bestätigen.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Grundprinzip — ein Agent = ein Mitarbeiter</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Der Bauplan — die 4-Teile-Struktur</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Werkzeuge — womit du baust</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Loslegen — bau nicht alle auf einmal</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Hinweise — worauf du achten musst</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Grundprinzip — ein Agent = ein Mitarbeiter</h2>
-        <p>Der häufigste Anfängerfehler: einen einzigen Riesen-Agenten bauen, der alles können soll. Er wird unzuverlässig, verliert den Überblick und macht Fehler. Die Regel ist simpel: <b>ein Agent, eine Aufgabe</b> — wie ein echter Mitarbeiter mit einer Spezialität. Du baust dir mehrere davon und gibst jedem genau einen Job.</p>
-<p><b>Was ist ein KI-Agent?</b> Ein KI-Agent ist ein KI-Programm, das eine feste Aufgabe weitgehend eigenständig erledigt: Es liest Daten, trifft im vorgegebenen Rahmen Entscheidungen und führt Schritte aus, ohne dass du es bei jedem Klick an die Hand nimmst. Anders als ein einzelner Chat-Prompt hat ein Agent festes Wissen, Zugriff auf deine Tools und wiederkehrende Abläufe.</p>
-<p><b>Dein Team für eine E-Commerce-Brand</b></p>
-<ul><li><b>Ads-Agent</b> — überwacht deine Werbekonten, meldet Auffälligkeiten und schlägt neue Anzeigentexte vor.</li><li><b>Customer-Support-Agent</b> — sortiert eingehende Anfragen, entwirft Antworten und markiert Rückerstattungen für deine Freigabe.</li><li><b>E-Mail-Marketing-Agent</b> — plant Newsletter, pflegt Sequenzen und verfolgt Öffnungs- und Klickraten.</li><li><b>Creative-Director-Agent</b> — entwickelt Hooks und Creative-Ideen und prüft sie gegen deine Markenstimme.</li><li><b>Buchhaltungs-Agent</b> — sortiert Belege vor, ordnet Ausgaben zu und bereitet Zahlen für den Steuerberater auf.</li><li><b>Co-Founder-Agent</b> — der Aufseher: beobachtet die anderen, meldet, wenn einer hakt, und fasst alles für dich zusammen.</li></ul>
-<p>Klingt nach viel — ist es am Anfang auch. Deshalb baust du nicht alle auf einmal. Wichtig ist zuerst eines: jeder dieser Agenten ist auf exakt dieselbe Weise gebaut — in vier Teilen.</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Der Bauplan — die 4-Teile-Struktur</h2>
-        <p>Jeder gute Agent steht auf vier Bausteinen. Fehlt einer, wird er unzuverlässig. Diese vier baust du für jeden Agenten gleich: <b>1 Kontext · 2 Verbindungen · 3 Workflows · 4 Gedächtnis.</b></p>
-<p><b>Baustein 1 — Kontext</b></p>
-<p>Kontext ist alles, was der Agent über dein Business wissen muss, um seine Aufgabe gut zu machen. Das ist nicht ein einzelner Satz, sondern mehrere ausführliche Dokumente: deine Markenstimme, Produktinfos, Zielgruppe, feste Regeln („antworte nie ohne meine Freigabe") und Beispiele. Der Agent liest diese Dateien jedes Mal, wenn du mit ihm arbeitest — so ist er immer auf dem Stand und rät nicht.</p>
-<p><i>So sieht das in Claude Code aus:</i> Die wichtigste Kontextdatei ist die <code>CLAUDE.md</code> im Ordner des Agenten — sie wird bei jeder Sitzung automatisch geladen. Zusätzliche Dokumente (z. B. <code>marke.md</code>, <code>produkte.md</code>) legst du daneben und verweist in der <code>CLAUDE.md</code> darauf.</p>
-<p><b>Baustein 2 — Verbindungen</b></p>
-<p>Ein Agent ist nur so gut wie die Daten, an die er kommt. Verbindungen hängen ihn an deine echten Geschäftstools — damit er mit aktuellen Zahlen arbeitet statt mit Annahmen. Für eine E-Commerce-Brand z. B.: Shopify (Bestellungen/Umsatz), dein E-Mail-Tool wie Klaviyo, deine Werbekonten, dein Buchhaltungstool und dein Support-Postfach.</p>
-<p><i>Begriff MCP:</i> Diese Verbindungen laufen über sogenannte MCP-Server (Model Context Protocol) — eine Art Universalstecker, über den Claude externe Tools lesen und bedienen kann. Für viele große Tools gibt es fertige MCP-Server; gibt es für dein Tool keinen, lässt sich oft dessen Schnittstelle (API) anbinden. Was anschließbar ist, hängt also vom jeweiligen Tool ab — nicht jedes ist sofort verfügbar.</p>
-<p><b>Baustein 3 — Workflows</b></p>
-<p>Workflows sind die wiederkehrenden Abläufe des Agenten — das, was er regelmäßig und immer gleich tut. Beispiele: jeden Tag die Werbe-Performance checken, wöchentlich die Zahlen prüfen, jeden Morgen einen Report aus Umsatz, Ausgaben und nächsten Schritten erstellen. Du beschreibst den Ablauf einmal; danach ruft der Agent ihn auf Zuruf oder nach Zeitplan ab.</p>
-<p><i>So sieht das in Claude Code aus:</i> Wiederkehrende Abläufe schreibst du als feste Anweisung (in der <code>CLAUDE.md</code> oder als eigenen, wiederverwendbaren Befehl). Über einen Zeitplan können sie automatisch starten — dafür kommt die optionale Ebene aus dem Werkzeuge-Teil ins Spiel.</p>
-<p><b>Baustein 4 — Gedächtnis</b></p>
-<p>Damit ein Agent mit der Zeit besser wird, muss er sich erinnern. Am Ende jeder Sitzung hält er fest, was entschieden wurde, was funktioniert hat und was nicht — in einer Gedächtnis-Datei, die er beim nächsten Mal zuerst liest. So wiederholt er Fehler nicht und kennt deine Vorlieben.</p>
-<p><i>Ehrlich gesagt:</i> Ein Agent „vergisst nie" nur dann, wenn du dieses Erinnern einrichtest — es ist kein Selbstläufer. Du gibst ihm die Anweisung, Erkenntnisse in eine Datei (z. B. <code>MEMORY.md</code>) zu schreiben und sie jedes Mal zuerst zu laden. Ohne diese Datei startet jede Sitzung wieder bei null.</p>
-<p>Das ist der ganze Bauplan: Kontext macht ihn schlau, Verbindungen geben ihm die Daten, Workflows geben ihm die Abläufe, Gedächtnis macht ihn besser.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Werkzeuge — womit du baust</h2>
-        <p><b>Claude Code — dein Baukasten</b></p>
-<p>Ich baue meine Agenten in Claude Code. Das ist Anthropics Werkzeug, mit dem du Claude direkt auf deinem Rechner arbeiten lässt: Du beschreibst in normaler Sprache, was ein Agent tun soll, und Claude baut ihn. Pro Agent legst du einen eigenen Ordner an — sauber getrennt, wie einzelne Mitarbeiter mit je eigenem Schreibtisch.</p>
-<p><i>Was du dafür brauchst:</i> Claude Code ist im Claude-Pro-Abo (ab 20 $/Monat) sowie in den Max-Plänen enthalten — ein separates Abo brauchst du nicht. Verbindungen (MCP) und größere Läufe ziehen aus demselben Nutzungsbudget wie dein normaler Claude-Zugang.</p>
-<p><b>Optional: OpenClaw + Telegram</b></p>
-<p>Standardmäßig arbeitest du mit den Agenten, solange du Claude Code offen hast. Willst du, dass sie autonom laufen — also auch, ohne dass du davor sitzt — kannst du eine optionale Ebene wie OpenClaw dazunehmen. OpenClaw ist ein quelloffenes Agenten-System mit eigenem Speicher, Zeitplan-Funktion (Cron) und Anbindung an Messenger. Damit erreichen dich die Agenten direkt per Telegram — z. B. mit dem Morgenreport oder einer Warnung, wenn die Werbeausgaben aus dem Ruder laufen.</p>
-<p><i>Ehrlich eingeordnet:</i> OpenClaw ist optional und etwas technischer. Du kannst es selbst betreiben oder einen (kostenpflichtigen) Hosting-Dienst nutzen. Fang ruhig ohne an — die 4-Teile-Struktur funktioniert genauso, wenn du die Agenten einfach in Claude Code startest. Die autonome Ebene holst du dir, sobald ein Agent zuverlässig läuft.</p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Loslegen — bau nicht alle auf einmal</h2>
-        <p>Der größte Fehler ist, sofort fünf Agenten bauen zu wollen. Fang mit einem an — und zwar mit dem, der dir am meisten bringt.</p>
-<ol><li><b>Wähle die nervigste Aufgabe.</b> Die, die dir jede Woche am meisten Zeit frisst. Für die meisten ist das Kundenservice oder das Reporting.</li><li><b>Bau genau diesen einen Agenten</b> — nach der 4-Teile-Struktur: Kontext-Dateien anlegen, Verbindungen setzen, einen Workflow definieren, Gedächtnis-Datei einrichten. Nichts weiter, kein zweiter Job.</li><li><b>Lass ihn eine Woche laufen.</b> Beobachte, korrigiere, was hakt. Erst wenn er zuverlässig läuft, baust du den nächsten. Skaliere nie, bevor das Erste stabil ist.</li></ol>
-<p><b>Der erste Agent — so beschreibst du ihn</b></p>
-<p>In Claude Code beschreibst du den Agenten in normaler Sprache. Diesen Text speicherst du als seine feste Anweisung (in der <code>CLAUDE.md</code>) — siehe den Prompt <b>Reporting-Agent — feste Anweisung</b> unten. Pro Lauf genügt dann ein kurzer Auslöser wie „Mach den Morgenreport". Die ausführliche Anweisung steht ja schon fest — du tippst nur noch den Startschuss.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Hinweise — worauf du achten musst</h2>
-        <p>KI-Agenten nehmen dir enorm viel ab — aber sie laufen nicht völlig ohne Aufsicht. Drei Dinge, die du von Anfang an beachten solltest:</p>
-<ul><li><b>Agenten brauchen Aufsicht.</b> Ohne einen Aufseher (deinen Co-Founder-Agent) oder deinen eigenen regelmäßigen Blick summieren sich Fehler leise auf, bis sie teuer werden.</li><li><b>Keine ungeprüften Rechte.</b> Gib keinem Agenten ungeprüft die Erlaubnis, Geld auszugeben, öffentlich zu posten oder Rückerstattungen auszulösen. Sensible Aktionen lässt du dir immer erst bestätigen.</li><li><b>Kosten steigen mit den Läufen.</b> Mehrere Agenten täglich sind auf bezahlten Claude-Plänen machbar. Aber ein Aufseher, der ständig alle prüft, kann ins Budget gehen — halte die Anweisungen knapp und präzise.</li></ul>
-<p><i>In einem Satz:</i> Bau einen Spezialisten nach der 4-Teile-Struktur, lass ihn eine Woche laufen, häng den nächsten dran — und du hast Schritt für Schritt ein KI-Team, das für dich arbeitet.</p>
-<p><b>Haftungsausschluss:</b> Dieser Guide dient ausschließlich zu Informations- und Bildungszwecken und stellt keine Steuer-, Rechts-, Finanz- oder Buchhaltungsberatung dar. KI kann Zahlen und Belege falsch erkennen — prüfe Ergebnisse selbst und lass sie fachlich (z. B. vom Steuerberater) freigeben, bevor du dich darauf verlässt. Datenschutz: Verbindest du Agenten mit echten Kunden- oder Geschäftsdaten, achte auf die DSGVO. Funktionen, Preise und Verfügbarkeit der genannten Tools können sich ändern.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">CLAUDE.md, MCP-Connectors und der Gedächtnis-Datei-Ansatz (MEMORY.md) sind echte Claude-Code-Muster; „OpenClaw" ist dagegen ein optionales Drittanbieter-Tool, dessen Verfügbarkeit du selbst prüfen solltest: und sensible Aktionen (Geld ausgeben, posten, Rückerstattungen) lässt du dir immer manuell bestätigen.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">Reporting-Agent — feste Anweisung (CLAUDE.md)</span>
+          <span class="prompt-label">Reporting-Agent: feste Anweisung (CLAUDE.md)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text"># Reporting-Agent — feste Anweisung
@@ -135,18 +65,18 @@ Halte dich an die Regeln in CLAUDE.md.
 Schreib deine Erkenntnisse am Ende in MEMORY.md.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/ki-agenten-bauplan.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/ki-agenten-bauplan.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

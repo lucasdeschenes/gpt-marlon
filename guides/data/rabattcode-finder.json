@@ -1,6 +1,6 @@
 {
   "file": "ChatGPT_Rabattcode-Finder_GPTMarlon_v2.pdf",
-  "title": "ChatGPT Rabattcode-Finder — nie wieder vollen Preis zahlen",
+  "title": "ChatGPT Rabattcode-Finder: nie wieder vollen Preis zahlen",
   "slug": "rabattcode-finder",
   "category": "Alltag",
   "tool": "ChatGPT",
@@ -29,46 +29,46 @@
   ],
   "prompts": [
     {
-      "label": "Prompt 1 — Der Code-Jäger",
+      "label": "Prompt 1: Der Code-Jäger",
       "text": "Ich möchte etwas von [URL] kaufen. Finde mir jeden aktuell gültigen Rabattcode, jede Promo-Aktion, jedes Cashback-Angebot und versteckte Deals. Keine abgelaufenen Codes."
     },
     {
-      "label": "Prompt 2 — Der Auto-Tester",
+      "label": "Prompt 2: Der Auto-Tester",
       "text": "Geh auf die Seite, leg den Artikel in den Warenkorb und teste jeden Code einzeln durch. Sag mir, welcher mir am meisten spart."
     },
     {
-      "label": "Prompt 3 — Der Rundum-Check",
+      "label": "Prompt 3: Der Rundum-Check",
       "text": "Mach das für jeden offenen Tab, in dem ich gerade etwas kaufen möchte."
     },
     {
-      "label": "Bonus 1 — Der Preis-Tracker",
+      "label": "Bonus 1: Der Preis-Tracker",
       "text": "Ich möchte [Produkt] bei [Shop] kaufen. Prüfe den Preisverlauf für diesen Artikel. Ist das der niedrigste Preis der letzten Zeit? Steht ein Sale bevor? Sollte ich warten oder jetzt kaufen?"
     },
     {
-      "label": "Bonus 2 — Der Alternativen-Finder",
+      "label": "Bonus 2: Der Alternativen-Finder",
       "text": "Ich möchte [Produkt] für [Preis] kaufen. Finde mir das exakt gleiche Produkt oder eine vergleichbare Alternative günstiger. Prüfe andere Händler, Zweitmarken, generalüberholte Ware und Rückläufer-Angebote."
     },
     {
-      "label": "Bonus 3 — Der Abo-Check",
+      "label": "Bonus 3: Der Abo-Check",
       "text": "Das sind alle Abos, die ich aktuell bezahle: [Liste]. Finde mir für jedes einen Rabattcode, einen günstigeren Tarif oder eine kostenlose Alternative mit vergleichbarem Funktionsumfang. Sag mir auch, ob es ein Kündigungs-Angebot (Retention-Rabatt) gibt."
     },
     {
-      "label": "Bonus 4 — Der Cashback-Stapler",
+      "label": "Bonus 4: Der Cashback-Stapler",
       "text": "Ich kaufe [Produkt] bei [Shop] für [Preis]. Finde mir jede Möglichkeit, Rabatte zu stapeln: Kreditkarten-Cashback, Cashback-Portale (z. B. Rakuten oder TopCashback), vergünstigte Gutscheinkarten und Promo-Codes. Wie hoch ist der maximal mögliche Gesamtrabatt?"
     },
     {
-      "label": "Bonus 5 — Das Verhandlungs-Skript",
+      "label": "Bonus 5: Das Verhandlungs-Skript",
       "text": "Ich möchte für [Produkt/Leistung] von [Unternehmen] einen niedrigeren Preis verhandeln. Schreib mir ein Skript für Chat, E-Mail oder Telefon. Nenne konkrete Argumente, Vergleichspreise und was ich sagen kann, falls abgelehnt wird."
     },
     {
-      "label": "Bonus 6 — Der Preisschutz-Check",
+      "label": "Bonus 6: Der Preisschutz-Check",
       "text": "Ich habe [Produkt] vor [X Tagen] bei [Shop] für [Preis] gekauft. Prüfe, ob der Preis seitdem gefallen ist. Falls ja, formuliere mir eine Anfrage an den Kundenservice, um die Differenz erstattet zu bekommen."
     },
     {
-      "label": "Bonus 7 — Der Sammelbestellungs-Optimierer",
+      "label": "Bonus 7: Der Sammelbestellungs-Optimierer",
       "text": "Ich muss diese Artikel kaufen: [Liste]. Finde den günstigsten Weg, alle zu bekommen. Prüfe, ob ein Kauf bei einem Händler mit sitewide-Rabattcode günstiger ist als der jeweils billigste Einzelanbieter. Berücksichtige die Versandkosten."
     }
   ],
-  "note": "Der Agent-Modus recherchiert und testet Codes und legt Artikel in den Warenkorb, schließt den Kauf aber nicht selbst ab — Warenkorb und Endpreis prüfst und bestätigst du selbst. Rabattcodes und Preise ändern sich laufend; eine Ersparnis ist nicht garantiert. Weil der Agent Webseiten automatisch interpretiert, vorher Banking-, Mail- und Zahlungs-Tabs schließen (Prompt-Injection-Risiko).",
+  "note": "Der Agent-Modus recherchiert und testet Codes und legt Artikel in den Warenkorb, schließt den Kauf aber nicht selbst ab: Warenkorb und Endpreis prüfst und bestätigst du selbst. Rabattcodes und Preise ändern sich laufend; eine Ersparnis ist nicht garantiert. Weil der Agent Webseiten automatisch interpretiert, vorher Banking-, Mail- und Zahlungs-Tabs schließen (Prompt-Injection-Risiko).",
   "date": "2026-07-05"
 }

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dein Strava wird zum KI-Coach — mit Claude — GPT Marlon Guides</title>
-  <meta name="description" content="Verbinde deine Trainingsdaten über den offiziellen, rein lesenden Strava-Connector mit Claude und hol in Sekunden heraus, wofür du früher einen Coach gebraucht hast. Der Guide zeigt Schritt für Schritt die Einrichtung — auch ohne Technik-Wissen — und liefert 3 fertige Prompts: Tiefen-Analyse, Dashboard und dein persönlicher KI-Trainer." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <title>Dein Strava wird zum KI-Coach: mit Claude — GPT Marlon Guides</title>
+  <meta name="description" content="Verbinde deine Trainingsdaten über den offiziellen, rein lesenden Strava-Connector mit Claude und hol in Sekunden heraus, wofür du früher einen Coach gebraucht hast. Der Guide zeigt Schritt für Schritt die Einrichtung: auch ohne Technik-Wissen, und liefert 3 fertige Prompts: Tiefen-Analyse, Dashboard und dein persönlicher KI-Trainer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -34,8 +34,8 @@
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Alltag</span></div>
     <div class="page-hero">
-      <h1 class="page-title">Dein Strava wird zum KI-Coach — mit Claude</h1>
-      <p class="page-sub">Verbinde deine Trainingsdaten über den offiziellen, rein lesenden Strava-Connector mit Claude und hol in Sekunden heraus, wofür du früher einen Coach gebraucht hast. Der Guide zeigt Schritt für Schritt die Einrichtung — auch ohne Technik-Wissen — und liefert 3 fertige Prompts: Tiefen-Analyse, Dashboard und dein persönlicher KI-Trainer.</p>
+      <h1 class="page-title">Dein Strava wird zum KI-Coach: mit Claude</h1>
+      <p class="page-sub">Verbinde deine Trainingsdaten über den offiziellen, rein lesenden Strava-Connector mit Claude und hol in Sekunden heraus, wofür du früher einen Coach gebraucht hast. Der Guide zeigt Schritt für Schritt die Einrichtung: auch ohne Technik-Wissen, und liefert 3 fertige Prompts: Tiefen-Analyse, Dashboard und dein persönlicher KI-Trainer.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Alltag</span>
@@ -43,87 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/strava-claude.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/strava-claude.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ Claude sieht deine Strava-Daten nur, weil du den read-only-Connector per Autorisierung selbst freigibst (jederzeit in den Strava-Einstellungen widerrufbar) — es „loggt sich nicht von allein ein" und kann nichts ändern oder posten; ist der Connector bei dir noch nicht ausgerollt, kannst du deine Strava-Daten alternativ exportieren und die Datei hochladen.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Teil 1 — Was gerade passiert ist</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Teil 2 — Was du brauchst</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Teil 3 — Strava mit Claude verbinden</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Teil 4 — Was jetzt möglich ist</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Teil 5 — Die 3 Prompts</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Teil 6 — Mehr rausholen &amp; andere Wege</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Teil 1 — Was gerade passiert ist</h2>
-        <p><b>Neu: Strava spricht jetzt mit KI.</b> Strava hat einen offiziellen MCP-Connector veröffentlicht — eine sichere, offizielle Brücke, über die eine KI wie Claude direkt auf deine eigenen Strava-Daten zugreifen darf: Aktivitäten, Pace, Herzfrequenz, Höhenmeter, Leistungswerte und Trends. Früher musstest du deine Daten mühsam exportieren und hochladen — ein einmaliger, toter Schnappschuss. Jetzt liest die KI deinen aktuellen Datenstand direkt aus, sobald du sie autorisierst. Du fragst in normaler Sprache, sie antwortet auf Basis deiner echten Zahlen.</p>
-<p><b>Was ist ein MCP-Server?</b> Stell dir MCP wie einen Universal-Adapter vor. So wie ein Reisestecker dein Ladegerät mit jeder Steckdose verbindet, verbindet ein MCP-Server eine App (hier: Strava) mit einer KI (hier: Claude) — in einer Sprache, die beide verstehen. Du musst nichts programmieren: Du steckst die beiden einmal zusammen, danach reden sie miteinander.</p>
-<p><b>Sicher — was die KI darf und was nicht.</b> Der Zugriff ist ausschließlich lesend (read-only). Die KI kann deine Daten ansehen und auswerten, aber nichts in deinem Strava-Konto ändern, löschen oder posten. Den Zugriff gibst du selbst per Autorisierung frei und kannst ihn jederzeit in den Strava-Einstellungen wieder entziehen.</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Teil 2 — Was du brauchst</h2>
-        <p>Vier Dinge — mehr nicht. Wenn du Strava-Abonnent bist, hast du das Wichtigste schon.</p>
-<ul><li><b>Strava-Abo</b> — Pflicht. Der Connector ist Teil des Strava-Abonnements; mit kostenlosem Strava-Konto funktioniert er nicht.</li><li><b>Claude-Konto</b> — ein kostenloses Claude-Konto reicht zum Starten (mit Tageslimit). Wer viel auswertet, fährt mit Claude Pro komfortabler.</li><li><b>Gerät</b> — zum Einrichten am besten Computer im Browser (claude.ai) oder die Claude-Desktop-App.</li><li><b>Region</b> — in Deutschland, Österreich und der Schweiz verfügbar. Der Rollout läuft schrittweise — nicht jeder sieht es am selben Tag.</li></ul>
-<p><b>Kurz-Check vor dem Start:</b> Strava-Abo aktiv? Bei Claude eingeloggt (Browser oder Desktop-App)? Strava-Login (E-Mail/Passwort) griffbereit fürs Autorisieren?</p>
-<p><i>Was ist Claude?</i> Claude ist eine KI von Anthropic — vergleichbar mit ChatGPT. Du erreichst sie im Browser unter claude.ai oder über die kostenlose Desktop-App. Genau hier wird gleich der Strava-Connector eingeschaltet.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Teil 3 — Strava mit Claude verbinden</h2>
-        <p>Der offizielle Weg — einmal einrichten, dann läuft's dauerhaft. Dauert keine zwei Minuten.</p>
-<ol><li>Öffne Claude im Browser auf claude.ai oder in der Desktop-App und logge dich ein.</li><li>Geh zu den Einstellungen und öffne den Bereich Connectors (Verbindungen).</li><li>Such in der Liste nach „Strava" und klick auf Connect (Verbinden).</li><li>Du wirst zu Strava weitergeleitet: dort einloggen und den Zugriff autorisieren (erlauben).</li><li>Zurück in Claude erscheint Strava als verbunden. Fertig — jetzt kannst du losfragen.</li></ol>
-<p><b>Strava taucht nicht auf?</b> Der Rollout läuft schrittweise — wenn du Abonnent bist und es fehlt, kommt der Zugang in Kürze. Prüf, ob dein Strava-Abo wirklich aktiv ist, und lade Claude bzw. den Browser einmal neu.</p>
-<p><i>Erster Test:</i> Nutze den Prompt <b>Erster Test — Aktivitäten ziehen</b> unten. Kommt eine saubere Tabelle zurück, ist alles korrekt verbunden.</p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Teil 4 — Was jetzt möglich ist</h2>
-        <p>Sobald verbunden, wird aus „Daten anschauen" echtes Coaching.</p>
-<p><b>Analyse — deine Form ehrlich lesen:</b> Trainingsanalysen (Volumen, Intensität, Pace- und Herzfrequenz-Entwicklung über Wochen), Fitness-Trends (geht's bergauf oder stagnierst du?) und Readiness (bist du erholt genug zum Pushen — oder brauchst du eine ruhige Woche?).</p>
-<p><b>Aufbau — dir Werkzeuge bauen lassen:</b> Dashboards für deine Kennzahlen, Routen-Ideen auf Basis deiner bisherigen Strecken und Cross-Sport-Auswertung (wie passen Laufen, Radfahren und Kraft zusammen?).</p>
-<p><b>Der Star: dein persönlicher KI-Coach.</b> Das Mächtigste: Du lässt dir einen persönlichen Trainer bauen, der deine echten Leistungen kennt und dir daraus passgenaue Pläne und Tipps gibt — statt Standard-Plan von der Stange. Die 3 Prompts bauen genau das Schritt für Schritt auf.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Teil 5 — Die 3 Prompts</h2>
-        <p>Die drei Prompts bauen aufeinander auf — am besten im selben Chat nacheinander einfügen (Strava muss verbunden sein). Bei [eckigen Klammern] deine Werte eintragen.</p>
-<ul><li><b>Prompt 1 — Tiefen-Analyse &amp; Fitness-Trends</b> liest deine Strava-Historie tief aus, erkennt echte Fitness-Trends statt Bauchgefühl und fasst alles in einer klaren Analyse zusammen (Stärken, Baustellen, Status deiner Form). Er liefert die Datenbasis für Prompt 2 und 3.</li><li><b>Prompt 2 — Dashboard &amp; Progress-Tracking</b> verwandelt die Analyse in ein visuelles Dashboard als eigenständige Seite (Artefakt / HTML), das du immer wieder mit neuen Daten fütterst.</li><li><b>Prompt 3 — Dein persönlicher KI-Trainer</b> macht aus Claude deinen dauerhaften Coach: periodisierter Plan, Anpassung an deine echten Daten, Readiness-Check, Feedback und Warnungen vor Überlastung.</li></ul>
-<p><i>Tipp:</i> Sag Claude beim Erstellen „merke dir, wie du dieses Dashboard gebaut hast" bzw. „merke dir mein Profil" — dann reicht künftig ein Satz zum Aktualisieren.</p>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Teil 6 — Mehr rausholen &amp; andere Wege</h2>
-        <p>Wenn du öfter analysierst oder ein anderes Tool nutzt — so machst du's clever.</p>
-<p><b>Wiederverwenden — aus einem Prompt eine Skill machen.</b> Nutzt du denselben Prompt (z. B. den Wochen-Review oder deinen Coach) immer wieder, musst du ihn nicht jedes Mal einfügen. In Claude bzw. Cowork kannst du daraus eine Skill machen — eine gespeicherte Anleitung, die Claude bei Bedarf automatisch anwendet. Einmal anlegen, danach reicht „mach meinen Wochen-Review".</p>
-<p><b>Andere Tools — ehrlich eingeordnet:</b></p>
-<ul><li><b>Claude (Web/Desktop)</b> — der offizielle, einfachste Weg. Für 99 % die richtige Wahl.</li><li><b>Claude Code</b> — für Entwickler: Connector ergänzen und feste Abläufe als Skills oder Slash-Befehle speichern.</li><li><b>Codex / ChatGPT</b> — kein offizieller Strava-Connector. Nur über Umwege (Drittanbieter wie Composio/Merge oder selbst gehostet, mit eigenen API-Keys); Prompts speicherst du dort als Custom/gespeicherte Prompts.</li></ul>
-<p>Kurz: Für den einfachen, sicheren Einstieg bleib bei Claude. Die anderen Wege sind etwas für Technik-Affine mit mehr Setup-Aufwand.</p>
-<p><b>Hinweis &amp; Haftungsausschluss:</b> Dieser Guide dient ausschließlich zu Informations- und Bildungszwecken. KI-generierte Trainingsanalysen und -pläne ersetzen keine individuelle, qualifizierte Trainings- oder ärztliche Beratung. Höre auf deinen Körper, steigere die Belastung mit Augenmaß und kläre gesundheitliche Fragen mit Ärztin/Arzt oder einer ausgebildeten Trainerin/einem Trainer ab. Funktionen, Verfügbarkeit und Menüpfade können sich ändern.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">Claude sieht deine Strava-Daten nur, weil du den read-only-Connector per Autorisierung selbst freigibst (jederzeit in den Strava-Einstellungen widerrufbar): es „loggt sich nicht von allein ein" und kann nichts ändern oder posten; ist der Connector bei dir noch nicht ausgerollt, kannst du deine Strava-Daten alternativ exportieren und die Datei hochladen.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">Erster Test — Aktivitäten ziehen</span>
+          <span class="prompt-label">Erster Test: Aktivitäten ziehen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Zieh meine letzten 5 Aktivitäten aus Strava und zeig mir Distanz, Pace und Höhenmeter.</pre>
@@ -131,10 +64,10 @@
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 1 — Tiefen-Analyse &amp; Fitness-Trends</span>
+          <span class="prompt-label">Prompt 1: Tiefen-Analyse &amp; Fitness-Trends</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Du bist mein erfahrener Ausdauer-Coach und Datenanalyst. Greif über den verbundenen Strava-Connector (read-only) auf meine Aktivitäten der letzten [180] Tage zu. Ziehe je Aktivität: Datum, Sportart, Distanz, Dauer, Pace bzw. Geschwindigkeit, Höhenmeter, Ø- und Max-Herzfrequenz, Leistung (Watt, falls vorhanden) und — wo verfügbar — die Pace- und Herzfrequenz-Streams.
@@ -156,10 +89,10 @@ Fehlen dir Daten (z. B. keine HF), sag es offen und arbeite mit dem, was da ist.
 
       <div class="prompt-card" id="prompt-3">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 2 — Dashboard &amp; Progress-Tracking</span>
+          <span class="prompt-label">Prompt 2: Dashboard &amp; Progress-Tracking</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Bau mir aus der Trainingsanalyse von eben und meinen verbundenen Strava-Daten ein übersichtliches Dashboard als eigenständige Seite (Artefakt / HTML). Es soll meine Form auf einen Blick zeigen und meinen Fortschritt über die Zeit abbilden.
@@ -179,10 +112,10 @@ Anforderungen:
 
       <div class="prompt-card" id="prompt-4">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 3 — Dein persönlicher KI-Trainer</span>
+          <span class="prompt-label">Prompt 3: Dein persönlicher KI-Trainer</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Werde mein persönlicher KI-Trainer — dauerhaft und auf mich zugeschnitten. Nutze die Trainingsanalyse und das Dashboard von eben als Wissensbasis über mein Level. Stell mir zuerst kurz diese Fragen (eine nach der anderen):
@@ -203,18 +136,18 @@ Sei danach dauerhaft mein Coach mit diesen Funktionen:
 Sprich mich mit Vornamen an und merke dir mein Profil für alle weiteren Gespräche.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/strava-claude.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/strava-claude.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

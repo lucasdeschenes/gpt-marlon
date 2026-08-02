@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flüge &amp; Hotels mit Claude recherchieren &amp; vergleichen — GPT Marlon Guides</title>
-  <meta name="description" content="Richte in Claude Cowork ein Reise-Profil ein, und Claude recherchiert Flüge und Hotels, vergleicht 3 Optionen je Kategorie und bereitet die Buchung Schritt für Schritt vor. Wichtig: Claude bucht und bezahlt nicht eigenständig – es füllt die Formulare vor und pausiert vor der Zahlung, den Kauf gibst du selbst frei und schließt ihn ab. Ein Bonus-Prompt erstellt danach einen einseitigen Reisevorbereitungs-Brief." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <meta name="description" content="Richte in Claude Cowork ein Reise-Profil ein, und Claude recherchiert Flüge und Hotels, vergleicht 3 Optionen je Kategorie und bereitet die Buchung Schritt für Schritt vor. Wichtig: Claude bucht und bezahlt nicht eigenständig, es füllt die Formulare vor und pausiert vor der Zahlung, den Kauf gibst du selbst frei und schließt ihn ab. Ein Bonus-Prompt erstellt danach einen einseitigen Reisevorbereitungs-Brief." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -35,7 +35,7 @@
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Alltag</span></div>
     <div class="page-hero">
       <h1 class="page-title">Flüge &amp; Hotels mit Claude recherchieren &amp; vergleichen</h1>
-      <p class="page-sub">Richte in Claude Cowork ein Reise-Profil ein, und Claude recherchiert Flüge und Hotels, vergleicht 3 Optionen je Kategorie und bereitet die Buchung Schritt für Schritt vor. Wichtig: Claude bucht und bezahlt nicht eigenständig – es füllt die Formulare vor und pausiert vor der Zahlung, den Kauf gibst du selbst frei und schließt ihn ab. Ein Bonus-Prompt erstellt danach einen einseitigen Reisevorbereitungs-Brief.</p>
+      <p class="page-sub">Richte in Claude Cowork ein Reise-Profil ein, und Claude recherchiert Flüge und Hotels, vergleicht 3 Optionen je Kategorie und bereitet die Buchung Schritt für Schritt vor. Wichtig: Claude bucht und bezahlt nicht eigenständig, es füllt die Formulare vor und pausiert vor der Zahlung, den Kauf gibst du selbst frei und schließt ihn ab. Ein Bonus-Prompt erstellt danach einen einseitigen Reisevorbereitungs-Brief.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Alltag</span>
@@ -43,70 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/fluege-recherchieren.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/fluege-recherchieren.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ Claude bucht und bezahlt nicht autonom: Es recherchiert, vergleicht und füllt Buchungsformulare vor und pausiert vor der Zahlung – den Kauf bestätigst und schließt du selbst ab.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Warum das jetzt gut funktioniert</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Schritt 1 – Reisepräferenzen einmalig einrichten</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Schritt 2 – Claude die Reise mitteilen</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Schritt 3 – Zusehen &amp; Zahlung freigeben</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Bonus – der Reisevorbereitungs-Brief</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Warum das jetzt gut funktioniert</h2>
-        <p>Claude Cowork war beim Reisebuchen schon brauchbar – mit den neueren Opus-Modellen (z. B. Opus 4.7) hat es eine neue Stufe erreicht. Der Ansatz: Du trägst deine Reisepräferenzen einmal ins Cowork-Projekt ein, fragst deine Trips an, und Claude öffnet den Browser, vergleicht Optionen auf den Reise-Websites und <b>bereitet die Buchungen bis zur Zahlung vor</b>.</p>
-<p><b>Wichtige Einordnung:</b> Claude kann nicht autonom bezahlen oder verbindlich buchen. Es <b>recherchiert, vergleicht und füllt Formulare vor</b> – die finale Zahlung und Buchung gibst du selbst frei. Genau dafür sind die festen Bestätigungs-Stopps im Prompt gebaut („NIEMALS ohne mein ‚Los' buchen").</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Schritt 1 – Reisepräferenzen einmalig einrichten</h2>
-        <p>Einmal ausfüllen – dann nie wieder tippen:</p>
-<ol><li>Öffne <b>Claude Cowork</b> auf deinem Computer.</li><li>Klicke oben links auf <b>+ Neues Projekt</b> und nenne es <i>Reise-HQ</i>.</li><li>Öffne das Projekt und klicke auf <b>Projektanweisungen</b> (Zahnrad-Symbol).</li><li>Kopiere die Vorlage (siehe Prompt <b>„Projektanweisungen: Reise-HQ"</b>) komplett in das Textfeld.</li><li>Fülle alle <b>[PLATZHALTER]</b> mit deinen echten Daten aus – Name, Flughafen, Kreditkarte, Loyalitätsnummern.</li><li>Speichern. Claude kennt jetzt deine Reisepräferenzen dauerhaft.</li></ol>
-<p>Die Vorlage legt fest, wer du bist, deine Flug- und Hotelpräferenzen sowie <b>feste Regeln</b> – u. a. immer vor der Buchung Gesamtkosten, Kreditkarte, Empfehlung und 2 Alternativen zeigen und <b>niemals ohne dein ‚Los' buchen</b>.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Schritt 2 – Claude die Reise mitteilen</h2>
-        <p>Cowork kennt deine Präferenzen bereits. Kopiere den <b>Buchungs-Prompt</b>, fülle die Lücken (Ziel, Daten, Zweck, Hotel-Lage, Reisende, Priorität, Abweichungen) und schick ihn ab. Der Prompt arbeitet in <b>drei Phasen mit Freigabe-Pause dazwischen</b>:</p>
-<ul><li><b>Phase 1 – Recherche (noch keine Buchung):</b> Google Flights + Airlines direkt + Buchungsportale vergleichen; je 3 Flug- und 3 Hoteloptionen (Empfehlung + 2 Alternativen) mit Gesamtkosten, Punkten, Storno und einem Hinweis; sauberer Vergleich nebeneinander.</li><li><b>Phase 2 – Buchen (nur nach deiner Freigabe):</b> Buchungsseiten öffnen, Formulare mit deinen Projektdaten vorausfüllen, Treueprogramm-Nummern &amp; Kreditkarte anwenden; direkt vor ‚Kaufen' nochmals pausieren und die Endsumme zeigen – erst nach deinem ‚Los' schließt du ab.</li><li><b>Phase 3 – Bericht:</b> Bestätigung im Standard-Format, Trip in Google Calendar eintragen, Bestätigungsmails in Google Drive ablegen.</li></ul>
-<p><b>Standard-Ausgabe nach jeder Buchung:</b> kurze Textzusammenfassung (z. B. „Gebucht: MUC→NYC + 3 Nächte NYC, 15.–22. Dez, Gesamt 890 €"), 6-stellige Bestätigungscodes, verdiente Meilen/Punkte und was vor der Reise zu tun ist (Check-in-Fenster, Upgrade, Stornofrist).</p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Schritt 3 – Zusehen &amp; Zahlung freigeben</h2>
-        <p>Cowork öffnet deinen Browser, navigiert die Buchungsseiten, füllt alle Formulare aus und <b>pausiert zur Bestätigung, bevor die Karte belastet wird</b>. Du kannst live zuschauen oder es vorbereiten lassen – den finalen Kauf gibst du selbst frei.</p>
-<p><b>Wann man das nicht verwenden sollte:</b></p>
-<ul><li>Familienbuchungen mit mehreren Personen und spezifischen Zusammensitz-Anforderungen</li><li>Prämienflüge, die nur telefonisch eingelöst werden können</li><li>Firmen-Buchungstools mit internen Genehmigungsworkflows</li></ul>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Bonus – der Reisevorbereitungs-Brief</h2>
-        <p>Nach jeder Buchung führst du den <b>Trip-Brief-Prompt</b> aus. Er erstellt eine einseitige, druckbare Übersicht (unter 500 Wörter) mit 8 Abschnitten: Wetter + Packliste, Restaurants in Hotelnähe, deine Meetings/Events (aus Google Calendar), eine lokale Aktivität, Fortbewegung, was du vergessen könntest, Geld-Tipps und eine persönliche Notiz.</p>
-<p><b>Quick-Setup-Checkliste (15 Minuten):</b> Cowork öffnen → Projekt <i>Reise-HQ</i> erstellen → Projektanweisungen einfügen und ausfüllen → Treueprogramm-Nummern &amp; Kreditkarten eintragen → Test: „Suche Flüge nach [ZIEL] nächsten Monat" (nur Recherche) → ersten echten Trip vorbereiten und selbst freigeben.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">Claude bucht und bezahlt nicht autonom: Es recherchiert, vergleicht und füllt Buchungsformulare vor und pausiert vor der Zahlung, den Kauf bestätigst und schließt du selbst ab.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
           <span class="prompt-label">Projektanweisungen: Reise-HQ</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">### REISE-HQ PROJEKTANWEISUNGEN
@@ -148,8 +98,8 @@ Kreditkarte für Hotels: [KARTE]
         <div class="prompt-head">
           <span class="prompt-label">Reise-Buchungs-Prompt (3 Phasen)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Buche mir eine Reise. Hier die Details:
@@ -190,8 +140,8 @@ Nicht blind das günstigste buchen. Optimiere für meine Priorität. Zeig mir di
         <div class="prompt-head">
           <span class="prompt-label">Reisevorbereitungs-Brief (Trip-Brief)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Du bist mein Reisevorbereiter. Erstelle eine einseitige Übersicht:
@@ -218,18 +168,18 @@ REISEDETAILS:
 Format: Sauber, druckbar, unter 500 Wörter. Abschnitte fett.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/fluege-recherchieren.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/fluege-recherchieren.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

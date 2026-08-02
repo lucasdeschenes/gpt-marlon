@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — GPT Marlon</title>
-  <meta name="description" content="Contact GPT Marlon — questions, press or partnerships. Your message goes straight to Marlon." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <title>Contact: GPT Marlon</title>
+  <meta name="description" content="Contact GPT Marlon: questions, press or partnerships. Your message goes straight to Marlon." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <link rel="stylesheet" href="assets/fonts.css" />
   <link rel="stylesheet" href="assets/site.css" />
   <link rel="stylesheet" href="assets/footer.css" />
@@ -33,9 +33,9 @@
   <main class="page">
     <div class="page-hero fade-up">
       <div class="section-label"><span data-en="Contact">Kontakt</span></div>
-      <h1 class="page-title"><span data-en="Say hi —">Sag Hallo —</span> <span class="gradient-text" data-en="Marlon reads everything.">Marlon liest alles.</span></h1>
+      <h1 class="page-title"><span data-en="Say hi.">Sag Hallo.</span> <span class="gradient-text" data-en="Marlon reads everything.">Marlon liest alles.</span></h1>
       <p class="page-sub">
-        <span data-en="Questions, ideas, press, collabs — drop a message. It's saved for us and your email app opens so you can send it directly too. Businesses: see ">Fragen, Ideen, Presse, Kooperationen — schreib uns. Deine Nachricht wird gespeichert und dein E-Mail-Programm öffnet sich, damit du sie auch direkt senden kannst. Für Unternehmen: siehe </span><a href="partnerships.html" style="color:var(--yellow)">Partnerships</a>.
+        <span data-en="Questions, ideas, press, collabs: drop a message. It's saved for us and your email app opens so you can send it directly too. Businesses: see ">Fragen, Ideen, Presse, Kooperationen: schreib uns. Deine Nachricht wird gespeichert und dein E-Mail-Programm öffnet sich, damit du sie auch direkt senden kannst. Für Unternehmen: siehe </span><a href="partnerships.html" style="color:var(--yellow)">Partnerships</a>.
       </p>
     </div>
 
@@ -64,7 +64,7 @@
         </div>
         <button type="submit" class="btn-primary" id="mSubmit"><span data-en="Send message →">Nachricht senden →</span></button>
         <div class="form-status" id="mStatus"></div>
-        <p class="form-note"><span data-en="On send, your message is stored for us and your email app opens pre-filled to ">Beim Senden wird deine Nachricht gespeichert und dein E-Mail-Programm öffnet sich vorausgefüllt an </span><b>business@gptmarlon.com</b><span data-en=" — hit send there to make sure it lands in the inbox too."> — sende sie dort ab, damit sie sicher im Postfach landet.</span></p>
+        <p class="form-note"><span data-en="On send, your message is stored for us and your email app opens pre-filled to ">Beim Senden wird deine Nachricht gespeichert und dein E-Mail-Programm öffnet sich vorausgefüllt an </span><b>business@gptmarlon.com</b><span data-en=". Hit send there to make sure it lands in the inbox too.">. Sende sie dort ab, damit sie sicher im Postfach landet.</span></p>
       </form>
     </div>
   </main>
@@ -113,11 +113,11 @@
       catch (err) { saved = false; }
       // open the visitor's email app pre-filled either way
       const subject = encodeURIComponent('[' + topic + '] Message from ' + (name || email));
-      const body = encodeURIComponent(msg + '\n\n— ' + (name || 'Anonymous') + ' (' + email + ')');
+      const body = encodeURIComponent(msg + '\n\n' + (name || 'Anonymous') + ' (' + email + ')');
       window.location.href = 'mailto:business@gptmarlon.com?subject=' + subject + '&body=' + body;
       status.textContent = saved
-        ? '✓ Message saved — your email app just opened, hit send there too.'
-        : 'Message could not be stored, but your email app opened — please send it from there.';
+        ? 'Message saved. Your email app just opened, hit send there too.'
+        : 'Message could not be stored, but your email app opened. Please send it from there.';
       status.className = 'form-status ' + (saved ? 'ok' : 'err');
       btn.disabled = false; btn.textContent = 'Send message →';
       if (saved) e.target.reset();

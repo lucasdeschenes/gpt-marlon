@@ -4,7 +4,7 @@
   "slug": "finanz-connectors",
   "category": "Finanzen",
   "tool": "Claude",
-  "summary": "Anthropic bietet kostenlose Finanz-Plugins an, die Claude in Cowork die Analyse-Werkzeuge großer Fonds geben – technisch sind das Connectors (MCP) und Agent Skills. Der Guide führt Schritt für Schritt durch Account, Marketplace und Installation und liefert sechs fertige Prompts für DCF, Earnings, Comps und Screening. Kein FactSet oder Bloomberg nötig, denn die Plugins arbeiten mit öffentlichen Daten – eine Anlageberatung ersetzen sie aber nicht.",
+  "summary": "Anthropic bietet kostenlose Finanz-Plugins an, die Claude in Cowork die Analyse-Werkzeuge großer Fonds geben: technisch sind das Connectors (MCP) und Agent Skills. Der Guide führt Schritt für Schritt durch Account, Marketplace und Installation und liefert sechs fertige Prompts für DCF, Earnings, Comps und Screening. Kein FactSet oder Bloomberg nötig, denn die Plugins arbeiten mit öffentlichen Daten, eine Anlageberatung ersetzen sie aber nicht.",
   "sections": [
     {
       "heading": "Zuerst: drei Begriffe, die alles erklären",
@@ -33,38 +33,38 @@
   ],
   "prompts": [
     {
-      "label": "Beispiel – Morning Note zu Tesla",
+      "label": "Beispiel: Morning Note zu Tesla",
       "text": "Erstelle mir eine kurze Morning Note zu Tesla: relevante News der letzten 24 Stunden, anstehende Termine (Earnings, Auslieferungszahlen) und ob es heute etwas gibt, das ich beachten sollte. Stichpunktartig."
     },
     {
-      "label": "Beispiel – Sektor-Screen Gesundheit",
+      "label": "Beispiel: Sektor-Screen Gesundheit",
       "text": "Screene den europäischen Gesundheitssektor und gib mir die 5 spannendsten Aktien — je mit zwei Sätzen zur These und dem größten Risiko."
     },
     {
-      "label": "Prompt 1 – DCF-Bewertung",
+      "label": "Prompt 1: DCF-Bewertung",
       "text": "Erstelle eine DCF-Bewertung für [Unternehmen]. Nutze die letzten 5 Jahre aus den offiziellen Filings, projiziere die Free Cashflows für 5 Jahre und nenne deine Annahmen für Wachstum, Marge und Diskontsatz (WACC) explizit. Zeig eine Sensitivitätstabelle und am Ende den fairen Wert pro Aktie im Vergleich zum aktuellen Kurs."
     },
     {
-      "label": "Prompt 2 – Earnings-Recap",
+      "label": "Prompt 2: Earnings-Recap",
       "text": "Fasse die letzten Quartalszahlen von [Unternehmen] zusammen. Vergleiche Umsatz und Gewinn mit den Erwartungen und dem Vorjahresquartal, nenne die 3 wichtigsten Aussagen aus dem Earnings Call, das Guidance-Update und was den Kurs bewegt hat. Maximal eine halbe Seite."
     },
     {
-      "label": "Prompt 3 – Sektor-Überblick",
+      "label": "Prompt 3: Sektor-Überblick",
       "text": "Gib mir einen Überblick über den [Sektor] in [Region]. Nenne die aktuellen Markttreiber und Risiken, die 5 größten Player mit ihrer Positionierung, typische Bewertungsniveaus (KGV, EV/EBITDA) und wo gerade die größten Chancen und Gefahren liegen."
     },
     {
-      "label": "Prompt 4 – Morning Note (Tagesbriefing)",
+      "label": "Prompt 4: Morning Note (Tagesbriefing)",
       "text": "Erstelle eine Morning Note zu meinen Werten: [Aktie 1, Aktie 2, ...]. Pro Aktie: relevante News der letzten 24 Stunden, anstehende Termine (Earnings, Dividende) und ob es etwas gibt, das ich heute beachten sollte. Kurz und stichpunktartig."
     },
     {
-      "label": "Prompt 5 – Vergleichsunternehmen (Comps)",
+      "label": "Prompt 5: Vergleichsunternehmen (Comps)",
       "text": "Erstelle eine Vergleichsanalyse (Comps) für [Unternehmen]. Wähle 5–6 vergleichbare börsennotierte Wettbewerber und stelle Bewertungsmultiplikatoren (KGV, EV/EBITDA, EV/Umsatz) sowie Wachstum und Margen in einer Tabelle gegenüber. Sag mir am Ende, ob [Unternehmen] relativ teuer oder günstig ist."
     },
     {
-      "label": "Prompt 6 – Ideenfindung",
+      "label": "Prompt 6: Ideenfindung",
       "text": "Ich suche neue Investmentideen im Bereich [Thema/Sektor]. Screene nach Unternehmen mit [Kriterien, z. B. Umsatzwachstum >10 %, soliden Margen, moderater Bewertung] und gib mir 5 Kandidaten — je mit zwei Sätzen zur These und dem größten Risiko."
     }
   ],
-  "note": "„Plugins\" sind bei Claude technisch Connectors (MCP) plus Agent Skills; die Analysen sind KI-generiert und keine Anlageberatung – prüfe sie vor jeder Entscheidung selbst.",
+  "note": "„Plugins\" sind bei Claude technisch Connectors (MCP) plus Agent Skills; die Analysen sind KI-generiert und keine Anlageberatung: prüfe sie vor jeder Entscheidung selbst.",
   "date": "2026-06-18"
 }

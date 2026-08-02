@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claude Fitness Coach — Setup-Leitfaden — GPT Marlon Guides</title>
-  <meta name="description" content="Claude wird zu deinem datengesteuerten Personal Trainer: Es liest deinen Apple-Health- bzw. CSV-Export (Schlaf, Puls, HRV, Workouts) und baut daraus jeden Tag ein Training, das zu deinem echten Zustand passt — schlecht geschlafen heißt aktive Erholung statt Kraft. Progressive Überlastung und Deload-Wochen laufen automatisch, fertige Workouts landen in Google Calendar. Enthält den vollständigen System-Prompt zum Einsetzen." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <title>Claude Fitness Coach: Setup-Leitfaden — GPT Marlon Guides</title>
+  <meta name="description" content="Claude wird zu deinem datengesteuerten Personal Trainer: Es liest deinen Apple-Health- bzw. CSV-Export (Schlaf, Puls, HRV, Workouts) und baut daraus jeden Tag ein Training, das zu deinem echten Zustand passt, schlecht geschlafen heißt aktive Erholung statt Kraft. Progressive Überlastung und Deload-Wochen laufen automatisch, fertige Workouts landen in Google Calendar. Enthält den vollständigen System-Prompt zum Einsetzen." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -34,8 +34,8 @@
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Alltag</span></div>
     <div class="page-hero">
-      <h1 class="page-title">Claude Fitness Coach — Setup-Leitfaden</h1>
-      <p class="page-sub">Claude wird zu deinem datengesteuerten Personal Trainer: Es liest deinen Apple-Health- bzw. CSV-Export (Schlaf, Puls, HRV, Workouts) und baut daraus jeden Tag ein Training, das zu deinem echten Zustand passt — schlecht geschlafen heißt aktive Erholung statt Kraft. Progressive Überlastung und Deload-Wochen laufen automatisch, fertige Workouts landen in Google Calendar. Enthält den vollständigen System-Prompt zum Einsetzen.</p>
+      <h1 class="page-title">Claude Fitness Coach: Setup-Leitfaden</h1>
+      <p class="page-sub">Claude wird zu deinem datengesteuerten Personal Trainer: Es liest deinen Apple-Health- bzw. CSV-Export (Schlaf, Puls, HRV, Workouts) und baut daraus jeden Tag ein Training, das zu deinem echten Zustand passt, schlecht geschlafen heißt aktive Erholung statt Kraft. Progressive Überlastung und Deload-Wochen laufen automatisch, fertige Workouts landen in Google Calendar. Enthält den vollständigen System-Prompt zum Einsetzen.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Alltag</span>
@@ -43,97 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/fitness-coach.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/fitness-coach.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ Claude liest deine Gesundheitsdaten nur (read-only) und trägt Workouts über den Connector in Google Calendar ein — zurück in Apple Health schreiben kann es nicht. Die native Apple-Health-/Health-Connect-Integration ist Stand 2026 nur als US-Beta (Pro/Max) verfügbar; in Deutschland, Österreich und der Schweiz läuft alles über den manuellen Export. Der Coach ersetzt keine ärztliche Beratung.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Kurz in eigener Sache &amp; was das System macht</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Was du brauchst</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Einrichtung in 5 Schritten</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Deine erste Analyse</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Bonus — täglich automatischer Morgen-Check</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Der vollständige System-Prompt</a></li>
-        <li><a href="#s7"><span class="toc-n">07</span>Was du deinem Fitness Coach sagen kannst</a></li>
-        <li><a href="#s8"><span class="toc-n">08</span>Datenschutz, FAQ &amp; Ausblick</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Kurz in eigener Sache &amp; was das System macht</h2>
-        <p><b>Hinweis vorab:</b> Im Reel und in der ersten Version dieses Guides wurde die native Apple-Health-Integration gezeigt. Die gibt es aktuell aber nur für Pro- und Max-Nutzer in den USA (Beta seit Januar 2026). Du bekommst trotzdem exakt dasselbe Ergebnis — du lädst deine Daten nur einmal selbst hoch (Schritt 2).</p>
-<p><b>Was das System macht:</b> Claude liest deine echten Gesundheitsdaten (Schlaf, Schritte, Herzfrequenz, zurückliegende Workouts) und erstellt daraus einen personalisierten Trainingsplan — kein generisches Template. Schlecht geschlafen? Claude tauscht Krafttraining gegen aktive Erholung. Top-Woche gehabt? Es schiebt dich härter. Progressive Überlastung und Deload-Wochen laufen automatisch nach Leistung, fertige Workouts schreibt Claude direkt in Google Calendar.</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Was du brauchst</h2>
-        <ul><li><b>iPhone mit Health-App.</b> Apple Watch optional, aber mehr Daten = bessere Analyse.</li><li><b>Claude-Account.</b> Für größere Health-Exporte ist Pro praktisch notwendig.</li><li><b>Google Calendar</b> für automatische Workout-Einträge (optional, empfohlen).</li><li><b>Wearable optional</b> (Apple Watch, Garmin, Whoop …) — verbessert die Daten, ist aber kein Muss.</li></ul>
-<p><b>Wichtig zu wissen:</b> Claude kann deine Health-Daten <b>lesen und analysieren, aber nichts in Apple Health schreiben</b>. Workouts können als Events in Google Calendar eingetragen werden. Die native Apple-Health-Integration ist als Beta nur in den USA verfügbar (Pro/Max) — dasselbe gilt für Health Connect auf Android. In Deutschland, Österreich und der Schweiz gehst du über den manuellen Export: gleiche Analyse, ein Schritt mehr.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Einrichtung in 5 Schritten</h2>
-        <p><b>1 — Projekt in Claude erstellen:</b> claude.ai öffnen, links auf Projekte → Projekt erstellen, z. B. „Fitness Coach“. Das Projekt speichert Fitness-Profil, Historie und System-Anweisungen dauerhaft.</p>
-<p><b>2 — Health-Daten exportieren:</b></p>
-<ul><li><i>Weg A (Standard, kostenlos):</i> Health-App → Profilbild oben rechts → ganz unten „Alle Gesundheitsdaten exportieren“. Das iPhone packt alles in eine ZIP. In Dateien sichern und in Claude hochladen; lehnt Claude die ZIP ab, entpacken und die export.xml hochladen. Apple exportiert immer alles (kein Zeitraum, keine Auswahl) — bei langjähriger Nutzung schnell mehrere hundert MB (Upload-Limit 500 MB pro Datei). Deshalb sagt der Prompt Claude, die Daten per Code zu parsen und auf Tagesebene zusammenzufassen.</li><li><i>Weg B (schlank, empfohlen):</i> App „Health Auto Export“ (kostenlos, Basic-Einmalkauf ca. 3 €, 7 Tage Gratis-Test). Nur die gewünschten Metriken aktivieren (Schlaf, Ruhepuls, HRV, Schritte, Workouts), Format CSV, Aggregation auf Tagesebene, Zeitraum 6–12 Monate. Kompakte CSVs, mit denen Claude problemlos arbeitet.</li></ul>
-<p><b>3 — Google Calendar verbinden:</b> claude.ai → Einstellungen → Connectors → Google Calendar → Verbinden. Claude kann ab sofort Kalendereinträge erstellen.</p>
-<p><b>4 — System-Anweisungen einsetzen:</b> Im Fitness-Coach-Projekt auf „Eigene Anweisungen festlegen“ klicken und den vollständigen System-Prompt (unten) einsetzen. Das ist das Gehirn des Systems. Nicht bearbeiten, außer man weiß genau, was man ändert.</p>
-<p><b>5 — Ziel nennen &amp; Export hochladen:</b> Neue Unterhaltung im Projekt, Export anhängen, Ziel beschreiben (z. B. „Ich möchte 10 kg abnehmen, habe Kurzhanteln zuhause und kann 4 Tage pro Woche trainieren.“). Claude stellt Rückfragen, erstellt dein Profil und liefert den ersten Plan. Danach genügt: „Was soll ich heute tun?“</p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Deine erste Analyse</h2>
-        <p>Bevor der Coach loslegt, lohnt sich ein voller Gesundheits-Check. Diesen Prompt zusammen mit deinem Export in eine neue Unterhaltung kopieren. → siehe Prompt „Erste Analyse — Gesundheits-Check“ unten.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Bonus — täglich automatischer Morgen-Check</h2>
-        <p>In den USA läuft das mit der nativen Integration vollautomatisch: Claude prüft jeden Morgen die Daten und passt das Workout an. In Deutschland, Österreich und der Schweiz geht das noch nicht (Voraussetzungen wären US-Account, Pro/Max, Claude iOS-App bzw. Android 14+ mit Health Connect und aktives Beta-Feature).</p>
-<p><b>Was trotzdem geht:</b> Cowork öffnen → Aufgabe planen, täglich zur gewünschten Uhrzeit. Der geplante Task arbeitet mit deinem letzten Export: plant das Workout und trägt es in den Kalender ein, kann aber nicht deinen Schlaf von letzter Nacht abrufen. Frische Daten heißt: neuer Export (mit Weg B in einer Minute erledigt). Tipp: Task etwa 30 Minuten vor dem üblichen ersten Handy-Check einrichten.</p>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Der vollständige System-Prompt</h2>
-        <p>Den gesamten Prompt (Schritte 1–10 plus Regeln) kopieren und in die Eigenen Anweisungen des Projekts einsetzen. Er deckt ab: Erstgespräch, Datenauswertung, Entscheidungslogik, Progressive Überlastung, Trainingsstruktur, Wochen- und Monatsplanung, Ernährung und Sondersituationen. → siehe Prompt „Vollständiger System-Prompt“ unten.</p>
-<p><b>Warum der Schlaf-Check zählt:</b> Unter 6 Stunden hart zu trainieren gräbt ein Erholungsloch — der Schlaf-Check ist das Herzstück des Systems und baut das automatisch ein.</p>
-      </section>
-
-      <section class="guide-section" id="s7">
-        <div class="gs-num">07</div>
-        <h2>Was du deinem Fitness Coach sagen kannst</h2>
-        <p>Jede Aussage in einer Unterhaltung im Projekt löst eine andere Funktion aus:</p>
-<ul><li>„Was soll ich heute tun?“ — Training basierend auf Schlaf, Herzfrequenz und gestrigem Workout.</li><li>„Plane meine Woche“ — 7-Tage-Plan mit Ruhetagen, direkt in Google Calendar.</li><li>„Ich hab nur 4 Stunden geschlafen“ — heruntergestuft auf aktive Erholung.</li><li>„Ich habe Muskelkater vom Beintraining“ — Wechsel zu Oberkörper oder aktiver Erholung.</li><li>„Ich fahre nächste Woche weg“ — leichter Bodyweight-Plan für unterwegs.</li><li>„Meine Workouts langweilen mich“ — neues Format, neue Übungen, ggf. ein Kurs.</li><li>„Was soll ich vor dem Training essen?“ — einfache Ernährungshinweise.</li><li>„Gib mir meinen Monatsfortschrittsbericht“ — 4 Wochen Daten: Workouts, Streaks, Kraftzuwächse, Schlaf und nächster Fokus.</li></ul>
-<p><b>Plan anpassen:</b> Passt das Training nicht zum Gefühl, einfach sagen „Ich bin müder als sonst“ oder „Ich will es heute härter“ — Claude passt sofort an. Der Plan ist Ausgangspunkt, kein starres Programm.</p>
-      </section>
-
-      <section class="guide-section" id="s8">
-        <div class="gs-num">08</div>
-        <h2>Datenschutz, FAQ &amp; Ausblick</h2>
-        <p><b>Datenschutz:</b> Health-Daten gehören zum Sensibelsten, was du digital besitzt. Beim manuellen Export entscheidest du selbst, was Claude sieht — mit Weg B sogar metrikgenau. In den Claude-Einstellungen unter Datenschutz legst du fest, ob deine Unterhaltungen zum Modelltraining verwendet werden dürfen.</p>
-<p><b>FAQ:</b></p>
-<ul><li><i>Brauche ich ein Wearable?</i> Nein, das iPhone reicht (Schritte, Schlaf, Herzfrequenz).</li><li><i>Kann ich beim Export einen Zeitraum wählen?</i> Bei Weg A nicht (Apple exportiert alles); dafür ist Weg B da.</li><li><i>Ohne iPhone?</i> Android/Samsung Health bietet „Persönliche Daten herunterladen“ bzw. Health Connect einen geplanten CSV/ZIP-Export; ab dem Upload ist alles identisch.</li><li><i>Kann Claude in Apple Health schreiben?</i> Nein (read-only). In Google Calendar können Events geschrieben werden.</li><li><i>Wie oft exportieren?</i> So oft du frische Daten willst — bewährt: einmal pro Woche vor der Planung.</li><li><i>Dateigröße?</i> Im Chat 500 MB pro Datei, bis zu 20 Dateien; in Projekt-Dateien 30 MB pro Datei (Stand Juni 2026).</li></ul>
-<p><b>Ausblick:</b> Sobald die native Apple-Health-Integration in Deutschland, Österreich oder der Schweiz verfügbar ist, fällt der Export-Schritt weg — ein Datum dafür hat Anthropic nicht genannt.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">Claude liest deine Gesundheitsdaten nur (read-only) und trägt Workouts über den Connector in Google Calendar ein: zurück in Apple Health schreiben kann es nicht. Die native Apple-Health-/Health-Connect-Integration ist Stand 2026 nur als US-Beta (Pro/Max) verfügbar; in Deutschland, Österreich und der Schweiz läuft alles über den manuellen Export. Der Coach ersetzt keine ärztliche Beratung.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">Erste Analyse — Gesundheits-Check</span>
+          <span class="prompt-label">Erste Analyse: Gesundheits-Check</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich lade dir meinen Apple-Health-Export hoch [ZIP mit export.xml ODER CSV-Dateien]. Analysiere die Daten per Code -- lies die Rohdaten nicht direkt ein, sondern parse und aggregiere sie auf Tagesebene.
@@ -152,8 +75,8 @@ Wichtig: Du bist kein Arzt. Kennzeichne alles, was ärztlich abgeklärt werden s
         <div class="prompt-head">
           <span class="prompt-label">Vollständiger System-Prompt</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text"># You are a personal fitness coach who uses real health data
@@ -395,18 +318,18 @@ No recent health export available: ask for one
 before prescribing anything.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/fitness-coach.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/fitness-coach.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

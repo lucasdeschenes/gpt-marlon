@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Der 5-Prompt Aktien-Stack — jede Aktie in unter 5 Minuten analysieren — GPT Marlon Guides</title>
+  <title>Der 5-Prompt Aktien-Stack: jede Aktie in unter 5 Minuten analysieren — GPT Marlon Guides</title>
   <meta name="description" content="Fünf aufeinander aufbauende Prompts komprimieren die stundenlange Aktienrecherche auf rund fünf Minuten pro Titel: Marktregime prüfen, Deep Dive scoren, Peers vergleichen, den Bear Case erzwingen und vor dem Kauf einen Exit-Plan schreiben. Jeden Prompt bekommst du auf Deutsch und im englischen Original. Das Framework stammt von Albert (@berttrading); die KI liefert die Analyse, dein Urteil und die Zahlenprüfung bleiben bei dir." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -34,7 +34,7 @@
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Finanzen</span></div>
     <div class="page-hero">
-      <h1 class="page-title">Der 5-Prompt Aktien-Stack — jede Aktie in unter 5 Minuten analysieren</h1>
+      <h1 class="page-title">Der 5-Prompt Aktien-Stack: jede Aktie in unter 5 Minuten analysieren</h1>
       <p class="page-sub">Fünf aufeinander aufbauende Prompts komprimieren die stundenlange Aktienrecherche auf rund fünf Minuten pro Titel: Marktregime prüfen, Deep Dive scoren, Peers vergleichen, den Bear Case erzwingen und vor dem Kauf einen Exit-Plan schreiben. Jeden Prompt bekommst du auf Deutsch und im englischen Original. Das Framework stammt von Albert (@berttrading); die KI liefert die Analyse, dein Urteil und die Zahlenprüfung bleiben bei dir.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
@@ -43,106 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/aktien-prompt-stack.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/aktien-prompt-stack.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ Die Prompts brauchen eine KI mit aktivierter Websuche (Claude, ChatGPT oder Gemini); die KI recherchiert und bewertet, kann aber Zahlen falsch abrufen oder halluzinieren — prüfe jede Angabe im Original-Filing. Die genannten Trading-Erfolge sind Erfahrungswerte von @berttrading, keine Renditeversprechen und keine Anlageberatung.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Lies das zuerst</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Was du brauchst</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Prompt 1 — Markt-Check (Weather Check)</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Prompt 2 — Deep Dive</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Prompt 3 — Konkurrenz-Vergleich (Peer Comparison)</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Prompt 4 — Bear Case</a></li>
-        <li><a href="#s7"><span class="toc-n">07</span>Prompt 5 — Exit-Plan (Exit Timer)</a></li>
-        <li><a href="#s8"><span class="toc-n">08</span>Ohne den Stack vs. mit dem Stack</a></li>
-        <li><a href="#s9"><span class="toc-n">09</span>Die häufigsten Fehler mit KI</a></li>
-        <li><a href="#s10"><span class="toc-n">10</span>Deine erste Woche &amp; Kill-Kriterien</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Lies das zuerst</h2>
-        <p>Wenn du Aktien auswählst, indem du durch X scrollst und Börsen-TV laufen lässt, spielst du auf dem schwersten Schwierigkeitsgrad. Gute KI ersetzt nicht dein Urteilsvermögen — sie komprimiert die vier Stunden Recherche, die du eigentlich machen müsstest, auf fünf Minuten pro Aktie, damit du sie wirklich machst.</p>
-<p>Das Framework stammt von Albert (@berttrading): Er hat mit genau diesem 5-Prompt-Stack letztes Jahr 129.000 Dollar im Swing-Trading verdient — nebenberuflich — und damit Aktien wie AMD und Palantir früh gefunden. Aufbereitet und übersetzt hat den Stack Marlon (@GPTMarlon): Jeden Prompt bekommst du auf Deutsch und im englischen Original.</p>
-<p>Ersetze [TICKER] durch das Kürzel der Aktie auf deiner Watchlist (z. B. AMD, NVDA, PLTR) und führe die Prompts der Reihe nach aus.</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Was du brauchst</h2>
-        <ul><li><b>Ein KI-Tool mit Websuche:</b> Claude (claude.ai), ChatGPT (chatgpt.com) oder Gemini (gemini.google.com). Die Prompts funktionieren in allen drei.</li><li><b>Kostenlos oder Abo?</b> Zum Testen reicht die Gratis-Version — Websuche ist inzwischen bei allen drei auch im kostenlosen Plan dabei, die Limits sind dort aber schnell erreicht. Für den ernsthaften Betrieb (5 Prompts pro Aktie, mehrere Aktien pro Woche) nimm ein Standard-Abo: Claude Pro oder ChatGPT Plus für rund 20 Dollar im Monat, Google AI Pro für rund 20 Dollar (Stand: Juni 2026). Die teuren Max- und Ultra-Stufen sind für diesen Workflow überflüssig.</li><li><b>30 Minuten pro Woche</b>, sobald die Routine sitzt.</li></ul>
-<p><b>Sprach-Tipp:</b> Nutze die deutschen Prompts, wenn du die Analyse auf Deutsch lesen willst. Die englischen Originale liefern englische Antworten. Inhaltlich sind beide gleichwertig.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Prompt 1 — Markt-Check (Weather Check)</h2>
-        <p>Einmal pro Woche ausführen. Sagt dir, auf welcher Seite des Marktes du spielst: Er bewertet Trend (SPY vs. 50-/200-Tage-Linie), Volatilität (VIX), Zinsen (10-jährige US-Anleihen) und Marktführerschaft (Top-/Bottom-Sektoren) und benennt das Regime (STRONG BULL bis BEAR) mit einem Ein-Satz-Urteil. → siehe Prompt 1 (DE) bzw. das englische Original unten.</p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Prompt 2 — Deep Dive</h2>
-        <p>Dein Anker-Prompt, den du auf jeder neuen Aktie laufen lässt. Er scort die Aktie über vier Dimensionen des V1-Frameworks — Wachstum &amp; Momentum (35), Moat &amp; Qualität (25), Absicherung nach unten (25), Sentiment &amp; Timing (15) — auf einen Gesamt-Score /100 mit Einstufung und asymmetrischer These. → Prompt 2.</p>
-<p><b>Echtes Beispiel — Claudes Deep Dive zu AMD bei 100 $ (Ende 2023):</b></p>
-<ul><li>Wachstum &amp; Momentum 24/35: Gesamtumsatz verlangsamte sich, ABER Data Center wuchs +40 % YoY und beschleunigte — das am schnellsten wachsende Segment. Die Guidance kündigte den MI300X-Hochlauf für H2 2024 an.</li><li>Moat &amp; Qualität 19/25: EPYC-Marktanteilsgewinne gegen Intel, MI300X als einzige glaubwürdige H100-Alternative, Bruttomarge ~50 % und steigend. Minus 2 Punkte für die TSMC-Abhängigkeit.</li><li>Absicherung nach unten 18/25: Netto-Cash über 5 Mrd. $, FCF-Marge ~8 %, Price/FCF ~35x (Premium, aber FCF vor der Skalierung). Keine ungeplanten Insider-Verkäufe.</li><li>Sentiment &amp; Timing 11/15: Top-Analysten uneins, moderates Short Interest, institutionelle Akkumulation — ein offen sichtbares Contrarian-Setup.</li></ul>
-<p><b>Gesamt: 72/100 — Medium Tier.</b> These: Bei 100 $ zahlte man nur für Client + Gaming + Embedded, Data Center gab es gratis dazu. Downside 60–80 $, Upside 250–300 $.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Prompt 3 — Konkurrenz-Vergleich (Peer Comparison)</h2>
-        <p>Günstig zählt nur relativ zum Wachstum. Dieser Prompt baut eine relative Bewertungstabelle für [TICKER] gegen zwei Peers (Forward-KGV, PEG, Price/FCF, Kursziel-Potenzial, Abstand zum 52-Wochen-Hoch, Umsatzwachstum, Bruttomarge) und rankt die drei von bester zu schlechtester. Bei Zyklikern und Rohstoffwerten lässt du das PEG weg. → Prompt 3.</p>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Prompt 4 — Bear Case</h2>
-        <p>Wenn du keine drei Gründe findest, bearish zu sein, hast du die Arbeit nicht gemacht. Die KI agiert als skeptischer Short-Seller und bewertet den Narrativ-Verfall über vier Dimensionen, vergibt einen Score /100 und beurteilt die DECAY VELOCITY (beschleunigt / stabil / verlangsamt). → Prompt 4.</p>
-      </section>
-
-      <section class="guide-section" id="s7">
-        <div class="gs-num">07</div>
-        <h2>Prompt 5 — Exit-Plan (Exit Timer)</h2>
-        <p>Die meisten Verlierer-Trades waren Gewinner ohne Exit-Plan — schreib ihn, bevor du einsteigst. Der Prompt baut einen 3-stufigen Exit-Plan (Invalidierung/Stop, erstes Ziel, Runner-Ziel) plus einen Binär-Katalysator-Check für die nächsten 90 Tage. → Prompt 5.</p>
-      </section>
-
-      <section class="guide-section" id="s8">
-        <div class="gs-num">08</div>
-        <h2>Ohne den Stack vs. mit dem Stack</h2>
-        <table><thead><tr><th>Ohne den Stack</th><th>Mit dem Stack</th></tr></thead><tbody><tr><td>4 Stunden verstreute Recherche pro Aktie</td><td>5 Minuten: 5 Prompts, 1 Workflow</td></tr><tr><td>Börsen-TV, X und YouTube als Kaninchenbau</td><td>Markt-Check ist Schritt 1</td></tr><tr><td>Marktlage vor dem Einstieg vergessen</td><td>Größe nur, wenn alle 5 Prompts dasselbe Bild zeigen</td></tr><tr><td>Bear Case übersprungen, weil unbequem</td><td>Prompt 4 erzwingt ihn</td></tr><tr><td>Einstieg ohne Exit-Plan</td><td>Prompt 5 schreibt ihn vor dem Kauf</td></tr><tr><td>Zu groß eingestiegen, weil der Bull Case sich gut anfühlte</td><td>Position nur bei voller Übereinstimmung</td></tr></tbody></table>
-      </section>
-
-      <section class="guide-section" id="s9">
-        <div class="gs-num">09</div>
-        <h2>Die häufigsten Fehler mit KI</h2>
-        <ul><li><b>Prompt 2 ohne Prompt 1 laufen lassen.</b> Ein Strong Buy auf der falschen Seite des Marktes ist trotzdem ein Verlust. Erst das Regime checken.</li><li><b>Prompt 4 überspringen.</b> Der Bear Case ist der unbequemste Prompt — genau deshalb lassen ihn 90 % weg. Findest du keine 3 Gegengründe, verstehst du den Trade nicht.</li><li><b>Handeln, bevor der Exit steht.</b> Prompt 5 ist nicht optional. Gewinner ohne Exit werden Verlierer mit Hoffnung.</li><li><b>Ohne Chart-Levels arbeiten.</b> Fundamentaldaten sagen dir, WAS du kaufst, nicht WO. Der Stack ist nur die halbe Miete.</li><li><b>KI-Output blind glauben.</b> Auch mit diesen Prompts halluziniert KI — prüfe die Zahlen immer im Original-Filing, bevor du die Position vergrößerst.</li></ul>
-      </section>
-
-      <section class="guide-section" id="s10">
-        <div class="gs-num">10</div>
-        <h2>Deine erste Woche &amp; Kill-Kriterien</h2>
-        <p><b>Erste Woche:</b></p>
-<ul><li>Sonntagabend: Prompt 1 einmal laufen lassen — Marktlage vor Montag kennen.</li><li>Montag: spannendster Wert der Watchlist, Prompts 2, 3, 4, 5 in dieser Reihenfolge.</li><li>Dienstag bis Donnerstag: Stack auf 2–3 weitere Aktien anwenden, Rangliste aufbauen.</li><li>Freitag: Picks mit Berts kostenloser Sonntags-Watchlist (@berttrading) abgleichen.</li><li>Nächster Sonntag: wiederholen — aus 4-Stunden-Recherche wird eine 30-Minuten-Routine.</li></ul>
-<p><b>Kill-Kriterien (je Aktie):</b> Prompt 2 ergibt V1 REJECT (&lt;50) ODER der Moat fällt durch (≤13/25) ODER Prompt 4 zeigt Decay ≥65 mit beschleunigender Velocity ODER Prompt 3 rankt die Aktie auf den letzten Platz — dann weiter zur nächsten. Größer einsteigen nur, wenn alle 5 Prompts dasselbe Bild zeigen.</p>
-<p><i>Wichtiger Hinweis:</i> Dieser Guide ist keine Anlageberatung. Aktien und besonders Optionen bergen erhebliche Risiken bis zum Totalverlust.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">Die Prompts brauchen eine KI mit aktivierter Websuche (Claude, ChatGPT oder Gemini); die KI recherchiert und bewertet, kann aber Zahlen falsch abrufen oder halluzinieren: prüfe jede Angabe im Original-Filing. Die genannten Trading-Erfolge sind Erfahrungswerte von @berttrading, keine Renditeversprechen und keine Anlageberatung.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 1 — Markt-Check (DE)</span>
+          <span class="prompt-label">Prompt 1: Markt-Check (DE)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Durchsuche aktuelle Finanznachrichten und FRED-Daten. Gib mir einen einseitigen Marktregime-Überblick über 4 Dimensionen:
@@ -160,10 +74,10 @@ Benenne das Regime -- STRONG BULL, MODERATE BULL, CHOP, CORRECTION, BEAR oder RE
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 1 — Market Check (EN)</span>
+          <span class="prompt-label">Prompt 1: Market Check (EN)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Search recent financial news and FRED data. Give me a 1-page regime read across 4 dimensions:
@@ -181,10 +95,10 @@ Call the regime -- STRONG BULL, MODERATE BULL, CHOP, CORRECTION, BEAR, or RECOVE
 
       <div class="prompt-card" id="prompt-3">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 2 — Deep Dive (DE)</span>
+          <span class="prompt-label">Prompt 2: Deep Dive (DE)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle einen Deep-Research-Report zu [TICKER] und bewerte die Aktie entlang der 4 Dimensionen meines V1-Frameworks:
@@ -208,10 +122,10 @@ Schließe mit einer asymmetrischen These in 3 Sätzen. Nenne Quellen.</pre>
 
       <div class="prompt-card" id="prompt-4">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 2 — Deep Dive (EN)</span>
+          <span class="prompt-label">Prompt 2: Deep Dive (EN)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Run a deep research report on [TICKER] and score it across my V1 framework's 4 dimensions:
@@ -235,10 +149,10 @@ Finish with a 3-sentence asymmetric thesis. Cite sources.</pre>
 
       <div class="prompt-card" id="prompt-5">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 3 — Peer Comparison (DE)</span>
+          <span class="prompt-label">Prompt 3: Peer Comparison (DE)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Durchsuche Yahoo Finance, Macrotrends und TipRanks. Erstelle eine relative Bewertungstabelle für [TICKER] vs. [PEER 1] und [PEER 2].
@@ -265,10 +179,10 @@ Lass das PEG bei Zyklikern und Rohstoffwerten (Energie, Materialien, Minen) komp
 
       <div class="prompt-card" id="prompt-6">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 3 — Peer Comparison (EN)</span>
+          <span class="prompt-label">Prompt 3: Peer Comparison (EN)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Search Yahoo Finance, Macrotrends, and TipRanks. Build a relative valuation table for [TICKER] vs [PEER 1] and [PEER 2].
@@ -295,10 +209,10 @@ Skip PEG entirely for cyclical/commodity names (Energy, Materials, Mining) -- tr
 
       <div class="prompt-card" id="prompt-7">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 4 — Bear Case (DE)</span>
+          <span class="prompt-label">Prompt 4: Bear Case (DE)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Agiere als skeptischer Short-Seller, der [TICKER] analysiert. Durchsuche SEC-Filings, Earnings-Transkripte und aktuelle Nachrichten. Bewerte den Narrativ-Verfall entlang meines 4-Dimensionen-Frameworks:
@@ -324,10 +238,10 @@ Nenne Quellen. Schließe mit 1 Invalidierungs-Trigger: Was würde dich zwingen, 
 
       <div class="prompt-card" id="prompt-8">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 4 — Bear Case (EN)</span>
+          <span class="prompt-label">Prompt 4: Bear Case (EN)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Act as a skeptical short-seller researching [TICKER]. Search SEC filings, earnings transcripts, and recent news. Score narrative decay across my 4-dimension framework:
@@ -353,10 +267,10 @@ Cite sources. Finish with 1 invalidation trigger: what would force you to abando
 
       <div class="prompt-card" id="prompt-9">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 5 — Exit-Plan (DE)</span>
+          <span class="prompt-label">Prompt 5: Exit-Plan (DE)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle für [TICKER] beim aktuellen Kurs [XX $] einen 3-stufigen Exit-Plan unter der Annahme, dass ich heute einsteige:
@@ -374,10 +288,10 @@ Liegt ein bestätigtes binäres Event innerhalb von 30 Tagen → nutze Optionen 
 
       <div class="prompt-card" id="prompt-10">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 5 — Exit Timer (EN)</span>
+          <span class="prompt-label">Prompt 5: Exit Timer (EN)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">For [TICKER] at current price [$XX], build me a 3-leg exit plan assuming I enter today:
@@ -393,18 +307,18 @@ Binary catalyst check (next 90 days only): Search next earnings date + any CONFI
 If a confirmed binary event is within 30 days → use defined-risk options (calls or LEAPS) instead of shares. Trim before the event or hold through? Tell me which and why.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/aktien-prompt-stack.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/aktien-prompt-stack.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

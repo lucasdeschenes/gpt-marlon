@@ -1,10 +1,10 @@
 {
   "file": "Belege_erfassen_GPTMarlon_v9.pdf",
-  "title": "Belege automatisch erfassen — Excel oder DATEV-Datei mit Claude",
+  "title": "Belege automatisch erfassen: Excel oder DATEV-Datei mit Claude",
   "slug": "belege-erfassen",
   "category": "Finanzen",
   "tool": "Claude",
-  "summary": "Claude liest deine Belege aus einem Ordner aus, erkennt Datum, Betrag und Kategorie und fängt Doppelungen und Zahlendreher über eine eingebaute Prüfstelle ab. Am Ende steht eine saubere Excel- oder Google-Sheet-Tabelle — auf Wunsch machst du daraus eine importfertige DATEV-Datei für deinen Steuerberater. Die stundenlange Tipparbeit fällt weg, die fachliche Freigabe bleibt bei dir.",
+  "summary": "Claude liest deine Belege aus einem Ordner aus, erkennt Datum, Betrag und Kategorie und fängt Doppelungen und Zahlendreher über eine eingebaute Prüfstelle ab. Am Ende steht eine saubere Excel- oder Google-Sheet-Tabelle: auf Wunsch machst du daraus eine importfertige DATEV-Datei für deinen Steuerberater. Die stundenlange Tipparbeit fällt weg, die fachliche Freigabe bleibt bei dir.",
   "sections": [
     {
       "heading": "Voraussetzungen & die zwei Wege",
@@ -49,15 +49,15 @@
       "text": "Du bist mein Buchhaltungs-Assistent. Bei jedem Lauf: lies die Belege im verbundenen Ordner aus (Datum, Lieferant, Belegnummer, Netto, USt, Brutto, Kategorie, Dateiname). Schreib bei Unklarheit \"UNKLAR\" statt zu raten. Führe danach die Prüfstelle aus (Doppelungen, Netto+USt=Brutto, fehlende Felder, Summe). Erzeuge die Datei erst nach meiner Freigabe."
     },
     {
-      "label": "Prompt 1 — Belege auslesen",
+      "label": "Prompt 1: Belege auslesen",
       "text": "Du bist mein Buchhaltungs-Assistent. Lies jeden Beleg [aus dem verbundenen Ordner bzw. Google-Drive-Ordner] einzeln aus und erstelle eine Tabelle mit diesen Spalten:\n- Belegdatum (TT.MM.JJJJ)\n- Lieferant / Aussteller\n- Belegnummer\n- Netto-Betrag\n- Umsatzsteuer (Betrag) und USt-Satz in %\n- Brutto-Betrag\n- Waehrung\n- Kategorie (kurze Beschreibung, z.B. \"Bürobedarf\")\n- Quelle (Dateiname des Belegs)\n\nRegeln:\n- Wenn ein Wert nicht eindeutig lesbar ist, schreib \"UNKLAR\" statt zu raten. Erfinde niemals Zahlen.\n- Rechne nichts, was nicht auf dem Beleg steht.\nGib mir zuerst NUR die Tabelle zur Kontrolle aus."
     },
     {
-      "label": "Prompt 2 — Die Prüfstelle",
+      "label": "Prompt 2: Die Prüfstelle",
       "text": "Prüfe die Tabelle jetzt automatisch und erstelle ein Prüfprotokoll. Markiere jeden Fund mit dem Belegnamen:\n1. Doppelungen: gleicher Lieferant + Betrag + Datum mehrfach.\n2. Rechen-Plausibilitaet: Netto + USt = Brutto? Passt der USt-Satz zum Betrag? Zahlendreher?\n3. Fehlende oder als \"UNKLAR\" markierte Felder.\n4. Unplausible Werte: Datum in der Zukunft, Betrag = 0, negativer Betrag ohne Grund.\n5. Gegenkontrolle: nenne die Summe aller Brutto-Betraege.\nListe alle Funde auf. Aendere noch NICHTS ohne meine Freigabe."
     },
     {
-      "label": "Prompt 3 — Abgleich & fehlende Belege",
+      "label": "Prompt 3: Abgleich & fehlende Belege",
       "text": "Ich habe zusätzlich meine Kontoauszüge in den verbundenen Ordner gelegt (PDF oder CSV). Gleiche die geprüfte Belegtabelle mit den Kontobewegungen ab und erstelle ein Abgleich-Protokoll:\n1. Ordne jeder Kontobewegung den passenden Beleg zu (Betrag + Datum, ggf. Verwendungszweck/Lieferant).\n2. BELEG FEHLT: Bewegung auf dem Konto, aber kein Beleg dazu.\n3. KEINE ZAHLUNG: Beleg vorhanden, aber keine passende Bewegung (z.B. bar bezahlt oder noch offen).\n4. Abweichungen bei Betrag oder Datum zwischen Beleg und Konto.\n5. Mögliche Doppelzahlungen.\nListe alle Funde mit Belegname und Buchungszeile auf. Ändere noch NICHTS ohne meine Freigabe."
     },
     {
@@ -73,6 +73,6 @@
       "text": "Baue mir eine gespeicherte Projekt-Anweisung für meine Belegerfassung, zugeschnitten auf: Ausgabeformat = [Excel / Google Sheet / DATEV], meine Kategorien = [___], (falls DATEV) Kontenrahmen = [SKR03/SKR04].\nSie soll: (1) Belege auslesen und bei Unklarheit \"UNKLAR\" schreiben, (2) eine Prüfstelle für Doppelungen und Zahlendreher enthalten, (3) erst nach meiner Freigabe die Datei erzeugen."
     }
   ],
-  "note": "Claude liest und prüft die Belege und bereitet die Excel- bzw. DATEV-Datei vor — die fachliche Freigabe und den DATEV-Import machst du (bzw. dein Steuerberater) selbst. Der native Google-Drive-Connector kann Dateien nur lesen und neu anlegen, aber nicht in ein bestehendes Google Sheet schreiben; dafür braucht es einen zusätzlichen Google-Sheets-Connector (MCP) mit Schreibrechten.",
+  "note": "Claude liest und prüft die Belege und bereitet die Excel- bzw. DATEV-Datei vor: die fachliche Freigabe und den DATEV-Import machst du (bzw. dein Steuerberater) selbst. Der native Google-Drive-Connector kann Dateien nur lesen und neu anlegen, aber nicht in ein bestehendes Google Sheet schreiben; dafür braucht es einen zusätzlichen Google-Sheets-Connector (MCP) mit Schreibrechten.",
   "date": "2026-06-23"
 }

@@ -9,7 +9,7 @@
 
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
-import { T, PH, SAME } from "./i18n-home.mjs";
+import { T, PH, SAME, DE } from "./i18n-home.mjs";
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const MONTHS_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -17,6 +17,17 @@ const fmt = (iso) => {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ""));
   return m ? `${MONTHS_EN[+m[2] - 1]} ${+m[3]}, ${m[1]}` : "";
 };
+
+// The design animates copy word by word, so anything we inject has to keep that
+// shape — a flat string would drop the entrance animation. `plain` is the inverse:
+// element text with the markup stripped, used to match a block by its wording.
+const words = (t) => String(t).trim().split(/\s+/)
+  .map((w) => `<span class="gm-word" style="display:inline-block">${esc(w)}</span>`)
+  .join(" ");
+const plain = (h) => h.replace(/<[^>]+>/g, "")
+  .replace(/&amp;/g, "&").replace(/&nbsp;/g, " ")
+  .replace(/&#39;/g, "'").replace(/&quot;/g, '"')
+  .replace(/\s+/g, " ").trim();
 
 let s = readFileSync("assets/framer-home.html", "utf8");
 
@@ -146,7 +157,15 @@ console.log(`  footer physics: ${footerFixed} container(s) placed`);
   const nCl = (s.match(CLAUDE_PNG) || []).length;
   s = s.replace(CLAUDE_PNG, "assets/framer/claude.svg");
 
-  console.log(`  tool logos: ${nPh} Perplexity placeholder(s) + ${nCl} Claude mark(s) replaced`);
+  // Runway is out, Higgsfield is in. Swap the whole <img> rather than just the
+  // src: the design's tag uses object-fit:cover, which crops a vector mark.
+  const RUNWAY_IMG = /<img decoding="async" width="256" height="256" src="assets\/framer\/1Udzh6oTRw7Uo7nr9WsNAszt83g-[0-9a-f]+\.png"[^>]*>/g;
+  const nRw = (s.match(RUNWAY_IMG) || []).length;
+  s = s.replace(RUNWAY_IMG, img("assets/framer/higgsfield.svg", "Higgsfield logo"))
+       .replace(/(<p[^>]*data-styles-preset="v_zCX1Lx4"[^>]*>)Runway(<\/p>)/g, "$1Higgsfield$2")
+       .replace(/data-framer-name="Logo Item \/ Runway"/g, 'data-framer-name="Logo Item / Higgsfield"');
+
+  console.log(`  tool logos: ${nPh} Perplexity placeholder(s) + ${nCl} Claude mark(s) + ${nRw} Runway->Higgsfield replaced`);
 }
 
 // ── navigation ────────────────────────────────────────────────────────────────
@@ -235,16 +254,196 @@ const SITE_FOOTER = `  <footer class="site-footer">
 }
 
 
+// ── homepage redesign ─────────────────────────────────────────────────────────
+// The Framer design still carries the old "KI-TOOLS TRAINING" positioning, the
+// story in the wrong place and the sections in the wrong order. Rewrite all of
+// it here. This runs BEFORE the i18n pass so the English table keys on the new
+// German copy rather than the copy the design shipped with.
+
+const HERO_LABEL = "AI Creator & Educator";
+const HERO_BOLD  = "Hey, ich bin Marlon.";
+const HERO_BODY  = "Ich mache KI so einfach, dass sie jeder nutzen kann. Egal ob du ein Business aufbaust, Content machst oder einfach nicht den Anschluss verlieren willst: Alles, was ich weiß, findest du hier. Kostenlos. Ich habe mir das komplett selbst beigebracht. Also schaffst du das auch.";
+
+const STORY_TITLE = "Meine Story";
+// One supplied block, broken at its natural pivot so it doesn't read as a wall
+// of text in an 860px column. Wording is untouched.
+const STORY_BODY = [
+  "Mehrere Jahre war ich im Venture Capital und habe von außen zugeschaut, wie KI alles verändert. Irgendwann wollte ich nicht mehr nur zuschauen. Ich habe mir alles selbst beigebracht, ohne Studium in dem Bereich und ohne teure Kurse. Einfach durchs Machen.",
+  "Heute läuft mein Business zu 90 Prozent über KI-Agenten. Und genau das, was ich dabei lerne, teile ich jeden Tag auf Instagram und hier auf der Seite.",
+];
+
+// 1. hero label — the small bordered pill above the title
+{
+  const before = s;
+  s = s.replace(/(>)KI-TOOLS TRAINING(<)/g, (m, a, b) => a + esc(HERO_LABEL) + b);
+  console.log(`  hero label -> "${HERO_LABEL}": ${before === s ? "NOT FOUND" : "ok"}`);
+}
+
+// 2. hero title + body. The design renders three breakpoint copies of the block,
+// each a single <p>: bold headline, <br>, then the bio.
+{
+  let n = 0;
+  s = s.replace(/(<p class="framer-text framer-styles-preset-[^"]*"[^>]*>)([\s\S]*?)<\/p>/g, (full, open, inner) => {
+    if (!plain(inner).startsWith("Lerne mit mir")) return full;
+    n++;
+    return `${open}<strong class="framer-text">${words(HERO_BOLD)}</strong>` +
+           `<br class="framer-text">${words(HERO_BODY)}</p>`;
+  });
+  console.log(`  hero copy: ${n} breakpoint cop${n === 1 ? "y" : "ies"} rewritten`);
+}
+
+// 3. a second hero action next to the community CTA, scrolling to the story.
+// The CTA sits alone in a column with 32px gaps, so wrap both in a flex row.
+{
+  const at = s.indexOf('<div class="framer-3i23y5-container">');
+  if (at === -1) {
+    console.log("  ! hero CTA container not found — 'Meine Story' link not added");
+  } else {
+    const end = balancedEnd(s, at);
+    const cta = s.slice(at, end);
+    const story = `<a class="gm-btn-ghost" href="#story"><span>Meine Story</span></a>`;
+    s = s.slice(0, at) + `<div class="gm-hero-actions">${cta}${story}</div>` + s.slice(end);
+    console.log("  hero: added the 'Meine Story' link beside the community CTA");
+  }
+}
+
+// 4. the story section: new heading, the supplied copy, and two stats. The views
+// figure is live (stats.js fills [data-stat] from Supabase); the hardcoded value
+// is the fallback when Supabase is unreachable.
+{
+  const at = s.indexOf('data-framer-name="Section-About Me"');
+  if (at === -1) {
+    console.log("  ! Section-About Me not found — story not rewritten");
+  } else {
+    const start = s.lastIndexOf("<", at);
+    const end = balancedEnd(s, start);
+    let sec = s.slice(start, end);
+
+    sec = sec.replace(/(<h2[^>]*>)[\s\S]*?(<\/h2>)/, (m, a, b) => a + esc(STORY_TITLE) + b);
+
+    // replace every paragraph in the Copy block with the new copy + the stats
+    const pOpen = /<p class="framer-text framer-styles-preset-30wjel"[^>]*>/.exec(sec);
+    if (pOpen) {
+      const first = sec.indexOf(pOpen[0]);
+      const last = sec.lastIndexOf("</p>") + 4;
+      const paras = STORY_BODY.map((t) => `${pOpen[0]}${esc(t)}</p>`).join("");
+      const stats =
+        `<dl class="gm-stats">` +
+        `<div class="gm-stat"><dt>Erster Post</dt><dd>27. Mai 2026</dd></div>` +
+        `<div class="gm-stat"><dt>Views · letzte 30 Tage</dt><dd data-stat="views_30d">4M+</dd></div>` +
+        `</dl>`;
+      sec = sec.slice(0, first) + paras + sec.slice(last);
+      // drop the stats in before the Container closes, so they inherit its
+      // 860px width and column gap instead of floating loose in the section
+      sec = sec.replace(/<\/div>\s*<\/section>\s*$/, `${stats}</div></section>`);
+    }
+    s = s.slice(0, start) + sec + s.slice(end);
+    console.log(`  story: retitled "${STORY_TITLE}" + new copy + 2 stats`);
+  }
+}
+
+// 5. German house style: no em/en dashes, no emojis. Runs on the German source
+// so both languages inherit the fix (the English is keyed on the result).
+{
+  let n = 0;
+  for (const [from, to] of Object.entries(DE)) {
+    if (!s.includes(from)) { console.log(`  ! copy fix no longer matches: ${from.slice(0, 60)}…`); continue; }
+    s = s.split(from).join(to);
+    n++;
+  }
+  // catch any dash the table missed, inside text nodes only
+  const strays = (s.match(/>[^<]*[—–][^<]*</g) || []).length;
+  console.log(`  copy: ${n} German string(s) fixed${strays ? `; ${strays} text node(s) still contain a dash` : ""}`);
+}
+
+// 6. the social card's action row shipped as text glyphs (♡ 💬 ➤). The speech
+// balloon renders as a full-colour emoji and the other two pick up whatever the
+// system font has, so none of them match the design. Swap in real icons.
+{
+  const icon = (d, filled) =>
+    `<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" ` +
+    `fill="${filled ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" ` +
+    `stroke-linecap="round" stroke-linejoin="round" style="display:block">${d}</svg>`;
+
+  const GLYPHS = {
+    "♡": icon('<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8z"/>'),
+    "\u{1F4AC}": icon('<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-3.8-.9L3 20.5l1.5-4.4A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/>'),
+    "➤": icon('<path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/>'),
+    "↻": icon('<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>'),
+  };
+
+  let n = 0;
+  for (const [glyph, svg] of Object.entries(GLYPHS)) {
+    const hits = s.split(glyph).length - 1;
+    n += hits;
+    s = s.split(">" + glyph + "<").join(">" + svg + "<");
+  }
+  console.log(`  social card: ${n} text glyph(s) replaced with icons`);
+}
+
+// 7. section order + the hairline dividers between them.
+// The six <section>s tile the wrapper back to back, so reordering is a straight
+// slice and reassemble. Requested order: hero, guides, reels, then the rest as
+// they were. Every section gets .gm-sec, which draws the divider (see
+// home-overrides.css) and gives the story section its scroll target.
+{
+  // The logo strip stays glued to the hero as a social-proof band, the way the
+  // design had it; guides and reels are promoted above the story.
+  const ORDER = [
+    "Section-Hero",
+    "Section-Logo Marquee",
+    "Section-Neueste Guides",
+    "Section-UGC Videos",
+    "Section-About Me",
+    "Section-Contact",
+  ];
+  const IDS = { "Section-About Me": "story", "Section-Neueste Guides": "guides", "Section-UGC Videos": "reels" };
+
+  const found = [];
+  const re = /data-framer-name="(Section-[^"]*)"/g;
+  let m;
+  while ((m = re.exec(s))) {
+    const start = s.lastIndexOf("<", m.index);
+    const end = balancedEnd(s, start);
+    if (end !== -1) found.push({ name: m[1], start, end });
+  }
+
+  const contiguous = found.every((x, i) => i === 0 || x.start === found[i - 1].end);
+  const complete = ORDER.every((n) => found.some((f) => f.name === n)) && found.length === ORDER.length;
+
+  if (!contiguous || !complete) {
+    // Bail loudly rather than silently shipping the design's original order.
+    console.log(`  ! sections not reorderable (contiguous=${contiguous}, complete=${complete}) — order left as-is`);
+  } else {
+    // Merge into the design's own class list — a second class attribute would be
+    // ignored by the browser and the section would lose its Framer styling.
+    const tag = (html, name) => {
+      const id = IDS[name] ? ` id="${IDS[name]}"` : "";
+      return html.replace(/^<section\b([^>]*)>/, (m, attrs) => {
+        const merged = /\bclass="/.test(attrs)
+          ? attrs.replace(/\bclass="/, 'class="gm-sec ')
+          : `${attrs} class="gm-sec"`;
+        return `<section${id}${merged}>`;
+      });
+    };
+    const body = found.map((f) => ({ ...f, html: s.slice(f.start, f.end) }));
+    const head = s.slice(0, found[0].start);
+    const tail = s.slice(found[found.length - 1].end);
+    const reordered = ORDER.map((n) => {
+      const f = body.find((b) => b.name === n);
+      return tag(f.html, n);
+    }).join("");
+    s = head + reordered + tail;
+    console.log(`  sections reordered: ${ORDER.map((n) => n.replace("Section-", "")).join(" > ")}`);
+  }
+}
+
 // ── i18n ──────────────────────────────────────────────────────────────────────
 // The Framer markup has no data-en attributes, so the DE/EN toggle had nothing
 // to swap on the homepage. Inject them from tools/i18n-home.mjs, keyed on the
 // German text. Anything unmatched is reported so untranslated copy is visible
 // rather than silently German.
 {
-  const plain = (h) => h.replace(/<[^>]+>/g, "")
-    .replace(/&amp;/g, "&").replace(/&nbsp;/g, " ")
-    .replace(/&#39;/g, "'").replace(/&quot;/g, '"')
-    .replace(/\s+/g, " ").trim();
   const attr = (v) => v.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 
   // the guide cards carry German titles/summaries straight from
@@ -255,12 +454,8 @@ const SITE_FOOTER = `  <footer class="site-footer">
   }
 
   // The German copy is animated word by word, and the hero's first sentence is
-  // bold. A flat English string would drop both, so mirror the German markup:
-  // wrap each English word in the same .gm-word span, and keep <strong>/<br>.
-  const words = (t) => String(t).trim().split(/\s+/)
-    .map((w) => `<span class="gm-word" style="display:inline-block">${esc(w)}</span>`)
-    .join(" ");
-
+  // bold. A flat English string would drop both, so mirror the German markup
+  // with the shared `words` helper, keeping <strong>/<br>.
   const buildEN = (inner, en) => {
     const animated = inner.includes("gm-word");
     if (typeof en === "object") {
@@ -360,11 +555,11 @@ const html = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GPT Marlon — KI-Tools Training</title>
-  <meta name="description" content="Lerne mit mir, KI effektiv zu nutzen. Tägliche Reels, Schritt-für-Schritt-Guides und kopierbare Prompts für ChatGPT, Claude & Co. — auf Deutsch." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
-  <meta property="og:title" content="GPT Marlon — KI-Tools Training" />
-  <meta property="og:description" content="Tägliche KI-Videos auf Deutsch + kostenlose Guides. ChatGPT, Claude und echte Workflows für den DACH-Markt." />
+  <title>GPT Marlon: KI einfach erklärt</title>
+  <meta name="description" content="Ich mache KI so einfach, dass sie jeder nutzen kann. Tägliche Reels, Schritt-für-Schritt-Guides und kopierbare Prompts für ChatGPT, Claude und Co. Auf Deutsch, kostenlos." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
+  <meta property="og:title" content="GPT Marlon: KI einfach erklärt" />
+  <meta property="og:description" content="Tägliche KI-Videos auf Deutsch und kostenlose Guides. ChatGPT, Claude und echte Workflows für den DACH-Markt." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gptmarlon.com/" />
   <meta property="og:image" content="https://gptmarlon.com/assets/marlon.jpg" />
@@ -403,7 +598,7 @@ ${s}
             }),
           });
           if (!res.ok) throw new Error('save failed');
-          if (btn) btn.textContent = '✓ Gesendet!';
+          if (btn) btn.textContent = 'Gesendet!';
           f.reset();
         } catch (err) {
           if (btn) btn.textContent = 'Nochmal versuchen';

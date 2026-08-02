@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claude mit der Recherche der letzten 30 Tage — GPT Marlon Guides</title>
-  <meta name="description" content="Jedes KI-Modell hat einen Wissensstichtag — fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um: Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <meta name="description" content="Jedes KI-Modell hat einen Wissensstichtag: fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um, Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -35,7 +35,7 @@
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Produktivität</span></div>
     <div class="page-hero">
       <h1 class="page-title">Claude mit der Recherche der letzten 30 Tage</h1>
-      <p class="page-sub">Jedes KI-Modell hat einen Wissensstichtag — fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um: Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht.</p>
+      <p class="page-sub">Jedes KI-Modell hat einen Wissensstichtag: fragst du nach etwas Neuerem, rät es oft überzeugt daneben. Die kostenlose, quelloffene Erweiterung /last30days dreht das um, Sie sucht erst die neuesten Beiträge aus vielen Quellen, gefiltert auf die letzten 30 Tage, und legt sie Claude zum Lesen vor, bevor eine Antwort entsteht.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Produktivität</span>
@@ -43,95 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/recherche-30-tage.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/recherche-30-tage.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ Die Erweiterung ist ein quelloffenes Drittanbieter-Werkzeug, das Claudes Capability „Code-Ausführung & Dateierstellung" nutzt; Verfügbarkeit, Befehle, Quellen und Preise können sich ändern, und die Treffer sind ein Stimmungsbild aus dem Netz (Werbung/ungeprüfte Meinungen möglich) — prüfe wichtige Angaben selbst gegen.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Teil 1 — Warum Claude manchmal alte Infos liefert</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Teil 2 — Was die Erweiterung liest</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Teil 3 — Was du vorher brauchst</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Teil 4 — Installieren: drei Wege</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Teil 5 — So nutzt du es</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Teil 6 — Später mehr Quellen freischalten</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Teil 1 — Warum Claude manchmal alte Infos liefert</h2>
-        <p>Stell dir das Gedächtnis einer KI wie ein Buch vor, das einmal gedruckt und nie wieder aktualisiert wurde. Beim Druck war alles richtig. Doch die Welt drehte sich weiter: Preise änderten sich, neue Tools kamen, Meinungen kippten. Fragst du nach etwas Aktuellem, will Claude trotzdem hilfreich sein — und antwortet aus genau diesem alten Buch. So handelst du am Ende vielleicht nach einem Preis, einem Feature oder einer „besten Wahl", die vor Monaten still und leise falsch geworden ist.</p>
-<p><b>Der Fachbegriff: Wissensstichtag.</b> Der Wissensstichtag (englisch „knowledge cutoff") ist das Datum, an dem das Training eines KI-Modells endete. Alles danach kennt das Modell nicht aus sich heraus. Es sagt dann selten „weiß ich nicht" — es füllt die Lücke mit einer plausibel klingenden Vermutung.</p>
-<p><b>Die Lösung — erst lesen, dann antworten.</b> Die kostenlose Erweiterung „Letzte 30 Tage" schließt diese Lücke. Du gibst ihr ein Thema. Statt aus dem Gedächtnis zu antworten, sucht sie quer durch viele Quellen — aber nur die Treffer der letzten 30 Tage. Diese frischen Ergebnisse legt sie Claude als Notizen vor, die es zuerst liest. Die Antwort stammt dann aus diesem Monat, nicht aus dem alten Buch.</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Teil 2 — Was die Erweiterung liest</h2>
-        <p>Wenn du sie startest, wirft sie ein weites Netz aus und zieht frische Treffer aus vielen Orten gleichzeitig — alle gefiltert auf die letzten 30 Tage. So mischst du normale Leute von Reddit, die Tech-Crowd von Hacker News, den Trend-Schwarm von TikTok und Reels und sogar Wett-Quoten aus dem letzten Monat.</p>
-<p>Ein wichtiger Teil ist sofort kostenlos und ohne Anmeldung nutzbar. Andere Quellen brauchen einen (oft kostenlosen) Zugangsschlüssel — dazu mehr in Teil 6.</p>
-<p><b>Sofort gratis — ohne Schlüssel:</b></p>
-<ul><li>Reddit (inkl. Top-Kommentare, nach Upvotes gewichtet — du siehst, dem die Leute zugestimmt haben)</li><li>Hacker News (die Tech- &amp; News-Crowd)</li><li>Polymarket (echte Prognosemarkt-Quoten: worauf Leute wetten)</li><li>GitHub (neue Projekte &amp; Tools)</li><li>YouTube-Transkripte &amp; Bluesky (mit App-Passwort)</li></ul>
-<p><b>Erst mit Zugangsschlüssel:</b></p>
-<ul><li>X / Twitter</li><li>TikTok, Instagram Reels, Threads, Pinterest</li><li>YouTube-Kommentare</li><li>Perplexity (KI-Websuche)</li><li>allgemeine Websuche</li></ul>
-<p><i>Prognosemarkt — kurz erklärt:</i> Ein Prognosemarkt (z. B. Polymarket) ist eine Plattform, auf der Menschen mit echtem Geld auf den Ausgang künftiger Ereignisse wetten. Die Quoten zeigen, für wie wahrscheinlich die Menge ein Ereignis gerade hält — ein Stimmungsbild in Zahlen.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Teil 3 — Was du vorher brauchst</h2>
-        <p>Die Erweiterung selbst ist kostenlos und quelloffen — sie läuft auf deinem Rechner, deine Recherche bleibt bei dir. Damit Claude sie ausführen darf, muss in deinem Konto eine Funktion eingeschaltet sein. Das ist in zwei Minuten erledigt.</p>
-<p><b>Punkt 1 — Ein Claude-Konto mit aktivem Code-Ausführen.</b> Eine Erweiterung (in Claude „Skill" genannt) funktioniert nur, wenn die Capability „Code-Ausführung &amp; Dateierstellung" aktiv ist:</p>
-<ol><li>In Claude oben rechts auf dein Profil → Einstellungen.</li><li>Capabilities (Funktionen) öffnen.</li><li>Code-Ausführung &amp; Dateierstellung einschalten.</li></ol>
-<p>Eigene Skills lassen sich in den Plänen Free, Pro und Max sowie Team/Enterprise nutzen, solange diese Capability an ist. Brauchst du sie nur im Browser unter claude.ai, reicht das aus — fürs Hochladen eigener Skills ist kein zusätzliches Programm nötig.</p>
-<p><b>Punkt 2 — Für gratis loslegen: gar nichts weiter.</b> Die kostenlosen Quellen (Reddit, Hacker News, Polymarket, GitHub) laufen ohne jeden Schlüssel. Kein Konto bei einem anderen Dienst, keine Kreditkarte.</p>
-<p><i>Kurz gegengecheckt:</i> Öffne Einstellungen → Capabilities und vergewissere dich, dass „Code-Ausführung &amp; Dateierstellung" wirklich aktiv ist. Ohne diesen Haken startet die Skill nicht — das ist die häufigste Stolperstelle.</p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Teil 4 — Installieren: drei Wege</h2>
-        <p>Es gibt mehrere Wege. Der einfachste ohne Terminal ist Weg A direkt im Browser. Wer Claude Code nutzt, nimmt Weg B. Alle führen zum selben Befehl <code>/last30days</code>.</p>
-<p><b>Weg A — ohne Terminal: im Browser unter claude.ai hochladen</b></p>
-<ol><li>Auf der Projektseite der Erweiterung die Datei <code>last30days.skill</code> aus dem neuesten Release herunterladen.</li><li>In claude.ai auf Customize (Anpassen) → Skills.</li><li>Auf + → Create skill → Upload a skill klicken und die Datei reinziehen.</li><li>Sicherstellen, dass „Code-Ausführung &amp; Dateierstellung" an ist (Teil 3). Fertig.</li></ol>
-<p><b>Weg B — Claude Code: als Plugin.</b> Nutzt du Claude Code (das Terminal-Werkzeug für Entwickler), fügst du die Erweiterung mit einer Zeile als Plugin hinzu (siehe Prompt unten). Einfügen, Enter, fertig.</p>
-<p><b>Weg C — andere KI-Editoren: per Terminal (50+ Tools).</b> Arbeitest du mit einem anderen KI-Editor (z. B. Cursor, Codex, Gemini CLI), läuft die Zeile unten im Terminal. Das <code>-g</code> am Ende installiert global, also überall verfügbar.</p>
-<p>Unsicher, welcher Weg? Claude im Browser/Desktop ohne Terminal → Weg A. Claude Code → Weg B. Anderer Editor → Weg C. Am Ende hast du überall denselben Befehl <code>/last30days</code>.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Teil 5 — So nutzt du es</h2>
-        <p>Ist die Erweiterung installiert, ist die Anwendung kinderleicht. Du tippst <code>/last30days</code> und dann dein Thema. Je konkreter dein Thema, desto schärfer die frischen Treffer. Das Muster ist immer gleich: <code>/last30days</code> + dein Thema (siehe Grundmuster-Prompt unten).</p>
-<p><b>Weitere Beispiele zum Ausprobieren:</b></p>
-<ul><li><code>/last30days kündigen gerade Leute wirklich Netflix</code></li><li><code>/last30days neue KI-Tools, die Leute aktuell lieben</code></li><li><code>/last30days ehrliche Tests zum neuen iPhone</code></li><li><code>/last30days was trended diese Woche auf TikTok für kleine Unternehmen</code></li></ul>
-<p><b>Vier Momente — wann sich der Befehl lohnt:</b></p>
-<ul><li><b>Bevor du etwas kaufst.</b> Vor der Ausgabe einmal laufen lassen — du siehst, was echte Leute diesen Monat sagen, nicht einen Glanz-Test von vor zwei Jahren. Fang die „nach drei Wochen kaputt"-Posts ab.</li><li><b>Vor einer größeren Entscheidung.</b> Tool, Plattform, Dienst oder Richtung fürs Business? Hol dir erst das aktuelle Lagebild.</li><li><b>Bevor du auf Social postest.</b> Willst du einen Trend reiten, musst du wissen, was heute läuft. Lass es auf deine Nische los.</li><li><b>Für Recherche &amp; News, die aktuell sein müssen.</b> Immer wenn die Antwort sich schnell ändert — Preise, Releases, „was ist der letzte Stand bei …".</li></ul>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Teil 6 — Später mehr Quellen freischalten</h2>
-        <p>Die gratis Kernquellen (Reddit, Hacker News, Polymarket, GitHub) decken schon eine Menge ab — fang damit an und zahl vorerst für nichts. Ein Zugangsschlüssel (API-Key) ist ein persönlicher Code, mit dem sich die Erweiterung bei einem anderen Dienst anmeldet, um dort zu suchen. Beim ersten Lauf führt dich ein kurzer Einrichtungs-Assistent durch die optionale Eingabe.</p>
-<p><b>Extra-Quellen, ihre Anbieter und Kosten:</b></p>
-<ul><li>TikTok, Instagram, Threads, Pinterest, YouTube-Kommentare — über <b>ScrapeCreators</b> (100 Gratis-Credits, danach nach Verbrauch).</li><li>X / Twitter — über <b>Xquik oder xAI-Schlüssel</b> (anbieterabhängig).</li><li>Websuche — über <b>Brave Search</b> (2.000 Abfragen/Monat gratis).</li><li>KI-Websuche — über <b>Perplexity oder OpenRouter</b> (nach Verbrauch).</li></ul>
-<p><i>Ehrlicher Hinweis — gratis zuerst:</i> Fang mit den kostenlosen Kernquellen an und gib vorerst kein Geld aus. Schlüssel ergänzt du nur, wenn du wirklich die sozialen Plattformen oder die volle Websuche brauchst.</p>
-<p><b>Hinweis:</b> Dieser Guide dient ausschließlich zu Informations- und Bildungszwecken. Die vorgestellte Erweiterung ist ein quelloffenes Drittanbieter-Werkzeug; Verfügbarkeit, Befehle, Quellen, Schlüssel-Anbieter und Preise können sich ändern — prüfe sie vor der Nutzung selbst. Such-Ergebnisse aus dem Netz können Fehler, Werbung oder ungeprüfte Meinungen enthalten; behandle sie als Stimmungsbild, nicht als gesicherte Fakten.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">Die Erweiterung ist ein quelloffenes Drittanbieter-Werkzeug, das Claudes Capability „Code-Ausführung & Dateierstellung" nutzt; Verfügbarkeit, Befehle, Quellen und Preise können sich ändern, und die Treffer sind ein Stimmungsbild aus dem Netz (Werbung/ungeprüfte Meinungen möglich): prüfe wichtige Angaben selbst gegen.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
           <span class="prompt-label">Installieren in Claude Code (Weg B)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/plugin marketplace add mvanhorn/last30days-skill</pre>
@@ -141,8 +66,8 @@
         <div class="prompt-head">
           <span class="prompt-label">Installieren per Terminal, andere Editoren (Weg C)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">npx skills add mvanhorn/last30days-skill -g</pre>
@@ -150,27 +75,27 @@
 
       <div class="prompt-card" id="prompt-3">
         <div class="prompt-head">
-          <span class="prompt-label">Anwenden — Grundmuster</span>
+          <span class="prompt-label">Anwenden: Grundmuster</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">/last30days bester günstiger Laptop für Studenten</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/recherche-30-tage.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/recherche-30-tage.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

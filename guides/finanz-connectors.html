@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finanz-Plugins für Claude installieren: dein eigener Research-Desk — GPT Marlon Guides</title>
-  <meta name="description" content="Anthropic bietet kostenlose Finanz-Plugins an, die Claude in Cowork die Analyse-Werkzeuge großer Fonds geben – technisch sind das Connectors (MCP) und Agent Skills. Der Guide führt Schritt für Schritt durch Account, Marketplace und Installation und liefert sechs fertige Prompts für DCF, Earnings, Comps und Screening. Kein FactSet oder Bloomberg nötig, denn die Plugins arbeiten mit öffentlichen Daten – eine Anlageberatung ersetzen sie aber nicht." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <meta name="description" content="Anthropic bietet kostenlose Finanz-Plugins an, die Claude in Cowork die Analyse-Werkzeuge großer Fonds geben: technisch sind das Connectors (MCP) und Agent Skills. Der Guide führt Schritt für Schritt durch Account, Marketplace und Installation und liefert sechs fertige Prompts für DCF, Earnings, Comps und Screening. Kein FactSet oder Bloomberg nötig, denn die Plugins arbeiten mit öffentlichen Daten, eine Anlageberatung ersetzen sie aber nicht." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -35,7 +35,7 @@
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Finanzen</span></div>
     <div class="page-hero">
       <h1 class="page-title">Finanz-Plugins für Claude installieren: dein eigener Research-Desk</h1>
-      <p class="page-sub">Anthropic bietet kostenlose Finanz-Plugins an, die Claude in Cowork die Analyse-Werkzeuge großer Fonds geben – technisch sind das Connectors (MCP) und Agent Skills. Der Guide führt Schritt für Schritt durch Account, Marketplace und Installation und liefert sechs fertige Prompts für DCF, Earnings, Comps und Screening. Kein FactSet oder Bloomberg nötig, denn die Plugins arbeiten mit öffentlichen Daten – eine Anlageberatung ersetzen sie aber nicht.</p>
+      <p class="page-sub">Anthropic bietet kostenlose Finanz-Plugins an, die Claude in Cowork die Analyse-Werkzeuge großer Fonds geben: technisch sind das Connectors (MCP) und Agent Skills. Der Guide führt Schritt für Schritt durch Account, Marketplace und Installation und liefert sechs fertige Prompts für DCF, Earnings, Comps und Screening. Kein FactSet oder Bloomberg nötig, denn die Plugins arbeiten mit öffentlichen Daten, eine Anlageberatung ersetzen sie aber nicht.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Finanzen</span>
@@ -43,81 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/finanz-connectors.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/finanz-connectors.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ „Plugins" sind bei Claude technisch Connectors (MCP) plus Agent Skills; die Analysen sind KI-generiert und keine Anlageberatung – prüfe sie vor jeder Entscheidung selbst.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Zuerst: drei Begriffe, die alles erklären</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Teil 1 – Claude-Account einrichten</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Teil 2 – Den Marketplace hinzufügen</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Teil 3 – Plugins für Privatanleger installieren</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Teil 4 – Deine ersten Befehle</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Deine 6 Starter-Prompts</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Zuerst: drei Begriffe, die alles erklären</h2>
-        <p><b>Cowork</b> – Claudes Arbeitsmodus für längere Projekte; hier leben die Plugins.</p>
-<p><b>Marketplace</b> – ein Verzeichnis von Plugins. Du fügst es einmal hinzu und installierst dann von dort.</p>
-<p><b>Plugin</b> – ein Bündel an Fähigkeiten (Modelle, Screening, Earnings-Notizen), das zu Claude hinzukommt. Kein Code nötig.</p>
-<p>&gt; Hinweis: Bei Claude sind diese „Plugins" technisch <b>Connectors (MCP)</b> und <b>Agent Skills</b> – gebündelt und über den Anthropic-Marketplace installierbar.</p>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Teil 1 – Claude-Account einrichten</h2>
-        <p>Drei schnelle Dinge, bevor du irgendetwas installieren kannst:</p>
-<ol><li><b>Account auf claude.com erstellen.</b> Melde dich mit der E-Mail an, die du nutzen möchtest.</li><li><b>Claude Pro reicht.</b> Pro (ab 20 $/Monat) gibt dir vollen Zugriff auf die Plugins. Auch in Max, Team und Enterprise enthalten – nur der kostenlose Plan hat keinen Zugriff.</li><li><b>Desktop-App laden.</b> Öffne sie und klicke oben auf <b>Cowork</b> – der Arbeitsmodus, in dem die Plugins leben.</li></ol>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Teil 2 – Den Marketplace hinzufügen</h2>
-        <p>Die Finanz-Plugins kommen direkt von Anthropic. Du fügst den Marketplace einmal hinzu und installierst danach von dort.</p>
-<ol><li>Claude Desktop öffnen → Menü <b>Customize</b> → Tab <b>Plugins</b>.</li><li>Im Bereich <b>Personal plugins</b> auf <b>+</b> klicken → <b>Add marketplace</b>.</li><li>Der einfache Weg: <b>Browse Anthropic sources</b> → <b>Financial Services</b> suchen → <b>Add</b> → <b>Done</b>.</li><li>Alternativ über GitHub: <b>Add from a repository</b> wählen und diese URL einfügen:</li></ol>
-<p><code>https://github.com/anthropics/financial-services-plugins</code></p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Teil 3 – Plugins für Privatanleger installieren</h2>
-        <p>Das Anthropic-Repo enthält Plugins für jede Ecke der Finanzwelt – die meisten sind für Profis gedacht. Für normale Anleger erledigen vier Plugins fast alles.</p>
-<table><thead><tr><th>Plugin</th><th>Bereich</th><th>Was es macht</th></tr></thead><tbody><tr><td><b>Financial Analysis</b></td><td>Kern (zuerst installieren)</td><td>Modelle, Bewertungen, Comps, DCF – bringt auch die Datenanbindungen mit</td></tr><tr><td><b>Equity Research</b></td><td>Research</td><td>Investment-Thesen, Aktien-Screening, Coverage-Reports, Katalysator-Kalender</td></tr><tr><td><b>Earnings Reviewer</b></td><td>Earnings</td><td>Quartalszahlen-Analysen, Morning Notes und Modell-Updates zu deinen Werten</td></tr><tr><td><b>Market Researcher</b></td><td>Markt</td><td>Sektor-Überblicke, Vergleichsanalysen und Ideenfindung für neue Investments</td></tr></tbody></table>
-<p><b>So installierst du jedes Plugin:</b></p>
-<ol><li>Plugin im Marketplace suchen.</li><li>Auf <b>Install</b> klicken – Financial Analysis zuerst.</li><li>Plugins aktivieren sich automatisch. Skills rufst du mit <code>/</code> oder dem <b>+</b> auf.</li></ol>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Teil 4 – Deine ersten Befehle</h2>
-        <p>Öffne eine Cowork-Session und probiere die beiden Beispiel-Prompts unten (<b>Morning Note zu Tesla</b> und <b>Sektor-Screen</b>). Beide funktionieren mit jeder Aktie oder Branche.</p>
-<p><b>Tipp:</b> Ein <code>/</code> öffnet in jeder Cowork-Session das Befehlsmenü. Du kannst aber auch einfach auf Deutsch beschreiben, was du willst – Claude wählt das richtige Tool selbst.</p>
-<p><b>Du brauchst kein FactSet oder Bloomberg:</b> Claude fragt dich, ob du dich mit Datenanbietern wie FactSet, Bloomberg, Morningstar oder S&amp;P Global verbinden willst. Du brauchst keinen davon. Die Plugins arbeiten vollständig mit öffentlichen Daten – direkt aus Geschäftsberichten (10-K) und offiziellen Finanzkennzahlen, ohne kostenpflichtiges Abo. Die Ausnahme: Reports, die sich von selbst mit Live-Kursen aktualisieren, brauchen einen API-Zugang eines Drittanbieters. Für alles andere reichen die kostenlosen öffentlichen Daten.</p>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Deine 6 Starter-Prompts</h2>
-        <p>Die Befehle hinter den Plugins, die du gerade installiert hast: <b>DCF-Bewertung</b>, <b>Earnings-Recap</b>, <b>Sektor-Überblick</b>, <b>Morning Note</b>, <b>Vergleichsunternehmen (Comps)</b> und <b>Ideenfindung</b>. Kopieren, Platzhalter in [eckigen Klammern] ersetzen, ausführen.</p>
-<p><b>Hinweis:</b> KI-generierte Finanzanalysen sind kein Ersatz für eigene Recherche und sollten vor einer Entscheidung geprüft werden. Dieser Guide ist keine Anlageberatung.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">„Plugins" sind bei Claude technisch Connectors (MCP) plus Agent Skills; die Analysen sind KI-generiert und keine Anlageberatung: prüfe sie vor jeder Entscheidung selbst.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
-          <span class="prompt-label">Beispiel – Morning Note zu Tesla</span>
+          <span class="prompt-label">Beispiel: Morning Note zu Tesla</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle mir eine kurze Morning Note zu Tesla: relevante News der letzten 24 Stunden, anstehende Termine (Earnings, Auslieferungszahlen) und ob es heute etwas gibt, das ich beachten sollte. Stichpunktartig.</pre>
@@ -125,10 +64,10 @@
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">Beispiel – Sektor-Screen Gesundheit</span>
+          <span class="prompt-label">Beispiel: Sektor-Screen Gesundheit</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Screene den europäischen Gesundheitssektor und gib mir die 5 spannendsten Aktien — je mit zwei Sätzen zur These und dem größten Risiko.</pre>
@@ -136,10 +75,10 @@
 
       <div class="prompt-card" id="prompt-3">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 1 – DCF-Bewertung</span>
+          <span class="prompt-label">Prompt 1: DCF-Bewertung</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle eine DCF-Bewertung für [Unternehmen]. Nutze die letzten 5 Jahre aus den offiziellen Filings, projiziere die Free Cashflows für 5 Jahre und nenne deine Annahmen für Wachstum, Marge und Diskontsatz (WACC) explizit. Zeig eine Sensitivitätstabelle und am Ende den fairen Wert pro Aktie im Vergleich zum aktuellen Kurs.</pre>
@@ -147,10 +86,10 @@
 
       <div class="prompt-card" id="prompt-4">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 2 – Earnings-Recap</span>
+          <span class="prompt-label">Prompt 2: Earnings-Recap</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Fasse die letzten Quartalszahlen von [Unternehmen] zusammen. Vergleiche Umsatz und Gewinn mit den Erwartungen und dem Vorjahresquartal, nenne die 3 wichtigsten Aussagen aus dem Earnings Call, das Guidance-Update und was den Kurs bewegt hat. Maximal eine halbe Seite.</pre>
@@ -158,10 +97,10 @@
 
       <div class="prompt-card" id="prompt-5">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 3 – Sektor-Überblick</span>
+          <span class="prompt-label">Prompt 3: Sektor-Überblick</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Gib mir einen Überblick über den [Sektor] in [Region]. Nenne die aktuellen Markttreiber und Risiken, die 5 größten Player mit ihrer Positionierung, typische Bewertungsniveaus (KGV, EV/EBITDA) und wo gerade die größten Chancen und Gefahren liegen.</pre>
@@ -169,10 +108,10 @@
 
       <div class="prompt-card" id="prompt-6">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 4 – Morning Note (Tagesbriefing)</span>
+          <span class="prompt-label">Prompt 4: Morning Note (Tagesbriefing)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle eine Morning Note zu meinen Werten: [Aktie 1, Aktie 2, ...]. Pro Aktie: relevante News der letzten 24 Stunden, anstehende Termine (Earnings, Dividende) und ob es etwas gibt, das ich heute beachten sollte. Kurz und stichpunktartig.</pre>
@@ -180,10 +119,10 @@
 
       <div class="prompt-card" id="prompt-7">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 5 – Vergleichsunternehmen (Comps)</span>
+          <span class="prompt-label">Prompt 5: Vergleichsunternehmen (Comps)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle eine Vergleichsanalyse (Comps) für [Unternehmen]. Wähle 5–6 vergleichbare börsennotierte Wettbewerber und stelle Bewertungsmultiplikatoren (KGV, EV/EBITDA, EV/Umsatz) sowie Wachstum und Margen in einer Tabelle gegenüber. Sag mir am Ende, ob [Unternehmen] relativ teuer oder günstig ist.</pre>
@@ -191,27 +130,27 @@
 
       <div class="prompt-card" id="prompt-8">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 6 – Ideenfindung</span>
+          <span class="prompt-label">Prompt 6: Ideenfindung</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich suche neue Investmentideen im Bereich [Thema/Sektor]. Screene nach Unternehmen mit [Kriterien, z. B. Umsatzwachstum &gt;10 %, soliden Margen, moderater Bewertung] und gib mir 5 Kandidaten — je mit zwei Sätzen zur These und dem größten Risiko.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/finanz-connectors.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/finanz-connectors.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

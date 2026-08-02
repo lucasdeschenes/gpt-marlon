@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Belege automatisch erfassen — Excel oder DATEV-Datei mit Claude — GPT Marlon Guides</title>
-  <meta name="description" content="Claude liest deine Belege aus einem Ordner aus, erkennt Datum, Betrag und Kategorie und fängt Doppelungen und Zahlendreher über eine eingebaute Prüfstelle ab. Am Ende steht eine saubere Excel- oder Google-Sheet-Tabelle — auf Wunsch machst du daraus eine importfertige DATEV-Datei für deinen Steuerberater. Die stundenlange Tipparbeit fällt weg, die fachliche Freigabe bleibt bei dir." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <title>Belege automatisch erfassen: Excel oder DATEV-Datei mit Claude — GPT Marlon Guides</title>
+  <meta name="description" content="Claude liest deine Belege aus einem Ordner aus, erkennt Datum, Betrag und Kategorie und fängt Doppelungen und Zahlendreher über eine eingebaute Prüfstelle ab. Am Ende steht eine saubere Excel- oder Google-Sheet-Tabelle: auf Wunsch machst du daraus eine importfertige DATEV-Datei für deinen Steuerberater. Die stundenlange Tipparbeit fällt weg, die fachliche Freigabe bleibt bei dir." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/site.css" />
@@ -34,8 +34,8 @@
   <main class="page guide-page">
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Finanzen</span></div>
     <div class="page-hero">
-      <h1 class="page-title">Belege automatisch erfassen — Excel oder DATEV-Datei mit Claude</h1>
-      <p class="page-sub">Claude liest deine Belege aus einem Ordner aus, erkennt Datum, Betrag und Kategorie und fängt Doppelungen und Zahlendreher über eine eingebaute Prüfstelle ab. Am Ende steht eine saubere Excel- oder Google-Sheet-Tabelle — auf Wunsch machst du daraus eine importfertige DATEV-Datei für deinen Steuerberater. Die stundenlange Tipparbeit fällt weg, die fachliche Freigabe bleibt bei dir.</p>
+      <h1 class="page-title">Belege automatisch erfassen: Excel oder DATEV-Datei mit Claude</h1>
+      <p class="page-sub">Claude liest deine Belege aus einem Ordner aus, erkennt Datum, Betrag und Kategorie und fängt Doppelungen und Zahlendreher über eine eingebaute Prüfstelle ab. Am Ende steht eine saubere Excel- oder Google-Sheet-Tabelle: auf Wunsch machst du daraus eine importfertige DATEV-Datei für deinen Steuerberater. Die stundenlange Tipparbeit fällt weg, die fachliche Freigabe bleibt bei dir.</p>
       <div class="chip-row">
         <span class="chip chip-tool">Claude</span>
         <span class="chip">Finanzen</span>
@@ -43,107 +43,20 @@
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/belege-erfassen.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/belege-erfassen.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    <div class="guide-note">ℹ️ Claude liest und prüft die Belege und bereitet die Excel- bzw. DATEV-Datei vor — die fachliche Freigabe und den DATEV-Import machst du (bzw. dein Steuerberater) selbst. Der native Google-Drive-Connector kann Dateien nur lesen und neu anlegen, aber nicht in ein bestehendes Google Sheet schreiben; dafür braucht es einen zusätzlichen Google-Sheets-Connector (MCP) mit Schreibrechten.</div>
-
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-        <li><a href="#s1"><span class="toc-n">01</span>Voraussetzungen &amp; die zwei Wege</a></li>
-        <li><a href="#s2"><span class="toc-n">02</span>Weg A — Cowork + lokaler Ordner einrichten</a></li>
-        <li><a href="#s3"><span class="toc-n">03</span>Weg B — Cowork + Google Drive einrichten</a></li>
-        <li><a href="#s4"><span class="toc-n">04</span>Prompt 1 — Belege auslesen</a></li>
-        <li><a href="#s5"><span class="toc-n">05</span>Prompt 2 — Die Prüfstelle</a></li>
-        <li><a href="#s6"><span class="toc-n">06</span>Optional — Abgleich mit Kontoauszügen</a></li>
-        <li><a href="#s7"><span class="toc-n">07</span>Deine Grundbasis: Excel oder Google Sheet</a></li>
-        <li><a href="#s8"><span class="toc-n">08</span>Optional — DATEV-Datei erzeugen</a></li>
-        <li><a href="#s9"><span class="toc-n">09</span>Selbst anpassen &amp; Eigenkontrolle</a></li>
-        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>
-      </ol>
-    </div>
-
-      <section class="guide-section" id="s1">
-        <div class="gs-num">01</div>
-        <h2>Voraussetzungen &amp; die zwei Wege</h2>
-        <p>Du arbeitest mit <b>Claude Cowork</b> in der Desktop-App — der Variante, in der Claude eigenständig mit deinen Dateien und Ordnern arbeitet. Du brauchst <b>Claude Pro</b>: Cowork und der Google-Drive-Connector gibt es nur in bezahlten Plänen, und bei hunderten Belegen lohnt Pro wegen der höheren Limits. Claude rechnet pro Anfrage in „Tokens“ ab — teile große Stapel in mehrere Durchläufe.</p>
-<p>Zwei Wege, je nachdem wo deine Belege liegen:</p>
-<ul><li><b>Weg A — Cowork + lokaler Ordner:</b> Deine Belege liegen in einem Ordner auf dem Computer. Claude liest sie direkt und legt die fertige Excel genau dort ab. Am direktesten.</li><li><b>Weg B — Cowork + Google Drive:</b> Deine Belege liegen in Google Drive. Claude liest sie über den Drive-Connector und legt das Ergebnis zurück in Drive. Gut für die Cloud oder geräteübergreifendes Arbeiten.</li></ul>
-      </section>
-
-      <section class="guide-section" id="s2">
-        <div class="gs-num">02</div>
-        <h2>Weg A — Cowork + lokaler Ordner einrichten</h2>
-        <ol><li>Claude-Desktop-App (Mac/Windows) von claude.com/download laden und mit dem Pro-Account anmelden.</li><li>Oben im Fenster von „Chat“ auf „Cowork“ umschalten.</li><li>Auf dem Computer einen Ordner anlegen (z. B. „Belege 2026“) und alle Belege hineinlegen (PDF, Foto, Scan).</li><li>In der linken Leiste unter Projekte ein neues Projekt erstellen (z. B. „Buchhaltung“). Ein Projekt merkt sich Ordner, Anweisungen und frühere Läufe.</li><li>Im Projekt deinen Belege-Ordner als Arbeitsordner freigeben. Claude darf nur freigegebene Ordner lesen/schreiben.</li><li>Projekt-Anweisung setzen (siehe Prompt „Projekt-Anweisung“ unten) — danach reicht jeden Monat ein kurzer Satz.</li></ol>
-<p><b>Monatlicher Lauf:</b> neue Belege in den Ordner legen und schreiben „Verarbeite die neuen Belege.“ Die App muss offen und der Rechner wach bleiben; Löschen verlangt Claude immer extra deine Erlaubnis.</p>
-      </section>
-
-      <section class="guide-section" id="s3">
-        <div class="gs-num">03</div>
-        <h2>Weg B — Cowork + Google Drive einrichten</h2>
-        <ol><li>In der Desktop-App in den Cowork-Modus wechseln.</li><li>Google Drive verbinden: Einstellungen → Connectoren → Google Drive verbinden (einmalig Google-Login + Freigabe).</li><li>Belege in einen Ordner in „Meine Ablage“ legen (geteilte Ablagen werden aktuell teils nicht erkannt).</li><li>Projekt anlegen und die Projekt-Anweisung wie bei Weg A eintragen.</li><li>Im Task sagen, aus welchem Drive-Ordner Claude lesen soll. Claude liest die Belege, baut die Excel und legt sie als neue Datei in Drive ab (oder du lädst sie herunter).</li></ol>
-<p><b>Kann Claude direkt in ein Google Sheet schreiben?</b> Nein. Der native Google-Drive-Connector kann Dateien nur lesen und neu anlegen, aber keine Zellen in ein bestehendes Sheet schreiben oder Zeilen anhängen — das ist eine Funktionsgrenze. Direktes Schreiben ins Sheet geht nur mit einem zusätzlichen Google-Sheets-Connector (MCP) mit Schreibrechten. Einfacher: Claude legt die fertige Excel in Drive ab, die du als Google Sheet öffnest.</p>
-<p><b>Erst klein testen (bei beiden Wegen):</b> Lass die Prompts zuerst mit 2–3 Belegen laufen und vergleiche mit den Originalen, bevor du hunderte Belege verarbeitest.</p>
-      </section>
-
-      <section class="guide-section" id="s4">
-        <div class="gs-num">04</div>
-        <h2>Prompt 1 — Belege auslesen</h2>
-        <p>Diese Anweisung sagt Claude genau, was es aus jedem Beleg holen soll — und zwingt es, bei Unklarheit „UNKLAR“ zu schreiben statt zu raten. Dafür brauchst du noch keinen Kontenrahmen. → siehe Prompt „Belege auslesen“ unten.</p>
-<p><b>Selbst prüfen:</b> Geh die Tabelle einmal durch. Prüfe stichprobenartig 5–10 Zeilen gegen die Originalbelege (Datum, Brutto-Betrag, USt-Satz) und schau dir jeden UNKLAR-Eintrag manuell an. Lieber jetzt zwei Minuten kontrollieren als später eine falsche Buchung.</p>
-      </section>
-
-      <section class="guide-section" id="s5">
-        <div class="gs-num">05</div>
-        <h2>Prompt 2 — Die Prüfstelle</h2>
-        <p>Jetzt baust du die automatische Kontrolle ein: Sie fängt Doppelungen, Zahlendreher und fehlende Felder ab, bevor irgendetwas weiterverarbeitet wird. → siehe Prompt „Prüfstelle“ unten.</p>
-<p><b>Selbst prüfen:</b> Das Prüfprotokoll ist eine Hilfe, kein Freibrief. Geh jeden markierten Punkt durch und entscheide selbst, ob Claude korrigieren darf. So gibst du frei, z. B.: „Korrigiere Punkt 2 und 3, Doppelung bei ‚Bürobedarf 14.03.‘ löschen. Rest unverändert.“ Claude ändert nur, was du freigibst.</p>
-      </section>
-
-      <section class="guide-section" id="s6">
-        <div class="gs-num">06</div>
-        <h2>Optional — Abgleich mit Kontoauszügen</h2>
-        <p>Du kannst Claude zusätzlich deine Kontoauszüge geben. Dann gleicht es jede Buchung mit deinen Belegen ab und findet vor allem, ob ein Beleg fehlt. Exportiere die Auszüge aus dem Online-Banking als PDF oder CSV und lege sie in denselben verbundenen Ordner (ein Unterordner „Kontoauszüge“ hält alles getrennt). → siehe Prompt „Abgleich &amp; fehlende Belege“ unten.</p>
-<p><b>Freiwillig — deine Entscheidung:</b> Kontoauszüge enthalten sensible Finanzdaten. Lade nur hoch, wozu du berechtigt bist (DSGVO), und nutze bei Bedarf nur die relevanten Monate.</p>
-<p><b>Selbst prüfen:</b> Geh zuerst die als BELEG FEHLT markierten Buchungen durch — genau dort steckt der verlorene Beleg. Gleiche Beträge bei verschiedenen Lieferanten kann Claude verwechseln.</p>
-      </section>
-
-      <section class="guide-section" id="s7">
-        <div class="gs-num">07</div>
-        <h2>Deine Grundbasis: Excel oder Google Sheet</h2>
-        <p>Die geprüfte Tabelle ist deine Grundbasis. Sichere sie als Datei — von hier aus baust du immer noch eine DATEV-Datei oder belässt es bei der Tabelle.</p>
-<ul><li><b>Einfachste Variante:</b> Lass Claude die geprüfte Tabelle als .xlsx ausgeben (siehe Prompt „Excel-Datei erstellen“ unten). Bei Weg A landet sie im lokalen Ordner, bei Weg B in Google Drive.</li><li><b>Cloud:</b> Da der native Drive-Connector read-only ist, öffnest du die .xlsx/.csv in Drive per Rechtsklick → Öffnen mit → Google Tabellen. Für laufendes Direkt-Schreiben ins Sheet brauchst du einen zusätzlichen Google-Sheets-Connector (MCP).</li></ul>
-<p><b>Selbst prüfen:</b> Öffne die fertige Datei und vergleiche die Summenzeile mit der Brutto-Summe aus der Prüfstelle.</p>
-      </section>
-
-      <section class="guide-section" id="s8">
-        <div class="gs-num">08</div>
-        <h2>Optional — DATEV-Datei erzeugen</h2>
-        <p>Willst du, dass dein Steuerberater die Daten mit einem Klick importiert, machst du aus der Grundbasis eine Datei im DATEV-Format (EXTF-Buchungsstapel, CSV). Erst jetzt wird der Kontenrahmen relevant. Hol dir einmalig vom Steuerberater:</p>
-<ul><li>Kontenrahmen (SKR03 / SKR04) — der genormte „Nummernplan“, der jeder Ausgabe ein festes Konto gibt.</li><li>Berater-Nr, Mandanten-Nr und Wirtschaftsjahr.</li><li>Eine Muster-Importdatei als Vorlage (zeigt Claude Spalten + Kopfzeile).</li></ul>
-<p>→ siehe Prompt „DATEV-Datei erzeugen“ unten.</p>
-<p><b>Selbst prüfen — vor dem Import:</b> Schick die fertige CSV vorab deinem Steuerberater oder mach in DATEV einen Testimport. Erst importieren, wenn die Struktur bestätigt ist.</p>
-      </section>
-
-      <section class="guide-section" id="s9">
-        <div class="gs-num">09</div>
-        <h2>Selbst anpassen &amp; Eigenkontrolle</h2>
-        <p><b>Pro-Move:</b> Lass dir eine gespeicherte Projekt-Anweisung bauen, die genau auf dein Ausgabeformat, deine Kategorien und (bei DATEV) deinen Kontenrahmen zugeschnitten ist. → siehe Prompt „Eigene Projekt-Anweisung“ unten.</p>
-<p><b>Deine Eigenkontrolle — immer:</b></p>
-<ul><li>Erst mit wenigen Belegen testen.</li><li>Ausgelesene Tabelle stichprobenartig gegen Originale prüfen.</li><li>Jeden UNKLAR-Eintrag manuell klären.</li><li>Prüfprotokoll Punkt für Punkt durchgehen.</li><li>Summenzeile gegen die Brutto-Summe abgleichen.</li><li>DATEV-Datei vor dem Import vom Steuerberater bestätigen lassen.</li></ul>
-<p>Dieser Guide ersetzt keine Steuer-, Rechts- oder Buchhaltungsberatung; die automatische Erfassung unterstützt die Vorarbeit, die fachliche Prüfung bleibt bei dir und deinem Steuerberater.</p>
-      </section>
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    <div class="guide-note">Claude liest und prüft die Belege und bereitet die Excel- bzw. DATEV-Datei vor: die fachliche Freigabe und den DATEV-Import machst du (bzw. dein Steuerberater) selbst. Der native Google-Drive-Connector kann Dateien nur lesen und neu anlegen, aber nicht in ein bestehendes Google Sheet schreiben; dafür braucht es einen zusätzlichen Google-Sheets-Connector (MCP) mit Schreibrechten.</div>
     <section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
         <div class="prompt-head">
           <span class="prompt-label">Projekt-Anweisung (einmal eintragen)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Du bist mein Buchhaltungs-Assistent. Bei jedem Lauf: lies die Belege im verbundenen Ordner aus (Datum, Lieferant, Belegnummer, Netto, USt, Brutto, Kategorie, Dateiname). Schreib bei Unklarheit "UNKLAR" statt zu raten. Führe danach die Prüfstelle aus (Doppelungen, Netto+USt=Brutto, fehlende Felder, Summe). Erzeuge die Datei erst nach meiner Freigabe.</pre>
@@ -151,10 +64,10 @@
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 1 — Belege auslesen</span>
+          <span class="prompt-label">Prompt 1: Belege auslesen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Du bist mein Buchhaltungs-Assistent. Lies jeden Beleg [aus dem verbundenen Ordner bzw. Google-Drive-Ordner] einzeln aus und erstelle eine Tabelle mit diesen Spalten:
@@ -176,10 +89,10 @@ Gib mir zuerst NUR die Tabelle zur Kontrolle aus.</pre>
 
       <div class="prompt-card" id="prompt-3">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 2 — Die Prüfstelle</span>
+          <span class="prompt-label">Prompt 2: Die Prüfstelle</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Prüfe die Tabelle jetzt automatisch und erstelle ein Prüfprotokoll. Markiere jeden Fund mit dem Belegnamen:
@@ -193,10 +106,10 @@ Liste alle Funde auf. Aendere noch NICHTS ohne meine Freigabe.</pre>
 
       <div class="prompt-card" id="prompt-4">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 3 — Abgleich &amp; fehlende Belege</span>
+          <span class="prompt-label">Prompt 3: Abgleich &amp; fehlende Belege</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Ich habe zusätzlich meine Kontoauszüge in den verbundenen Ordner gelegt (PDF oder CSV). Gleiche die geprüfte Belegtabelle mit den Kontobewegungen ab und erstelle ein Abgleich-Protokoll:
@@ -212,8 +125,8 @@ Liste alle Funde mit Belegname und Buchungszeile auf. Ändere noch NICHTS ohne m
         <div class="prompt-head">
           <span class="prompt-label">Excel-Datei erstellen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle aus der geprüften Tabelle eine Excel-Datei (.xlsx) mit Kopfzeile, Summenzeile unten und sauber formatierten Spalten.</pre>
@@ -223,8 +136,8 @@ Liste alle Funde mit Belegname und Buchungszeile auf. Ändere noch NICHTS ohne m
         <div class="prompt-head">
           <span class="prompt-label">DATEV-Datei erzeugen</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Erstelle aus der geprüften Tabelle eine Import-Datei im DATEV-Format (EXTF-Buchungsstapel, CSV).
@@ -238,26 +151,26 @@ Fehlt eine Pflicht-Angabe, FRAG NACH statt zu raten. Gib die Datei als herunterl
         <div class="prompt-head">
           <span class="prompt-label">Eigene Projekt-Anweisung bauen (Pro-Move)</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
           </div>
         </div>
         <pre class="prompt-text">Baue mir eine gespeicherte Projekt-Anweisung für meine Belegerfassung, zugeschnitten auf: Ausgabeformat = [Excel / Google Sheet / DATEV], meine Kategorien = [___], (falls DATEV) Kontenrahmen = [SKR03/SKR04].
 Sie soll: (1) Belege auslesen und bei Unklarheit "UNKLAR" schreiben, (2) eine Prüfstelle für Doppelungen und Zahlendreher enthalten, (3) erst nach meiner Freigabe die Datei erzeugen.</pre>
       </div>
     </section>
+
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/belege-erfassen.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/belege-erfassen.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
   <footer class="site-footer">

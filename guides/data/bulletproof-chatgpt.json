@@ -1,10 +1,10 @@
 {
   "file": "Bulletproof_ChatGPT_GPTMarlon.pdf",
-  "title": "Bulletproof ChatGPT — mach aus dem Ja-Sager deinen härtesten Coach",
+  "title": "Bulletproof ChatGPT: mach aus dem Ja-Sager deinen härtesten Coach",
   "slug": "bulletproof-chatgpt",
   "category": "Produktivität",
   "tool": "ChatGPT",
-  "summary": "Mit einer einzigen Instruktion in den „Individuellen Hinweisen“ wird aus dem höflichen Ja-Sager ein schonungsloser Mentor, der deine Ideen stresstestet, statt sie zu loben. Du richtest sie in 60 Sekunden ein — kein Abo, kein Tool nötig — und schaltest mit Trigger-Sätzen gezielt in den Kritik-Modus. Dazu kommen drei Bonus-Modi: Advocatus Diaboli, Pre-Mortem und Entscheidungs-Matrix.",
+  "summary": "Mit einer einzigen Instruktion in den „Individuellen Hinweisen“ wird aus dem höflichen Ja-Sager ein schonungsloser Mentor, der deine Ideen stresstestet, statt sie zu loben. Du richtest sie in 60 Sekunden ein: kein Abo, kein Tool nötig, und schaltest mit Trigger-Sätzen gezielt in den Kritik-Modus. Dazu kommen drei Bonus-Modi: Advocatus Diaboli, Pre-Mortem und Entscheidungs-Matrix.",
   "sections": [
     {
       "heading": "Warum sich ChatGPT wie ein Ja-Sager anfühlt",
@@ -53,15 +53,15 @@
       "text": "1. Ziel:\n2. Mein Plan:\n3. Rahmen: (Zeit, Budget, Skills, Zielgruppe)\n\nDann frag: \"Stresstest das und gib mir eine staerkere Version.\""
     },
     {
-      "label": "Bonus 1 — Advocatus Diaboli",
+      "label": "Bonus 1: Advocatus Diaboli",
       "text": "Uebernimm die Gegenposition. Argumentiere so ueberzeugend wie moeglich GEGEN meine Idee -- als muesstest du jemanden davon abhalten, sie umzusetzen. Nenne die 5 staerksten Gruende dagegen."
     },
     {
-      "label": "Bonus 2 — Pre-Mortem",
+      "label": "Bonus 2: Pre-Mortem",
       "text": "Stell dir vor, es ist 12 Monate spaeter und dieses Projekt ist krachend gescheitert. Schreibe die Post-Mortem: Was ist schiefgegangen, warum, und welche Warnsignale haette ich heute schon sehen koennen?"
     },
     {
-      "label": "Bonus 3 — Entscheidungs-Matrix",
+      "label": "Bonus 3: Entscheidungs-Matrix",
       "text": "Ich schwanke zwischen [Option A] und [Option B]. Bewerte beide entlang von [Kriterien, z.B. Aufwand, Risiko, Ertrag]. Gib jeder eine Wertung 1-10 mit Begruendung -- und am Ende eine klare Empfehlung."
     },
     {

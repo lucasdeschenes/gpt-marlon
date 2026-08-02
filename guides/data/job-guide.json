@@ -4,7 +4,7 @@
   "slug": "job-guide",
   "category": "Karriere",
   "tool": "Claude",
-  "summary": "Die kompakte Version des Bewerbungs-Workflows: Lebenslauf-Analyse, Erfahrungs-Rewrite nach der Google-XYZ-Formel und ein ATS-plus-Hiring-Manager-Test, ergänzt um Bonus-Prompts für Anschreiben, Interview-Prep, Gehaltsverhandlung, LinkedIn und Follow-ups. Auto-Bewerben läuft über Claude Cowork und die Claude-in-Chrome-Erweiterung – mit Pause vor jeder Einreichung.",
+  "summary": "Die kompakte Version des Bewerbungs-Workflows: Lebenslauf-Analyse, Erfahrungs-Rewrite nach der Google-XYZ-Formel und ein ATS-plus-Hiring-Manager-Test, ergänzt um Bonus-Prompts für Anschreiben, Interview-Prep, Gehaltsverhandlung, LinkedIn und Follow-ups. Auto-Bewerben läuft über Claude Cowork und die Claude-in-Chrome-Erweiterung, mit Pause vor jeder Einreichung.",
   "sections": [
     {
       "heading": "So funktioniert's",
@@ -45,19 +45,19 @@
   ],
   "prompts": [
     {
-      "label": "Prompt 1 – Lebenslauf-Analyse",
+      "label": "Prompt 1: Lebenslauf-Analyse",
       "text": "Verhalte dich wie ein Senior Recruiter des Unternehmens, bei dem ich mich bewerbe.\n\nAnalysiere meinen Lebenslauf gegen diese Stellenbeschreibung.\n\nGib mir:\n1. Einen Match-Score von 100\n2. Die 5 wichtigsten fehlenden Keywords, nach denen das ATS sucht\n3. Die 3 roten Flags, die ein Hiring Manager in unter 10 Sekunden entdecken wuerde\n4. Welche Abschnitte stark sind und warum\n5. Welche Abschnitte schwach sind und warum\n6. Wie mein Lebenslauf im Vergleich zu einem starken Kandidaten fuer diese Stelle aussieht\n\nSei brutal ehrlich. Ich moechte Probleme lieber jetzt loesen als spaeter geghostet werden."
     },
     {
-      "label": "Prompt 2 – Erfahrungs-Rewrite (gleicher Chat)",
+      "label": "Prompt 2: Erfahrungs-Rewrite (gleicher Chat)",
       "text": "Schreibe meinen Erfahrungsabschnitt mit diesen Regeln um:\n\n1. Baue die fehlenden Keywords natuerlich ein, aber erzwinge sie NICHT. Sie sollen sich normal anfuehlen.\n2. Behebe oder entferne jede rote Flag, die du erkannt hast.\n3. Nutze die Google-XYZ-Formel fuer jeden Punkt: 'Erreicht [X] gemessen an [Y] durch [Z]'\n4. Beginne jeden Punkt mit einem starken Aktionsverb. Nie 'Verantwortlich fuer' oder 'Geholfen mit'.\n5. Fuege ueberall konkrete Zahlen ein. Wenn ich keine angegeben habe, schlage realistische Platzhalter vor und markiere sie mit [EINTRAGEN].\n6. Halte jeden Punkt auf max. 1-2 Zeilen. Recruiter ueberfliegen. Dichte Abschnitte werden uebersprungen.\n7. Ordne Punkte nach Wirkung, nicht nach Datum. Das beeindruckendste Ergebnis kommt zuerst."
     },
     {
-      "label": "Prompt 3 – ATS + Hiring Manager Scan (gleicher Chat)",
+      "label": "Prompt 3: ATS + Hiring Manager Scan (gleicher Chat)",
       "text": "Verhalte dich jetzt wie zwei verschiedene Personen:\n\nERST: Als ATS-Filter. Scanne meinen neuen Lebenslauf:\n- Wuerde er das ATS fuer diesen Job bestehen? (Ja/Nein)\n- Welche Keywords sind jetzt vorhanden, welche fehlen?\n- Gibt es Formatierungsprobleme, die den Parser verwirren wuerden? (Tabellen, Spalten, Sonderzeichen)\n\nDANN: Als Hiring Manager, der 200 Lebenslaeufe liest. Scanne meinen Lebenslauf:\n- Welche Abschnitte wuerdest du ueberspringen? Warum?\n- Was laesst dich stoppen (positiv oder negativ)?\n- Kaeme er in den 'Ja', 'Vielleicht' oder 'Nein' Stapel?\n- Schreibe Abschnitte um, die uebersprungen wuerden.\n\nGib mir die finale Version meines Lebenslaufs nach allen Korrekturen."
     },
     {
-      "label": "Prompt 4 – Auto-Bewerben (in Claude Cowork)",
+      "label": "Prompt 4: Auto-Bewerben (in Claude Cowork)",
       "text": "Jetzt, wo mein Lebenslauf optimiert ist, geh zu LinkedIn und mache folgendes:\n\n1. Suche nach [JOBTITEL]-Stellen in [ORT], veroeffentlicht in den letzten [7/14/30] Tagen.\n2. Filtere auf Jobs, bei denen mein Lebenslauf mindestens 70% Match hat.\n3. Waehle die Top 10 Jobs, bei denen meine Chancen auf ein Interview am hoechsten sind.\n4. Fuer jeden Job:\n- Lies die vollstaendige Stellenbeschreibung\n- Passe meine Zusammenfassung und Kernpunkte an\n- Schreibe ein kurzes Anschreiben (max. 3 Saetze) mit einem spezifischen Unternehmensbezug\n- Reiche die Bewerbung ueber LinkedIn ein\n5. Danach: Sende mir eine Zusammenfassung:\n- Unternehmen + Jobtitel\n- Match-Score\n- Was du angepasst hast\n- Bewerbungsstatus (Eingereicht / Entwurf)\n\nPausiere vor jeder Einreichung und zeige mir die angepasste Version zuerst."
     },
     {

@@ -112,7 +112,7 @@ const head = (title, desc, p) => `<head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${esc(title)}</title>
   <meta name="description" content="${escAttr(desc)}" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="${p}assets/fonts.css" />
   <link rel="stylesheet" href="${p}assets/site.css" />
@@ -145,9 +145,20 @@ mkdirSync("guides", { recursive: true });
 const toolBadge = (tool) => `<span class="chip chip-tool">${esc(tool)}</span>`;
 const openBtns = (tool) => {
   const b = [];
-  if (/claude/i.test(tool)) b.push(`<button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">✦ In Claude öffnen</button>`);
-  if (/chatgpt/i.test(tool)) b.push(`<button class="pbtn" onclick="openIn(this,'chatgpt')">◍ In ChatGPT öffnen</button>`);
+  if (/claude/i.test(tool)) b.push(`<button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>`);
+  if (/chatgpt/i.test(tool)) b.push(`<button class="pbtn" onclick="openIn(this,'chatgpt')">In ChatGPT öffnen</button>`);
   return b.join("");
+};
+
+// Skill files live outside the JSON, so a guide gets the section only once a file
+// actually exists. Either guides/skills/<slug>.md, or guides/skills/<slug>/*.md
+// for a guide that ships more than one.
+const skillFilesFor = (slug) => {
+  const out = [];
+  if (existsSync(path.join("guides", "skills", slug + ".md"))) out.push(slug + ".md");
+  const dir = path.join("guides", "skills", slug);
+  if (existsSync(dir)) out.push(...readdirSync(dir).filter((f) => f.endsWith(".md")).map((f) => slug + "/" + f));
+  return out;
 };
 
 for (const g of guides) {
@@ -156,30 +167,24 @@ for (const g of guides) {
         <div class="prompt-head">
           <span class="prompt-label">${esc(p.label)}</span>
           <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">📋 Kopieren</button>
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
             ${openBtns(g.tool)}
           </div>
         </div>
         <pre class="prompt-text">${esc(p.text)}</pre>
       </div>`).join("\n");
 
-  // Numbered, anchored sections + a table of contents — the guides are long, and
-  // a reader needs to see the shape of the workflow before starting it.
-  const sectionsHtml = g.sections.map((s, i) => `
-      <section class="guide-section" id="s${i + 1}">
-        <div class="gs-num">${String(i + 1).padStart(2, "0")}</div>
-        <h2>${esc(s.heading)}</h2>
-        ${md(s.body)}
-      </section>`).join("\n");
-
-  const tocHtml = g.sections.length > 2 ? `
-    <div class="guide-toc" role="navigation" aria-label="Inhalt">
-      <div class="guide-toc-label"><span data-en="In this guide">In diesem Guide</span></div>
-      <ol>
-${g.sections.map((s, i) => `        <li><a href="#s${i + 1}"><span class="toc-n">${String(i + 1).padStart(2, "0")}</span>${esc(s.heading)}</a></li>`).join("\n")}
-${(g.prompts || []).length ? `        <li><a href="#alle-prompts"><span class="toc-n">★</span><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></a></li>` : ""}
-      </ol>
-    </div>` : "";
+  // The step-by-step walkthrough lives in the PDF only. What stays on the page is
+  // the download, the prompts and any skill files — so no sections, no table of
+  // contents. g.sections is still read from the JSON for the PDF pipeline.
+  const skills = skillFilesFor(g.slug);
+  const skillsHtml = skills.length ? `
+    <section class="guide-section" id="skill-dateien">
+      <h2><span data-en="Skill files to download">Skill-Dateien zum Download</span></h2>
+      <div class="skill-list">
+${skills.map((f) => `        <a class="skill-file" href="../guides/skills/${f}" download><span class="skill-name">${esc(f.split("/").pop())}</span><span class="skill-hint" data-en="Download">Herunterladen</span></a>`).join("\n")}
+      </div>
+    </section>` : "";
 
   const html = `<!DOCTYPE html>
 <html lang="de">
@@ -198,29 +203,27 @@ ${nav("guide")}
         <span class="chip">Aktualisiert Juli 2026</span>
       </div>
       <div class="guide-actions">
-        <a class="btn-primary" href="../guides/pdf/${g.slug}.pdf" download><span data-en="⬇ Download PDF">⬇ Als PDF herunterladen</span></a>
-        <a class="btn-secondary" href="#" data-community><span data-en="🚀 Join community">🚀 Community beitreten</span></a>
+        <a class="btn-primary" href="../guides/pdf/${g.slug}.pdf" download><span data-en="Download PDF">Als PDF herunterladen</span></a>
+        <a class="btn-secondary" href="#" data-community><span data-en="Join community">Community beitreten</span></a>
       </div>
     </div>
-    ${g.note ? `<div class="guide-note">ℹ️ ${g.note}</div>` : ""}
-${tocHtml}
-${sectionsHtml}
+    <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
+    ${g.note ? `<div class="guide-note">${g.note}</div>` : ""}
     ${(g.prompts || []).length ? `<section class="guide-section" id="alle-prompts">
-      <div class="gs-num">★</div>
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>${promptsHtml}
     </section>` : ""}
+${skillsHtml}
     <div class="guide-download">
-      <div class="guide-download-icon">📖</div>
       <div class="guide-download-title"><span data-en="Take the whole guide with you">Nimm den kompletten Guide mit</span></div>
-      <div class="guide-download-sub"><span data-en="All steps and prompts as a PDF — to save, print and follow along offline.">Alle Schritte und Prompts als PDF — zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
-      <a class="btn-primary" href="../guides/pdf/${g.slug}.pdf" download><span data-en="⬇ Download full PDF (free)">⬇ Vollständiges PDF herunterladen (kostenlos)</span></a>
+      <div class="guide-download-sub"><span data-en="Every step as a PDF: to save, print and follow along offline.">Alle Schritte als PDF: zum Speichern, Ausdrucken und offline Nachmachen.</span></div>
+      <a class="btn-primary" href="../guides/pdf/${g.slug}.pdf" download><span data-en="Download full PDF (free)">Vollständiges PDF herunterladen (kostenlos)</span></a>
     </div>
     <div class="guide-cta">
       <div>
-        <div class="guide-cta-title"><span data-en="More of this — every week.">Mehr davon — jede Woche.</span></div>
+        <div class="guide-cta-title"><span data-en="More of this, every week.">Mehr davon, jede Woche.</span></div>
         <div class="guide-cta-sub"><span data-en="New resources, prompts and workflows straight to your inbox. Free.">Neue Ressourcen, Prompts und Workflows direkt ins Postfach. Kostenlos.</span></div>
       </div>
-      <a class="btn-primary" href="#" data-community><span data-en="Join the community →">Community beitreten →</span></a>
+      <a class="btn-primary" href="#" data-community><span data-en="Join the community">Community beitreten</span></a>
     </div>
   </main>
 ${footer("../")}
@@ -258,14 +261,14 @@ const cards = guides.map((g, i) => {
 
 const indexHtml = `<!DOCTYPE html>
 <html lang="de">
-${head("Ressourcen — GPT Marlon", "Alle GPT Marlon Ressourcen: Schritt-für-Schritt-Anleitungen für Claude & ChatGPT — Bewerbung, Finanzen, Produktivität, Content. Mit kopierbaren Prompts.", "")}
+${head("Ressourcen: GPT Marlon", "Alle GPT Marlon Ressourcen: Schritt-für-Schritt-Anleitungen für Claude und ChatGPT. Bewerbung, Finanzen, Produktivität, Content. Mit kopierbaren Prompts.", "")}
 <body>
 ${nav("guides")}
   <main class="page">
     <div class="page-hero fade-up">
       <div class="section-label"><span data-en="Resources">Ressourcen</span></div>
       <h1 class="page-title"><span data-en="All resources.">Alle Ressourcen.</span> <span class="gradient-text" data-en="All prompts. Free.">Alle Prompts. Kostenlos.</span></h1>
-      <p class="page-sub"><span data-en="The complete step-by-step guides from the reels — each with copy-ready prompts you can open straight in Claude or ChatGPT.">Die kompletten Schritt-für-Schritt-Anleitungen aus den Reels — jeder Guide mit kopierbaren Prompts, die du direkt in Claude oder ChatGPT öffnen kannst.</span></p>
+      <p class="page-sub"><span data-en="The complete step-by-step guides from the reels. Every guide comes as a PDF, plus copy-ready prompts you can open straight in Claude or ChatGPT.">Die kompletten Schritt-für-Schritt-Anleitungen aus den Reels. Jeden Guide gibt es als PDF, dazu kopierbare Prompts, die du direkt in Claude oder ChatGPT öffnen kannst.</span></p>
     </div>
     <div class="res-controls fade-up">
       <div class="res-search">
@@ -278,7 +281,7 @@ ${nav("guides")}
           <option value="featured" data-en="Featured">Empfohlen</option>
           <option value="new" data-en="Newest first">Neueste zuerst</option>
           <option value="old" data-en="Oldest first">Älteste zuerst</option>
-          <option value="az" data-en="A to Z">A–Z</option>
+          <option value="az" data-en="A to Z">A bis Z</option>
         </select>
       </div>
     </div>

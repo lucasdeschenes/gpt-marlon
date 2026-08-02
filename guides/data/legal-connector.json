@@ -4,7 +4,7 @@
   "slug": "legal-connector",
   "category": "Produktivität",
   "tool": "Claude",
-  "summary": "Das offizielle Legal-Plugin von Anthropic (technisch ein Bündel aus Skills, Slash-Befehlen und Connectors) läuft in Claude Cowork und prüft Verträge, NDAs und Compliance-Fragen nach einem Ampel-System. Der Guide zeigt Installation, das entscheidende Playbook (legal.local.md) sowie über 25 fertige Prompts – inklusive DACH-Anpassung und DSGVO-Fokus. Es ist ein Beschleuniger für die Vorarbeit und ersetzt keine anwaltliche Beratung.",
+  "summary": "Das offizielle Legal-Plugin von Anthropic (technisch ein Bündel aus Skills, Slash-Befehlen und Connectors) läuft in Claude Cowork und prüft Verträge, NDAs und Compliance-Fragen nach einem Ampel-System. Der Guide zeigt Installation, das entscheidende Playbook (legal.local.md) sowie über 25 fertige Prompts: inklusive DACH-Anpassung und DSGVO-Fokus. Es ist ein Beschleuniger für die Vorarbeit und ersetzt keine anwaltliche Beratung.",
   "sections": [
     {
       "heading": "Teil 1 – Das Plugin in 60 Sekunden installieren",
@@ -49,154 +49,154 @@
   ],
   "prompts": [
     {
-      "label": "/review-contract – Lieferantenvertrag",
+      "label": "/review-contract: Lieferantenvertrag",
       "text": "/review-contract [Vertrag hochladen]\nIch bin der Kunde/Käufer. Wir müssen bis Monatsende abschließen. Markiere alles, was uns unbegrenzter Haftung aussetzt oder beim Datenschutz zu schwach ist."
     },
     {
-      "label": "/review-contract – SaaS-AGB / Nutzungsbedingungen",
+      "label": "/review-contract: SaaS-AGB / Nutzungsbedingungen",
       "text": "Prüfe diese SaaS-Nutzungsbedingungen. Ich bin der Kunde. Fokus: Dateneigentum, Kündigungsrechte, Haftungsgrenzen und versteckte automatische Verlängerungen."
     },
     {
-      "label": "/review-contract – Gewerbemietvertrag",
+      "label": "/review-contract: Gewerbemietvertrag",
       "text": "/review-contract [Mietvertrag hochladen]\nPrüfe diesen Gewerbemietvertrag. Ich bin der Mieter. Markiere alles zu vorzeitiger Kündigung, Mieterhöhungen (Indexmiete/Staffelmiete), Instandhaltungspflichten und persönlichen Bürgschaften."
     },
     {
-      "label": "/review-contract – Arbeitsvertrag",
+      "label": "/review-contract: Arbeitsvertrag",
       "text": "Prüfe diesen Arbeitsvertrag. Ich bin der Arbeitnehmer. Markiere Wettbewerbsverbote, Klauseln zur Übertragung geistigen Eigentums, Rückzahlungsklauseln und alles, was mich nach dem Ausscheiden beruflich einschränkt."
     },
     {
-      "label": "/review-contract – Freelancer-Vertrag",
+      "label": "/review-contract: Freelancer-Vertrag",
       "text": "Prüfe diesen Freelancer-Vertrag. Ich bin der Auftragnehmer. Markiere alles zu Nutzungsrechten an meiner Arbeit, Zahlungszielen, Ausfallhonoraren und Schutz vor schleichender Ausweitung des Auftragsumfangs."
     },
     {
-      "label": "/review-contract – Gesellschafter-/Partnervertrag",
+      "label": "/review-contract: Gesellschafter-/Partnervertrag",
       "text": "/review-contract [Vertrag hochladen]\nIch gehe eine 50/50-Partnerschaft ein. Prüfe Ausstiegsregelungen, Streitbeilegung, Entscheidungsbefugnisse, Einlagepflichten — und was passiert, wenn ein Partner aussteigen will."
     },
     {
-      "label": "/triage-nda – Schnell-Check",
+      "label": "/triage-nda: Schnell-Check",
       "text": "/triage-nda [NDA hochladen]\nPrüfe dieses NDA von einem potenziellen Partner. Können wir heute unterschreiben oder muss das in die juristische Prüfung?"
     },
     {
-      "label": "/triage-nda – NDA vom Wettbewerber",
+      "label": "/triage-nda: NDA vom Wettbewerber",
       "text": "/triage-nda [NDA hochladen]\nEin Wettbewerber schickt uns dieses gegenseitige NDA für Partnerschaftsgespräche. Prüfe auf versteckte Abwerbeverbote, Wettbewerbsverbote und Stillhalteklauseln."
     },
     {
-      "label": "/triage-nda – Stapel-Triage",
+      "label": "/triage-nda: Stapel-Triage",
       "text": "Ich habe diese Woche 5 NDAs von verschiedenen Anbietern bekommen. [alle 5 hochladen] Triagiere jedes einzeln: Welche kann ich sofort unterschreiben, welche brauchen Prüfung, wo sollte ich zurückverhandeln?"
     },
     {
-      "label": "Compliance – neues Produkt-Feature",
+      "label": "Compliance: neues Produkt-Feature",
       "text": "Compliance-Check: Wir wollen biometrische Anmeldung (Face ID) in unsere Mobile-App einbauen. Unsere Nutzer sitzen in Deutschland, Österreich und der Schweiz. Welche Regeln gelten, was müssen wir vor Launch klären?"
     },
     {
-      "label": "Compliance – Marketing-Kampagne",
+      "label": "Compliance: Marketing-Kampagne",
       "text": "Compliance-Check: Unser Marketing will Kunden-Testimonials und Vorher-Nachher-Fotos in bezahlten Anzeigen auf Meta und Google nutzen. Einige Kunden sind aus der EU. Worauf müssen wir achten?"
     },
     {
-      "label": "Compliance – E-Mail-Marketing",
+      "label": "Compliance: E-Mail-Marketing",
       "text": "Compliance-Check: Wir bauen eine E-Mail-Liste über einen Lead-Magneten auf unserer Website auf und wollen dieser Liste Werbe-Mails schicken. Nutzer weltweit, Schwerpunkt DACH. Welche Regeln gelten (DSGVO, UWG, ePrivacy)?"
     },
     {
-      "label": "Compliance – KI-Feature",
+      "label": "Compliance: KI-Feature",
       "text": "Compliance-Check: Wir wollen ein KI-Modell auf unseren Kundensupport-Chats trainieren, um einen Chatbot zu bauen. Die Chats enthalten Namen, E-Mail-Adressen und Kaufhistorie. Was verlangen DSGVO und EU AI Act von uns?"
     },
     {
-      "label": "Compliance – Datentransfer",
+      "label": "Compliance: Datentransfer",
       "text": "Compliance-Check: Wir müssen EU-Kundendaten zur Verarbeitung in unser US-Rechenzentrum übertragen. Welche Transfer-Mechanismen brauchen wir dafür (Standardvertragsklauseln, Data Privacy Framework)?"
     },
     {
-      "label": "Compliance – Mitarbeiter-Monitoring",
+      "label": "Compliance: Mitarbeiter-Monitoring",
       "text": "Compliance-Check: Wir überlegen, Bildschirm-Monitoring für unser Remote-Team einzuführen. Mitarbeiter sitzen in Deutschland, Österreich und UK. Was ist erlaubt, was nicht, und wo muss der Betriebsrat einbezogen werden?"
     },
     {
-      "label": "Compliance – Kinder- und Jugenddaten",
+      "label": "Compliance: Kinder- und Jugenddaten",
       "text": "Compliance-Check: Unsere App wird von Lehrern und Schülern (10-17 Jahre) genutzt. Wir erfassen Namen, E-Mail und Nutzungsdaten und wollen Analytics-Tracking ergänzen. Welche Anforderungen gelten für Minderjährige nach DSGVO (Einwilligung, Altersgrenzen)?"
     },
     {
-      "label": "Risiko – Lieferantenvertrag bewerten",
+      "label": "Risiko: Lieferantenvertrag bewerten",
       "text": "Bewerte die rechtlichen Risiken in diesem Liefervertrag. [Vertrag hochladen] Wir sind ein mittelständisches SaaS-Unternehmen, es geht um einen Cloud-Infrastruktur-Deal über 500.000 € pro Jahr."
     },
     {
-      "label": "Risiko – Markteintritt USA",
+      "label": "Risiko: Markteintritt USA",
       "text": "Bewerte die rechtlichen Risiken einer Expansion unseres SaaS-Produkts in die USA. Wir sind bisher nur in der EU aktiv. Auf welche regulatorischen, datenschutzrechtlichen und vertraglichen Risiken müssen wir uns vorbereiten?"
     },
     {
-      "label": "Risiko – Open-Source-Lizenz (AGPL)",
+      "label": "Risiko: Open-Source-Lizenz (AGPL)",
       "text": "Bewerte das IP-Risiko: Unser neues Feature nutzt eine Open-Source-Bibliothek unter AGPL-Lizenz. Unser Produkt ist proprietäre SaaS. Wo liegt das Problem und welche Alternativen haben wir?"
     },
     {
-      "label": "Risiko – Scheinselbstständigkeit",
+      "label": "Risiko: Scheinselbstständigkeit",
       "text": "Bewerte die rechtlichen Risiken: Wir beschäftigen 15 freie Mitarbeiter in Deutschland, einige seit über 3 Jahren fast ausschließlich für uns. Wie hoch ist unser Risiko bei einer Statusfeststellung (Scheinselbstständigkeit) und was würde eine Umstellung auf Festanstellung bedeuten?"
     },
     {
-      "label": "/vendor-check – vor der Verlängerung",
+      "label": "/vendor-check: vor der Verlängerung",
       "text": "/vendor-check Salesforce\nUnser Salesforce-Vertrag steht zur Verlängerung an. Zeig mir alles, was wir zu Salesforce haben, und markiere alles, was in den nächsten 90 Tagen ausläuft."
     },
     {
-      "label": "/vendor-check – neuer Lieferant",
+      "label": "/vendor-check: neuer Lieferant",
       "text": "/vendor-check Snowflake\nWir onboarden Snowflake als neuen Anbieter. Welche Vereinbarungen haben wir schon? Was fehlt noch, bevor wir live gehen (NDA, AVV, Rahmenvertrag)?"
     },
     {
-      "label": "/brief – Morgen-Briefing",
+      "label": "/brief: Morgen-Briefing",
       "text": "/brief daily\nMein Morgen-Briefing: Welche Verträge warten auf Prüfung, welche Fristen nähern sich, was kam über Nacht rein?"
     },
     {
-      "label": "/brief – Themen-Recherche",
+      "label": "/brief: Themen-Recherche",
       "text": "/brief topic: Was sind die rechtlichen Folgen, wenn wir KI-generierte Inhalte in unserem Marketing einsetzen? Gibt es Urheberrechts- oder Haftungsfragen (DE/EU)?"
     },
     {
-      "label": "/brief – Vorfall (Datenpanne)",
+      "label": "/brief: Vorfall (Datenpanne)",
       "text": "/brief incident\nWir haben eine mögliche Datenpanne entdeckt: Ein Laptop mit Kundendaten wurde gestohlen. Er war verschlüsselt, aber wir wissen nicht, ob die VPN-Sitzung aktiv war. Briefe mich sofort — inkl. 72-Stunden-Meldepflicht."
     },
     {
-      "label": "/brief – Abmahnung / Unterlassung",
+      "label": "/brief: Abmahnung / Unterlassung",
       "text": "/brief incident\nWir haben eine Abmahnung von einem Wettbewerber erhalten, der behauptet, unser Produkt verletze sein Patent. [Schreiben hochladen] Briefe mich zur Lage und zu den unmittelbaren nächsten Schritten."
     },
     {
-      "label": "/respond – DSGVO-Auskunftsersuchen",
+      "label": "/respond: DSGVO-Auskunftsersuchen",
       "text": "/respond\nWir haben ein Auskunftsersuchen nach Art. 15 DSGVO von einem Kunden aus Deutschland: Er will alle Daten, die wir über ihn gespeichert haben. E-Mail liegt vor. Frist: 1 Monat ab heute. Entwirf die Antwort und eine Checkliste, welche Systeme wir durchsuchen müssen."
     },
     {
-      "label": "/respond – DSGVO-Löschersuchen mit Konflikt",
+      "label": "/respond: DSGVO-Löschersuchen mit Konflikt",
       "text": "/respond\nEin Ex-Kunde verlangt Löschung aller Daten nach Art. 17 DSGVO. Wir müssen seine Rechnungsdaten aber 10 Jahre aufbewahren (§ 147 AO). Entwirf eine Antwort, die die Teillöschung erklärt und die Aufbewahrungspflicht sauber begründet."
     },
     {
-      "label": "/respond – NDA-Anfrage aus dem Vertrieb",
+      "label": "/respond: NDA-Anfrage aus dem Vertrieb",
       "text": "/respond\nDer Vertrieb braucht ein NDA für die Acme GmbH für einen möglichen Enterprise-Deal. Nutze unser Standard-NDA (gegenseitig). Kontakt: Jane Schmidt, jane@acme.de."
     },
     {
-      "label": "Meeting-Briefing – Vertragsverhandlung",
+      "label": "Meeting-Briefing: Vertragsverhandlung",
       "text": "Bereite ein Meeting-Briefing für meinen Verhandlungs-Call mit der Acme GmbH morgen 14 Uhr vor. Ich führe die Verhandlung. Es geht um deren Rahmenvertrag, Knackpunkt ist die Haftungsobergrenze."
     },
     {
-      "label": "Meeting-Briefing – Geschäftsführungs-Update",
+      "label": "Meeting-Briefing: Geschäftsführungs-Update",
       "text": "Bereite ein Legal-Update für die Geschäftsführungssitzung am Freitag vor: laufende Streitigkeiten, regulatorische Neuerungen, offene Freigaben und die Top-3-Rechtsrisiken, die wir gerade beobachten."
     },
     {
-      "label": "Ohne Plugin – jedes Dokument verstehen",
+      "label": "Ohne Plugin: jedes Dokument verstehen",
       "text": "Erkläre mir dieses Dokument, als wäre ich kein Jurist. Nenne die 5 wichtigsten Dinge, die ich vor der Unterschrift wissen muss, und markiere alles, was mir schaden könnte. [Dokument hochladen]"
     },
     {
-      "label": "Ohne Plugin – zwei Vertragsversionen vergleichen",
+      "label": "Ohne Plugin: zwei Vertragsversionen vergleichen",
       "text": "Vergleiche diese zwei Versionen des Vertrags. [v1 und v2 hochladen] Zeig mir jede Änderung, erkläre, was sie für mich bedeutet, und markiere alle Änderungen, die meine Position verschlechtern."
     },
     {
-      "label": "Ohne Plugin – Klausel in Klartext",
+      "label": "Ohne Plugin: Klausel in Klartext",
       "text": "Übersetze diese Vertragsklausel in verständliches Deutsch und sag mir, was sie für mich als Kunde konkret bedeutet: [Klausel einfügen]"
     },
     {
-      "label": "Ohne Plugin – besseren Deal verhandeln",
+      "label": "Ohne Plugin: besseren Deal verhandeln",
       "text": "Ich habe diesen Vertrag von einem Anbieter erhalten. [Vertrag hochladen] Schreib mir eine professionelle E-Mail-Antwort, die die Haftungsobergrenze, die automatische Verlängerung und die Kündigungsfrist nachverhandelt. Ton: kooperativ, nicht konfrontativ."
     },
     {
-      "label": "Ohne Plugin – Kündigungsschreiben",
+      "label": "Ohne Plugin: Kündigungsschreiben",
       "text": "Schreib ein formelles Kündigungsschreiben für meinen Vertrag bei [Firma]. Meine Kundennummer: [HIER KUNDENNUMMER EINFÜGEN]. Beziehe dich auf die Kündigungsklausel, die eine Kündigung mit [X] Tagen Frist erlaubt."
     },
     {
-      "label": "Ohne Plugin – auf Forderung reagieren",
+      "label": "Ohne Plugin: auf Forderung reagieren",
       "text": "Ich habe dieses Schreiben von [Firma/Person] erhalten, die behauptet, ich schulde ihr Geld für [Situation]. [Schreiben hochladen] Hilf mir, eine sachliche Antwort zu entwerfen, die die Forderung bestreitet und begründet, warum ich den Betrag nicht schulde."
     }
   ],
-  "note": "Das „Plugin\" ist ein Bündel aus Claude-Skills und Connectors; seine Analysen sind KI-generiert und ersetzen keine Prüfung durch eine Anwältin/einen Anwalt oder Steuerberater – lass rechtlich Wesentliches fachlich freigeben.",
+  "note": "Das „Plugin\" ist ein Bündel aus Claude-Skills und Connectors; seine Analysen sind KI-generiert und ersetzen keine Prüfung durch eine Anwältin/einen Anwalt oder Steuerberater: lass rechtlich Wesentliches fachlich freigeben.",
   "date": "2026-07-06"
 }
