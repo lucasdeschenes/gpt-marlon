@@ -39,7 +39,7 @@
       <div class="chip-row">
         <span class="chip chip-tool">Oracle Cloud + Emergent</span>
         <span class="chip">Produktivität</span>
-        <span class="chip">3 Prompts zum Kopieren</span>
+        <span class="chip">7 Prompts zum Kopieren</span>
         <span class="chip">Stand August 2026</span>
       </div>
       <div class="guide-actions">
@@ -183,6 +183,142 @@ Befehl, mit dem ich sie bestaetige.
 
 Wenn dir die Ausgaben dafuer nicht reichen, sag das offen und nenne
 mir den naechsten Befehl, dessen Ausgabe du brauchst. Rate nicht.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-4">
+        <div class="prompt-head">
+          <span class="prompt-label">Zusatz: den Tunnel Schritt für Schritt aufbauen</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            
+          </div>
+        </div>
+        <pre class="prompt-text">Antworte mir bitte direkt hier im Chat. Baue keine App und lege kein
+Projekt an.
+
+Begleite mich Schritt fuer Schritt beim Aufbau meines eigenen
+WireGuard-VPN-Servers auf einer Oracle-Cloud-Instanz mit Ubuntu 22.04.
+
+Mein Stand: [WAS SCHON STEHT, z. B. "Konto und Server angelegt,
+SSH-Schluessel heruntergeladen" oder "noch gar nichts"]
+Mein Computer: [WINDOWS ODER MAC]
+
+So arbeitest du mit mir:
+- Ein Schritt pro Nachricht, nicht mehr. Warte nach jedem Schritt auf
+  meine Antwort.
+- Gib mir pro Schritt genau einen Befehl zum Kopieren, dazu einen Satz,
+  was er bewirkt, und sag mir, welche Ausgabe ich erwarten soll.
+- Ich schicke dir die Ausgabe zurueck. Pruefe sie, bevor es weitergeht.
+  Sieht sie falsch aus, sag das und nenne den naechsten Befehl zur
+  Eingrenzung, statt einfach fortzufahren.
+- Frag mich nie nach einem privaten Schluessel. Nutz Platzhalter wie
+  SERVER_PRIVAT, die echten Werte trage ich selbst ein.
+
+Diese Vorgaben sind nicht verhandelbar:
+- Tunnelnetz 10.66.1.0/24, der Server ist 10.66.1.1, das erste Geraet
+  ist 10.66.1.2.
+- WireGuard auf UDP-Port 51820.
+- MTU = 1380 in jeder Datei, Server wie Geraete. Nicht 1420: viele
+  deutsche Anschluesse fahren DS-Lite, dort werden groessere Pakete
+  stillschweigend verworfen.
+- Die FORWARD-Regeln mit "-I FORWARD 1" einfuegen, niemals mit "-A".
+  Grund: Die Ubuntu-Abbilder von Oracle haben am Ende der FORWARD-Kette
+  eine REJECT-Regel. Angehaengte Regeln stehen dahinter und greifen nie.
+  Der Tunnel verbindet sich dann, aber keine Webseite laedt.
+- Der Port muss zusaetzlich in der Oracle Security List als Ingress-Regel
+  offen sein: Quelle 0.0.0.0/0, Protokoll UDP, Port 51820. Erinnere mich
+  daran, bevor wir zum ersten Mal testen.
+
+Zum Schluss fuehrst du mich durch die Pruefung auf ipleak.net und sagst
+mir, worauf ich bei angezeigter Adresse, DNS-Servern und IPv6 achten muss.
+
+Fang mit Schritt 1 an.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-5">
+        <div class="prompt-head">
+          <span class="prompt-label">Oberfläche 1: Rahmen setzen</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            
+          </div>
+        </div>
+        <pre class="prompt-text">Ich möchte mit dir eine Web-Oberfläche bauen, mit der ich die
+Konfigurationsdateien für meinen eigenen WireGuard-VPN-Server verwalte.
+
+Wichtig, bevor du irgendetwas baust: Eine Website im Browser kann keinen
+VPN-Tunnel aufbauen, dafür braucht es Administratorrechte im Betriebssystem.
+Baue deshalb keinen "Verbinden"-Knopf, der so tut, als würde er eine
+Verbindung herstellen. Die Oberfläche soll Konfigurationen erzeugen und
+verwalten. Verbinden tue ich anschließend mit der offiziellen WireGuard-App.
+
+Stell mir jetzt Fragen, bis du verstanden hast, was ich brauche: wie viele
+Geräte, welche Angaben ich schon habe, was auf dem Handy funktionieren muss.
+Frag in kleinen Schritten, nicht alles auf einmal. Fang noch nicht an zu bauen.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-6">
+        <div class="prompt-head">
+          <span class="prompt-label">Oberfläche 2: Bauauftrag</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            
+          </div>
+        </div>
+        <pre class="prompt-text">Danke, jetzt bauen wir. Erstelle eine Web-Oberfläche mit diesen Funktionen:
+
+1. Ich hinterlege einmalig meinen Server: öffentliche IP-Adresse, Port 51820
+   und den öffentlichen Schlüssel des Servers.
+2. Ich lege Geräte an (Laptop, Handy, Tablet). Jedes Gerät bekommt ein eigenes
+   Schlüsselpaar und eine eigene Adresse im Netz 10.66.1.0/24, beginnend
+   bei 10.66.1.2.
+3. Für jedes Gerät erzeugst du eine Konfiguration in exakt diesem Format:
+
+[Interface]
+PrivateKey = privater Schlüssel des Geräts
+Address = Adresse/32
+DNS = 1.1.1.1
+MTU = 1380
+
+[Peer]
+PublicKey = öffentlicher Schlüssel des Servers
+Endpoint = Server-IP:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+PersistentKeepalive = 25
+
+4. Jede Konfiguration kann ich als .conf-Datei herunterladen und als QR-Code
+   anzeigen. Der QR-Code muss exakt den Text der Konfiguration enthalten und
+   sonst nichts, weil die WireGuard-App genau diesen Text erwartet.
+5. Zusätzlich zeigst du mir pro Gerät den passenden Peer-Block für meine
+   Serverdatei mit einem Kopier-Knopf.
+
+Die Schlüssel müssen echte Curve25519-Schlüssel sein, wie WireGuard sie
+verlangt: 32 Byte, Base64-kodiert, 44 Zeichen lang.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-7">
+        <div class="prompt-head">
+          <span class="prompt-label">Oberfläche 3: Kontrolle</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            
+          </div>
+        </div>
+        <pre class="prompt-text">Bevor ich das benutze, prüfe deine eigene Umsetzung und antworte mir ehrlich
+auf jeden Punkt einzeln:
+
+1. Sind die erzeugten Schlüssel echte Curve25519-Schlüssel mit 44 Zeichen,
+   oder ist es Zufallstext, der nur so aussieht?
+2. Gehört zu jedem privaten Schlüssel der passende öffentliche? Erklär mir,
+   wie du ihn ableitest.
+3. Enthält der QR-Code exakt den Konfigurationstext, ohne zusätzliche Zeichen
+   oder Umbrüche?
+4. Verlässt irgendein privater Schlüssel mein Gerät, zum Beispiel durch
+   Speichern auf einem Server oder Senden an eine Schnittstelle?
+5. Gibt es irgendwo einen Knopf oder eine Anzeige, die einen aktiven
+   VPN-Schutz behauptet, den die Seite gar nicht herstellen kann?
+
+Wenn einer dieser Punkte nicht sauber ist, sag es mir klar und korrigiere ihn.</pre>
       </div>
     </section>
 
