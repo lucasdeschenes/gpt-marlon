@@ -37,6 +37,10 @@
     {
       "heading": "Die Oberfläche bauen lassen",
       "body": "Für jedes neue Gerät musst du sonst Schlüssel im Terminal erzeugen und Text zusammenkopieren. Die drei Oberflächen-Prompts bauen daraus eine kleine Web-Oberfläche in Emergent: Rahmen setzen, bauen lassen, nachprüfen. Der dritte ist der wichtigste und der, den fast alle weglassen.\n\nEine Website im Browser kann keinen VPN-Tunnel aufbauen, dafür braucht es Administratorrechte im Betriebssystem. Sagst du das nicht ausdrücklich dazu, baut dir jede KI-Plattform bereitwillig einen „Verbinden\"-Knopf, der nichts tut. Deshalb steht dieser Satz gleich im ersten Prompt. Die Oberfläche erzeugt Konfigurationen, verbinden tust du danach mit der offiziellen WireGuard-App."
+    },
+    {
+      "heading": "Von der Oberflaeche zum laufenden Tunnel",
+      "body": "Die Oberflaeche gibt dir pro Geraet zwei Dinge: die Geraetedatei und einen Peer-Block. Die Geraetedatei gehoert auf dein Geraet, der Peer-Block auf den Server. Erst wenn beide an ihrem Platz sind, kommt eine Verbindung zustande. Emergent selbst fasst deinen Server nie an."
     }
   ],
   "prompts": [
