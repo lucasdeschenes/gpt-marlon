@@ -88,6 +88,56 @@ Zwei Regeln fuer deine Antwort:
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
+          <span class="prompt-label">Zusatz-Prompt: den Tunnel Schritt für Schritt aufbauen</span>
+          <div class="prompt-actions">
+            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
+            
+          </div>
+        </div>
+        <pre class="prompt-text">Antworte mir bitte direkt hier im Chat. Baue keine App und lege kein
+Projekt an.
+
+Begleite mich Schritt fuer Schritt beim Aufbau meines eigenen
+WireGuard-VPN-Servers auf einer Oracle-Cloud-Instanz mit Ubuntu 22.04.
+
+Mein Stand: [WAS SCHON STEHT, z. B. "Konto und Server angelegt,
+SSH-Schluessel heruntergeladen" oder "noch gar nichts"]
+Mein Computer: [WINDOWS ODER MAC]
+
+So arbeitest du mit mir:
+- Ein Schritt pro Nachricht, nicht mehr. Warte nach jedem Schritt auf
+  meine Antwort.
+- Gib mir pro Schritt genau einen Befehl zum Kopieren, dazu einen Satz,
+  was er bewirkt, und sag mir, welche Ausgabe ich erwarten soll.
+- Ich schicke dir die Ausgabe zurueck. Pruefe sie, bevor es weitergeht.
+  Sieht sie falsch aus, sag das und nenne den naechsten Befehl zur
+  Eingrenzung, statt einfach fortzufahren.
+- Frag mich nie nach einem privaten Schluessel. Nutz Platzhalter wie
+  SERVER_PRIVAT, die echten Werte trage ich selbst ein.
+
+Diese Vorgaben sind nicht verhandelbar:
+- Tunnelnetz 10.66.1.0/24, der Server ist 10.66.1.1, das erste Geraet
+  ist 10.66.1.2.
+- WireGuard auf UDP-Port 51820.
+- MTU = 1380 in jeder Datei, Server wie Geraete. Nicht 1420: viele
+  deutsche Anschluesse fahren DS-Lite, dort werden groessere Pakete
+  stillschweigend verworfen.
+- Die FORWARD-Regeln mit "-I FORWARD 1" einfuegen, niemals mit "-A".
+  Grund: Die Ubuntu-Abbilder von Oracle haben am Ende der FORWARD-Kette
+  eine REJECT-Regel. Angehaengte Regeln stehen dahinter und greifen nie.
+  Der Tunnel verbindet sich dann, aber keine Webseite laedt.
+- Der Port muss zusaetzlich in der Oracle Security List als Ingress-Regel
+  offen sein: Quelle 0.0.0.0/0, Protokoll UDP, Port 51820. Erinnere mich
+  daran, bevor wir zum ersten Mal testen.
+
+Zum Schluss fuehrst du mich durch die Pruefung auf ipleak.net und sagst
+mir, worauf ich bei angezeigter Adresse, DNS-Servern und IPv6 achten muss.
+
+Fang mit Schritt 1 an.</pre>
+      </div>
+
+      <div class="prompt-card" id="prompt-3">
+        <div class="prompt-head">
           <span class="prompt-label">Prompt 02: Konfigurationsdateien erstellen</span>
           <div class="prompt-actions">
             <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
@@ -138,7 +188,7 @@ Wenn einer der Punkte nicht stimmt, korrigier ihn, bevor du mir
 antwortest.</pre>
       </div>
 
-      <div class="prompt-card" id="prompt-3">
+      <div class="prompt-card" id="prompt-4">
         <div class="prompt-head">
           <span class="prompt-label">Prompt 03: Fehlersuche mit echten Ausgaben</span>
           <div class="prompt-actions">
@@ -185,59 +235,9 @@ Wenn dir die Ausgaben dafuer nicht reichen, sag das offen und nenne
 mir den naechsten Befehl, dessen Ausgabe du brauchst. Rate nicht.</pre>
       </div>
 
-      <div class="prompt-card" id="prompt-4">
-        <div class="prompt-head">
-          <span class="prompt-label">Zusatz: den Tunnel Schritt für Schritt aufbauen</span>
-          <div class="prompt-actions">
-            <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
-            
-          </div>
-        </div>
-        <pre class="prompt-text">Antworte mir bitte direkt hier im Chat. Baue keine App und lege kein
-Projekt an.
-
-Begleite mich Schritt fuer Schritt beim Aufbau meines eigenen
-WireGuard-VPN-Servers auf einer Oracle-Cloud-Instanz mit Ubuntu 22.04.
-
-Mein Stand: [WAS SCHON STEHT, z. B. "Konto und Server angelegt,
-SSH-Schluessel heruntergeladen" oder "noch gar nichts"]
-Mein Computer: [WINDOWS ODER MAC]
-
-So arbeitest du mit mir:
-- Ein Schritt pro Nachricht, nicht mehr. Warte nach jedem Schritt auf
-  meine Antwort.
-- Gib mir pro Schritt genau einen Befehl zum Kopieren, dazu einen Satz,
-  was er bewirkt, und sag mir, welche Ausgabe ich erwarten soll.
-- Ich schicke dir die Ausgabe zurueck. Pruefe sie, bevor es weitergeht.
-  Sieht sie falsch aus, sag das und nenne den naechsten Befehl zur
-  Eingrenzung, statt einfach fortzufahren.
-- Frag mich nie nach einem privaten Schluessel. Nutz Platzhalter wie
-  SERVER_PRIVAT, die echten Werte trage ich selbst ein.
-
-Diese Vorgaben sind nicht verhandelbar:
-- Tunnelnetz 10.66.1.0/24, der Server ist 10.66.1.1, das erste Geraet
-  ist 10.66.1.2.
-- WireGuard auf UDP-Port 51820.
-- MTU = 1380 in jeder Datei, Server wie Geraete. Nicht 1420: viele
-  deutsche Anschluesse fahren DS-Lite, dort werden groessere Pakete
-  stillschweigend verworfen.
-- Die FORWARD-Regeln mit "-I FORWARD 1" einfuegen, niemals mit "-A".
-  Grund: Die Ubuntu-Abbilder von Oracle haben am Ende der FORWARD-Kette
-  eine REJECT-Regel. Angehaengte Regeln stehen dahinter und greifen nie.
-  Der Tunnel verbindet sich dann, aber keine Webseite laedt.
-- Der Port muss zusaetzlich in der Oracle Security List als Ingress-Regel
-  offen sein: Quelle 0.0.0.0/0, Protokoll UDP, Port 51820. Erinnere mich
-  daran, bevor wir zum ersten Mal testen.
-
-Zum Schluss fuehrst du mich durch die Pruefung auf ipleak.net und sagst
-mir, worauf ich bei angezeigter Adresse, DNS-Servern und IPv6 achten muss.
-
-Fang mit Schritt 1 an.</pre>
-      </div>
-
       <div class="prompt-card" id="prompt-5">
         <div class="prompt-head">
-          <span class="prompt-label">Oberfläche 1: Rahmen setzen</span>
+          <span class="prompt-label">Prompt 04: Rahmen setzen</span>
           <div class="prompt-actions">
             <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
             
@@ -259,7 +259,7 @@ Frag in kleinen Schritten, nicht alles auf einmal. Fang noch nicht an zu bauen.<
 
       <div class="prompt-card" id="prompt-6">
         <div class="prompt-head">
-          <span class="prompt-label">Oberfläche 2: Bauauftrag</span>
+          <span class="prompt-label">Prompt 05: Bauauftrag</span>
           <div class="prompt-actions">
             <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
             
@@ -298,7 +298,7 @@ verlangt: 32 Byte, Base64-kodiert, 44 Zeichen lang.</pre>
 
       <div class="prompt-card" id="prompt-7">
         <div class="prompt-head">
-          <span class="prompt-label">Oberfläche 3: Kontrolle</span>
+          <span class="prompt-label">Prompt 06: Kontrolle</span>
           <div class="prompt-actions">
             <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
             
