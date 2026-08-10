@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eigenes VPN bauen: kostenloser Cloud-Server in unter einer Stunde — GPT Marlon Guides</title>
-  <meta name="description" content="Ein eigener VPN-Server bei Oracle Cloud kostet dauerhaft nichts und schützt deine Verbindung in fremden WLANs. Schritt für Schritt vom Konto bis zur ersten Verbindung, inklusive der Stolperfallen, an denen die meisten Anleitungen schweigen." />
+  <meta name="description" content="Ein eigener VPN-Server bei Oracle Cloud kostet dauerhaft nichts und schützt deine Verbindung in fremden WLANs. Jeder Klick und jeder Befehl einzeln erklärt, ohne Vorkenntnisse. Am Ende baust du dir mit Emergent noch die passende Oberfläche dazu." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23FFE74A%22/><path d=%22M50 17l9.5 23.5L84 42.5 65.5 59l5.5 25L50 71 29 84l5.5-25L16 42.5l24.5-2z%22 fill=%22%23111111%22/></svg>" />
   <!-- self-hosted faces from the Framer design, so every page matches the homepage -->
   <link rel="stylesheet" href="../assets/fonts.css" />
@@ -35,9 +35,9 @@
     <div class="crumbs"><a href="../guides.html"><span data-en="← All resources">← Alle Ressourcen</span></a> · <span>Produktivität</span></div>
     <div class="page-hero">
       <h1 class="page-title">Eigenes VPN bauen: kostenloser Cloud-Server in unter einer Stunde</h1>
-      <p class="page-sub">Ein eigener VPN-Server bei Oracle Cloud kostet dauerhaft nichts und schützt deine Verbindung in fremden WLANs. Schritt für Schritt vom Konto bis zur ersten Verbindung, inklusive der Stolperfallen, an denen die meisten Anleitungen schweigen.</p>
+      <p class="page-sub">Ein eigener VPN-Server bei Oracle Cloud kostet dauerhaft nichts und schützt deine Verbindung in fremden WLANs. Jeder Klick und jeder Befehl einzeln erklärt, ohne Vorkenntnisse. Am Ende baust du dir mit Emergent noch die passende Oberfläche dazu.</p>
       <div class="chip-row">
-        <span class="chip chip-tool">Oracle Cloud + Claude</span>
+        <span class="chip chip-tool">Oracle Cloud + Emergent</span>
         <span class="chip">Produktivität</span>
         <span class="chip">3 Prompts zum Kopieren</span>
         <span class="chip">Stand August 2026</span>
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="guide-lead"><span data-en="The complete walkthrough with every step is in the PDF. Here you'll find the prompts to copy and the skill files to download.">Die komplette Anleitung mit allen Schritten steckt in der PDF. Hier findest du die Prompts zum Kopieren und die Skill-Dateien zum Download.</span></div>
-    <div class="guide-note">Füge deine privaten Schlüssel niemals in einen Chat ein, bei keinem Anbieter. Sie sind der einzige Beweis, dass du der rechtmäßige Nutzer deines Tunnels bist. Lass dir Vorlagen mit Platzhaltern geben und setze die echten Werte lokal in die Datei ein. Die Ausgabe von sudo wg show ist dagegen unbedenklich: sie zeigt private Schlüssel grundsätzlich nur als (hidden). Betrieb und Nutzung eines eigenen VPN sind in Deutschland, Österreich und der Schweiz zulässig; das Umgehen von Ländersperren kann gegen die Nutzungsbedingungen einzelner Dienste verstoßen.</div>
+    <div class="guide-note">Füge deine privaten Schlüssel niemals in einen Chat ein, weder bei Emergent noch anderswo. Lass dir Vorlagen mit Platzhaltern geben und setze die echten Werte erst lokal in die Datei ein. Die Ausgabe von sudo wg show ist dagegen unbedenklich, sie zeigt private Schlüssel nur als (hidden). Betrieb und Nutzung eines eigenen VPN sind in Deutschland, Österreich und der Schweiz zulässig; das Umgehen von Ländersperren kann gegen die Nutzungsbedingungen einzelner Dienste verstoßen.</div>
     <section class="guide-section" id="alle-prompts">
       <h2><span data-en="All prompts to copy">Alle Prompts zum Kopieren</span></h2>
       <div class="prompt-card" id="prompt-1">
@@ -56,42 +56,86 @@
           <span class="prompt-label">Prompt 01: Die richtige Region wählen</span>
           <div class="prompt-actions">
             <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
+            
           </div>
         </div>
-        <pre class="prompt-text">Ich möchte einen eigenen VPN-Server bei Oracle Cloud betreiben und muss mich
-einmalig und unwiderruflich für eine Heimatregion entscheiden.
+        <pre class="prompt-text">Antworte mir bitte direkt hier im Chat. Baue keine App und lege kein
+Projekt an - ich brauche nur eine Einschaetzung.
+
+Ich richte nach einer Anleitung einen eigenen WireGuard-VPN-Server bei
+Oracle Cloud ein und muss jetzt die Heimatregion auswaehlen. Diese Wahl
+ist endgueltig, und kostenlos ist ausschliesslich diese eine Region.
 
 Meine Situation:
 - Ich wohne in: [LAND, STADT EINFÜGEN]
-- Ich nutze das VPN hauptsächlich für: [z. B. Schutz in fremden WLANs / als
-  bestimmtes Land erscheinen / Zugriff auf mein Heimnetz]
-- Videocalls über die Verbindung: [ja/nein]
+- Ich will das VPN vor allem fuer: [z. B. Sicherheit in fremden WLANs /
+  im Ausland als mein Heimatland erscheinen / Zugriff auf mein Heimnetz]
+- Videocalls oder Spiele ueber die Verbindung: [ja/nein]
 
-Erkläre mir, welche Oracle-Region für mich sinnvoll ist. Nenne die zu
-erwartende Verzögerung in Millisekunden, wäge Tempo gegen Standort ab und sag
-mir klar, wenn meine Wunschregion eine schlechte Wahl wäre.</pre>
+Gib mir genau drei Dinge:
+1. Die eine Region, die du empfiehlst - mit dem exakten Namen, wie er
+   im Auswahlmenue von Oracle steht, im Format "Germany Central
+   (Frankfurt)".
+2. Eine Ausweichregion, falls meine erste Wahl ausgebucht ist.
+3. In zwei Saetzen: warum diese Region - und was ich mir damit an
+   Nachteilen einhandle.
+
+Zwei Regeln fuer deine Antwort:
+- Nenne keine konkreten Millisekunden-Werte, wenn du sie nicht sicher
+  weisst. Sag stattdessen "nah", "mittel" oder "weit".
+- Wenn dir eine Angabe von mir fehlt, frag nach, statt zu raten.</pre>
       </div>
 
       <div class="prompt-card" id="prompt-2">
         <div class="prompt-head">
-          <span class="prompt-label">Prompt 02: Konfigurationsdateien als Vorlage</span>
+          <span class="prompt-label">Prompt 02: Konfigurationsdateien erstellen</span>
           <div class="prompt-actions">
             <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
+            
           </div>
         </div>
-        <pre class="prompt-text">Ich richte einen WireGuard-VPN-Server auf Ubuntu 22.04 bei Oracle Cloud ein.
+        <pre class="prompt-text">Antworte mir bitte direkt hier im Chat. Baue keine App und lege kein
+Projekt an - ich brauche fertige Textdateien zum Kopieren.
 
-Name meiner Netzwerkkarte: [z. B. ens3]
-Tunnelnetz: 10.66.1.0/24
-Anzahl Geräte, die ich anbinden will: [ANZAHL EINFÜGEN]
+Ich richte einen WireGuard-VPN-Server auf Ubuntu 22.04 bei Oracle Cloud
+ein und brauche die Konfigurationsdateien dafuer.
 
-Erstelle die Serverdatei wg0.conf und die Clientdatei vpn.conf als Vorlage mit
-Platzhaltern für die Schlüssel – ich setze sie selbst ein, damit sie diesen
-Chat nie verlassen. MTU auf 1380. Die FORWARD-Regeln müssen mit
-"-I FORWARD 1" eingefügt werden, nicht mit "-A", weil die Ubuntu-Abbilder von
-Oracle am Ende dieser Kette eine ablehnende Regel enthalten.</pre>
+Meine Angaben:
+- Name der Netzwerkkarte des Servers: [z. B. ens3]
+- Tunnelnetz: 10.66.1.0/24, der Server selbst ist 10.66.1.1
+- Anzahl Geraete, die ich anbinden will: [ANZAHL EINFÜGEN]
+
+Diese Vorgaben sind nicht verhandelbar, halte dich exakt daran:
+- MTU = 1380 in JEDER Datei, Server wie Geraete.
+- Die beiden FORWARD-Regeln mit "-I FORWARD 1" einfuegen, niemals mit
+  "-A". Grund: Die Ubuntu-Abbilder von Oracle haben am Ende der
+  FORWARD-Kette eine REJECT-Regel. Angehaengte Regeln stehen dahinter
+  und greifen nie.
+- In jeder Geraetedatei: AllowedIPs = 0.0.0.0/0, ::/0
+- In jeder Geraetedatei: DNS = 1.1.1.1
+- In jeder Geraetedatei: PersistentKeepalive = 25
+- Jedes Geraet bekommt eine eigene Adresse, beginnend bei 10.66.1.2.
+- Setz fuer alle Schluessel Platzhalter ein, zum Beispiel
+  SERVER_PRIVAT. Erzeuge keine echten Schluessel und frag mich auch
+  nicht danach - die trage ich selbst ein.
+
+Ausgabeformat, bitte genau so:
+1. Die Serverdatei wg0.conf als ein einziger Codeblock, ohne
+   Erklaertext dazwischen.
+2. Danach pro Geraet eine eigene Datei als eigener Codeblock, benannt
+   geraet1.conf, geraet2.conf und so weiter.
+3. Danach eine Tabelle mit drei Spalten: Platzhalter | wo er hingehoert
+   | woher ich den Wert bekomme.
+
+Zum Schluss pruefst du deine eigene Ausgabe und bestaetigst mir jeden
+dieser vier Punkte einzeln mit Ja oder Nein:
+- Steht in jeder einzelnen Datei MTU = 1380?
+- Steht in beiden FORWARD-Zeilen "-I FORWARD 1" und nicht "-A"?
+- Hat wirklich jedes Geraet eine andere Adresse?
+- Gibt es in der Serverdatei fuer jedes Geraet genau einen [Peer]-Block?
+
+Wenn einer der Punkte nicht stimmt, korrigier ihn, bevor du mir
+antwortest.</pre>
       </div>
 
       <div class="prompt-card" id="prompt-3">
@@ -99,25 +143,46 @@ Oracle am Ende dieser Kette eine ablehnende Regel enthalten.</pre>
           <span class="prompt-label">Prompt 03: Fehlersuche mit echten Ausgaben</span>
           <div class="prompt-actions">
             <button class="pbtn" onclick="copyPrompt(this)">Kopieren</button>
-            <button class="pbtn pbtn-claude" onclick="openIn(this,'claude')">In Claude öffnen</button>
+            
           </div>
         </div>
-        <pre class="prompt-text">Mein selbst gebauter WireGuard-VPN funktioniert nicht richtig.
+        <pre class="prompt-text">Antworte mir bitte direkt hier im Chat. Baue keine App und lege kein
+Projekt an.
 
-Was passiert: [FEHLER BESCHREIBEN]
+Mein selbst gebauter WireGuard-VPN-Server bei Oracle Cloud (Ubuntu
+22.04) funktioniert nicht richtig.
+
+Was genau passiert: [FEHLER BESCHREIBEN - z. B. "verbunden, aber keine
+Webseite laedt" oder "es kommt gar keine Verbindung zustande"]
 
 Ausgabe von "sudo wg show":
-[AUSGABE EINFÜGEN]
+[HIER EINFÜGEN]
 
 Ausgabe von "sudo iptables -L FORWARD -n --line-numbers":
-[AUSGABE EINFÜGEN]
+[HIER EINFÜGEN]
 
-Mein Internetanschluss: [z. B. Vodafone Kabel Deutschland]
+Mein Internetanschluss zu Hause: [z. B. Vodafone Kabel Deutschland]
 
-Finde die wahrscheinlichste Ursache. Prüfe zuerst zwei Dinge: ob die
-Paketgröße (MTU) zu hoch ist und ob meine ACCEPT-Regeln in der FORWARD-Kette
-unterhalb einer REJECT-Regel stehen. Das sind die beiden häufigsten Fehler.
-Gib mir konkrete Befehle zum Nachprüfen, keine allgemeinen Ratschläge.</pre>
+So ist es eingerichtet: MTU 1380, Tunnelnetz 10.66.1.0/24, WireGuard
+auf UDP-Port 51820, Ingress-Regel in Oracle ist angelegt.
+
+Arbeite diese drei Punkte in genau dieser Reihenfolge ab und sag mir
+zu jedem klar Ja oder Nein:
+1. Zeigt "wg show" einen aktuellen Handshake? Wenn nein, liegt das
+   Problem VOR dem Tunnel: Port, Firewall oder ein falscher
+   Schluessel. Dann brauchen wir die anderen Punkte gar nicht.
+2. Stehen meine ACCEPT-Zeilen in der FORWARD-Kette OBERHALB der
+   REJECT-Zeile? Wenn sie darunter stehen, wird weitergeleiteter
+   Verkehr verworfen.
+3. Steigen bei "wg show" beide Uebertragungswerte oder nur einer?
+   Wenn viel gesendet und kaum etwas empfangen wird, deutet das auf
+   zu grosse Pakete hin, also auf die MTU.
+
+Nenne mir danach die EINE wahrscheinlichste Ursache und genau einen
+Befehl, mit dem ich sie bestaetige.
+
+Wenn dir die Ausgaben dafuer nicht reichen, sag das offen und nenne
+mir den naechsten Befehl, dessen Ausgabe du brauchst. Rate nicht.</pre>
       </div>
     </section>
 
