@@ -1,0 +1,66 @@
+{
+  "file": "eigenes-vpn-bauen-cloud-server_GPTMarlon.pdf",
+  "title": "Eigenes VPN bauen: kostenloser Cloud-Server in unter einer Stunde",
+  "slug": "eigenes-vpn-bauen-cloud-server",
+  "category": "Produktivität",
+  "tool": "Oracle Cloud + Claude",
+  "summary": "Ein eigener VPN-Server bei Oracle Cloud kostet dauerhaft nichts und schützt deine Verbindung in fremden WLANs. Schritt für Schritt vom Konto bis zur ersten Verbindung, inklusive der Stolperfallen, an denen die meisten Anleitungen schweigen.",
+  "sections": [
+    {
+      "heading": "Was du brauchst",
+      "body": "Ein Oracle-Cloud-Konto (kostenlos, aber mit Kreditkarte), einen Computer und etwa 45 Minuten. Terminal-Erfahrung ist nicht nötig, alle Befehle stehen fertig zum Kopieren im Guide.\n\n**Die Kreditkarte ist Pflicht, auch für das Gratis-Angebot.** Oracle bucht einmalig rund einen Euro zur Prüfung und gibt den Betrag wieder frei. Das Konto wandelt sich nicht automatisch in ein Bezahlkonto um. Debit-, Prepaid- und virtuelle Karten werden häufig abgelehnt.\n\n**Kostenlos ist nur deine Heimatregion.** Du wählst bei der Anmeldung ein Rechenzentrum aus, und nur dort gilt das Gratis-Kontingent. Diese Wahl ist endgültig.\n\nSei während der Anmeldung mit keinem VPN verbunden. Oracle lehnt Registrierungen aus VPN- und Proxy-Netzen regelmäßig ab, ohne Begründung und ohne zweiten Versuch mit derselben E-Mail-Adresse."
+    },
+    {
+      "heading": "Die wichtigste Entscheidung: das Land",
+      "body": "Weil nur eine Region gratis ist, legst du mit ihr fest, als welches Land du im Netz erscheinst.\n\n**Entfernung kostet Tempo.** Von Mitteleuropa liegen Frankfurt, Amsterdam und London bei etwa 25 bis 50 Millisekunden, die US-Ostküste bei rund 110, Tokio bei rund 290. Alles darüber merkst du in Videocalls deutlich.\n\n**Ein Server im eigenen Land verschiebt nichts.** Er schützt deine Verbindung vor dem WLAN-Betreiber und dem Zugangsanbieter, aber du erscheinst weiter als deutsche Verbindung."
+    },
+    {
+      "heading": "Server anlegen",
+      "body": "Unter **Compute → Instances** eine neue Instanz mit **Ubuntu 22.04** erstellen. Zwei Einstellungen sind entscheidend.\n\nBei **Shape** ist `VM.Standard.A1.Flex` (ARM) die stärkere Gratis-Variante, aber notorisch ausgebucht. Erscheint `Out of host capacity`, wechsle auf `VM.Standard.E2.1.Micro`: ebenfalls kostenlos, ein anderer Kapazitätstopf, für ein VPN völlig ausreichend. Die Verschlüsselung erledigt der Kernel, nicht die CPU.\n\nBeim SSH-Schlüssel lädst du den privaten Schlüssel herunter und bewahrst ihn sicher auf. Ohne ihn kommst du später nicht auf den Server."
+    },
+    {
+      "heading": "Mit dem Server verbinden (Windows)",
+      "body": "Unter Windows brauchst du kein Zusatzprogramm. PowerShell öffnen, normale Rechte genügen.\n\n```\nssh -i C:\\Users\\DEINNAME\\Downloads\\schluessel.key ubuntu@DEINE_SERVER_IP\n```\n\nKommt die Meldung **UNPROTECTED PRIVATE KEY FILE**, verweigert Windows den Schlüssel, weil zu viele Konten darauf zugreifen dürfen:\n\n```\nicacls C:\\Users\\DEINNAME\\Downloads\\schluessel.key /inheritance:r /grant:r \"$env:USERNAME:(R)\"\n```\n\nAuf macOS und Linux lautet der Befehl `chmod 600 schluessel.key`."
+    },
+    {
+      "heading": "WireGuard einrichten",
+      "body": "**Schritt 1: Installation und Schlüssel**\n\n```\nsudo apt update && sudo apt install -y wireguard\nwg genkey | sudo tee /etc/wireguard/server.key | wg pubkey | sudo tee /etc/wireguard/server.pub\nsudo chmod 600 /etc/wireguard/server.key\nwg genkey | tee client.key | wg pubkey > client.pub\n```\n\n**Schritt 2: Netzwerkkarte ermitteln** mit `ip -4 route show default`. Der Name hinter `dev` ist deine Netzwerkkarte, meist `ens3`.\n\n**Schritt 3: Serverkonfiguration** unter `/etc/wireguard/wg0.conf` anlegen, Adresse `10.66.1.1/24`, Port `51820`, MTU `1380`.\n\nDie beiden FORWARD-Zeilen nutzen `-I FORWARD 1`, nicht `-A`. Die Ubuntu-Abbilder von Oracle enthalten am Ende dieser Kette eine Regel, die alles Weitergeleitete ablehnt. Mit `-A` landen deine Regeln dahinter und greifen nie. Der Tunnel verbindet sich dann einwandfrei, aber keine einzige Webseite lädt.\n\n**Schritt 4: Weiterleitung, Firewall, Start.** Zeigt `sudo wg show` die Schnittstelle `wg0`, läuft der Server."
+    },
+    {
+      "heading": "Port in der Oracle-Firewall öffnen",
+      "body": "Oracle filtert zusätzlich außerhalb des Servers. Unter **Networking → Virtual Cloud Networks** dein Netzwerk öffnen, dann die **Security List**, und eine Ingress-Regel anlegen: Quelle `0.0.0.0/0`, Protokoll **UDP**, Zielport **51820**. Ohne diesen Schritt kommt keine Verbindung zustande."
+    },
+    {
+      "heading": "Gerät verbinden",
+      "body": "Auf dem Computer eine Datei `vpn.conf` anlegen, mit deinen Schlüsseln und der öffentlichen IP des Servers. Offiziellen WireGuard-Client installieren, Datei importieren, Tunnel aktivieren. Für Smartphones aus derselben Datei einen QR-Code erzeugen: `qrencode -t ansiutf8 < vpn.conf`.\n\nDer Wert `MTU = 1380` steht bewusst so da. Viele deutsche Anschlüsse, Vodafone Kabel und teilweise Telekom, transportieren IPv4 innerhalb von IPv6 (DS-Lite). Dadurch passen nur etwa 1460 Byte pro Paket. Der sonst übliche Wert 1420 erzeugt zu große Pakete, die stillschweigend verworfen werden. Der Tunnel verbindet sich, kleine Anfragen laufen, aber Seiten laden ewig oder gar nicht."
+    },
+    {
+      "heading": "Prüfen, ob es wirklich funktioniert",
+      "body": "Bei aktivem Tunnel **ipleak.net** aufrufen. Drei Dinge sollten stimmen: die angezeigte IP ist die deines Servers, das Land passt zur gewählten Region, und unter den DNS-Servern taucht **kein** Eintrag deines Zugangsanbieters auf.\n\nDer letzte Punkt ist der wichtigste. Ein VPN, das den Datenverkehr umleitet, aber die Namensauflösung beim Provider lässt, verrät ihm weiter jede besuchte Seite."
+    },
+    {
+      "heading": "Was funktioniert und was nicht",
+      "body": "- **Funktioniert zuverlässig:** Schutz in fremden WLANs, Verbergen der Aktivität vor dem Zugangsanbieter, Zugriff auf das Heimnetz, YouTube im eingeloggten Zustand.\n- **Funktioniert meistens:** Dienste mit weltweit gleichem Angebot wie Apple TV+, dazu Crunchyroll, Twitch und werbefinanzierte Mediatheken.\n- **Funktioniert nicht:** Netflix, Disney+, Prime Video und Max sperren Rechenzentrums-Adressen beim Abspielen. Keine Einstellung ändert daran etwas.\n- **Anonymität ist es nicht:** dein Zugangsanbieter sieht nichts mehr, der Zieldienst dagegen sehr wohl, sobald du dich dort anmeldest."
+    },
+    {
+      "heading": "Wenn etwas klemmt",
+      "body": "**Verbindung kommt zustande, aber keine Seite lädt.** In neun von zehn Fällen die Paketgröße. Setze `MTU` auf beiden Seiten auf 1380, notfalls auf 1280. Zweiter Verdacht: die FORWARD-Regeln stehen mit `-A` statt `-I`.\n\n**Gar keine Verbindung.** Prüfe die Ingress-Regel in der Oracle Security List und ob `sudo wg show` die Schnittstelle anzeigt.\n\n**`Out of host capacity` beim Anlegen.** Nimm `VM.Standard.E2.1.Micro`."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Prompt 01: Die richtige Region wählen",
+      "text": "Ich möchte einen eigenen VPN-Server bei Oracle Cloud betreiben und muss mich\neinmalig und unwiderruflich für eine Heimatregion entscheiden.\n\nMeine Situation:\n- Ich wohne in: [LAND, STADT EINFÜGEN]\n- Ich nutze das VPN hauptsächlich für: [z. B. Schutz in fremden WLANs / als\n  bestimmtes Land erscheinen / Zugriff auf mein Heimnetz]\n- Videocalls über die Verbindung: [ja/nein]\n\nErkläre mir, welche Oracle-Region für mich sinnvoll ist. Nenne die zu\nerwartende Verzögerung in Millisekunden, wäge Tempo gegen Standort ab und sag\nmir klar, wenn meine Wunschregion eine schlechte Wahl wäre."
+    },
+    {
+      "label": "Prompt 02: Konfigurationsdateien als Vorlage",
+      "text": "Ich richte einen WireGuard-VPN-Server auf Ubuntu 22.04 bei Oracle Cloud ein.\n\nName meiner Netzwerkkarte: [z. B. ens3]\nTunnelnetz: 10.66.1.0/24\nAnzahl Geräte, die ich anbinden will: [ANZAHL EINFÜGEN]\n\nErstelle die Serverdatei wg0.conf und die Clientdatei vpn.conf als Vorlage mit\nPlatzhaltern für die Schlüssel – ich setze sie selbst ein, damit sie diesen\nChat nie verlassen. MTU auf 1380. Die FORWARD-Regeln müssen mit\n\"-I FORWARD 1\" eingefügt werden, nicht mit \"-A\", weil die Ubuntu-Abbilder von\nOracle am Ende dieser Kette eine ablehnende Regel enthalten."
+    },
+    {
+      "label": "Prompt 03: Fehlersuche mit echten Ausgaben",
+      "text": "Mein selbst gebauter WireGuard-VPN funktioniert nicht richtig.\n\nWas passiert: [FEHLER BESCHREIBEN]\n\nAusgabe von \"sudo wg show\":\n[AUSGABE EINFÜGEN]\n\nAusgabe von \"sudo iptables -L FORWARD -n --line-numbers\":\n[AUSGABE EINFÜGEN]\n\nMein Internetanschluss: [z. B. Vodafone Kabel Deutschland]\n\nFinde die wahrscheinlichste Ursache. Prüfe zuerst zwei Dinge: ob die\nPaketgröße (MTU) zu hoch ist und ob meine ACCEPT-Regeln in der FORWARD-Kette\nunterhalb einer REJECT-Regel stehen. Das sind die beiden häufigsten Fehler.\nGib mir konkrete Befehle zum Nachprüfen, keine allgemeinen Ratschläge."
+    }
+  ],
+  "note": "Füge deine privaten Schlüssel niemals in einen Chat ein, bei keinem Anbieter. Sie sind der einzige Beweis, dass du der rechtmäßige Nutzer deines Tunnels bist. Lass dir Vorlagen mit Platzhaltern geben und setze die echten Werte lokal in die Datei ein. Die Ausgabe von sudo wg show ist dagegen unbedenklich: sie zeigt private Schlüssel grundsätzlich nur als (hidden). Betrieb und Nutzung eines eigenen VPN sind in Deutschland, Österreich und der Schweiz zulässig; das Umgehen von Ländersperren kann gegen die Nutzungsbedingungen einzelner Dienste verstoßen.",
+  "date": "2026-08-10"
+}
