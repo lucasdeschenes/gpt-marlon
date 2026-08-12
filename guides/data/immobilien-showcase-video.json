@@ -1,0 +1,58 @@
+{
+  "file": "immobilienshowcasevideo_GPTMarlon.pdf",
+  "title": "In 5 Minuten zum cinematischen Immobilien-Showcase",
+  "slug": "immobilien-showcase-video",
+  "category": "Content",
+  "tool": "ChatGPT + Higgsfield",
+  "summary": "Ein einziges Foto einer Immobilie, und daraus wird ein Video, das aussieht, als wäre es mit einer Drohne gefilmt: Die Kamera gleitet über das Grundstück, umkreist das Gebäude und fliegt durch die offene Glasfront ins Wohnzimmer. Kein Dreh, kein Team, keine Drohne. Ein Bild, ein Prompt, ein Werkzeug, das du einmal an ChatGPT anschließt.",
+  "sections": [
+    {
+      "heading": "Was hier passiert und was du brauchst",
+      "body": "Du hängst einen Video-Dienst namens **Higgsfield** als Plugin in ChatGPT ein. Ist es einmal verbunden, kannst du im normalen Chat schreiben: „Mach mir aus diesem Foto einen Drohnenflug\". ChatGPT gibt den Auftrag weiter, Higgsfield rechnet, und du bekommst einen fertigen Clip zum Herunterladen zurück.\n\nDahinter steckt ein Bild-zu-Video-Modell: Es nimmt dein Foto als ersten Bildinhalt und erfindet die Bewegung dazu. Was auf dem Foto nicht zu sehen ist, denkt sich das Modell aus. Das ist die Stärke und gleichzeitig die Grenze der Methode.\n\n1. **ChatGPT im Browser oder in der Desktop-App.** Der Plugin-Bereich ist dort zu finden, auf dem Handy nicht durchgängig. Kostenlos nutzbar, die bezahlten Pläne liegen bei rund 8 Euro (Go) und rund 23 Euro im Monat (Plus).\n2. **Ein Higgsfield-Konto.** Kostenlos anlegbar, die Anmeldung passiert beim Verbinden.\n3. **Die Fotos der Immobilie.** Fünf bis zehn gute reichen völlig."
+    },
+    {
+      "heading": "Kosten, ehrlich gerechnet",
+      "body": "Videogenerierung verbraucht Credits. Higgsfield hat ein kostenloses Tageskontingent zum Ausprobieren: klein, mit Wasserzeichen, die stärksten Modelle gesperrt. Bezahlte Higgsfield-Pläne beginnen bei rund 15 US-Dollar im Monat.\n\nLängere Clips und höhere Auflösung kosten ein Vielfaches kurzer Testläufe. Erst kurz und in 480p ausprobieren, dann den finalen Durchlauf in voller Länge und 720p."
+    },
+    {
+      "heading": "Higgsfield mit ChatGPT verbinden",
+      "body": "Einmalige Einrichtung, danach steht das Werkzeug in jedem neuen Chat bereit.\n\n1. **Plugin-Bereich öffnen.** In ChatGPT links in der Seitenleiste auf Plugins, alternativ über Einstellungen.\n2. **Higgsfield suchen** und den Eintrag öffnen.\n3. **Verbinden** klicken, je nach Ansicht ein Plus-Symbol.\n4. **Anmelden und bestätigen** mit dem Higgsfield-Konto.\n5. **Im Chat aufrufen** mit `@Higgsfield` oder über das Plus und dann Mehr.\n\nWenn es nicht klappt: Kam kein Anmeldefenster, öffne den Eintrag erneut und klick noch einmal auf Verbinden. Fehlt der Plugin-Eintrag ganz, bist du wahrscheinlich in der Handy-App. Antwortet ChatGPT nur mit Text, sprich das Plugin ausdrücklich an."
+    },
+    {
+      "heading": "Die Fotos reinbekommen",
+      "body": "**Weg A, den Link probieren.** Adresse des Inserats kopieren, in ChatGPT einfügen und darum bitten, die Fotos daraus zu ziehen.\n\n**Weg B, die Fotos selbst hochladen.** Portale sperren automatisierte Zugriffe fast immer aus, deshalb scheitert Weg A häufig. Bild in der großen Ansicht öffnen und per Rechtsklick speichern; lässt es sich nicht speichern, einen Screenshot machen und den Rand wegschneiden. Für die Videogenerierung reicht das vollkommen.\n\nNimm 5 bis 10 starke Fotos, nicht 40: Außenansicht, Küche, Wohnbereich, Schlafzimmer, Bad und das eine besondere Detail. Achte darauf, dass kein Wasserzeichen und keine Portal-Einblendung im Bild steht, sonst übernimmt das Modell diese Störer ins Video."
+    },
+    {
+      "heading": "Die Einstellungen, die den Unterschied machen",
+      "body": "| Einstellung | Was du willst | Warum |\n| --- | --- | --- |\n| Modell | Seedance 2.5 | Nimmt deine Fotos als Referenz und animiert sie, 4 bis 30 Sekunden pro Clip |\n| Modus | omni_reference | Der Modus, in dem das Modell deine Bilder als Vorlage nimmt. Ohne ihn erfindet es die Immobilie frei dazu |\n| Auflösung | 720p | Mehr kann Seedance 2.5 nicht, dafür längere Clips |\n| Format | 16:9 oder 9:16 | Querformat für Website und YouTube, Hochformat für Reels, TikTok und Shorts |\n| Ton | aus | Musik legst du im Schnitt drunter |\n\nÄndere pro Durchlauf nur eine Sache. Veränderst du Bewegung, Licht und Länge gleichzeitig, weißt du beim Ergebnis nicht, was gewirkt hat, und jeder Versuch kostet Credits. Brauchst du echtes 4K, ist Seedance 2.0 das Modell dafür, dort sind allerdings höchstens 15 Sekunden drin."
+    },
+    {
+      "heading": "Aus Clips wird ein Showcase",
+      "body": "Ein Modell-Durchlauf erzeugt einen kurzen Clip. Die Aufforderung „mach ein zweiminütiges Rundgangvideo aus allen Fotos\" führt deshalb nicht zu einem zweiminütigen Video, sondern zu einem kurzen Clip, der zu viel auf einmal will.\n\n1. **Pro Foto einen Clip generieren.** Nur die Bewegung an den Raum anpassen: Anflug bei der Außenansicht, Durchflug beim Wohnzimmer, Abflug über der Terrasse.\n2. **Look konstant halten.** Lichtstimmung, Tempo und Format in jedem Prompt gleich beschreiben.\n3. **Reihenfolge wie ein echter Rundgang.** Außen anfangen, dann Raum für Raum, auf dem stärksten Detail enden.\n4. **Im Schnittprogramm zusammensetzen.** Gleiche Übergangslänge, Musik drunter, auf den Beat schneiden.\n5. **Abbinder setzen.** Am Ende ein Standbild mit Preis, Zimmern, Fläche und Ort.\n\nSieh dir jeden Clip einmal in Ruhe an, bevor du schneidest: Bleiben Wände gerade? Wandern Möbel? Verformen sich Fenster beim Durchflug? Wenn ja, denselben Clip mit Prompt 03 neu generieren."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Prompt 01: FPV-Drohnenflug aus dem Inserat",
+      "text": "Nimm diesen Link und generiere aus den Immobilienfotos in\ndiesem Inserat mit Higgsfield (Seedance 2.5) einen\ncinematischen FPV-Drohnenflug: Die Kamera startet an der\nPosition des Fotos, gleitet dynamisch über das Grundstück\nauf das Gebäude zu, umkreist es in einer flüssigen Bewegung\nund fliegt durch die offene Glasfront ins Innere. Eine\neinzige durchgehende Kamerafahrt ohne Schnitte.\nHyperrealistisch, dynamische Kamerabewegung, stabilisierte\nAufnahme, cineastische Farbgebung, weiches natürliches\nTageslicht, Luxus-Immobilien-Ästhetik, hohe Detailschärfe.\nNutze den Modus \"omni_reference\" mit den Fotos als\nReferenz, 720p, 16:9, etwa 8 Sekunden, ohne Ton."
+    },
+    {
+      "label": "Prompt 02: Dieselbe Fahrt aus hochgeladenen Bildern",
+      "text": "Nimm diese Bilder und generiere daraus mit Higgsfield\n(Seedance 2.5) einen cinematischen FPV-Drohnenflug: Die\nKamera startet an der Position des Fotos, gleitet dynamisch\nüber das Grundstück auf das Gebäude zu, umkreist es in einer\nflüssigen Bewegung und fliegt durch die offene Glasfront ins\nInnere. Eine einzige durchgehende Kamerafahrt ohne Schnitte.\nHyperrealistisch, dynamische Kamerabewegung, stabilisierte\nAufnahme, cineastische Farbgebung, weiches natürliches\nTageslicht, Luxus-Immobilien-Ästhetik, hohe Detailschärfe.\nNutze den Modus \"omni_reference\" mit den Fotos als\nReferenz, 720p, 16:9, etwa 8 Sekunden, ohne Ton."
+    },
+    {
+      "label": "Prompt 03: Nachsteuern, wenn die Bewegung übertreibt",
+      "text": "Die Kamerabewegung ist zu stark und der Raum verzieht sich.\nGeneriere den Clip neu: subtilere, langsamere Kamerafahrt,\ndie Räume müssen stabil und real wirken, keine verbogenen\nWände oder Möbel. Gleicher Look, gleiche Lichtstimmung."
+    },
+    {
+      "label": "Prompt 04: Hochformat für Reels und TikTok",
+      "text": "Mach mir denselben Flug noch einmal im Format 9:16, etwas\nkürzer und schneller, für Instagram Reels, TikTok und\nYouTube Shorts."
+    },
+    {
+      "label": "Prompt 05: Die Stimmung wechseln",
+      "text": "Generiere denselben Flug in zwei Stimmungen: einmal Luxus —\nlangsameres Tempo, warmes Abendlicht, tiefe Schatten. Und\neinmal hell und freundlich — Mittagslicht, frische Farben,\noffener Look."
+    }
+  ],
+  "note": "Nutze nur Fotos, an denen du die Rechte hast: dein eigenes Objekt, dein eigenes Inserat oder eine Immobilie, die du vertrittst. Fotos aus fremden Inseraten gehören in der Regel dem Fotografen oder dem Anbieter. Und ein KI-Video zeigt Räume so, wie das Modell sie sich ausmalt, nicht wie sie wirklich sind: als Content großartig, als Vermarktungsmaterial für ein echtes Objekt irreführend.",
+  "date": "2026-08-12"
+}
