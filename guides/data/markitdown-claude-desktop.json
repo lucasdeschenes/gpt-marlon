@@ -1,0 +1,66 @@
+{
+  "file": "markitdown-claude-desktop_GPTMarlon.pdf",
+  "title": "MarkItDown: PDFs, Word, Excel bis YouTube-Videos in Markdown konvertieren",
+  "slug": "markitdown-claude-desktop",
+  "category": "Claude Basics",
+  "tool": "Claude Desktop",
+  "summary": "Ein 180 Seiten langer Bericht liegt in deinem Schreibtisch-Ordner. Bisher: hochladen, warten, hoffen, dass die Tabellen nicht zerfallen. Nach diesem Guide sagst du zu Claude: „Lies die Datei auf meinem Schreibtisch und fass mir Kapitel 3 zusammen.\" Claude holt sie sich selbst, als sauberen, gut lesbaren Text. Das Werkzeug dahinter ist kostenlos, die Einrichtung dauert rund fünf Minuten, und du musst genau einen Befehl kopieren.",
+  "sections": [
+    {
+      "heading": "Was MarkItDown wirklich macht",
+      "body": "MarkItDown ist ein kostenloses, quelloffenes Werkzeug von Microsoft. Es übersetzt so ziemlich jedes Dateiformat in **Markdown**, also einfachen Text mit ein paar wenigen Formatierungszeichen. Kein Layout, keine Schriftarten, keine eingebetteten Bilder, nur die Struktur. Genau das verstehen Sprachmodelle am zuverlässigsten.\n\n**Der wichtigste Punkt zuerst:** MarkItDown greift **nicht** in den Chat ein. Ziehst du eine Datei wie gewohnt ins Chatfenster, passiert damit nichts Neues. Diese Behauptung liest man im Netz häufig, sie stimmt nicht.\n\nWas es tatsächlich tut: Es gibt Claude ein zusätzliches Werkzeug in die Hand. Du nennst Claude eine Datei auf deiner Festplatte oder eine Internet-Adresse, und Claude holt den Inhalt selbst.\n\nDer Unterschied ist „hochladen\" gegen „hinzeigen\". Das umgeht die Upload-Grenzen und funktioniert auch bei sehr großen Dokumenten. Nebenbei ist es sparsamer im Verbrauch, weil Claude reinen Text statt Seitenbildern verarbeitet."
+    },
+    {
+      "heading": "Welche Dateien funktionieren",
+      "body": "| Bereich | Formate |\n| --- | --- |\n| Dokumente | PDF, Word (.docx), PowerPoint (.pptx), E-Books (.epub) |\n| Tabellen | Excel (.xlsx, .xls), CSV |\n| Web | Webseiten (HTML), Wikipedia-Artikel, RSS-Feeds, Suchergebnisseiten |\n| Video | YouTube (öffentliches Transkript) |\n| Weitere | Outlook-Nachrichten (.msg), ZIP-Archive, Jupyter-Notebooks, reine Textdateien |\n\n**Ehrliche Grenzen.** Bei YouTube wird das öffentlich hinterlegte Transkript gelesen. Hat ein Video keins, kommt nichts zurück, und das ist kein Fehler deiner Einrichtung. Bei Bild- und Audiodateien liefert das Werkzeug ohne zusätzliche Einrichtung nur die technischen Angaben, nicht den Inhalt; Claude kann Bilder ohnehin direkt ansehen. Bei eingescannten PDFs ohne hinterlegten Text hilft nur eine Texterkennung vorab."
+    },
+    {
+      "heading": "Was du brauchst",
+      "body": "- **Claude Desktop**, das Programm, nicht die Webseite. Kostenloser Download für Mac und Windows, funktioniert im Gratis-Plan.\n- **Claude Pro** ist nicht erforderlich. Nur nötig, wenn du viel mit langen Dokumenten arbeitest und mehr Kontingent brauchst.\n- **MarkItDown und uv**, beide kostenlos und quelloffen.\n- **Kein Python.** Viele Anleitungen lassen dich zuerst Python installieren. Das kannst du dir sparen: uv bringt sich alles Nötige selbst mit."
+    },
+    {
+      "heading": "Schritt 1 und 2: das schwarze Fenster",
+      "body": "Einmalig brauchst du das Terminal. Mac: Command und Leertaste drücken, `Terminal` tippen, Enter. Windows: Windows-Taste drücken, `PowerShell` tippen, Enter.\n\nDann die Zeile einfügen, die zu deinem Gerät passt:\n\n```\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n```\n\n```\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n```\n\nSteht am Ende sinngemäß `installed` oder `everything's installed`, hat es geklappt. Erscheint eine Meldung, du müsstest das Terminal neu starten: einfach schließen und ein neues öffnen."
+    },
+    {
+      "heading": "Schritt 3: Claude die Notiz geben",
+      "body": "In Claude Desktop in die Einstellungen, links auf **Developer** und dort auf **Edit Config**. Findest du „Developer\" nicht, schau unter **Extensions**, dann **Advanced settings**. Es öffnet sich ein Ordner mit der Datei `claude_desktop_config.json`. Öffne sie mit einem einfachen Text-Programm.\n\n```\n{\n  \"mcpServers\": {\n    \"markitdown\": {\n      \"command\": \"uvx\",\n      \"args\": [\"markitdown-mcp\"]\n    }\n  }\n}\n```\n\nJede Klammer und jedes Anführungszeichen muss genau so bleiben, also kopieren statt abtippen. Hast du in dieser Datei bereits andere Werkzeuge eingetragen, überschreib sie nicht blind: dann gehört der Abschnitt `markitdown` zusätzlich in den vorhandenen Bereich `mcpServers`."
+    },
+    {
+      "heading": "Schritt 4: neu starten und testen",
+      "body": "Claude muss **komplett** beendet werden. Mac: Command und Q. Windows: Rechtsklick auf das Claude-Symbol neben der Uhr, dann Beenden. Beim ersten Start dauert es einen Moment länger, weil das Werkzeug im Hintergrund geladen wird.\n\n**Den Ort einer Datei bekommen, ohne zu tippen.** Mac: Rechtsklick auf die Datei, dann die Wahl-Taste gedrückt halten, der Eintrag ändert sich zu „als Pfadname kopieren\". Windows: Umschalt gedrückt halten und rechtsklicken, dann „Als Pfad kopieren\".\n\nClaude fragt einmal um Erlaubnis, das Werkzeug zu benutzen. Diese Erlaubnis wird bei jedem neuen Gespräch einmal abgefragt, das ist Absicht."
+    },
+    {
+      "heading": "Wenn etwas nicht klappt",
+      "body": "**Claude kennt kein MarkItDown-Werkzeug.** Häufigster Grund: Claude wurde nicht vollständig beendet.\n\n**Claude findet uvx nicht.** Öffne das Terminal und gib `which uvx` (Mac) oder `where uvx` (Windows) ein. Die ausgegebene Zeile setzt du in der Einstellungsdatei anstelle von `uvx` zwischen die Anführungszeichen. Auf Windows verdoppelst du dabei jeden Schrägstrich, also zum Beispiel `\"command\": \"C:\\\\Users\\\\Anna\\\\.local\\\\bin\\\\uvx.exe\"`.\n\n**Claude meldet einen Fehler in der Einstellung.** Dann stimmt eine Klammer oder ein Anführungszeichen nicht. Inhalt komplett löschen, den Block frisch einfügen, speichern, neu starten.\n\n**Der erste Aufruf dauert sehr lange.** Beim allerersten Mal lädt uv das Werkzeug herunter. Ein bis zwei Minuten sind normal."
+    },
+    {
+      "heading": "Die sieben Merksätze",
+      "body": "1. **Hinzeigen statt hochladen.** Du nennst Claude den Ort der Datei, Claude holt sie sich selbst.\n2. **Ein Befehl genügt.** uv installieren, mehr passiert im schwarzen Fenster nicht.\n3. **Kein Python nötig.** uv bringt alles Weitere selbst mit.\n4. **Immer komplett neu starten.** Fenster schließen reicht nicht.\n5. **Pfad nie abtippen.** Mac: Rechtsklick und Wahltaste. Windows: Umschalt und Rechtsklick.\n6. **Findet Claude uvx nicht**, den vollen Ort per `which uvx` oder `where uvx` eintragen.\n7. **Kein YouTube-Transkript** heißt, es ist keins vorhanden, nicht deine Einrichtung ist kaputt."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Prompt 01: Der erste Test",
+      "text": "Bitte wandle diese Datei mit MarkItDown in Markdown um\nund zeig mir die ersten 20 Zeilen:\n\n[HIER DATEIPFAD EINFÜGEN]"
+    },
+    {
+      "label": "Prompt 02: Langes Dokument auf den Punkt",
+      "text": "Wandle diese Datei mit MarkItDown um und fasse sie dann\nfür mich zusammen:\n- Worum geht es in drei Sätzen?\n- Die fünf wichtigsten Aussagen als Liste\n- Alles, was für mich eine Frist, eine Zahl oder eine\n  Handlung bedeutet\n\nSag mir ausdrücklich, wenn etwas im Dokument unklar\noder widersprüchlich ist.\n\nDatei: [HIER DATEIPFAD EINFÜGEN]"
+    },
+    {
+      "label": "Prompt 03: YouTube-Video ohne Anschauen",
+      "text": "Hol dir das Transkript dieses Videos mit MarkItDown\nund gib mir:\n1. Die Kernaussage in zwei Sätzen\n2. Die konkreten Tipps als nummerierte Liste\n3. Die Stellen, an denen etwas behauptet,\n   aber nicht belegt wird\n\nVideo: [HIER YOUTUBE-LINK EINFÜGEN]\n\nFalls kein Transkript verfügbar ist, sag mir das offen,\nstatt zu raten."
+    },
+    {
+      "label": "Prompt 04: Tabelle verstehen",
+      "text": "Wandle diese Excel-Datei mit MarkItDown um und\nerklär mir in einfacher Sprache:\n- Welche Spalten gibt es und was bedeuten sie?\n- Was fällt dir an den Zahlen auf?\n- Drei Fragen, die ich mir dazu stellen sollte\n\nRechne nichts, was nicht in der Datei steht, und sag mir,\nwenn Werte fehlen.\n\nDatei: [HIER DATEIPFAD EINFÜGEN]"
+    },
+    {
+      "label": "Prompt 05: Mehrere Dateien vergleichen",
+      "text": "Wandle beide Dateien mit MarkItDown um und stell sie\ngegenüber:\n- Wo sagen sie dasselbe?\n- Wo widersprechen sie sich?\n- Was steht nur in einer von beiden?\n\nDatei 1: [HIER DATEIPFAD EINFÜGEN]\nDatei 2: [HIER DATEIPFAD EINFÜGEN]"
+    }
+  ],
+  "note": "Claude muss komplett beendet werden, nicht nur das Fenster geschlossen: Mac Command und Q, Windows über das Symbol neben der Uhr. Das ist der mit Abstand häufigste Grund, warum es anschließend nicht funktioniert. Achte außerdem darauf, dass dein Text-Programm in der Einstellungsdatei keine geschwungenen Anführungszeichen einsetzt, sonst meldet Claude einen Fehler in der Konfiguration. In TextEdit hilft Format, dann In reinen Text umwandeln.",
+  "date": "2026-08-14"
+}
