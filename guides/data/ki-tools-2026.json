@@ -1,0 +1,54 @@
+{
+  "file": "ki-tools-2026_GPTMarlon.pdf",
+  "title": "KI-Tools 2026: mein ehrliches Ranking",
+  "slug": "ki-tools-2026",
+  "category": "Produktivität",
+  "tool": "Tool-Ranking",
+  "summary": "Es gibt inzwischen tausende KI-Tools, und die meisten davon brauchst du nicht. Ich habe in den letzten Monaten unzählige ausprobiert, bezahlt und wieder gekündigt. Übrig geblieben sind zehn, die ich wirklich benutze: was jedes Tool kann, für wen es sich lohnt, wie du startest, und warum zwei große Namen ganz unten landen.",
+  "sections": [
+    {
+      "heading": "Das Ranking auf einen Blick",
+      "body": "| Platz | Tool | Stärke | Link |\n| --- | --- | --- | --- |\n| 1 | Claude | Schreiben, Denken, Agent-Aufgaben | claude.ai |\n| 2 | Higgsfield | KI-Bilder und -Videos, Ad-Assets | higgsfield.ai |\n| 3 | Codex | Coding und Automatisierung | chatgpt.com (im ChatGPT-Abo) |\n| 4 | ChatGPT | Allrounder, Bildgenerierung im Chat | chatgpt.com |\n| 5 | Perplexity | Recherche mit Quellen | perplexity.ai |\n| 6 | NotebookLM | Lernen aus eigenen Quellen | notebooklm.google.com |\n| 7 | Wispr Flow | Diktieren statt Tippen | wisprflow.ai |\n| 8 | Gemini | Google-Ökosystem, Video-KI | gemini.google.com |\n| 9 | Copilot | Nur im Microsoft-365-Alltag | copilot.microsoft.com |\n| 10 | Apple Intelligence | Aktuell keine Empfehlung | vorinstalliert (iPhone/Mac) |\n\nDas Ranking ist eine persönliche Einschätzung aus dem Alltag, kein Labor-Benchmark. Die Reihenfolge beantwortet eine einfache Frage: Womit spare ich wirklich Zeit, und was würde ich sofort wieder abonnieren?"
+    },
+    {
+      "heading": "Platz 1: Claude",
+      "body": "Das Tool, das am Tag am häufigsten offen ist. Mit **Fable 5** hat Anthropic gerade sein bisher stärkstes Modell veröffentlicht. Der Unterschied zeigt sich vor allem beim Schreiben: Claude hält deinen Ton, deine Formulierungen und deinen Stil über lange Texte konsistent, statt in generisches KI-Deutsch zu verfallen.\n\nDazu kommt, dass Claude längst mehr ist als ein Chatfenster. Mit **Projekten** gibst du ihm dauerhaftes Wissen, mit den Agent-Funktionen erledigt es ganze Arbeitspakete am Stück: Dateien lesen und erstellen, recherchieren, Dokumente bauen. Du beschreibst das Ergebnis, nicht jeden Einzelschritt.\n\nDer kostenlose Plan reicht zum Ausprobieren völlig. Ein Upgrade lohnt sich erst, wenn du täglich an Limits stößt."
+    },
+    {
+      "heading": "Platz 2: Higgsfield",
+      "body": "Die Kreativ-Suite für KI-Bilder und -Videos. Die Plattform bündelt die wichtigsten Bild- und Videomodelle an einem Ort, du wählst pro Projekt das passende Modell, statt fünf Abos zu verwalten. Dazu Kamera-Steuerung, Upscaling, Hintergrund-Entfernung und fertige Workflows für Werbeanzeigen.\n\nDer eigentliche Gamechanger sind die Integrationen: Über die offiziellen Connectoren steuerst du Higgsfield direkt aus ChatGPT und Claude. Du entwickelst die Kampagnenidee im Gespräch, und die Bilder und Videos entstehen im selben Flow, ohne Copy-Paste zwischen Tools.\n\nStarte mit einem einzigen echten Projekt, etwa drei Ad-Varianten für ein Produkt, statt planlos Credits zu verbrauchen."
+    },
+    {
+      "heading": "Platz 3: Codex",
+      "body": "Das beste Tool für alles, was nach Code oder Automatisierung aussieht, und du musst dafür nicht programmieren können. Du beschreibst in normaler Sprache, was du willst, und Codex schreibt den Code in einer sicheren Umgebung, führt ihn aus, testet ihn und zeigt dir das Ergebnis.\n\nBeeindruckend ist die Computernutzung: Codex kann selbstständig mit Programmen und Oberflächen arbeiten, statt nur Code auszuspucken.\n\nLass dir immer kurz erklären, was ein Skript tut, bevor du es mit echten Daten laufen lässt, und teste zuerst mit einer Kopie deiner Dateien, nie mit dem Original."
+    },
+    {
+      "heading": "Platz 4: ChatGPT",
+      "body": "Bleibt ein Go-to-Tool, und die aktuelle Modellgeneration ist stark: **GPT-5.5** kam im Mai 2026 als neues Standardmodell, seit Juli rollt **GPT-5.6** aus. Für schnelles Brainstorming, Ideenlisten und Hin-und-her-Denken weiterhin exzellent.\n\nDer zweite große Grund ist der neue Bildgenerator: **ChatGPT Images 2.0** bekommt sogar Text im Bild nahezu perfekt hin, lange die größte Schwäche aller Bildmodelle.\n\nWarum dann nur Platz 4? Weil Claude fürs Schreiben und für Agent-Aufgaben vorn liegt, Higgsfield bei Video führt und Codex das Automatisieren übernimmt. ChatGPT ist überall gut, in den wichtigsten Disziplinen aber nicht mehr das Beste."
+    },
+    {
+      "heading": "Plätze 5 bis 7: Perplexity, NotebookLM, Wispr Flow",
+      "body": "**Perplexity** hat die klassische Google-Suche ersetzt. Statt zehn blauer Links bekommst du eine direkte Antwort mit Quellenangaben, die du nachschlagen kannst. Mit **Comet** gibt es dazu einen eigenen Browser samt Assistent, inzwischen kostenlos verfügbar.\n\n**NotebookLM** dreht das Prinzip um: Statt das ganze Internet zu befragen, lädst du deine eigenen Quellen hoch, und die KI wird zum Experten für genau dieses Material. Daraus entstehen Zusammenfassungen, Lernhilfen und Audio-Übersichten, die klingen wie ein Podcast über deine Unterlagen. Mit Google-Konto kostenlos.\n\n**Wispr Flow**: Taste gedrückt halten, sprechen, und der Text erscheint sauber formatiert am Cursor, in jeder App. Deutsch wird voll unterstützt. Nicht verwechseln mit „Whisper\", dem Spracherkennungsmodell von OpenAI."
+    },
+    {
+      "heading": "Plätze 8 bis 10: Gemini, Copilot, Apple Intelligence",
+      "body": "**Gemini** ist stark, wenn dein Leben ohnehin in Gmail, Docs und Drive stattfindet. Auch bei Video-KI liefert Google mit **Gemini Omni** ab. Als Gesamtpaket noch nicht auf dem Niveau der Tools weiter oben.\n\n**Copilot** lohnt nur, wenn du tief im Microsoft-365-Ökosystem steckst. Außerhalb davon bekommst du mit Claude oder ChatGPT mehr Leistung für dein Geld.\n\n**Apple Intelligence** bekommt aktuell keine Empfehlung. Die angekündigte intelligente Siri wurde mehrfach verschoben, und für die EU hat Apple die neuen Siri-KI-Funktionen wegen des Digital Markets Act auf unbestimmte Zeit ausgesetzt, ohne Zeitplan. Kauf dir kein neues iPhone oder MacBook wegen der beworbenen KI-Funktionen."
+    },
+    {
+      "heading": "So spielt der Stack zusammen",
+      "body": "Die Stärke liegt nicht im einzelnen Tool, sondern in der Kette. Ein typischer Content-Tag:\n\n1. **Recherche mit Perplexity:** Thema prüfen, Fakten und Quellen sammeln.\n2. **Ideen mit ChatGPT:** aus der Recherche zwanzig Hook- und Content-Ideen entwickeln, die zwei besten auswählen.\n3. **Skript mit Claude:** die Idee in deinem Ton ausformulieren lassen, im Projekt, das deinen Stil kennt.\n4. **Visuals mit Higgsfield:** Bilder und Video-Assets generieren, direkt über die Integration aus dem Chat.\n5. **Diktieren mit Wispr Flow:** Anweisungen, Korrekturen und Captions einsprechen statt tippen.\n6. **Wiederkehrendes mit Codex automatisieren.**\n\nNotebookLM läuft nebenbei als Lernmaschine, Gemini oder Copilot kommen nur dazu, wenn du ohnehin im jeweiligen Ökosystem arbeitest."
+    },
+    {
+      "heading": "Der einfachste Start",
+      "body": "Nicht alle zehn auf einmal. Starte mit Claude (kostenlos), nimm Perplexity für die Recherche dazu und ergänze den Rest erst, wenn eine konkrete Aufgabe es verlangt. Ein Tool, das du täglich nutzt, schlägt fünf Abos, die du vergisst.\n\nUnd bevor du irgendwo zahlst: Der Test-Prompt unten läuft durch jedes Chat-Tool, das du in Erwägung ziehst. Das Tool, das am wenigsten generisch klingt und am ehrlichsten mit seinen Schwächen umgeht, gewinnt für dich. Nicht das mit dem lautesten Marketing."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Prompt 01: Der Tool-Test",
+      "text": "Ich teste gerade, ob du zu meinem Alltag passt. Das sind meine drei häufigsten Aufgaben:\n\n1. [AUFGABE 1, z. B. \"E-Mails an Kunden formulieren\"]\n2. [AUFGABE 2, z. B. \"lange PDFs zusammenfassen\"]\n3. [AUFGABE 3, z. B. \"Ideen für Social-Media-Posts entwickeln\"]\n\nErledige alle drei nacheinander an je einem konkreten Beispiel, das ich dir gleich gebe. Sag mir danach\nehrlich, welche der drei Aufgaben du am besten und welche du am schlechtesten kannst und warum."
+    }
+  ],
+  "note": "Dieses Ranking gibt persönliche Erfahrungen und Einschätzungen wieder: keine bezahlte Werbung, keine Affiliate-Links. Es ist eine Alltagseinschätzung, kein Labor-Benchmark. Alle Angaben zu Funktionen, Preisen und Verfügbarkeit wurden im August 2026 geprüft und können sich jederzeit ändern. Prüfe vor einem Kauf oder Abo immer die offiziellen Angaben des jeweiligen Anbieters.",
+  "date": "2026-08-16"
+}
