@@ -1,0 +1,54 @@
+{
+  "file": "claudewasserzeichenentfernen_GPTMarlon.pdf",
+  "title": "Claude Wasserzeichen entfernen: die komplette Anleitung",
+  "slug": "claude-wasserzeichen-entfernen",
+  "category": "Claude Basics",
+  "tool": "Watermarks Remover",
+  "summary": "Claude markiert seit August 2026 jeden Text, den es schreibt. Diese Anleitung zeigt zuerst die Einrichtung in unter fünf Minuten, danach was die Markierung genau ist, was das Werkzeug belegen kann und was es nicht kann.",
+  "sections": [
+    {
+      "heading": "Was gerade passiert ist",
+      "body": "Am 11. August 2026 hat Anthropic angekündigt, dass Claude die Texte, die es schreibt, mit einem Wasserzeichen versieht. Der Auslöser ist der Transparenz-Kodex zum EU-KI-Gesetz, der am 2. August 2026 in Kraft getreten ist. Google macht das bei Gemini bereits, und es ist ziemlich sicher, dass die übrigen Anbieter im Lauf des Jahres folgen.\n\nDaneben steht ein Nutzen, der unabhängig davon bleibt: KI-Werkzeuge streuen unsichtbare Zeichen ohne Breite in den Text. Fügst du so einen Text in ein CMS oder einen Code-Editor ein, sitzt die Formatierung nicht mehr, die Suche findet Absätze nicht, und du suchst eine Stunde nach einem Problem, das kein Bildschirm anzeigt."
+    },
+    {
+      "heading": "Was du vorher brauchst",
+      "body": "Ein Claude-Konto. Eigene Skills lassen sich auf allen Plänen hochladen, auch im kostenlosen Free-Plan.\n\nEntscheidend ist eine einzige Einstellung: **Settings**, dann **Capabilities**, dann **Code execution and file creation** einschalten. Ist sie aus, bekommst du eine Absage, die aussieht, als sei die Skill kaputt. Bei Team- und Enterprise-Konten muss eine Person mit Inhaber-Rechten das unter Organization settings freigeben."
+    },
+    {
+      "heading": "Die Einrichtung",
+      "body": "Die Skill heißt **Watermarks Remover** und liegt quelloffen auf GitHub, du kannst vor dem Hochladen hineinschauen.\n\n1. `github.com/guillaumemeyer/watermarks-remover` öffnen.\n2. In den Ordner `skills/remove-ai-marks` klicken.\n3. Die Datei `SKILL.md` öffnen.\n4. Oben rechts **Raw File** herunterladen.\n5. In Claude auf **Customize**, dann **Skills**.\n6. Dropdown, dann **Upload Skill**, Datei hineinziehen.\n\nWird eine ZIP-Datei verlangt: Ordner `remove-ai-marks` anlegen, die `SKILL.md` hineinschieben, den Ordner zippen und diese ZIP hochladen. Nach dem Hochladen taucht `remove-ai-marks` in der Skills-Liste auf."
+    },
+    {
+      "heading": "So benutzt du sie",
+      "body": "Der Befehl lautet `/remove AI marks`, danach den Text einfügen oder die Datei anhängen. Springt er nicht an, `/remove-ai-marks` mit Bindestrichen schreiben.\n\nDie Skill prüft zuerst und ändert danach. Der Prüfbericht nennt die Zahl der gefundenen unsichtbaren Zeichen und listet die Metadaten auf. Diese Zahlen sind gezählt, nicht geschätzt, und es lohnt sich, sie zu lesen: alles danach bewegt sich in Richtung Einschätzung.\n\nProbier es an etwas aus, das du längst veröffentlicht hast, statt an dem Text, den du gleich abschicken willst."
+    },
+    {
+      "heading": "Was das Wasserzeichen genau ist",
+      "body": "Wenn Claude einen Satz schreibt, gibt es an vielen Stellen mehrere Wörter, die gleich gut passen würden. Das Wasserzeichen lenkt diese Wahl mit einem geheimen Schlüssel, sodass über einen längeren Abschnitt ein Muster entsteht, das eine Prüfstelle mit dem passenden Schlüssel erkennen kann.\n\nDer Text liest sich völlig normal, kein einzelnes Wort sieht auffällig aus. Das Signal lebt allein im Muster über Hunderte von Wörtern. Die Markierung sitzt nicht in der Datei, sie sitzt in der Wortwahl selbst.\n\nDeshalb bringt es nichts, den Text durch Notepad zu schleusen oder als anderen Dateityp zu speichern. Das Wasserzeichen arbeitet auf Modellebene, also unabhängig davon, ob der Text aus der App, der API, Claude Code oder Cowork kommt. Bei Bildern und Dateien arbeitet Anthropic stattdessen mit C2PA-Herkunftsnachweisen."
+    },
+    {
+      "heading": "Was das Werkzeug säubert",
+      "body": "| Schicht | Worum es geht | Belegbar? |\n| --- | --- | --- |\n| A, unsichtbare Zeichen | Leerzeichen ohne Breite, schmale Leerzeichen, Richtungsmarken und andere ungewöhnliche Unicode-Zeichen | Ja, es zählt exakt, was es herausgezogen hat |\n| B, das statistische Muster | Die Wortwahl, angegriffen dadurch, dass eine zweite KI den Text umschreibt | Nach bestem Wissen. Von außen derzeit nicht bestätigbar |\n| Dateien | C2PA-Herkunftsnachweise, EXIF- und XMP-Metadaten in PNG, JPEG, SVG, PDF, DOCX, ODT, HTML und MD | Ja, jedes entfernte Feld wird einzeln gemeldet |\n\nZwei Regeln zum Umschreiben: Das umschreibende Modell ist selbst eine KI und setzt frische unsichtbare Zeichen. Die Reihenfolge lautet also säubern, umschreiben, noch einmal säubern. Und lass Claude-Text nicht von Claude umschreiben, sonst tauschst du die Muster nur gegen neue Muster desselben Modells."
+    },
+    {
+      "heading": "Der ehrliche Teil",
+      "body": "**Das Werkzeug kann den Erfolg nicht nachweisen.** Der Entwickler schreibt das selbst in seine Dokumentation: Solange die Anbieter keine öffentlichen Prüfwerkzeuge und Schlüssel bereitstellen, kann kein Werkzeug seriös bescheinigen, dass ein Text die offizielle Prüfung nicht besteht. Das Entfernen der unsichtbaren Zeichen ist nachprüfbar, die statistische Schicht ist es nicht.\n\n**Das ist ein bewegliches Ziel.** Was heute säubert, kann später ausgeglichen werden, sobald die Erkennung öffentlich läuft. Behandle das Ergebnis als Reinigung deiner Texte und Dateien, nicht als dauerhafte Garantie.\n\n**Das Umschreiben kostet dich etwas Echtes.** Wenn ein zweites Modell deine Wortwahl durchmischt, flacht das Ton und Stimme ab. Dein Text kommt mit jedem starken Durchgang ein Stück gewöhnlicher zurück, was schwer wiegt, wenn der ganze Sinn war, dass er nach dir klingt.\n\n**Wasserzeichen und Prüfwerkzeuge sind zwei Themen.** Viele KI-Prüfwerkzeuge arbeiten über den Schreibstil statt über ein verstecktes Signal. Ein Text kann frei von Wasserzeichen sein und trotzdem angeschlagen werden."
+    },
+    {
+      "heading": "Wo sich das wirklich lohnt",
+      "body": "| Anwendung | Was es dir bringt |\n| --- | --- |\n| Einfügen in CMS oder Code-Editor | Räumt die unsichtbaren Zeichen weg, die dir sonst eine Stunde Fehlersuche einbringen |\n| Bilder und PDFs veröffentlichen | Entfernt EXIF, XMP und Herkunftsnachweise, dort stecken gern Gerätenamen, Software-Versionen und manchmal Standortdaten |\n| Die eigene Website prüfen | Läuft über einen Ordner und meldet, was deine Werkzeuge still in deine Dateien geschrieben haben |\n| Eigene Entwürfe säubern | Nimmt die kleinen Formatierungs-Verräter heraus, bevor etwas unter deinem Namen rausgeht |\n\nEin Gedanke gehört noch dazu, und der steht so auch in der Dokumentation des Entwicklers: Wenn du in einer Lage schreibst, in der der Einsatz von KI ein Problem wäre, sagt das meistens etwas über die Lage aus."
+    }
+  ],
+  "prompts": [
+    {
+      "label": "Prompt 01: Umformulieren",
+      "text": "Schreibe den folgenden Text so um, dass er auf Wortebene deutlich andere\nFormulierungen verwendet. Ändere die Reihenfolge der Satzteile, die\nVerbindungswörter und die Übergänge. Variiere Satzgrenzen und Satzlänge.\nErsetze sowohl inhaltstragende Wörter als auch Funktionswörter, wo die\nBedeutung es zulässt. Erhalte alle Fakten, Zahlen, Namen und technischen\nBezeichnungen unverändert. Füge keine Aussagen hinzu und lasse keine weg.\nGib ausschließlich den umgeschriebenen Text aus.\n\n[HIER DEINEN TEXT EINFÜGEN]"
+    },
+    {
+      "label": "Prompt 02: Natürlicher schreiben",
+      "text": "Schreibe den folgenden Text so um, als hätte ihn ein Mensch von Grund auf\ngeschrieben. Variiere Satzrhythmus und Satzlänge. Ersetze formelhafte\nKI-typische Übergänge und Füllwörter durch konkrete, natürliche\nFormulierungen. Verwende einfache, abwechslungsreiche Sprache. Erhalte alle\nFakten, Zahlen, Namen und technischen Bezeichnungen unverändert. Füge keine\nAussagen hinzu und lasse keine weg. Gib ausschließlich den umgeschriebenen\nText aus.\n\n[HIER DEINEN TEXT EINFÜGEN]"
+    }
+  ],
+  "note": "Beachte beim Einsatz die Regeln, die für dich gelten: etwa Vorgaben von Auftraggebern, Hochschulen oder Arbeitgebern zur Kennzeichnung von KI-Einsatz. Beim Hochladen eigener Dateien gilt: Lade nur Inhalte hoch, an denen du die Rechte hast, und keine personenbezogenen Daten Dritter. Dieser Guide dient Informations- und Bildungszwecken und spiegelt den Stand bei Erstellung wider.",
+  "date": "2026-08-19"
+}
